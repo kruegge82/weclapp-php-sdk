@@ -1,0 +1,47 @@
+# # BaseSalesRecordItemWithCost
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **string** |  | [optional] [readonly]
+**created_date** | **int** |  | [optional] [readonly]
+**last_modified_date** | **int** |  | [optional] [readonly]
+**version** | **string** |  | [optional]
+**custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
+**article_id** | **string** |  | [optional]
+**article_number** | **string** |  | [optional]
+**note** | **string** |  | [optional]
+**position_number** | **int** |  | [optional]
+**quantity** | **float** |  | [optional]
+**description** | **string** |  | [optional]
+**description_fixed** | **bool** |  | [optional]
+**manual_quantity** | **bool** |  | [optional]
+**parent_item_id** | **string** |  | [optional]
+**title** | **string** |  | [optional]
+**unit_id** | **string** |  | [optional]
+**unit_name** | **string** |  | [optional]
+**discount_percentage** | **float** |  | [optional]
+**gross_amount** | **float** |  | [optional]
+**gross_amount_in_company_currency** | **float** |  | [optional]
+**manual_unit_price** | **bool** |  | [optional]
+**net_amount** | **float** |  | [optional]
+**net_amount_for_statistics** | **float** |  | [optional]
+**net_amount_for_statistics_in_company_currency** | **float** |  | [optional]
+**net_amount_in_company_currency** | **float** |  | [optional]
+**reduction_addition_items** | [**\kruegge82\weclapp\Model\ReductionAdditionItem[]**](ReductionAdditionItem.md) |  | [optional]
+**tax_id** | **string** |  | [optional]
+**tax_name** | **string** |  | [optional]
+**unit_price** | **float** |  | [optional]
+**unit_price_in_company_currency** | **float** |  | [optional]
+**add_page_break_before** | **bool** |  | [optional]
+**free_text_item** | **bool** |  | [optional]
+**group_name** | **string** |  | [optional]
+**commission_sales_partners** | [**\kruegge82\weclapp\Model\CommissionSalesPartner[]**](CommissionSalesPartner.md) |  | [optional]
+**manual_unit_cost** | **bool** |  | [optional]
+**service_period_from** | **int** |  | [optional]
+**service_period_to** | **int** |  | [optional]
+**unit_cost** | **float** |  | [optional]
+**unit_cost_in_company_currency** | **float** |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
