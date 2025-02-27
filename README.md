@@ -3,7 +3,7 @@
 # Getting Started
 
 
-API Version:     **[v1](v1.html)**
+API Version:     [v1](v1.html)
 
 
 The weclapp REST API lets you integrate weclapp with other applications or services.
@@ -13,8 +13,8 @@ The specification for this version can be downloaded here:
 | Format                          | Public                                                                           |
 |---------------------------------|----------------------------------------------------------------------------------|
 | swagger JSON                    | <a href=\"swagger.json\" download=\"weclapp-swagger.json\">Download</a> |
-| OpenApi 3 JSON                  | <a href=\"openapi_v1.json\" download=\"weclapp-openapi.json\">Download</a> |
-| OpenApi 3 YAML (with user docs) | <a href=\"openapi_v1.yaml\" download=\"weclapp-openapi.yaml\">Download</a> |
+| OpenApi 3 JSON                  | <a href=\"openapi_v2.json\" download=\"weclapp-openapi.json\">Download</a> |
+| OpenApi 3 YAML (with user docs) | <a href=\"openapi_v2.yaml\" download=\"weclapp-openapi.yaml\">Download</a> |
 
 
 
@@ -51,7 +51,7 @@ possible in two ways:
 ## Using curl
 
 ```bash
-curl --compressed -H \"AuthenticationToken:{api_token}\" \"https://<TENANT>.weclapp.com/webapp/api/v1\" ...
+curl --compressed -H \"AuthenticationToken:{api_token}\" \"https://<TENANT>.weclapp.com/webapp/api/v2\" ...
 ```
 
 Examples of how to use curl will be shown in each section of this API.
@@ -73,7 +73,7 @@ as that makes it much easier to identify misbehaving clients.
 
 ## URLs
 
-The base URL for the API is `https://<TENANT>.weclapp.com/webapp/api/v1/`
+The base URL for the API is `https://<TENANT>.weclapp.com/webapp/api/v2/`
 where `<TENANT>.weclapp.com` is the domain of the specific
 weclapp instance. So each weclapp instance has its own API endpoints
 which allow accessing data for that particular instance. The API
@@ -84,12 +84,12 @@ operations use the same pattern for all resources:
 
 | Operation                     | HTTP Method | URL pattern                                                           |
 |-------------------------------|-------------|-----------------------------------------------------------------------|
-| Query/list instances          | GET         | `https://<TENANT>.weclapp.com/webapp/api/v1/<resource>`       |
-| total number of instances     | GET         | `https://<TENANT>.weclapp.com/webapp/api/v1/<resource>/count` |
-| Get a specific instance by id | GET         | `https://<TENANT>.weclapp.com/webapp/api/v1/<resource>/id/<id>` |
-| Create a new instance         | POST        | `https://<TENANT>.weclapp.com/webapp/api/v1/<resource>`       |
-| Update a specific instance    | PUT         | `https://<TENANT>.weclapp.com/webapp/api/v1/<resource>/id/<id>` |
-| Delete a specific instance    | DELETE      | `https://<TENANT>.weclapp.com/webapp/api/v1/<resource>/id/<id>` |
+| Query/list instances          | GET         | `https://<TENANT>.weclapp.com/webapp/api/v2/<resource>`       |
+| total number of instances     | GET         | `https://<TENANT>.weclapp.com/webapp/api/v2/<resource>/count` |
+| Get a specific instance by id | GET         | `https://<TENANT>.weclapp.com/webapp/api/v2/<resource>/id/<id>` |
+| Create a new instance         | POST        | `https://<TENANT>.weclapp.com/webapp/api/v2/<resource>`       |
+| Update a specific instance    | PUT         | `https://<TENANT>.weclapp.com/webapp/api/v2/<resource>/id/<id>` |
+| Delete a specific instance    | DELETE      | `https://<TENANT>.weclapp.com/webapp/api/v2/<resource>/id/<id>` |
 
 Not all resources support all of those operations. A general description
 for each operation can be found in API operations by example, and
@@ -100,9 +100,9 @@ details for each resource are described on the page for that resource.
 Some resources allow further operations or actions. Those operations can
 be executed with a POST request, for some operations that only read data
 it is also possible to use a GET request (this is documented for each
-operation). For general operations for a resource the URL pattern is `https://<TENANT>.weclapp.com/webapp/api/v1/<resource>/<operation>`.
+operation). For general operations for a resource the URL pattern is `https://<TENANT>.weclapp.com/webapp/api/v2/<resource>/<operation>`.
 Some operations are instance specific, those use the following URL
-pattern: `https://<TENANT>.weclapp.com/webapp/api/v1/<resource>/id/<id>/<operation>`.
+pattern: `https://<TENANT>.weclapp.com/webapp/api/v2/<resource>/id/<id>/<operation>`.
 
 
 
@@ -186,7 +186,7 @@ a resource:
 
 
 ```bash
-curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v1/customer\"
+curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v2/customer\"
 ```
 
 **Output:**
@@ -281,7 +281,7 @@ used:
 
 
 ```bash
-curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v1/customer?serializeNulls\"
+curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v2/customer?serializeNulls\"
 ```
 
 **Output:**
@@ -458,7 +458,7 @@ done using the `page` query parameter. Examples:
 ### `GET /customer?pageSize=10`
 
 ```bash
-curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v1/customer?pageSize=10\"
+curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v2/customer?pageSize=10\"
 ```
 
 returns at most 10 instances
@@ -466,7 +466,7 @@ returns at most 10 instances
 ### `GET /customer?page=2&pageSize=10`
 
 ```bash
-curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v1/customer?page=2&pageSize=10\"
+curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v2/customer?page=2&pageSize=10\"
 ```
 
 returns the second page of results (the `page` parameter is one based, so
@@ -481,7 +481,7 @@ the `sort` parameter:
 ### `GET /customer?sort=lastModifiedDate`
 
 ```bash
-curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v1/customer?sort=lastModifiedDate\"
+curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v2/customer?sort=lastModifiedDate\"
 ```
 
 sort by `lastModifiedDate` (ascending).
@@ -489,7 +489,7 @@ sort by `lastModifiedDate` (ascending).
 ### `GET /customer?sort=-lastModifiedDate`
 
 ```bash
-curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v1/customer?sort=-lastModifiedDate\"
+curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v2/customer?sort=-lastModifiedDate\"
 ```
 
 sort by `lastModifiedDate` descending.
@@ -497,7 +497,7 @@ sort by `lastModifiedDate` descending.
 ### `GET /customer?sort=lastModifiedDate,-salesChannel`
 
 ```bash
-curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v1/customer?sort=lastModifiedDate,-salesChannel\"
+curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v2/customer?sort=lastModifiedDate,-salesChannel\"
 ```
 
 sort by `lastModifiedDate` (ascending) and then `salesChannel` descending.
@@ -520,7 +520,7 @@ is possible using filtering query parameters:
 ### `GET /customer?salesChannel-eq=NET1`
 
 ```bash
-curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v1/customer?salesChannel-eq=NET1\"
+curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v2/customer?salesChannel-eq=NET1\"
 ```
 
 customers for `salesChannel` `NET1`.
@@ -528,7 +528,7 @@ customers for `salesChannel` `NET1`.
 ### `GET /customer?createdDate-gt=1398436281262`
 
 ```bash
-curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v1/customer?createdDate-gt=1398436281262\"
+curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v2/customer?createdDate-gt=1398436281262\"
 ```
 
 customers created after the specified timestamp.
@@ -537,7 +537,7 @@ customers created after the specified timestamp.
 
 ```bash
 curl --compressed -H \"AuthenticationToken:<TOKEN>\" \\
-  \"https://<TENANT>.weclapp.com/webapp/api/v1/customer?salesChannel-eq=NET1&createdDate-gt=1398436281262\"
+  \"https://<TENANT>.weclapp.com/webapp/api/v2/customer?salesChannel-eq=NET1&createdDate-gt=1398436281262\"
 ```
 
 customers for `salesChannel` `NET1` and created after the specified timestamp.
@@ -546,7 +546,7 @@ customers for `salesChannel` `NET1` and created after the specified timestamp.
 
 ```bash
 curl --compressed -H \"\"\"AuthenticationToken:<TOKEN>\" \\
-  \"https://<TENANT>.weclapp.com/webapp/api/v1/customer?customAttribute4587-eq=NEW\"
+  \"https://<TENANT>.weclapp.com/webapp/api/v2/customer?customAttribute4587-eq=NEW\"
 ```
 
 customers with the value `NEW` for `customAttribute` with id 4587.
@@ -555,7 +555,7 @@ customers with the value `NEW` for `customAttribute` with id 4587.
 
 ```bash
 curl --compressed -H \"AuthenticationToken:<TOKEN>\"
-  \"https://<TENANT>.weclapp.com/webapp/api/v1/customer?customAttribute4587.entityReferences.entityId-eq=1234\"
+  \"https://<TENANT>.weclapp.com/webapp/api/v2/customer?customAttribute4587.entityReferences.entityId-eq=1234\"
 ```
 
 customers with an entity reference to an entity with the id 1234 for the `customAttribute` with the id 4587.
@@ -568,7 +568,7 @@ All attributeTypes are supported except `MULTISELECT_LIST`. CustomAttributes of 
 
 ```bash
 curl --compressed -H \"AuthenticationToken:<TOKEN>\" \\
-  \"https://<TENANT>.weclapp.com/webapp/api/v1/customer?customAttribute3387.value-eq=OPTION1\"
+  \"https://<TENANT>.weclapp.com/webapp/api/v2/customer?customAttribute3387.value-eq=OPTION1\"
 ```
 
 customers with value `OPTION1` for `customAttribute` with id 3387.
@@ -609,7 +609,7 @@ In addition to the default behavior of linking filter expressions via \"and\" yo
 
 ```bash
 curl --compressed -H \"AuthenticationToken:<TOKEN>\" \\
-  \"https://<TENANT>.weclapp.com/webapp/api/v1/customer?or-name-eq=charlie&or-name-eq=chaplin\"
+  \"https://<TENANT>.weclapp.com/webapp/api/v2/customer?or-name-eq=charlie&or-name-eq=chaplin\"
 ```
 
 The above example is the equivalent of the expression `(name equals \"charlie\") or (name equals \"chaplin\")`
@@ -622,7 +622,7 @@ For combining `or` and `and` clauses you may also group `or` expressions by usin
 
 ```bash
 curl --compressed -H \"AuthenticationToken:<TOKEN>\" \\
-  \"https://<TENANT>.weclapp.com/webapp/api/v1/customer?orGroup1-name-eq=charlie&orGroup1-name-eq=chaplin&orGroup2-responsibleUserUsername-eq=mrtest&orGroup2-referenceNumber=4711&commercialLanguageId-eq=12\"
+  \"https://<TENANT>.weclapp.com/webapp/api/v2/customer?orGroup1-name-eq=charlie&orGroup1-name-eq=chaplin&orGroup2-responsibleUserUsername-eq=mrtest&orGroup2-referenceNumber=4711&commercialLanguageId-eq=12\"
 ```
 
 The above example is the equivalent of the expression
@@ -642,7 +642,7 @@ combine multiple conditions and express relations between properties. Example:
 
 ```bash
 curl --compressed -H \"AuthenticationToken:<TOKEN>\" \\
-  https://<TENANT>.weclapp.com/webapp/api/v1/party \\
+  https://<TENANT>.weclapp.com/webapp/api/v2/party \\
   --get \\
   --data-urlencode 'filter=(lower(contacts.firstName + \" \" + contacts.lastName) = \"Ertan Özdil\") and (lastModifiedDate >= \"2022-01-01T00:00:00Z\")'
 ```
@@ -739,7 +739,7 @@ properties using the `properties` query parameter:
 
 ```bash
 curl --compressed -H \"AuthenticationToken:<TOKEN>\" \\
-  \"https://<TENANT>.weclapp.com/webapp/api/v1/customer?properties=id,customerNumber,salesChannel\"
+  \"https://<TENANT>.weclapp.com/webapp/api/v2/customer?properties=id,customerNumber,salesChannel\"
 ```
 
 **Output:**
@@ -762,7 +762,7 @@ It is also possible to specify property paths:
 
 ```bash
 curl --compressed -H \"AuthenticationToken:<TOKEN>\" \\
-  \"https://<TENANT>.weclapp.com/webapp/api/v1/customer?properties=id,customerNumber,salesChannel,contacts.id,contacts.lastName\"
+  \"https://<TENANT>.weclapp.com/webapp/api/v2/customer?properties=id,customerNumber,salesChannel,contacts.id,contacts.lastName\"
 ```
 
 If an unknown property or property path is specified then an error
@@ -799,7 +799,7 @@ To determine the total number of entity instances the count operation
 can be used:
 
 ```bash
-curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v1/customer/count\"
+curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v2/customer/count\"
 ```
 
 It is possible to use the filtering query parameters from the querying
@@ -807,7 +807,7 @@ operation with the count operation:
 
 ```bash
 curl --compressed -H \"AuthenticationToken:<TOKEN>\" \\
-  \"https://<TENANT>.weclapp.com/webapp/api/v1/customer/count?salesChannel-eq=NET1\"
+  \"https://<TENANT>.weclapp.com/webapp/api/v2/customer/count?salesChannel-eq=NET1\"
 ```
 
 returns the number of customers for `salesChannel` `NET1`.
@@ -825,7 +825,7 @@ The API response will contain an additional object `referencedEntities`.
 
 ```bash
 curl --compressed -H \"AuthenticationToken:<TOKEN>\" \\
-  \"https://<TENANT>.weclapp.com/webapp/api/v1/article?includeReferencedEntities=unitId,articleCategoryId&properties=id,name,unitId,articleCategoryId\"
+  \"https://<TENANT>.weclapp.com/webapp/api/v2/article?includeReferencedEntities=unitId,articleCategoryId&properties=id,name,unitId,articleCategoryId\"
 ```
 
 **Output:**
@@ -889,7 +889,7 @@ respective entity.
 
 ```bash
 curl --compressed -H \"AuthenticationToken:<TOKEN>\" \\
-  \"https://<TENANT>.weclapp.com/webapp/api/v1/article?additionalProperties=currentSalesPrice\"
+  \"https://<TENANT>.weclapp.com/webapp/api/v2/article?additionalProperties=currentSalesPrice\"
 ```
 
 **Output:**
@@ -929,7 +929,7 @@ The meta properties (id, version, createdDate, lastModifiedDate) are not include
 ```bash
 curl --compressed -H \"AuthenticationToken:<TOKEN>\" \\
   -H Content-Type: application/json \\
-  -X POST \"https://<TENANT>.weclapp.com/webapp/api/v1/salesOrder?dryRun=true\" \\
+  -X POST \"https://<TENANT>.weclapp.com/webapp/api/v2/salesOrder?dryRun=true\" \\
   -d   '{ \"customerNumber\": \"4799\" }'
 ```
 
@@ -1078,6 +1078,8 @@ operations if the operation was successful:
 If you are not currently logged in to weclapp, you are using another
 browser or the AuthenticationToken was wrong you will get a response of
 `401 (Unauthorized)`.
+If you have insufficient privileges for the
+operation you will get a `403 (Forbidden)`.
 It is possible to disable
 the optimistic locking check by just omitting the `version` property, but
 doing this might accidentally overwrite changes done by another user in the
@@ -1093,7 +1095,7 @@ Performing a GET request on that URL returns the entity instance:
 ### `GET /customer/id/3346`
 
 ```bash
-curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v1/customer/id/3346\"
+curl --compressed -H \"AuthenticationToken:<TOKEN>\" \"https://<TENANT>.weclapp.com/webapp/api/v2/customer/id/3346\"
 ```
 
 **Output:**
@@ -1203,7 +1205,7 @@ and there are defaults for some properties. Here are some general notes:
 ```bash
 curl --compressed -H \"AuthenticationToken:<TOKEN>\" \\
   -H Content-Type: application/json \\
-  -X POST \"https://<TENANT>.weclapp.com/webapp/api/v1/customer\" \\
+  -X POST \"https://<TENANT>.weclapp.com/webapp/api/v2/customer\" \\
   -d   '{ \"customerNumber\": \"C1013\", \"partyType\": \"ORGANIZATION\", \"company\": \"Firma\" }'
 ```
 
@@ -1283,7 +1285,7 @@ In this example only the property \"company\" will be updated. All other propert
 ```bash
 curl --compressed -H \"AuthenticationToken:<TOKEN>\" \\
   -H Content-Type: application/json \\
-  -X PUT \"https://<TENANT>.weclapp.com/webapp/api/v1/customer/id/4391\" \\
+  -X PUT \"https://<TENANT>.weclapp.com/webapp/api/v2/customer/id/4391\" \\
   -d  @- <<JSON
 {
   \"id\": \"4391\",
@@ -1389,7 +1391,7 @@ In this example only the property \"company\" will be updated. All other propert
 ```bash
 curl --compressed -H \"AuthenticationToken:<TOKEN>\" \\
   -H Content-Type: application/json \\
-  -X PUT \"https://<TENANT>.weclapp.com/webapp/api/v1/customer/id/4391?ignoreMissingProperties=true\" \\
+  -X PUT \"https://<TENANT>.weclapp.com/webapp/api/v2/customer/id/4391?ignoreMissingProperties=true\" \\
   -d '{ \"version\": \"0\", \"company\": \"NEUER FIRMENNAME!!!\" }'
 ```
 
@@ -1455,7 +1457,7 @@ Deleting an instances is done by performing a `DELETE` request to the URL of the
 ### `DELETE /customer/id/{id}`
 
 ```bash
-curl --compressed -H \"AuthenticationToken:<TOKEN>\" -X DELETE \"https://<TENANT>.weclapp.com/webapp/api/v1/customer/id/4391\"
+curl --compressed -H \"AuthenticationToken:<TOKEN>\" -X DELETE \"https://<TENANT>.weclapp.com/webapp/api/v2/customer/id/4391\"
 ```
 
 If the deletion is possible it is performed and the response status will be 204 (No Content), otherwise an error response will be returned.
@@ -1898,7 +1900,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://localhost:80/webapp/api/v1*
+All URIs are relative to *https://localhost:80/webapp/api/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -2042,14 +2044,6 @@ Class | Method | HTTP request | Description
 *CompanySizeApi* | [**companySizeIdIdGet**](docs/Api/CompanySizeApi.md#companysizeididget) | **GET** /companySize/id/{id} | query a specific companySize
 *CompanySizeApi* | [**companySizeIdIdPut**](docs/Api/CompanySizeApi.md#companysizeididput) | **PUT** /companySize/id/{id} | update a companySize
 *CompanySizeApi* | [**companySizePost**](docs/Api/CompanySizeApi.md#companysizepost) | **POST** /companySize | create a companySize
-*ContactApi* | [**contactCountGet**](docs/Api/ContactApi.md#contactcountget) | **GET** /contact/count | count contact
-*ContactApi* | [**contactGet**](docs/Api/ContactApi.md#contactget) | **GET** /contact | query contact
-*ContactApi* | [**contactIdIdDelete**](docs/Api/ContactApi.md#contactididdelete) | **DELETE** /contact/id/{id} | delete a contact
-*ContactApi* | [**contactIdIdDownloadImageGet**](docs/Api/ContactApi.md#contactididdownloadimageget) | **GET** /contact/id/{id}/downloadImage | 
-*ContactApi* | [**contactIdIdGet**](docs/Api/ContactApi.md#contactididget) | **GET** /contact/id/{id} | query a specific contact
-*ContactApi* | [**contactIdIdPut**](docs/Api/ContactApi.md#contactididput) | **PUT** /contact/id/{id} | update a contact
-*ContactApi* | [**contactIdIdUploadImagePost**](docs/Api/ContactApi.md#contactididuploadimagepost) | **POST** /contact/id/{id}/uploadImage | 
-*ContactApi* | [**contactPost**](docs/Api/ContactApi.md#contactpost) | **POST** /contact | create a contact
 *ContractApi* | [**contractCountGet**](docs/Api/ContractApi.md#contractcountget) | **GET** /contract/count | count contract
 *ContractApi* | [**contractGet**](docs/Api/ContractApi.md#contractget) | **GET** /contract | query contract
 *ContractApi* | [**contractIdIdCreateContractDocumentPost**](docs/Api/ContractApi.md#contractididcreatecontractdocumentpost) | **POST** /contract/id/{id}/createContractDocument | 
@@ -2124,14 +2118,6 @@ Class | Method | HTTP request | Description
 *CustomAttributeDefinitionApi* | [**customAttributeDefinitionPost**](docs/Api/CustomAttributeDefinitionApi.md#customattributedefinitionpost) | **POST** /customAttributeDefinition | create a customAttributeDefinition
 *CustomAttributeDefinitionApi* | [**customAttributeDefinitionReadOrderGet**](docs/Api/CustomAttributeDefinitionApi.md#customattributedefinitionreadorderget) | **GET** /customAttributeDefinition/readOrder | 
 *CustomAttributeDefinitionApi* | [**customAttributeDefinitionUpdateOrderPost**](docs/Api/CustomAttributeDefinitionApi.md#customattributedefinitionupdateorderpost) | **POST** /customAttributeDefinition/updateOrder | 
-*CustomerApi* | [**customerCountGet**](docs/Api/CustomerApi.md#customercountget) | **GET** /customer/count | count customer
-*CustomerApi* | [**customerGet**](docs/Api/CustomerApi.md#customerget) | **GET** /customer | query customer
-*CustomerApi* | [**customerIdIdDelete**](docs/Api/CustomerApi.md#customerididdelete) | **DELETE** /customer/id/{id} | delete a customer
-*CustomerApi* | [**customerIdIdDownloadImageGet**](docs/Api/CustomerApi.md#customerididdownloadimageget) | **GET** /customer/id/{id}/downloadImage | 
-*CustomerApi* | [**customerIdIdGet**](docs/Api/CustomerApi.md#customerididget) | **GET** /customer/id/{id} | query a specific customer
-*CustomerApi* | [**customerIdIdPut**](docs/Api/CustomerApi.md#customerididput) | **PUT** /customer/id/{id} | update a customer
-*CustomerApi* | [**customerIdIdUploadImagePost**](docs/Api/CustomerApi.md#customerididuploadimagepost) | **POST** /customer/id/{id}/uploadImage | 
-*CustomerApi* | [**customerPost**](docs/Api/CustomerApi.md#customerpost) | **POST** /customer | create a customer
 *CustomerCategoryApi* | [**customerCategoryCountGet**](docs/Api/CustomerCategoryApi.md#customercategorycountget) | **GET** /customerCategory/count | count customerCategory
 *CustomerCategoryApi* | [**customerCategoryGet**](docs/Api/CustomerCategoryApi.md#customercategoryget) | **GET** /customerCategory | query customerCategory
 *CustomerCategoryApi* | [**customerCategoryIdIdDelete**](docs/Api/CustomerCategoryApi.md#customercategoryididdelete) | **DELETE** /customerCategory/id/{id} | delete a customerCategory
@@ -2225,15 +2211,6 @@ Class | Method | HTTP request | Description
 *InventoryTransportReferenceApi* | [**inventoryTransportReferencePost**](docs/Api/InventoryTransportReferenceApi.md#inventorytransportreferencepost) | **POST** /inventoryTransportReference | create a inventoryTransportReference
 *JobApi* | [**jobAbortGet**](docs/Api/JobApi.md#jobabortget) | **GET** /job/abort | 
 *JobApi* | [**jobStatusGet**](docs/Api/JobApi.md#jobstatusget) | **GET** /job/status | 
-*LeadApi* | [**leadCountGet**](docs/Api/LeadApi.md#leadcountget) | **GET** /lead/count | count lead
-*LeadApi* | [**leadGet**](docs/Api/LeadApi.md#leadget) | **GET** /lead | query lead
-*LeadApi* | [**leadIdIdConvertLeadToCustomerGet**](docs/Api/LeadApi.md#leadididconvertleadtocustomerget) | **GET** /lead/id/{id}/convertLeadToCustomer | 
-*LeadApi* | [**leadIdIdDelete**](docs/Api/LeadApi.md#leadididdelete) | **DELETE** /lead/id/{id} | delete a lead
-*LeadApi* | [**leadIdIdDownloadImageGet**](docs/Api/LeadApi.md#leadididdownloadimageget) | **GET** /lead/id/{id}/downloadImage | 
-*LeadApi* | [**leadIdIdGet**](docs/Api/LeadApi.md#leadididget) | **GET** /lead/id/{id} | query a specific lead
-*LeadApi* | [**leadIdIdPut**](docs/Api/LeadApi.md#leadididput) | **PUT** /lead/id/{id} | update a lead
-*LeadApi* | [**leadIdIdUploadImagePost**](docs/Api/LeadApi.md#leadididuploadimagepost) | **POST** /lead/id/{id}/uploadImage | 
-*LeadApi* | [**leadPost**](docs/Api/LeadApi.md#leadpost) | **POST** /lead | create a lead
 *LeadRatingApi* | [**leadRatingCountGet**](docs/Api/LeadRatingApi.md#leadratingcountget) | **GET** /leadRating/count | count leadRating
 *LeadRatingApi* | [**leadRatingGet**](docs/Api/LeadRatingApi.md#leadratingget) | **GET** /leadRating | query leadRating
 *LeadRatingApi* | [**leadRatingIdIdDelete**](docs/Api/LeadRatingApi.md#leadratingididdelete) | **DELETE** /leadRating/id/{id} | delete a leadRating
@@ -2633,14 +2610,6 @@ Class | Method | HTTP request | Description
 *StoragePlaceSizeApi* | [**storagePlaceSizeIdIdGet**](docs/Api/StoragePlaceSizeApi.md#storageplacesizeididget) | **GET** /storagePlaceSize/id/{id} | query a specific storagePlaceSize
 *StoragePlaceSizeApi* | [**storagePlaceSizeIdIdPut**](docs/Api/StoragePlaceSizeApi.md#storageplacesizeididput) | **PUT** /storagePlaceSize/id/{id} | update a storagePlaceSize
 *StoragePlaceSizeApi* | [**storagePlaceSizePost**](docs/Api/StoragePlaceSizeApi.md#storageplacesizepost) | **POST** /storagePlaceSize | create a storagePlaceSize
-*SupplierApi* | [**supplierCountGet**](docs/Api/SupplierApi.md#suppliercountget) | **GET** /supplier/count | count supplier
-*SupplierApi* | [**supplierGet**](docs/Api/SupplierApi.md#supplierget) | **GET** /supplier | query supplier
-*SupplierApi* | [**supplierIdIdDelete**](docs/Api/SupplierApi.md#supplierididdelete) | **DELETE** /supplier/id/{id} | delete a supplier
-*SupplierApi* | [**supplierIdIdDownloadImageGet**](docs/Api/SupplierApi.md#supplierididdownloadimageget) | **GET** /supplier/id/{id}/downloadImage | 
-*SupplierApi* | [**supplierIdIdGet**](docs/Api/SupplierApi.md#supplierididget) | **GET** /supplier/id/{id} | query a specific supplier
-*SupplierApi* | [**supplierIdIdPut**](docs/Api/SupplierApi.md#supplierididput) | **PUT** /supplier/id/{id} | update a supplier
-*SupplierApi* | [**supplierIdIdUploadImagePost**](docs/Api/SupplierApi.md#supplierididuploadimagepost) | **POST** /supplier/id/{id}/uploadImage | 
-*SupplierApi* | [**supplierPost**](docs/Api/SupplierApi.md#supplierpost) | **POST** /supplier | create a supplier
 *SystemApi* | [**systemCreateDemoTestSystemPost**](docs/Api/SystemApi.md#systemcreatedemotestsystempost) | **POST** /system/createDemoTestSystem | 
 *SystemApi* | [**systemDemoTestSystemInfoGet**](docs/Api/SystemApi.md#systemdemotestsysteminfoget) | **GET** /system/demoTestSystemInfo | 
 *SystemApi* | [**systemLicensesGet**](docs/Api/SystemApi.md#systemlicensesget) | **GET** /system/licenses | 
@@ -2931,8 +2900,6 @@ Class | Method | HTTP request | Description
 - [CommissionSalesPartner](docs/Model/CommissionSalesPartner.md)
 - [CommissionType](docs/Model/CommissionType.md)
 - [ConditionsForEntityType](docs/Model/ConditionsForEntityType.md)
-- [Contact](docs/Model/Contact.md)
-- [ContactGet200Response](docs/Model/ContactGet200Response.md)
 - [Contract](docs/Model/Contract.md)
 - [ContractAdditionalAddress](docs/Model/ContractAdditionalAddress.md)
 - [ContractAuthorizationUnit](docs/Model/ContractAuthorizationUnit.md)
@@ -2979,10 +2946,7 @@ Class | Method | HTTP request | Description
 - [CustomAttributePublicPageType](docs/Model/CustomAttributePublicPageType.md)
 - [CustomAttributeType](docs/Model/CustomAttributeType.md)
 - [CustomValue](docs/Model/CustomValue.md)
-- [Customer](docs/Model/Customer.md)
 - [CustomerBusinessType](docs/Model/CustomerBusinessType.md)
-- [CustomerGet200Response](docs/Model/CustomerGet200Response.md)
-- [CustomerOrLead](docs/Model/CustomerOrLead.md)
 - [CustomerSatisfaction](docs/Model/CustomerSatisfaction.md)
 - [CustomerSpecificArticleAttributes](docs/Model/CustomerSpecificArticleAttributes.md)
 - [DebitCreditIndicator](docs/Model/DebitCreditIndicator.md)
@@ -3001,8 +2965,8 @@ Class | Method | HTTP request | Description
 - [DunningBlockState](docs/Model/DunningBlockState.md)
 - [Duration](docs/Model/Duration.md)
 - [EcommerceOrder](docs/Model/EcommerceOrder.md)
+- [EcommerceShippingCarrier](docs/Model/EcommerceShippingCarrier.md)
 - [EmailAddresses](docs/Model/EmailAddresses.md)
-- [Entity](docs/Model/Entity.md)
 - [EntityReference](docs/Model/EntityReference.md)
 - [EventInvitationStatus](docs/Model/EventInvitationStatus.md)
 - [EventRight](docs/Model/EventRight.md)
@@ -3059,9 +3023,6 @@ Class | Method | HTTP request | Description
 - [JobResult](docs/Model/JobResult.md)
 - [JobStatus](docs/Model/JobStatus.md)
 - [JobType](docs/Model/JobType.md)
-- [Lead](docs/Model/Lead.md)
-- [LeadGet200Response](docs/Model/LeadGet200Response.md)
-- [LeadIdIdConvertLeadToCustomerGet200Response](docs/Model/LeadIdIdConvertLeadToCustomerGet200Response.md)
 - [LeadStatus](docs/Model/LeadStatus.md)
 - [LedgerAccount](docs/Model/LedgerAccount.md)
 - [LedgerAccountGet200Response](docs/Model/LedgerAccountGet200Response.md)
@@ -3101,7 +3062,6 @@ Class | Method | HTTP request | Description
 - [PackagingUnit](docs/Model/PackagingUnit.md)
 - [Party](docs/Model/Party.md)
 - [PartyBankAccount](docs/Model/PartyBankAccount.md)
-- [PartyButNotContact](docs/Model/PartyButNotContact.md)
 - [PartyEmailAddresses](docs/Model/PartyEmailAddresses.md)
 - [PartyGet200Response](docs/Model/PartyGet200Response.md)
 - [PartyGet200ResponseAdditionalProperties](docs/Model/PartyGet200ResponseAdditionalProperties.md)
@@ -3127,7 +3087,6 @@ Class | Method | HTTP request | Description
 - [PickGet200Response](docs/Model/PickGet200Response.md)
 - [PriceCalculationParameter](docs/Model/PriceCalculationParameter.md)
 - [PriceCalculationParameterGet200Response](docs/Model/PriceCalculationParameterGet200Response.md)
-- [PriceCalculationParameterV1](docs/Model/PriceCalculationParameterV1.md)
 - [PriceConditionType](docs/Model/PriceConditionType.md)
 - [PriceData](docs/Model/PriceData.md)
 - [PriceDataReductionAdditionItem](docs/Model/PriceDataReductionAdditionItem.md)
@@ -3189,6 +3148,7 @@ Class | Method | HTTP request | Description
 - [PurchaseOrderRequestIdIdExportItemsAsCsvPostRequest](docs/Model/PurchaseOrderRequestIdIdExportItemsAsCsvPostRequest.md)
 - [PurchaseOrderRequestIdIdPushPurchasePricesPostRequest](docs/Model/PurchaseOrderRequestIdIdPushPurchasePricesPostRequest.md)
 - [PurchaseOrderRequestItem](docs/Model/PurchaseOrderRequestItem.md)
+- [PurchaseOrderRequestItemScaleValue](docs/Model/PurchaseOrderRequestItemScaleValue.md)
 - [PurchaseOrderRequestOffer](docs/Model/PurchaseOrderRequestOffer.md)
 - [PurchaseOrderRequestOfferItem](docs/Model/PurchaseOrderRequestOfferItem.md)
 - [PurchaseOrderRequestOfferItemScaleValue](docs/Model/PurchaseOrderRequestOfferItemScaleValue.md)
@@ -3313,8 +3273,6 @@ Class | Method | HTTP request | Description
 - [StoragePlaceTypeSettings](docs/Model/StoragePlaceTypeSettings.md)
 - [StoreType](docs/Model/StoreType.md)
 - [SuccessResponse](docs/Model/SuccessResponse.md)
-- [Supplier](docs/Model/Supplier.md)
-- [SupplierGet200Response](docs/Model/SupplierGet200Response.md)
 - [SupplierOrderStatusType](docs/Model/SupplierOrderStatusType.md)
 - [SupplierOrderType](docs/Model/SupplierOrderType.md)
 - [SupplySource](docs/Model/SupplySource.md)
@@ -3447,6 +3405,6 @@ support@weclapp.com
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1`
+- API version: `2`
     - Generator version: `7.12.0-SNAPSHOT`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

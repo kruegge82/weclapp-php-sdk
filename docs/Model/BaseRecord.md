@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **commercial_language** | **string** |  | [optional]
 **creator_id** | **string** |  | [optional]
 **description** | **string** |  | [optional]
-**disable_email_template** | **bool** |  | [optional]
+**disable_record_emailing_rule** | **bool** |  | [optional]
 **record_comment** | **string** |  | [optional]
 **record_free_text** | **string** |  | [optional]
 **record_opening** | **string** |  | [optional]

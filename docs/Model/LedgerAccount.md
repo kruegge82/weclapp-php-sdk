@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **balance_sheet_item** | [**\kruegge82\weclapp\Model\BalanceSheetItem**](BalanceSheetItem.md) |  | [optional]
 **description** | **string** |  | [optional]
 **parent_account_id** | **string** |  | [optional]
-**parent_account_number** | **string** |  | [optional]
 **type** | [**\kruegge82\weclapp\Model\LedgerAccountType**](LedgerAccountType.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

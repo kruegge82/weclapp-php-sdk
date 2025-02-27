@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **version** | **string** |  | [optional]
 **custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
 **article_id** | **string** |  | [optional]
-**article_number** | **string** |  | [optional]
 **batch_number** | **string** |  | [optional]
 **expiration_date** | **int** |  | [optional]
 

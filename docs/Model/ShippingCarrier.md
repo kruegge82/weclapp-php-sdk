@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional]
 **active** | **bool** |  | [optional]
+**ecommerce_shipping_carrier** | [**\kruegge82\weclapp\Model\EcommerceShippingCarrier**](EcommerceShippingCarrier.md) |  | [optional]
 **internal_shipping_carrier** | [**\kruegge82\weclapp\Model\InternalShippingCarrier**](InternalShippingCarrier.md) |  | [optional]
 **name** | **string** |  | [optional]
 **position_number** | **int** |  | [optional]

@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **version** | **string** |  | [optional]
 **custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
 **article_id** | **string** |  | [optional]
-**batch_number** | **string** |  | [optional]
 **batch_number_id** | **string** |  | [optional]
 **cost_center_id** | **string** |  | [optional]
 **incoming_goods_item_id** | **string** |  | [optional]

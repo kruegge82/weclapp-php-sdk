@@ -22,6 +22,5 @@ Name | Type | Description | Notes
 **short_description2** | **string** |  | [optional]
 **tax_rate_type** | [**\kruegge82\weclapp\Model\TaxRateType**](TaxRateType.md) |  | [optional]
 **unit_id** | **string** |  | [optional]
-**unit_name** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

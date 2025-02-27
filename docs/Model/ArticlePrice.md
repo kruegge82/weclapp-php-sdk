@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional]
 **currency_id** | **string** |  | [optional]
-**currency_name** | **string** |  | [optional]
 **customer_id** | **string** |  | [optional]
 **description** | **string** |  | [optional]
 **end_date** | **int** |  | [optional]
@@ -21,6 +20,5 @@ Name | Type | Description | Notes
 **start_date** | **int** |  | [optional]
 **sales_channel** | [**\kruegge82\weclapp\Model\DistributionChannel**](DistributionChannel.md) |  | [optional]
 **article_id** | **string** |  | [optional]
-**article_number** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

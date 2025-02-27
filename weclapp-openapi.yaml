@@ -7589,6 +7589,8 @@ paths:
     get:
       deprecated: true
       description: query contact
+      description: query contact
+
       parameters:
       - in: query
         name: page

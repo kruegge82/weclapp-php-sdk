@@ -30,7 +30,6 @@ Name | Type | Description | Notes
 **primary_address_id** | **string** |  | [optional]
 **salutation** | [**\kruegge82\weclapp\Model\Salutation**](Salutation.md) |  | [optional]
 **tags** | **string[]** |  | [optional]
-**title** | **string** |  | [optional]
 **title_id** | **string** |  | [optional]
 **website** | **string** |  | [optional]
 

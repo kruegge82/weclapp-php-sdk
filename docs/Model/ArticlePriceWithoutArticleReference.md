@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional]
 **currency_id** | **string** |  | [optional]
-**currency_name** | **string** |  | [optional]
 **customer_id** | **string** |  | [optional]
 **description** | **string** |  | [optional]
 **end_date** | **int** |  | [optional]

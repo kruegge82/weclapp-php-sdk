@@ -26,7 +26,6 @@ Name | Type | Description | Notes
 **state** | **string** |  | [optional]
 **street1** | **string** |  | [optional]
 **street2** | **string** |  | [optional]
-**title** | **string** |  | [optional]
 **title_id** | **string** |  | [optional]
 **zipcode** | **string** |  | [optional]
 

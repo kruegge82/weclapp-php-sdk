@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional]
 **article_id** | **string** |  | [optional]
-**article_number** | **string** |  | [optional]
 **position_number** | **int** |  | [optional]
 **quantity** | **float** |  | [optional]
 
