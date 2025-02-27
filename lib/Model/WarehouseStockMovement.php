@@ -889,7 +889,7 @@ class WarehouseStockMovement implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('non-nullable quantity cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($quantity)))) {
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($quantity)))) {
             throw new \InvalidArgumentException("invalid value for \$quantity when calling WarehouseStockMovement., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
