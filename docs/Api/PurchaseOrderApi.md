@@ -165,8 +165,6 @@ purchaseOrderIdIdCancelDropshippingShipmentsPost($id, $purchase_order_id_id_canc
 
 
 
-cancel dropshipping shipments and incoming goods  # Endpoint for cancelling one or more dropshipping shipments and their corresponding incoming goods  ## When can a dropshipping shipment be cancelled?  A dropshipping shipment is an outgoing shipment from the fictitious \"dropshipping warehouse\" created by processing a dropshipping order (see documentation of `/purchaseOrder/id/{id}/processDropshipping`). For each dropshipping shipment, a corresponding dropshipping incoming goods exists. Both entities are linked to each other in the database, unless the dropshipping order was processed before release of weclapp version 24.15.1.  In order to cancel a dropshipping shipment, the following conditions must be met: * The shipment must **not** be in status `CANCELLED`. * The shipment must belong to the underlying dropshipping order, that is, there is an incoming goods linked to the shipment which is linked to the dropshipping order (note that there is no direct link between the dropshipping shipment and the dropshipping order).  The dropshipping order itself must * not be in status `ORDER_ENTRY_COMPLETED` or `ORDER_ENTRY_IN_PROGRESS` and * have at least one uncancelled dropshipping shipment.  The dropshipping shipments to be cancelled are specified in the mandatory parameter `shipmentIds`. Some constellations are forbidden and will trigger an error message: * `shipmentIds` is null or empty. * `shipmentIds` contains null, a nonexistent id, an id of an entity which is not a dropshipping shipment, or an id of a dropshipping shipment which does not meet the above conditions.  ## What happens in dropshipping shipment cancellation?  The specified dropshipping shipments are cancelled, that is, their stock movements are reverted and the status of each shipment is set to `CANCELLED`. The same is done for the corresponding incoming goods, only that their status is set to `INCOMING_CANCELLED`. Finally, the dropshipping order is reopened as it is not completely shipped anymore.
-
 ### Example
 
 ```php
@@ -228,8 +226,6 @@ purchaseOrderIdIdCreateContractPost($id, $body): \kruegge82\weclapp\Model\Purcha
 ```
 
 
-
-create a contract from a purchase order  # Endpoint for creating a contract for the specified purchase order  To use this endpoint, the optional purchase order workflow action \"Create contract\" must be enabled.
 
 ### Example
 
@@ -785,8 +781,6 @@ purchaseOrderIdIdProcessDropshippingPost($id, $purchase_order_id_id_process_drop
 ```
 
 
-
-process a dropshipping purchase order  # Endpoint for processing a dropshipping order  ## What does \"processing a dropshipping order\" mean?  When a dropshipping order is processed, an incoming goods to the dropshipping warehouse in status `INCOMING_SHIPPED` and a shipment from the dropshipping warehouse in status `SHIPPED` are created. Furthermore, if all non-free-text items are shipped (that is, included in an incoming goods/shipment pair), the `received` property of the dropshipping order is set to `true`.  From the sales order's perspective, a shipment to the customer is created, only that the goods are not shipped from the sales order warehouse, but from the warehouse of the dropshipping order's supplier. In weclapp, this is modeled as the fictitious \"dropshipping warehouse\" mentioned above.  ## When can a dropshipping order be processed?  In order to process a dropshipping order, the following conditions must be met: * The dropshipping order is in status `CONFIRMED`. * It is possible to create a shipment for the underlying sales order. In any case, the sales order must be in status `ORDER_CONFIRMATION_PRINTED`. * There is at least one non-free-text item in the dropshipping order which is not shipped yet.  ## Which items in the dropshipping order can be processed?  The dropshipping order items to be included in the created incoming goods/shipment can be controlled via the parameter `processPurchaseOrderItems`. On the one hand, if `processPurchaseOrderItems` is not set, all unshipped items - including free-text ones - will be included. On the other hand, using a subset of items in `processPurchaseOrderItems` allows for partial processing, that is, the creation of multiple incoming goods/shipment pairs from the dropshipping order.  Special cases: * Items with quantity 0 are skipped, unless no other item with quantity != 0 is provided in `processPurchaseOrderItems`. In that case, an error is issued as the incoming goods/shipment must have at least one item. * If a sales bill of material header article item is provided in `processPurchaseOrderItems` which is already shipped, the quantity in the incoming goods/shipment is automatically reduced to 0. * If the only dropshipping order items not included in incoming goods/shipment pairs are free-text items, these cannot be processed anymore as the dropshipping order is already `received`.  Some constellations are forbidden and will trigger an error message: * `processPurchaseOrderItems` is empty (not null). * `processPurchaseOrderItems` includes a sales bill of material header article item, but no subitem. * `processPurchaseOrderItems` includes a sales bill of material subitem, but not the header article item.
 
 ### Example
 

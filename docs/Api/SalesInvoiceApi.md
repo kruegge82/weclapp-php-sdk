@@ -7,6 +7,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 | [**salesInvoiceCountGet()**](SalesInvoiceApi.md#salesInvoiceCountGet) | **GET** /salesInvoice/count | count salesInvoice |
 | [**salesInvoiceGet()**](SalesInvoiceApi.md#salesInvoiceGet) | **GET** /salesInvoice | query salesInvoice |
 | [**salesInvoiceIdIdAddSalesOrdersPost()**](SalesInvoiceApi.md#salesInvoiceIdIdAddSalesOrdersPost) | **POST** /salesInvoice/id/{id}/addSalesOrders |  |
+| [**salesInvoiceIdIdCalculateSalesPricesPost()**](SalesInvoiceApi.md#salesInvoiceIdIdCalculateSalesPricesPost) | **POST** /salesInvoice/id/{id}/calculateSalesPrices |  |
 | [**salesInvoiceIdIdCreateContractPost()**](SalesInvoiceApi.md#salesInvoiceIdIdCreateContractPost) | **POST** /salesInvoice/id/{id}/createContract |  |
 | [**salesInvoiceIdIdCreateCreditNotePost()**](SalesInvoiceApi.md#salesInvoiceIdIdCreateCreditNotePost) | **POST** /salesInvoice/id/{id}/createCreditNote |  |
 | [**salesInvoiceIdIdDelete()**](SalesInvoiceApi.md#salesInvoiceIdIdDelete) | **DELETE** /salesInvoice/id/{id} | delete a salesInvoice |
@@ -14,6 +15,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 | [**salesInvoiceIdIdGet()**](SalesInvoiceApi.md#salesInvoiceIdIdGet) | **GET** /salesInvoice/id/{id} | query a specific salesInvoice |
 | [**salesInvoiceIdIdPut()**](SalesInvoiceApi.md#salesInvoiceIdIdPut) | **PUT** /salesInvoice/id/{id} | update a salesInvoice |
 | [**salesInvoiceIdIdRecalculateCostsPost()**](SalesInvoiceApi.md#salesInvoiceIdIdRecalculateCostsPost) | **POST** /salesInvoice/id/{id}/recalculateCosts |  |
+| [**salesInvoiceIdIdResetTaxesPost()**](SalesInvoiceApi.md#salesInvoiceIdIdResetTaxesPost) | **POST** /salesInvoice/id/{id}/resetTaxes |  |
 | [**salesInvoiceIdIdSetCostsForItemsWithoutCostPost()**](SalesInvoiceApi.md#salesInvoiceIdIdSetCostsForItemsWithoutCostPost) | **POST** /salesInvoice/id/{id}/setCostsForItemsWithoutCost |  |
 | [**salesInvoiceIdIdUpdatePricesPost()**](SalesInvoiceApi.md#salesInvoiceIdIdUpdatePricesPost) | **POST** /salesInvoice/id/{id}/updatePrices |  |
 | [**salesInvoicePost()**](SalesInvoiceApi.md#salesInvoicePost) | **POST** /salesInvoice | create a salesInvoice |
@@ -217,6 +219,68 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `salesInvoiceIdIdCalculateSalesPricesPost()`
+
+```php
+salesInvoiceIdIdCalculateSalesPricesPost($id, $sales_invoice_id_id_calculate_sales_prices_post_request): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCreditNotePost200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\SalesInvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$sales_invoice_id_id_calculate_sales_prices_post_request = new \kruegge82\weclapp\Model\SalesInvoiceIdIdCalculateSalesPricesPostRequest(); // \kruegge82\weclapp\Model\SalesInvoiceIdIdCalculateSalesPricesPostRequest
+
+try {
+    $result = $apiInstance->salesInvoiceIdIdCalculateSalesPricesPost($id, $sales_invoice_id_id_calculate_sales_prices_post_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SalesInvoiceApi->salesInvoiceIdIdCalculateSalesPricesPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **sales_invoice_id_id_calculate_sales_prices_post_request** | [**\kruegge82\weclapp\Model\SalesInvoiceIdIdCalculateSalesPricesPostRequest**](../Model/SalesInvoiceIdIdCalculateSalesPricesPostRequest.md)|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCreditNotePost200Response**](../Model/IncomingGoodsIdIdCreateCreditNotePost200Response.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `salesInvoiceIdIdCreateContractPost()`
 
 ```php
@@ -224,8 +288,6 @@ salesInvoiceIdIdCreateContractPost($id, $body): \kruegge82\weclapp\Model\Purchas
 ```
 
 
-
-create a contract from a sales invoice  # Endpoint for creating a contract for the specified sales invoice  To use this endpoint, the optional invoice workflow action \"Create contract\" must be enabled.
 
 ### Example
 
@@ -602,8 +664,6 @@ salesInvoiceIdIdRecalculateCostsPost($id, $body): \kruegge82\weclapp\Model\Incom
 
 
 
-Recalculate costs for the sales invoice.  # Endpoint to recalculate the costs of the sales invoice  Recalculate costs of the items and with it the costs of the sales invoice. Costs are usually set/calculated for an item when added or edited. The costs usually have a source. The source can change at some time. The item costs are not recalculated. If you want to recalculate the costs based on the environment, you can use this method.
-
 ### Example
 
 ```php
@@ -658,6 +718,68 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `salesInvoiceIdIdResetTaxesPost()`
+
+```php
+salesInvoiceIdIdResetTaxesPost($id, $body): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCreditNotePost200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\SalesInvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$body = array('key' => new \stdClass); // object
+
+try {
+    $result = $apiInstance->salesInvoiceIdIdResetTaxesPost($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SalesInvoiceApi->salesInvoiceIdIdResetTaxesPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **body** | **object**|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCreditNotePost200Response**](../Model/IncomingGoodsIdIdCreateCreditNotePost200Response.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `salesInvoiceIdIdSetCostsForItemsWithoutCostPost()`
 
 ```php
@@ -665,8 +787,6 @@ salesInvoiceIdIdSetCostsForItemsWithoutCostPost($id, $quotation_id_id_set_costs_
 ```
 
 
-
-set unitCost of sales invoice items without unitCost  # Endpoint for setting the unit cost of sales invoice items and shipping cost items without unit cost to a fixed value  For a sales record item (or shipping cost item) with an article, `unitCost` is typically set based on the currently valid purchase price of the article's primary supply source. If the unit cost cannot be determined, e.g. because there is no valid purchase price or the item has no article, `unitCost` will be null. Instead of setting `unitCost` separately for each of these items, all of them can be updated at once with the present endpoint.  The parameter `costUpdateMode` determines the target value for `unitCost`: * `SET_TO_NET_UNIT_PRICE`: If the sales invoice's `salesChannel` is of type net, use `unitPrice`, otherwise use its net value `100 * unitPrice / (100 + taxValue)` (where `taxValue` is the value of the tax given by the item's `taxId`). * `SET_TO_ZERO`: Use zero.  For all updated items, `manualUnitCost` is set to true.  Items where `unitCost` is not null will not be touched.
 
 ### Example
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **article_unit_price** | **float** |  | [optional]
 **currency_id** | **string** |  | [optional]
 **end_date** | **int** |  | [optional]
+**last_modified_date** | **int** |  | [optional]
 **quantity** | **float** |  | [optional]
 **reduction_addition_items** | [**\kruegge82\weclapp\Model\PriceDataReductionAdditionItem[]**](PriceDataReductionAdditionItem.md) |  | [optional]
 **start_date** | **int** |  | [optional]

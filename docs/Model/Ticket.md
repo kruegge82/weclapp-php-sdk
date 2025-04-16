@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **first_name** | **string** |  | [optional]
 **follow_up_date** | **int** |  | [optional]
 **invoicing_status** | [**\kruegge82\weclapp\Model\BillableInvoiceStatus**](BillableInvoiceStatus.md) |  | [optional]
+**is_template** | **bool** |  | [optional]
 **language** | **string** |  | [optional]
 **last_name** | **string** |  | [optional]
 **legacy_article_id** | **string** |  | [optional]
@@ -53,5 +54,6 @@ Name | Type | Description | Notes
 **ticket_service_level_agreement_id** | **string** |  | [optional]
 **ticket_status_id** | **string** |  | [optional]
 **ticket_type_id** | **string** |  | [optional]
+**watchers** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

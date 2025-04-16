@@ -12,8 +12,10 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 | [**purchaseInvoiceIdIdDownloadLatestPurchaseInvoiceDocumentGet()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdDownloadLatestPurchaseInvoiceDocumentGet) | **GET** /purchaseInvoice/id/{id}/downloadLatestPurchaseInvoiceDocument |  |
 | [**purchaseInvoiceIdIdGet()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdGet) | **GET** /purchaseInvoice/id/{id} | query a specific purchaseInvoice |
 | [**purchaseInvoiceIdIdPut()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdPut) | **PUT** /purchaseInvoice/id/{id} | update a purchaseInvoice |
+| [**purchaseInvoiceIdIdResetTaxesPost()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdResetTaxesPost) | **POST** /purchaseInvoice/id/{id}/resetTaxes |  |
 | [**purchaseInvoiceIdIdSaveDuplicateInvoiceAsOriginalPost()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdSaveDuplicateInvoiceAsOriginalPost) | **POST** /purchaseInvoice/id/{id}/saveDuplicateInvoiceAsOriginal |  |
 | [**purchaseInvoicePost()**](PurchaseInvoiceApi.md#purchaseInvoicePost) | **POST** /purchaseInvoice | create a purchaseInvoice |
+| [**purchaseInvoiceStartInvoiceDocumentProcessingMultipartUploadPost()**](PurchaseInvoiceApi.md#purchaseInvoiceStartInvoiceDocumentProcessingMultipartUploadPost) | **POST** /purchaseInvoice/startInvoiceDocumentProcessing/multipartUpload |  |
 
 
 ## `purchaseInvoiceCountGet()`
@@ -159,8 +161,6 @@ purchaseInvoiceIdIdCreateContractPost($id, $body): \kruegge82\weclapp\Model\Purc
 ```
 
 
-
-create a contract from a purchase invoice  # Endpoint for creating a contract for the specified purchase invoice  To use this endpoint, the optional purchase invoice workflow action \"Create contract\" must be enabled.  Furthermore, the purchase invoice must have * type `STANDARD_INVOICE` or `FINAL_INVOICE` or * type `CREDIT_NOTE` without a preceding invoice, or with a preceding invoice having type `STANDARD_INVOICE` or `FINAL_INVOICE`.
 
 ### Example
 
@@ -529,6 +529,68 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `purchaseInvoiceIdIdResetTaxesPost()`
+
+```php
+purchaseInvoiceIdIdResetTaxesPost($id, $body): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreatePurchaseInvoicePost200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\PurchaseInvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$body = array('key' => new \stdClass); // object
+
+try {
+    $result = $apiInstance->purchaseInvoiceIdIdResetTaxesPost($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PurchaseInvoiceApi->purchaseInvoiceIdIdResetTaxesPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **body** | **object**|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\IncomingGoodsIdIdCreatePurchaseInvoicePost200Response**](../Model/IncomingGoodsIdIdCreatePurchaseInvoicePost200Response.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `purchaseInvoiceIdIdSaveDuplicateInvoiceAsOriginalPost()`
 
 ```php
@@ -649,6 +711,66 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `purchaseInvoiceStartInvoiceDocumentProcessingMultipartUploadPost()`
+
+```php
+purchaseInvoiceStartInvoiceDocumentProcessingMultipartUploadPost($filename): \kruegge82\weclapp\Model\JobAbortGet200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\PurchaseInvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$filename = array('/path/to/file.txt'); // \SplFileObject[]
+
+try {
+    $result = $apiInstance->purchaseInvoiceStartInvoiceDocumentProcessingMultipartUploadPost($filename);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PurchaseInvoiceApi->purchaseInvoiceStartInvoiceDocumentProcessingMultipartUploadPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filename** | **\SplFileObject[]**|  | [optional] |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\JobAbortGet200Response**](../Model/JobAbortGet200Response.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `multipart/form-data`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

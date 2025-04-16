@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **group_name** | **string** |  | [optional]
 **commission_sales_partners** | [**\kruegge82\weclapp\Model\CommissionSalesPartner[]**](CommissionSalesPartner.md) |  | [optional]
 **manual_unit_cost** | **bool** |  | [optional]
+**recommended_retail_price** | **float** |  | [optional]
 **service_period_from** | **int** |  | [optional]
 **service_period_to** | **int** |  | [optional]
 **unit_cost** | **float** |  | [optional]

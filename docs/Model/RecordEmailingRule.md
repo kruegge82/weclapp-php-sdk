@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **sales_channels** | [**\kruegge82\weclapp\Model\DistributionChannel[]**](DistributionChannel.md) |  | [optional]
 **sales_invoice_origin** | [**\kruegge82\weclapp\Model\SalesInvoiceOrigin**](SalesInvoiceOrigin.md) |  | [optional]
 **sales_invoice_types** | [**\kruegge82\weclapp\Model\SalesInvoiceType[]**](SalesInvoiceType.md) |  | [optional]
+**shipment_out_types** | [**\kruegge82\weclapp\Model\ShipmentOutType[]**](ShipmentOutType.md) |  | [optional]
 **template_id** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
 **creator_id** | **string** |  | [optional]
 **currency_conversion_date** | **int** |  | [optional]
+**currency_conversion_locked** | **bool** |  | [optional]
 **currency_conversion_rate** | **float** |  | [optional]
 **description** | **string** |  | [optional]
 **end_date** | **int** |  | [optional]

@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **title** | **string** |  | [optional]
 **unit_id** | **string** |  | [optional]
 **dropshipping_shipment_item_id** | **string** |  | [optional]
+**item_group** | **string** |  | [optional]
 **purchase_order_item_id** | **string** |  | [optional]
 **return_assessment_id** | **string** |  | [optional]
 **return_description** | **string** |  | [optional]

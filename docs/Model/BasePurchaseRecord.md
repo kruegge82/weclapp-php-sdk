@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **sent_to_recipient** | **bool** |  | [optional]
 **tags** | **string[]** |  | [optional]
 **currency_conversion_date** | **int** |  | [optional]
+**currency_conversion_locked** | **bool** |  | [optional]
 **currency_conversion_rate** | **float** |  | [optional]
 **gross_amount** | **float** |  | [optional]
 **gross_amount_in_company_currency** | **float** |  | [optional]
