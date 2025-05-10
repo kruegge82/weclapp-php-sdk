@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional]
 **article_id** | **string** |  | [optional]
+**article_number** | **string** |  | [optional]
 **batch_number** | **string** |  | [optional]
 **batch_number_id** | **string** |  | [optional]
 **inbound_date** | **int** |  | [optional]

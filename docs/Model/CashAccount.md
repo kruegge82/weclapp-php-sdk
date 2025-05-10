@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **account_id** | **string** |  | [optional]
 **active** | **bool** |  | [optional]
 **currency_id** | **string** |  | [optional]
+**currency_name** | **string** |  | [optional]
 **description** | **string** |  | [optional]
 **opening_balance** | **float** |  | [optional]
 **treasurer_id** | **string** |  | [optional]

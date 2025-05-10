@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **version** | **string** |  | [optional]
 **custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
 **article_id** | **string** |  | [optional]
+**article_number** | **string** |  | [optional]
 **note** | **string** |  | [optional]
 **position_number** | **int** |  | [optional]
 **quantity** | **float** |  | [optional]

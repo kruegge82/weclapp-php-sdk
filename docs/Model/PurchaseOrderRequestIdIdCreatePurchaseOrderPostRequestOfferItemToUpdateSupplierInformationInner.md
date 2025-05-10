@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **create_or_update_article_supply_source** | **bool** |  | [optional]
-**offer_item_id** | **string** |  | [optional]
+**offer_item_id** | **int** |  | [optional]
 **quantity** | **float** |  | [optional]
-**sales_order_item_id** | **string** |  | [optional]
+**sales_order_item_id** | **int** |  | [optional]
 **update_information** | **bool** |  | [optional]
 **update_purchase_price** | [**\kruegge82\weclapp\Model\PurchaseOrderRequestPurchasePriceUpdateMode**](PurchaseOrderRequestPurchasePriceUpdateMode.md) |  | [optional]
 

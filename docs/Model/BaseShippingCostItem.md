@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional]
 **article_id** | **string** |  | [optional]
+**article_number** | **string** |  | [optional]
 **gross_amount** | **float** |  | [optional]
 **gross_amount_in_company_currency** | **float** |  | [optional]
 **manual_unit_price** | **bool** |  | [optional]

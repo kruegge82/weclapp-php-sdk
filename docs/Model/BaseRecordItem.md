@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **version** | **string** |  | [optional]
 **custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
 **article_id** | **string** |  | [optional]
+**article_number** | **string** |  | [optional]
 **note** | **string** |  | [optional]
 **position_number** | **int** |  | [optional]
 **quantity** | **float** |  | [optional]
@@ -20,5 +21,6 @@ Name | Type | Description | Notes
 **parent_item_id** | **string** |  | [optional]
 **title** | **string** |  | [optional]
 **unit_id** | **string** |  | [optional]
+**unit_name** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

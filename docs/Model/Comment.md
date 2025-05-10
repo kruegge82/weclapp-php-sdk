@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **version** | **string** |  | [optional]
 **author_name** | **string** |  | [optional]
 **author_user_id** | **string** |  | [optional]
+**author_user_username** | **string** |  | [optional]
 **comment** | **string** |  | [optional]
 **entity_id** | **string** |  | [optional]
 **entity_name** | **string** |  | [optional]

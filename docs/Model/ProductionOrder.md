@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **actual_quantity** | **float** |  | [optional]
 **actual_start_date** | **int** |  | [optional]
 **article_id** | **string** |  | [optional]
+**article_number** | **string** |  | [optional]
 **assembly_storage_place_id** | **string** |  | [optional]
 **availability** | [**\kruegge82\weclapp\Model\DispositionInfoAvailabilityType**](DispositionInfoAvailabilityType.md) |  | [optional]
 **availability_for_all_warehouses** | [**\kruegge82\weclapp\Model\DispositionInfoAvailabilityType**](DispositionInfoAvailabilityType.md) |  | [optional]
@@ -26,6 +27,7 @@ Name | Type | Description | Notes
 **target_quantity** | **float** |  | [optional]
 **target_start_date** | **int** |  | [optional]
 **warehouse_id** | **string** |  | [optional]
+**warehouse_name** | **string** |  | [optional]
 **work_items** | [**\kruegge82\weclapp\Model\ProductionOrderWorkItem[]**](ProductionOrderWorkItem.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

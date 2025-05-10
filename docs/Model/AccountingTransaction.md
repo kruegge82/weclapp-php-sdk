@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **conversion_rate** | **float** |  | [optional]
 **conversion_rate_date** | **int** |  | [optional]
 **currency_id** | **string** |  | [optional]
+**currency_name** | **string** |  | [optional]
 **draft** | **bool** |  | [optional]
 **external_record_number** | **string** |  | [optional]
 **internal_record_number** | **string** |  | [optional]

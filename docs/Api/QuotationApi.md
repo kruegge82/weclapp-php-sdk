@@ -1,6 +1,6 @@
 # kruegge82\weclapp\QuotationApi
 
-All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -295,6 +295,8 @@ quotationIdIdCalculateSalesPricesPost($id, $quotation_id_id_calculate_sales_pric
 
 
 
+calculate sales prices # Endpoint for calculating sales prices calculates the sales prices for items based on calculation mode and percentage. Prices can be either calculated for all items and shipping costs with stored costs of the quotation, or for a list of specified item Ids. The new net item price is calculated either by adding up the item costs plus a percentage surcharge on these costs, or based on the desired target margin.  The parameter `calculationMode` determines how the prices are calculated: * `COST_SURCHARGE`: The new net price is set to purchase costs plus a percent surcharge.     Net price=purchase costs + purchase costs * surcharge / 100. * `TARGET_MARGIN`: The new net price is set to purchase costs multiplied by 100 and divided by 100 minus the target margin.     Net price=purchase costs * 100 / (100 - target margin).  The parameter 'percentage' specifies the target margin or surcharge percentage  Via the optional parameter 'quotationItemIds' a list of item Ids can be specified. If given, the sales prices are only calculated for the given items. If no item Ids are specified, the prices are calculated for all items of the quotation.  ## When can prices be calculated? The optional workflow option 'Calculate Sales Prices' must be activated for quotations General sales setting 'Allow manual article prices ins sales' must be activated
+
 ### Example
 
 ```php
@@ -479,6 +481,8 @@ quotationIdIdCreatePurchaseOrderRequestPost($id, $quotation_id_id_create_purchas
 ```
 
 
+
+create a purchase order request  # Endpoint for creating a purchase order request for the specified quotation  To create a purchase order request from a sales order see `/salesOrder/id/{id}/createPurchaseOrderRequest`  ## Information on optional parameters  * If no `quotationItemIds` will be provided, all quotation items of the quotation will be used to create the purchase order request. * The parameter `useItemQuantity` can only be set to true for the request types `PURCHASE_ORDER_REQUEST` and `BLANKET_ORDER_REQUEST`. * The parameter `mergeItems` may only be set to true if `useItemQuantity` is also set to true.
 
 ### Example
 
@@ -1038,6 +1042,8 @@ quotationIdIdRecalculateCostsPost($id, $body): \kruegge82\weclapp\Model\Quotatio
 
 
 
+Recalculate costs for the quotation.  # Endpoint to recalculate the costs of the quotation  Recalculate costs of the items and with it the costs of the quotation. Costs are usually set/calculated for an item when added or edited. The costs usually have a source. The source can change at some time. The item costs are not recalculated. If you want to recalculate the costs based on the environment, you can use this method.
+
 ### Example
 
 ```php
@@ -1100,6 +1106,8 @@ quotationIdIdResetTaxesPost($id, $body): \kruegge82\weclapp\Model\QuotationIdIdA
 
 
 
+reset taxes of quotation items for a quotation # Endpoint for resetting taxes Resets the taxes to the default for the specified entity. ## When can taxes be reset? General sales setting \"Non-compliant item tax rates\" needs to be set to \"Allow and warn\" or \"manual correction required\" Optional quotation workflow action \"reset taxes\" needs to be enabled
+
 ### Example
 
 ```php
@@ -1161,6 +1169,8 @@ quotationIdIdSetCostsForItemsWithoutCostPost($id, $quotation_id_id_set_costs_for
 ```
 
 
+
+set unitCost of quotation items without unitCost  # Endpoint for setting the unit cost of quotation items and shipping cost items without unit cost to a fixed value  For a sales record item (or shipping cost item) with an article, `unitCost` is typically set based on the currently valid purchase price of the article's primary supply source. If the unit cost cannot be determined, e.g. because there is no valid purchase price or the item has no article, `unitCost` will be null. Instead of setting `unitCost` separately for each of these items, all of them can be updated at once with the present endpoint.  The parameter `costUpdateMode` determines the target value for `unitCost`: * `SET_TO_NET_UNIT_PRICE`: If the quotation's `salesChannel` is of type net, use `unitPrice`, otherwise use its net value `100 * unitPrice / (100 + taxValue)` (where `taxValue` is the value of the tax given by the item's `taxId`). * `SET_TO_ZERO`: Use zero.  For all updated items, `manualUnitCost` is set to true.  Items where `unitCost` is not null will not be touched.
 
 ### Example
 

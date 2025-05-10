@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional]
 **campaign_id** | **string** |  | [optional]
+**campaign_number** | **string** |  | [optional]
 **participation** | **bool** |  | [optional]
 **party_id** | **string** |  | [optional]
 

@@ -1,6 +1,6 @@
 # kruegge82\weclapp\PurchaseInvoiceApi
 
-All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -161,6 +161,8 @@ purchaseInvoiceIdIdCreateContractPost($id, $body): \kruegge82\weclapp\Model\Purc
 ```
 
 
+
+create a contract from a purchase invoice  # Endpoint for creating a contract for the specified purchase invoice  To use this endpoint, the optional purchase invoice workflow action \"Create contract\" must be enabled.  Furthermore, the purchase invoice must have * type `STANDARD_INVOICE` or `FINAL_INVOICE` or * type `CREDIT_NOTE` without a preceding invoice, or with a preceding invoice having type `STANDARD_INVOICE` or `FINAL_INVOICE`.
 
 ### Example
 
@@ -537,6 +539,8 @@ purchaseInvoiceIdIdResetTaxesPost($id, $body): \kruegge82\weclapp\Model\Incoming
 
 
 
+reset taxes of invoice items for a purchase invoice # Endpoint for resetting taxes Resets the taxes to the default for the specified entity. ## When can taxes be reset? General purchase setting \"Non-compliant item tax rates\" needs to be set to \"Allow and warn\" or \"manual correction required\" Optional purchase invoice workflow action \"reset taxes\" needs to be enabled
+
 ### Example
 
 ```php
@@ -724,6 +728,8 @@ purchaseInvoiceStartInvoiceDocumentProcessingMultipartUploadPost($filename): \kr
 ```
 
 
+
+upload purchase invoice documents and process them via OCR or e-invoice detection  # Endpoint for uploading purchase invoice documents and processing them  This endpoint can be used to quickly turn invoice documents received from suppliers into weclapp purchase invoices. Supported file types are XML, PDF (with or without embedded XML) and images (PNG, JPEG, GIF, TIFF).  The documents are uploaded via HTTP multipart request (multiple documents can be uploaded at the same time) and processing is started as a background job. For each document, the appropriate processing strategy is selected based on the file type: * Image files and PDF files without embedded XML are processed using Optical Character Recognition (OCR). **Note:** This will only work if your weclapp admin has previously given consent to the use of our OCR provider Klippa App B.V. This can only be done in the weclapp UI. * XML files and PDF files with embedded XML will be processed using e-invoice detection.  If processing is successful, a purchase invoice with status `INVOICE_RECEIVED` will be created, otherwise a validation error will be shown in the background job log.
 
 ### Example
 

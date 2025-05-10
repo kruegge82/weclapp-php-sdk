@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **campaign_type** | [**\kruegge82\weclapp\Model\CampaignType**](CampaignType.md) |  | [optional]
 **description** | **string** |  | [optional]
 **responsible_user_id** | **string** |  | [optional]
+**responsible_user_username** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

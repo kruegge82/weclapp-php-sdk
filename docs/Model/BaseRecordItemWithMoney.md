@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **version** | **string** |  | [optional]
 **custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
 **article_id** | **string** |  | [optional]
+**article_number** | **string** |  | [optional]
 **note** | **string** |  | [optional]
 **position_number** | **int** |  | [optional]
 **quantity** | **float** |  | [optional]
@@ -20,6 +21,7 @@ Name | Type | Description | Notes
 **parent_item_id** | **string** |  | [optional]
 **title** | **string** |  | [optional]
 **unit_id** | **string** |  | [optional]
+**unit_name** | **string** |  | [optional]
 **discount_percentage** | **float** |  | [optional]
 **gross_amount** | **float** |  | [optional]
 **gross_amount_in_company_currency** | **float** |  | [optional]
@@ -30,6 +32,7 @@ Name | Type | Description | Notes
 **net_amount_in_company_currency** | **float** |  | [optional]
 **reduction_addition_items** | [**\kruegge82\weclapp\Model\ReductionAdditionItem[]**](ReductionAdditionItem.md) |  | [optional]
 **tax_id** | **string** |  | [optional]
+**tax_name** | **string** |  | [optional]
 **unit_price** | **float** |  | [optional]
 **unit_price_in_company_currency** | **float** |  | [optional]
 
