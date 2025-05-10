@@ -49143,7 +49143,7 @@ components:
                 service: pick
             quantity:
               format: decimal
-              pattern: ^([0-9]{1,13})([.][0-9]{1,5})?$
+              pattern: ^-?([0-9]{1,13})([.][0-9]{1,5})?$
               type: string
             salesOrderItemId:
               type: string
@@ -49215,7 +49215,7 @@ components:
                 service: productionOrder
             quantity:
               format: decimal
-              pattern: ^([0-9]{1,13})([.][0-9]{1,5})?$
+              pattern: ^-?([0-9]{1,13})([.][0-9]{1,5})?$
               type: string
               x-weclapp:
                 required: true
@@ -49253,7 +49253,7 @@ components:
                 service: user
             valuationPrice:
               format: decimal
-              pattern: ^([0-9]{1,13})([.][0-9]{1,5})?$
+              pattern: ^-?([0-9]{1,13})([.][0-9]{1,5})?$
               type: string
               x-weclapp:
                 required: true
