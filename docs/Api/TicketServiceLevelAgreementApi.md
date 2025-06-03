@@ -1,24 +1,24 @@
 # kruegge82\weclapp\TicketServiceLevelAgreementApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**ticketServiceLevelAgreementCountGet()**](TicketServiceLevelAgreementApi.md#ticketServiceLevelAgreementCountGet) | **GET** /ticketServiceLevelAgreement/count | count ticketServiceLevelAgreement |
-| [**ticketServiceLevelAgreementGet()**](TicketServiceLevelAgreementApi.md#ticketServiceLevelAgreementGet) | **GET** /ticketServiceLevelAgreement | query ticketServiceLevelAgreement |
-| [**ticketServiceLevelAgreementIdIdDelete()**](TicketServiceLevelAgreementApi.md#ticketServiceLevelAgreementIdIdDelete) | **DELETE** /ticketServiceLevelAgreement/id/{id} | delete a ticketServiceLevelAgreement |
-| [**ticketServiceLevelAgreementIdIdGet()**](TicketServiceLevelAgreementApi.md#ticketServiceLevelAgreementIdIdGet) | **GET** /ticketServiceLevelAgreement/id/{id} | query a specific ticketServiceLevelAgreement |
-| [**ticketServiceLevelAgreementIdIdPut()**](TicketServiceLevelAgreementApi.md#ticketServiceLevelAgreementIdIdPut) | **PUT** /ticketServiceLevelAgreement/id/{id} | update a ticketServiceLevelAgreement |
-| [**ticketServiceLevelAgreementPost()**](TicketServiceLevelAgreementApi.md#ticketServiceLevelAgreementPost) | **POST** /ticketServiceLevelAgreement | create a ticketServiceLevelAgreement |
+| [**ticketServiceLevelAgreementCountGet()**](TicketServiceLevelAgreementApi.md#ticketServiceLevelAgreementCountGet) | **GET** /ticketServiceLevelAgreement/count |  |
+| [**ticketServiceLevelAgreementGet()**](TicketServiceLevelAgreementApi.md#ticketServiceLevelAgreementGet) | **GET** /ticketServiceLevelAgreement |  |
+| [**ticketServiceLevelAgreementIdIdDelete()**](TicketServiceLevelAgreementApi.md#ticketServiceLevelAgreementIdIdDelete) | **DELETE** /ticketServiceLevelAgreement/id/{id} |  |
+| [**ticketServiceLevelAgreementIdIdGet()**](TicketServiceLevelAgreementApi.md#ticketServiceLevelAgreementIdIdGet) | **GET** /ticketServiceLevelAgreement/id/{id} |  |
+| [**ticketServiceLevelAgreementIdIdPut()**](TicketServiceLevelAgreementApi.md#ticketServiceLevelAgreementIdIdPut) | **PUT** /ticketServiceLevelAgreement/id/{id} |  |
+| [**ticketServiceLevelAgreementPost()**](TicketServiceLevelAgreementApi.md#ticketServiceLevelAgreementPost) | **POST** /ticketServiceLevelAgreement |  |
 
 
 ## `ticketServiceLevelAgreementCountGet()`
 
 ```php
-ticketServiceLevelAgreementCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+ticketServiceLevelAgreementCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count ticketServiceLevelAgreement
+
 
 count ticketServiceLevelAgreement
 
@@ -29,7 +29,7 @@ count ticketServiceLevelAgreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\TicketServiceLevelAgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->ticketServiceLevelAgreementCountGet($filter);
+    $result = $apiInstance->ticketServiceLevelAgreementCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketServiceLevelAgreementApi->ticketServiceLevelAgreementCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `ticketServiceLevelAgreementGet()`
 
 ```php
-ticketServiceLevelAgreementGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\TicketServiceLevelAgreementGet200Response
+ticketServiceLevelAgreementGet($page, $page_size, $sort): \kruegge82\weclapp\Model\TicketServiceLevelAgreementGet200Response
 ```
 
-query ticketServiceLevelAgreement
+
 
 query ticketServiceLevelAgreement
 
@@ -91,7 +88,7 @@ query ticketServiceLevelAgreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\TicketServiceLevelAgreementApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->ticketServiceLevelAgreementGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->ticketServiceLevelAgreementGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketServiceLevelAgreementApi->ticketServiceLevelAgreementGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 ticketServiceLevelAgreementIdIdDelete($id, $dry_run)
 ```
 
-delete a ticketServiceLevelAgreement
+
 
 delete a ticketServiceLevelAgreement
 
@@ -165,7 +154,7 @@ delete a ticketServiceLevelAgreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 ticketServiceLevelAgreementIdIdGet($id): \kruegge82\weclapp\Model\TicketServiceLevelAgreement
 ```
 
-query a specific ticketServiceLevelAgreement
 
-query a specific ticketServiceLevelAgreement
+
+query ticketServiceLevelAgreement
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific ticketServiceLevelAgreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `ticketServiceLevelAgreementIdIdPut()`
 
 ```php
-ticketServiceLevelAgreementIdIdPut($id, $ticket_service_level_agreement, $dry_run): \kruegge82\weclapp\Model\TicketServiceLevelAgreement
+ticketServiceLevelAgreementIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\TicketServiceLevelAgreement
 ```
 
-update a ticketServiceLevelAgreement
+
 
 update ticketServiceLevelAgreement
 
@@ -290,7 +279,7 @@ update ticketServiceLevelAgreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\TicketServiceLevelAgreementApi(
     $config
 );
 $id = 'id_example'; // string
-$ticket_service_level_agreement = new \kruegge82\weclapp\Model\TicketServiceLevelAgreement(); // \kruegge82\weclapp\Model\TicketServiceLevelAgreement
+$body = new \kruegge82\weclapp\Model\TicketServiceLevelAgreement(); // \kruegge82\weclapp\Model\TicketServiceLevelAgreement
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->ticketServiceLevelAgreementIdIdPut($id, $ticket_service_level_agreement, $dry_run);
+    $result = $apiInstance->ticketServiceLevelAgreementIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketServiceLevelAgreementApi->ticketServiceLevelAgreementIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **ticket_service_level_agreement** | [**\kruegge82\weclapp\Model\TicketServiceLevelAgreement**](../Model/TicketServiceLevelAgreement.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\TicketServiceLevelAgreement**](../Model/TicketServiceLevelAgreement.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `ticketServiceLevelAgreementPost()`
 
 ```php
-ticketServiceLevelAgreementPost($ticket_service_level_agreement, $dry_run): \kruegge82\weclapp\Model\TicketServiceLevelAgreement
+ticketServiceLevelAgreementPost($body, $dry_run): \kruegge82\weclapp\Model\TicketServiceLevelAgreement
 ```
 
-create a ticketServiceLevelAgreement
+
 
 create a ticketServiceLevelAgreement
 
@@ -356,7 +345,7 @@ create a ticketServiceLevelAgreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\TicketServiceLevelAgreementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ticket_service_level_agreement = new \kruegge82\weclapp\Model\TicketServiceLevelAgreement(); // \kruegge82\weclapp\Model\TicketServiceLevelAgreement
+$body = new \kruegge82\weclapp\Model\TicketServiceLevelAgreement(); // \kruegge82\weclapp\Model\TicketServiceLevelAgreement
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->ticketServiceLevelAgreementPost($ticket_service_level_agreement, $dry_run);
+    $result = $apiInstance->ticketServiceLevelAgreementPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketServiceLevelAgreementApi->ticketServiceLevelAgreementPost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ticket_service_level_agreement** | [**\kruegge82\weclapp\Model\TicketServiceLevelAgreement**](../Model/TicketServiceLevelAgreement.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\TicketServiceLevelAgreement**](../Model/TicketServiceLevelAgreement.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

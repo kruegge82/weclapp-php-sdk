@@ -1,24 +1,24 @@
 # kruegge82\weclapp\LeadSourceApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**leadSourceCountGet()**](LeadSourceApi.md#leadSourceCountGet) | **GET** /leadSource/count | count leadSource |
-| [**leadSourceGet()**](LeadSourceApi.md#leadSourceGet) | **GET** /leadSource | query leadSource |
-| [**leadSourceIdIdDelete()**](LeadSourceApi.md#leadSourceIdIdDelete) | **DELETE** /leadSource/id/{id} | delete a leadSource |
-| [**leadSourceIdIdGet()**](LeadSourceApi.md#leadSourceIdIdGet) | **GET** /leadSource/id/{id} | query a specific leadSource |
-| [**leadSourceIdIdPut()**](LeadSourceApi.md#leadSourceIdIdPut) | **PUT** /leadSource/id/{id} | update a leadSource |
-| [**leadSourcePost()**](LeadSourceApi.md#leadSourcePost) | **POST** /leadSource | create a leadSource |
+| [**leadSourceCountGet()**](LeadSourceApi.md#leadSourceCountGet) | **GET** /leadSource/count |  |
+| [**leadSourceGet()**](LeadSourceApi.md#leadSourceGet) | **GET** /leadSource |  |
+| [**leadSourceIdIdDelete()**](LeadSourceApi.md#leadSourceIdIdDelete) | **DELETE** /leadSource/id/{id} |  |
+| [**leadSourceIdIdGet()**](LeadSourceApi.md#leadSourceIdIdGet) | **GET** /leadSource/id/{id} |  |
+| [**leadSourceIdIdPut()**](LeadSourceApi.md#leadSourceIdIdPut) | **PUT** /leadSource/id/{id} |  |
+| [**leadSourcePost()**](LeadSourceApi.md#leadSourcePost) | **POST** /leadSource |  |
 
 
 ## `leadSourceCountGet()`
 
 ```php
-leadSourceCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+leadSourceCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count leadSource
+
 
 count leadSource
 
@@ -29,7 +29,7 @@ count leadSource
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\LeadSourceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->leadSourceCountGet($filter);
+    $result = $apiInstance->leadSourceCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadSourceApi->leadSourceCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `leadSourceGet()`
 
 ```php
-leadSourceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
+leadSourceGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
 ```
 
-query leadSource
+
 
 query leadSource
 
@@ -91,7 +88,7 @@ query leadSource
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\LeadSourceApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->leadSourceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->leadSourceGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadSourceApi->leadSourceGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 leadSourceIdIdDelete($id, $dry_run)
 ```
 
-delete a leadSource
+
 
 delete a leadSource
 
@@ -165,7 +154,7 @@ delete a leadSource
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 leadSourceIdIdGet($id): \kruegge82\weclapp\Model\CustomValue
 ```
 
-query a specific leadSource
 
-query a specific leadSource
+
+query leadSource
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific leadSource
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `leadSourceIdIdPut()`
 
 ```php
-leadSourceIdIdPut($id, $custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
+leadSourceIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-update a leadSource
+
 
 update leadSource
 
@@ -290,7 +279,7 @@ update leadSource
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\LeadSourceApi(
     $config
 );
 $id = 'id_example'; // string
-$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->leadSourceIdIdPut($id, $custom_value, $dry_run);
+    $result = $apiInstance->leadSourceIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadSourceApi->leadSourceIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `leadSourcePost()`
 
 ```php
-leadSourcePost($custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
+leadSourcePost($body, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-create a leadSource
+
 
 create a leadSource
 
@@ -356,7 +345,7 @@ create a leadSource
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\LeadSourceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->leadSourcePost($custom_value, $dry_run);
+    $result = $apiInstance->leadSourcePost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadSourceApi->leadSourcePost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

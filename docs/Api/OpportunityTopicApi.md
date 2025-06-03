@@ -1,24 +1,24 @@
 # kruegge82\weclapp\OpportunityTopicApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**opportunityTopicCountGet()**](OpportunityTopicApi.md#opportunityTopicCountGet) | **GET** /opportunityTopic/count | count opportunityTopic |
-| [**opportunityTopicGet()**](OpportunityTopicApi.md#opportunityTopicGet) | **GET** /opportunityTopic | query opportunityTopic |
-| [**opportunityTopicIdIdDelete()**](OpportunityTopicApi.md#opportunityTopicIdIdDelete) | **DELETE** /opportunityTopic/id/{id} | delete a opportunityTopic |
-| [**opportunityTopicIdIdGet()**](OpportunityTopicApi.md#opportunityTopicIdIdGet) | **GET** /opportunityTopic/id/{id} | query a specific opportunityTopic |
-| [**opportunityTopicIdIdPut()**](OpportunityTopicApi.md#opportunityTopicIdIdPut) | **PUT** /opportunityTopic/id/{id} | update a opportunityTopic |
-| [**opportunityTopicPost()**](OpportunityTopicApi.md#opportunityTopicPost) | **POST** /opportunityTopic | create a opportunityTopic |
+| [**opportunityTopicCountGet()**](OpportunityTopicApi.md#opportunityTopicCountGet) | **GET** /opportunityTopic/count |  |
+| [**opportunityTopicGet()**](OpportunityTopicApi.md#opportunityTopicGet) | **GET** /opportunityTopic |  |
+| [**opportunityTopicIdIdDelete()**](OpportunityTopicApi.md#opportunityTopicIdIdDelete) | **DELETE** /opportunityTopic/id/{id} |  |
+| [**opportunityTopicIdIdGet()**](OpportunityTopicApi.md#opportunityTopicIdIdGet) | **GET** /opportunityTopic/id/{id} |  |
+| [**opportunityTopicIdIdPut()**](OpportunityTopicApi.md#opportunityTopicIdIdPut) | **PUT** /opportunityTopic/id/{id} |  |
+| [**opportunityTopicPost()**](OpportunityTopicApi.md#opportunityTopicPost) | **POST** /opportunityTopic |  |
 
 
 ## `opportunityTopicCountGet()`
 
 ```php
-opportunityTopicCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+opportunityTopicCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count opportunityTopic
+
 
 count opportunityTopic
 
@@ -29,7 +29,7 @@ count opportunityTopic
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\OpportunityTopicApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->opportunityTopicCountGet($filter);
+    $result = $apiInstance->opportunityTopicCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OpportunityTopicApi->opportunityTopicCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `opportunityTopicGet()`
 
 ```php
-opportunityTopicGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
+opportunityTopicGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
 ```
 
-query opportunityTopic
+
 
 query opportunityTopic
 
@@ -91,7 +88,7 @@ query opportunityTopic
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\OpportunityTopicApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->opportunityTopicGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->opportunityTopicGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OpportunityTopicApi->opportunityTopicGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 opportunityTopicIdIdDelete($id, $dry_run)
 ```
 
-delete a opportunityTopic
+
 
 delete a opportunityTopic
 
@@ -165,7 +154,7 @@ delete a opportunityTopic
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 opportunityTopicIdIdGet($id): \kruegge82\weclapp\Model\CustomValue
 ```
 
-query a specific opportunityTopic
 
-query a specific opportunityTopic
+
+query opportunityTopic
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific opportunityTopic
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `opportunityTopicIdIdPut()`
 
 ```php
-opportunityTopicIdIdPut($id, $custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
+opportunityTopicIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-update a opportunityTopic
+
 
 update opportunityTopic
 
@@ -290,7 +279,7 @@ update opportunityTopic
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\OpportunityTopicApi(
     $config
 );
 $id = 'id_example'; // string
-$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->opportunityTopicIdIdPut($id, $custom_value, $dry_run);
+    $result = $apiInstance->opportunityTopicIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OpportunityTopicApi->opportunityTopicIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `opportunityTopicPost()`
 
 ```php
-opportunityTopicPost($custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
+opportunityTopicPost($body, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-create a opportunityTopic
+
 
 create a opportunityTopic
 
@@ -356,7 +345,7 @@ create a opportunityTopic
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\OpportunityTopicApi(
     new GuzzleHttp\Client(),
     $config
 );
-$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->opportunityTopicPost($custom_value, $dry_run);
+    $result = $apiInstance->opportunityTopicPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OpportunityTopicApi->opportunityTopicPost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

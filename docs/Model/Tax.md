@@ -4,22 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] [readonly]
-**created_date** | **int** |  | [optional] [readonly]
-**last_modified_date** | **int** |  | [optional] [readonly]
+**id** | **string** |  | [optional]
 **version** | **string** |  | [optional]
 **account_id** | **string** |  | [optional]
-**account_number** | **string** |  | [optional]
 **contra_account_id** | **string** |  | [optional]
-**contra_account_number** | **string** |  | [optional]
+**created_date** | **int** |  | [optional]
 **default_discount_account_id** | **string** |  | [optional]
-**default_discount_account_number** | **string** |  | [optional]
 **default_nominal_account_id** | **string** |  | [optional]
-**default_nominal_account_number** | **string** |  | [optional]
 **deposit_account_id** | **string** |  | [optional]
-**name** | **string** |  | [optional]
-**tax_key** | [**\kruegge82\weclapp\Model\TaxKey**](TaxKey.md) |  | [optional]
-**tax_type** | [**\kruegge82\weclapp\Model\TaxType**](TaxType.md) |  | [optional]
-**tax_value** | **float** |  | [optional]
+**last_modified_date** | **int** |  | [optional]
+**name** | **string** |  |
+**tax_key** | **string** |  | [optional]
+**tax_type** | **string** |  |
+**tax_value** | **float** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

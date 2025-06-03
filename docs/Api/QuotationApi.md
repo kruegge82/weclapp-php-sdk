@@ -1,11 +1,11 @@
 # kruegge82\weclapp\QuotationApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**quotationCountGet()**](QuotationApi.md#quotationCountGet) | **GET** /quotation/count | count quotation |
-| [**quotationGet()**](QuotationApi.md#quotationGet) | **GET** /quotation | query quotation |
+| [**quotationCountGet()**](QuotationApi.md#quotationCountGet) | **GET** /quotation/count |  |
+| [**quotationGet()**](QuotationApi.md#quotationGet) | **GET** /quotation |  |
 | [**quotationIdIdAcceptPost()**](QuotationApi.md#quotationIdIdAcceptPost) | **POST** /quotation/id/{id}/accept |  |
 | [**quotationIdIdAddDefaultScalePricesToItemsPost()**](QuotationApi.md#quotationIdIdAddDefaultScalePricesToItemsPost) | **POST** /quotation/id/{id}/addDefaultScalePricesToItems |  |
 | [**quotationIdIdCalculateSalesPricesPost()**](QuotationApi.md#quotationIdIdCalculateSalesPricesPost) | **POST** /quotation/id/{id}/calculateSalesPrices |  |
@@ -13,28 +13,28 @@ All URIs are relative to https://localhost:80/webapp/api/v1, except if the opera
 | [**quotationIdIdCreatePublicPageLinkPost()**](QuotationApi.md#quotationIdIdCreatePublicPageLinkPost) | **POST** /quotation/id/{id}/createPublicPageLink |  |
 | [**quotationIdIdCreatePurchaseOrderRequestPost()**](QuotationApi.md#quotationIdIdCreatePurchaseOrderRequestPost) | **POST** /quotation/id/{id}/createPurchaseOrderRequest |  |
 | [**quotationIdIdCreateQuotationPdfPost()**](QuotationApi.md#quotationIdIdCreateQuotationPdfPost) | **POST** /quotation/id/{id}/createQuotationPdf |  |
-| [**quotationIdIdDelete()**](QuotationApi.md#quotationIdIdDelete) | **DELETE** /quotation/id/{id} | delete a quotation |
+| [**quotationIdIdDelete()**](QuotationApi.md#quotationIdIdDelete) | **DELETE** /quotation/id/{id} |  |
 | [**quotationIdIdDisablePublicPageLinkPost()**](QuotationApi.md#quotationIdIdDisablePublicPageLinkPost) | **POST** /quotation/id/{id}/disablePublicPageLink |  |
 | [**quotationIdIdDownloadLatestQuotationPdfGet()**](QuotationApi.md#quotationIdIdDownloadLatestQuotationPdfGet) | **GET** /quotation/id/{id}/downloadLatestQuotationPdf |  |
-| [**quotationIdIdGet()**](QuotationApi.md#quotationIdIdGet) | **GET** /quotation/id/{id} | query a specific quotation |
+| [**quotationIdIdGet()**](QuotationApi.md#quotationIdIdGet) | **GET** /quotation/id/{id} |  |
 | [**quotationIdIdInquirePost()**](QuotationApi.md#quotationIdIdInquirePost) | **POST** /quotation/id/{id}/inquire |  |
 | [**quotationIdIdPrintLabelPost()**](QuotationApi.md#quotationIdIdPrintLabelPost) | **POST** /quotation/id/{id}/printLabel |  |
 | [**quotationIdIdPrintQuotationDataGet()**](QuotationApi.md#quotationIdIdPrintQuotationDataGet) | **GET** /quotation/id/{id}/printQuotationData |  |
-| [**quotationIdIdPut()**](QuotationApi.md#quotationIdIdPut) | **PUT** /quotation/id/{id} | update a quotation |
+| [**quotationIdIdPut()**](QuotationApi.md#quotationIdIdPut) | **PUT** /quotation/id/{id} |  |
 | [**quotationIdIdRecalculateCostsPost()**](QuotationApi.md#quotationIdIdRecalculateCostsPost) | **POST** /quotation/id/{id}/recalculateCosts |  |
 | [**quotationIdIdResetTaxesPost()**](QuotationApi.md#quotationIdIdResetTaxesPost) | **POST** /quotation/id/{id}/resetTaxes |  |
 | [**quotationIdIdSetCostsForItemsWithoutCostPost()**](QuotationApi.md#quotationIdIdSetCostsForItemsWithoutCostPost) | **POST** /quotation/id/{id}/setCostsForItemsWithoutCost |  |
 | [**quotationIdIdUpdatePricesPost()**](QuotationApi.md#quotationIdIdUpdatePricesPost) | **POST** /quotation/id/{id}/updatePrices |  |
-| [**quotationPost()**](QuotationApi.md#quotationPost) | **POST** /quotation | create a quotation |
+| [**quotationPost()**](QuotationApi.md#quotationPost) | **POST** /quotation |  |
 
 
 ## `quotationCountGet()`
 
 ```php
-quotationCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+quotationCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count quotation
+
 
 count quotation
 
@@ -45,7 +45,7 @@ count quotation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -57,10 +57,9 @@ $apiInstance = new kruegge82\weclapp\Api\QuotationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->quotationCountGet($filter);
+    $result = $apiInstance->quotationCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QuotationApi->quotationCountGet: ', $e->getMessage(), PHP_EOL;
@@ -69,9 +68,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -79,7 +76,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -93,10 +90,10 @@ try {
 ## `quotationGet()`
 
 ```php
-quotationGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\QuotationGet200Response
+quotationGet($page, $page_size, $sort): \kruegge82\weclapp\Model\QuotationGet200Response
 ```
 
-query quotation
+
 
 query quotation
 
@@ -107,7 +104,7 @@ query quotation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -121,14 +118,10 @@ $apiInstance = new kruegge82\weclapp\Api\QuotationApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->quotationGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->quotationGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QuotationApi->quotationGet: ', $e->getMessage(), PHP_EOL;
@@ -141,11 +134,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -153,7 +142,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -167,7 +156,7 @@ try {
 ## `quotationIdIdAcceptPost()`
 
 ```php
-quotationIdIdAcceptPost($id, $quotation_id_id_accept_post_request): \kruegge82\weclapp\Model\QuotationIdIdAcceptPost200Response
+quotationIdIdAcceptPost($id, $body): \kruegge82\weclapp\Model\QuotationIdIdAcceptPost200Response
 ```
 
 
@@ -179,7 +168,7 @@ quotationIdIdAcceptPost($id, $quotation_id_id_accept_post_request): \kruegge82\w
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -192,10 +181,10 @@ $apiInstance = new kruegge82\weclapp\Api\QuotationApi(
     $config
 );
 $id = 'id_example'; // string
-$quotation_id_id_accept_post_request = new \kruegge82\weclapp\Model\QuotationIdIdAcceptPostRequest(); // \kruegge82\weclapp\Model\QuotationIdIdAcceptPostRequest
+$body = new \kruegge82\weclapp\Model\QuotationIdIdAcceptPostRequest(); // \kruegge82\weclapp\Model\QuotationIdIdAcceptPostRequest
 
 try {
-    $result = $apiInstance->quotationIdIdAcceptPost($id, $quotation_id_id_accept_post_request);
+    $result = $apiInstance->quotationIdIdAcceptPost($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QuotationApi->quotationIdIdAcceptPost: ', $e->getMessage(), PHP_EOL;
@@ -207,7 +196,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **quotation_id_id_accept_post_request** | [**\kruegge82\weclapp\Model\QuotationIdIdAcceptPostRequest**](../Model/QuotationIdIdAcceptPostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\QuotationIdIdAcceptPostRequest**](../Model/QuotationIdIdAcceptPostRequest.md)|  | |
 
 ### Return type
 
@@ -215,7 +204,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -229,7 +218,7 @@ try {
 ## `quotationIdIdAddDefaultScalePricesToItemsPost()`
 
 ```php
-quotationIdIdAddDefaultScalePricesToItemsPost($id, $quotation_id_id_add_default_scale_prices_to_items_post_request): \kruegge82\weclapp\Model\QuotationIdIdAcceptPost200Response
+quotationIdIdAddDefaultScalePricesToItemsPost($id, $body): \kruegge82\weclapp\Model\QuotationIdIdAcceptPost200Response
 ```
 
 
@@ -241,7 +230,7 @@ quotationIdIdAddDefaultScalePricesToItemsPost($id, $quotation_id_id_add_default_
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -254,10 +243,10 @@ $apiInstance = new kruegge82\weclapp\Api\QuotationApi(
     $config
 );
 $id = 'id_example'; // string
-$quotation_id_id_add_default_scale_prices_to_items_post_request = new \kruegge82\weclapp\Model\QuotationIdIdAddDefaultScalePricesToItemsPostRequest(); // \kruegge82\weclapp\Model\QuotationIdIdAddDefaultScalePricesToItemsPostRequest
+$body = new \kruegge82\weclapp\Model\QuotationIdIdAddDefaultScalePricesToItemsPostRequest(); // \kruegge82\weclapp\Model\QuotationIdIdAddDefaultScalePricesToItemsPostRequest
 
 try {
-    $result = $apiInstance->quotationIdIdAddDefaultScalePricesToItemsPost($id, $quotation_id_id_add_default_scale_prices_to_items_post_request);
+    $result = $apiInstance->quotationIdIdAddDefaultScalePricesToItemsPost($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QuotationApi->quotationIdIdAddDefaultScalePricesToItemsPost: ', $e->getMessage(), PHP_EOL;
@@ -269,7 +258,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **quotation_id_id_add_default_scale_prices_to_items_post_request** | [**\kruegge82\weclapp\Model\QuotationIdIdAddDefaultScalePricesToItemsPostRequest**](../Model/QuotationIdIdAddDefaultScalePricesToItemsPostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\QuotationIdIdAddDefaultScalePricesToItemsPostRequest**](../Model/QuotationIdIdAddDefaultScalePricesToItemsPostRequest.md)|  | |
 
 ### Return type
 
@@ -277,7 +266,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -291,7 +280,7 @@ try {
 ## `quotationIdIdCalculateSalesPricesPost()`
 
 ```php
-quotationIdIdCalculateSalesPricesPost($id, $quotation_id_id_calculate_sales_prices_post_request): \kruegge82\weclapp\Model\QuotationIdIdAcceptPost200Response
+quotationIdIdCalculateSalesPricesPost($id, $body): \kruegge82\weclapp\Model\QuotationIdIdAcceptPost200Response
 ```
 
 
@@ -303,7 +292,7 @@ quotationIdIdCalculateSalesPricesPost($id, $quotation_id_id_calculate_sales_pric
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -316,10 +305,10 @@ $apiInstance = new kruegge82\weclapp\Api\QuotationApi(
     $config
 );
 $id = 'id_example'; // string
-$quotation_id_id_calculate_sales_prices_post_request = new \kruegge82\weclapp\Model\QuotationIdIdCalculateSalesPricesPostRequest(); // \kruegge82\weclapp\Model\QuotationIdIdCalculateSalesPricesPostRequest
+$body = new \kruegge82\weclapp\Model\QuotationIdIdCalculateSalesPricesPostRequest(); // \kruegge82\weclapp\Model\QuotationIdIdCalculateSalesPricesPostRequest
 
 try {
-    $result = $apiInstance->quotationIdIdCalculateSalesPricesPost($id, $quotation_id_id_calculate_sales_prices_post_request);
+    $result = $apiInstance->quotationIdIdCalculateSalesPricesPost($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QuotationApi->quotationIdIdCalculateSalesPricesPost: ', $e->getMessage(), PHP_EOL;
@@ -331,7 +320,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **quotation_id_id_calculate_sales_prices_post_request** | [**\kruegge82\weclapp\Model\QuotationIdIdCalculateSalesPricesPostRequest**](../Model/QuotationIdIdCalculateSalesPricesPostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\QuotationIdIdCalculateSalesPricesPostRequest**](../Model/QuotationIdIdCalculateSalesPricesPostRequest.md)|  | |
 
 ### Return type
 
@@ -339,7 +328,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -365,7 +354,7 @@ quotationIdIdCreateNewVersionPost($id, $body): \kruegge82\weclapp\Model\Quotatio
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -401,7 +390,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -427,7 +416,7 @@ quotationIdIdCreatePublicPageLinkPost($id, $body)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -462,7 +451,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -476,7 +465,7 @@ void (empty response body)
 ## `quotationIdIdCreatePurchaseOrderRequestPost()`
 
 ```php
-quotationIdIdCreatePurchaseOrderRequestPost($id, $quotation_id_id_create_purchase_order_request_post_request): \kruegge82\weclapp\Model\QuotationIdIdCreatePurchaseOrderRequestPost200Response
+quotationIdIdCreatePurchaseOrderRequestPost($id, $body): \kruegge82\weclapp\Model\QuotationIdIdCreatePurchaseOrderRequestPost200Response
 ```
 
 
@@ -488,7 +477,7 @@ quotationIdIdCreatePurchaseOrderRequestPost($id, $quotation_id_id_create_purchas
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -501,10 +490,10 @@ $apiInstance = new kruegge82\weclapp\Api\QuotationApi(
     $config
 );
 $id = 'id_example'; // string
-$quotation_id_id_create_purchase_order_request_post_request = new \kruegge82\weclapp\Model\QuotationIdIdCreatePurchaseOrderRequestPostRequest(); // \kruegge82\weclapp\Model\QuotationIdIdCreatePurchaseOrderRequestPostRequest
+$body = new \kruegge82\weclapp\Model\QuotationIdIdCreatePurchaseOrderRequestPostRequest(); // \kruegge82\weclapp\Model\QuotationIdIdCreatePurchaseOrderRequestPostRequest
 
 try {
-    $result = $apiInstance->quotationIdIdCreatePurchaseOrderRequestPost($id, $quotation_id_id_create_purchase_order_request_post_request);
+    $result = $apiInstance->quotationIdIdCreatePurchaseOrderRequestPost($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QuotationApi->quotationIdIdCreatePurchaseOrderRequestPost: ', $e->getMessage(), PHP_EOL;
@@ -516,7 +505,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **quotation_id_id_create_purchase_order_request_post_request** | [**\kruegge82\weclapp\Model\QuotationIdIdCreatePurchaseOrderRequestPostRequest**](../Model/QuotationIdIdCreatePurchaseOrderRequestPostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\QuotationIdIdCreatePurchaseOrderRequestPostRequest**](../Model/QuotationIdIdCreatePurchaseOrderRequestPostRequest.md)|  | |
 
 ### Return type
 
@@ -524,7 +513,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -538,7 +527,7 @@ try {
 ## `quotationIdIdCreateQuotationPdfPost()`
 
 ```php
-quotationIdIdCreateQuotationPdfPost($id, $body): \SplFileObject
+quotationIdIdCreateQuotationPdfPost($id, $body)
 ```
 
 
@@ -550,7 +539,7 @@ quotationIdIdCreateQuotationPdfPost($id, $body): \SplFileObject
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -566,8 +555,7 @@ $id = 'id_example'; // string
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->quotationIdIdCreateQuotationPdfPost($id, $body);
-    print_r($result);
+    $apiInstance->quotationIdIdCreateQuotationPdfPost($id, $body);
 } catch (Exception $e) {
     echo 'Exception when calling QuotationApi->quotationIdIdCreateQuotationPdfPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -582,16 +570,16 @@ try {
 
 ### Return type
 
-**\SplFileObject**
+void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -603,7 +591,7 @@ try {
 quotationIdIdDelete($id, $dry_run)
 ```
 
-delete a quotation
+
 
 delete a quotation
 
@@ -614,7 +602,7 @@ delete a quotation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -649,7 +637,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -675,7 +663,7 @@ quotationIdIdDisablePublicPageLinkPost($id, $body)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -710,7 +698,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -724,7 +712,7 @@ void (empty response body)
 ## `quotationIdIdDownloadLatestQuotationPdfGet()`
 
 ```php
-quotationIdIdDownloadLatestQuotationPdfGet($id): \SplFileObject
+quotationIdIdDownloadLatestQuotationPdfGet($id)
 ```
 
 
@@ -736,7 +724,7 @@ quotationIdIdDownloadLatestQuotationPdfGet($id): \SplFileObject
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -751,8 +739,7 @@ $apiInstance = new kruegge82\weclapp\Api\QuotationApi(
 $id = 'id_example'; // string
 
 try {
-    $result = $apiInstance->quotationIdIdDownloadLatestQuotationPdfGet($id);
-    print_r($result);
+    $apiInstance->quotationIdIdDownloadLatestQuotationPdfGet($id);
 } catch (Exception $e) {
     echo 'Exception when calling QuotationApi->quotationIdIdDownloadLatestQuotationPdfGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -766,16 +753,16 @@ try {
 
 ### Return type
 
-**\SplFileObject**
+void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -787,9 +774,9 @@ try {
 quotationIdIdGet($id): \kruegge82\weclapp\Model\Quotation
 ```
 
-query a specific quotation
 
-query a specific quotation
+
+query quotation
 
 ### Example
 
@@ -798,7 +785,7 @@ query a specific quotation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -832,7 +819,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -846,7 +833,7 @@ try {
 ## `quotationIdIdInquirePost()`
 
 ```php
-quotationIdIdInquirePost($id, $quotation_id_id_inquire_post_request): \kruegge82\weclapp\Model\QuotationIdIdAcceptPost200Response
+quotationIdIdInquirePost($id, $body): \kruegge82\weclapp\Model\QuotationIdIdAcceptPost200Response
 ```
 
 
@@ -858,7 +845,7 @@ quotationIdIdInquirePost($id, $quotation_id_id_inquire_post_request): \kruegge82
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -871,10 +858,10 @@ $apiInstance = new kruegge82\weclapp\Api\QuotationApi(
     $config
 );
 $id = 'id_example'; // string
-$quotation_id_id_inquire_post_request = new \kruegge82\weclapp\Model\QuotationIdIdInquirePostRequest(); // \kruegge82\weclapp\Model\QuotationIdIdInquirePostRequest
+$body = new \kruegge82\weclapp\Model\QuotationIdIdInquirePostRequest(); // \kruegge82\weclapp\Model\QuotationIdIdInquirePostRequest
 
 try {
-    $result = $apiInstance->quotationIdIdInquirePost($id, $quotation_id_id_inquire_post_request);
+    $result = $apiInstance->quotationIdIdInquirePost($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QuotationApi->quotationIdIdInquirePost: ', $e->getMessage(), PHP_EOL;
@@ -886,7 +873,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **quotation_id_id_inquire_post_request** | [**\kruegge82\weclapp\Model\QuotationIdIdInquirePostRequest**](../Model/QuotationIdIdInquirePostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\QuotationIdIdInquirePostRequest**](../Model/QuotationIdIdInquirePostRequest.md)|  | |
 
 ### Return type
 
@@ -894,7 +881,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -908,7 +895,7 @@ try {
 ## `quotationIdIdPrintLabelPost()`
 
 ```php
-quotationIdIdPrintLabelPost($id, $quotation_id_id_print_label_post_request): \SplFileObject
+quotationIdIdPrintLabelPost($id, $body)
 ```
 
 
@@ -920,7 +907,7 @@ quotationIdIdPrintLabelPost($id, $quotation_id_id_print_label_post_request): \Sp
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -933,11 +920,10 @@ $apiInstance = new kruegge82\weclapp\Api\QuotationApi(
     $config
 );
 $id = 'id_example'; // string
-$quotation_id_id_print_label_post_request = new \kruegge82\weclapp\Model\QuotationIdIdPrintLabelPostRequest(); // \kruegge82\weclapp\Model\QuotationIdIdPrintLabelPostRequest
+$body = new \kruegge82\weclapp\Model\QuotationIdIdPrintLabelPostRequest(); // \kruegge82\weclapp\Model\QuotationIdIdPrintLabelPostRequest
 
 try {
-    $result = $apiInstance->quotationIdIdPrintLabelPost($id, $quotation_id_id_print_label_post_request);
-    print_r($result);
+    $apiInstance->quotationIdIdPrintLabelPost($id, $body);
 } catch (Exception $e) {
     echo 'Exception when calling QuotationApi->quotationIdIdPrintLabelPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -948,20 +934,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **quotation_id_id_print_label_post_request** | [**\kruegge82\weclapp\Model\QuotationIdIdPrintLabelPostRequest**](../Model/QuotationIdIdPrintLabelPostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\QuotationIdIdPrintLabelPostRequest**](../Model/QuotationIdIdPrintLabelPostRequest.md)|  | |
 
 ### Return type
 
-**\SplFileObject**
+void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -970,7 +956,7 @@ try {
 ## `quotationIdIdPrintQuotationDataGet()`
 
 ```php
-quotationIdIdPrintQuotationDataGet($id): \SplFileObject
+quotationIdIdPrintQuotationDataGet($id)
 ```
 
 
@@ -982,7 +968,7 @@ quotationIdIdPrintQuotationDataGet($id): \SplFileObject
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -997,8 +983,7 @@ $apiInstance = new kruegge82\weclapp\Api\QuotationApi(
 $id = 'id_example'; // string
 
 try {
-    $result = $apiInstance->quotationIdIdPrintQuotationDataGet($id);
-    print_r($result);
+    $apiInstance->quotationIdIdPrintQuotationDataGet($id);
 } catch (Exception $e) {
     echo 'Exception when calling QuotationApi->quotationIdIdPrintQuotationDataGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -1012,16 +997,16 @@ try {
 
 ### Return type
 
-**\SplFileObject**
+void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -1030,10 +1015,10 @@ try {
 ## `quotationIdIdPut()`
 
 ```php
-quotationIdIdPut($id, $quotation, $dry_run): \kruegge82\weclapp\Model\Quotation
+quotationIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Quotation
 ```
 
-update a quotation
+
 
 update quotation
 
@@ -1044,7 +1029,7 @@ update quotation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -1057,11 +1042,11 @@ $apiInstance = new kruegge82\weclapp\Api\QuotationApi(
     $config
 );
 $id = 'id_example'; // string
-$quotation = new \kruegge82\weclapp\Model\Quotation(); // \kruegge82\weclapp\Model\Quotation
+$body = new \kruegge82\weclapp\Model\Quotation(); // \kruegge82\weclapp\Model\Quotation
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->quotationIdIdPut($id, $quotation, $dry_run);
+    $result = $apiInstance->quotationIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QuotationApi->quotationIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -1073,7 +1058,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **quotation** | [**\kruegge82\weclapp\Model\Quotation**](../Model/Quotation.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Quotation**](../Model/Quotation.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -1082,7 +1067,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -1108,7 +1093,7 @@ quotationIdIdRecalculateCostsPost($id, $body): \kruegge82\weclapp\Model\Quotatio
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -1144,7 +1129,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -1170,7 +1155,7 @@ quotationIdIdResetTaxesPost($id, $body): \kruegge82\weclapp\Model\QuotationIdIdA
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -1206,7 +1191,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -1220,7 +1205,7 @@ try {
 ## `quotationIdIdSetCostsForItemsWithoutCostPost()`
 
 ```php
-quotationIdIdSetCostsForItemsWithoutCostPost($id, $quotation_id_id_set_costs_for_items_without_cost_post_request): \kruegge82\weclapp\Model\QuotationIdIdAcceptPost200Response
+quotationIdIdSetCostsForItemsWithoutCostPost($id, $body): \kruegge82\weclapp\Model\QuotationIdIdAcceptPost200Response
 ```
 
 
@@ -1232,7 +1217,7 @@ quotationIdIdSetCostsForItemsWithoutCostPost($id, $quotation_id_id_set_costs_for
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -1245,10 +1230,10 @@ $apiInstance = new kruegge82\weclapp\Api\QuotationApi(
     $config
 );
 $id = 'id_example'; // string
-$quotation_id_id_set_costs_for_items_without_cost_post_request = new \kruegge82\weclapp\Model\QuotationIdIdSetCostsForItemsWithoutCostPostRequest(); // \kruegge82\weclapp\Model\QuotationIdIdSetCostsForItemsWithoutCostPostRequest
+$body = new \kruegge82\weclapp\Model\QuotationIdIdSetCostsForItemsWithoutCostPostRequest(); // \kruegge82\weclapp\Model\QuotationIdIdSetCostsForItemsWithoutCostPostRequest
 
 try {
-    $result = $apiInstance->quotationIdIdSetCostsForItemsWithoutCostPost($id, $quotation_id_id_set_costs_for_items_without_cost_post_request);
+    $result = $apiInstance->quotationIdIdSetCostsForItemsWithoutCostPost($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QuotationApi->quotationIdIdSetCostsForItemsWithoutCostPost: ', $e->getMessage(), PHP_EOL;
@@ -1260,7 +1245,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **quotation_id_id_set_costs_for_items_without_cost_post_request** | [**\kruegge82\weclapp\Model\QuotationIdIdSetCostsForItemsWithoutCostPostRequest**](../Model/QuotationIdIdSetCostsForItemsWithoutCostPostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\QuotationIdIdSetCostsForItemsWithoutCostPostRequest**](../Model/QuotationIdIdSetCostsForItemsWithoutCostPostRequest.md)|  | |
 
 ### Return type
 
@@ -1268,7 +1253,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -1294,7 +1279,7 @@ quotationIdIdUpdatePricesPost($id, $body): \kruegge82\weclapp\Model\QuotationIdI
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -1330,7 +1315,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -1344,10 +1329,10 @@ try {
 ## `quotationPost()`
 
 ```php
-quotationPost($quotation, $dry_run): \kruegge82\weclapp\Model\Quotation
+quotationPost($body, $dry_run): \kruegge82\weclapp\Model\Quotation
 ```
 
-create a quotation
+
 
 create a quotation
 
@@ -1358,7 +1343,7 @@ create a quotation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -1370,11 +1355,11 @@ $apiInstance = new kruegge82\weclapp\Api\QuotationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$quotation = new \kruegge82\weclapp\Model\Quotation(); // \kruegge82\weclapp\Model\Quotation
+$body = new \kruegge82\weclapp\Model\Quotation(); // \kruegge82\weclapp\Model\Quotation
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->quotationPost($quotation, $dry_run);
+    $result = $apiInstance->quotationPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QuotationApi->quotationPost: ', $e->getMessage(), PHP_EOL;
@@ -1385,7 +1370,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **quotation** | [**\kruegge82\weclapp\Model\Quotation**](../Model/Quotation.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Quotation**](../Model/Quotation.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -1394,7 +1379,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

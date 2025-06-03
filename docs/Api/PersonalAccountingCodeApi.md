@@ -1,24 +1,24 @@
 # kruegge82\weclapp\PersonalAccountingCodeApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**personalAccountingCodeCountGet()**](PersonalAccountingCodeApi.md#personalAccountingCodeCountGet) | **GET** /personalAccountingCode/count | count personalAccountingCode |
-| [**personalAccountingCodeGet()**](PersonalAccountingCodeApi.md#personalAccountingCodeGet) | **GET** /personalAccountingCode | query personalAccountingCode |
-| [**personalAccountingCodeIdIdDelete()**](PersonalAccountingCodeApi.md#personalAccountingCodeIdIdDelete) | **DELETE** /personalAccountingCode/id/{id} | delete a personalAccountingCode |
-| [**personalAccountingCodeIdIdGet()**](PersonalAccountingCodeApi.md#personalAccountingCodeIdIdGet) | **GET** /personalAccountingCode/id/{id} | query a specific personalAccountingCode |
-| [**personalAccountingCodeIdIdPut()**](PersonalAccountingCodeApi.md#personalAccountingCodeIdIdPut) | **PUT** /personalAccountingCode/id/{id} | update a personalAccountingCode |
-| [**personalAccountingCodePost()**](PersonalAccountingCodeApi.md#personalAccountingCodePost) | **POST** /personalAccountingCode | create a personalAccountingCode |
+| [**personalAccountingCodeCountGet()**](PersonalAccountingCodeApi.md#personalAccountingCodeCountGet) | **GET** /personalAccountingCode/count |  |
+| [**personalAccountingCodeGet()**](PersonalAccountingCodeApi.md#personalAccountingCodeGet) | **GET** /personalAccountingCode |  |
+| [**personalAccountingCodeIdIdDelete()**](PersonalAccountingCodeApi.md#personalAccountingCodeIdIdDelete) | **DELETE** /personalAccountingCode/id/{id} |  |
+| [**personalAccountingCodeIdIdGet()**](PersonalAccountingCodeApi.md#personalAccountingCodeIdIdGet) | **GET** /personalAccountingCode/id/{id} |  |
+| [**personalAccountingCodeIdIdPut()**](PersonalAccountingCodeApi.md#personalAccountingCodeIdIdPut) | **PUT** /personalAccountingCode/id/{id} |  |
+| [**personalAccountingCodePost()**](PersonalAccountingCodeApi.md#personalAccountingCodePost) | **POST** /personalAccountingCode |  |
 
 
 ## `personalAccountingCodeCountGet()`
 
 ```php
-personalAccountingCodeCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+personalAccountingCodeCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count personalAccountingCode
+
 
 count personalAccountingCode
 
@@ -29,7 +29,7 @@ count personalAccountingCode
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\PersonalAccountingCodeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->personalAccountingCodeCountGet($filter);
+    $result = $apiInstance->personalAccountingCodeCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonalAccountingCodeApi->personalAccountingCodeCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `personalAccountingCodeGet()`
 
 ```php
-personalAccountingCodeGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
+personalAccountingCodeGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
 ```
 
-query personalAccountingCode
+
 
 query personalAccountingCode
 
@@ -91,7 +88,7 @@ query personalAccountingCode
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\PersonalAccountingCodeApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->personalAccountingCodeGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->personalAccountingCodeGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonalAccountingCodeApi->personalAccountingCodeGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 personalAccountingCodeIdIdDelete($id, $dry_run)
 ```
 
-delete a personalAccountingCode
+
 
 delete a personalAccountingCode
 
@@ -165,7 +154,7 @@ delete a personalAccountingCode
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 personalAccountingCodeIdIdGet($id): \kruegge82\weclapp\Model\CustomValue
 ```
 
-query a specific personalAccountingCode
 
-query a specific personalAccountingCode
+
+query personalAccountingCode
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific personalAccountingCode
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `personalAccountingCodeIdIdPut()`
 
 ```php
-personalAccountingCodeIdIdPut($id, $custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
+personalAccountingCodeIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-update a personalAccountingCode
+
 
 update personalAccountingCode
 
@@ -290,7 +279,7 @@ update personalAccountingCode
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\PersonalAccountingCodeApi(
     $config
 );
 $id = 'id_example'; // string
-$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->personalAccountingCodeIdIdPut($id, $custom_value, $dry_run);
+    $result = $apiInstance->personalAccountingCodeIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonalAccountingCodeApi->personalAccountingCodeIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `personalAccountingCodePost()`
 
 ```php
-personalAccountingCodePost($custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
+personalAccountingCodePost($body, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-create a personalAccountingCode
+
 
 create a personalAccountingCode
 
@@ -356,7 +345,7 @@ create a personalAccountingCode
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\PersonalAccountingCodeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->personalAccountingCodePost($custom_value, $dry_run);
+    $result = $apiInstance->personalAccountingCodePost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonalAccountingCodeApi->personalAccountingCodePost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

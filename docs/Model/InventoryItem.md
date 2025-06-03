@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] [readonly]
-**created_date** | **int** |  | [optional] [readonly]
-**last_modified_date** | **int** |  | [optional] [readonly]
+**id** | **string** |  | [optional]
 **version** | **string** |  | [optional]
 **article_id** | **string** |  | [optional]
 **batch_number** | **string** |  | [optional]
 **comment** | **string** |  | [optional]
 **counted_quantity** | **float** |  | [optional]
+**created_date** | **int** |  | [optional]
 **expected_quantity** | **float** |  | [optional]
 **expiration_date** | **int** |  | [optional]
 **inbound_date** | **int** |  | [optional]
-**inventory_id** | **string** |  | [optional]
+**inventory_id** | **string** |  |
 **inventory_serial_numbers** | [**\kruegge82\weclapp\Model\InventorySerialNumber[]**](InventorySerialNumber.md) |  | [optional]
 **inventory_transport_reference_id** | **string** |  | [optional]
+**last_modified_date** | **int** |  | [optional]
 **manual_position** | **bool** |  | [optional]
 **order_item_id** | **string** |  | [optional]
 **position_number** | **string** |  | [optional]

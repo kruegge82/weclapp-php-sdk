@@ -1,23 +1,23 @@
 # kruegge82\weclapp\PurchaseOpenItemApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**purchaseOpenItemCountGet()**](PurchaseOpenItemApi.md#purchaseOpenItemCountGet) | **GET** /purchaseOpenItem/count | count purchaseOpenItem |
-| [**purchaseOpenItemGet()**](PurchaseOpenItemApi.md#purchaseOpenItemGet) | **GET** /purchaseOpenItem | query purchaseOpenItem |
+| [**purchaseOpenItemCountGet()**](PurchaseOpenItemApi.md#purchaseOpenItemCountGet) | **GET** /purchaseOpenItem/count |  |
+| [**purchaseOpenItemGet()**](PurchaseOpenItemApi.md#purchaseOpenItemGet) | **GET** /purchaseOpenItem |  |
 | [**purchaseOpenItemIdIdCreatePaymentApplicationPost()**](PurchaseOpenItemApi.md#purchaseOpenItemIdIdCreatePaymentApplicationPost) | **POST** /purchaseOpenItem/id/{id}/createPaymentApplication |  |
-| [**purchaseOpenItemIdIdGet()**](PurchaseOpenItemApi.md#purchaseOpenItemIdIdGet) | **GET** /purchaseOpenItem/id/{id} | query a specific purchaseOpenItem |
+| [**purchaseOpenItemIdIdGet()**](PurchaseOpenItemApi.md#purchaseOpenItemIdIdGet) | **GET** /purchaseOpenItem/id/{id} |  |
 | [**purchaseOpenItemIdIdUpdatePaymentStatePost()**](PurchaseOpenItemApi.md#purchaseOpenItemIdIdUpdatePaymentStatePost) | **POST** /purchaseOpenItem/id/{id}/updatePaymentState |  |
 
 
 ## `purchaseOpenItemCountGet()`
 
 ```php
-purchaseOpenItemCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+purchaseOpenItemCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count purchaseOpenItem
+
 
 count purchaseOpenItem
 
@@ -28,7 +28,7 @@ count purchaseOpenItem
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -40,10 +40,9 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOpenItemApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->purchaseOpenItemCountGet($filter);
+    $result = $apiInstance->purchaseOpenItemCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOpenItemApi->purchaseOpenItemCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,9 +51,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -62,7 +59,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -76,10 +73,10 @@ try {
 ## `purchaseOpenItemGet()`
 
 ```php
-purchaseOpenItemGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\PurchaseOpenItemGet200Response
+purchaseOpenItemGet($page, $page_size, $sort): \kruegge82\weclapp\Model\PurchaseOpenItemGet200Response
 ```
 
-query purchaseOpenItem
+
 
 query purchaseOpenItem
 
@@ -90,7 +87,7 @@ query purchaseOpenItem
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -104,14 +101,10 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOpenItemApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->purchaseOpenItemGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->purchaseOpenItemGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOpenItemApi->purchaseOpenItemGet: ', $e->getMessage(), PHP_EOL;
@@ -124,11 +117,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -136,7 +125,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -150,7 +139,7 @@ try {
 ## `purchaseOpenItemIdIdCreatePaymentApplicationPost()`
 
 ```php
-purchaseOpenItemIdIdCreatePaymentApplicationPost($id, $purchase_open_item_id_id_create_payment_application_post_request): \kruegge82\weclapp\Model\PurchaseOpenItemIdIdCreatePaymentApplicationPost200Response
+purchaseOpenItemIdIdCreatePaymentApplicationPost($id, $body): \kruegge82\weclapp\Model\PurchaseOpenItemIdIdCreatePaymentApplicationPost200Response
 ```
 
 
@@ -162,7 +151,7 @@ purchaseOpenItemIdIdCreatePaymentApplicationPost($id, $purchase_open_item_id_id_
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -175,10 +164,10 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOpenItemApi(
     $config
 );
 $id = 'id_example'; // string
-$purchase_open_item_id_id_create_payment_application_post_request = new \kruegge82\weclapp\Model\PurchaseOpenItemIdIdCreatePaymentApplicationPostRequest(); // \kruegge82\weclapp\Model\PurchaseOpenItemIdIdCreatePaymentApplicationPostRequest
+$body = new \kruegge82\weclapp\Model\PurchaseOpenItemIdIdCreatePaymentApplicationPostRequest(); // \kruegge82\weclapp\Model\PurchaseOpenItemIdIdCreatePaymentApplicationPostRequest
 
 try {
-    $result = $apiInstance->purchaseOpenItemIdIdCreatePaymentApplicationPost($id, $purchase_open_item_id_id_create_payment_application_post_request);
+    $result = $apiInstance->purchaseOpenItemIdIdCreatePaymentApplicationPost($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOpenItemApi->purchaseOpenItemIdIdCreatePaymentApplicationPost: ', $e->getMessage(), PHP_EOL;
@@ -190,7 +179,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **purchase_open_item_id_id_create_payment_application_post_request** | [**\kruegge82\weclapp\Model\PurchaseOpenItemIdIdCreatePaymentApplicationPostRequest**](../Model/PurchaseOpenItemIdIdCreatePaymentApplicationPostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\PurchaseOpenItemIdIdCreatePaymentApplicationPostRequest**](../Model/PurchaseOpenItemIdIdCreatePaymentApplicationPostRequest.md)|  | |
 
 ### Return type
 
@@ -198,7 +187,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -215,9 +204,9 @@ try {
 purchaseOpenItemIdIdGet($id): \kruegge82\weclapp\Model\PurchaseOpenItem
 ```
 
-query a specific purchaseOpenItem
 
-query a specific purchaseOpenItem
+
+query purchaseOpenItem
 
 ### Example
 
@@ -226,7 +215,7 @@ query a specific purchaseOpenItem
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -260,7 +249,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -274,7 +263,7 @@ try {
 ## `purchaseOpenItemIdIdUpdatePaymentStatePost()`
 
 ```php
-purchaseOpenItemIdIdUpdatePaymentStatePost($id, $purchase_open_item_id_id_update_payment_state_post_request): \kruegge82\weclapp\Model\PurchaseOpenItemIdIdCreatePaymentApplicationPost200Response
+purchaseOpenItemIdIdUpdatePaymentStatePost($id, $body): \kruegge82\weclapp\Model\PurchaseOpenItemIdIdCreatePaymentApplicationPost200Response
 ```
 
 
@@ -286,7 +275,7 @@ purchaseOpenItemIdIdUpdatePaymentStatePost($id, $purchase_open_item_id_id_update
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -299,10 +288,10 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOpenItemApi(
     $config
 );
 $id = 'id_example'; // string
-$purchase_open_item_id_id_update_payment_state_post_request = new \kruegge82\weclapp\Model\PurchaseOpenItemIdIdUpdatePaymentStatePostRequest(); // \kruegge82\weclapp\Model\PurchaseOpenItemIdIdUpdatePaymentStatePostRequest
+$body = new \kruegge82\weclapp\Model\PurchaseOpenItemIdIdUpdatePaymentStatePostRequest(); // \kruegge82\weclapp\Model\PurchaseOpenItemIdIdUpdatePaymentStatePostRequest
 
 try {
-    $result = $apiInstance->purchaseOpenItemIdIdUpdatePaymentStatePost($id, $purchase_open_item_id_id_update_payment_state_post_request);
+    $result = $apiInstance->purchaseOpenItemIdIdUpdatePaymentStatePost($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOpenItemApi->purchaseOpenItemIdIdUpdatePaymentStatePost: ', $e->getMessage(), PHP_EOL;
@@ -314,7 +303,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **purchase_open_item_id_id_update_payment_state_post_request** | [**\kruegge82\weclapp\Model\PurchaseOpenItemIdIdUpdatePaymentStatePostRequest**](../Model/PurchaseOpenItemIdIdUpdatePaymentStatePostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\PurchaseOpenItemIdIdUpdatePaymentStatePostRequest**](../Model/PurchaseOpenItemIdIdUpdatePaymentStatePostRequest.md)|  | |
 
 ### Return type
 
@@ -322,7 +311,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

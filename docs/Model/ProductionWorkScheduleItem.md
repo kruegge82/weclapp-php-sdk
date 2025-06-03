@@ -4,23 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] [readonly]
-**created_date** | **int** |  | [optional] [readonly]
-**last_modified_date** | **int** |  | [optional] [readonly]
+**id** | **string** |  | [optional]
 **version** | **string** |  | [optional]
-**custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
 **cost_center_id** | **string** |  | [optional]
+**created_date** | **int** |  | [optional]
+**custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
 **description** | **string** |  | [optional]
-**multiple_human_operation** | **int** |  | [optional]
-**multiple_machine_operation** | **int** |  | [optional]
+**last_modified_date** | **int** |  | [optional]
+**multiple_human_operation** | **int** |  |
+**multiple_machine_operation** | **int** |  |
 **position_number** | **int** |  | [optional]
 **production_work_schedule_id** | **string** |  | [optional]
 **quantity_base** | **int** |  | [optional]
-**setup_time** | **float** |  | [optional]
+**setup_time** | **float** |  |
 **short_description** | **string** |  | [optional]
-**time_type** | [**\kruegge82\weclapp\Model\ProductionWorkScheduleItemTimeType**](ProductionWorkScheduleItemTimeType.md) |  | [optional]
-**time_unit** | [**\kruegge82\weclapp\Model\TimeUnit**](TimeUnit.md) |  | [optional]
-**unit_time** | **float** |  | [optional]
+**time_type** | **string** |  |
+**time_unit** | **string** |  |
+**unit_time** | **float** |  |
 **valid_from** | **int** |  | [optional]
 **valid_to** | **int** |  | [optional]
 

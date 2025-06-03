@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] [readonly]
-**created_date** | **int** |  | [optional] [readonly]
-**last_modified_date** | **int** |  | [optional] [readonly]
+**id** | **string** |  | [optional]
 **version** | **string** |  | [optional]
 **active** | **bool** |  | [optional]
-**short_identifier** | **string** |  | [optional]
-**storage_location_id** | **string** |  | [optional]
-**storage_places** | [**\kruegge82\weclapp\Model\NestedStoragePlace[]**](NestedStoragePlace.md) |  | [optional]
+**created_date** | **int** |  | [optional]
+**last_modified_date** | **int** |  | [optional]
+**short_identifier** | **string** |  |
+**storage_location_id** | **string** |  |
+**storage_places** | [**\kruegge82\weclapp\Model\NestedStoragePlace[]**](NestedStoragePlace.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

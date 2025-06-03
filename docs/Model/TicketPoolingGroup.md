@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] [readonly]
-**created_date** | **int** |  | [optional] [readonly]
-**last_modified_date** | **int** |  | [optional] [readonly]
+**id** | **string** |  | [optional]
 **version** | **string** |  | [optional]
+**created_date** | **int** |  | [optional]
 **description** | **string** |  | [optional]
-**name** | **string** |  | [optional]
+**last_modified_date** | **int** |  | [optional]
+**name** | **string** |  |
 **ticket_categories** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
 **ticket_pooling_group_members** | [**\kruegge82\weclapp\Model\TicketPoolingGroupMember[]**](TicketPoolingGroupMember.md) |  | [optional]
 

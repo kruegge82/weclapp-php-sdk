@@ -1,24 +1,24 @@
 # kruegge82\weclapp\TicketTypeApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**ticketTypeCountGet()**](TicketTypeApi.md#ticketTypeCountGet) | **GET** /ticketType/count | count ticketType |
-| [**ticketTypeGet()**](TicketTypeApi.md#ticketTypeGet) | **GET** /ticketType | query ticketType |
-| [**ticketTypeIdIdDelete()**](TicketTypeApi.md#ticketTypeIdIdDelete) | **DELETE** /ticketType/id/{id} | delete a ticketType |
-| [**ticketTypeIdIdGet()**](TicketTypeApi.md#ticketTypeIdIdGet) | **GET** /ticketType/id/{id} | query a specific ticketType |
-| [**ticketTypeIdIdPut()**](TicketTypeApi.md#ticketTypeIdIdPut) | **PUT** /ticketType/id/{id} | update a ticketType |
-| [**ticketTypePost()**](TicketTypeApi.md#ticketTypePost) | **POST** /ticketType | create a ticketType |
+| [**ticketTypeCountGet()**](TicketTypeApi.md#ticketTypeCountGet) | **GET** /ticketType/count |  |
+| [**ticketTypeGet()**](TicketTypeApi.md#ticketTypeGet) | **GET** /ticketType |  |
+| [**ticketTypeIdIdDelete()**](TicketTypeApi.md#ticketTypeIdIdDelete) | **DELETE** /ticketType/id/{id} |  |
+| [**ticketTypeIdIdGet()**](TicketTypeApi.md#ticketTypeIdIdGet) | **GET** /ticketType/id/{id} |  |
+| [**ticketTypeIdIdPut()**](TicketTypeApi.md#ticketTypeIdIdPut) | **PUT** /ticketType/id/{id} |  |
+| [**ticketTypePost()**](TicketTypeApi.md#ticketTypePost) | **POST** /ticketType |  |
 
 
 ## `ticketTypeCountGet()`
 
 ```php
-ticketTypeCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+ticketTypeCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count ticketType
+
 
 count ticketType
 
@@ -29,7 +29,7 @@ count ticketType
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\TicketTypeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->ticketTypeCountGet($filter);
+    $result = $apiInstance->ticketTypeCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketTypeApi->ticketTypeCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `ticketTypeGet()`
 
 ```php
-ticketTypeGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\TicketTypeGet200Response
+ticketTypeGet($page, $page_size, $sort): \kruegge82\weclapp\Model\TicketTypeGet200Response
 ```
 
-query ticketType
+
 
 query ticketType
 
@@ -91,7 +88,7 @@ query ticketType
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\TicketTypeApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->ticketTypeGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->ticketTypeGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketTypeApi->ticketTypeGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 ticketTypeIdIdDelete($id, $dry_run)
 ```
 
-delete a ticketType
+
 
 delete a ticketType
 
@@ -165,7 +154,7 @@ delete a ticketType
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 ticketTypeIdIdGet($id): \kruegge82\weclapp\Model\TicketType
 ```
 
-query a specific ticketType
 
-query a specific ticketType
+
+query ticketType
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific ticketType
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `ticketTypeIdIdPut()`
 
 ```php
-ticketTypeIdIdPut($id, $ticket_type, $dry_run): \kruegge82\weclapp\Model\TicketType
+ticketTypeIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\TicketType
 ```
 
-update a ticketType
+
 
 update ticketType
 
@@ -290,7 +279,7 @@ update ticketType
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\TicketTypeApi(
     $config
 );
 $id = 'id_example'; // string
-$ticket_type = new \kruegge82\weclapp\Model\TicketType(); // \kruegge82\weclapp\Model\TicketType
+$body = new \kruegge82\weclapp\Model\TicketType(); // \kruegge82\weclapp\Model\TicketType
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->ticketTypeIdIdPut($id, $ticket_type, $dry_run);
+    $result = $apiInstance->ticketTypeIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketTypeApi->ticketTypeIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **ticket_type** | [**\kruegge82\weclapp\Model\TicketType**](../Model/TicketType.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\TicketType**](../Model/TicketType.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `ticketTypePost()`
 
 ```php
-ticketTypePost($ticket_type, $dry_run): \kruegge82\weclapp\Model\TicketType
+ticketTypePost($body, $dry_run): \kruegge82\weclapp\Model\TicketType
 ```
 
-create a ticketType
+
 
 create a ticketType
 
@@ -356,7 +345,7 @@ create a ticketType
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\TicketTypeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ticket_type = new \kruegge82\weclapp\Model\TicketType(); // \kruegge82\weclapp\Model\TicketType
+$body = new \kruegge82\weclapp\Model\TicketType(); // \kruegge82\weclapp\Model\TicketType
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->ticketTypePost($ticket_type, $dry_run);
+    $result = $apiInstance->ticketTypePost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketTypeApi->ticketTypePost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ticket_type** | [**\kruegge82\weclapp\Model\TicketType**](../Model/TicketType.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\TicketType**](../Model/TicketType.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

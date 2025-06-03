@@ -1,33 +1,33 @@
 # kruegge82\weclapp\ShipmentApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**shipmentCountGet()**](ShipmentApi.md#shipmentCountGet) | **GET** /shipment/count | count shipment |
-| [**shipmentGet()**](ShipmentApi.md#shipmentGet) | **GET** /shipment | query shipment |
+| [**shipmentCountGet()**](ShipmentApi.md#shipmentCountGet) | **GET** /shipment/count |  |
+| [**shipmentGet()**](ShipmentApi.md#shipmentGet) | **GET** /shipment |  |
 | [**shipmentIdIdCreatePickingListPost()**](ShipmentApi.md#shipmentIdIdCreatePickingListPost) | **POST** /shipment/id/{id}/createPickingList |  |
 | [**shipmentIdIdCreateReturnLabelsPost()**](ShipmentApi.md#shipmentIdIdCreateReturnLabelsPost) | **POST** /shipment/id/{id}/createReturnLabels |  |
 | [**shipmentIdIdCreateSalesInvoicePost()**](ShipmentApi.md#shipmentIdIdCreateSalesInvoicePost) | **POST** /shipment/id/{id}/createSalesInvoice |  |
 | [**shipmentIdIdCreateShippingLabelPdfPost()**](ShipmentApi.md#shipmentIdIdCreateShippingLabelPdfPost) | **POST** /shipment/id/{id}/createShippingLabelPdf |  |
 | [**shipmentIdIdCreateShippingLabelsPost()**](ShipmentApi.md#shipmentIdIdCreateShippingLabelsPost) | **POST** /shipment/id/{id}/createShippingLabels |  |
-| [**shipmentIdIdDelete()**](ShipmentApi.md#shipmentIdIdDelete) | **DELETE** /shipment/id/{id} | delete a shipment |
+| [**shipmentIdIdDelete()**](ShipmentApi.md#shipmentIdIdDelete) | **DELETE** /shipment/id/{id} |  |
 | [**shipmentIdIdDownloadLatestDeliveryNotePdfGet()**](ShipmentApi.md#shipmentIdIdDownloadLatestDeliveryNotePdfGet) | **GET** /shipment/id/{id}/downloadLatestDeliveryNotePdf |  |
 | [**shipmentIdIdDownloadLatestPickingListPdfGet()**](ShipmentApi.md#shipmentIdIdDownloadLatestPickingListPdfGet) | **GET** /shipment/id/{id}/downloadLatestPickingListPdf |  |
 | [**shipmentIdIdDownloadLatestShippingLabelPdfGet()**](ShipmentApi.md#shipmentIdIdDownloadLatestShippingLabelPdfGet) | **GET** /shipment/id/{id}/downloadLatestShippingLabelPdf |  |
-| [**shipmentIdIdGet()**](ShipmentApi.md#shipmentIdIdGet) | **GET** /shipment/id/{id} | query a specific shipment |
+| [**shipmentIdIdGet()**](ShipmentApi.md#shipmentIdIdGet) | **GET** /shipment/id/{id} |  |
 | [**shipmentIdIdPrintLabelPost()**](ShipmentApi.md#shipmentIdIdPrintLabelPost) | **POST** /shipment/id/{id}/printLabel |  |
-| [**shipmentIdIdPut()**](ShipmentApi.md#shipmentIdIdPut) | **PUT** /shipment/id/{id} | update a shipment |
-| [**shipmentPost()**](ShipmentApi.md#shipmentPost) | **POST** /shipment | create a shipment |
+| [**shipmentIdIdPut()**](ShipmentApi.md#shipmentIdIdPut) | **PUT** /shipment/id/{id} |  |
+| [**shipmentPost()**](ShipmentApi.md#shipmentPost) | **POST** /shipment |  |
 
 
 ## `shipmentCountGet()`
 
 ```php
-shipmentCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+shipmentCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count shipment
+
 
 count shipment
 
@@ -38,7 +38,7 @@ count shipment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -50,10 +50,9 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->shipmentCountGet($filter);
+    $result = $apiInstance->shipmentCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->shipmentCountGet: ', $e->getMessage(), PHP_EOL;
@@ -62,9 +61,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -72,7 +69,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -86,10 +83,10 @@ try {
 ## `shipmentGet()`
 
 ```php
-shipmentGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ShipmentGet200Response
+shipmentGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ShipmentGet200Response
 ```
 
-query shipment
+
 
 query shipment
 
@@ -100,7 +97,7 @@ query shipment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -114,14 +111,10 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->shipmentGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->shipmentGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->shipmentGet: ', $e->getMessage(), PHP_EOL;
@@ -134,11 +127,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -146,7 +135,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -160,7 +149,7 @@ try {
 ## `shipmentIdIdCreatePickingListPost()`
 
 ```php
-shipmentIdIdCreatePickingListPost($id, $body): \SplFileObject
+shipmentIdIdCreatePickingListPost($id, $body)
 ```
 
 
@@ -172,7 +161,7 @@ shipmentIdIdCreatePickingListPost($id, $body): \SplFileObject
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -188,8 +177,7 @@ $id = 'id_example'; // string
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->shipmentIdIdCreatePickingListPost($id, $body);
-    print_r($result);
+    $apiInstance->shipmentIdIdCreatePickingListPost($id, $body);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->shipmentIdIdCreatePickingListPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -204,16 +192,16 @@ try {
 
 ### Return type
 
-**\SplFileObject**
+void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -234,7 +222,7 @@ shipmentIdIdCreateReturnLabelsPost($id, $body): \kruegge82\weclapp\Model\Documen
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -270,7 +258,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -296,7 +284,7 @@ shipmentIdIdCreateSalesInvoicePost($id, $body): \kruegge82\weclapp\Model\Incomin
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -332,7 +320,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -346,7 +334,7 @@ try {
 ## `shipmentIdIdCreateShippingLabelPdfPost()`
 
 ```php
-shipmentIdIdCreateShippingLabelPdfPost($id, $name, $body, $description): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
+shipmentIdIdCreateShippingLabelPdfPost($id, $name, $description): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
 ```
 
 
@@ -358,7 +346,7 @@ shipmentIdIdCreateShippingLabelPdfPost($id, $name, $body, $description): \kruegg
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -372,11 +360,10 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentApi(
 );
 $id = 'id_example'; // string
 $name = 'name_example'; // string
-$body = '/path/to/file.txt'; // \SplFileObject
 $description = 'description_example'; // string
 
 try {
-    $result = $apiInstance->shipmentIdIdCreateShippingLabelPdfPost($id, $name, $body, $description);
+    $result = $apiInstance->shipmentIdIdCreateShippingLabelPdfPost($id, $name, $description);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->shipmentIdIdCreateShippingLabelPdfPost: ', $e->getMessage(), PHP_EOL;
@@ -389,7 +376,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
 | **name** | **string**|  | |
-| **body** | **\SplFileObject****\SplFileObject**|  | |
 | **description** | **string**|  | [optional] |
 
 ### Return type
@@ -398,11 +384,11 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
-- **Content-Type**: `application/pdf`, `image/jpeg`, `image/png`
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -424,7 +410,7 @@ shipmentIdIdCreateShippingLabelsPost($id, $body): \kruegge82\weclapp\Model\Docum
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -460,7 +446,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -477,7 +463,7 @@ try {
 shipmentIdIdDelete($id, $dry_run)
 ```
 
-delete a shipment
+
 
 delete a shipment
 
@@ -488,7 +474,7 @@ delete a shipment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -523,7 +509,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -537,7 +523,7 @@ void (empty response body)
 ## `shipmentIdIdDownloadLatestDeliveryNotePdfGet()`
 
 ```php
-shipmentIdIdDownloadLatestDeliveryNotePdfGet($id): \SplFileObject
+shipmentIdIdDownloadLatestDeliveryNotePdfGet($id)
 ```
 
 
@@ -549,7 +535,7 @@ shipmentIdIdDownloadLatestDeliveryNotePdfGet($id): \SplFileObject
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -564,8 +550,7 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentApi(
 $id = 'id_example'; // string
 
 try {
-    $result = $apiInstance->shipmentIdIdDownloadLatestDeliveryNotePdfGet($id);
-    print_r($result);
+    $apiInstance->shipmentIdIdDownloadLatestDeliveryNotePdfGet($id);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->shipmentIdIdDownloadLatestDeliveryNotePdfGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -579,16 +564,16 @@ try {
 
 ### Return type
 
-**\SplFileObject**
+void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -597,7 +582,7 @@ try {
 ## `shipmentIdIdDownloadLatestPickingListPdfGet()`
 
 ```php
-shipmentIdIdDownloadLatestPickingListPdfGet($id): \SplFileObject
+shipmentIdIdDownloadLatestPickingListPdfGet($id)
 ```
 
 
@@ -609,7 +594,7 @@ shipmentIdIdDownloadLatestPickingListPdfGet($id): \SplFileObject
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -624,8 +609,7 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentApi(
 $id = 'id_example'; // string
 
 try {
-    $result = $apiInstance->shipmentIdIdDownloadLatestPickingListPdfGet($id);
-    print_r($result);
+    $apiInstance->shipmentIdIdDownloadLatestPickingListPdfGet($id);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->shipmentIdIdDownloadLatestPickingListPdfGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -639,16 +623,16 @@ try {
 
 ### Return type
 
-**\SplFileObject**
+void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -657,7 +641,7 @@ try {
 ## `shipmentIdIdDownloadLatestShippingLabelPdfGet()`
 
 ```php
-shipmentIdIdDownloadLatestShippingLabelPdfGet($id): \SplFileObject
+shipmentIdIdDownloadLatestShippingLabelPdfGet($id)
 ```
 
 
@@ -669,7 +653,7 @@ shipmentIdIdDownloadLatestShippingLabelPdfGet($id): \SplFileObject
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -684,8 +668,7 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentApi(
 $id = 'id_example'; // string
 
 try {
-    $result = $apiInstance->shipmentIdIdDownloadLatestShippingLabelPdfGet($id);
-    print_r($result);
+    $apiInstance->shipmentIdIdDownloadLatestShippingLabelPdfGet($id);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->shipmentIdIdDownloadLatestShippingLabelPdfGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -699,16 +682,16 @@ try {
 
 ### Return type
 
-**\SplFileObject**
+void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -720,9 +703,9 @@ try {
 shipmentIdIdGet($id): \kruegge82\weclapp\Model\Shipment
 ```
 
-query a specific shipment
 
-query a specific shipment
+
+query shipment
 
 ### Example
 
@@ -731,7 +714,7 @@ query a specific shipment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -765,7 +748,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -779,7 +762,7 @@ try {
 ## `shipmentIdIdPrintLabelPost()`
 
 ```php
-shipmentIdIdPrintLabelPost($id, $shipment_id_id_print_label_post_request): \SplFileObject
+shipmentIdIdPrintLabelPost($id, $body)
 ```
 
 
@@ -791,7 +774,7 @@ shipmentIdIdPrintLabelPost($id, $shipment_id_id_print_label_post_request): \SplF
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -804,11 +787,10 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentApi(
     $config
 );
 $id = 'id_example'; // string
-$shipment_id_id_print_label_post_request = new \kruegge82\weclapp\Model\ShipmentIdIdPrintLabelPostRequest(); // \kruegge82\weclapp\Model\ShipmentIdIdPrintLabelPostRequest
+$body = new \kruegge82\weclapp\Model\ShipmentIdIdPrintLabelPostRequest(); // \kruegge82\weclapp\Model\ShipmentIdIdPrintLabelPostRequest
 
 try {
-    $result = $apiInstance->shipmentIdIdPrintLabelPost($id, $shipment_id_id_print_label_post_request);
-    print_r($result);
+    $apiInstance->shipmentIdIdPrintLabelPost($id, $body);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->shipmentIdIdPrintLabelPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -819,20 +801,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **shipment_id_id_print_label_post_request** | [**\kruegge82\weclapp\Model\ShipmentIdIdPrintLabelPostRequest**](../Model/ShipmentIdIdPrintLabelPostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\ShipmentIdIdPrintLabelPostRequest**](../Model/ShipmentIdIdPrintLabelPostRequest.md)|  | |
 
 ### Return type
 
-**\SplFileObject**
+void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -841,10 +823,10 @@ try {
 ## `shipmentIdIdPut()`
 
 ```php
-shipmentIdIdPut($id, $shipment, $dry_run): \kruegge82\weclapp\Model\Shipment
+shipmentIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Shipment
 ```
 
-update a shipment
+
 
 update shipment
 
@@ -855,7 +837,7 @@ update shipment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -868,11 +850,11 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentApi(
     $config
 );
 $id = 'id_example'; // string
-$shipment = new \kruegge82\weclapp\Model\Shipment(); // \kruegge82\weclapp\Model\Shipment
+$body = new \kruegge82\weclapp\Model\Shipment(); // \kruegge82\weclapp\Model\Shipment
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->shipmentIdIdPut($id, $shipment, $dry_run);
+    $result = $apiInstance->shipmentIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->shipmentIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -884,7 +866,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **shipment** | [**\kruegge82\weclapp\Model\Shipment**](../Model/Shipment.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Shipment**](../Model/Shipment.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -893,7 +875,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -907,10 +889,10 @@ try {
 ## `shipmentPost()`
 
 ```php
-shipmentPost($shipment, $dry_run): \kruegge82\weclapp\Model\Shipment
+shipmentPost($body, $dry_run): \kruegge82\weclapp\Model\Shipment
 ```
 
-create a shipment
+
 
 create a shipment
 
@@ -921,7 +903,7 @@ create a shipment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -933,11 +915,11 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$shipment = new \kruegge82\weclapp\Model\Shipment(); // \kruegge82\weclapp\Model\Shipment
+$body = new \kruegge82\weclapp\Model\Shipment(); // \kruegge82\weclapp\Model\Shipment
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->shipmentPost($shipment, $dry_run);
+    $result = $apiInstance->shipmentPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->shipmentPost: ', $e->getMessage(), PHP_EOL;
@@ -948,7 +930,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **shipment** | [**\kruegge82\weclapp\Model\Shipment**](../Model/Shipment.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Shipment**](../Model/Shipment.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -957,7 +939,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

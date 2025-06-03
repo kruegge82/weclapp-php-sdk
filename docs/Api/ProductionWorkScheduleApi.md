@@ -1,24 +1,24 @@
 # kruegge82\weclapp\ProductionWorkScheduleApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**productionWorkScheduleCountGet()**](ProductionWorkScheduleApi.md#productionWorkScheduleCountGet) | **GET** /productionWorkSchedule/count | count productionWorkSchedule |
-| [**productionWorkScheduleGet()**](ProductionWorkScheduleApi.md#productionWorkScheduleGet) | **GET** /productionWorkSchedule | query productionWorkSchedule |
-| [**productionWorkScheduleIdIdDelete()**](ProductionWorkScheduleApi.md#productionWorkScheduleIdIdDelete) | **DELETE** /productionWorkSchedule/id/{id} | delete a productionWorkSchedule |
-| [**productionWorkScheduleIdIdGet()**](ProductionWorkScheduleApi.md#productionWorkScheduleIdIdGet) | **GET** /productionWorkSchedule/id/{id} | query a specific productionWorkSchedule |
-| [**productionWorkScheduleIdIdPut()**](ProductionWorkScheduleApi.md#productionWorkScheduleIdIdPut) | **PUT** /productionWorkSchedule/id/{id} | update a productionWorkSchedule |
-| [**productionWorkSchedulePost()**](ProductionWorkScheduleApi.md#productionWorkSchedulePost) | **POST** /productionWorkSchedule | create a productionWorkSchedule |
+| [**productionWorkScheduleCountGet()**](ProductionWorkScheduleApi.md#productionWorkScheduleCountGet) | **GET** /productionWorkSchedule/count |  |
+| [**productionWorkScheduleGet()**](ProductionWorkScheduleApi.md#productionWorkScheduleGet) | **GET** /productionWorkSchedule |  |
+| [**productionWorkScheduleIdIdDelete()**](ProductionWorkScheduleApi.md#productionWorkScheduleIdIdDelete) | **DELETE** /productionWorkSchedule/id/{id} |  |
+| [**productionWorkScheduleIdIdGet()**](ProductionWorkScheduleApi.md#productionWorkScheduleIdIdGet) | **GET** /productionWorkSchedule/id/{id} |  |
+| [**productionWorkScheduleIdIdPut()**](ProductionWorkScheduleApi.md#productionWorkScheduleIdIdPut) | **PUT** /productionWorkSchedule/id/{id} |  |
+| [**productionWorkSchedulePost()**](ProductionWorkScheduleApi.md#productionWorkSchedulePost) | **POST** /productionWorkSchedule |  |
 
 
 ## `productionWorkScheduleCountGet()`
 
 ```php
-productionWorkScheduleCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+productionWorkScheduleCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count productionWorkSchedule
+
 
 count productionWorkSchedule
 
@@ -29,7 +29,7 @@ count productionWorkSchedule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\ProductionWorkScheduleApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->productionWorkScheduleCountGet($filter);
+    $result = $apiInstance->productionWorkScheduleCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductionWorkScheduleApi->productionWorkScheduleCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `productionWorkScheduleGet()`
 
 ```php
-productionWorkScheduleGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ProductionWorkScheduleGet200Response
+productionWorkScheduleGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ProductionWorkScheduleGet200Response
 ```
 
-query productionWorkSchedule
+
 
 query productionWorkSchedule
 
@@ -91,7 +88,7 @@ query productionWorkSchedule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\ProductionWorkScheduleApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->productionWorkScheduleGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->productionWorkScheduleGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductionWorkScheduleApi->productionWorkScheduleGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 productionWorkScheduleIdIdDelete($id, $dry_run)
 ```
 
-delete a productionWorkSchedule
+
 
 delete a productionWorkSchedule
 
@@ -165,7 +154,7 @@ delete a productionWorkSchedule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 productionWorkScheduleIdIdGet($id): \kruegge82\weclapp\Model\ProductionWorkSchedule
 ```
 
-query a specific productionWorkSchedule
 
-query a specific productionWorkSchedule
+
+query productionWorkSchedule
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific productionWorkSchedule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `productionWorkScheduleIdIdPut()`
 
 ```php
-productionWorkScheduleIdIdPut($id, $production_work_schedule, $dry_run): \kruegge82\weclapp\Model\ProductionWorkSchedule
+productionWorkScheduleIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\ProductionWorkSchedule
 ```
 
-update a productionWorkSchedule
+
 
 update productionWorkSchedule
 
@@ -290,7 +279,7 @@ update productionWorkSchedule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\ProductionWorkScheduleApi(
     $config
 );
 $id = 'id_example'; // string
-$production_work_schedule = new \kruegge82\weclapp\Model\ProductionWorkSchedule(); // \kruegge82\weclapp\Model\ProductionWorkSchedule
+$body = new \kruegge82\weclapp\Model\ProductionWorkSchedule(); // \kruegge82\weclapp\Model\ProductionWorkSchedule
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->productionWorkScheduleIdIdPut($id, $production_work_schedule, $dry_run);
+    $result = $apiInstance->productionWorkScheduleIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductionWorkScheduleApi->productionWorkScheduleIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **production_work_schedule** | [**\kruegge82\weclapp\Model\ProductionWorkSchedule**](../Model/ProductionWorkSchedule.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\ProductionWorkSchedule**](../Model/ProductionWorkSchedule.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `productionWorkSchedulePost()`
 
 ```php
-productionWorkSchedulePost($production_work_schedule, $dry_run): \kruegge82\weclapp\Model\ProductionWorkSchedule
+productionWorkSchedulePost($body, $dry_run): \kruegge82\weclapp\Model\ProductionWorkSchedule
 ```
 
-create a productionWorkSchedule
+
 
 create a productionWorkSchedule
 
@@ -356,7 +345,7 @@ create a productionWorkSchedule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\ProductionWorkScheduleApi(
     new GuzzleHttp\Client(),
     $config
 );
-$production_work_schedule = new \kruegge82\weclapp\Model\ProductionWorkSchedule(); // \kruegge82\weclapp\Model\ProductionWorkSchedule
+$body = new \kruegge82\weclapp\Model\ProductionWorkSchedule(); // \kruegge82\weclapp\Model\ProductionWorkSchedule
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->productionWorkSchedulePost($production_work_schedule, $dry_run);
+    $result = $apiInstance->productionWorkSchedulePost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductionWorkScheduleApi->productionWorkSchedulePost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **production_work_schedule** | [**\kruegge82\weclapp\Model\ProductionWorkSchedule**](../Model/ProductionWorkSchedule.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\ProductionWorkSchedule**](../Model/ProductionWorkSchedule.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

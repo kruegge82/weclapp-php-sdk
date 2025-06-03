@@ -1,27 +1,27 @@
 # kruegge82\weclapp\AttendanceApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**attendanceCountGet()**](AttendanceApi.md#attendanceCountGet) | **GET** /attendance/count | count attendance |
+| [**attendanceCountGet()**](AttendanceApi.md#attendanceCountGet) | **GET** /attendance/count |  |
 | [**attendanceCurrentAttendanceGet()**](AttendanceApi.md#attendanceCurrentAttendanceGet) | **GET** /attendance/currentAttendance |  |
-| [**attendanceGet()**](AttendanceApi.md#attendanceGet) | **GET** /attendance | query attendance |
-| [**attendanceIdIdDelete()**](AttendanceApi.md#attendanceIdIdDelete) | **DELETE** /attendance/id/{id} | delete a attendance |
-| [**attendanceIdIdGet()**](AttendanceApi.md#attendanceIdIdGet) | **GET** /attendance/id/{id} | query a specific attendance |
-| [**attendanceIdIdPut()**](AttendanceApi.md#attendanceIdIdPut) | **PUT** /attendance/id/{id} | update a attendance |
+| [**attendanceGet()**](AttendanceApi.md#attendanceGet) | **GET** /attendance |  |
+| [**attendanceIdIdDelete()**](AttendanceApi.md#attendanceIdIdDelete) | **DELETE** /attendance/id/{id} |  |
+| [**attendanceIdIdGet()**](AttendanceApi.md#attendanceIdIdGet) | **GET** /attendance/id/{id} |  |
+| [**attendanceIdIdPut()**](AttendanceApi.md#attendanceIdIdPut) | **PUT** /attendance/id/{id} |  |
 | [**attendanceLogOffPost()**](AttendanceApi.md#attendanceLogOffPost) | **POST** /attendance/logOff |  |
 | [**attendanceLogOnPost()**](AttendanceApi.md#attendanceLogOnPost) | **POST** /attendance/logOn |  |
-| [**attendancePost()**](AttendanceApi.md#attendancePost) | **POST** /attendance | create a attendance |
+| [**attendancePost()**](AttendanceApi.md#attendancePost) | **POST** /attendance |  |
 
 
 ## `attendanceCountGet()`
 
 ```php
-attendanceCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+attendanceCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count attendance
+
 
 count attendance
 
@@ -32,7 +32,7 @@ count attendance
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -44,10 +44,9 @@ $apiInstance = new kruegge82\weclapp\Api\AttendanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->attendanceCountGet($filter);
+    $result = $apiInstance->attendanceCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttendanceApi->attendanceCountGet: ', $e->getMessage(), PHP_EOL;
@@ -56,9 +55,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -66,7 +63,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -92,7 +89,7 @@ attendanceCurrentAttendanceGet(): \kruegge82\weclapp\Model\AttendanceCurrentAtte
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -123,7 +120,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -137,10 +134,10 @@ This endpoint does not need any parameter.
 ## `attendanceGet()`
 
 ```php
-attendanceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\AttendanceGet200Response
+attendanceGet($page, $page_size, $sort): \kruegge82\weclapp\Model\AttendanceGet200Response
 ```
 
-query attendance
+
 
 query attendance
 
@@ -151,7 +148,7 @@ query attendance
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -165,14 +162,10 @@ $apiInstance = new kruegge82\weclapp\Api\AttendanceApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->attendanceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->attendanceGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttendanceApi->attendanceGet: ', $e->getMessage(), PHP_EOL;
@@ -185,11 +178,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -197,7 +186,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -214,7 +203,7 @@ try {
 attendanceIdIdDelete($id, $dry_run)
 ```
 
-delete a attendance
+
 
 delete a attendance
 
@@ -225,7 +214,7 @@ delete a attendance
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -260,7 +249,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -277,9 +266,9 @@ void (empty response body)
 attendanceIdIdGet($id): \kruegge82\weclapp\Model\Attendance
 ```
 
-query a specific attendance
 
-query a specific attendance
+
+query attendance
 
 ### Example
 
@@ -288,7 +277,7 @@ query a specific attendance
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -322,7 +311,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -336,10 +325,10 @@ try {
 ## `attendanceIdIdPut()`
 
 ```php
-attendanceIdIdPut($id, $attendance, $dry_run): \kruegge82\weclapp\Model\Attendance
+attendanceIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Attendance
 ```
 
-update a attendance
+
 
 update attendance
 
@@ -350,7 +339,7 @@ update attendance
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -363,11 +352,11 @@ $apiInstance = new kruegge82\weclapp\Api\AttendanceApi(
     $config
 );
 $id = 'id_example'; // string
-$attendance = new \kruegge82\weclapp\Model\Attendance(); // \kruegge82\weclapp\Model\Attendance
+$body = new \kruegge82\weclapp\Model\Attendance(); // \kruegge82\weclapp\Model\Attendance
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->attendanceIdIdPut($id, $attendance, $dry_run);
+    $result = $apiInstance->attendanceIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttendanceApi->attendanceIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -379,7 +368,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **attendance** | [**\kruegge82\weclapp\Model\Attendance**](../Model/Attendance.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Attendance**](../Model/Attendance.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -388,7 +377,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -414,7 +403,7 @@ attendanceLogOffPost($body): \kruegge82\weclapp\Model\AttendanceCurrentAttendanc
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -448,7 +437,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -474,7 +463,7 @@ attendanceLogOnPost($body): \kruegge82\weclapp\Model\AttendanceCurrentAttendance
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -508,7 +497,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -522,10 +511,10 @@ try {
 ## `attendancePost()`
 
 ```php
-attendancePost($attendance, $dry_run): \kruegge82\weclapp\Model\Attendance
+attendancePost($body, $dry_run): \kruegge82\weclapp\Model\Attendance
 ```
 
-create a attendance
+
 
 create a attendance
 
@@ -536,7 +525,7 @@ create a attendance
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -548,11 +537,11 @@ $apiInstance = new kruegge82\weclapp\Api\AttendanceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$attendance = new \kruegge82\weclapp\Model\Attendance(); // \kruegge82\weclapp\Model\Attendance
+$body = new \kruegge82\weclapp\Model\Attendance(); // \kruegge82\weclapp\Model\Attendance
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->attendancePost($attendance, $dry_run);
+    $result = $apiInstance->attendancePost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttendanceApi->attendancePost: ', $e->getMessage(), PHP_EOL;
@@ -563,7 +552,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **attendance** | [**\kruegge82\weclapp\Model\Attendance**](../Model/Attendance.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Attendance**](../Model/Attendance.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -572,7 +561,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

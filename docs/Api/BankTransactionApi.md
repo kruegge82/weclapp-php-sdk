@@ -1,22 +1,22 @@
 # kruegge82\weclapp\BankTransactionApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**bankTransactionCountGet()**](BankTransactionApi.md#bankTransactionCountGet) | **GET** /bankTransaction/count | count bankTransaction |
-| [**bankTransactionGet()**](BankTransactionApi.md#bankTransactionGet) | **GET** /bankTransaction | query bankTransaction |
-| [**bankTransactionIdIdDelete()**](BankTransactionApi.md#bankTransactionIdIdDelete) | **DELETE** /bankTransaction/id/{id} | delete a bankTransaction |
-| [**bankTransactionIdIdGet()**](BankTransactionApi.md#bankTransactionIdIdGet) | **GET** /bankTransaction/id/{id} | query a specific bankTransaction |
+| [**bankTransactionCountGet()**](BankTransactionApi.md#bankTransactionCountGet) | **GET** /bankTransaction/count |  |
+| [**bankTransactionGet()**](BankTransactionApi.md#bankTransactionGet) | **GET** /bankTransaction |  |
+| [**bankTransactionIdIdDelete()**](BankTransactionApi.md#bankTransactionIdIdDelete) | **DELETE** /bankTransaction/id/{id} |  |
+| [**bankTransactionIdIdGet()**](BankTransactionApi.md#bankTransactionIdIdGet) | **GET** /bankTransaction/id/{id} |  |
 
 
 ## `bankTransactionCountGet()`
 
 ```php
-bankTransactionCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+bankTransactionCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count bankTransaction
+
 
 count bankTransaction
 
@@ -27,7 +27,7 @@ count bankTransaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -39,10 +39,9 @@ $apiInstance = new kruegge82\weclapp\Api\BankTransactionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->bankTransactionCountGet($filter);
+    $result = $apiInstance->bankTransactionCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BankTransactionApi->bankTransactionCountGet: ', $e->getMessage(), PHP_EOL;
@@ -51,9 +50,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -61,7 +58,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -75,10 +72,10 @@ try {
 ## `bankTransactionGet()`
 
 ```php
-bankTransactionGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\BankTransactionGet200Response
+bankTransactionGet($page, $page_size, $sort): \kruegge82\weclapp\Model\BankTransactionGet200Response
 ```
 
-query bankTransaction
+
 
 query bankTransaction
 
@@ -89,7 +86,7 @@ query bankTransaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -103,14 +100,10 @@ $apiInstance = new kruegge82\weclapp\Api\BankTransactionApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->bankTransactionGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->bankTransactionGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BankTransactionApi->bankTransactionGet: ', $e->getMessage(), PHP_EOL;
@@ -123,11 +116,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -135,7 +124,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -152,7 +141,7 @@ try {
 bankTransactionIdIdDelete($id, $dry_run)
 ```
 
-delete a bankTransaction
+
 
 delete a bankTransaction
 
@@ -163,7 +152,7 @@ delete a bankTransaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -198,7 +187,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -215,9 +204,9 @@ void (empty response body)
 bankTransactionIdIdGet($id): \kruegge82\weclapp\Model\BankTransaction
 ```
 
-query a specific bankTransaction
 
-query a specific bankTransaction
+
+query bankTransaction
 
 ### Example
 
@@ -226,7 +215,7 @@ query a specific bankTransaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -260,7 +249,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

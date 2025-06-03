@@ -1,24 +1,24 @@
 # kruegge82\weclapp\TagApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**tagCountGet()**](TagApi.md#tagCountGet) | **GET** /tag/count | count tag |
-| [**tagGet()**](TagApi.md#tagGet) | **GET** /tag | query tag |
-| [**tagIdIdDelete()**](TagApi.md#tagIdIdDelete) | **DELETE** /tag/id/{id} | delete a tag |
-| [**tagIdIdGet()**](TagApi.md#tagIdIdGet) | **GET** /tag/id/{id} | query a specific tag |
-| [**tagIdIdPut()**](TagApi.md#tagIdIdPut) | **PUT** /tag/id/{id} | update a tag |
-| [**tagPost()**](TagApi.md#tagPost) | **POST** /tag | create a tag |
+| [**tagCountGet()**](TagApi.md#tagCountGet) | **GET** /tag/count |  |
+| [**tagGet()**](TagApi.md#tagGet) | **GET** /tag |  |
+| [**tagIdIdDelete()**](TagApi.md#tagIdIdDelete) | **DELETE** /tag/id/{id} |  |
+| [**tagIdIdGet()**](TagApi.md#tagIdIdGet) | **GET** /tag/id/{id} |  |
+| [**tagIdIdPut()**](TagApi.md#tagIdIdPut) | **PUT** /tag/id/{id} |  |
+| [**tagPost()**](TagApi.md#tagPost) | **POST** /tag |  |
 
 
 ## `tagCountGet()`
 
 ```php
-tagCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+tagCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count tag
+
 
 count tag
 
@@ -29,7 +29,7 @@ count tag
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\TagApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->tagCountGet($filter);
+    $result = $apiInstance->tagCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TagApi->tagCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `tagGet()`
 
 ```php
-tagGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\TagGet200Response
+tagGet($page, $page_size, $sort): \kruegge82\weclapp\Model\TagGet200Response
 ```
 
-query tag
+
 
 query tag
 
@@ -91,7 +88,7 @@ query tag
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\TagApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->tagGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->tagGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TagApi->tagGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 tagIdIdDelete($id, $dry_run)
 ```
 
-delete a tag
+
 
 delete a tag
 
@@ -165,7 +154,7 @@ delete a tag
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 tagIdIdGet($id): \kruegge82\weclapp\Model\Tag
 ```
 
-query a specific tag
 
-query a specific tag
+
+query tag
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific tag
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `tagIdIdPut()`
 
 ```php
-tagIdIdPut($id, $tag, $dry_run): \kruegge82\weclapp\Model\Tag
+tagIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Tag
 ```
 
-update a tag
+
 
 update tag
 
@@ -290,7 +279,7 @@ update tag
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\TagApi(
     $config
 );
 $id = 'id_example'; // string
-$tag = new \kruegge82\weclapp\Model\Tag(); // \kruegge82\weclapp\Model\Tag
+$body = new \kruegge82\weclapp\Model\Tag(); // \kruegge82\weclapp\Model\Tag
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->tagIdIdPut($id, $tag, $dry_run);
+    $result = $apiInstance->tagIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TagApi->tagIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **tag** | [**\kruegge82\weclapp\Model\Tag**](../Model/Tag.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Tag**](../Model/Tag.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `tagPost()`
 
 ```php
-tagPost($tag, $dry_run): \kruegge82\weclapp\Model\Tag
+tagPost($body, $dry_run): \kruegge82\weclapp\Model\Tag
 ```
 
-create a tag
+
 
 create a tag
 
@@ -356,7 +345,7 @@ create a tag
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\TagApi(
     new GuzzleHttp\Client(),
     $config
 );
-$tag = new \kruegge82\weclapp\Model\Tag(); // \kruegge82\weclapp\Model\Tag
+$body = new \kruegge82\weclapp\Model\Tag(); // \kruegge82\weclapp\Model\Tag
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->tagPost($tag, $dry_run);
+    $result = $apiInstance->tagPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TagApi->tagPost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **tag** | [**\kruegge82\weclapp\Model\Tag**](../Model/Tag.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Tag**](../Model/Tag.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

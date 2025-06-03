@@ -16,11 +16,10 @@ Name | Type | Description | Notes
 **post_office_box_city** | **string** |  | [optional]
 **post_office_box_number** | **string** |  | [optional]
 **post_office_box_zip_code** | **string** |  | [optional]
-**salutation** | [**\kruegge82\weclapp\Model\Salutation**](Salutation.md) |  | [optional]
+**salutation** | **string** |  | [optional]
 **state** | **string** |  | [optional]
 **street1** | **string** |  | [optional]
 **street2** | **string** |  | [optional]
-**title** | **string** |  | [optional]
 **title_id** | **string** |  | [optional]
 **zipcode** | **string** |  | [optional]
 

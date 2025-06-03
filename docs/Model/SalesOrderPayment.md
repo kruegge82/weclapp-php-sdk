@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] [readonly]
-**created_date** | **int** |  | [optional] [readonly]
-**last_modified_date** | **int** |  | [optional] [readonly]
+**id** | **string** |  | [optional]
 **version** | **string** |  | [optional]
 **amount** | **float** |  | [optional]
 **condition** | **string** |  | [optional]
 **condition_met** | **bool** |  | [optional]
+**created_date** | **int** |  | [optional]
 **due_date** | **int** |  | [optional]
+**last_modified_date** | **int** |  | [optional]
 **position_number** | **int** |  | [optional]
 **sales_invoice_id** | **string** |  | [optional]
 **sales_invoices** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]

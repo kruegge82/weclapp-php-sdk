@@ -1,24 +1,24 @@
 # kruegge82\weclapp\PersonDepartmentApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**personDepartmentCountGet()**](PersonDepartmentApi.md#personDepartmentCountGet) | **GET** /personDepartment/count | count personDepartment |
-| [**personDepartmentGet()**](PersonDepartmentApi.md#personDepartmentGet) | **GET** /personDepartment | query personDepartment |
-| [**personDepartmentIdIdDelete()**](PersonDepartmentApi.md#personDepartmentIdIdDelete) | **DELETE** /personDepartment/id/{id} | delete a personDepartment |
-| [**personDepartmentIdIdGet()**](PersonDepartmentApi.md#personDepartmentIdIdGet) | **GET** /personDepartment/id/{id} | query a specific personDepartment |
-| [**personDepartmentIdIdPut()**](PersonDepartmentApi.md#personDepartmentIdIdPut) | **PUT** /personDepartment/id/{id} | update a personDepartment |
-| [**personDepartmentPost()**](PersonDepartmentApi.md#personDepartmentPost) | **POST** /personDepartment | create a personDepartment |
+| [**personDepartmentCountGet()**](PersonDepartmentApi.md#personDepartmentCountGet) | **GET** /personDepartment/count |  |
+| [**personDepartmentGet()**](PersonDepartmentApi.md#personDepartmentGet) | **GET** /personDepartment |  |
+| [**personDepartmentIdIdDelete()**](PersonDepartmentApi.md#personDepartmentIdIdDelete) | **DELETE** /personDepartment/id/{id} |  |
+| [**personDepartmentIdIdGet()**](PersonDepartmentApi.md#personDepartmentIdIdGet) | **GET** /personDepartment/id/{id} |  |
+| [**personDepartmentIdIdPut()**](PersonDepartmentApi.md#personDepartmentIdIdPut) | **PUT** /personDepartment/id/{id} |  |
+| [**personDepartmentPost()**](PersonDepartmentApi.md#personDepartmentPost) | **POST** /personDepartment |  |
 
 
 ## `personDepartmentCountGet()`
 
 ```php
-personDepartmentCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+personDepartmentCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count personDepartment
+
 
 count personDepartment
 
@@ -29,7 +29,7 @@ count personDepartment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\PersonDepartmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->personDepartmentCountGet($filter);
+    $result = $apiInstance->personDepartmentCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonDepartmentApi->personDepartmentCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `personDepartmentGet()`
 
 ```php
-personDepartmentGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
+personDepartmentGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
 ```
 
-query personDepartment
+
 
 query personDepartment
 
@@ -91,7 +88,7 @@ query personDepartment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\PersonDepartmentApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->personDepartmentGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->personDepartmentGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonDepartmentApi->personDepartmentGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 personDepartmentIdIdDelete($id, $dry_run)
 ```
 
-delete a personDepartment
+
 
 delete a personDepartment
 
@@ -165,7 +154,7 @@ delete a personDepartment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 personDepartmentIdIdGet($id): \kruegge82\weclapp\Model\CustomValue
 ```
 
-query a specific personDepartment
 
-query a specific personDepartment
+
+query personDepartment
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific personDepartment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `personDepartmentIdIdPut()`
 
 ```php
-personDepartmentIdIdPut($id, $custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
+personDepartmentIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-update a personDepartment
+
 
 update personDepartment
 
@@ -290,7 +279,7 @@ update personDepartment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\PersonDepartmentApi(
     $config
 );
 $id = 'id_example'; // string
-$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->personDepartmentIdIdPut($id, $custom_value, $dry_run);
+    $result = $apiInstance->personDepartmentIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonDepartmentApi->personDepartmentIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `personDepartmentPost()`
 
 ```php
-personDepartmentPost($custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
+personDepartmentPost($body, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-create a personDepartment
+
 
 create a personDepartment
 
@@ -356,7 +345,7 @@ create a personDepartment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\PersonDepartmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->personDepartmentPost($custom_value, $dry_run);
+    $result = $apiInstance->personDepartmentPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PersonDepartmentApi->personDepartmentPost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

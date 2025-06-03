@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**batch_booking_dto** | [**\kruegge82\weclapp\Model\AccountingTransactionBatchBookingPostRequestBatchBookingDto**](AccountingTransactionBatchBookingPostRequestBatchBookingDto.md) |  |
+**batch_booking_dto** | [**\kruegge82\weclapp\Model\BatchBooking**](BatchBooking.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

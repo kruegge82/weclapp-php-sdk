@@ -1,22 +1,22 @@
 # kruegge82\weclapp\AccountingTransactionApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**accountingTransactionBatchBookingPost()**](AccountingTransactionApi.md#accountingTransactionBatchBookingPost) | **POST** /accountingTransaction/batchBooking | Creates an accounting transaction of type &#39;impersonal&#39; |
-| [**accountingTransactionCountGet()**](AccountingTransactionApi.md#accountingTransactionCountGet) | **GET** /accountingTransaction/count | count accountingTransaction |
-| [**accountingTransactionGet()**](AccountingTransactionApi.md#accountingTransactionGet) | **GET** /accountingTransaction | query accountingTransaction |
-| [**accountingTransactionIdIdGet()**](AccountingTransactionApi.md#accountingTransactionIdIdGet) | **GET** /accountingTransaction/id/{id} | query a specific accountingTransaction |
+| [**accountingTransactionBatchBookingPost()**](AccountingTransactionApi.md#accountingTransactionBatchBookingPost) | **POST** /accountingTransaction/batchBooking |  |
+| [**accountingTransactionCountGet()**](AccountingTransactionApi.md#accountingTransactionCountGet) | **GET** /accountingTransaction/count |  |
+| [**accountingTransactionGet()**](AccountingTransactionApi.md#accountingTransactionGet) | **GET** /accountingTransaction |  |
+| [**accountingTransactionIdIdGet()**](AccountingTransactionApi.md#accountingTransactionIdIdGet) | **GET** /accountingTransaction/id/{id} |  |
 
 
 ## `accountingTransactionBatchBookingPost()`
 
 ```php
-accountingTransactionBatchBookingPost($accounting_transaction_batch_booking_post_request): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
+accountingTransactionBatchBookingPost($body): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
 ```
 
-Creates an accounting transaction of type 'impersonal'
+
 
 ### Example
 
@@ -25,7 +25,7 @@ Creates an accounting transaction of type 'impersonal'
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -37,10 +37,10 @@ $apiInstance = new kruegge82\weclapp\Api\AccountingTransactionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accounting_transaction_batch_booking_post_request = new \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPostRequest(); // \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPostRequest
+$body = new \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPostRequest(); // \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPostRequest
 
 try {
-    $result = $apiInstance->accountingTransactionBatchBookingPost($accounting_transaction_batch_booking_post_request);
+    $result = $apiInstance->accountingTransactionBatchBookingPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountingTransactionApi->accountingTransactionBatchBookingPost: ', $e->getMessage(), PHP_EOL;
@@ -51,7 +51,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **accounting_transaction_batch_booking_post_request** | [**\kruegge82\weclapp\Model\AccountingTransactionBatchBookingPostRequest**](../Model/AccountingTransactionBatchBookingPostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\AccountingTransactionBatchBookingPostRequest**](../Model/AccountingTransactionBatchBookingPostRequest.md)|  | |
 
 ### Return type
 
@@ -59,7 +59,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -73,10 +73,10 @@ try {
 ## `accountingTransactionCountGet()`
 
 ```php
-accountingTransactionCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+accountingTransactionCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count accountingTransaction
+
 
 count accountingTransaction
 
@@ -87,7 +87,7 @@ count accountingTransaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -99,10 +99,9 @@ $apiInstance = new kruegge82\weclapp\Api\AccountingTransactionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->accountingTransactionCountGet($filter);
+    $result = $apiInstance->accountingTransactionCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountingTransactionApi->accountingTransactionCountGet: ', $e->getMessage(), PHP_EOL;
@@ -111,9 +110,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -121,7 +118,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -135,10 +132,10 @@ try {
 ## `accountingTransactionGet()`
 
 ```php
-accountingTransactionGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\AccountingTransactionGet200Response
+accountingTransactionGet($page, $page_size, $sort): \kruegge82\weclapp\Model\AccountingTransactionGet200Response
 ```
 
-query accountingTransaction
+
 
 query accountingTransaction
 
@@ -149,7 +146,7 @@ query accountingTransaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -163,14 +160,10 @@ $apiInstance = new kruegge82\weclapp\Api\AccountingTransactionApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->accountingTransactionGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->accountingTransactionGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountingTransactionApi->accountingTransactionGet: ', $e->getMessage(), PHP_EOL;
@@ -183,11 +176,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -195,7 +184,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -212,9 +201,9 @@ try {
 accountingTransactionIdIdGet($id): \kruegge82\weclapp\Model\AccountingTransaction
 ```
 
-query a specific accountingTransaction
 
-query a specific accountingTransaction
+
+query accountingTransaction
 
 ### Example
 
@@ -223,7 +212,7 @@ query a specific accountingTransaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -257,7 +246,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

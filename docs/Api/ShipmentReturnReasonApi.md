@@ -1,24 +1,24 @@
 # kruegge82\weclapp\ShipmentReturnReasonApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**shipmentReturnReasonCountGet()**](ShipmentReturnReasonApi.md#shipmentReturnReasonCountGet) | **GET** /shipmentReturnReason/count | count shipmentReturnReason |
-| [**shipmentReturnReasonGet()**](ShipmentReturnReasonApi.md#shipmentReturnReasonGet) | **GET** /shipmentReturnReason | query shipmentReturnReason |
-| [**shipmentReturnReasonIdIdDelete()**](ShipmentReturnReasonApi.md#shipmentReturnReasonIdIdDelete) | **DELETE** /shipmentReturnReason/id/{id} | delete a shipmentReturnReason |
-| [**shipmentReturnReasonIdIdGet()**](ShipmentReturnReasonApi.md#shipmentReturnReasonIdIdGet) | **GET** /shipmentReturnReason/id/{id} | query a specific shipmentReturnReason |
-| [**shipmentReturnReasonIdIdPut()**](ShipmentReturnReasonApi.md#shipmentReturnReasonIdIdPut) | **PUT** /shipmentReturnReason/id/{id} | update a shipmentReturnReason |
-| [**shipmentReturnReasonPost()**](ShipmentReturnReasonApi.md#shipmentReturnReasonPost) | **POST** /shipmentReturnReason | create a shipmentReturnReason |
+| [**shipmentReturnReasonCountGet()**](ShipmentReturnReasonApi.md#shipmentReturnReasonCountGet) | **GET** /shipmentReturnReason/count |  |
+| [**shipmentReturnReasonGet()**](ShipmentReturnReasonApi.md#shipmentReturnReasonGet) | **GET** /shipmentReturnReason |  |
+| [**shipmentReturnReasonIdIdDelete()**](ShipmentReturnReasonApi.md#shipmentReturnReasonIdIdDelete) | **DELETE** /shipmentReturnReason/id/{id} |  |
+| [**shipmentReturnReasonIdIdGet()**](ShipmentReturnReasonApi.md#shipmentReturnReasonIdIdGet) | **GET** /shipmentReturnReason/id/{id} |  |
+| [**shipmentReturnReasonIdIdPut()**](ShipmentReturnReasonApi.md#shipmentReturnReasonIdIdPut) | **PUT** /shipmentReturnReason/id/{id} |  |
+| [**shipmentReturnReasonPost()**](ShipmentReturnReasonApi.md#shipmentReturnReasonPost) | **POST** /shipmentReturnReason |  |
 
 
 ## `shipmentReturnReasonCountGet()`
 
 ```php
-shipmentReturnReasonCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+shipmentReturnReasonCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count shipmentReturnReason
+
 
 count shipmentReturnReason
 
@@ -29,7 +29,7 @@ count shipmentReturnReason
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentReturnReasonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->shipmentReturnReasonCountGet($filter);
+    $result = $apiInstance->shipmentReturnReasonCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentReturnReasonApi->shipmentReturnReasonCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `shipmentReturnReasonGet()`
 
 ```php
-shipmentReturnReasonGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ShipmentReturnAssessmentGet200Response
+shipmentReturnReasonGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ShipmentReturnAssessmentGet200Response
 ```
 
-query shipmentReturnReason
+
 
 query shipmentReturnReason
 
@@ -91,7 +88,7 @@ query shipmentReturnReason
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentReturnReasonApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->shipmentReturnReasonGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->shipmentReturnReasonGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentReturnReasonApi->shipmentReturnReasonGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 shipmentReturnReasonIdIdDelete($id, $dry_run)
 ```
 
-delete a shipmentReturnReason
+
 
 delete a shipmentReturnReason
 
@@ -165,7 +154,7 @@ delete a shipmentReturnReason
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 shipmentReturnReasonIdIdGet($id): \kruegge82\weclapp\Model\ShipmentReturnDescription
 ```
 
-query a specific shipmentReturnReason
 
-query a specific shipmentReturnReason
+
+query shipmentReturnReason
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific shipmentReturnReason
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `shipmentReturnReasonIdIdPut()`
 
 ```php
-shipmentReturnReasonIdIdPut($id, $shipment_return_description, $dry_run): \kruegge82\weclapp\Model\ShipmentReturnDescription
+shipmentReturnReasonIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\ShipmentReturnDescription
 ```
 
-update a shipmentReturnReason
+
 
 update shipmentReturnReason
 
@@ -290,7 +279,7 @@ update shipmentReturnReason
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentReturnReasonApi(
     $config
 );
 $id = 'id_example'; // string
-$shipment_return_description = new \kruegge82\weclapp\Model\ShipmentReturnDescription(); // \kruegge82\weclapp\Model\ShipmentReturnDescription
+$body = new \kruegge82\weclapp\Model\ShipmentReturnDescription(); // \kruegge82\weclapp\Model\ShipmentReturnDescription
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->shipmentReturnReasonIdIdPut($id, $shipment_return_description, $dry_run);
+    $result = $apiInstance->shipmentReturnReasonIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentReturnReasonApi->shipmentReturnReasonIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **shipment_return_description** | [**\kruegge82\weclapp\Model\ShipmentReturnDescription**](../Model/ShipmentReturnDescription.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\ShipmentReturnDescription**](../Model/ShipmentReturnDescription.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `shipmentReturnReasonPost()`
 
 ```php
-shipmentReturnReasonPost($shipment_return_description, $dry_run): \kruegge82\weclapp\Model\ShipmentReturnDescription
+shipmentReturnReasonPost($body, $dry_run): \kruegge82\weclapp\Model\ShipmentReturnDescription
 ```
 
-create a shipmentReturnReason
+
 
 create a shipmentReturnReason
 
@@ -356,7 +345,7 @@ create a shipmentReturnReason
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentReturnReasonApi(
     new GuzzleHttp\Client(),
     $config
 );
-$shipment_return_description = new \kruegge82\weclapp\Model\ShipmentReturnDescription(); // \kruegge82\weclapp\Model\ShipmentReturnDescription
+$body = new \kruegge82\weclapp\Model\ShipmentReturnDescription(); // \kruegge82\weclapp\Model\ShipmentReturnDescription
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->shipmentReturnReasonPost($shipment_return_description, $dry_run);
+    $result = $apiInstance->shipmentReturnReasonPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentReturnReasonApi->shipmentReturnReasonPost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **shipment_return_description** | [**\kruegge82\weclapp\Model\ShipmentReturnDescription**](../Model/ShipmentReturnDescription.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\ShipmentReturnDescription**](../Model/ShipmentReturnDescription.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

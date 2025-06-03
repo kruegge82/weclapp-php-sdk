@@ -1,24 +1,24 @@
 # kruegge82\weclapp\CustomerTopicApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**customerTopicCountGet()**](CustomerTopicApi.md#customerTopicCountGet) | **GET** /customerTopic/count | count customerTopic |
-| [**customerTopicGet()**](CustomerTopicApi.md#customerTopicGet) | **GET** /customerTopic | query customerTopic |
-| [**customerTopicIdIdDelete()**](CustomerTopicApi.md#customerTopicIdIdDelete) | **DELETE** /customerTopic/id/{id} | delete a customerTopic |
-| [**customerTopicIdIdGet()**](CustomerTopicApi.md#customerTopicIdIdGet) | **GET** /customerTopic/id/{id} | query a specific customerTopic |
-| [**customerTopicIdIdPut()**](CustomerTopicApi.md#customerTopicIdIdPut) | **PUT** /customerTopic/id/{id} | update a customerTopic |
-| [**customerTopicPost()**](CustomerTopicApi.md#customerTopicPost) | **POST** /customerTopic | create a customerTopic |
+| [**customerTopicCountGet()**](CustomerTopicApi.md#customerTopicCountGet) | **GET** /customerTopic/count |  |
+| [**customerTopicGet()**](CustomerTopicApi.md#customerTopicGet) | **GET** /customerTopic |  |
+| [**customerTopicIdIdDelete()**](CustomerTopicApi.md#customerTopicIdIdDelete) | **DELETE** /customerTopic/id/{id} |  |
+| [**customerTopicIdIdGet()**](CustomerTopicApi.md#customerTopicIdIdGet) | **GET** /customerTopic/id/{id} |  |
+| [**customerTopicIdIdPut()**](CustomerTopicApi.md#customerTopicIdIdPut) | **PUT** /customerTopic/id/{id} |  |
+| [**customerTopicPost()**](CustomerTopicApi.md#customerTopicPost) | **POST** /customerTopic |  |
 
 
 ## `customerTopicCountGet()`
 
 ```php
-customerTopicCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+customerTopicCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count customerTopic
+
 
 count customerTopic
 
@@ -29,7 +29,7 @@ count customerTopic
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\CustomerTopicApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->customerTopicCountGet($filter);
+    $result = $apiInstance->customerTopicCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerTopicApi->customerTopicCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `customerTopicGet()`
 
 ```php
-customerTopicGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
+customerTopicGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
 ```
 
-query customerTopic
+
 
 query customerTopic
 
@@ -91,7 +88,7 @@ query customerTopic
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\CustomerTopicApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->customerTopicGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->customerTopicGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerTopicApi->customerTopicGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 customerTopicIdIdDelete($id, $dry_run)
 ```
 
-delete a customerTopic
+
 
 delete a customerTopic
 
@@ -165,7 +154,7 @@ delete a customerTopic
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 customerTopicIdIdGet($id): \kruegge82\weclapp\Model\CustomValue
 ```
 
-query a specific customerTopic
 
-query a specific customerTopic
+
+query customerTopic
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific customerTopic
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `customerTopicIdIdPut()`
 
 ```php
-customerTopicIdIdPut($id, $custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
+customerTopicIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-update a customerTopic
+
 
 update customerTopic
 
@@ -290,7 +279,7 @@ update customerTopic
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\CustomerTopicApi(
     $config
 );
 $id = 'id_example'; // string
-$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->customerTopicIdIdPut($id, $custom_value, $dry_run);
+    $result = $apiInstance->customerTopicIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerTopicApi->customerTopicIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `customerTopicPost()`
 
 ```php
-customerTopicPost($custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
+customerTopicPost($body, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-create a customerTopic
+
 
 create a customerTopic
 
@@ -356,7 +345,7 @@ create a customerTopic
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\CustomerTopicApi(
     new GuzzleHttp\Client(),
     $config
 );
-$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->customerTopicPost($custom_value, $dry_run);
+    $result = $apiInstance->customerTopicPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerTopicApi->customerTopicPost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

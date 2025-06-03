@@ -1,24 +1,24 @@
 # kruegge82\weclapp\TicketChannelApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**ticketChannelCountGet()**](TicketChannelApi.md#ticketChannelCountGet) | **GET** /ticketChannel/count | count ticketChannel |
-| [**ticketChannelGet()**](TicketChannelApi.md#ticketChannelGet) | **GET** /ticketChannel | query ticketChannel |
-| [**ticketChannelIdIdDelete()**](TicketChannelApi.md#ticketChannelIdIdDelete) | **DELETE** /ticketChannel/id/{id} | delete a ticketChannel |
-| [**ticketChannelIdIdGet()**](TicketChannelApi.md#ticketChannelIdIdGet) | **GET** /ticketChannel/id/{id} | query a specific ticketChannel |
-| [**ticketChannelIdIdPut()**](TicketChannelApi.md#ticketChannelIdIdPut) | **PUT** /ticketChannel/id/{id} | update a ticketChannel |
-| [**ticketChannelPost()**](TicketChannelApi.md#ticketChannelPost) | **POST** /ticketChannel | create a ticketChannel |
+| [**ticketChannelCountGet()**](TicketChannelApi.md#ticketChannelCountGet) | **GET** /ticketChannel/count |  |
+| [**ticketChannelGet()**](TicketChannelApi.md#ticketChannelGet) | **GET** /ticketChannel |  |
+| [**ticketChannelIdIdDelete()**](TicketChannelApi.md#ticketChannelIdIdDelete) | **DELETE** /ticketChannel/id/{id} |  |
+| [**ticketChannelIdIdGet()**](TicketChannelApi.md#ticketChannelIdIdGet) | **GET** /ticketChannel/id/{id} |  |
+| [**ticketChannelIdIdPut()**](TicketChannelApi.md#ticketChannelIdIdPut) | **PUT** /ticketChannel/id/{id} |  |
+| [**ticketChannelPost()**](TicketChannelApi.md#ticketChannelPost) | **POST** /ticketChannel |  |
 
 
 ## `ticketChannelCountGet()`
 
 ```php
-ticketChannelCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+ticketChannelCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count ticketChannel
+
 
 count ticketChannel
 
@@ -29,7 +29,7 @@ count ticketChannel
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\TicketChannelApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->ticketChannelCountGet($filter);
+    $result = $apiInstance->ticketChannelCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketChannelApi->ticketChannelCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `ticketChannelGet()`
 
 ```php
-ticketChannelGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
+ticketChannelGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
 ```
 
-query ticketChannel
+
 
 query ticketChannel
 
@@ -91,7 +88,7 @@ query ticketChannel
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\TicketChannelApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->ticketChannelGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->ticketChannelGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketChannelApi->ticketChannelGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 ticketChannelIdIdDelete($id, $dry_run)
 ```
 
-delete a ticketChannel
+
 
 delete a ticketChannel
 
@@ -165,7 +154,7 @@ delete a ticketChannel
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 ticketChannelIdIdGet($id): \kruegge82\weclapp\Model\CustomValue
 ```
 
-query a specific ticketChannel
 
-query a specific ticketChannel
+
+query ticketChannel
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific ticketChannel
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `ticketChannelIdIdPut()`
 
 ```php
-ticketChannelIdIdPut($id, $custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
+ticketChannelIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-update a ticketChannel
+
 
 update ticketChannel
 
@@ -290,7 +279,7 @@ update ticketChannel
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\TicketChannelApi(
     $config
 );
 $id = 'id_example'; // string
-$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->ticketChannelIdIdPut($id, $custom_value, $dry_run);
+    $result = $apiInstance->ticketChannelIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketChannelApi->ticketChannelIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `ticketChannelPost()`
 
 ```php
-ticketChannelPost($custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
+ticketChannelPost($body, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-create a ticketChannel
+
 
 create a ticketChannel
 
@@ -356,7 +345,7 @@ create a ticketChannel
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\TicketChannelApi(
     new GuzzleHttp\Client(),
     $config
 );
-$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->ticketChannelPost($custom_value, $dry_run);
+    $result = $apiInstance->ticketChannelPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketChannelApi->ticketChannelPost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

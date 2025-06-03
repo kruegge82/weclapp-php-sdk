@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] [readonly]
-**created_date** | **int** |  | [optional] [readonly]
-**last_modified_date** | **int** |  | [optional] [readonly]
+**id** | **string** |  | [optional]
 **version** | **string** |  | [optional]
 **article_id** | **string** |  | [optional]
+**created_date** | **int** |  | [optional]
 **description** | **string** |  | [optional]
 **description_fixed** | **bool** |  | [optional]
 **discount_percentage** | **float** |  | [optional]
-**interval** | [**\kruegge82\weclapp\Model\ContractChargeInterval**](ContractChargeInterval.md) |  | [optional]
-**interval_type** | [**\kruegge82\weclapp\Model\ContractChargeIntervalType**](ContractChargeIntervalType.md) |  | [optional]
+**interval** | **string** |  |
+**interval_type** | **string** |  |
+**last_modified_date** | **int** |  | [optional]
 **manual_unit_price** | **bool** |  | [optional]
 **net_amount** | **float** |  | [optional]
 **net_amount_in_company_currency** | **float** |  | [optional]

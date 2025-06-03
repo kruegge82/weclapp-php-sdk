@@ -1,24 +1,24 @@
 # kruegge82\weclapp\CostTypeApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**costTypeCountGet()**](CostTypeApi.md#costTypeCountGet) | **GET** /costType/count | count costType |
-| [**costTypeGet()**](CostTypeApi.md#costTypeGet) | **GET** /costType | query costType |
-| [**costTypeIdIdDelete()**](CostTypeApi.md#costTypeIdIdDelete) | **DELETE** /costType/id/{id} | delete a costType |
-| [**costTypeIdIdGet()**](CostTypeApi.md#costTypeIdIdGet) | **GET** /costType/id/{id} | query a specific costType |
-| [**costTypeIdIdPut()**](CostTypeApi.md#costTypeIdIdPut) | **PUT** /costType/id/{id} | update a costType |
-| [**costTypePost()**](CostTypeApi.md#costTypePost) | **POST** /costType | create a costType |
+| [**costTypeCountGet()**](CostTypeApi.md#costTypeCountGet) | **GET** /costType/count |  |
+| [**costTypeGet()**](CostTypeApi.md#costTypeGet) | **GET** /costType |  |
+| [**costTypeIdIdDelete()**](CostTypeApi.md#costTypeIdIdDelete) | **DELETE** /costType/id/{id} |  |
+| [**costTypeIdIdGet()**](CostTypeApi.md#costTypeIdIdGet) | **GET** /costType/id/{id} |  |
+| [**costTypeIdIdPut()**](CostTypeApi.md#costTypeIdIdPut) | **PUT** /costType/id/{id} |  |
+| [**costTypePost()**](CostTypeApi.md#costTypePost) | **POST** /costType |  |
 
 
 ## `costTypeCountGet()`
 
 ```php
-costTypeCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+costTypeCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count costType
+
 
 count costType
 
@@ -29,7 +29,7 @@ count costType
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\CostTypeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->costTypeCountGet($filter);
+    $result = $apiInstance->costTypeCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CostTypeApi->costTypeCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `costTypeGet()`
 
 ```php
-costTypeGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\CostTypeGet200Response
+costTypeGet($page, $page_size, $sort): \kruegge82\weclapp\Model\CostTypeGet200Response
 ```
 
-query costType
+
 
 query costType
 
@@ -91,7 +88,7 @@ query costType
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\CostTypeApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->costTypeGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->costTypeGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CostTypeApi->costTypeGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 costTypeIdIdDelete($id, $dry_run)
 ```
 
-delete a costType
+
 
 delete a costType
 
@@ -165,7 +154,7 @@ delete a costType
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 costTypeIdIdGet($id): \kruegge82\weclapp\Model\CostType
 ```
 
-query a specific costType
 
-query a specific costType
+
+query costType
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific costType
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `costTypeIdIdPut()`
 
 ```php
-costTypeIdIdPut($id, $cost_type, $dry_run): \kruegge82\weclapp\Model\CostType
+costTypeIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\CostType
 ```
 
-update a costType
+
 
 update costType
 
@@ -290,7 +279,7 @@ update costType
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\CostTypeApi(
     $config
 );
 $id = 'id_example'; // string
-$cost_type = new \kruegge82\weclapp\Model\CostType(); // \kruegge82\weclapp\Model\CostType
+$body = new \kruegge82\weclapp\Model\CostType(); // \kruegge82\weclapp\Model\CostType
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->costTypeIdIdPut($id, $cost_type, $dry_run);
+    $result = $apiInstance->costTypeIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CostTypeApi->costTypeIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **cost_type** | [**\kruegge82\weclapp\Model\CostType**](../Model/CostType.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CostType**](../Model/CostType.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `costTypePost()`
 
 ```php
-costTypePost($cost_type, $dry_run): \kruegge82\weclapp\Model\CostType
+costTypePost($body, $dry_run): \kruegge82\weclapp\Model\CostType
 ```
 
-create a costType
+
 
 create a costType
 
@@ -356,7 +345,7 @@ create a costType
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\CostTypeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$cost_type = new \kruegge82\weclapp\Model\CostType(); // \kruegge82\weclapp\Model\CostType
+$body = new \kruegge82\weclapp\Model\CostType(); // \kruegge82\weclapp\Model\CostType
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->costTypePost($cost_type, $dry_run);
+    $result = $apiInstance->costTypePost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CostTypeApi->costTypePost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **cost_type** | [**\kruegge82\weclapp\Model\CostType**](../Model/CostType.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CostType**](../Model/CostType.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

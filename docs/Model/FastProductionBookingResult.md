@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | [**\kruegge82\weclapp\Model\FastProductionBookingResultMessage**](FastProductionBookingResultMessage.md) |  | [optional]
+**message** | **string** |  | [optional]
 **success** | **bool** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

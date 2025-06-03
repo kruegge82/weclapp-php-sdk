@@ -1,25 +1,25 @@
 # kruegge82\weclapp\FinancialYearApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**financialYearCountGet()**](FinancialYearApi.md#financialYearCountGet) | **GET** /financialYear/count | count financialYear |
-| [**financialYearGet()**](FinancialYearApi.md#financialYearGet) | **GET** /financialYear | query financialYear |
-| [**financialYearIdIdDelete()**](FinancialYearApi.md#financialYearIdIdDelete) | **DELETE** /financialYear/id/{id} | delete a financialYear |
+| [**financialYearCountGet()**](FinancialYearApi.md#financialYearCountGet) | **GET** /financialYear/count |  |
+| [**financialYearGet()**](FinancialYearApi.md#financialYearGet) | **GET** /financialYear |  |
+| [**financialYearIdIdDelete()**](FinancialYearApi.md#financialYearIdIdDelete) | **DELETE** /financialYear/id/{id} |  |
 | [**financialYearIdIdGeneratePeriodsPost()**](FinancialYearApi.md#financialYearIdIdGeneratePeriodsPost) | **POST** /financialYear/id/{id}/generatePeriods |  |
-| [**financialYearIdIdGet()**](FinancialYearApi.md#financialYearIdIdGet) | **GET** /financialYear/id/{id} | query a specific financialYear |
-| [**financialYearIdIdPut()**](FinancialYearApi.md#financialYearIdIdPut) | **PUT** /financialYear/id/{id} | update a financialYear |
-| [**financialYearPost()**](FinancialYearApi.md#financialYearPost) | **POST** /financialYear | create a financialYear |
+| [**financialYearIdIdGet()**](FinancialYearApi.md#financialYearIdIdGet) | **GET** /financialYear/id/{id} |  |
+| [**financialYearIdIdPut()**](FinancialYearApi.md#financialYearIdIdPut) | **PUT** /financialYear/id/{id} |  |
+| [**financialYearPost()**](FinancialYearApi.md#financialYearPost) | **POST** /financialYear |  |
 
 
 ## `financialYearCountGet()`
 
 ```php
-financialYearCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+financialYearCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count financialYear
+
 
 count financialYear
 
@@ -30,7 +30,7 @@ count financialYear
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -42,10 +42,9 @@ $apiInstance = new kruegge82\weclapp\Api\FinancialYearApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->financialYearCountGet($filter);
+    $result = $apiInstance->financialYearCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinancialYearApi->financialYearCountGet: ', $e->getMessage(), PHP_EOL;
@@ -54,9 +53,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -64,7 +61,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -78,10 +75,10 @@ try {
 ## `financialYearGet()`
 
 ```php
-financialYearGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\FinancialYearGet200Response
+financialYearGet($page, $page_size, $sort): \kruegge82\weclapp\Model\FinancialYearGet200Response
 ```
 
-query financialYear
+
 
 query financialYear
 
@@ -92,7 +89,7 @@ query financialYear
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -106,14 +103,10 @@ $apiInstance = new kruegge82\weclapp\Api\FinancialYearApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->financialYearGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->financialYearGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinancialYearApi->financialYearGet: ', $e->getMessage(), PHP_EOL;
@@ -126,11 +119,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -138,7 +127,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -155,7 +144,7 @@ try {
 financialYearIdIdDelete($id, $dry_run)
 ```
 
-delete a financialYear
+
 
 delete a financialYear
 
@@ -166,7 +155,7 @@ delete a financialYear
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -201,7 +190,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -227,7 +216,7 @@ financialYearIdIdGeneratePeriodsPost($id, $body): \kruegge82\weclapp\Model\Finan
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -263,7 +252,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -280,9 +269,9 @@ try {
 financialYearIdIdGet($id): \kruegge82\weclapp\Model\FinancialYear
 ```
 
-query a specific financialYear
 
-query a specific financialYear
+
+query financialYear
 
 ### Example
 
@@ -291,7 +280,7 @@ query a specific financialYear
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -325,7 +314,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -339,10 +328,10 @@ try {
 ## `financialYearIdIdPut()`
 
 ```php
-financialYearIdIdPut($id, $financial_year, $dry_run): \kruegge82\weclapp\Model\FinancialYear
+financialYearIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\FinancialYear
 ```
 
-update a financialYear
+
 
 update financialYear
 
@@ -353,7 +342,7 @@ update financialYear
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -366,11 +355,11 @@ $apiInstance = new kruegge82\weclapp\Api\FinancialYearApi(
     $config
 );
 $id = 'id_example'; // string
-$financial_year = new \kruegge82\weclapp\Model\FinancialYear(); // \kruegge82\weclapp\Model\FinancialYear
+$body = new \kruegge82\weclapp\Model\FinancialYear(); // \kruegge82\weclapp\Model\FinancialYear
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->financialYearIdIdPut($id, $financial_year, $dry_run);
+    $result = $apiInstance->financialYearIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinancialYearApi->financialYearIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -382,7 +371,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **financial_year** | [**\kruegge82\weclapp\Model\FinancialYear**](../Model/FinancialYear.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\FinancialYear**](../Model/FinancialYear.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -391,7 +380,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -405,10 +394,10 @@ try {
 ## `financialYearPost()`
 
 ```php
-financialYearPost($financial_year, $dry_run): \kruegge82\weclapp\Model\FinancialYear
+financialYearPost($body, $dry_run): \kruegge82\weclapp\Model\FinancialYear
 ```
 
-create a financialYear
+
 
 create a financialYear
 
@@ -419,7 +408,7 @@ create a financialYear
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -431,11 +420,11 @@ $apiInstance = new kruegge82\weclapp\Api\FinancialYearApi(
     new GuzzleHttp\Client(),
     $config
 );
-$financial_year = new \kruegge82\weclapp\Model\FinancialYear(); // \kruegge82\weclapp\Model\FinancialYear
+$body = new \kruegge82\weclapp\Model\FinancialYear(); // \kruegge82\weclapp\Model\FinancialYear
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->financialYearPost($financial_year, $dry_run);
+    $result = $apiInstance->financialYearPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinancialYearApi->financialYearPost: ', $e->getMessage(), PHP_EOL;
@@ -446,7 +435,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **financial_year** | [**\kruegge82\weclapp\Model\FinancialYear**](../Model/FinancialYear.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\FinancialYear**](../Model/FinancialYear.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -455,7 +444,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

@@ -1,24 +1,24 @@
 # kruegge82\weclapp\VariantArticleAttributeApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**variantArticleAttributeCountGet()**](VariantArticleAttributeApi.md#variantArticleAttributeCountGet) | **GET** /variantArticleAttribute/count | count variantArticleAttribute |
-| [**variantArticleAttributeGet()**](VariantArticleAttributeApi.md#variantArticleAttributeGet) | **GET** /variantArticleAttribute | query variantArticleAttribute |
-| [**variantArticleAttributeIdIdDelete()**](VariantArticleAttributeApi.md#variantArticleAttributeIdIdDelete) | **DELETE** /variantArticleAttribute/id/{id} | delete a variantArticleAttribute |
-| [**variantArticleAttributeIdIdGet()**](VariantArticleAttributeApi.md#variantArticleAttributeIdIdGet) | **GET** /variantArticleAttribute/id/{id} | query a specific variantArticleAttribute |
-| [**variantArticleAttributeIdIdPut()**](VariantArticleAttributeApi.md#variantArticleAttributeIdIdPut) | **PUT** /variantArticleAttribute/id/{id} | update a variantArticleAttribute |
-| [**variantArticleAttributePost()**](VariantArticleAttributeApi.md#variantArticleAttributePost) | **POST** /variantArticleAttribute | create a variantArticleAttribute |
+| [**variantArticleAttributeCountGet()**](VariantArticleAttributeApi.md#variantArticleAttributeCountGet) | **GET** /variantArticleAttribute/count |  |
+| [**variantArticleAttributeGet()**](VariantArticleAttributeApi.md#variantArticleAttributeGet) | **GET** /variantArticleAttribute |  |
+| [**variantArticleAttributeIdIdDelete()**](VariantArticleAttributeApi.md#variantArticleAttributeIdIdDelete) | **DELETE** /variantArticleAttribute/id/{id} |  |
+| [**variantArticleAttributeIdIdGet()**](VariantArticleAttributeApi.md#variantArticleAttributeIdIdGet) | **GET** /variantArticleAttribute/id/{id} |  |
+| [**variantArticleAttributeIdIdPut()**](VariantArticleAttributeApi.md#variantArticleAttributeIdIdPut) | **PUT** /variantArticleAttribute/id/{id} |  |
+| [**variantArticleAttributePost()**](VariantArticleAttributeApi.md#variantArticleAttributePost) | **POST** /variantArticleAttribute |  |
 
 
 ## `variantArticleAttributeCountGet()`
 
 ```php
-variantArticleAttributeCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+variantArticleAttributeCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count variantArticleAttribute
+
 
 count variantArticleAttribute
 
@@ -29,7 +29,7 @@ count variantArticleAttribute
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\VariantArticleAttributeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->variantArticleAttributeCountGet($filter);
+    $result = $apiInstance->variantArticleAttributeCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VariantArticleAttributeApi->variantArticleAttributeCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `variantArticleAttributeGet()`
 
 ```php
-variantArticleAttributeGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\VariantArticleAttributeGet200Response
+variantArticleAttributeGet($page, $page_size, $sort): \kruegge82\weclapp\Model\VariantArticleAttributeGet200Response
 ```
 
-query variantArticleAttribute
+
 
 query variantArticleAttribute
 
@@ -91,7 +88,7 @@ query variantArticleAttribute
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\VariantArticleAttributeApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->variantArticleAttributeGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->variantArticleAttributeGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VariantArticleAttributeApi->variantArticleAttributeGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 variantArticleAttributeIdIdDelete($id, $dry_run)
 ```
 
-delete a variantArticleAttribute
+
 
 delete a variantArticleAttribute
 
@@ -165,7 +154,7 @@ delete a variantArticleAttribute
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 variantArticleAttributeIdIdGet($id): \kruegge82\weclapp\Model\VariantArticleAttribute
 ```
 
-query a specific variantArticleAttribute
 
-query a specific variantArticleAttribute
+
+query variantArticleAttribute
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific variantArticleAttribute
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `variantArticleAttributeIdIdPut()`
 
 ```php
-variantArticleAttributeIdIdPut($id, $variant_article_attribute, $dry_run): \kruegge82\weclapp\Model\VariantArticleAttribute
+variantArticleAttributeIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\VariantArticleAttribute
 ```
 
-update a variantArticleAttribute
+
 
 update variantArticleAttribute
 
@@ -290,7 +279,7 @@ update variantArticleAttribute
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\VariantArticleAttributeApi(
     $config
 );
 $id = 'id_example'; // string
-$variant_article_attribute = new \kruegge82\weclapp\Model\VariantArticleAttribute(); // \kruegge82\weclapp\Model\VariantArticleAttribute
+$body = new \kruegge82\weclapp\Model\VariantArticleAttribute(); // \kruegge82\weclapp\Model\VariantArticleAttribute
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->variantArticleAttributeIdIdPut($id, $variant_article_attribute, $dry_run);
+    $result = $apiInstance->variantArticleAttributeIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VariantArticleAttributeApi->variantArticleAttributeIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **variant_article_attribute** | [**\kruegge82\weclapp\Model\VariantArticleAttribute**](../Model/VariantArticleAttribute.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\VariantArticleAttribute**](../Model/VariantArticleAttribute.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `variantArticleAttributePost()`
 
 ```php
-variantArticleAttributePost($variant_article_attribute, $dry_run): \kruegge82\weclapp\Model\VariantArticleAttribute
+variantArticleAttributePost($body, $dry_run): \kruegge82\weclapp\Model\VariantArticleAttribute
 ```
 
-create a variantArticleAttribute
+
 
 create a variantArticleAttribute
 
@@ -356,7 +345,7 @@ create a variantArticleAttribute
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\VariantArticleAttributeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$variant_article_attribute = new \kruegge82\weclapp\Model\VariantArticleAttribute(); // \kruegge82\weclapp\Model\VariantArticleAttribute
+$body = new \kruegge82\weclapp\Model\VariantArticleAttribute(); // \kruegge82\weclapp\Model\VariantArticleAttribute
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->variantArticleAttributePost($variant_article_attribute, $dry_run);
+    $result = $apiInstance->variantArticleAttributePost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VariantArticleAttributeApi->variantArticleAttributePost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **variant_article_attribute** | [**\kruegge82\weclapp\Model\VariantArticleAttribute**](../Model/VariantArticleAttribute.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\VariantArticleAttribute**](../Model/VariantArticleAttribute.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

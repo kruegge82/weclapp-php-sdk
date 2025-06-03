@@ -1,16 +1,16 @@
 # kruegge82\weclapp\CurrencyApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**currencyCompanyCurrencyGet()**](CurrencyApi.md#currencyCompanyCurrencyGet) | **GET** /currency/companyCurrency |  |
-| [**currencyCountGet()**](CurrencyApi.md#currencyCountGet) | **GET** /currency/count | count currency |
-| [**currencyGet()**](CurrencyApi.md#currencyGet) | **GET** /currency | query currency |
-| [**currencyIdIdDelete()**](CurrencyApi.md#currencyIdIdDelete) | **DELETE** /currency/id/{id} | delete a currency |
-| [**currencyIdIdGet()**](CurrencyApi.md#currencyIdIdGet) | **GET** /currency/id/{id} | query a specific currency |
-| [**currencyIdIdPut()**](CurrencyApi.md#currencyIdIdPut) | **PUT** /currency/id/{id} | update a currency |
-| [**currencyPost()**](CurrencyApi.md#currencyPost) | **POST** /currency | create a currency |
+| [**currencyCountGet()**](CurrencyApi.md#currencyCountGet) | **GET** /currency/count |  |
+| [**currencyGet()**](CurrencyApi.md#currencyGet) | **GET** /currency |  |
+| [**currencyIdIdDelete()**](CurrencyApi.md#currencyIdIdDelete) | **DELETE** /currency/id/{id} |  |
+| [**currencyIdIdGet()**](CurrencyApi.md#currencyIdIdGet) | **GET** /currency/id/{id} |  |
+| [**currencyIdIdPut()**](CurrencyApi.md#currencyIdIdPut) | **PUT** /currency/id/{id} |  |
+| [**currencyPost()**](CurrencyApi.md#currencyPost) | **POST** /currency |  |
 
 
 ## `currencyCompanyCurrencyGet()`
@@ -28,7 +28,7 @@ currencyCompanyCurrencyGet(): \kruegge82\weclapp\Model\CurrencyCompanyCurrencyGe
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -59,7 +59,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -73,10 +73,10 @@ This endpoint does not need any parameter.
 ## `currencyCountGet()`
 
 ```php
-currencyCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+currencyCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count currency
+
 
 count currency
 
@@ -87,7 +87,7 @@ count currency
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -99,10 +99,9 @@ $apiInstance = new kruegge82\weclapp\Api\CurrencyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->currencyCountGet($filter);
+    $result = $apiInstance->currencyCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CurrencyApi->currencyCountGet: ', $e->getMessage(), PHP_EOL;
@@ -111,9 +110,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -121,7 +118,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -135,10 +132,10 @@ try {
 ## `currencyGet()`
 
 ```php
-currencyGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\CurrencyGet200Response
+currencyGet($page, $page_size, $sort): \kruegge82\weclapp\Model\CurrencyGet200Response
 ```
 
-query currency
+
 
 query currency
 
@@ -149,7 +146,7 @@ query currency
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -163,14 +160,10 @@ $apiInstance = new kruegge82\weclapp\Api\CurrencyApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->currencyGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->currencyGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CurrencyApi->currencyGet: ', $e->getMessage(), PHP_EOL;
@@ -183,11 +176,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -195,7 +184,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -212,7 +201,7 @@ try {
 currencyIdIdDelete($id, $dry_run)
 ```
 
-delete a currency
+
 
 delete a currency
 
@@ -223,7 +212,7 @@ delete a currency
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -258,7 +247,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -275,9 +264,9 @@ void (empty response body)
 currencyIdIdGet($id): \kruegge82\weclapp\Model\Currency
 ```
 
-query a specific currency
 
-query a specific currency
+
+query currency
 
 ### Example
 
@@ -286,7 +275,7 @@ query a specific currency
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -320,7 +309,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -334,10 +323,10 @@ try {
 ## `currencyIdIdPut()`
 
 ```php
-currencyIdIdPut($id, $currency, $dry_run): \kruegge82\weclapp\Model\Currency
+currencyIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Currency
 ```
 
-update a currency
+
 
 update currency
 
@@ -348,7 +337,7 @@ update currency
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -361,11 +350,11 @@ $apiInstance = new kruegge82\weclapp\Api\CurrencyApi(
     $config
 );
 $id = 'id_example'; // string
-$currency = new \kruegge82\weclapp\Model\Currency(); // \kruegge82\weclapp\Model\Currency
+$body = new \kruegge82\weclapp\Model\Currency(); // \kruegge82\weclapp\Model\Currency
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->currencyIdIdPut($id, $currency, $dry_run);
+    $result = $apiInstance->currencyIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CurrencyApi->currencyIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -377,7 +366,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **currency** | [**\kruegge82\weclapp\Model\Currency**](../Model/Currency.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Currency**](../Model/Currency.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -386,7 +375,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -400,10 +389,10 @@ try {
 ## `currencyPost()`
 
 ```php
-currencyPost($currency, $dry_run): \kruegge82\weclapp\Model\Currency
+currencyPost($body, $dry_run): \kruegge82\weclapp\Model\Currency
 ```
 
-create a currency
+
 
 create a currency
 
@@ -414,7 +403,7 @@ create a currency
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -426,11 +415,11 @@ $apiInstance = new kruegge82\weclapp\Api\CurrencyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$currency = new \kruegge82\weclapp\Model\Currency(); // \kruegge82\weclapp\Model\Currency
+$body = new \kruegge82\weclapp\Model\Currency(); // \kruegge82\weclapp\Model\Currency
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->currencyPost($currency, $dry_run);
+    $result = $apiInstance->currencyPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CurrencyApi->currencyPost: ', $e->getMessage(), PHP_EOL;
@@ -441,7 +430,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **currency** | [**\kruegge82\weclapp\Model\Currency**](../Model/Currency.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Currency**](../Model/Currency.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -450,7 +439,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

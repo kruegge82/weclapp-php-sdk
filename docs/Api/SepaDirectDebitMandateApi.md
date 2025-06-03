@@ -1,24 +1,24 @@
 # kruegge82\weclapp\SepaDirectDebitMandateApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**sepaDirectDebitMandateCountGet()**](SepaDirectDebitMandateApi.md#sepaDirectDebitMandateCountGet) | **GET** /sepaDirectDebitMandate/count | count sepaDirectDebitMandate |
-| [**sepaDirectDebitMandateGet()**](SepaDirectDebitMandateApi.md#sepaDirectDebitMandateGet) | **GET** /sepaDirectDebitMandate | query sepaDirectDebitMandate |
-| [**sepaDirectDebitMandateIdIdDelete()**](SepaDirectDebitMandateApi.md#sepaDirectDebitMandateIdIdDelete) | **DELETE** /sepaDirectDebitMandate/id/{id} | delete a sepaDirectDebitMandate |
-| [**sepaDirectDebitMandateIdIdGet()**](SepaDirectDebitMandateApi.md#sepaDirectDebitMandateIdIdGet) | **GET** /sepaDirectDebitMandate/id/{id} | query a specific sepaDirectDebitMandate |
-| [**sepaDirectDebitMandateIdIdPut()**](SepaDirectDebitMandateApi.md#sepaDirectDebitMandateIdIdPut) | **PUT** /sepaDirectDebitMandate/id/{id} | update a sepaDirectDebitMandate |
-| [**sepaDirectDebitMandatePost()**](SepaDirectDebitMandateApi.md#sepaDirectDebitMandatePost) | **POST** /sepaDirectDebitMandate | create a sepaDirectDebitMandate |
+| [**sepaDirectDebitMandateCountGet()**](SepaDirectDebitMandateApi.md#sepaDirectDebitMandateCountGet) | **GET** /sepaDirectDebitMandate/count |  |
+| [**sepaDirectDebitMandateGet()**](SepaDirectDebitMandateApi.md#sepaDirectDebitMandateGet) | **GET** /sepaDirectDebitMandate |  |
+| [**sepaDirectDebitMandateIdIdDelete()**](SepaDirectDebitMandateApi.md#sepaDirectDebitMandateIdIdDelete) | **DELETE** /sepaDirectDebitMandate/id/{id} |  |
+| [**sepaDirectDebitMandateIdIdGet()**](SepaDirectDebitMandateApi.md#sepaDirectDebitMandateIdIdGet) | **GET** /sepaDirectDebitMandate/id/{id} |  |
+| [**sepaDirectDebitMandateIdIdPut()**](SepaDirectDebitMandateApi.md#sepaDirectDebitMandateIdIdPut) | **PUT** /sepaDirectDebitMandate/id/{id} |  |
+| [**sepaDirectDebitMandatePost()**](SepaDirectDebitMandateApi.md#sepaDirectDebitMandatePost) | **POST** /sepaDirectDebitMandate |  |
 
 
 ## `sepaDirectDebitMandateCountGet()`
 
 ```php
-sepaDirectDebitMandateCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+sepaDirectDebitMandateCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count sepaDirectDebitMandate
+
 
 count sepaDirectDebitMandate
 
@@ -29,7 +29,7 @@ count sepaDirectDebitMandate
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\SepaDirectDebitMandateApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->sepaDirectDebitMandateCountGet($filter);
+    $result = $apiInstance->sepaDirectDebitMandateCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SepaDirectDebitMandateApi->sepaDirectDebitMandateCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `sepaDirectDebitMandateGet()`
 
 ```php
-sepaDirectDebitMandateGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\SepaDirectDebitMandateGet200Response
+sepaDirectDebitMandateGet($page, $page_size, $sort): \kruegge82\weclapp\Model\SepaDirectDebitMandateGet200Response
 ```
 
-query sepaDirectDebitMandate
+
 
 query sepaDirectDebitMandate
 
@@ -91,7 +88,7 @@ query sepaDirectDebitMandate
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\SepaDirectDebitMandateApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->sepaDirectDebitMandateGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->sepaDirectDebitMandateGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SepaDirectDebitMandateApi->sepaDirectDebitMandateGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 sepaDirectDebitMandateIdIdDelete($id, $dry_run)
 ```
 
-delete a sepaDirectDebitMandate
+
 
 delete a sepaDirectDebitMandate
 
@@ -165,7 +154,7 @@ delete a sepaDirectDebitMandate
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 sepaDirectDebitMandateIdIdGet($id): \kruegge82\weclapp\Model\SepaDirectDebitMandate
 ```
 
-query a specific sepaDirectDebitMandate
 
-query a specific sepaDirectDebitMandate
+
+query sepaDirectDebitMandate
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific sepaDirectDebitMandate
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `sepaDirectDebitMandateIdIdPut()`
 
 ```php
-sepaDirectDebitMandateIdIdPut($id, $sepa_direct_debit_mandate, $dry_run): \kruegge82\weclapp\Model\SepaDirectDebitMandate
+sepaDirectDebitMandateIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\SepaDirectDebitMandate
 ```
 
-update a sepaDirectDebitMandate
+
 
 update sepaDirectDebitMandate
 
@@ -290,7 +279,7 @@ update sepaDirectDebitMandate
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\SepaDirectDebitMandateApi(
     $config
 );
 $id = 'id_example'; // string
-$sepa_direct_debit_mandate = new \kruegge82\weclapp\Model\SepaDirectDebitMandate(); // \kruegge82\weclapp\Model\SepaDirectDebitMandate
+$body = new \kruegge82\weclapp\Model\SepaDirectDebitMandate(); // \kruegge82\weclapp\Model\SepaDirectDebitMandate
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->sepaDirectDebitMandateIdIdPut($id, $sepa_direct_debit_mandate, $dry_run);
+    $result = $apiInstance->sepaDirectDebitMandateIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SepaDirectDebitMandateApi->sepaDirectDebitMandateIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **sepa_direct_debit_mandate** | [**\kruegge82\weclapp\Model\SepaDirectDebitMandate**](../Model/SepaDirectDebitMandate.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\SepaDirectDebitMandate**](../Model/SepaDirectDebitMandate.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `sepaDirectDebitMandatePost()`
 
 ```php
-sepaDirectDebitMandatePost($sepa_direct_debit_mandate, $dry_run): \kruegge82\weclapp\Model\SepaDirectDebitMandate
+sepaDirectDebitMandatePost($body, $dry_run): \kruegge82\weclapp\Model\SepaDirectDebitMandate
 ```
 
-create a sepaDirectDebitMandate
+
 
 create a sepaDirectDebitMandate
 
@@ -356,7 +345,7 @@ create a sepaDirectDebitMandate
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\SepaDirectDebitMandateApi(
     new GuzzleHttp\Client(),
     $config
 );
-$sepa_direct_debit_mandate = new \kruegge82\weclapp\Model\SepaDirectDebitMandate(); // \kruegge82\weclapp\Model\SepaDirectDebitMandate
+$body = new \kruegge82\weclapp\Model\SepaDirectDebitMandate(); // \kruegge82\weclapp\Model\SepaDirectDebitMandate
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->sepaDirectDebitMandatePost($sepa_direct_debit_mandate, $dry_run);
+    $result = $apiInstance->sepaDirectDebitMandatePost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SepaDirectDebitMandateApi->sepaDirectDebitMandatePost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **sepa_direct_debit_mandate** | [**\kruegge82\weclapp\Model\SepaDirectDebitMandate**](../Model/SepaDirectDebitMandate.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\SepaDirectDebitMandate**](../Model/SepaDirectDebitMandate.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

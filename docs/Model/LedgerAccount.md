@@ -4,16 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] [readonly]
-**created_date** | **int** |  | [optional] [readonly]
-**last_modified_date** | **int** |  | [optional] [readonly]
+**id** | **string** |  | [optional]
 **version** | **string** |  | [optional]
 **account_number** | **string** |  | [optional]
 **automatic** | **bool** |  | [optional]
-**balance_sheet_item** | [**\kruegge82\weclapp\Model\BalanceSheetItem**](BalanceSheetItem.md) |  | [optional]
+**balance_sheet_item** | **string** |  | [optional]
+**created_date** | **int** |  | [optional]
 **description** | **string** |  | [optional]
+**last_modified_date** | **int** |  | [optional]
 **parent_account_id** | **string** |  | [optional]
-**parent_account_number** | **string** |  | [optional]
-**type** | [**\kruegge82\weclapp\Model\LedgerAccountType**](LedgerAccountType.md) |  | [optional]
+**type** | **string** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

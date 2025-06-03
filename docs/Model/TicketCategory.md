@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] [readonly]
-**created_date** | **int** |  | [optional] [readonly]
-**last_modified_date** | **int** |  | [optional] [readonly]
+**id** | **string** |  | [optional]
 **version** | **string** |  | [optional]
 **active** | **bool** |  | [optional]
-**name** | **string** |  | [optional]
+**created_date** | **int** |  | [optional]
+**last_modified_date** | **int** |  | [optional]
+**name** | **string** |  |
 **parent_ticket_category_id** | **string** |  | [optional]
 **pseudo_category** | **bool** |  | [optional]
 **published** | **bool** |  | [optional]

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] [readonly]
-**created_date** | **int** |  | [optional] [readonly]
-**last_modified_date** | **int** |  | [optional] [readonly]
+**id** | **string** |  | [optional]
 **version** | **string** |  | [optional]
-**financial_year_id** | **string** |  | [optional]
-**name** | **string** |  | [optional]
+**created_date** | **int** |  | [optional]
+**financial_year_id** | **string** |  |
+**last_modified_date** | **int** |  | [optional]
+**name** | **string** |  |
 **open** | **bool** |  | [optional]
-**period_number** | **int** |  | [optional]
+**period_number** | **int** |  |
 **valid_from** | **int** |  | [optional]
 **valid_to** | **int** |  | [optional]
 

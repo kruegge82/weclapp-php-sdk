@@ -1,24 +1,24 @@
 # kruegge82\weclapp\TaxDeterminationRuleApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**taxDeterminationRuleCountGet()**](TaxDeterminationRuleApi.md#taxDeterminationRuleCountGet) | **GET** /taxDeterminationRule/count | count taxDeterminationRule |
-| [**taxDeterminationRuleGet()**](TaxDeterminationRuleApi.md#taxDeterminationRuleGet) | **GET** /taxDeterminationRule | query taxDeterminationRule |
-| [**taxDeterminationRuleIdIdDelete()**](TaxDeterminationRuleApi.md#taxDeterminationRuleIdIdDelete) | **DELETE** /taxDeterminationRule/id/{id} | delete a taxDeterminationRule |
-| [**taxDeterminationRuleIdIdGet()**](TaxDeterminationRuleApi.md#taxDeterminationRuleIdIdGet) | **GET** /taxDeterminationRule/id/{id} | query a specific taxDeterminationRule |
-| [**taxDeterminationRuleIdIdPut()**](TaxDeterminationRuleApi.md#taxDeterminationRuleIdIdPut) | **PUT** /taxDeterminationRule/id/{id} | update a taxDeterminationRule |
-| [**taxDeterminationRulePost()**](TaxDeterminationRuleApi.md#taxDeterminationRulePost) | **POST** /taxDeterminationRule | create a taxDeterminationRule |
+| [**taxDeterminationRuleCountGet()**](TaxDeterminationRuleApi.md#taxDeterminationRuleCountGet) | **GET** /taxDeterminationRule/count |  |
+| [**taxDeterminationRuleGet()**](TaxDeterminationRuleApi.md#taxDeterminationRuleGet) | **GET** /taxDeterminationRule |  |
+| [**taxDeterminationRuleIdIdDelete()**](TaxDeterminationRuleApi.md#taxDeterminationRuleIdIdDelete) | **DELETE** /taxDeterminationRule/id/{id} |  |
+| [**taxDeterminationRuleIdIdGet()**](TaxDeterminationRuleApi.md#taxDeterminationRuleIdIdGet) | **GET** /taxDeterminationRule/id/{id} |  |
+| [**taxDeterminationRuleIdIdPut()**](TaxDeterminationRuleApi.md#taxDeterminationRuleIdIdPut) | **PUT** /taxDeterminationRule/id/{id} |  |
+| [**taxDeterminationRulePost()**](TaxDeterminationRuleApi.md#taxDeterminationRulePost) | **POST** /taxDeterminationRule |  |
 
 
 ## `taxDeterminationRuleCountGet()`
 
 ```php
-taxDeterminationRuleCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+taxDeterminationRuleCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count taxDeterminationRule
+
 
 count taxDeterminationRule
 
@@ -29,7 +29,7 @@ count taxDeterminationRule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\TaxDeterminationRuleApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->taxDeterminationRuleCountGet($filter);
+    $result = $apiInstance->taxDeterminationRuleCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxDeterminationRuleApi->taxDeterminationRuleCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `taxDeterminationRuleGet()`
 
 ```php
-taxDeterminationRuleGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\TaxDeterminationRuleGet200Response
+taxDeterminationRuleGet($page, $page_size, $sort): \kruegge82\weclapp\Model\TaxDeterminationRuleGet200Response
 ```
 
-query taxDeterminationRule
+
 
 query taxDeterminationRule
 
@@ -91,7 +88,7 @@ query taxDeterminationRule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\TaxDeterminationRuleApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->taxDeterminationRuleGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->taxDeterminationRuleGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxDeterminationRuleApi->taxDeterminationRuleGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 taxDeterminationRuleIdIdDelete($id, $dry_run)
 ```
 
-delete a taxDeterminationRule
+
 
 delete a taxDeterminationRule
 
@@ -165,7 +154,7 @@ delete a taxDeterminationRule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 taxDeterminationRuleIdIdGet($id): \kruegge82\weclapp\Model\TaxDeterminationRule
 ```
 
-query a specific taxDeterminationRule
 
-query a specific taxDeterminationRule
+
+query taxDeterminationRule
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific taxDeterminationRule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `taxDeterminationRuleIdIdPut()`
 
 ```php
-taxDeterminationRuleIdIdPut($id, $tax_determination_rule, $dry_run): \kruegge82\weclapp\Model\TaxDeterminationRule
+taxDeterminationRuleIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\TaxDeterminationRule
 ```
 
-update a taxDeterminationRule
+
 
 update taxDeterminationRule
 
@@ -290,7 +279,7 @@ update taxDeterminationRule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\TaxDeterminationRuleApi(
     $config
 );
 $id = 'id_example'; // string
-$tax_determination_rule = new \kruegge82\weclapp\Model\TaxDeterminationRule(); // \kruegge82\weclapp\Model\TaxDeterminationRule
+$body = new \kruegge82\weclapp\Model\TaxDeterminationRule(); // \kruegge82\weclapp\Model\TaxDeterminationRule
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->taxDeterminationRuleIdIdPut($id, $tax_determination_rule, $dry_run);
+    $result = $apiInstance->taxDeterminationRuleIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxDeterminationRuleApi->taxDeterminationRuleIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **tax_determination_rule** | [**\kruegge82\weclapp\Model\TaxDeterminationRule**](../Model/TaxDeterminationRule.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\TaxDeterminationRule**](../Model/TaxDeterminationRule.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `taxDeterminationRulePost()`
 
 ```php
-taxDeterminationRulePost($tax_determination_rule, $dry_run): \kruegge82\weclapp\Model\TaxDeterminationRule
+taxDeterminationRulePost($body, $dry_run): \kruegge82\weclapp\Model\TaxDeterminationRule
 ```
 
-create a taxDeterminationRule
+
 
 create a taxDeterminationRule
 
@@ -356,7 +345,7 @@ create a taxDeterminationRule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\TaxDeterminationRuleApi(
     new GuzzleHttp\Client(),
     $config
 );
-$tax_determination_rule = new \kruegge82\weclapp\Model\TaxDeterminationRule(); // \kruegge82\weclapp\Model\TaxDeterminationRule
+$body = new \kruegge82\weclapp\Model\TaxDeterminationRule(); // \kruegge82\weclapp\Model\TaxDeterminationRule
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->taxDeterminationRulePost($tax_determination_rule, $dry_run);
+    $result = $apiInstance->taxDeterminationRulePost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxDeterminationRuleApi->taxDeterminationRulePost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **tax_determination_rule** | [**\kruegge82\weclapp\Model\TaxDeterminationRule**](../Model/TaxDeterminationRule.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\TaxDeterminationRule**](../Model/TaxDeterminationRule.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

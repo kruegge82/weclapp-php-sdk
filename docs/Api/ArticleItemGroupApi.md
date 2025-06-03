@@ -1,24 +1,24 @@
 # kruegge82\weclapp\ArticleItemGroupApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**articleItemGroupCountGet()**](ArticleItemGroupApi.md#articleItemGroupCountGet) | **GET** /articleItemGroup/count | count articleItemGroup |
-| [**articleItemGroupGet()**](ArticleItemGroupApi.md#articleItemGroupGet) | **GET** /articleItemGroup | query articleItemGroup |
-| [**articleItemGroupIdIdDelete()**](ArticleItemGroupApi.md#articleItemGroupIdIdDelete) | **DELETE** /articleItemGroup/id/{id} | delete a articleItemGroup |
-| [**articleItemGroupIdIdGet()**](ArticleItemGroupApi.md#articleItemGroupIdIdGet) | **GET** /articleItemGroup/id/{id} | query a specific articleItemGroup |
-| [**articleItemGroupIdIdPut()**](ArticleItemGroupApi.md#articleItemGroupIdIdPut) | **PUT** /articleItemGroup/id/{id} | update a articleItemGroup |
-| [**articleItemGroupPost()**](ArticleItemGroupApi.md#articleItemGroupPost) | **POST** /articleItemGroup | create a articleItemGroup |
+| [**articleItemGroupCountGet()**](ArticleItemGroupApi.md#articleItemGroupCountGet) | **GET** /articleItemGroup/count |  |
+| [**articleItemGroupGet()**](ArticleItemGroupApi.md#articleItemGroupGet) | **GET** /articleItemGroup |  |
+| [**articleItemGroupIdIdDelete()**](ArticleItemGroupApi.md#articleItemGroupIdIdDelete) | **DELETE** /articleItemGroup/id/{id} |  |
+| [**articleItemGroupIdIdGet()**](ArticleItemGroupApi.md#articleItemGroupIdIdGet) | **GET** /articleItemGroup/id/{id} |  |
+| [**articleItemGroupIdIdPut()**](ArticleItemGroupApi.md#articleItemGroupIdIdPut) | **PUT** /articleItemGroup/id/{id} |  |
+| [**articleItemGroupPost()**](ArticleItemGroupApi.md#articleItemGroupPost) | **POST** /articleItemGroup |  |
 
 
 ## `articleItemGroupCountGet()`
 
 ```php
-articleItemGroupCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+articleItemGroupCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count articleItemGroup
+
 
 count articleItemGroup
 
@@ -29,7 +29,7 @@ count articleItemGroup
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleItemGroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->articleItemGroupCountGet($filter);
+    $result = $apiInstance->articleItemGroupCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleItemGroupApi->articleItemGroupCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `articleItemGroupGet()`
 
 ```php
-articleItemGroupGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ArticleItemGroupGet200Response
+articleItemGroupGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ArticleItemGroupGet200Response
 ```
 
-query articleItemGroup
+
 
 query articleItemGroup
 
@@ -91,7 +88,7 @@ query articleItemGroup
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleItemGroupApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->articleItemGroupGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->articleItemGroupGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleItemGroupApi->articleItemGroupGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 articleItemGroupIdIdDelete($id, $dry_run)
 ```
 
-delete a articleItemGroup
+
 
 delete a articleItemGroup
 
@@ -165,7 +154,7 @@ delete a articleItemGroup
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 articleItemGroupIdIdGet($id): \kruegge82\weclapp\Model\ArticleItemGroup
 ```
 
-query a specific articleItemGroup
 
-query a specific articleItemGroup
+
+query articleItemGroup
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific articleItemGroup
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `articleItemGroupIdIdPut()`
 
 ```php
-articleItemGroupIdIdPut($id, $article_item_group, $dry_run): \kruegge82\weclapp\Model\ArticleItemGroup
+articleItemGroupIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\ArticleItemGroup
 ```
 
-update a articleItemGroup
+
 
 update articleItemGroup
 
@@ -290,7 +279,7 @@ update articleItemGroup
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleItemGroupApi(
     $config
 );
 $id = 'id_example'; // string
-$article_item_group = new \kruegge82\weclapp\Model\ArticleItemGroup(); // \kruegge82\weclapp\Model\ArticleItemGroup
+$body = new \kruegge82\weclapp\Model\ArticleItemGroup(); // \kruegge82\weclapp\Model\ArticleItemGroup
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->articleItemGroupIdIdPut($id, $article_item_group, $dry_run);
+    $result = $apiInstance->articleItemGroupIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleItemGroupApi->articleItemGroupIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **article_item_group** | [**\kruegge82\weclapp\Model\ArticleItemGroup**](../Model/ArticleItemGroup.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\ArticleItemGroup**](../Model/ArticleItemGroup.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `articleItemGroupPost()`
 
 ```php
-articleItemGroupPost($article_item_group, $dry_run): \kruegge82\weclapp\Model\ArticleItemGroup
+articleItemGroupPost($body, $dry_run): \kruegge82\weclapp\Model\ArticleItemGroup
 ```
 
-create a articleItemGroup
+
 
 create a articleItemGroup
 
@@ -356,7 +345,7 @@ create a articleItemGroup
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleItemGroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$article_item_group = new \kruegge82\weclapp\Model\ArticleItemGroup(); // \kruegge82\weclapp\Model\ArticleItemGroup
+$body = new \kruegge82\weclapp\Model\ArticleItemGroup(); // \kruegge82\weclapp\Model\ArticleItemGroup
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->articleItemGroupPost($article_item_group, $dry_run);
+    $result = $apiInstance->articleItemGroupPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleItemGroupApi->articleItemGroupPost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **article_item_group** | [**\kruegge82\weclapp\Model\ArticleItemGroup**](../Model/ArticleItemGroup.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\ArticleItemGroup**](../Model/ArticleItemGroup.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

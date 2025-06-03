@@ -1,23 +1,23 @@
 # kruegge82\weclapp\CashAccountApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**cashAccountCountGet()**](CashAccountApi.md#cashAccountCountGet) | **GET** /cashAccount/count | count cashAccount |
-| [**cashAccountGet()**](CashAccountApi.md#cashAccountGet) | **GET** /cashAccount | query cashAccount |
-| [**cashAccountIdIdGet()**](CashAccountApi.md#cashAccountIdIdGet) | **GET** /cashAccount/id/{id} | query a specific cashAccount |
-| [**cashAccountIdIdPut()**](CashAccountApi.md#cashAccountIdIdPut) | **PUT** /cashAccount/id/{id} | update a cashAccount |
-| [**cashAccountPost()**](CashAccountApi.md#cashAccountPost) | **POST** /cashAccount | create a cashAccount |
+| [**cashAccountCountGet()**](CashAccountApi.md#cashAccountCountGet) | **GET** /cashAccount/count |  |
+| [**cashAccountGet()**](CashAccountApi.md#cashAccountGet) | **GET** /cashAccount |  |
+| [**cashAccountIdIdGet()**](CashAccountApi.md#cashAccountIdIdGet) | **GET** /cashAccount/id/{id} |  |
+| [**cashAccountIdIdPut()**](CashAccountApi.md#cashAccountIdIdPut) | **PUT** /cashAccount/id/{id} |  |
+| [**cashAccountPost()**](CashAccountApi.md#cashAccountPost) | **POST** /cashAccount |  |
 
 
 ## `cashAccountCountGet()`
 
 ```php
-cashAccountCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+cashAccountCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count cashAccount
+
 
 count cashAccount
 
@@ -28,7 +28,7 @@ count cashAccount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -40,10 +40,9 @@ $apiInstance = new kruegge82\weclapp\Api\CashAccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->cashAccountCountGet($filter);
+    $result = $apiInstance->cashAccountCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CashAccountApi->cashAccountCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,9 +51,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -62,7 +59,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -76,10 +73,10 @@ try {
 ## `cashAccountGet()`
 
 ```php
-cashAccountGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\CashAccountGet200Response
+cashAccountGet($page, $page_size, $sort): \kruegge82\weclapp\Model\CashAccountGet200Response
 ```
 
-query cashAccount
+
 
 query cashAccount
 
@@ -90,7 +87,7 @@ query cashAccount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -104,14 +101,10 @@ $apiInstance = new kruegge82\weclapp\Api\CashAccountApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->cashAccountGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->cashAccountGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CashAccountApi->cashAccountGet: ', $e->getMessage(), PHP_EOL;
@@ -124,11 +117,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -136,7 +125,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -153,9 +142,9 @@ try {
 cashAccountIdIdGet($id): \kruegge82\weclapp\Model\CashAccount
 ```
 
-query a specific cashAccount
 
-query a specific cashAccount
+
+query cashAccount
 
 ### Example
 
@@ -164,7 +153,7 @@ query a specific cashAccount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -198,7 +187,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -212,10 +201,10 @@ try {
 ## `cashAccountIdIdPut()`
 
 ```php
-cashAccountIdIdPut($id, $cash_account, $dry_run): \kruegge82\weclapp\Model\CashAccount
+cashAccountIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\CashAccount
 ```
 
-update a cashAccount
+
 
 update cashAccount
 
@@ -226,7 +215,7 @@ update cashAccount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -239,11 +228,11 @@ $apiInstance = new kruegge82\weclapp\Api\CashAccountApi(
     $config
 );
 $id = 'id_example'; // string
-$cash_account = new \kruegge82\weclapp\Model\CashAccount(); // \kruegge82\weclapp\Model\CashAccount
+$body = new \kruegge82\weclapp\Model\CashAccount(); // \kruegge82\weclapp\Model\CashAccount
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->cashAccountIdIdPut($id, $cash_account, $dry_run);
+    $result = $apiInstance->cashAccountIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CashAccountApi->cashAccountIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -255,7 +244,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **cash_account** | [**\kruegge82\weclapp\Model\CashAccount**](../Model/CashAccount.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CashAccount**](../Model/CashAccount.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -264,7 +253,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -278,10 +267,10 @@ try {
 ## `cashAccountPost()`
 
 ```php
-cashAccountPost($cash_account, $dry_run): \kruegge82\weclapp\Model\CashAccount
+cashAccountPost($body, $dry_run): \kruegge82\weclapp\Model\CashAccount
 ```
 
-create a cashAccount
+
 
 create a cashAccount
 
@@ -292,7 +281,7 @@ create a cashAccount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -304,11 +293,11 @@ $apiInstance = new kruegge82\weclapp\Api\CashAccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$cash_account = new \kruegge82\weclapp\Model\CashAccount(); // \kruegge82\weclapp\Model\CashAccount
+$body = new \kruegge82\weclapp\Model\CashAccount(); // \kruegge82\weclapp\Model\CashAccount
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->cashAccountPost($cash_account, $dry_run);
+    $result = $apiInstance->cashAccountPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CashAccountApi->cashAccountPost: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **cash_account** | [**\kruegge82\weclapp\Model\CashAccount**](../Model/CashAccount.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CashAccount**](../Model/CashAccount.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

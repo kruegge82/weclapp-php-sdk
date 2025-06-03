@@ -4,16 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] [readonly]
-**created_date** | **int** |  | [optional] [readonly]
-**last_modified_date** | **int** |  | [optional] [readonly]
+**id** | **string** |  | [optional]
 **version** | **string** |  | [optional]
 **account_id** | **string** |  | [optional]
 **active** | **bool** |  | [optional]
-**currency_id** | **string** |  | [optional]
-**currency_name** | **string** |  | [optional]
+**created_date** | **int** |  | [optional]
+**currency_id** | **string** |  |
 **description** | **string** |  | [optional]
+**last_modified_date** | **int** |  | [optional]
 **opening_balance** | **float** |  | [optional]
-**treasurer_id** | **string** |  | [optional]
+**treasurer_id** | **string** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

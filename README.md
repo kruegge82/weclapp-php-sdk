@@ -49,7 +49,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -61,10 +61,10 @@ $apiInstance = new kruegge82\weclapp\Api\AccountingTransactionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$accounting_transaction_batch_booking_post_request = new \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPostRequest(); // \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPostRequest
+$body = new \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPostRequest(); // \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPostRequest
 
 try {
-    $result = $apiInstance->accountingTransactionBatchBookingPost($accounting_transaction_batch_booking_post_request);
+    $result = $apiInstance->accountingTransactionBatchBookingPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountingTransactionApi->accountingTransactionBatchBookingPost: ', $e->getMessage(), PHP_EOL;
@@ -74,530 +74,530 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://localhost:80/webapp/api/v1*
+All URIs are relative to *http://nullapi/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccountingTransactionApi* | [**accountingTransactionBatchBookingPost**](docs/Api/AccountingTransactionApi.md#accountingtransactionbatchbookingpost) | **POST** /accountingTransaction/batchBooking | Creates an accounting transaction of type &#39;impersonal&#39;
-*AccountingTransactionApi* | [**accountingTransactionCountGet**](docs/Api/AccountingTransactionApi.md#accountingtransactioncountget) | **GET** /accountingTransaction/count | count accountingTransaction
-*AccountingTransactionApi* | [**accountingTransactionGet**](docs/Api/AccountingTransactionApi.md#accountingtransactionget) | **GET** /accountingTransaction | query accountingTransaction
-*AccountingTransactionApi* | [**accountingTransactionIdIdGet**](docs/Api/AccountingTransactionApi.md#accountingtransactionididget) | **GET** /accountingTransaction/id/{id} | query a specific accountingTransaction
-*ArchivedEmailApi* | [**archivedEmailCountGet**](docs/Api/ArchivedEmailApi.md#archivedemailcountget) | **GET** /archivedEmail/count | count archivedEmail
-*ArchivedEmailApi* | [**archivedEmailGet**](docs/Api/ArchivedEmailApi.md#archivedemailget) | **GET** /archivedEmail | query archivedEmail
-*ArchivedEmailApi* | [**archivedEmailIdIdGet**](docs/Api/ArchivedEmailApi.md#archivedemailididget) | **GET** /archivedEmail/id/{id} | query a specific archivedEmail
+*AccountingTransactionApi* | [**accountingTransactionBatchBookingPost**](docs/Api/AccountingTransactionApi.md#accountingtransactionbatchbookingpost) | **POST** /accountingTransaction/batchBooking | 
+*AccountingTransactionApi* | [**accountingTransactionCountGet**](docs/Api/AccountingTransactionApi.md#accountingtransactioncountget) | **GET** /accountingTransaction/count | 
+*AccountingTransactionApi* | [**accountingTransactionGet**](docs/Api/AccountingTransactionApi.md#accountingtransactionget) | **GET** /accountingTransaction | 
+*AccountingTransactionApi* | [**accountingTransactionIdIdGet**](docs/Api/AccountingTransactionApi.md#accountingtransactionididget) | **GET** /accountingTransaction/id/{id} | 
+*ArchivedEmailApi* | [**archivedEmailCountGet**](docs/Api/ArchivedEmailApi.md#archivedemailcountget) | **GET** /archivedEmail/count | 
+*ArchivedEmailApi* | [**archivedEmailGet**](docs/Api/ArchivedEmailApi.md#archivedemailget) | **GET** /archivedEmail | 
+*ArchivedEmailApi* | [**archivedEmailIdIdGet**](docs/Api/ArchivedEmailApi.md#archivedemailididget) | **GET** /archivedEmail/id/{id} | 
 *ArchivedEmailApi* | [**archivedEmailIdIdRemoveReferencePost**](docs/Api/ArchivedEmailApi.md#archivedemailididremovereferencepost) | **POST** /archivedEmail/id/{id}/removeReference | 
-*ArticleApi* | [**articleCountGet**](docs/Api/ArticleApi.md#articlecountget) | **GET** /article/count | count article
-*ArticleApi* | [**articleGet**](docs/Api/ArticleApi.md#articleget) | **GET** /article | query article
+*ArticleApi* | [**articleCountGet**](docs/Api/ArticleApi.md#articlecountget) | **GET** /article/count | 
+*ArticleApi* | [**articleGet**](docs/Api/ArticleApi.md#articleget) | **GET** /article | 
 *ArticleApi* | [**articleIdIdChangeUnitPost**](docs/Api/ArticleApi.md#articleididchangeunitpost) | **POST** /article/id/{id}/changeUnit | 
 *ArticleApi* | [**articleIdIdCreateDatasheetPdfPost**](docs/Api/ArticleApi.md#articleididcreatedatasheetpdfpost) | **POST** /article/id/{id}/createDatasheetPdf | 
 *ArticleApi* | [**articleIdIdCreateLabelPdfPost**](docs/Api/ArticleApi.md#articleididcreatelabelpdfpost) | **POST** /article/id/{id}/createLabelPdf | 
-*ArticleApi* | [**articleIdIdDelete**](docs/Api/ArticleApi.md#articleididdelete) | **DELETE** /article/id/{id} | delete a article
+*ArticleApi* | [**articleIdIdDelete**](docs/Api/ArticleApi.md#articleididdelete) | **DELETE** /article/id/{id} | 
 *ArticleApi* | [**articleIdIdDownloadArticleImageGet**](docs/Api/ArticleApi.md#articleididdownloadarticleimageget) | **GET** /article/id/{id}/downloadArticleImage | 
 *ArticleApi* | [**articleIdIdDownloadMainArticleImageGet**](docs/Api/ArticleApi.md#articleididdownloadmainarticleimageget) | **GET** /article/id/{id}/downloadMainArticleImage | 
-*ArticleApi* | [**articleIdIdGet**](docs/Api/ArticleApi.md#articleididget) | **GET** /article/id/{id} | query a specific article
+*ArticleApi* | [**articleIdIdGet**](docs/Api/ArticleApi.md#articleididget) | **GET** /article/id/{id} | 
 *ArticleApi* | [**articleIdIdPackagingUnitStructureGet**](docs/Api/ArticleApi.md#articleididpackagingunitstructureget) | **GET** /article/id/{id}/packagingUnitStructure | 
-*ArticleApi* | [**articleIdIdPut**](docs/Api/ArticleApi.md#articleididput) | **PUT** /article/id/{id} | update a article
+*ArticleApi* | [**articleIdIdPut**](docs/Api/ArticleApi.md#articleididput) | **PUT** /article/id/{id} | 
 *ArticleApi* | [**articleIdIdUploadArticleImagePost**](docs/Api/ArticleApi.md#articleididuploadarticleimagepost) | **POST** /article/id/{id}/uploadArticleImage | 
-*ArticleApi* | [**articlePost**](docs/Api/ArticleApi.md#articlepost) | **POST** /article | create a article
-*ArticleAccountingCodeApi* | [**articleAccountingCodeCountGet**](docs/Api/ArticleAccountingCodeApi.md#articleaccountingcodecountget) | **GET** /articleAccountingCode/count | count articleAccountingCode
-*ArticleAccountingCodeApi* | [**articleAccountingCodeGet**](docs/Api/ArticleAccountingCodeApi.md#articleaccountingcodeget) | **GET** /articleAccountingCode | query articleAccountingCode
-*ArticleAccountingCodeApi* | [**articleAccountingCodeIdIdDelete**](docs/Api/ArticleAccountingCodeApi.md#articleaccountingcodeididdelete) | **DELETE** /articleAccountingCode/id/{id} | delete a articleAccountingCode
-*ArticleAccountingCodeApi* | [**articleAccountingCodeIdIdGet**](docs/Api/ArticleAccountingCodeApi.md#articleaccountingcodeididget) | **GET** /articleAccountingCode/id/{id} | query a specific articleAccountingCode
-*ArticleAccountingCodeApi* | [**articleAccountingCodeIdIdPut**](docs/Api/ArticleAccountingCodeApi.md#articleaccountingcodeididput) | **PUT** /articleAccountingCode/id/{id} | update a articleAccountingCode
-*ArticleAccountingCodeApi* | [**articleAccountingCodePost**](docs/Api/ArticleAccountingCodeApi.md#articleaccountingcodepost) | **POST** /articleAccountingCode | create a articleAccountingCode
-*ArticleCategoryApi* | [**articleCategoryCountGet**](docs/Api/ArticleCategoryApi.md#articlecategorycountget) | **GET** /articleCategory/count | count articleCategory
-*ArticleCategoryApi* | [**articleCategoryGet**](docs/Api/ArticleCategoryApi.md#articlecategoryget) | **GET** /articleCategory | query articleCategory
-*ArticleCategoryApi* | [**articleCategoryIdIdDelete**](docs/Api/ArticleCategoryApi.md#articlecategoryididdelete) | **DELETE** /articleCategory/id/{id} | delete a articleCategory
+*ArticleApi* | [**articlePost**](docs/Api/ArticleApi.md#articlepost) | **POST** /article | 
+*ArticleAccountingCodeApi* | [**articleAccountingCodeCountGet**](docs/Api/ArticleAccountingCodeApi.md#articleaccountingcodecountget) | **GET** /articleAccountingCode/count | 
+*ArticleAccountingCodeApi* | [**articleAccountingCodeGet**](docs/Api/ArticleAccountingCodeApi.md#articleaccountingcodeget) | **GET** /articleAccountingCode | 
+*ArticleAccountingCodeApi* | [**articleAccountingCodeIdIdDelete**](docs/Api/ArticleAccountingCodeApi.md#articleaccountingcodeididdelete) | **DELETE** /articleAccountingCode/id/{id} | 
+*ArticleAccountingCodeApi* | [**articleAccountingCodeIdIdGet**](docs/Api/ArticleAccountingCodeApi.md#articleaccountingcodeididget) | **GET** /articleAccountingCode/id/{id} | 
+*ArticleAccountingCodeApi* | [**articleAccountingCodeIdIdPut**](docs/Api/ArticleAccountingCodeApi.md#articleaccountingcodeididput) | **PUT** /articleAccountingCode/id/{id} | 
+*ArticleAccountingCodeApi* | [**articleAccountingCodePost**](docs/Api/ArticleAccountingCodeApi.md#articleaccountingcodepost) | **POST** /articleAccountingCode | 
+*ArticleCategoryApi* | [**articleCategoryCountGet**](docs/Api/ArticleCategoryApi.md#articlecategorycountget) | **GET** /articleCategory/count | 
+*ArticleCategoryApi* | [**articleCategoryGet**](docs/Api/ArticleCategoryApi.md#articlecategoryget) | **GET** /articleCategory | 
+*ArticleCategoryApi* | [**articleCategoryIdIdDelete**](docs/Api/ArticleCategoryApi.md#articlecategoryididdelete) | **DELETE** /articleCategory/id/{id} | 
 *ArticleCategoryApi* | [**articleCategoryIdIdDownloadImageGet**](docs/Api/ArticleCategoryApi.md#articlecategoryididdownloadimageget) | **GET** /articleCategory/id/{id}/downloadImage | 
-*ArticleCategoryApi* | [**articleCategoryIdIdGet**](docs/Api/ArticleCategoryApi.md#articlecategoryididget) | **GET** /articleCategory/id/{id} | query a specific articleCategory
-*ArticleCategoryApi* | [**articleCategoryIdIdPut**](docs/Api/ArticleCategoryApi.md#articlecategoryididput) | **PUT** /articleCategory/id/{id} | update a articleCategory
+*ArticleCategoryApi* | [**articleCategoryIdIdGet**](docs/Api/ArticleCategoryApi.md#articlecategoryididget) | **GET** /articleCategory/id/{id} | 
+*ArticleCategoryApi* | [**articleCategoryIdIdPut**](docs/Api/ArticleCategoryApi.md#articlecategoryididput) | **PUT** /articleCategory/id/{id} | 
 *ArticleCategoryApi* | [**articleCategoryIdIdUploadImagePost**](docs/Api/ArticleCategoryApi.md#articlecategoryididuploadimagepost) | **POST** /articleCategory/id/{id}/uploadImage | 
-*ArticleCategoryApi* | [**articleCategoryPost**](docs/Api/ArticleCategoryApi.md#articlecategorypost) | **POST** /articleCategory | create a articleCategory
-*ArticleCategoryClassificationApi* | [**articleCategoryClassificationCountGet**](docs/Api/ArticleCategoryClassificationApi.md#articlecategoryclassificationcountget) | **GET** /articleCategoryClassification/count | count articleCategoryClassification
-*ArticleCategoryClassificationApi* | [**articleCategoryClassificationGet**](docs/Api/ArticleCategoryClassificationApi.md#articlecategoryclassificationget) | **GET** /articleCategoryClassification | query articleCategoryClassification
-*ArticleCategoryClassificationApi* | [**articleCategoryClassificationIdIdDelete**](docs/Api/ArticleCategoryClassificationApi.md#articlecategoryclassificationididdelete) | **DELETE** /articleCategoryClassification/id/{id} | delete a articleCategoryClassification
-*ArticleCategoryClassificationApi* | [**articleCategoryClassificationIdIdGet**](docs/Api/ArticleCategoryClassificationApi.md#articlecategoryclassificationididget) | **GET** /articleCategoryClassification/id/{id} | query a specific articleCategoryClassification
-*ArticleCategoryClassificationApi* | [**articleCategoryClassificationIdIdPut**](docs/Api/ArticleCategoryClassificationApi.md#articlecategoryclassificationididput) | **PUT** /articleCategoryClassification/id/{id} | update a articleCategoryClassification
-*ArticleCategoryClassificationApi* | [**articleCategoryClassificationPost**](docs/Api/ArticleCategoryClassificationApi.md#articlecategoryclassificationpost) | **POST** /articleCategoryClassification | create a articleCategoryClassification
-*ArticleItemGroupApi* | [**articleItemGroupCountGet**](docs/Api/ArticleItemGroupApi.md#articleitemgroupcountget) | **GET** /articleItemGroup/count | count articleItemGroup
-*ArticleItemGroupApi* | [**articleItemGroupGet**](docs/Api/ArticleItemGroupApi.md#articleitemgroupget) | **GET** /articleItemGroup | query articleItemGroup
-*ArticleItemGroupApi* | [**articleItemGroupIdIdDelete**](docs/Api/ArticleItemGroupApi.md#articleitemgroupididdelete) | **DELETE** /articleItemGroup/id/{id} | delete a articleItemGroup
-*ArticleItemGroupApi* | [**articleItemGroupIdIdGet**](docs/Api/ArticleItemGroupApi.md#articleitemgroupididget) | **GET** /articleItemGroup/id/{id} | query a specific articleItemGroup
-*ArticleItemGroupApi* | [**articleItemGroupIdIdPut**](docs/Api/ArticleItemGroupApi.md#articleitemgroupididput) | **PUT** /articleItemGroup/id/{id} | update a articleItemGroup
-*ArticleItemGroupApi* | [**articleItemGroupPost**](docs/Api/ArticleItemGroupApi.md#articleitemgrouppost) | **POST** /articleItemGroup | create a articleItemGroup
-*ArticlePriceApi* | [**articlePriceCountGet**](docs/Api/ArticlePriceApi.md#articlepricecountget) | **GET** /articlePrice/count | count articlePrice
-*ArticlePriceApi* | [**articlePriceGet**](docs/Api/ArticlePriceApi.md#articlepriceget) | **GET** /articlePrice | query articlePrice
-*ArticlePriceApi* | [**articlePriceIdIdGet**](docs/Api/ArticlePriceApi.md#articlepriceididget) | **GET** /articlePrice/id/{id} | query a specific articlePrice
-*ArticleRatingApi* | [**articleRatingCountGet**](docs/Api/ArticleRatingApi.md#articleratingcountget) | **GET** /articleRating/count | count articleRating
-*ArticleRatingApi* | [**articleRatingGet**](docs/Api/ArticleRatingApi.md#articleratingget) | **GET** /articleRating | query articleRating
-*ArticleRatingApi* | [**articleRatingIdIdDelete**](docs/Api/ArticleRatingApi.md#articleratingididdelete) | **DELETE** /articleRating/id/{id} | delete a articleRating
-*ArticleRatingApi* | [**articleRatingIdIdGet**](docs/Api/ArticleRatingApi.md#articleratingididget) | **GET** /articleRating/id/{id} | query a specific articleRating
-*ArticleRatingApi* | [**articleRatingIdIdPut**](docs/Api/ArticleRatingApi.md#articleratingididput) | **PUT** /articleRating/id/{id} | update a articleRating
-*ArticleRatingApi* | [**articleRatingPost**](docs/Api/ArticleRatingApi.md#articleratingpost) | **POST** /articleRating | create a articleRating
-*ArticleStatusApi* | [**articleStatusCountGet**](docs/Api/ArticleStatusApi.md#articlestatuscountget) | **GET** /articleStatus/count | count articleStatus
-*ArticleStatusApi* | [**articleStatusGet**](docs/Api/ArticleStatusApi.md#articlestatusget) | **GET** /articleStatus | query articleStatus
-*ArticleStatusApi* | [**articleStatusIdIdDelete**](docs/Api/ArticleStatusApi.md#articlestatusididdelete) | **DELETE** /articleStatus/id/{id} | delete a articleStatus
-*ArticleStatusApi* | [**articleStatusIdIdGet**](docs/Api/ArticleStatusApi.md#articlestatusididget) | **GET** /articleStatus/id/{id} | query a specific articleStatus
-*ArticleStatusApi* | [**articleStatusIdIdPut**](docs/Api/ArticleStatusApi.md#articlestatusididput) | **PUT** /articleStatus/id/{id} | update a articleStatus
-*ArticleStatusApi* | [**articleStatusPost**](docs/Api/ArticleStatusApi.md#articlestatuspost) | **POST** /articleStatus | create a articleStatus
-*ArticleSupplySourceApi* | [**articleSupplySourceCountGet**](docs/Api/ArticleSupplySourceApi.md#articlesupplysourcecountget) | **GET** /articleSupplySource/count | count articleSupplySource
-*ArticleSupplySourceApi* | [**articleSupplySourceGet**](docs/Api/ArticleSupplySourceApi.md#articlesupplysourceget) | **GET** /articleSupplySource | query articleSupplySource
-*ArticleSupplySourceApi* | [**articleSupplySourceIdIdDelete**](docs/Api/ArticleSupplySourceApi.md#articlesupplysourceididdelete) | **DELETE** /articleSupplySource/id/{id} | delete a articleSupplySource
-*ArticleSupplySourceApi* | [**articleSupplySourceIdIdGet**](docs/Api/ArticleSupplySourceApi.md#articlesupplysourceididget) | **GET** /articleSupplySource/id/{id} | query a specific articleSupplySource
-*ArticleSupplySourceApi* | [**articleSupplySourceIdIdPut**](docs/Api/ArticleSupplySourceApi.md#articlesupplysourceididput) | **PUT** /articleSupplySource/id/{id} | update a articleSupplySource
-*ArticleSupplySourceApi* | [**articleSupplySourcePost**](docs/Api/ArticleSupplySourceApi.md#articlesupplysourcepost) | **POST** /articleSupplySource | create a articleSupplySource
-*AttendanceApi* | [**attendanceCountGet**](docs/Api/AttendanceApi.md#attendancecountget) | **GET** /attendance/count | count attendance
+*ArticleCategoryApi* | [**articleCategoryPost**](docs/Api/ArticleCategoryApi.md#articlecategorypost) | **POST** /articleCategory | 
+*ArticleCategoryClassificationApi* | [**articleCategoryClassificationCountGet**](docs/Api/ArticleCategoryClassificationApi.md#articlecategoryclassificationcountget) | **GET** /articleCategoryClassification/count | 
+*ArticleCategoryClassificationApi* | [**articleCategoryClassificationGet**](docs/Api/ArticleCategoryClassificationApi.md#articlecategoryclassificationget) | **GET** /articleCategoryClassification | 
+*ArticleCategoryClassificationApi* | [**articleCategoryClassificationIdIdDelete**](docs/Api/ArticleCategoryClassificationApi.md#articlecategoryclassificationididdelete) | **DELETE** /articleCategoryClassification/id/{id} | 
+*ArticleCategoryClassificationApi* | [**articleCategoryClassificationIdIdGet**](docs/Api/ArticleCategoryClassificationApi.md#articlecategoryclassificationididget) | **GET** /articleCategoryClassification/id/{id} | 
+*ArticleCategoryClassificationApi* | [**articleCategoryClassificationIdIdPut**](docs/Api/ArticleCategoryClassificationApi.md#articlecategoryclassificationididput) | **PUT** /articleCategoryClassification/id/{id} | 
+*ArticleCategoryClassificationApi* | [**articleCategoryClassificationPost**](docs/Api/ArticleCategoryClassificationApi.md#articlecategoryclassificationpost) | **POST** /articleCategoryClassification | 
+*ArticleItemGroupApi* | [**articleItemGroupCountGet**](docs/Api/ArticleItemGroupApi.md#articleitemgroupcountget) | **GET** /articleItemGroup/count | 
+*ArticleItemGroupApi* | [**articleItemGroupGet**](docs/Api/ArticleItemGroupApi.md#articleitemgroupget) | **GET** /articleItemGroup | 
+*ArticleItemGroupApi* | [**articleItemGroupIdIdDelete**](docs/Api/ArticleItemGroupApi.md#articleitemgroupididdelete) | **DELETE** /articleItemGroup/id/{id} | 
+*ArticleItemGroupApi* | [**articleItemGroupIdIdGet**](docs/Api/ArticleItemGroupApi.md#articleitemgroupididget) | **GET** /articleItemGroup/id/{id} | 
+*ArticleItemGroupApi* | [**articleItemGroupIdIdPut**](docs/Api/ArticleItemGroupApi.md#articleitemgroupididput) | **PUT** /articleItemGroup/id/{id} | 
+*ArticleItemGroupApi* | [**articleItemGroupPost**](docs/Api/ArticleItemGroupApi.md#articleitemgrouppost) | **POST** /articleItemGroup | 
+*ArticlePriceApi* | [**articlePriceCountGet**](docs/Api/ArticlePriceApi.md#articlepricecountget) | **GET** /articlePrice/count | 
+*ArticlePriceApi* | [**articlePriceGet**](docs/Api/ArticlePriceApi.md#articlepriceget) | **GET** /articlePrice | 
+*ArticlePriceApi* | [**articlePriceIdIdGet**](docs/Api/ArticlePriceApi.md#articlepriceididget) | **GET** /articlePrice/id/{id} | 
+*ArticleRatingApi* | [**articleRatingCountGet**](docs/Api/ArticleRatingApi.md#articleratingcountget) | **GET** /articleRating/count | 
+*ArticleRatingApi* | [**articleRatingGet**](docs/Api/ArticleRatingApi.md#articleratingget) | **GET** /articleRating | 
+*ArticleRatingApi* | [**articleRatingIdIdDelete**](docs/Api/ArticleRatingApi.md#articleratingididdelete) | **DELETE** /articleRating/id/{id} | 
+*ArticleRatingApi* | [**articleRatingIdIdGet**](docs/Api/ArticleRatingApi.md#articleratingididget) | **GET** /articleRating/id/{id} | 
+*ArticleRatingApi* | [**articleRatingIdIdPut**](docs/Api/ArticleRatingApi.md#articleratingididput) | **PUT** /articleRating/id/{id} | 
+*ArticleRatingApi* | [**articleRatingPost**](docs/Api/ArticleRatingApi.md#articleratingpost) | **POST** /articleRating | 
+*ArticleStatusApi* | [**articleStatusCountGet**](docs/Api/ArticleStatusApi.md#articlestatuscountget) | **GET** /articleStatus/count | 
+*ArticleStatusApi* | [**articleStatusGet**](docs/Api/ArticleStatusApi.md#articlestatusget) | **GET** /articleStatus | 
+*ArticleStatusApi* | [**articleStatusIdIdDelete**](docs/Api/ArticleStatusApi.md#articlestatusididdelete) | **DELETE** /articleStatus/id/{id} | 
+*ArticleStatusApi* | [**articleStatusIdIdGet**](docs/Api/ArticleStatusApi.md#articlestatusididget) | **GET** /articleStatus/id/{id} | 
+*ArticleStatusApi* | [**articleStatusIdIdPut**](docs/Api/ArticleStatusApi.md#articlestatusididput) | **PUT** /articleStatus/id/{id} | 
+*ArticleStatusApi* | [**articleStatusPost**](docs/Api/ArticleStatusApi.md#articlestatuspost) | **POST** /articleStatus | 
+*ArticleSupplySourceApi* | [**articleSupplySourceCountGet**](docs/Api/ArticleSupplySourceApi.md#articlesupplysourcecountget) | **GET** /articleSupplySource/count | 
+*ArticleSupplySourceApi* | [**articleSupplySourceGet**](docs/Api/ArticleSupplySourceApi.md#articlesupplysourceget) | **GET** /articleSupplySource | 
+*ArticleSupplySourceApi* | [**articleSupplySourceIdIdDelete**](docs/Api/ArticleSupplySourceApi.md#articlesupplysourceididdelete) | **DELETE** /articleSupplySource/id/{id} | 
+*ArticleSupplySourceApi* | [**articleSupplySourceIdIdGet**](docs/Api/ArticleSupplySourceApi.md#articlesupplysourceididget) | **GET** /articleSupplySource/id/{id} | 
+*ArticleSupplySourceApi* | [**articleSupplySourceIdIdPut**](docs/Api/ArticleSupplySourceApi.md#articlesupplysourceididput) | **PUT** /articleSupplySource/id/{id} | 
+*ArticleSupplySourceApi* | [**articleSupplySourcePost**](docs/Api/ArticleSupplySourceApi.md#articlesupplysourcepost) | **POST** /articleSupplySource | 
+*AttendanceApi* | [**attendanceCountGet**](docs/Api/AttendanceApi.md#attendancecountget) | **GET** /attendance/count | 
 *AttendanceApi* | [**attendanceCurrentAttendanceGet**](docs/Api/AttendanceApi.md#attendancecurrentattendanceget) | **GET** /attendance/currentAttendance | 
-*AttendanceApi* | [**attendanceGet**](docs/Api/AttendanceApi.md#attendanceget) | **GET** /attendance | query attendance
-*AttendanceApi* | [**attendanceIdIdDelete**](docs/Api/AttendanceApi.md#attendanceididdelete) | **DELETE** /attendance/id/{id} | delete a attendance
-*AttendanceApi* | [**attendanceIdIdGet**](docs/Api/AttendanceApi.md#attendanceididget) | **GET** /attendance/id/{id} | query a specific attendance
-*AttendanceApi* | [**attendanceIdIdPut**](docs/Api/AttendanceApi.md#attendanceididput) | **PUT** /attendance/id/{id} | update a attendance
+*AttendanceApi* | [**attendanceGet**](docs/Api/AttendanceApi.md#attendanceget) | **GET** /attendance | 
+*AttendanceApi* | [**attendanceIdIdDelete**](docs/Api/AttendanceApi.md#attendanceididdelete) | **DELETE** /attendance/id/{id} | 
+*AttendanceApi* | [**attendanceIdIdGet**](docs/Api/AttendanceApi.md#attendanceididget) | **GET** /attendance/id/{id} | 
+*AttendanceApi* | [**attendanceIdIdPut**](docs/Api/AttendanceApi.md#attendanceididput) | **PUT** /attendance/id/{id} | 
 *AttendanceApi* | [**attendanceLogOffPost**](docs/Api/AttendanceApi.md#attendancelogoffpost) | **POST** /attendance/logOff | 
 *AttendanceApi* | [**attendanceLogOnPost**](docs/Api/AttendanceApi.md#attendancelogonpost) | **POST** /attendance/logOn | 
-*AttendanceApi* | [**attendancePost**](docs/Api/AttendanceApi.md#attendancepost) | **POST** /attendance | create a attendance
-*BankAccountApi* | [**bankAccountCountGet**](docs/Api/BankAccountApi.md#bankaccountcountget) | **GET** /bankAccount/count | count bankAccount
-*BankAccountApi* | [**bankAccountGet**](docs/Api/BankAccountApi.md#bankaccountget) | **GET** /bankAccount | query bankAccount
-*BankAccountApi* | [**bankAccountIdIdDelete**](docs/Api/BankAccountApi.md#bankaccountididdelete) | **DELETE** /bankAccount/id/{id} | delete a bankAccount
-*BankAccountApi* | [**bankAccountIdIdGet**](docs/Api/BankAccountApi.md#bankaccountididget) | **GET** /bankAccount/id/{id} | query a specific bankAccount
-*BankAccountApi* | [**bankAccountIdIdPut**](docs/Api/BankAccountApi.md#bankaccountididput) | **PUT** /bankAccount/id/{id} | update a bankAccount
-*BankAccountApi* | [**bankAccountPost**](docs/Api/BankAccountApi.md#bankaccountpost) | **POST** /bankAccount | create a bankAccount
-*BankTransactionApi* | [**bankTransactionCountGet**](docs/Api/BankTransactionApi.md#banktransactioncountget) | **GET** /bankTransaction/count | count bankTransaction
-*BankTransactionApi* | [**bankTransactionGet**](docs/Api/BankTransactionApi.md#banktransactionget) | **GET** /bankTransaction | query bankTransaction
-*BankTransactionApi* | [**bankTransactionIdIdDelete**](docs/Api/BankTransactionApi.md#banktransactionididdelete) | **DELETE** /bankTransaction/id/{id} | delete a bankTransaction
-*BankTransactionApi* | [**bankTransactionIdIdGet**](docs/Api/BankTransactionApi.md#banktransactionididget) | **GET** /bankTransaction/id/{id} | query a specific bankTransaction
-*BatchNumberApi* | [**batchNumberCountGet**](docs/Api/BatchNumberApi.md#batchnumbercountget) | **GET** /batchNumber/count | count batchNumber
-*BatchNumberApi* | [**batchNumberGet**](docs/Api/BatchNumberApi.md#batchnumberget) | **GET** /batchNumber | query batchNumber
-*BatchNumberApi* | [**batchNumberIdIdGet**](docs/Api/BatchNumberApi.md#batchnumberididget) | **GET** /batchNumber/id/{id} | query a specific batchNumber
-*BlanketPurchaseOrderApi* | [**blanketPurchaseOrderCountGet**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseordercountget) | **GET** /blanketPurchaseOrder/count | count blanketPurchaseOrder
-*BlanketPurchaseOrderApi* | [**blanketPurchaseOrderGet**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderget) | **GET** /blanketPurchaseOrder | query blanketPurchaseOrder
-*BlanketPurchaseOrderApi* | [**blanketPurchaseOrderIdIdDelete**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderididdelete) | **DELETE** /blanketPurchaseOrder/id/{id} | delete a blanketPurchaseOrder
+*AttendanceApi* | [**attendancePost**](docs/Api/AttendanceApi.md#attendancepost) | **POST** /attendance | 
+*BankAccountApi* | [**bankAccountCountGet**](docs/Api/BankAccountApi.md#bankaccountcountget) | **GET** /bankAccount/count | 
+*BankAccountApi* | [**bankAccountGet**](docs/Api/BankAccountApi.md#bankaccountget) | **GET** /bankAccount | 
+*BankAccountApi* | [**bankAccountIdIdDelete**](docs/Api/BankAccountApi.md#bankaccountididdelete) | **DELETE** /bankAccount/id/{id} | 
+*BankAccountApi* | [**bankAccountIdIdGet**](docs/Api/BankAccountApi.md#bankaccountididget) | **GET** /bankAccount/id/{id} | 
+*BankAccountApi* | [**bankAccountIdIdPut**](docs/Api/BankAccountApi.md#bankaccountididput) | **PUT** /bankAccount/id/{id} | 
+*BankAccountApi* | [**bankAccountPost**](docs/Api/BankAccountApi.md#bankaccountpost) | **POST** /bankAccount | 
+*BankTransactionApi* | [**bankTransactionCountGet**](docs/Api/BankTransactionApi.md#banktransactioncountget) | **GET** /bankTransaction/count | 
+*BankTransactionApi* | [**bankTransactionGet**](docs/Api/BankTransactionApi.md#banktransactionget) | **GET** /bankTransaction | 
+*BankTransactionApi* | [**bankTransactionIdIdDelete**](docs/Api/BankTransactionApi.md#banktransactionididdelete) | **DELETE** /bankTransaction/id/{id} | 
+*BankTransactionApi* | [**bankTransactionIdIdGet**](docs/Api/BankTransactionApi.md#banktransactionididget) | **GET** /bankTransaction/id/{id} | 
+*BatchNumberApi* | [**batchNumberCountGet**](docs/Api/BatchNumberApi.md#batchnumbercountget) | **GET** /batchNumber/count | 
+*BatchNumberApi* | [**batchNumberGet**](docs/Api/BatchNumberApi.md#batchnumberget) | **GET** /batchNumber | 
+*BatchNumberApi* | [**batchNumberIdIdGet**](docs/Api/BatchNumberApi.md#batchnumberididget) | **GET** /batchNumber/id/{id} | 
+*BlanketPurchaseOrderApi* | [**blanketPurchaseOrderCountGet**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseordercountget) | **GET** /blanketPurchaseOrder/count | 
+*BlanketPurchaseOrderApi* | [**blanketPurchaseOrderGet**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderget) | **GET** /blanketPurchaseOrder | 
+*BlanketPurchaseOrderApi* | [**blanketPurchaseOrderIdIdDelete**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderididdelete) | **DELETE** /blanketPurchaseOrder/id/{id} | 
 *BlanketPurchaseOrderApi* | [**blanketPurchaseOrderIdIdDownloadLatestBlanketPurchaseOrderPdfGet**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderididdownloadlatestblanketpurchaseorderpdfget) | **GET** /blanketPurchaseOrder/id/{id}/downloadLatestBlanketPurchaseOrderPdf | 
 *BlanketPurchaseOrderApi* | [**blanketPurchaseOrderIdIdGenerateReleasesPost**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderididgeneratereleasespost) | **POST** /blanketPurchaseOrder/id/{id}/generateReleases | 
-*BlanketPurchaseOrderApi* | [**blanketPurchaseOrderIdIdGet**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderididget) | **GET** /blanketPurchaseOrder/id/{id} | query a specific blanketPurchaseOrder
-*BlanketPurchaseOrderApi* | [**blanketPurchaseOrderIdIdPut**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderididput) | **PUT** /blanketPurchaseOrder/id/{id} | update a blanketPurchaseOrder
-*BlanketPurchaseOrderApi* | [**blanketPurchaseOrderPost**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderpost) | **POST** /blanketPurchaseOrder | create a blanketPurchaseOrder
-*CalendarApi* | [**calendarCountGet**](docs/Api/CalendarApi.md#calendarcountget) | **GET** /calendar/count | count calendar
-*CalendarApi* | [**calendarGet**](docs/Api/CalendarApi.md#calendarget) | **GET** /calendar | query calendar
-*CalendarApi* | [**calendarIdIdDelete**](docs/Api/CalendarApi.md#calendarididdelete) | **DELETE** /calendar/id/{id} | delete a calendar
+*BlanketPurchaseOrderApi* | [**blanketPurchaseOrderIdIdGet**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderididget) | **GET** /blanketPurchaseOrder/id/{id} | 
+*BlanketPurchaseOrderApi* | [**blanketPurchaseOrderIdIdPut**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderididput) | **PUT** /blanketPurchaseOrder/id/{id} | 
+*BlanketPurchaseOrderApi* | [**blanketPurchaseOrderPost**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderpost) | **POST** /blanketPurchaseOrder | 
+*CalendarApi* | [**calendarCountGet**](docs/Api/CalendarApi.md#calendarcountget) | **GET** /calendar/count | 
+*CalendarApi* | [**calendarGet**](docs/Api/CalendarApi.md#calendarget) | **GET** /calendar | 
+*CalendarApi* | [**calendarIdIdDelete**](docs/Api/CalendarApi.md#calendarididdelete) | **DELETE** /calendar/id/{id} | 
 *CalendarApi* | [**calendarIdIdDeleteCalendarAndMoveEventsPost**](docs/Api/CalendarApi.md#calendarididdeletecalendarandmoveeventspost) | **POST** /calendar/id/{id}/deleteCalendarAndMoveEvents | 
-*CalendarApi* | [**calendarIdIdGet**](docs/Api/CalendarApi.md#calendarididget) | **GET** /calendar/id/{id} | query a specific calendar
+*CalendarApi* | [**calendarIdIdGet**](docs/Api/CalendarApi.md#calendarididget) | **GET** /calendar/id/{id} | 
 *CalendarApi* | [**calendarIdIdImportiCalPost**](docs/Api/CalendarApi.md#calendarididimporticalpost) | **POST** /calendar/id/{id}/importiCal | 
-*CalendarApi* | [**calendarIdIdPut**](docs/Api/CalendarApi.md#calendarididput) | **PUT** /calendar/id/{id} | update a calendar
-*CalendarApi* | [**calendarPost**](docs/Api/CalendarApi.md#calendarpost) | **POST** /calendar | create a calendar
-*CalendarEventApi* | [**calendarEventCountGet**](docs/Api/CalendarEventApi.md#calendareventcountget) | **GET** /calendarEvent/count | count calendarEvent
-*CalendarEventApi* | [**calendarEventGet**](docs/Api/CalendarEventApi.md#calendareventget) | **GET** /calendarEvent | query calendarEvent
-*CalendarEventApi* | [**calendarEventIdIdDelete**](docs/Api/CalendarEventApi.md#calendareventididdelete) | **DELETE** /calendarEvent/id/{id} | delete a calendarEvent
-*CalendarEventApi* | [**calendarEventIdIdGet**](docs/Api/CalendarEventApi.md#calendareventididget) | **GET** /calendarEvent/id/{id} | query a specific calendarEvent
-*CalendarEventApi* | [**calendarEventIdIdPut**](docs/Api/CalendarEventApi.md#calendareventididput) | **PUT** /calendarEvent/id/{id} | update a calendarEvent
-*CalendarEventApi* | [**calendarEventPost**](docs/Api/CalendarEventApi.md#calendareventpost) | **POST** /calendarEvent | create a calendarEvent
-*CampaignApi* | [**campaignCountGet**](docs/Api/CampaignApi.md#campaigncountget) | **GET** /campaign/count | count campaign
-*CampaignApi* | [**campaignGet**](docs/Api/CampaignApi.md#campaignget) | **GET** /campaign | query campaign
-*CampaignApi* | [**campaignIdIdDelete**](docs/Api/CampaignApi.md#campaignididdelete) | **DELETE** /campaign/id/{id} | delete a campaign
-*CampaignApi* | [**campaignIdIdGet**](docs/Api/CampaignApi.md#campaignididget) | **GET** /campaign/id/{id} | query a specific campaign
-*CampaignApi* | [**campaignIdIdPut**](docs/Api/CampaignApi.md#campaignididput) | **PUT** /campaign/id/{id} | update a campaign
-*CampaignApi* | [**campaignPost**](docs/Api/CampaignApi.md#campaignpost) | **POST** /campaign | create a campaign
-*CampaignParticipantApi* | [**campaignParticipantCountGet**](docs/Api/CampaignParticipantApi.md#campaignparticipantcountget) | **GET** /campaignParticipant/count | count campaignParticipant
-*CampaignParticipantApi* | [**campaignParticipantGet**](docs/Api/CampaignParticipantApi.md#campaignparticipantget) | **GET** /campaignParticipant | query campaignParticipant
-*CampaignParticipantApi* | [**campaignParticipantIdIdDelete**](docs/Api/CampaignParticipantApi.md#campaignparticipantididdelete) | **DELETE** /campaignParticipant/id/{id} | delete a campaignParticipant
-*CampaignParticipantApi* | [**campaignParticipantIdIdGet**](docs/Api/CampaignParticipantApi.md#campaignparticipantididget) | **GET** /campaignParticipant/id/{id} | query a specific campaignParticipant
-*CampaignParticipantApi* | [**campaignParticipantIdIdPut**](docs/Api/CampaignParticipantApi.md#campaignparticipantididput) | **PUT** /campaignParticipant/id/{id} | update a campaignParticipant
-*CampaignParticipantApi* | [**campaignParticipantPost**](docs/Api/CampaignParticipantApi.md#campaignparticipantpost) | **POST** /campaignParticipant | create a campaignParticipant
-*CashAccountApi* | [**cashAccountCountGet**](docs/Api/CashAccountApi.md#cashaccountcountget) | **GET** /cashAccount/count | count cashAccount
-*CashAccountApi* | [**cashAccountGet**](docs/Api/CashAccountApi.md#cashaccountget) | **GET** /cashAccount | query cashAccount
-*CashAccountApi* | [**cashAccountIdIdGet**](docs/Api/CashAccountApi.md#cashaccountididget) | **GET** /cashAccount/id/{id} | query a specific cashAccount
-*CashAccountApi* | [**cashAccountIdIdPut**](docs/Api/CashAccountApi.md#cashaccountididput) | **PUT** /cashAccount/id/{id} | update a cashAccount
-*CashAccountApi* | [**cashAccountPost**](docs/Api/CashAccountApi.md#cashaccountpost) | **POST** /cashAccount | create a cashAccount
-*CashAccountTransactionApi* | [**cashAccountTransactionCountGet**](docs/Api/CashAccountTransactionApi.md#cashaccounttransactioncountget) | **GET** /cashAccountTransaction/count | count cashAccountTransaction
-*CashAccountTransactionApi* | [**cashAccountTransactionGet**](docs/Api/CashAccountTransactionApi.md#cashaccounttransactionget) | **GET** /cashAccountTransaction | query cashAccountTransaction
-*CashAccountTransactionApi* | [**cashAccountTransactionIdIdDelete**](docs/Api/CashAccountTransactionApi.md#cashaccounttransactionididdelete) | **DELETE** /cashAccountTransaction/id/{id} | delete a cashAccountTransaction
-*CashAccountTransactionApi* | [**cashAccountTransactionIdIdGet**](docs/Api/CashAccountTransactionApi.md#cashaccounttransactionididget) | **GET** /cashAccountTransaction/id/{id} | query a specific cashAccountTransaction
-*CashAccountTransactionApi* | [**cashAccountTransactionPost**](docs/Api/CashAccountTransactionApi.md#cashaccounttransactionpost) | **POST** /cashAccountTransaction | create a cashAccountTransaction
-*CommentApi* | [**commentCountGet**](docs/Api/CommentApi.md#commentcountget) | **GET** /comment/count | count comment
-*CommentApi* | [**commentGet**](docs/Api/CommentApi.md#commentget) | **GET** /comment | query comment
-*CommentApi* | [**commentIdIdDelete**](docs/Api/CommentApi.md#commentididdelete) | **DELETE** /comment/id/{id} | delete a comment
-*CommentApi* | [**commentIdIdGet**](docs/Api/CommentApi.md#commentididget) | **GET** /comment/id/{id} | query a specific comment
-*CommentApi* | [**commentIdIdPut**](docs/Api/CommentApi.md#commentididput) | **PUT** /comment/id/{id} | update a comment
-*CommentApi* | [**commentPost**](docs/Api/CommentApi.md#commentpost) | **POST** /comment | create a comment
-*CommercialLanguageApi* | [**commercialLanguageCountGet**](docs/Api/CommercialLanguageApi.md#commerciallanguagecountget) | **GET** /commercialLanguage/count | count commercialLanguage
-*CommercialLanguageApi* | [**commercialLanguageGet**](docs/Api/CommercialLanguageApi.md#commerciallanguageget) | **GET** /commercialLanguage | query commercialLanguage
-*CommercialLanguageApi* | [**commercialLanguageIdIdGet**](docs/Api/CommercialLanguageApi.md#commerciallanguageididget) | **GET** /commercialLanguage/id/{id} | query a specific commercialLanguage
-*CompanySizeApi* | [**companySizeCountGet**](docs/Api/CompanySizeApi.md#companysizecountget) | **GET** /companySize/count | count companySize
-*CompanySizeApi* | [**companySizeGet**](docs/Api/CompanySizeApi.md#companysizeget) | **GET** /companySize | query companySize
-*CompanySizeApi* | [**companySizeIdIdDelete**](docs/Api/CompanySizeApi.md#companysizeididdelete) | **DELETE** /companySize/id/{id} | delete a companySize
-*CompanySizeApi* | [**companySizeIdIdGet**](docs/Api/CompanySizeApi.md#companysizeididget) | **GET** /companySize/id/{id} | query a specific companySize
-*CompanySizeApi* | [**companySizeIdIdPut**](docs/Api/CompanySizeApi.md#companysizeididput) | **PUT** /companySize/id/{id} | update a companySize
-*CompanySizeApi* | [**companySizePost**](docs/Api/CompanySizeApi.md#companysizepost) | **POST** /companySize | create a companySize
-*ContactApi* | [**contactCountGet**](docs/Api/ContactApi.md#contactcountget) | **GET** /contact/count | count contact
-*ContactApi* | [**contactGet**](docs/Api/ContactApi.md#contactget) | **GET** /contact | query contact
-*ContactApi* | [**contactIdIdDelete**](docs/Api/ContactApi.md#contactididdelete) | **DELETE** /contact/id/{id} | delete a contact
+*CalendarApi* | [**calendarIdIdPut**](docs/Api/CalendarApi.md#calendarididput) | **PUT** /calendar/id/{id} | 
+*CalendarApi* | [**calendarPost**](docs/Api/CalendarApi.md#calendarpost) | **POST** /calendar | 
+*CalendarEventApi* | [**calendarEventCountGet**](docs/Api/CalendarEventApi.md#calendareventcountget) | **GET** /calendarEvent/count | 
+*CalendarEventApi* | [**calendarEventGet**](docs/Api/CalendarEventApi.md#calendareventget) | **GET** /calendarEvent | 
+*CalendarEventApi* | [**calendarEventIdIdDelete**](docs/Api/CalendarEventApi.md#calendareventididdelete) | **DELETE** /calendarEvent/id/{id} | 
+*CalendarEventApi* | [**calendarEventIdIdGet**](docs/Api/CalendarEventApi.md#calendareventididget) | **GET** /calendarEvent/id/{id} | 
+*CalendarEventApi* | [**calendarEventIdIdPut**](docs/Api/CalendarEventApi.md#calendareventididput) | **PUT** /calendarEvent/id/{id} | 
+*CalendarEventApi* | [**calendarEventPost**](docs/Api/CalendarEventApi.md#calendareventpost) | **POST** /calendarEvent | 
+*CampaignApi* | [**campaignCountGet**](docs/Api/CampaignApi.md#campaigncountget) | **GET** /campaign/count | 
+*CampaignApi* | [**campaignGet**](docs/Api/CampaignApi.md#campaignget) | **GET** /campaign | 
+*CampaignApi* | [**campaignIdIdDelete**](docs/Api/CampaignApi.md#campaignididdelete) | **DELETE** /campaign/id/{id} | 
+*CampaignApi* | [**campaignIdIdGet**](docs/Api/CampaignApi.md#campaignididget) | **GET** /campaign/id/{id} | 
+*CampaignApi* | [**campaignIdIdPut**](docs/Api/CampaignApi.md#campaignididput) | **PUT** /campaign/id/{id} | 
+*CampaignApi* | [**campaignPost**](docs/Api/CampaignApi.md#campaignpost) | **POST** /campaign | 
+*CampaignParticipantApi* | [**campaignParticipantCountGet**](docs/Api/CampaignParticipantApi.md#campaignparticipantcountget) | **GET** /campaignParticipant/count | 
+*CampaignParticipantApi* | [**campaignParticipantGet**](docs/Api/CampaignParticipantApi.md#campaignparticipantget) | **GET** /campaignParticipant | 
+*CampaignParticipantApi* | [**campaignParticipantIdIdDelete**](docs/Api/CampaignParticipantApi.md#campaignparticipantididdelete) | **DELETE** /campaignParticipant/id/{id} | 
+*CampaignParticipantApi* | [**campaignParticipantIdIdGet**](docs/Api/CampaignParticipantApi.md#campaignparticipantididget) | **GET** /campaignParticipant/id/{id} | 
+*CampaignParticipantApi* | [**campaignParticipantIdIdPut**](docs/Api/CampaignParticipantApi.md#campaignparticipantididput) | **PUT** /campaignParticipant/id/{id} | 
+*CampaignParticipantApi* | [**campaignParticipantPost**](docs/Api/CampaignParticipantApi.md#campaignparticipantpost) | **POST** /campaignParticipant | 
+*CashAccountApi* | [**cashAccountCountGet**](docs/Api/CashAccountApi.md#cashaccountcountget) | **GET** /cashAccount/count | 
+*CashAccountApi* | [**cashAccountGet**](docs/Api/CashAccountApi.md#cashaccountget) | **GET** /cashAccount | 
+*CashAccountApi* | [**cashAccountIdIdGet**](docs/Api/CashAccountApi.md#cashaccountididget) | **GET** /cashAccount/id/{id} | 
+*CashAccountApi* | [**cashAccountIdIdPut**](docs/Api/CashAccountApi.md#cashaccountididput) | **PUT** /cashAccount/id/{id} | 
+*CashAccountApi* | [**cashAccountPost**](docs/Api/CashAccountApi.md#cashaccountpost) | **POST** /cashAccount | 
+*CashAccountTransactionApi* | [**cashAccountTransactionCountGet**](docs/Api/CashAccountTransactionApi.md#cashaccounttransactioncountget) | **GET** /cashAccountTransaction/count | 
+*CashAccountTransactionApi* | [**cashAccountTransactionGet**](docs/Api/CashAccountTransactionApi.md#cashaccounttransactionget) | **GET** /cashAccountTransaction | 
+*CashAccountTransactionApi* | [**cashAccountTransactionIdIdDelete**](docs/Api/CashAccountTransactionApi.md#cashaccounttransactionididdelete) | **DELETE** /cashAccountTransaction/id/{id} | 
+*CashAccountTransactionApi* | [**cashAccountTransactionIdIdGet**](docs/Api/CashAccountTransactionApi.md#cashaccounttransactionididget) | **GET** /cashAccountTransaction/id/{id} | 
+*CashAccountTransactionApi* | [**cashAccountTransactionPost**](docs/Api/CashAccountTransactionApi.md#cashaccounttransactionpost) | **POST** /cashAccountTransaction | 
+*CommentApi* | [**commentCountGet**](docs/Api/CommentApi.md#commentcountget) | **GET** /comment/count | 
+*CommentApi* | [**commentGet**](docs/Api/CommentApi.md#commentget) | **GET** /comment | 
+*CommentApi* | [**commentIdIdDelete**](docs/Api/CommentApi.md#commentididdelete) | **DELETE** /comment/id/{id} | 
+*CommentApi* | [**commentIdIdGet**](docs/Api/CommentApi.md#commentididget) | **GET** /comment/id/{id} | 
+*CommentApi* | [**commentIdIdPut**](docs/Api/CommentApi.md#commentididput) | **PUT** /comment/id/{id} | 
+*CommentApi* | [**commentPost**](docs/Api/CommentApi.md#commentpost) | **POST** /comment | 
+*CommercialLanguageApi* | [**commercialLanguageCountGet**](docs/Api/CommercialLanguageApi.md#commerciallanguagecountget) | **GET** /commercialLanguage/count | 
+*CommercialLanguageApi* | [**commercialLanguageGet**](docs/Api/CommercialLanguageApi.md#commerciallanguageget) | **GET** /commercialLanguage | 
+*CommercialLanguageApi* | [**commercialLanguageIdIdGet**](docs/Api/CommercialLanguageApi.md#commerciallanguageididget) | **GET** /commercialLanguage/id/{id} | 
+*CompanySizeApi* | [**companySizeCountGet**](docs/Api/CompanySizeApi.md#companysizecountget) | **GET** /companySize/count | 
+*CompanySizeApi* | [**companySizeGet**](docs/Api/CompanySizeApi.md#companysizeget) | **GET** /companySize | 
+*CompanySizeApi* | [**companySizeIdIdDelete**](docs/Api/CompanySizeApi.md#companysizeididdelete) | **DELETE** /companySize/id/{id} | 
+*CompanySizeApi* | [**companySizeIdIdGet**](docs/Api/CompanySizeApi.md#companysizeididget) | **GET** /companySize/id/{id} | 
+*CompanySizeApi* | [**companySizeIdIdPut**](docs/Api/CompanySizeApi.md#companysizeididput) | **PUT** /companySize/id/{id} | 
+*CompanySizeApi* | [**companySizePost**](docs/Api/CompanySizeApi.md#companysizepost) | **POST** /companySize | 
+*ContactApi* | [**contactCountGet**](docs/Api/ContactApi.md#contactcountget) | **GET** /contact/count | 
+*ContactApi* | [**contactGet**](docs/Api/ContactApi.md#contactget) | **GET** /contact | 
+*ContactApi* | [**contactIdIdDelete**](docs/Api/ContactApi.md#contactididdelete) | **DELETE** /contact/id/{id} | 
 *ContactApi* | [**contactIdIdDownloadImageGet**](docs/Api/ContactApi.md#contactididdownloadimageget) | **GET** /contact/id/{id}/downloadImage | 
-*ContactApi* | [**contactIdIdGet**](docs/Api/ContactApi.md#contactididget) | **GET** /contact/id/{id} | query a specific contact
-*ContactApi* | [**contactIdIdPut**](docs/Api/ContactApi.md#contactididput) | **PUT** /contact/id/{id} | update a contact
+*ContactApi* | [**contactIdIdGet**](docs/Api/ContactApi.md#contactididget) | **GET** /contact/id/{id} | 
+*ContactApi* | [**contactIdIdPut**](docs/Api/ContactApi.md#contactididput) | **PUT** /contact/id/{id} | 
 *ContactApi* | [**contactIdIdUploadImagePost**](docs/Api/ContactApi.md#contactididuploadimagepost) | **POST** /contact/id/{id}/uploadImage | 
-*ContactApi* | [**contactPost**](docs/Api/ContactApi.md#contactpost) | **POST** /contact | create a contact
-*ContractApi* | [**contractCountGet**](docs/Api/ContractApi.md#contractcountget) | **GET** /contract/count | count contract
-*ContractApi* | [**contractGet**](docs/Api/ContractApi.md#contractget) | **GET** /contract | query contract
+*ContactApi* | [**contactPost**](docs/Api/ContactApi.md#contactpost) | **POST** /contact | 
+*ContractApi* | [**contractCountGet**](docs/Api/ContractApi.md#contractcountget) | **GET** /contract/count | 
+*ContractApi* | [**contractGet**](docs/Api/ContractApi.md#contractget) | **GET** /contract | 
 *ContractApi* | [**contractIdIdCreateContractDocumentPost**](docs/Api/ContractApi.md#contractididcreatecontractdocumentpost) | **POST** /contract/id/{id}/createContractDocument | 
-*ContractApi* | [**contractIdIdDelete**](docs/Api/ContractApi.md#contractididdelete) | **DELETE** /contract/id/{id} | delete a contract
+*ContractApi* | [**contractIdIdDelete**](docs/Api/ContractApi.md#contractididdelete) | **DELETE** /contract/id/{id} | 
 *ContractApi* | [**contractIdIdDownloadLatestContractDocumentPdfGet**](docs/Api/ContractApi.md#contractididdownloadlatestcontractdocumentpdfget) | **GET** /contract/id/{id}/downloadLatestContractDocumentPdf | 
-*ContractApi* | [**contractIdIdGet**](docs/Api/ContractApi.md#contractididget) | **GET** /contract/id/{id} | query a specific contract
-*ContractApi* | [**contractIdIdPut**](docs/Api/ContractApi.md#contractididput) | **PUT** /contract/id/{id} | update a contract
-*ContractApi* | [**contractPost**](docs/Api/ContractApi.md#contractpost) | **POST** /contract | create a contract
-*ContractAuthorizationUnitApi* | [**contractAuthorizationUnitCountGet**](docs/Api/ContractAuthorizationUnitApi.md#contractauthorizationunitcountget) | **GET** /contractAuthorizationUnit/count | count contractAuthorizationUnit
-*ContractAuthorizationUnitApi* | [**contractAuthorizationUnitGet**](docs/Api/ContractAuthorizationUnitApi.md#contractauthorizationunitget) | **GET** /contractAuthorizationUnit | query contractAuthorizationUnit
-*ContractAuthorizationUnitApi* | [**contractAuthorizationUnitIdIdGet**](docs/Api/ContractAuthorizationUnitApi.md#contractauthorizationunitididget) | **GET** /contractAuthorizationUnit/id/{id} | query a specific contractAuthorizationUnit
-*ContractBillingGroupApi* | [**contractBillingGroupCountGet**](docs/Api/ContractBillingGroupApi.md#contractbillinggroupcountget) | **GET** /contractBillingGroup/count | count contractBillingGroup
-*ContractBillingGroupApi* | [**contractBillingGroupGet**](docs/Api/ContractBillingGroupApi.md#contractbillinggroupget) | **GET** /contractBillingGroup | query contractBillingGroup
-*ContractBillingGroupApi* | [**contractBillingGroupIdIdDelete**](docs/Api/ContractBillingGroupApi.md#contractbillinggroupididdelete) | **DELETE** /contractBillingGroup/id/{id} | delete a contractBillingGroup
-*ContractBillingGroupApi* | [**contractBillingGroupIdIdGet**](docs/Api/ContractBillingGroupApi.md#contractbillinggroupididget) | **GET** /contractBillingGroup/id/{id} | query a specific contractBillingGroup
-*ContractBillingGroupApi* | [**contractBillingGroupIdIdPut**](docs/Api/ContractBillingGroupApi.md#contractbillinggroupididput) | **PUT** /contractBillingGroup/id/{id} | update a contractBillingGroup
-*ContractBillingGroupApi* | [**contractBillingGroupPost**](docs/Api/ContractBillingGroupApi.md#contractbillinggrouppost) | **POST** /contractBillingGroup | create a contractBillingGroup
-*ContractTerminationReasonApi* | [**contractTerminationReasonCountGet**](docs/Api/ContractTerminationReasonApi.md#contractterminationreasoncountget) | **GET** /contractTerminationReason/count | count contractTerminationReason
-*ContractTerminationReasonApi* | [**contractTerminationReasonGet**](docs/Api/ContractTerminationReasonApi.md#contractterminationreasonget) | **GET** /contractTerminationReason | query contractTerminationReason
-*ContractTerminationReasonApi* | [**contractTerminationReasonIdIdDelete**](docs/Api/ContractTerminationReasonApi.md#contractterminationreasonididdelete) | **DELETE** /contractTerminationReason/id/{id} | delete a contractTerminationReason
-*ContractTerminationReasonApi* | [**contractTerminationReasonIdIdGet**](docs/Api/ContractTerminationReasonApi.md#contractterminationreasonididget) | **GET** /contractTerminationReason/id/{id} | query a specific contractTerminationReason
-*ContractTerminationReasonApi* | [**contractTerminationReasonIdIdPut**](docs/Api/ContractTerminationReasonApi.md#contractterminationreasonididput) | **PUT** /contractTerminationReason/id/{id} | update a contractTerminationReason
-*ContractTerminationReasonApi* | [**contractTerminationReasonPost**](docs/Api/ContractTerminationReasonApi.md#contractterminationreasonpost) | **POST** /contractTerminationReason | create a contractTerminationReason
-*CostCenterApi* | [**costCenterCountGet**](docs/Api/CostCenterApi.md#costcentercountget) | **GET** /costCenter/count | count costCenter
-*CostCenterApi* | [**costCenterGet**](docs/Api/CostCenterApi.md#costcenterget) | **GET** /costCenter | query costCenter
-*CostCenterApi* | [**costCenterIdIdDelete**](docs/Api/CostCenterApi.md#costcenterididdelete) | **DELETE** /costCenter/id/{id} | delete a costCenter
-*CostCenterApi* | [**costCenterIdIdGet**](docs/Api/CostCenterApi.md#costcenterididget) | **GET** /costCenter/id/{id} | query a specific costCenter
-*CostCenterApi* | [**costCenterIdIdPut**](docs/Api/CostCenterApi.md#costcenterididput) | **PUT** /costCenter/id/{id} | update a costCenter
-*CostCenterApi* | [**costCenterPost**](docs/Api/CostCenterApi.md#costcenterpost) | **POST** /costCenter | create a costCenter
-*CostCenterGroupApi* | [**costCenterGroupCountGet**](docs/Api/CostCenterGroupApi.md#costcentergroupcountget) | **GET** /costCenterGroup/count | count costCenterGroup
-*CostCenterGroupApi* | [**costCenterGroupGet**](docs/Api/CostCenterGroupApi.md#costcentergroupget) | **GET** /costCenterGroup | query costCenterGroup
-*CostCenterGroupApi* | [**costCenterGroupIdIdDelete**](docs/Api/CostCenterGroupApi.md#costcentergroupididdelete) | **DELETE** /costCenterGroup/id/{id} | delete a costCenterGroup
-*CostCenterGroupApi* | [**costCenterGroupIdIdGet**](docs/Api/CostCenterGroupApi.md#costcentergroupididget) | **GET** /costCenterGroup/id/{id} | query a specific costCenterGroup
-*CostCenterGroupApi* | [**costCenterGroupIdIdPut**](docs/Api/CostCenterGroupApi.md#costcentergroupididput) | **PUT** /costCenterGroup/id/{id} | update a costCenterGroup
-*CostCenterGroupApi* | [**costCenterGroupPost**](docs/Api/CostCenterGroupApi.md#costcentergrouppost) | **POST** /costCenterGroup | create a costCenterGroup
-*CostTypeApi* | [**costTypeCountGet**](docs/Api/CostTypeApi.md#costtypecountget) | **GET** /costType/count | count costType
-*CostTypeApi* | [**costTypeGet**](docs/Api/CostTypeApi.md#costtypeget) | **GET** /costType | query costType
-*CostTypeApi* | [**costTypeIdIdDelete**](docs/Api/CostTypeApi.md#costtypeididdelete) | **DELETE** /costType/id/{id} | delete a costType
-*CostTypeApi* | [**costTypeIdIdGet**](docs/Api/CostTypeApi.md#costtypeididget) | **GET** /costType/id/{id} | query a specific costType
-*CostTypeApi* | [**costTypeIdIdPut**](docs/Api/CostTypeApi.md#costtypeididput) | **PUT** /costType/id/{id} | update a costType
-*CostTypeApi* | [**costTypePost**](docs/Api/CostTypeApi.md#costtypepost) | **POST** /costType | create a costType
-*CrmCallCategoryApi* | [**crmCallCategoryCountGet**](docs/Api/CrmCallCategoryApi.md#crmcallcategorycountget) | **GET** /crmCallCategory/count | count crmCallCategory
-*CrmCallCategoryApi* | [**crmCallCategoryGet**](docs/Api/CrmCallCategoryApi.md#crmcallcategoryget) | **GET** /crmCallCategory | query crmCallCategory
-*CrmCallCategoryApi* | [**crmCallCategoryIdIdDelete**](docs/Api/CrmCallCategoryApi.md#crmcallcategoryididdelete) | **DELETE** /crmCallCategory/id/{id} | delete a crmCallCategory
-*CrmCallCategoryApi* | [**crmCallCategoryIdIdGet**](docs/Api/CrmCallCategoryApi.md#crmcallcategoryididget) | **GET** /crmCallCategory/id/{id} | query a specific crmCallCategory
-*CrmCallCategoryApi* | [**crmCallCategoryIdIdPut**](docs/Api/CrmCallCategoryApi.md#crmcallcategoryididput) | **PUT** /crmCallCategory/id/{id} | update a crmCallCategory
-*CrmCallCategoryApi* | [**crmCallCategoryPost**](docs/Api/CrmCallCategoryApi.md#crmcallcategorypost) | **POST** /crmCallCategory | create a crmCallCategory
-*CrmEventApi* | [**crmEventCountGet**](docs/Api/CrmEventApi.md#crmeventcountget) | **GET** /crmEvent/count | count crmEvent
-*CrmEventApi* | [**crmEventGet**](docs/Api/CrmEventApi.md#crmeventget) | **GET** /crmEvent | query crmEvent
-*CrmEventApi* | [**crmEventIdIdDelete**](docs/Api/CrmEventApi.md#crmeventididdelete) | **DELETE** /crmEvent/id/{id} | delete a crmEvent
-*CrmEventApi* | [**crmEventIdIdGet**](docs/Api/CrmEventApi.md#crmeventididget) | **GET** /crmEvent/id/{id} | query a specific crmEvent
-*CrmEventApi* | [**crmEventIdIdPut**](docs/Api/CrmEventApi.md#crmeventididput) | **PUT** /crmEvent/id/{id} | update a crmEvent
-*CrmEventApi* | [**crmEventPost**](docs/Api/CrmEventApi.md#crmeventpost) | **POST** /crmEvent | create a crmEvent
-*CrmEventCategoryApi* | [**crmEventCategoryCountGet**](docs/Api/CrmEventCategoryApi.md#crmeventcategorycountget) | **GET** /crmEventCategory/count | count crmEventCategory
-*CrmEventCategoryApi* | [**crmEventCategoryGet**](docs/Api/CrmEventCategoryApi.md#crmeventcategoryget) | **GET** /crmEventCategory | query crmEventCategory
-*CrmEventCategoryApi* | [**crmEventCategoryIdIdDelete**](docs/Api/CrmEventCategoryApi.md#crmeventcategoryididdelete) | **DELETE** /crmEventCategory/id/{id} | delete a crmEventCategory
-*CrmEventCategoryApi* | [**crmEventCategoryIdIdGet**](docs/Api/CrmEventCategoryApi.md#crmeventcategoryididget) | **GET** /crmEventCategory/id/{id} | query a specific crmEventCategory
-*CrmEventCategoryApi* | [**crmEventCategoryIdIdPut**](docs/Api/CrmEventCategoryApi.md#crmeventcategoryididput) | **PUT** /crmEventCategory/id/{id} | update a crmEventCategory
-*CrmEventCategoryApi* | [**crmEventCategoryPost**](docs/Api/CrmEventCategoryApi.md#crmeventcategorypost) | **POST** /crmEventCategory | create a crmEventCategory
+*ContractApi* | [**contractIdIdGet**](docs/Api/ContractApi.md#contractididget) | **GET** /contract/id/{id} | 
+*ContractApi* | [**contractIdIdPut**](docs/Api/ContractApi.md#contractididput) | **PUT** /contract/id/{id} | 
+*ContractApi* | [**contractPost**](docs/Api/ContractApi.md#contractpost) | **POST** /contract | 
+*ContractAuthorizationUnitApi* | [**contractAuthorizationUnitCountGet**](docs/Api/ContractAuthorizationUnitApi.md#contractauthorizationunitcountget) | **GET** /contractAuthorizationUnit/count | 
+*ContractAuthorizationUnitApi* | [**contractAuthorizationUnitGet**](docs/Api/ContractAuthorizationUnitApi.md#contractauthorizationunitget) | **GET** /contractAuthorizationUnit | 
+*ContractAuthorizationUnitApi* | [**contractAuthorizationUnitIdIdGet**](docs/Api/ContractAuthorizationUnitApi.md#contractauthorizationunitididget) | **GET** /contractAuthorizationUnit/id/{id} | 
+*ContractBillingGroupApi* | [**contractBillingGroupCountGet**](docs/Api/ContractBillingGroupApi.md#contractbillinggroupcountget) | **GET** /contractBillingGroup/count | 
+*ContractBillingGroupApi* | [**contractBillingGroupGet**](docs/Api/ContractBillingGroupApi.md#contractbillinggroupget) | **GET** /contractBillingGroup | 
+*ContractBillingGroupApi* | [**contractBillingGroupIdIdDelete**](docs/Api/ContractBillingGroupApi.md#contractbillinggroupididdelete) | **DELETE** /contractBillingGroup/id/{id} | 
+*ContractBillingGroupApi* | [**contractBillingGroupIdIdGet**](docs/Api/ContractBillingGroupApi.md#contractbillinggroupididget) | **GET** /contractBillingGroup/id/{id} | 
+*ContractBillingGroupApi* | [**contractBillingGroupIdIdPut**](docs/Api/ContractBillingGroupApi.md#contractbillinggroupididput) | **PUT** /contractBillingGroup/id/{id} | 
+*ContractBillingGroupApi* | [**contractBillingGroupPost**](docs/Api/ContractBillingGroupApi.md#contractbillinggrouppost) | **POST** /contractBillingGroup | 
+*ContractTerminationReasonApi* | [**contractTerminationReasonCountGet**](docs/Api/ContractTerminationReasonApi.md#contractterminationreasoncountget) | **GET** /contractTerminationReason/count | 
+*ContractTerminationReasonApi* | [**contractTerminationReasonGet**](docs/Api/ContractTerminationReasonApi.md#contractterminationreasonget) | **GET** /contractTerminationReason | 
+*ContractTerminationReasonApi* | [**contractTerminationReasonIdIdDelete**](docs/Api/ContractTerminationReasonApi.md#contractterminationreasonididdelete) | **DELETE** /contractTerminationReason/id/{id} | 
+*ContractTerminationReasonApi* | [**contractTerminationReasonIdIdGet**](docs/Api/ContractTerminationReasonApi.md#contractterminationreasonididget) | **GET** /contractTerminationReason/id/{id} | 
+*ContractTerminationReasonApi* | [**contractTerminationReasonIdIdPut**](docs/Api/ContractTerminationReasonApi.md#contractterminationreasonididput) | **PUT** /contractTerminationReason/id/{id} | 
+*ContractTerminationReasonApi* | [**contractTerminationReasonPost**](docs/Api/ContractTerminationReasonApi.md#contractterminationreasonpost) | **POST** /contractTerminationReason | 
+*CostCenterApi* | [**costCenterCountGet**](docs/Api/CostCenterApi.md#costcentercountget) | **GET** /costCenter/count | 
+*CostCenterApi* | [**costCenterGet**](docs/Api/CostCenterApi.md#costcenterget) | **GET** /costCenter | 
+*CostCenterApi* | [**costCenterIdIdDelete**](docs/Api/CostCenterApi.md#costcenterididdelete) | **DELETE** /costCenter/id/{id} | 
+*CostCenterApi* | [**costCenterIdIdGet**](docs/Api/CostCenterApi.md#costcenterididget) | **GET** /costCenter/id/{id} | 
+*CostCenterApi* | [**costCenterIdIdPut**](docs/Api/CostCenterApi.md#costcenterididput) | **PUT** /costCenter/id/{id} | 
+*CostCenterApi* | [**costCenterPost**](docs/Api/CostCenterApi.md#costcenterpost) | **POST** /costCenter | 
+*CostCenterGroupApi* | [**costCenterGroupCountGet**](docs/Api/CostCenterGroupApi.md#costcentergroupcountget) | **GET** /costCenterGroup/count | 
+*CostCenterGroupApi* | [**costCenterGroupGet**](docs/Api/CostCenterGroupApi.md#costcentergroupget) | **GET** /costCenterGroup | 
+*CostCenterGroupApi* | [**costCenterGroupIdIdDelete**](docs/Api/CostCenterGroupApi.md#costcentergroupididdelete) | **DELETE** /costCenterGroup/id/{id} | 
+*CostCenterGroupApi* | [**costCenterGroupIdIdGet**](docs/Api/CostCenterGroupApi.md#costcentergroupididget) | **GET** /costCenterGroup/id/{id} | 
+*CostCenterGroupApi* | [**costCenterGroupIdIdPut**](docs/Api/CostCenterGroupApi.md#costcentergroupididput) | **PUT** /costCenterGroup/id/{id} | 
+*CostCenterGroupApi* | [**costCenterGroupPost**](docs/Api/CostCenterGroupApi.md#costcentergrouppost) | **POST** /costCenterGroup | 
+*CostTypeApi* | [**costTypeCountGet**](docs/Api/CostTypeApi.md#costtypecountget) | **GET** /costType/count | 
+*CostTypeApi* | [**costTypeGet**](docs/Api/CostTypeApi.md#costtypeget) | **GET** /costType | 
+*CostTypeApi* | [**costTypeIdIdDelete**](docs/Api/CostTypeApi.md#costtypeididdelete) | **DELETE** /costType/id/{id} | 
+*CostTypeApi* | [**costTypeIdIdGet**](docs/Api/CostTypeApi.md#costtypeididget) | **GET** /costType/id/{id} | 
+*CostTypeApi* | [**costTypeIdIdPut**](docs/Api/CostTypeApi.md#costtypeididput) | **PUT** /costType/id/{id} | 
+*CostTypeApi* | [**costTypePost**](docs/Api/CostTypeApi.md#costtypepost) | **POST** /costType | 
+*CrmCallCategoryApi* | [**crmCallCategoryCountGet**](docs/Api/CrmCallCategoryApi.md#crmcallcategorycountget) | **GET** /crmCallCategory/count | 
+*CrmCallCategoryApi* | [**crmCallCategoryGet**](docs/Api/CrmCallCategoryApi.md#crmcallcategoryget) | **GET** /crmCallCategory | 
+*CrmCallCategoryApi* | [**crmCallCategoryIdIdDelete**](docs/Api/CrmCallCategoryApi.md#crmcallcategoryididdelete) | **DELETE** /crmCallCategory/id/{id} | 
+*CrmCallCategoryApi* | [**crmCallCategoryIdIdGet**](docs/Api/CrmCallCategoryApi.md#crmcallcategoryididget) | **GET** /crmCallCategory/id/{id} | 
+*CrmCallCategoryApi* | [**crmCallCategoryIdIdPut**](docs/Api/CrmCallCategoryApi.md#crmcallcategoryididput) | **PUT** /crmCallCategory/id/{id} | 
+*CrmCallCategoryApi* | [**crmCallCategoryPost**](docs/Api/CrmCallCategoryApi.md#crmcallcategorypost) | **POST** /crmCallCategory | 
+*CrmEventApi* | [**crmEventCountGet**](docs/Api/CrmEventApi.md#crmeventcountget) | **GET** /crmEvent/count | 
+*CrmEventApi* | [**crmEventGet**](docs/Api/CrmEventApi.md#crmeventget) | **GET** /crmEvent | 
+*CrmEventApi* | [**crmEventIdIdDelete**](docs/Api/CrmEventApi.md#crmeventididdelete) | **DELETE** /crmEvent/id/{id} | 
+*CrmEventApi* | [**crmEventIdIdGet**](docs/Api/CrmEventApi.md#crmeventididget) | **GET** /crmEvent/id/{id} | 
+*CrmEventApi* | [**crmEventIdIdPut**](docs/Api/CrmEventApi.md#crmeventididput) | **PUT** /crmEvent/id/{id} | 
+*CrmEventApi* | [**crmEventPost**](docs/Api/CrmEventApi.md#crmeventpost) | **POST** /crmEvent | 
+*CrmEventCategoryApi* | [**crmEventCategoryCountGet**](docs/Api/CrmEventCategoryApi.md#crmeventcategorycountget) | **GET** /crmEventCategory/count | 
+*CrmEventCategoryApi* | [**crmEventCategoryGet**](docs/Api/CrmEventCategoryApi.md#crmeventcategoryget) | **GET** /crmEventCategory | 
+*CrmEventCategoryApi* | [**crmEventCategoryIdIdDelete**](docs/Api/CrmEventCategoryApi.md#crmeventcategoryididdelete) | **DELETE** /crmEventCategory/id/{id} | 
+*CrmEventCategoryApi* | [**crmEventCategoryIdIdGet**](docs/Api/CrmEventCategoryApi.md#crmeventcategoryididget) | **GET** /crmEventCategory/id/{id} | 
+*CrmEventCategoryApi* | [**crmEventCategoryIdIdPut**](docs/Api/CrmEventCategoryApi.md#crmeventcategoryididput) | **PUT** /crmEventCategory/id/{id} | 
+*CrmEventCategoryApi* | [**crmEventCategoryPost**](docs/Api/CrmEventCategoryApi.md#crmeventcategorypost) | **POST** /crmEventCategory | 
 *CurrencyApi* | [**currencyCompanyCurrencyGet**](docs/Api/CurrencyApi.md#currencycompanycurrencyget) | **GET** /currency/companyCurrency | 
-*CurrencyApi* | [**currencyCountGet**](docs/Api/CurrencyApi.md#currencycountget) | **GET** /currency/count | count currency
-*CurrencyApi* | [**currencyGet**](docs/Api/CurrencyApi.md#currencyget) | **GET** /currency | query currency
-*CurrencyApi* | [**currencyIdIdDelete**](docs/Api/CurrencyApi.md#currencyididdelete) | **DELETE** /currency/id/{id} | delete a currency
-*CurrencyApi* | [**currencyIdIdGet**](docs/Api/CurrencyApi.md#currencyididget) | **GET** /currency/id/{id} | query a specific currency
-*CurrencyApi* | [**currencyIdIdPut**](docs/Api/CurrencyApi.md#currencyididput) | **PUT** /currency/id/{id} | update a currency
-*CurrencyApi* | [**currencyPost**](docs/Api/CurrencyApi.md#currencypost) | **POST** /currency | create a currency
-*CustomAttributeDefinitionApi* | [**customAttributeDefinitionCountGet**](docs/Api/CustomAttributeDefinitionApi.md#customattributedefinitioncountget) | **GET** /customAttributeDefinition/count | count customAttributeDefinition
-*CustomAttributeDefinitionApi* | [**customAttributeDefinitionGet**](docs/Api/CustomAttributeDefinitionApi.md#customattributedefinitionget) | **GET** /customAttributeDefinition | query customAttributeDefinition
-*CustomAttributeDefinitionApi* | [**customAttributeDefinitionIdIdDelete**](docs/Api/CustomAttributeDefinitionApi.md#customattributedefinitionididdelete) | **DELETE** /customAttributeDefinition/id/{id} | delete a customAttributeDefinition
-*CustomAttributeDefinitionApi* | [**customAttributeDefinitionIdIdGet**](docs/Api/CustomAttributeDefinitionApi.md#customattributedefinitionididget) | **GET** /customAttributeDefinition/id/{id} | query a specific customAttributeDefinition
-*CustomAttributeDefinitionApi* | [**customAttributeDefinitionIdIdPut**](docs/Api/CustomAttributeDefinitionApi.md#customattributedefinitionididput) | **PUT** /customAttributeDefinition/id/{id} | update a customAttributeDefinition
-*CustomAttributeDefinitionApi* | [**customAttributeDefinitionPost**](docs/Api/CustomAttributeDefinitionApi.md#customattributedefinitionpost) | **POST** /customAttributeDefinition | create a customAttributeDefinition
+*CurrencyApi* | [**currencyCountGet**](docs/Api/CurrencyApi.md#currencycountget) | **GET** /currency/count | 
+*CurrencyApi* | [**currencyGet**](docs/Api/CurrencyApi.md#currencyget) | **GET** /currency | 
+*CurrencyApi* | [**currencyIdIdDelete**](docs/Api/CurrencyApi.md#currencyididdelete) | **DELETE** /currency/id/{id} | 
+*CurrencyApi* | [**currencyIdIdGet**](docs/Api/CurrencyApi.md#currencyididget) | **GET** /currency/id/{id} | 
+*CurrencyApi* | [**currencyIdIdPut**](docs/Api/CurrencyApi.md#currencyididput) | **PUT** /currency/id/{id} | 
+*CurrencyApi* | [**currencyPost**](docs/Api/CurrencyApi.md#currencypost) | **POST** /currency | 
+*CustomAttributeDefinitionApi* | [**customAttributeDefinitionCountGet**](docs/Api/CustomAttributeDefinitionApi.md#customattributedefinitioncountget) | **GET** /customAttributeDefinition/count | 
+*CustomAttributeDefinitionApi* | [**customAttributeDefinitionGet**](docs/Api/CustomAttributeDefinitionApi.md#customattributedefinitionget) | **GET** /customAttributeDefinition | 
+*CustomAttributeDefinitionApi* | [**customAttributeDefinitionIdIdDelete**](docs/Api/CustomAttributeDefinitionApi.md#customattributedefinitionididdelete) | **DELETE** /customAttributeDefinition/id/{id} | 
+*CustomAttributeDefinitionApi* | [**customAttributeDefinitionIdIdGet**](docs/Api/CustomAttributeDefinitionApi.md#customattributedefinitionididget) | **GET** /customAttributeDefinition/id/{id} | 
+*CustomAttributeDefinitionApi* | [**customAttributeDefinitionIdIdPut**](docs/Api/CustomAttributeDefinitionApi.md#customattributedefinitionididput) | **PUT** /customAttributeDefinition/id/{id} | 
+*CustomAttributeDefinitionApi* | [**customAttributeDefinitionPost**](docs/Api/CustomAttributeDefinitionApi.md#customattributedefinitionpost) | **POST** /customAttributeDefinition | 
 *CustomAttributeDefinitionApi* | [**customAttributeDefinitionReadOrderGet**](docs/Api/CustomAttributeDefinitionApi.md#customattributedefinitionreadorderget) | **GET** /customAttributeDefinition/readOrder | 
 *CustomAttributeDefinitionApi* | [**customAttributeDefinitionUpdateOrderPost**](docs/Api/CustomAttributeDefinitionApi.md#customattributedefinitionupdateorderpost) | **POST** /customAttributeDefinition/updateOrder | 
-*CustomerApi* | [**customerCountGet**](docs/Api/CustomerApi.md#customercountget) | **GET** /customer/count | count customer
-*CustomerApi* | [**customerGet**](docs/Api/CustomerApi.md#customerget) | **GET** /customer | query customer
-*CustomerApi* | [**customerIdIdDelete**](docs/Api/CustomerApi.md#customerididdelete) | **DELETE** /customer/id/{id} | delete a customer
+*CustomerApi* | [**customerCountGet**](docs/Api/CustomerApi.md#customercountget) | **GET** /customer/count | 
+*CustomerApi* | [**customerGet**](docs/Api/CustomerApi.md#customerget) | **GET** /customer | 
+*CustomerApi* | [**customerIdIdDelete**](docs/Api/CustomerApi.md#customerididdelete) | **DELETE** /customer/id/{id} | 
 *CustomerApi* | [**customerIdIdDownloadImageGet**](docs/Api/CustomerApi.md#customerididdownloadimageget) | **GET** /customer/id/{id}/downloadImage | 
-*CustomerApi* | [**customerIdIdGet**](docs/Api/CustomerApi.md#customerididget) | **GET** /customer/id/{id} | query a specific customer
-*CustomerApi* | [**customerIdIdPut**](docs/Api/CustomerApi.md#customerididput) | **PUT** /customer/id/{id} | update a customer
+*CustomerApi* | [**customerIdIdGet**](docs/Api/CustomerApi.md#customerididget) | **GET** /customer/id/{id} | 
+*CustomerApi* | [**customerIdIdPut**](docs/Api/CustomerApi.md#customerididput) | **PUT** /customer/id/{id} | 
 *CustomerApi* | [**customerIdIdUploadImagePost**](docs/Api/CustomerApi.md#customerididuploadimagepost) | **POST** /customer/id/{id}/uploadImage | 
-*CustomerApi* | [**customerPost**](docs/Api/CustomerApi.md#customerpost) | **POST** /customer | create a customer
-*CustomerCategoryApi* | [**customerCategoryCountGet**](docs/Api/CustomerCategoryApi.md#customercategorycountget) | **GET** /customerCategory/count | count customerCategory
-*CustomerCategoryApi* | [**customerCategoryGet**](docs/Api/CustomerCategoryApi.md#customercategoryget) | **GET** /customerCategory | query customerCategory
-*CustomerCategoryApi* | [**customerCategoryIdIdDelete**](docs/Api/CustomerCategoryApi.md#customercategoryididdelete) | **DELETE** /customerCategory/id/{id} | delete a customerCategory
-*CustomerCategoryApi* | [**customerCategoryIdIdGet**](docs/Api/CustomerCategoryApi.md#customercategoryididget) | **GET** /customerCategory/id/{id} | query a specific customerCategory
-*CustomerCategoryApi* | [**customerCategoryIdIdPut**](docs/Api/CustomerCategoryApi.md#customercategoryididput) | **PUT** /customerCategory/id/{id} | update a customerCategory
-*CustomerCategoryApi* | [**customerCategoryPost**](docs/Api/CustomerCategoryApi.md#customercategorypost) | **POST** /customerCategory | create a customerCategory
-*CustomerLeadLossReasonApi* | [**customerLeadLossReasonCountGet**](docs/Api/CustomerLeadLossReasonApi.md#customerleadlossreasoncountget) | **GET** /customerLeadLossReason/count | count customerLeadLossReason
-*CustomerLeadLossReasonApi* | [**customerLeadLossReasonGet**](docs/Api/CustomerLeadLossReasonApi.md#customerleadlossreasonget) | **GET** /customerLeadLossReason | query customerLeadLossReason
-*CustomerLeadLossReasonApi* | [**customerLeadLossReasonIdIdDelete**](docs/Api/CustomerLeadLossReasonApi.md#customerleadlossreasonididdelete) | **DELETE** /customerLeadLossReason/id/{id} | delete a customerLeadLossReason
-*CustomerLeadLossReasonApi* | [**customerLeadLossReasonIdIdGet**](docs/Api/CustomerLeadLossReasonApi.md#customerleadlossreasonididget) | **GET** /customerLeadLossReason/id/{id} | query a specific customerLeadLossReason
-*CustomerLeadLossReasonApi* | [**customerLeadLossReasonIdIdPut**](docs/Api/CustomerLeadLossReasonApi.md#customerleadlossreasonididput) | **PUT** /customerLeadLossReason/id/{id} | update a customerLeadLossReason
-*CustomerLeadLossReasonApi* | [**customerLeadLossReasonPost**](docs/Api/CustomerLeadLossReasonApi.md#customerleadlossreasonpost) | **POST** /customerLeadLossReason | create a customerLeadLossReason
-*CustomerTopicApi* | [**customerTopicCountGet**](docs/Api/CustomerTopicApi.md#customertopiccountget) | **GET** /customerTopic/count | count customerTopic
-*CustomerTopicApi* | [**customerTopicGet**](docs/Api/CustomerTopicApi.md#customertopicget) | **GET** /customerTopic | query customerTopic
-*CustomerTopicApi* | [**customerTopicIdIdDelete**](docs/Api/CustomerTopicApi.md#customertopicididdelete) | **DELETE** /customerTopic/id/{id} | delete a customerTopic
-*CustomerTopicApi* | [**customerTopicIdIdGet**](docs/Api/CustomerTopicApi.md#customertopicididget) | **GET** /customerTopic/id/{id} | query a specific customerTopic
-*CustomerTopicApi* | [**customerTopicIdIdPut**](docs/Api/CustomerTopicApi.md#customertopicididput) | **PUT** /customerTopic/id/{id} | update a customerTopic
-*CustomerTopicApi* | [**customerTopicPost**](docs/Api/CustomerTopicApi.md#customertopicpost) | **POST** /customerTopic | create a customerTopic
-*CustomsTariffNumberApi* | [**customsTariffNumberCountGet**](docs/Api/CustomsTariffNumberApi.md#customstariffnumbercountget) | **GET** /customsTariffNumber/count | count customsTariffNumber
-*CustomsTariffNumberApi* | [**customsTariffNumberGet**](docs/Api/CustomsTariffNumberApi.md#customstariffnumberget) | **GET** /customsTariffNumber | query customsTariffNumber
-*CustomsTariffNumberApi* | [**customsTariffNumberIdIdDelete**](docs/Api/CustomsTariffNumberApi.md#customstariffnumberididdelete) | **DELETE** /customsTariffNumber/id/{id} | delete a customsTariffNumber
-*CustomsTariffNumberApi* | [**customsTariffNumberIdIdGet**](docs/Api/CustomsTariffNumberApi.md#customstariffnumberididget) | **GET** /customsTariffNumber/id/{id} | query a specific customsTariffNumber
-*CustomsTariffNumberApi* | [**customsTariffNumberIdIdPut**](docs/Api/CustomsTariffNumberApi.md#customstariffnumberididput) | **PUT** /customsTariffNumber/id/{id} | update a customsTariffNumber
-*CustomsTariffNumberApi* | [**customsTariffNumberPost**](docs/Api/CustomsTariffNumberApi.md#customstariffnumberpost) | **POST** /customsTariffNumber | create a customsTariffNumber
+*CustomerApi* | [**customerPost**](docs/Api/CustomerApi.md#customerpost) | **POST** /customer | 
+*CustomerCategoryApi* | [**customerCategoryCountGet**](docs/Api/CustomerCategoryApi.md#customercategorycountget) | **GET** /customerCategory/count | 
+*CustomerCategoryApi* | [**customerCategoryGet**](docs/Api/CustomerCategoryApi.md#customercategoryget) | **GET** /customerCategory | 
+*CustomerCategoryApi* | [**customerCategoryIdIdDelete**](docs/Api/CustomerCategoryApi.md#customercategoryididdelete) | **DELETE** /customerCategory/id/{id} | 
+*CustomerCategoryApi* | [**customerCategoryIdIdGet**](docs/Api/CustomerCategoryApi.md#customercategoryididget) | **GET** /customerCategory/id/{id} | 
+*CustomerCategoryApi* | [**customerCategoryIdIdPut**](docs/Api/CustomerCategoryApi.md#customercategoryididput) | **PUT** /customerCategory/id/{id} | 
+*CustomerCategoryApi* | [**customerCategoryPost**](docs/Api/CustomerCategoryApi.md#customercategorypost) | **POST** /customerCategory | 
+*CustomerLeadLossReasonApi* | [**customerLeadLossReasonCountGet**](docs/Api/CustomerLeadLossReasonApi.md#customerleadlossreasoncountget) | **GET** /customerLeadLossReason/count | 
+*CustomerLeadLossReasonApi* | [**customerLeadLossReasonGet**](docs/Api/CustomerLeadLossReasonApi.md#customerleadlossreasonget) | **GET** /customerLeadLossReason | 
+*CustomerLeadLossReasonApi* | [**customerLeadLossReasonIdIdDelete**](docs/Api/CustomerLeadLossReasonApi.md#customerleadlossreasonididdelete) | **DELETE** /customerLeadLossReason/id/{id} | 
+*CustomerLeadLossReasonApi* | [**customerLeadLossReasonIdIdGet**](docs/Api/CustomerLeadLossReasonApi.md#customerleadlossreasonididget) | **GET** /customerLeadLossReason/id/{id} | 
+*CustomerLeadLossReasonApi* | [**customerLeadLossReasonIdIdPut**](docs/Api/CustomerLeadLossReasonApi.md#customerleadlossreasonididput) | **PUT** /customerLeadLossReason/id/{id} | 
+*CustomerLeadLossReasonApi* | [**customerLeadLossReasonPost**](docs/Api/CustomerLeadLossReasonApi.md#customerleadlossreasonpost) | **POST** /customerLeadLossReason | 
+*CustomerTopicApi* | [**customerTopicCountGet**](docs/Api/CustomerTopicApi.md#customertopiccountget) | **GET** /customerTopic/count | 
+*CustomerTopicApi* | [**customerTopicGet**](docs/Api/CustomerTopicApi.md#customertopicget) | **GET** /customerTopic | 
+*CustomerTopicApi* | [**customerTopicIdIdDelete**](docs/Api/CustomerTopicApi.md#customertopicididdelete) | **DELETE** /customerTopic/id/{id} | 
+*CustomerTopicApi* | [**customerTopicIdIdGet**](docs/Api/CustomerTopicApi.md#customertopicididget) | **GET** /customerTopic/id/{id} | 
+*CustomerTopicApi* | [**customerTopicIdIdPut**](docs/Api/CustomerTopicApi.md#customertopicididput) | **PUT** /customerTopic/id/{id} | 
+*CustomerTopicApi* | [**customerTopicPost**](docs/Api/CustomerTopicApi.md#customertopicpost) | **POST** /customerTopic | 
+*CustomsTariffNumberApi* | [**customsTariffNumberCountGet**](docs/Api/CustomsTariffNumberApi.md#customstariffnumbercountget) | **GET** /customsTariffNumber/count | 
+*CustomsTariffNumberApi* | [**customsTariffNumberGet**](docs/Api/CustomsTariffNumberApi.md#customstariffnumberget) | **GET** /customsTariffNumber | 
+*CustomsTariffNumberApi* | [**customsTariffNumberIdIdDelete**](docs/Api/CustomsTariffNumberApi.md#customstariffnumberididdelete) | **DELETE** /customsTariffNumber/id/{id} | 
+*CustomsTariffNumberApi* | [**customsTariffNumberIdIdGet**](docs/Api/CustomsTariffNumberApi.md#customstariffnumberididget) | **GET** /customsTariffNumber/id/{id} | 
+*CustomsTariffNumberApi* | [**customsTariffNumberIdIdPut**](docs/Api/CustomsTariffNumberApi.md#customstariffnumberididput) | **PUT** /customsTariffNumber/id/{id} | 
+*CustomsTariffNumberApi* | [**customsTariffNumberPost**](docs/Api/CustomsTariffNumberApi.md#customstariffnumberpost) | **POST** /customsTariffNumber | 
 *DocumentApi* | [**documentCopyPost**](docs/Api/DocumentApi.md#documentcopypost) | **POST** /document/copy | 
-*DocumentApi* | [**documentCountGet**](docs/Api/DocumentApi.md#documentcountget) | **GET** /document/count | count document
-*DocumentApi* | [**documentGet**](docs/Api/DocumentApi.md#documentget) | **GET** /document | query document
+*DocumentApi* | [**documentCountGet**](docs/Api/DocumentApi.md#documentcountget) | **GET** /document/count | 
+*DocumentApi* | [**documentGet**](docs/Api/DocumentApi.md#documentget) | **GET** /document | 
 *DocumentApi* | [**documentIdIdCopyPost**](docs/Api/DocumentApi.md#documentididcopypost) | **POST** /document/id/{id}/copy | 
-*DocumentApi* | [**documentIdIdDelete**](docs/Api/DocumentApi.md#documentididdelete) | **DELETE** /document/id/{id} | delete a document
+*DocumentApi* | [**documentIdIdDelete**](docs/Api/DocumentApi.md#documentididdelete) | **DELETE** /document/id/{id} | 
 *DocumentApi* | [**documentIdIdDownloadDocumentVersionGet**](docs/Api/DocumentApi.md#documentididdownloaddocumentversionget) | **GET** /document/id/{id}/downloadDocumentVersion | 
 *DocumentApi* | [**documentIdIdDownloadDocumentVersionsZippedGet**](docs/Api/DocumentApi.md#documentididdownloaddocumentversionszippedget) | **GET** /document/id/{id}/downloadDocumentVersionsZipped | 
 *DocumentApi* | [**documentIdIdDownloadGet**](docs/Api/DocumentApi.md#documentididdownloadget) | **GET** /document/id/{id}/download | 
-*DocumentApi* | [**documentIdIdGet**](docs/Api/DocumentApi.md#documentididget) | **GET** /document/id/{id} | query a specific document
-*DocumentApi* | [**documentIdIdPut**](docs/Api/DocumentApi.md#documentididput) | **PUT** /document/id/{id} | update a document
+*DocumentApi* | [**documentIdIdGet**](docs/Api/DocumentApi.md#documentididget) | **GET** /document/id/{id} | 
+*DocumentApi* | [**documentIdIdPut**](docs/Api/DocumentApi.md#documentididput) | **PUT** /document/id/{id} | 
 *DocumentApi* | [**documentIdIdUploadPost**](docs/Api/DocumentApi.md#documentididuploadpost) | **POST** /document/id/{id}/upload | 
 *DocumentApi* | [**documentUploadPost**](docs/Api/DocumentApi.md#documentuploadpost) | **POST** /document/upload | 
-*ExternalConnectionApi* | [**externalConnectionCountGet**](docs/Api/ExternalConnectionApi.md#externalconnectioncountget) | **GET** /externalConnection/count | count externalConnection
-*ExternalConnectionApi* | [**externalConnectionGet**](docs/Api/ExternalConnectionApi.md#externalconnectionget) | **GET** /externalConnection | query externalConnection
-*ExternalConnectionApi* | [**externalConnectionIdIdGet**](docs/Api/ExternalConnectionApi.md#externalconnectionididget) | **GET** /externalConnection/id/{id} | query a specific externalConnection
-*FinancialYearApi* | [**financialYearCountGet**](docs/Api/FinancialYearApi.md#financialyearcountget) | **GET** /financialYear/count | count financialYear
-*FinancialYearApi* | [**financialYearGet**](docs/Api/FinancialYearApi.md#financialyearget) | **GET** /financialYear | query financialYear
-*FinancialYearApi* | [**financialYearIdIdDelete**](docs/Api/FinancialYearApi.md#financialyearididdelete) | **DELETE** /financialYear/id/{id} | delete a financialYear
+*ExternalConnectionApi* | [**externalConnectionCountGet**](docs/Api/ExternalConnectionApi.md#externalconnectioncountget) | **GET** /externalConnection/count | 
+*ExternalConnectionApi* | [**externalConnectionGet**](docs/Api/ExternalConnectionApi.md#externalconnectionget) | **GET** /externalConnection | 
+*ExternalConnectionApi* | [**externalConnectionIdIdGet**](docs/Api/ExternalConnectionApi.md#externalconnectionididget) | **GET** /externalConnection/id/{id} | 
+*FinancialYearApi* | [**financialYearCountGet**](docs/Api/FinancialYearApi.md#financialyearcountget) | **GET** /financialYear/count | 
+*FinancialYearApi* | [**financialYearGet**](docs/Api/FinancialYearApi.md#financialyearget) | **GET** /financialYear | 
+*FinancialYearApi* | [**financialYearIdIdDelete**](docs/Api/FinancialYearApi.md#financialyearididdelete) | **DELETE** /financialYear/id/{id} | 
 *FinancialYearApi* | [**financialYearIdIdGeneratePeriodsPost**](docs/Api/FinancialYearApi.md#financialyearididgenerateperiodspost) | **POST** /financialYear/id/{id}/generatePeriods | 
-*FinancialYearApi* | [**financialYearIdIdGet**](docs/Api/FinancialYearApi.md#financialyearididget) | **GET** /financialYear/id/{id} | query a specific financialYear
-*FinancialYearApi* | [**financialYearIdIdPut**](docs/Api/FinancialYearApi.md#financialyearididput) | **PUT** /financialYear/id/{id} | update a financialYear
-*FinancialYearApi* | [**financialYearPost**](docs/Api/FinancialYearApi.md#financialyearpost) | **POST** /financialYear | create a financialYear
-*FulfillmentProviderApi* | [**fulfillmentProviderCountGet**](docs/Api/FulfillmentProviderApi.md#fulfillmentprovidercountget) | **GET** /fulfillmentProvider/count | count fulfillmentProvider
-*FulfillmentProviderApi* | [**fulfillmentProviderGet**](docs/Api/FulfillmentProviderApi.md#fulfillmentproviderget) | **GET** /fulfillmentProvider | query fulfillmentProvider
-*FulfillmentProviderApi* | [**fulfillmentProviderIdIdGet**](docs/Api/FulfillmentProviderApi.md#fulfillmentproviderididget) | **GET** /fulfillmentProvider/id/{id} | query a specific fulfillmentProvider
-*IncomingGoodsApi* | [**incomingGoodsCountGet**](docs/Api/IncomingGoodsApi.md#incominggoodscountget) | **GET** /incomingGoods/count | count incomingGoods
-*IncomingGoodsApi* | [**incomingGoodsGet**](docs/Api/IncomingGoodsApi.md#incominggoodsget) | **GET** /incomingGoods | query incomingGoods
+*FinancialYearApi* | [**financialYearIdIdGet**](docs/Api/FinancialYearApi.md#financialyearididget) | **GET** /financialYear/id/{id} | 
+*FinancialYearApi* | [**financialYearIdIdPut**](docs/Api/FinancialYearApi.md#financialyearididput) | **PUT** /financialYear/id/{id} | 
+*FinancialYearApi* | [**financialYearPost**](docs/Api/FinancialYearApi.md#financialyearpost) | **POST** /financialYear | 
+*FulfillmentProviderApi* | [**fulfillmentProviderCountGet**](docs/Api/FulfillmentProviderApi.md#fulfillmentprovidercountget) | **GET** /fulfillmentProvider/count | 
+*FulfillmentProviderApi* | [**fulfillmentProviderGet**](docs/Api/FulfillmentProviderApi.md#fulfillmentproviderget) | **GET** /fulfillmentProvider | 
+*FulfillmentProviderApi* | [**fulfillmentProviderIdIdGet**](docs/Api/FulfillmentProviderApi.md#fulfillmentproviderididget) | **GET** /fulfillmentProvider/id/{id} | 
+*IncomingGoodsApi* | [**incomingGoodsCountGet**](docs/Api/IncomingGoodsApi.md#incominggoodscountget) | **GET** /incomingGoods/count | 
+*IncomingGoodsApi* | [**incomingGoodsGet**](docs/Api/IncomingGoodsApi.md#incominggoodsget) | **GET** /incomingGoods | 
 *IncomingGoodsApi* | [**incomingGoodsIdIdAddPurchaseOrdersPost**](docs/Api/IncomingGoodsApi.md#incominggoodsididaddpurchaseorderspost) | **POST** /incomingGoods/id/{id}/addPurchaseOrders | 
 *IncomingGoodsApi* | [**incomingGoodsIdIdCreateCompensationShipmentPost**](docs/Api/IncomingGoodsApi.md#incominggoodsididcreatecompensationshipmentpost) | **POST** /incomingGoods/id/{id}/createCompensationShipment | 
 *IncomingGoodsApi* | [**incomingGoodsIdIdCreateCreditNotePost**](docs/Api/IncomingGoodsApi.md#incominggoodsididcreatecreditnotepost) | **POST** /incomingGoods/id/{id}/createCreditNote | 
 *IncomingGoodsApi* | [**incomingGoodsIdIdCreatePurchaseInvoicePost**](docs/Api/IncomingGoodsApi.md#incominggoodsididcreatepurchaseinvoicepost) | **POST** /incomingGoods/id/{id}/createPurchaseInvoice | 
 *IncomingGoodsApi* | [**incomingGoodsIdIdCreateReturnLabelsPost**](docs/Api/IncomingGoodsApi.md#incominggoodsididcreatereturnlabelspost) | **POST** /incomingGoods/id/{id}/createReturnLabels | 
 *IncomingGoodsApi* | [**incomingGoodsIdIdCreateSupplierReturnPost**](docs/Api/IncomingGoodsApi.md#incominggoodsididcreatesupplierreturnpost) | **POST** /incomingGoods/id/{id}/createSupplierReturn | 
-*IncomingGoodsApi* | [**incomingGoodsIdIdDelete**](docs/Api/IncomingGoodsApi.md#incominggoodsididdelete) | **DELETE** /incomingGoods/id/{id} | delete a incomingGoods
-*IncomingGoodsApi* | [**incomingGoodsIdIdGet**](docs/Api/IncomingGoodsApi.md#incominggoodsididget) | **GET** /incomingGoods/id/{id} | query a specific incomingGoods
+*IncomingGoodsApi* | [**incomingGoodsIdIdDelete**](docs/Api/IncomingGoodsApi.md#incominggoodsididdelete) | **DELETE** /incomingGoods/id/{id} | 
+*IncomingGoodsApi* | [**incomingGoodsIdIdGet**](docs/Api/IncomingGoodsApi.md#incominggoodsididget) | **GET** /incomingGoods/id/{id} | 
 *IncomingGoodsApi* | [**incomingGoodsIdIdIncomingBookingsGet**](docs/Api/IncomingGoodsApi.md#incominggoodsididincomingbookingsget) | **GET** /incomingGoods/id/{id}/incomingBookings | 
-*IncomingGoodsApi* | [**incomingGoodsIdIdPut**](docs/Api/IncomingGoodsApi.md#incominggoodsididput) | **PUT** /incomingGoods/id/{id} | update a incomingGoods
+*IncomingGoodsApi* | [**incomingGoodsIdIdPut**](docs/Api/IncomingGoodsApi.md#incominggoodsididput) | **PUT** /incomingGoods/id/{id} | 
 *IncomingGoodsApi* | [**incomingGoodsIdIdUpdateIncomingBookingsPost**](docs/Api/IncomingGoodsApi.md#incominggoodsididupdateincomingbookingspost) | **POST** /incomingGoods/id/{id}/updateIncomingBookings | 
-*IncomingGoodsApi* | [**incomingGoodsPost**](docs/Api/IncomingGoodsApi.md#incominggoodspost) | **POST** /incomingGoods | create a incomingGoods
-*InternalTransportReferenceApi* | [**internalTransportReferenceCountGet**](docs/Api/InternalTransportReferenceApi.md#internaltransportreferencecountget) | **GET** /internalTransportReference/count | count internalTransportReference
-*InternalTransportReferenceApi* | [**internalTransportReferenceGet**](docs/Api/InternalTransportReferenceApi.md#internaltransportreferenceget) | **GET** /internalTransportReference | query internalTransportReference
+*IncomingGoodsApi* | [**incomingGoodsPost**](docs/Api/IncomingGoodsApi.md#incominggoodspost) | **POST** /incomingGoods | 
+*InternalTransportReferenceApi* | [**internalTransportReferenceCountGet**](docs/Api/InternalTransportReferenceApi.md#internaltransportreferencecountget) | **GET** /internalTransportReference/count | 
+*InternalTransportReferenceApi* | [**internalTransportReferenceGet**](docs/Api/InternalTransportReferenceApi.md#internaltransportreferenceget) | **GET** /internalTransportReference | 
 *InternalTransportReferenceApi* | [**internalTransportReferenceIdIdCreateLabelPost**](docs/Api/InternalTransportReferenceApi.md#internaltransportreferenceididcreatelabelpost) | **POST** /internalTransportReference/id/{id}/createLabel | 
-*InternalTransportReferenceApi* | [**internalTransportReferenceIdIdDelete**](docs/Api/InternalTransportReferenceApi.md#internaltransportreferenceididdelete) | **DELETE** /internalTransportReference/id/{id} | delete a internalTransportReference
+*InternalTransportReferenceApi* | [**internalTransportReferenceIdIdDelete**](docs/Api/InternalTransportReferenceApi.md#internaltransportreferenceididdelete) | **DELETE** /internalTransportReference/id/{id} | 
 *InternalTransportReferenceApi* | [**internalTransportReferenceIdIdDownloadLatestLabelGet**](docs/Api/InternalTransportReferenceApi.md#internaltransportreferenceididdownloadlatestlabelget) | **GET** /internalTransportReference/id/{id}/downloadLatestLabel | 
-*InternalTransportReferenceApi* | [**internalTransportReferenceIdIdGet**](docs/Api/InternalTransportReferenceApi.md#internaltransportreferenceididget) | **GET** /internalTransportReference/id/{id} | query a specific internalTransportReference
-*InternalTransportReferenceApi* | [**internalTransportReferenceIdIdPut**](docs/Api/InternalTransportReferenceApi.md#internaltransportreferenceididput) | **PUT** /internalTransportReference/id/{id} | update a internalTransportReference
-*InternalTransportReferenceApi* | [**internalTransportReferencePost**](docs/Api/InternalTransportReferenceApi.md#internaltransportreferencepost) | **POST** /internalTransportReference | create a internalTransportReference
-*InventoryApi* | [**inventoryCountGet**](docs/Api/InventoryApi.md#inventorycountget) | **GET** /inventory/count | count inventory
+*InternalTransportReferenceApi* | [**internalTransportReferenceIdIdGet**](docs/Api/InternalTransportReferenceApi.md#internaltransportreferenceididget) | **GET** /internalTransportReference/id/{id} | 
+*InternalTransportReferenceApi* | [**internalTransportReferenceIdIdPut**](docs/Api/InternalTransportReferenceApi.md#internaltransportreferenceididput) | **PUT** /internalTransportReference/id/{id} | 
+*InternalTransportReferenceApi* | [**internalTransportReferencePost**](docs/Api/InternalTransportReferenceApi.md#internaltransportreferencepost) | **POST** /internalTransportReference | 
+*InventoryApi* | [**inventoryCountGet**](docs/Api/InventoryApi.md#inventorycountget) | **GET** /inventory/count | 
 *InventoryApi* | [**inventoryCreatePost**](docs/Api/InventoryApi.md#inventorycreatepost) | **POST** /inventory/create | 
-*InventoryApi* | [**inventoryGet**](docs/Api/InventoryApi.md#inventoryget) | **GET** /inventory | query inventory
-*InventoryApi* | [**inventoryIdIdGet**](docs/Api/InventoryApi.md#inventoryididget) | **GET** /inventory/id/{id} | query a specific inventory
-*InventoryApi* | [**inventoryIdIdPut**](docs/Api/InventoryApi.md#inventoryididput) | **PUT** /inventory/id/{id} | update a inventory
-*InventoryApi* | [**inventoryPost**](docs/Api/InventoryApi.md#inventorypost) | **POST** /inventory | create a inventory
-*InventoryGroupApi* | [**inventoryGroupCountGet**](docs/Api/InventoryGroupApi.md#inventorygroupcountget) | **GET** /inventoryGroup/count | count inventoryGroup
-*InventoryGroupApi* | [**inventoryGroupGet**](docs/Api/InventoryGroupApi.md#inventorygroupget) | **GET** /inventoryGroup | query inventoryGroup
-*InventoryGroupApi* | [**inventoryGroupIdIdGet**](docs/Api/InventoryGroupApi.md#inventorygroupididget) | **GET** /inventoryGroup/id/{id} | query a specific inventoryGroup
-*InventoryItemApi* | [**inventoryItemCountGet**](docs/Api/InventoryItemApi.md#inventoryitemcountget) | **GET** /inventoryItem/count | count inventoryItem
-*InventoryItemApi* | [**inventoryItemGet**](docs/Api/InventoryItemApi.md#inventoryitemget) | **GET** /inventoryItem | query inventoryItem
-*InventoryItemApi* | [**inventoryItemIdIdDelete**](docs/Api/InventoryItemApi.md#inventoryitemididdelete) | **DELETE** /inventoryItem/id/{id} | delete a inventoryItem
-*InventoryItemApi* | [**inventoryItemIdIdGet**](docs/Api/InventoryItemApi.md#inventoryitemididget) | **GET** /inventoryItem/id/{id} | query a specific inventoryItem
-*InventoryItemApi* | [**inventoryItemIdIdPut**](docs/Api/InventoryItemApi.md#inventoryitemididput) | **PUT** /inventoryItem/id/{id} | update a inventoryItem
-*InventoryItemApi* | [**inventoryItemPost**](docs/Api/InventoryItemApi.md#inventoryitempost) | **POST** /inventoryItem | create a inventoryItem
-*InventoryTransportReferenceApi* | [**inventoryTransportReferenceCountGet**](docs/Api/InventoryTransportReferenceApi.md#inventorytransportreferencecountget) | **GET** /inventoryTransportReference/count | count inventoryTransportReference
-*InventoryTransportReferenceApi* | [**inventoryTransportReferenceGet**](docs/Api/InventoryTransportReferenceApi.md#inventorytransportreferenceget) | **GET** /inventoryTransportReference | query inventoryTransportReference
-*InventoryTransportReferenceApi* | [**inventoryTransportReferenceIdIdGet**](docs/Api/InventoryTransportReferenceApi.md#inventorytransportreferenceididget) | **GET** /inventoryTransportReference/id/{id} | query a specific inventoryTransportReference
-*InventoryTransportReferenceApi* | [**inventoryTransportReferenceIdIdPut**](docs/Api/InventoryTransportReferenceApi.md#inventorytransportreferenceididput) | **PUT** /inventoryTransportReference/id/{id} | update a inventoryTransportReference
-*InventoryTransportReferenceApi* | [**inventoryTransportReferencePost**](docs/Api/InventoryTransportReferenceApi.md#inventorytransportreferencepost) | **POST** /inventoryTransportReference | create a inventoryTransportReference
+*InventoryApi* | [**inventoryGet**](docs/Api/InventoryApi.md#inventoryget) | **GET** /inventory | 
+*InventoryApi* | [**inventoryIdIdGet**](docs/Api/InventoryApi.md#inventoryididget) | **GET** /inventory/id/{id} | 
+*InventoryApi* | [**inventoryIdIdPut**](docs/Api/InventoryApi.md#inventoryididput) | **PUT** /inventory/id/{id} | 
+*InventoryApi* | [**inventoryPost**](docs/Api/InventoryApi.md#inventorypost) | **POST** /inventory | 
+*InventoryGroupApi* | [**inventoryGroupCountGet**](docs/Api/InventoryGroupApi.md#inventorygroupcountget) | **GET** /inventoryGroup/count | 
+*InventoryGroupApi* | [**inventoryGroupGet**](docs/Api/InventoryGroupApi.md#inventorygroupget) | **GET** /inventoryGroup | 
+*InventoryGroupApi* | [**inventoryGroupIdIdGet**](docs/Api/InventoryGroupApi.md#inventorygroupididget) | **GET** /inventoryGroup/id/{id} | 
+*InventoryItemApi* | [**inventoryItemCountGet**](docs/Api/InventoryItemApi.md#inventoryitemcountget) | **GET** /inventoryItem/count | 
+*InventoryItemApi* | [**inventoryItemGet**](docs/Api/InventoryItemApi.md#inventoryitemget) | **GET** /inventoryItem | 
+*InventoryItemApi* | [**inventoryItemIdIdDelete**](docs/Api/InventoryItemApi.md#inventoryitemididdelete) | **DELETE** /inventoryItem/id/{id} | 
+*InventoryItemApi* | [**inventoryItemIdIdGet**](docs/Api/InventoryItemApi.md#inventoryitemididget) | **GET** /inventoryItem/id/{id} | 
+*InventoryItemApi* | [**inventoryItemIdIdPut**](docs/Api/InventoryItemApi.md#inventoryitemididput) | **PUT** /inventoryItem/id/{id} | 
+*InventoryItemApi* | [**inventoryItemPost**](docs/Api/InventoryItemApi.md#inventoryitempost) | **POST** /inventoryItem | 
+*InventoryTransportReferenceApi* | [**inventoryTransportReferenceCountGet**](docs/Api/InventoryTransportReferenceApi.md#inventorytransportreferencecountget) | **GET** /inventoryTransportReference/count | 
+*InventoryTransportReferenceApi* | [**inventoryTransportReferenceGet**](docs/Api/InventoryTransportReferenceApi.md#inventorytransportreferenceget) | **GET** /inventoryTransportReference | 
+*InventoryTransportReferenceApi* | [**inventoryTransportReferenceIdIdGet**](docs/Api/InventoryTransportReferenceApi.md#inventorytransportreferenceididget) | **GET** /inventoryTransportReference/id/{id} | 
+*InventoryTransportReferenceApi* | [**inventoryTransportReferenceIdIdPut**](docs/Api/InventoryTransportReferenceApi.md#inventorytransportreferenceididput) | **PUT** /inventoryTransportReference/id/{id} | 
+*InventoryTransportReferenceApi* | [**inventoryTransportReferencePost**](docs/Api/InventoryTransportReferenceApi.md#inventorytransportreferencepost) | **POST** /inventoryTransportReference | 
 *JobApi* | [**jobAbortGet**](docs/Api/JobApi.md#jobabortget) | **GET** /job/abort | 
 *JobApi* | [**jobStatusGet**](docs/Api/JobApi.md#jobstatusget) | **GET** /job/status | 
-*LeadApi* | [**leadCountGet**](docs/Api/LeadApi.md#leadcountget) | **GET** /lead/count | count lead
-*LeadApi* | [**leadGet**](docs/Api/LeadApi.md#leadget) | **GET** /lead | query lead
+*LeadApi* | [**leadCountGet**](docs/Api/LeadApi.md#leadcountget) | **GET** /lead/count | 
+*LeadApi* | [**leadGet**](docs/Api/LeadApi.md#leadget) | **GET** /lead | 
 *LeadApi* | [**leadIdIdConvertLeadToCustomerGet**](docs/Api/LeadApi.md#leadididconvertleadtocustomerget) | **GET** /lead/id/{id}/convertLeadToCustomer | 
-*LeadApi* | [**leadIdIdDelete**](docs/Api/LeadApi.md#leadididdelete) | **DELETE** /lead/id/{id} | delete a lead
+*LeadApi* | [**leadIdIdDelete**](docs/Api/LeadApi.md#leadididdelete) | **DELETE** /lead/id/{id} | 
 *LeadApi* | [**leadIdIdDownloadImageGet**](docs/Api/LeadApi.md#leadididdownloadimageget) | **GET** /lead/id/{id}/downloadImage | 
-*LeadApi* | [**leadIdIdGet**](docs/Api/LeadApi.md#leadididget) | **GET** /lead/id/{id} | query a specific lead
-*LeadApi* | [**leadIdIdPut**](docs/Api/LeadApi.md#leadididput) | **PUT** /lead/id/{id} | update a lead
+*LeadApi* | [**leadIdIdGet**](docs/Api/LeadApi.md#leadididget) | **GET** /lead/id/{id} | 
+*LeadApi* | [**leadIdIdPut**](docs/Api/LeadApi.md#leadididput) | **PUT** /lead/id/{id} | 
 *LeadApi* | [**leadIdIdUploadImagePost**](docs/Api/LeadApi.md#leadididuploadimagepost) | **POST** /lead/id/{id}/uploadImage | 
-*LeadApi* | [**leadPost**](docs/Api/LeadApi.md#leadpost) | **POST** /lead | create a lead
-*LeadRatingApi* | [**leadRatingCountGet**](docs/Api/LeadRatingApi.md#leadratingcountget) | **GET** /leadRating/count | count leadRating
-*LeadRatingApi* | [**leadRatingGet**](docs/Api/LeadRatingApi.md#leadratingget) | **GET** /leadRating | query leadRating
-*LeadRatingApi* | [**leadRatingIdIdDelete**](docs/Api/LeadRatingApi.md#leadratingididdelete) | **DELETE** /leadRating/id/{id} | delete a leadRating
-*LeadRatingApi* | [**leadRatingIdIdGet**](docs/Api/LeadRatingApi.md#leadratingididget) | **GET** /leadRating/id/{id} | query a specific leadRating
-*LeadRatingApi* | [**leadRatingIdIdPut**](docs/Api/LeadRatingApi.md#leadratingididput) | **PUT** /leadRating/id/{id} | update a leadRating
-*LeadRatingApi* | [**leadRatingPost**](docs/Api/LeadRatingApi.md#leadratingpost) | **POST** /leadRating | create a leadRating
-*LeadSourceApi* | [**leadSourceCountGet**](docs/Api/LeadSourceApi.md#leadsourcecountget) | **GET** /leadSource/count | count leadSource
-*LeadSourceApi* | [**leadSourceGet**](docs/Api/LeadSourceApi.md#leadsourceget) | **GET** /leadSource | query leadSource
-*LeadSourceApi* | [**leadSourceIdIdDelete**](docs/Api/LeadSourceApi.md#leadsourceididdelete) | **DELETE** /leadSource/id/{id} | delete a leadSource
-*LeadSourceApi* | [**leadSourceIdIdGet**](docs/Api/LeadSourceApi.md#leadsourceididget) | **GET** /leadSource/id/{id} | query a specific leadSource
-*LeadSourceApi* | [**leadSourceIdIdPut**](docs/Api/LeadSourceApi.md#leadsourceididput) | **PUT** /leadSource/id/{id} | update a leadSource
-*LeadSourceApi* | [**leadSourcePost**](docs/Api/LeadSourceApi.md#leadsourcepost) | **POST** /leadSource | create a leadSource
-*LedgerAccountApi* | [**ledgerAccountCountGet**](docs/Api/LedgerAccountApi.md#ledgeraccountcountget) | **GET** /ledgerAccount/count | count ledgerAccount
-*LedgerAccountApi* | [**ledgerAccountGet**](docs/Api/LedgerAccountApi.md#ledgeraccountget) | **GET** /ledgerAccount | query ledgerAccount
-*LedgerAccountApi* | [**ledgerAccountIdIdDelete**](docs/Api/LedgerAccountApi.md#ledgeraccountididdelete) | **DELETE** /ledgerAccount/id/{id} | delete a ledgerAccount
-*LedgerAccountApi* | [**ledgerAccountIdIdGet**](docs/Api/LedgerAccountApi.md#ledgeraccountididget) | **GET** /ledgerAccount/id/{id} | query a specific ledgerAccount
-*LedgerAccountApi* | [**ledgerAccountIdIdPut**](docs/Api/LedgerAccountApi.md#ledgeraccountididput) | **PUT** /ledgerAccount/id/{id} | update a ledgerAccount
-*LedgerAccountApi* | [**ledgerAccountPost**](docs/Api/LedgerAccountApi.md#ledgeraccountpost) | **POST** /ledgerAccount | create a ledgerAccount
-*LegalFormApi* | [**legalFormCountGet**](docs/Api/LegalFormApi.md#legalformcountget) | **GET** /legalForm/count | count legalForm
-*LegalFormApi* | [**legalFormGet**](docs/Api/LegalFormApi.md#legalformget) | **GET** /legalForm | query legalForm
-*LegalFormApi* | [**legalFormIdIdDelete**](docs/Api/LegalFormApi.md#legalformididdelete) | **DELETE** /legalForm/id/{id} | delete a legalForm
-*LegalFormApi* | [**legalFormIdIdGet**](docs/Api/LegalFormApi.md#legalformididget) | **GET** /legalForm/id/{id} | query a specific legalForm
-*LegalFormApi* | [**legalFormIdIdPut**](docs/Api/LegalFormApi.md#legalformididput) | **PUT** /legalForm/id/{id} | update a legalForm
-*LegalFormApi* | [**legalFormPost**](docs/Api/LegalFormApi.md#legalformpost) | **POST** /legalForm | create a legalForm
-*LoadingEquipmentIdentifierApi* | [**loadingEquipmentIdentifierCountGet**](docs/Api/LoadingEquipmentIdentifierApi.md#loadingequipmentidentifiercountget) | **GET** /loadingEquipmentIdentifier/count | count loadingEquipmentIdentifier
-*LoadingEquipmentIdentifierApi* | [**loadingEquipmentIdentifierGet**](docs/Api/LoadingEquipmentIdentifierApi.md#loadingequipmentidentifierget) | **GET** /loadingEquipmentIdentifier | query loadingEquipmentIdentifier
-*LoadingEquipmentIdentifierApi* | [**loadingEquipmentIdentifierIdIdDelete**](docs/Api/LoadingEquipmentIdentifierApi.md#loadingequipmentidentifierididdelete) | **DELETE** /loadingEquipmentIdentifier/id/{id} | delete a loadingEquipmentIdentifier
-*LoadingEquipmentIdentifierApi* | [**loadingEquipmentIdentifierIdIdGet**](docs/Api/LoadingEquipmentIdentifierApi.md#loadingequipmentidentifierididget) | **GET** /loadingEquipmentIdentifier/id/{id} | query a specific loadingEquipmentIdentifier
-*LoadingEquipmentIdentifierApi* | [**loadingEquipmentIdentifierIdIdPut**](docs/Api/LoadingEquipmentIdentifierApi.md#loadingequipmentidentifierididput) | **PUT** /loadingEquipmentIdentifier/id/{id} | update a loadingEquipmentIdentifier
-*LoadingEquipmentIdentifierApi* | [**loadingEquipmentIdentifierPost**](docs/Api/LoadingEquipmentIdentifierApi.md#loadingequipmentidentifierpost) | **POST** /loadingEquipmentIdentifier | create a loadingEquipmentIdentifier
-*MailTemplateApi* | [**mailTemplateCountGet**](docs/Api/MailTemplateApi.md#mailtemplatecountget) | **GET** /mailTemplate/count | count mailTemplate
-*MailTemplateApi* | [**mailTemplateGet**](docs/Api/MailTemplateApi.md#mailtemplateget) | **GET** /mailTemplate | query mailTemplate
-*MailTemplateApi* | [**mailTemplateIdIdDelete**](docs/Api/MailTemplateApi.md#mailtemplateididdelete) | **DELETE** /mailTemplate/id/{id} | delete a mailTemplate
-*MailTemplateApi* | [**mailTemplateIdIdGet**](docs/Api/MailTemplateApi.md#mailtemplateididget) | **GET** /mailTemplate/id/{id} | query a specific mailTemplate
-*MailTemplateApi* | [**mailTemplateIdIdPut**](docs/Api/MailTemplateApi.md#mailtemplateididput) | **PUT** /mailTemplate/id/{id} | update a mailTemplate
-*MailTemplateApi* | [**mailTemplatePost**](docs/Api/MailTemplateApi.md#mailtemplatepost) | **POST** /mailTemplate | create a mailTemplate
-*ManufacturerApi* | [**manufacturerCountGet**](docs/Api/ManufacturerApi.md#manufacturercountget) | **GET** /manufacturer/count | count manufacturer
-*ManufacturerApi* | [**manufacturerGet**](docs/Api/ManufacturerApi.md#manufacturerget) | **GET** /manufacturer | query manufacturer
-*ManufacturerApi* | [**manufacturerIdIdDelete**](docs/Api/ManufacturerApi.md#manufacturerididdelete) | **DELETE** /manufacturer/id/{id} | delete a manufacturer
-*ManufacturerApi* | [**manufacturerIdIdGet**](docs/Api/ManufacturerApi.md#manufacturerididget) | **GET** /manufacturer/id/{id} | query a specific manufacturer
-*ManufacturerApi* | [**manufacturerIdIdPut**](docs/Api/ManufacturerApi.md#manufacturerididput) | **PUT** /manufacturer/id/{id} | update a manufacturer
-*ManufacturerApi* | [**manufacturerPost**](docs/Api/ManufacturerApi.md#manufacturerpost) | **POST** /manufacturer | create a manufacturer
+*LeadApi* | [**leadPost**](docs/Api/LeadApi.md#leadpost) | **POST** /lead | 
+*LeadRatingApi* | [**leadRatingCountGet**](docs/Api/LeadRatingApi.md#leadratingcountget) | **GET** /leadRating/count | 
+*LeadRatingApi* | [**leadRatingGet**](docs/Api/LeadRatingApi.md#leadratingget) | **GET** /leadRating | 
+*LeadRatingApi* | [**leadRatingIdIdDelete**](docs/Api/LeadRatingApi.md#leadratingididdelete) | **DELETE** /leadRating/id/{id} | 
+*LeadRatingApi* | [**leadRatingIdIdGet**](docs/Api/LeadRatingApi.md#leadratingididget) | **GET** /leadRating/id/{id} | 
+*LeadRatingApi* | [**leadRatingIdIdPut**](docs/Api/LeadRatingApi.md#leadratingididput) | **PUT** /leadRating/id/{id} | 
+*LeadRatingApi* | [**leadRatingPost**](docs/Api/LeadRatingApi.md#leadratingpost) | **POST** /leadRating | 
+*LeadSourceApi* | [**leadSourceCountGet**](docs/Api/LeadSourceApi.md#leadsourcecountget) | **GET** /leadSource/count | 
+*LeadSourceApi* | [**leadSourceGet**](docs/Api/LeadSourceApi.md#leadsourceget) | **GET** /leadSource | 
+*LeadSourceApi* | [**leadSourceIdIdDelete**](docs/Api/LeadSourceApi.md#leadsourceididdelete) | **DELETE** /leadSource/id/{id} | 
+*LeadSourceApi* | [**leadSourceIdIdGet**](docs/Api/LeadSourceApi.md#leadsourceididget) | **GET** /leadSource/id/{id} | 
+*LeadSourceApi* | [**leadSourceIdIdPut**](docs/Api/LeadSourceApi.md#leadsourceididput) | **PUT** /leadSource/id/{id} | 
+*LeadSourceApi* | [**leadSourcePost**](docs/Api/LeadSourceApi.md#leadsourcepost) | **POST** /leadSource | 
+*LedgerAccountApi* | [**ledgerAccountCountGet**](docs/Api/LedgerAccountApi.md#ledgeraccountcountget) | **GET** /ledgerAccount/count | 
+*LedgerAccountApi* | [**ledgerAccountGet**](docs/Api/LedgerAccountApi.md#ledgeraccountget) | **GET** /ledgerAccount | 
+*LedgerAccountApi* | [**ledgerAccountIdIdDelete**](docs/Api/LedgerAccountApi.md#ledgeraccountididdelete) | **DELETE** /ledgerAccount/id/{id} | 
+*LedgerAccountApi* | [**ledgerAccountIdIdGet**](docs/Api/LedgerAccountApi.md#ledgeraccountididget) | **GET** /ledgerAccount/id/{id} | 
+*LedgerAccountApi* | [**ledgerAccountIdIdPut**](docs/Api/LedgerAccountApi.md#ledgeraccountididput) | **PUT** /ledgerAccount/id/{id} | 
+*LedgerAccountApi* | [**ledgerAccountPost**](docs/Api/LedgerAccountApi.md#ledgeraccountpost) | **POST** /ledgerAccount | 
+*LegalFormApi* | [**legalFormCountGet**](docs/Api/LegalFormApi.md#legalformcountget) | **GET** /legalForm/count | 
+*LegalFormApi* | [**legalFormGet**](docs/Api/LegalFormApi.md#legalformget) | **GET** /legalForm | 
+*LegalFormApi* | [**legalFormIdIdDelete**](docs/Api/LegalFormApi.md#legalformididdelete) | **DELETE** /legalForm/id/{id} | 
+*LegalFormApi* | [**legalFormIdIdGet**](docs/Api/LegalFormApi.md#legalformididget) | **GET** /legalForm/id/{id} | 
+*LegalFormApi* | [**legalFormIdIdPut**](docs/Api/LegalFormApi.md#legalformididput) | **PUT** /legalForm/id/{id} | 
+*LegalFormApi* | [**legalFormPost**](docs/Api/LegalFormApi.md#legalformpost) | **POST** /legalForm | 
+*LoadingEquipmentIdentifierApi* | [**loadingEquipmentIdentifierCountGet**](docs/Api/LoadingEquipmentIdentifierApi.md#loadingequipmentidentifiercountget) | **GET** /loadingEquipmentIdentifier/count | 
+*LoadingEquipmentIdentifierApi* | [**loadingEquipmentIdentifierGet**](docs/Api/LoadingEquipmentIdentifierApi.md#loadingequipmentidentifierget) | **GET** /loadingEquipmentIdentifier | 
+*LoadingEquipmentIdentifierApi* | [**loadingEquipmentIdentifierIdIdDelete**](docs/Api/LoadingEquipmentIdentifierApi.md#loadingequipmentidentifierididdelete) | **DELETE** /loadingEquipmentIdentifier/id/{id} | 
+*LoadingEquipmentIdentifierApi* | [**loadingEquipmentIdentifierIdIdGet**](docs/Api/LoadingEquipmentIdentifierApi.md#loadingequipmentidentifierididget) | **GET** /loadingEquipmentIdentifier/id/{id} | 
+*LoadingEquipmentIdentifierApi* | [**loadingEquipmentIdentifierIdIdPut**](docs/Api/LoadingEquipmentIdentifierApi.md#loadingequipmentidentifierididput) | **PUT** /loadingEquipmentIdentifier/id/{id} | 
+*LoadingEquipmentIdentifierApi* | [**loadingEquipmentIdentifierPost**](docs/Api/LoadingEquipmentIdentifierApi.md#loadingequipmentidentifierpost) | **POST** /loadingEquipmentIdentifier | 
+*MailTemplateApi* | [**mailTemplateCountGet**](docs/Api/MailTemplateApi.md#mailtemplatecountget) | **GET** /mailTemplate/count | 
+*MailTemplateApi* | [**mailTemplateGet**](docs/Api/MailTemplateApi.md#mailtemplateget) | **GET** /mailTemplate | 
+*MailTemplateApi* | [**mailTemplateIdIdDelete**](docs/Api/MailTemplateApi.md#mailtemplateididdelete) | **DELETE** /mailTemplate/id/{id} | 
+*MailTemplateApi* | [**mailTemplateIdIdGet**](docs/Api/MailTemplateApi.md#mailtemplateididget) | **GET** /mailTemplate/id/{id} | 
+*MailTemplateApi* | [**mailTemplateIdIdPut**](docs/Api/MailTemplateApi.md#mailtemplateididput) | **PUT** /mailTemplate/id/{id} | 
+*MailTemplateApi* | [**mailTemplatePost**](docs/Api/MailTemplateApi.md#mailtemplatepost) | **POST** /mailTemplate | 
+*ManufacturerApi* | [**manufacturerCountGet**](docs/Api/ManufacturerApi.md#manufacturercountget) | **GET** /manufacturer/count | 
+*ManufacturerApi* | [**manufacturerGet**](docs/Api/ManufacturerApi.md#manufacturerget) | **GET** /manufacturer | 
+*ManufacturerApi* | [**manufacturerIdIdDelete**](docs/Api/ManufacturerApi.md#manufacturerididdelete) | **DELETE** /manufacturer/id/{id} | 
+*ManufacturerApi* | [**manufacturerIdIdGet**](docs/Api/ManufacturerApi.md#manufacturerididget) | **GET** /manufacturer/id/{id} | 
+*ManufacturerApi* | [**manufacturerIdIdPut**](docs/Api/ManufacturerApi.md#manufacturerididput) | **PUT** /manufacturer/id/{id} | 
+*ManufacturerApi* | [**manufacturerPost**](docs/Api/ManufacturerApi.md#manufacturerpost) | **POST** /manufacturer | 
 *MetaApi* | [**metaQueryFilterPropertiesGet**](docs/Api/MetaApi.md#metaqueryfilterpropertiesget) | **GET** /meta/queryFilterProperties | 
 *MetaApi* | [**metaQuerySortPropertiesGet**](docs/Api/MetaApi.md#metaquerysortpropertiesget) | **GET** /meta/querySortProperties | 
 *MetaApi* | [**metaResourcesGet**](docs/Api/MetaApi.md#metaresourcesget) | **GET** /meta/resources | 
-*NotificationApi* | [**notificationCountGet**](docs/Api/NotificationApi.md#notificationcountget) | **GET** /notification/count | count notification
-*NotificationApi* | [**notificationGet**](docs/Api/NotificationApi.md#notificationget) | **GET** /notification | query notification
-*NotificationApi* | [**notificationIdIdGet**](docs/Api/NotificationApi.md#notificationididget) | **GET** /notification/id/{id} | query a specific notification
+*NotificationApi* | [**notificationCountGet**](docs/Api/NotificationApi.md#notificationcountget) | **GET** /notification/count | 
+*NotificationApi* | [**notificationGet**](docs/Api/NotificationApi.md#notificationget) | **GET** /notification | 
+*NotificationApi* | [**notificationIdIdGet**](docs/Api/NotificationApi.md#notificationididget) | **GET** /notification/id/{id} | 
 *NotificationApi* | [**notificationIdIdMarkReadPost**](docs/Api/NotificationApi.md#notificationididmarkreadpost) | **POST** /notification/id/{id}/markRead | 
-*OpportunityApi* | [**opportunityCountGet**](docs/Api/OpportunityApi.md#opportunitycountget) | **GET** /opportunity/count | count opportunity
-*OpportunityApi* | [**opportunityGet**](docs/Api/OpportunityApi.md#opportunityget) | **GET** /opportunity | query opportunity
-*OpportunityApi* | [**opportunityIdIdDelete**](docs/Api/OpportunityApi.md#opportunityididdelete) | **DELETE** /opportunity/id/{id} | delete a opportunity
-*OpportunityApi* | [**opportunityIdIdGet**](docs/Api/OpportunityApi.md#opportunityididget) | **GET** /opportunity/id/{id} | query a specific opportunity
+*OpportunityApi* | [**opportunityCountGet**](docs/Api/OpportunityApi.md#opportunitycountget) | **GET** /opportunity/count | 
+*OpportunityApi* | [**opportunityGet**](docs/Api/OpportunityApi.md#opportunityget) | **GET** /opportunity | 
+*OpportunityApi* | [**opportunityIdIdDelete**](docs/Api/OpportunityApi.md#opportunityididdelete) | **DELETE** /opportunity/id/{id} | 
+*OpportunityApi* | [**opportunityIdIdGet**](docs/Api/OpportunityApi.md#opportunityididget) | **GET** /opportunity/id/{id} | 
 *OpportunityApi* | [**opportunityIdIdLinkQuotationPost**](docs/Api/OpportunityApi.md#opportunityididlinkquotationpost) | **POST** /opportunity/id/{id}/linkQuotation | 
-*OpportunityApi* | [**opportunityIdIdPut**](docs/Api/OpportunityApi.md#opportunityididput) | **PUT** /opportunity/id/{id} | update a opportunity
-*OpportunityApi* | [**opportunityPost**](docs/Api/OpportunityApi.md#opportunitypost) | **POST** /opportunity | create a opportunity
-*OpportunityTopicApi* | [**opportunityTopicCountGet**](docs/Api/OpportunityTopicApi.md#opportunitytopiccountget) | **GET** /opportunityTopic/count | count opportunityTopic
-*OpportunityTopicApi* | [**opportunityTopicGet**](docs/Api/OpportunityTopicApi.md#opportunitytopicget) | **GET** /opportunityTopic | query opportunityTopic
-*OpportunityTopicApi* | [**opportunityTopicIdIdDelete**](docs/Api/OpportunityTopicApi.md#opportunitytopicididdelete) | **DELETE** /opportunityTopic/id/{id} | delete a opportunityTopic
-*OpportunityTopicApi* | [**opportunityTopicIdIdGet**](docs/Api/OpportunityTopicApi.md#opportunitytopicididget) | **GET** /opportunityTopic/id/{id} | query a specific opportunityTopic
-*OpportunityTopicApi* | [**opportunityTopicIdIdPut**](docs/Api/OpportunityTopicApi.md#opportunitytopicididput) | **PUT** /opportunityTopic/id/{id} | update a opportunityTopic
-*OpportunityTopicApi* | [**opportunityTopicPost**](docs/Api/OpportunityTopicApi.md#opportunitytopicpost) | **POST** /opportunityTopic | create a opportunityTopic
-*OpportunityWinLossReasonApi* | [**opportunityWinLossReasonCountGet**](docs/Api/OpportunityWinLossReasonApi.md#opportunitywinlossreasoncountget) | **GET** /opportunityWinLossReason/count | count opportunityWinLossReason
-*OpportunityWinLossReasonApi* | [**opportunityWinLossReasonGet**](docs/Api/OpportunityWinLossReasonApi.md#opportunitywinlossreasonget) | **GET** /opportunityWinLossReason | query opportunityWinLossReason
-*OpportunityWinLossReasonApi* | [**opportunityWinLossReasonIdIdDelete**](docs/Api/OpportunityWinLossReasonApi.md#opportunitywinlossreasonididdelete) | **DELETE** /opportunityWinLossReason/id/{id} | delete a opportunityWinLossReason
-*OpportunityWinLossReasonApi* | [**opportunityWinLossReasonIdIdGet**](docs/Api/OpportunityWinLossReasonApi.md#opportunitywinlossreasonididget) | **GET** /opportunityWinLossReason/id/{id} | query a specific opportunityWinLossReason
-*OpportunityWinLossReasonApi* | [**opportunityWinLossReasonIdIdPut**](docs/Api/OpportunityWinLossReasonApi.md#opportunitywinlossreasonididput) | **PUT** /opportunityWinLossReason/id/{id} | update a opportunityWinLossReason
-*OpportunityWinLossReasonApi* | [**opportunityWinLossReasonPost**](docs/Api/OpportunityWinLossReasonApi.md#opportunitywinlossreasonpost) | **POST** /opportunityWinLossReason | create a opportunityWinLossReason
-*PartyApi* | [**partyCountGet**](docs/Api/PartyApi.md#partycountget) | **GET** /party/count | count party
-*PartyApi* | [**partyGet**](docs/Api/PartyApi.md#partyget) | **GET** /party | query party
+*OpportunityApi* | [**opportunityIdIdPut**](docs/Api/OpportunityApi.md#opportunityididput) | **PUT** /opportunity/id/{id} | 
+*OpportunityApi* | [**opportunityPost**](docs/Api/OpportunityApi.md#opportunitypost) | **POST** /opportunity | 
+*OpportunityTopicApi* | [**opportunityTopicCountGet**](docs/Api/OpportunityTopicApi.md#opportunitytopiccountget) | **GET** /opportunityTopic/count | 
+*OpportunityTopicApi* | [**opportunityTopicGet**](docs/Api/OpportunityTopicApi.md#opportunitytopicget) | **GET** /opportunityTopic | 
+*OpportunityTopicApi* | [**opportunityTopicIdIdDelete**](docs/Api/OpportunityTopicApi.md#opportunitytopicididdelete) | **DELETE** /opportunityTopic/id/{id} | 
+*OpportunityTopicApi* | [**opportunityTopicIdIdGet**](docs/Api/OpportunityTopicApi.md#opportunitytopicididget) | **GET** /opportunityTopic/id/{id} | 
+*OpportunityTopicApi* | [**opportunityTopicIdIdPut**](docs/Api/OpportunityTopicApi.md#opportunitytopicididput) | **PUT** /opportunityTopic/id/{id} | 
+*OpportunityTopicApi* | [**opportunityTopicPost**](docs/Api/OpportunityTopicApi.md#opportunitytopicpost) | **POST** /opportunityTopic | 
+*OpportunityWinLossReasonApi* | [**opportunityWinLossReasonCountGet**](docs/Api/OpportunityWinLossReasonApi.md#opportunitywinlossreasoncountget) | **GET** /opportunityWinLossReason/count | 
+*OpportunityWinLossReasonApi* | [**opportunityWinLossReasonGet**](docs/Api/OpportunityWinLossReasonApi.md#opportunitywinlossreasonget) | **GET** /opportunityWinLossReason | 
+*OpportunityWinLossReasonApi* | [**opportunityWinLossReasonIdIdDelete**](docs/Api/OpportunityWinLossReasonApi.md#opportunitywinlossreasonididdelete) | **DELETE** /opportunityWinLossReason/id/{id} | 
+*OpportunityWinLossReasonApi* | [**opportunityWinLossReasonIdIdGet**](docs/Api/OpportunityWinLossReasonApi.md#opportunitywinlossreasonididget) | **GET** /opportunityWinLossReason/id/{id} | 
+*OpportunityWinLossReasonApi* | [**opportunityWinLossReasonIdIdPut**](docs/Api/OpportunityWinLossReasonApi.md#opportunitywinlossreasonididput) | **PUT** /opportunityWinLossReason/id/{id} | 
+*OpportunityWinLossReasonApi* | [**opportunityWinLossReasonPost**](docs/Api/OpportunityWinLossReasonApi.md#opportunitywinlossreasonpost) | **POST** /opportunityWinLossReason | 
+*PartyApi* | [**partyCountGet**](docs/Api/PartyApi.md#partycountget) | **GET** /party/count | 
+*PartyApi* | [**partyGet**](docs/Api/PartyApi.md#partyget) | **GET** /party | 
 *PartyApi* | [**partyIdIdCreatePublicPagePost**](docs/Api/PartyApi.md#partyididcreatepublicpagepost) | **POST** /party/id/{id}/createPublicPage | 
-*PartyApi* | [**partyIdIdDelete**](docs/Api/PartyApi.md#partyididdelete) | **DELETE** /party/id/{id} | delete a party
+*PartyApi* | [**partyIdIdDelete**](docs/Api/PartyApi.md#partyididdelete) | **DELETE** /party/id/{id} | 
 *PartyApi* | [**partyIdIdDownloadImageGet**](docs/Api/PartyApi.md#partyididdownloadimageget) | **GET** /party/id/{id}/downloadImage | 
-*PartyApi* | [**partyIdIdGet**](docs/Api/PartyApi.md#partyididget) | **GET** /party/id/{id} | query a specific party
-*PartyApi* | [**partyIdIdPut**](docs/Api/PartyApi.md#partyididput) | **PUT** /party/id/{id} | update a party
+*PartyApi* | [**partyIdIdGet**](docs/Api/PartyApi.md#partyididget) | **GET** /party/id/{id} | 
+*PartyApi* | [**partyIdIdPut**](docs/Api/PartyApi.md#partyididput) | **PUT** /party/id/{id} | 
 *PartyApi* | [**partyIdIdUploadImagePost**](docs/Api/PartyApi.md#partyididuploadimagepost) | **POST** /party/id/{id}/uploadImage | 
-*PartyApi* | [**partyPost**](docs/Api/PartyApi.md#partypost) | **POST** /party | create a party
-*PartyRatingApi* | [**partyRatingCountGet**](docs/Api/PartyRatingApi.md#partyratingcountget) | **GET** /partyRating/count | count partyRating
-*PartyRatingApi* | [**partyRatingGet**](docs/Api/PartyRatingApi.md#partyratingget) | **GET** /partyRating | query partyRating
-*PartyRatingApi* | [**partyRatingIdIdDelete**](docs/Api/PartyRatingApi.md#partyratingididdelete) | **DELETE** /partyRating/id/{id} | delete a partyRating
-*PartyRatingApi* | [**partyRatingIdIdGet**](docs/Api/PartyRatingApi.md#partyratingididget) | **GET** /partyRating/id/{id} | query a specific partyRating
-*PartyRatingApi* | [**partyRatingIdIdPut**](docs/Api/PartyRatingApi.md#partyratingididput) | **PUT** /partyRating/id/{id} | update a partyRating
-*PartyRatingApi* | [**partyRatingPost**](docs/Api/PartyRatingApi.md#partyratingpost) | **POST** /partyRating | create a partyRating
-*PaymentMethodApi* | [**paymentMethodCountGet**](docs/Api/PaymentMethodApi.md#paymentmethodcountget) | **GET** /paymentMethod/count | count paymentMethod
-*PaymentMethodApi* | [**paymentMethodGet**](docs/Api/PaymentMethodApi.md#paymentmethodget) | **GET** /paymentMethod | query paymentMethod
-*PaymentMethodApi* | [**paymentMethodIdIdDelete**](docs/Api/PaymentMethodApi.md#paymentmethodididdelete) | **DELETE** /paymentMethod/id/{id} | delete a paymentMethod
-*PaymentMethodApi* | [**paymentMethodIdIdGet**](docs/Api/PaymentMethodApi.md#paymentmethodididget) | **GET** /paymentMethod/id/{id} | query a specific paymentMethod
-*PaymentMethodApi* | [**paymentMethodIdIdPut**](docs/Api/PaymentMethodApi.md#paymentmethodididput) | **PUT** /paymentMethod/id/{id} | update a paymentMethod
-*PaymentMethodApi* | [**paymentMethodPost**](docs/Api/PaymentMethodApi.md#paymentmethodpost) | **POST** /paymentMethod | create a paymentMethod
-*PaymentRunApi* | [**paymentRunCountGet**](docs/Api/PaymentRunApi.md#paymentruncountget) | **GET** /paymentRun/count | count paymentRun
-*PaymentRunApi* | [**paymentRunGet**](docs/Api/PaymentRunApi.md#paymentrunget) | **GET** /paymentRun | query paymentRun
-*PaymentRunApi* | [**paymentRunIdIdDelete**](docs/Api/PaymentRunApi.md#paymentrunididdelete) | **DELETE** /paymentRun/id/{id} | delete a paymentRun
-*PaymentRunApi* | [**paymentRunIdIdGet**](docs/Api/PaymentRunApi.md#paymentrunididget) | **GET** /paymentRun/id/{id} | query a specific paymentRun
-*PaymentRunApi* | [**paymentRunIdIdPut**](docs/Api/PaymentRunApi.md#paymentrunididput) | **PUT** /paymentRun/id/{id} | update a paymentRun
-*PaymentRunItemApi* | [**paymentRunItemCountGet**](docs/Api/PaymentRunItemApi.md#paymentrunitemcountget) | **GET** /paymentRunItem/count | count paymentRunItem
-*PaymentRunItemApi* | [**paymentRunItemGet**](docs/Api/PaymentRunItemApi.md#paymentrunitemget) | **GET** /paymentRunItem | query paymentRunItem
-*PaymentRunItemApi* | [**paymentRunItemIdIdGet**](docs/Api/PaymentRunItemApi.md#paymentrunitemididget) | **GET** /paymentRunItem/id/{id} | query a specific paymentRunItem
-*PersonDepartmentApi* | [**personDepartmentCountGet**](docs/Api/PersonDepartmentApi.md#persondepartmentcountget) | **GET** /personDepartment/count | count personDepartment
-*PersonDepartmentApi* | [**personDepartmentGet**](docs/Api/PersonDepartmentApi.md#persondepartmentget) | **GET** /personDepartment | query personDepartment
-*PersonDepartmentApi* | [**personDepartmentIdIdDelete**](docs/Api/PersonDepartmentApi.md#persondepartmentididdelete) | **DELETE** /personDepartment/id/{id} | delete a personDepartment
-*PersonDepartmentApi* | [**personDepartmentIdIdGet**](docs/Api/PersonDepartmentApi.md#persondepartmentididget) | **GET** /personDepartment/id/{id} | query a specific personDepartment
-*PersonDepartmentApi* | [**personDepartmentIdIdPut**](docs/Api/PersonDepartmentApi.md#persondepartmentididput) | **PUT** /personDepartment/id/{id} | update a personDepartment
-*PersonDepartmentApi* | [**personDepartmentPost**](docs/Api/PersonDepartmentApi.md#persondepartmentpost) | **POST** /personDepartment | create a personDepartment
-*PersonRoleApi* | [**personRoleCountGet**](docs/Api/PersonRoleApi.md#personrolecountget) | **GET** /personRole/count | count personRole
-*PersonRoleApi* | [**personRoleGet**](docs/Api/PersonRoleApi.md#personroleget) | **GET** /personRole | query personRole
-*PersonRoleApi* | [**personRoleIdIdDelete**](docs/Api/PersonRoleApi.md#personroleididdelete) | **DELETE** /personRole/id/{id} | delete a personRole
-*PersonRoleApi* | [**personRoleIdIdGet**](docs/Api/PersonRoleApi.md#personroleididget) | **GET** /personRole/id/{id} | query a specific personRole
-*PersonRoleApi* | [**personRoleIdIdPut**](docs/Api/PersonRoleApi.md#personroleididput) | **PUT** /personRole/id/{id} | update a personRole
-*PersonRoleApi* | [**personRolePost**](docs/Api/PersonRoleApi.md#personrolepost) | **POST** /personRole | create a personRole
-*PersonalAccountingCodeApi* | [**personalAccountingCodeCountGet**](docs/Api/PersonalAccountingCodeApi.md#personalaccountingcodecountget) | **GET** /personalAccountingCode/count | count personalAccountingCode
-*PersonalAccountingCodeApi* | [**personalAccountingCodeGet**](docs/Api/PersonalAccountingCodeApi.md#personalaccountingcodeget) | **GET** /personalAccountingCode | query personalAccountingCode
-*PersonalAccountingCodeApi* | [**personalAccountingCodeIdIdDelete**](docs/Api/PersonalAccountingCodeApi.md#personalaccountingcodeididdelete) | **DELETE** /personalAccountingCode/id/{id} | delete a personalAccountingCode
-*PersonalAccountingCodeApi* | [**personalAccountingCodeIdIdGet**](docs/Api/PersonalAccountingCodeApi.md#personalaccountingcodeididget) | **GET** /personalAccountingCode/id/{id} | query a specific personalAccountingCode
-*PersonalAccountingCodeApi* | [**personalAccountingCodeIdIdPut**](docs/Api/PersonalAccountingCodeApi.md#personalaccountingcodeididput) | **PUT** /personalAccountingCode/id/{id} | update a personalAccountingCode
-*PersonalAccountingCodeApi* | [**personalAccountingCodePost**](docs/Api/PersonalAccountingCodeApi.md#personalaccountingcodepost) | **POST** /personalAccountingCode | create a personalAccountingCode
-*PickApi* | [**pickCountGet**](docs/Api/PickApi.md#pickcountget) | **GET** /pick/count | count pick
-*PickApi* | [**pickGet**](docs/Api/PickApi.md#pickget) | **GET** /pick | query pick
-*PickApi* | [**pickIdIdGet**](docs/Api/PickApi.md#pickididget) | **GET** /pick/id/{id} | query a specific pick
-*PickCheckReasonApi* | [**pickCheckReasonCountGet**](docs/Api/PickCheckReasonApi.md#pickcheckreasoncountget) | **GET** /pickCheckReason/count | count pickCheckReason
-*PickCheckReasonApi* | [**pickCheckReasonGet**](docs/Api/PickCheckReasonApi.md#pickcheckreasonget) | **GET** /pickCheckReason | query pickCheckReason
-*PickCheckReasonApi* | [**pickCheckReasonIdIdDelete**](docs/Api/PickCheckReasonApi.md#pickcheckreasonididdelete) | **DELETE** /pickCheckReason/id/{id} | delete a pickCheckReason
-*PickCheckReasonApi* | [**pickCheckReasonIdIdGet**](docs/Api/PickCheckReasonApi.md#pickcheckreasonididget) | **GET** /pickCheckReason/id/{id} | query a specific pickCheckReason
-*PickCheckReasonApi* | [**pickCheckReasonIdIdPut**](docs/Api/PickCheckReasonApi.md#pickcheckreasonididput) | **PUT** /pickCheckReason/id/{id} | update a pickCheckReason
-*PickCheckReasonApi* | [**pickCheckReasonPost**](docs/Api/PickCheckReasonApi.md#pickcheckreasonpost) | **POST** /pickCheckReason | create a pickCheckReason
-*PlaceOfServiceApi* | [**placeOfServiceCountGet**](docs/Api/PlaceOfServiceApi.md#placeofservicecountget) | **GET** /placeOfService/count | count placeOfService
-*PlaceOfServiceApi* | [**placeOfServiceGet**](docs/Api/PlaceOfServiceApi.md#placeofserviceget) | **GET** /placeOfService | query placeOfService
-*PlaceOfServiceApi* | [**placeOfServiceIdIdDelete**](docs/Api/PlaceOfServiceApi.md#placeofserviceididdelete) | **DELETE** /placeOfService/id/{id} | delete a placeOfService
-*PlaceOfServiceApi* | [**placeOfServiceIdIdGet**](docs/Api/PlaceOfServiceApi.md#placeofserviceididget) | **GET** /placeOfService/id/{id} | query a specific placeOfService
-*PlaceOfServiceApi* | [**placeOfServiceIdIdPut**](docs/Api/PlaceOfServiceApi.md#placeofserviceididput) | **PUT** /placeOfService/id/{id} | update a placeOfService
-*PlaceOfServiceApi* | [**placeOfServicePost**](docs/Api/PlaceOfServiceApi.md#placeofservicepost) | **POST** /placeOfService | create a placeOfService
-*PriceCalculationParameterApi* | [**priceCalculationParameterCountGet**](docs/Api/PriceCalculationParameterApi.md#pricecalculationparametercountget) | **GET** /priceCalculationParameter/count | count priceCalculationParameter
-*PriceCalculationParameterApi* | [**priceCalculationParameterGet**](docs/Api/PriceCalculationParameterApi.md#pricecalculationparameterget) | **GET** /priceCalculationParameter | query priceCalculationParameter
-*PriceCalculationParameterApi* | [**priceCalculationParameterIdIdDelete**](docs/Api/PriceCalculationParameterApi.md#pricecalculationparameterididdelete) | **DELETE** /priceCalculationParameter/id/{id} | delete a priceCalculationParameter
-*PriceCalculationParameterApi* | [**priceCalculationParameterIdIdGet**](docs/Api/PriceCalculationParameterApi.md#pricecalculationparameterididget) | **GET** /priceCalculationParameter/id/{id} | query a specific priceCalculationParameter
-*PriceCalculationParameterApi* | [**priceCalculationParameterIdIdPut**](docs/Api/PriceCalculationParameterApi.md#pricecalculationparameterididput) | **PUT** /priceCalculationParameter/id/{id} | update a priceCalculationParameter
-*PriceCalculationParameterApi* | [**priceCalculationParameterPost**](docs/Api/PriceCalculationParameterApi.md#pricecalculationparameterpost) | **POST** /priceCalculationParameter | create a priceCalculationParameter
-*ProductionOrderApi* | [**productionOrderCountGet**](docs/Api/ProductionOrderApi.md#productionordercountget) | **GET** /productionOrder/count | count productionOrder
+*PartyApi* | [**partyPost**](docs/Api/PartyApi.md#partypost) | **POST** /party | 
+*PartyRatingApi* | [**partyRatingCountGet**](docs/Api/PartyRatingApi.md#partyratingcountget) | **GET** /partyRating/count | 
+*PartyRatingApi* | [**partyRatingGet**](docs/Api/PartyRatingApi.md#partyratingget) | **GET** /partyRating | 
+*PartyRatingApi* | [**partyRatingIdIdDelete**](docs/Api/PartyRatingApi.md#partyratingididdelete) | **DELETE** /partyRating/id/{id} | 
+*PartyRatingApi* | [**partyRatingIdIdGet**](docs/Api/PartyRatingApi.md#partyratingididget) | **GET** /partyRating/id/{id} | 
+*PartyRatingApi* | [**partyRatingIdIdPut**](docs/Api/PartyRatingApi.md#partyratingididput) | **PUT** /partyRating/id/{id} | 
+*PartyRatingApi* | [**partyRatingPost**](docs/Api/PartyRatingApi.md#partyratingpost) | **POST** /partyRating | 
+*PaymentMethodApi* | [**paymentMethodCountGet**](docs/Api/PaymentMethodApi.md#paymentmethodcountget) | **GET** /paymentMethod/count | 
+*PaymentMethodApi* | [**paymentMethodGet**](docs/Api/PaymentMethodApi.md#paymentmethodget) | **GET** /paymentMethod | 
+*PaymentMethodApi* | [**paymentMethodIdIdDelete**](docs/Api/PaymentMethodApi.md#paymentmethodididdelete) | **DELETE** /paymentMethod/id/{id} | 
+*PaymentMethodApi* | [**paymentMethodIdIdGet**](docs/Api/PaymentMethodApi.md#paymentmethodididget) | **GET** /paymentMethod/id/{id} | 
+*PaymentMethodApi* | [**paymentMethodIdIdPut**](docs/Api/PaymentMethodApi.md#paymentmethodididput) | **PUT** /paymentMethod/id/{id} | 
+*PaymentMethodApi* | [**paymentMethodPost**](docs/Api/PaymentMethodApi.md#paymentmethodpost) | **POST** /paymentMethod | 
+*PaymentRunApi* | [**paymentRunCountGet**](docs/Api/PaymentRunApi.md#paymentruncountget) | **GET** /paymentRun/count | 
+*PaymentRunApi* | [**paymentRunGet**](docs/Api/PaymentRunApi.md#paymentrunget) | **GET** /paymentRun | 
+*PaymentRunApi* | [**paymentRunIdIdDelete**](docs/Api/PaymentRunApi.md#paymentrunididdelete) | **DELETE** /paymentRun/id/{id} | 
+*PaymentRunApi* | [**paymentRunIdIdGet**](docs/Api/PaymentRunApi.md#paymentrunididget) | **GET** /paymentRun/id/{id} | 
+*PaymentRunApi* | [**paymentRunIdIdPut**](docs/Api/PaymentRunApi.md#paymentrunididput) | **PUT** /paymentRun/id/{id} | 
+*PaymentRunItemApi* | [**paymentRunItemCountGet**](docs/Api/PaymentRunItemApi.md#paymentrunitemcountget) | **GET** /paymentRunItem/count | 
+*PaymentRunItemApi* | [**paymentRunItemGet**](docs/Api/PaymentRunItemApi.md#paymentrunitemget) | **GET** /paymentRunItem | 
+*PaymentRunItemApi* | [**paymentRunItemIdIdGet**](docs/Api/PaymentRunItemApi.md#paymentrunitemididget) | **GET** /paymentRunItem/id/{id} | 
+*PersonDepartmentApi* | [**personDepartmentCountGet**](docs/Api/PersonDepartmentApi.md#persondepartmentcountget) | **GET** /personDepartment/count | 
+*PersonDepartmentApi* | [**personDepartmentGet**](docs/Api/PersonDepartmentApi.md#persondepartmentget) | **GET** /personDepartment | 
+*PersonDepartmentApi* | [**personDepartmentIdIdDelete**](docs/Api/PersonDepartmentApi.md#persondepartmentididdelete) | **DELETE** /personDepartment/id/{id} | 
+*PersonDepartmentApi* | [**personDepartmentIdIdGet**](docs/Api/PersonDepartmentApi.md#persondepartmentididget) | **GET** /personDepartment/id/{id} | 
+*PersonDepartmentApi* | [**personDepartmentIdIdPut**](docs/Api/PersonDepartmentApi.md#persondepartmentididput) | **PUT** /personDepartment/id/{id} | 
+*PersonDepartmentApi* | [**personDepartmentPost**](docs/Api/PersonDepartmentApi.md#persondepartmentpost) | **POST** /personDepartment | 
+*PersonRoleApi* | [**personRoleCountGet**](docs/Api/PersonRoleApi.md#personrolecountget) | **GET** /personRole/count | 
+*PersonRoleApi* | [**personRoleGet**](docs/Api/PersonRoleApi.md#personroleget) | **GET** /personRole | 
+*PersonRoleApi* | [**personRoleIdIdDelete**](docs/Api/PersonRoleApi.md#personroleididdelete) | **DELETE** /personRole/id/{id} | 
+*PersonRoleApi* | [**personRoleIdIdGet**](docs/Api/PersonRoleApi.md#personroleididget) | **GET** /personRole/id/{id} | 
+*PersonRoleApi* | [**personRoleIdIdPut**](docs/Api/PersonRoleApi.md#personroleididput) | **PUT** /personRole/id/{id} | 
+*PersonRoleApi* | [**personRolePost**](docs/Api/PersonRoleApi.md#personrolepost) | **POST** /personRole | 
+*PersonalAccountingCodeApi* | [**personalAccountingCodeCountGet**](docs/Api/PersonalAccountingCodeApi.md#personalaccountingcodecountget) | **GET** /personalAccountingCode/count | 
+*PersonalAccountingCodeApi* | [**personalAccountingCodeGet**](docs/Api/PersonalAccountingCodeApi.md#personalaccountingcodeget) | **GET** /personalAccountingCode | 
+*PersonalAccountingCodeApi* | [**personalAccountingCodeIdIdDelete**](docs/Api/PersonalAccountingCodeApi.md#personalaccountingcodeididdelete) | **DELETE** /personalAccountingCode/id/{id} | 
+*PersonalAccountingCodeApi* | [**personalAccountingCodeIdIdGet**](docs/Api/PersonalAccountingCodeApi.md#personalaccountingcodeididget) | **GET** /personalAccountingCode/id/{id} | 
+*PersonalAccountingCodeApi* | [**personalAccountingCodeIdIdPut**](docs/Api/PersonalAccountingCodeApi.md#personalaccountingcodeididput) | **PUT** /personalAccountingCode/id/{id} | 
+*PersonalAccountingCodeApi* | [**personalAccountingCodePost**](docs/Api/PersonalAccountingCodeApi.md#personalaccountingcodepost) | **POST** /personalAccountingCode | 
+*PickApi* | [**pickCountGet**](docs/Api/PickApi.md#pickcountget) | **GET** /pick/count | 
+*PickApi* | [**pickGet**](docs/Api/PickApi.md#pickget) | **GET** /pick | 
+*PickApi* | [**pickIdIdGet**](docs/Api/PickApi.md#pickididget) | **GET** /pick/id/{id} | 
+*PickCheckReasonApi* | [**pickCheckReasonCountGet**](docs/Api/PickCheckReasonApi.md#pickcheckreasoncountget) | **GET** /pickCheckReason/count | 
+*PickCheckReasonApi* | [**pickCheckReasonGet**](docs/Api/PickCheckReasonApi.md#pickcheckreasonget) | **GET** /pickCheckReason | 
+*PickCheckReasonApi* | [**pickCheckReasonIdIdDelete**](docs/Api/PickCheckReasonApi.md#pickcheckreasonididdelete) | **DELETE** /pickCheckReason/id/{id} | 
+*PickCheckReasonApi* | [**pickCheckReasonIdIdGet**](docs/Api/PickCheckReasonApi.md#pickcheckreasonididget) | **GET** /pickCheckReason/id/{id} | 
+*PickCheckReasonApi* | [**pickCheckReasonIdIdPut**](docs/Api/PickCheckReasonApi.md#pickcheckreasonididput) | **PUT** /pickCheckReason/id/{id} | 
+*PickCheckReasonApi* | [**pickCheckReasonPost**](docs/Api/PickCheckReasonApi.md#pickcheckreasonpost) | **POST** /pickCheckReason | 
+*PlaceOfServiceApi* | [**placeOfServiceCountGet**](docs/Api/PlaceOfServiceApi.md#placeofservicecountget) | **GET** /placeOfService/count | 
+*PlaceOfServiceApi* | [**placeOfServiceGet**](docs/Api/PlaceOfServiceApi.md#placeofserviceget) | **GET** /placeOfService | 
+*PlaceOfServiceApi* | [**placeOfServiceIdIdDelete**](docs/Api/PlaceOfServiceApi.md#placeofserviceididdelete) | **DELETE** /placeOfService/id/{id} | 
+*PlaceOfServiceApi* | [**placeOfServiceIdIdGet**](docs/Api/PlaceOfServiceApi.md#placeofserviceididget) | **GET** /placeOfService/id/{id} | 
+*PlaceOfServiceApi* | [**placeOfServiceIdIdPut**](docs/Api/PlaceOfServiceApi.md#placeofserviceididput) | **PUT** /placeOfService/id/{id} | 
+*PlaceOfServiceApi* | [**placeOfServicePost**](docs/Api/PlaceOfServiceApi.md#placeofservicepost) | **POST** /placeOfService | 
+*PriceCalculationParameterApi* | [**priceCalculationParameterCountGet**](docs/Api/PriceCalculationParameterApi.md#pricecalculationparametercountget) | **GET** /priceCalculationParameter/count | 
+*PriceCalculationParameterApi* | [**priceCalculationParameterGet**](docs/Api/PriceCalculationParameterApi.md#pricecalculationparameterget) | **GET** /priceCalculationParameter | 
+*PriceCalculationParameterApi* | [**priceCalculationParameterIdIdDelete**](docs/Api/PriceCalculationParameterApi.md#pricecalculationparameterididdelete) | **DELETE** /priceCalculationParameter/id/{id} | 
+*PriceCalculationParameterApi* | [**priceCalculationParameterIdIdGet**](docs/Api/PriceCalculationParameterApi.md#pricecalculationparameterididget) | **GET** /priceCalculationParameter/id/{id} | 
+*PriceCalculationParameterApi* | [**priceCalculationParameterIdIdPut**](docs/Api/PriceCalculationParameterApi.md#pricecalculationparameterididput) | **PUT** /priceCalculationParameter/id/{id} | 
+*PriceCalculationParameterApi* | [**priceCalculationParameterPost**](docs/Api/PriceCalculationParameterApi.md#pricecalculationparameterpost) | **POST** /priceCalculationParameter | 
+*ProductionOrderApi* | [**productionOrderCountGet**](docs/Api/ProductionOrderApi.md#productionordercountget) | **GET** /productionOrder/count | 
 *ProductionOrderApi* | [**productionOrderFastProductionBookingPost**](docs/Api/ProductionOrderApi.md#productionorderfastproductionbookingpost) | **POST** /productionOrder/fastProductionBooking | 
-*ProductionOrderApi* | [**productionOrderGet**](docs/Api/ProductionOrderApi.md#productionorderget) | **GET** /productionOrder | query productionOrder
+*ProductionOrderApi* | [**productionOrderGet**](docs/Api/ProductionOrderApi.md#productionorderget) | **GET** /productionOrder | 
 *ProductionOrderApi* | [**productionOrderIdIdCreatePickingListPost**](docs/Api/ProductionOrderApi.md#productionorderididcreatepickinglistpost) | **POST** /productionOrder/id/{id}/createPickingList | 
-*ProductionOrderApi* | [**productionOrderIdIdDelete**](docs/Api/ProductionOrderApi.md#productionorderididdelete) | **DELETE** /productionOrder/id/{id} | delete a productionOrder
+*ProductionOrderApi* | [**productionOrderIdIdDelete**](docs/Api/ProductionOrderApi.md#productionorderididdelete) | **DELETE** /productionOrder/id/{id} | 
 *ProductionOrderApi* | [**productionOrderIdIdDownloadLatestProductionOrderPdfGet**](docs/Api/ProductionOrderApi.md#productionorderididdownloadlatestproductionorderpdfget) | **GET** /productionOrder/id/{id}/downloadLatestProductionOrderPdf | 
-*ProductionOrderApi* | [**productionOrderIdIdGet**](docs/Api/ProductionOrderApi.md#productionorderididget) | **GET** /productionOrder/id/{id} | query a specific productionOrder
-*ProductionOrderApi* | [**productionOrderIdIdPut**](docs/Api/ProductionOrderApi.md#productionorderididput) | **PUT** /productionOrder/id/{id} | update a productionOrder
-*ProductionOrderApi* | [**productionOrderPost**](docs/Api/ProductionOrderApi.md#productionorderpost) | **POST** /productionOrder | create a productionOrder
-*ProductionWorkScheduleApi* | [**productionWorkScheduleCountGet**](docs/Api/ProductionWorkScheduleApi.md#productionworkschedulecountget) | **GET** /productionWorkSchedule/count | count productionWorkSchedule
-*ProductionWorkScheduleApi* | [**productionWorkScheduleGet**](docs/Api/ProductionWorkScheduleApi.md#productionworkscheduleget) | **GET** /productionWorkSchedule | query productionWorkSchedule
-*ProductionWorkScheduleApi* | [**productionWorkScheduleIdIdDelete**](docs/Api/ProductionWorkScheduleApi.md#productionworkscheduleididdelete) | **DELETE** /productionWorkSchedule/id/{id} | delete a productionWorkSchedule
-*ProductionWorkScheduleApi* | [**productionWorkScheduleIdIdGet**](docs/Api/ProductionWorkScheduleApi.md#productionworkscheduleididget) | **GET** /productionWorkSchedule/id/{id} | query a specific productionWorkSchedule
-*ProductionWorkScheduleApi* | [**productionWorkScheduleIdIdPut**](docs/Api/ProductionWorkScheduleApi.md#productionworkscheduleididput) | **PUT** /productionWorkSchedule/id/{id} | update a productionWorkSchedule
-*ProductionWorkScheduleApi* | [**productionWorkSchedulePost**](docs/Api/ProductionWorkScheduleApi.md#productionworkschedulepost) | **POST** /productionWorkSchedule | create a productionWorkSchedule
-*ProductionWorkScheduleAssignmentApi* | [**productionWorkScheduleAssignmentCountGet**](docs/Api/ProductionWorkScheduleAssignmentApi.md#productionworkscheduleassignmentcountget) | **GET** /productionWorkScheduleAssignment/count | count productionWorkScheduleAssignment
-*ProductionWorkScheduleAssignmentApi* | [**productionWorkScheduleAssignmentGet**](docs/Api/ProductionWorkScheduleAssignmentApi.md#productionworkscheduleassignmentget) | **GET** /productionWorkScheduleAssignment | query productionWorkScheduleAssignment
-*ProductionWorkScheduleAssignmentApi* | [**productionWorkScheduleAssignmentIdIdDelete**](docs/Api/ProductionWorkScheduleAssignmentApi.md#productionworkscheduleassignmentididdelete) | **DELETE** /productionWorkScheduleAssignment/id/{id} | delete a productionWorkScheduleAssignment
-*ProductionWorkScheduleAssignmentApi* | [**productionWorkScheduleAssignmentIdIdGet**](docs/Api/ProductionWorkScheduleAssignmentApi.md#productionworkscheduleassignmentididget) | **GET** /productionWorkScheduleAssignment/id/{id} | query a specific productionWorkScheduleAssignment
-*ProductionWorkScheduleAssignmentApi* | [**productionWorkScheduleAssignmentIdIdPut**](docs/Api/ProductionWorkScheduleAssignmentApi.md#productionworkscheduleassignmentididput) | **PUT** /productionWorkScheduleAssignment/id/{id} | update a productionWorkScheduleAssignment
-*ProductionWorkScheduleAssignmentApi* | [**productionWorkScheduleAssignmentPost**](docs/Api/ProductionWorkScheduleAssignmentApi.md#productionworkscheduleassignmentpost) | **POST** /productionWorkScheduleAssignment | create a productionWorkScheduleAssignment
+*ProductionOrderApi* | [**productionOrderIdIdGet**](docs/Api/ProductionOrderApi.md#productionorderididget) | **GET** /productionOrder/id/{id} | 
+*ProductionOrderApi* | [**productionOrderIdIdPut**](docs/Api/ProductionOrderApi.md#productionorderididput) | **PUT** /productionOrder/id/{id} | 
+*ProductionOrderApi* | [**productionOrderPost**](docs/Api/ProductionOrderApi.md#productionorderpost) | **POST** /productionOrder | 
+*ProductionWorkScheduleApi* | [**productionWorkScheduleCountGet**](docs/Api/ProductionWorkScheduleApi.md#productionworkschedulecountget) | **GET** /productionWorkSchedule/count | 
+*ProductionWorkScheduleApi* | [**productionWorkScheduleGet**](docs/Api/ProductionWorkScheduleApi.md#productionworkscheduleget) | **GET** /productionWorkSchedule | 
+*ProductionWorkScheduleApi* | [**productionWorkScheduleIdIdDelete**](docs/Api/ProductionWorkScheduleApi.md#productionworkscheduleididdelete) | **DELETE** /productionWorkSchedule/id/{id} | 
+*ProductionWorkScheduleApi* | [**productionWorkScheduleIdIdGet**](docs/Api/ProductionWorkScheduleApi.md#productionworkscheduleididget) | **GET** /productionWorkSchedule/id/{id} | 
+*ProductionWorkScheduleApi* | [**productionWorkScheduleIdIdPut**](docs/Api/ProductionWorkScheduleApi.md#productionworkscheduleididput) | **PUT** /productionWorkSchedule/id/{id} | 
+*ProductionWorkScheduleApi* | [**productionWorkSchedulePost**](docs/Api/ProductionWorkScheduleApi.md#productionworkschedulepost) | **POST** /productionWorkSchedule | 
+*ProductionWorkScheduleAssignmentApi* | [**productionWorkScheduleAssignmentCountGet**](docs/Api/ProductionWorkScheduleAssignmentApi.md#productionworkscheduleassignmentcountget) | **GET** /productionWorkScheduleAssignment/count | 
+*ProductionWorkScheduleAssignmentApi* | [**productionWorkScheduleAssignmentGet**](docs/Api/ProductionWorkScheduleAssignmentApi.md#productionworkscheduleassignmentget) | **GET** /productionWorkScheduleAssignment | 
+*ProductionWorkScheduleAssignmentApi* | [**productionWorkScheduleAssignmentIdIdDelete**](docs/Api/ProductionWorkScheduleAssignmentApi.md#productionworkscheduleassignmentididdelete) | **DELETE** /productionWorkScheduleAssignment/id/{id} | 
+*ProductionWorkScheduleAssignmentApi* | [**productionWorkScheduleAssignmentIdIdGet**](docs/Api/ProductionWorkScheduleAssignmentApi.md#productionworkscheduleassignmentididget) | **GET** /productionWorkScheduleAssignment/id/{id} | 
+*ProductionWorkScheduleAssignmentApi* | [**productionWorkScheduleAssignmentIdIdPut**](docs/Api/ProductionWorkScheduleAssignmentApi.md#productionworkscheduleassignmentididput) | **PUT** /productionWorkScheduleAssignment/id/{id} | 
+*ProductionWorkScheduleAssignmentApi* | [**productionWorkScheduleAssignmentPost**](docs/Api/ProductionWorkScheduleAssignmentApi.md#productionworkscheduleassignmentpost) | **POST** /productionWorkScheduleAssignment | 
 *PropertyTranslationApi* | [**propertyTranslationReadPropertyTranslationsGet**](docs/Api/PropertyTranslationApi.md#propertytranslationreadpropertytranslationsget) | **GET** /propertyTranslation/readPropertyTranslations | 
 *PropertyTranslationApi* | [**propertyTranslationUpdatePropertyTranslationsPost**](docs/Api/PropertyTranslationApi.md#propertytranslationupdatepropertytranslationspost) | **POST** /propertyTranslation/updatePropertyTranslations | 
-*PurchaseInvoiceApi* | [**purchaseInvoiceCountGet**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoicecountget) | **GET** /purchaseInvoice/count | count purchaseInvoice
-*PurchaseInvoiceApi* | [**purchaseInvoiceGet**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceget) | **GET** /purchaseInvoice | query purchaseInvoice
+*PurchaseInvoiceApi* | [**purchaseInvoiceCountGet**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoicecountget) | **GET** /purchaseInvoice/count | 
+*PurchaseInvoiceApi* | [**purchaseInvoiceGet**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceget) | **GET** /purchaseInvoice | 
 *PurchaseInvoiceApi* | [**purchaseInvoiceIdIdCreateContractPost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididcreatecontractpost) | **POST** /purchaseInvoice/id/{id}/createContract | 
 *PurchaseInvoiceApi* | [**purchaseInvoiceIdIdCreateCreditNotePost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididcreatecreditnotepost) | **POST** /purchaseInvoice/id/{id}/createCreditNote | 
-*PurchaseInvoiceApi* | [**purchaseInvoiceIdIdDelete**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididdelete) | **DELETE** /purchaseInvoice/id/{id} | delete a purchaseInvoice
+*PurchaseInvoiceApi* | [**purchaseInvoiceIdIdDelete**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididdelete) | **DELETE** /purchaseInvoice/id/{id} | 
 *PurchaseInvoiceApi* | [**purchaseInvoiceIdIdDownloadLatestPurchaseInvoiceDocumentGet**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididdownloadlatestpurchaseinvoicedocumentget) | **GET** /purchaseInvoice/id/{id}/downloadLatestPurchaseInvoiceDocument | 
-*PurchaseInvoiceApi* | [**purchaseInvoiceIdIdGet**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididget) | **GET** /purchaseInvoice/id/{id} | query a specific purchaseInvoice
+*PurchaseInvoiceApi* | [**purchaseInvoiceIdIdGet**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididget) | **GET** /purchaseInvoice/id/{id} | 
 *PurchaseInvoiceApi* | [**purchaseInvoiceIdIdPrintLabelPost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididprintlabelpost) | **POST** /purchaseInvoice/id/{id}/printLabel | 
-*PurchaseInvoiceApi* | [**purchaseInvoiceIdIdPut**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididput) | **PUT** /purchaseInvoice/id/{id} | update a purchaseInvoice
+*PurchaseInvoiceApi* | [**purchaseInvoiceIdIdPut**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididput) | **PUT** /purchaseInvoice/id/{id} | 
 *PurchaseInvoiceApi* | [**purchaseInvoiceIdIdResetTaxesPost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididresettaxespost) | **POST** /purchaseInvoice/id/{id}/resetTaxes | 
 *PurchaseInvoiceApi* | [**purchaseInvoiceIdIdSaveDuplicateInvoiceAsOriginalPost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididsaveduplicateinvoiceasoriginalpost) | **POST** /purchaseInvoice/id/{id}/saveDuplicateInvoiceAsOriginal | 
-*PurchaseInvoiceApi* | [**purchaseInvoicePost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoicepost) | **POST** /purchaseInvoice | create a purchaseInvoice
-*PurchaseInvoiceApi* | [**purchaseInvoiceStartInvoiceDocumentProcessingMultipartUploadPost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoicestartinvoicedocumentprocessingmultipartuploadpost) | **POST** /purchaseInvoice/startInvoiceDocumentProcessing/multipartUpload | 
-*PurchaseOpenItemApi* | [**purchaseOpenItemCountGet**](docs/Api/PurchaseOpenItemApi.md#purchaseopenitemcountget) | **GET** /purchaseOpenItem/count | count purchaseOpenItem
-*PurchaseOpenItemApi* | [**purchaseOpenItemGet**](docs/Api/PurchaseOpenItemApi.md#purchaseopenitemget) | **GET** /purchaseOpenItem | query purchaseOpenItem
+*PurchaseInvoiceApi* | [**purchaseInvoicePost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoicepost) | **POST** /purchaseInvoice | 
+*PurchaseInvoiceApi* | [**purchaseInvoiceStartInvoiceDocumentProcessingPost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoicestartinvoicedocumentprocessingpost) | **POST** /purchaseInvoice/startInvoiceDocumentProcessing | 
+*PurchaseOpenItemApi* | [**purchaseOpenItemCountGet**](docs/Api/PurchaseOpenItemApi.md#purchaseopenitemcountget) | **GET** /purchaseOpenItem/count | 
+*PurchaseOpenItemApi* | [**purchaseOpenItemGet**](docs/Api/PurchaseOpenItemApi.md#purchaseopenitemget) | **GET** /purchaseOpenItem | 
 *PurchaseOpenItemApi* | [**purchaseOpenItemIdIdCreatePaymentApplicationPost**](docs/Api/PurchaseOpenItemApi.md#purchaseopenitemididcreatepaymentapplicationpost) | **POST** /purchaseOpenItem/id/{id}/createPaymentApplication | 
-*PurchaseOpenItemApi* | [**purchaseOpenItemIdIdGet**](docs/Api/PurchaseOpenItemApi.md#purchaseopenitemididget) | **GET** /purchaseOpenItem/id/{id} | query a specific purchaseOpenItem
+*PurchaseOpenItemApi* | [**purchaseOpenItemIdIdGet**](docs/Api/PurchaseOpenItemApi.md#purchaseopenitemididget) | **GET** /purchaseOpenItem/id/{id} | 
 *PurchaseOpenItemApi* | [**purchaseOpenItemIdIdUpdatePaymentStatePost**](docs/Api/PurchaseOpenItemApi.md#purchaseopenitemididupdatepaymentstatepost) | **POST** /purchaseOpenItem/id/{id}/updatePaymentState | 
-*PurchaseOrderApi* | [**purchaseOrderCountGet**](docs/Api/PurchaseOrderApi.md#purchaseordercountget) | **GET** /purchaseOrder/count | count purchaseOrder
-*PurchaseOrderApi* | [**purchaseOrderGet**](docs/Api/PurchaseOrderApi.md#purchaseorderget) | **GET** /purchaseOrder | query purchaseOrder
+*PurchaseOrderApi* | [**purchaseOrderCountGet**](docs/Api/PurchaseOrderApi.md#purchaseordercountget) | **GET** /purchaseOrder/count | 
+*PurchaseOrderApi* | [**purchaseOrderGet**](docs/Api/PurchaseOrderApi.md#purchaseorderget) | **GET** /purchaseOrder | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdCancelDropshippingShipmentsPost**](docs/Api/PurchaseOrderApi.md#purchaseorderididcanceldropshippingshipmentspost) | **POST** /purchaseOrder/id/{id}/cancelDropshippingShipments | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdCreateCancellationSlipPdfPost**](docs/Api/PurchaseOrderApi.md#purchaseorderididcreatecancellationslippdfpost) | **POST** /purchaseOrder/id/{id}/createCancellationSlipPdf | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdCreateContractPost**](docs/Api/PurchaseOrderApi.md#purchaseorderididcreatecontractpost) | **POST** /purchaseOrder/id/{id}/createContract | 
@@ -605,33 +605,33 @@ Class | Method | HTTP request | Description
 *PurchaseOrderApi* | [**purchaseOrderIdIdCreateIncomingGoodsPost**](docs/Api/PurchaseOrderApi.md#purchaseorderididcreateincominggoodspost) | **POST** /purchaseOrder/id/{id}/createIncomingGoods | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdCreatePurchaseInvoicePost**](docs/Api/PurchaseOrderApi.md#purchaseorderididcreatepurchaseinvoicepost) | **POST** /purchaseOrder/id/{id}/createPurchaseInvoice | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdCreateSupplierReturnPost**](docs/Api/PurchaseOrderApi.md#purchaseorderididcreatesupplierreturnpost) | **POST** /purchaseOrder/id/{id}/createSupplierReturn | 
-*PurchaseOrderApi* | [**purchaseOrderIdIdDelete**](docs/Api/PurchaseOrderApi.md#purchaseorderididdelete) | **DELETE** /purchaseOrder/id/{id} | delete a purchaseOrder
+*PurchaseOrderApi* | [**purchaseOrderIdIdDelete**](docs/Api/PurchaseOrderApi.md#purchaseorderididdelete) | **DELETE** /purchaseOrder/id/{id} | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdDownloadLatestCancellationSlipPdfGet**](docs/Api/PurchaseOrderApi.md#purchaseorderididdownloadlatestcancellationslippdfget) | **GET** /purchaseOrder/id/{id}/downloadLatestCancellationSlipPdf | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdDownloadLatestDropshippingDeliveryNotePdfGet**](docs/Api/PurchaseOrderApi.md#purchaseorderididdownloadlatestdropshippingdeliverynotepdfget) | **GET** /purchaseOrder/id/{id}/downloadLatestDropshippingDeliveryNotePdf | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdDownloadLatestPurchaseOrderPdfGet**](docs/Api/PurchaseOrderApi.md#purchaseorderididdownloadlatestpurchaseorderpdfget) | **GET** /purchaseOrder/id/{id}/downloadLatestPurchaseOrderPdf | 
-*PurchaseOrderApi* | [**purchaseOrderIdIdGet**](docs/Api/PurchaseOrderApi.md#purchaseorderididget) | **GET** /purchaseOrder/id/{id} | query a specific purchaseOrder
+*PurchaseOrderApi* | [**purchaseOrderIdIdGet**](docs/Api/PurchaseOrderApi.md#purchaseorderididget) | **GET** /purchaseOrder/id/{id} | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdPrintLabelPost**](docs/Api/PurchaseOrderApi.md#purchaseorderididprintlabelpost) | **POST** /purchaseOrder/id/{id}/printLabel | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdProcessDropshippingPost**](docs/Api/PurchaseOrderApi.md#purchaseorderididprocessdropshippingpost) | **POST** /purchaseOrder/id/{id}/processDropshipping | 
-*PurchaseOrderApi* | [**purchaseOrderIdIdPut**](docs/Api/PurchaseOrderApi.md#purchaseorderididput) | **PUT** /purchaseOrder/id/{id} | update a purchaseOrder
-*PurchaseOrderApi* | [**purchaseOrderPost**](docs/Api/PurchaseOrderApi.md#purchaseorderpost) | **POST** /purchaseOrder | create a purchaseOrder
-*PurchaseOrderRequestApi* | [**purchaseOrderRequestCountGet**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestcountget) | **GET** /purchaseOrderRequest/count | count purchaseOrderRequest
-*PurchaseOrderRequestApi* | [**purchaseOrderRequestGet**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestget) | **GET** /purchaseOrderRequest | query purchaseOrderRequest
+*PurchaseOrderApi* | [**purchaseOrderIdIdPut**](docs/Api/PurchaseOrderApi.md#purchaseorderididput) | **PUT** /purchaseOrder/id/{id} | 
+*PurchaseOrderApi* | [**purchaseOrderPost**](docs/Api/PurchaseOrderApi.md#purchaseorderpost) | **POST** /purchaseOrder | 
+*PurchaseOrderRequestApi* | [**purchaseOrderRequestCountGet**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestcountget) | **GET** /purchaseOrderRequest/count | 
+*PurchaseOrderRequestApi* | [**purchaseOrderRequestGet**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestget) | **GET** /purchaseOrderRequest | 
 *PurchaseOrderRequestApi* | [**purchaseOrderRequestIdIdCreateBlanketPurchaseOrderPost**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestididcreateblanketpurchaseorderpost) | **POST** /purchaseOrderRequest/id/{id}/createBlanketPurchaseOrder | 
 *PurchaseOrderRequestApi* | [**purchaseOrderRequestIdIdCreatePurchaseOrderPost**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestididcreatepurchaseorderpost) | **POST** /purchaseOrderRequest/id/{id}/createPurchaseOrder | 
-*PurchaseOrderRequestApi* | [**purchaseOrderRequestIdIdDelete**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestididdelete) | **DELETE** /purchaseOrderRequest/id/{id} | delete a purchaseOrderRequest
+*PurchaseOrderRequestApi* | [**purchaseOrderRequestIdIdDelete**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestididdelete) | **DELETE** /purchaseOrderRequest/id/{id} | 
 *PurchaseOrderRequestApi* | [**purchaseOrderRequestIdIdExportItemsAsCsvPost**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestididexportitemsascsvpost) | **POST** /purchaseOrderRequest/id/{id}/exportItemsAsCsv | 
-*PurchaseOrderRequestApi* | [**purchaseOrderRequestIdIdGet**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestididget) | **GET** /purchaseOrderRequest/id/{id} | query a specific purchaseOrderRequest
+*PurchaseOrderRequestApi* | [**purchaseOrderRequestIdIdGet**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestididget) | **GET** /purchaseOrderRequest/id/{id} | 
 *PurchaseOrderRequestApi* | [**purchaseOrderRequestIdIdPushPurchasePricesPost**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestididpushpurchasepricespost) | **POST** /purchaseOrderRequest/id/{id}/pushPurchasePrices | 
-*PurchaseOrderRequestApi* | [**purchaseOrderRequestIdIdPut**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestididput) | **PUT** /purchaseOrderRequest/id/{id} | update a purchaseOrderRequest
-*PurchaseOrderRequestApi* | [**purchaseOrderRequestPost**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestpost) | **POST** /purchaseOrderRequest | create a purchaseOrderRequest
-*PurchaseRequisitionApi* | [**purchaseRequisitionCountGet**](docs/Api/PurchaseRequisitionApi.md#purchaserequisitioncountget) | **GET** /purchaseRequisition/count | count purchaseRequisition
+*PurchaseOrderRequestApi* | [**purchaseOrderRequestIdIdPut**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestididput) | **PUT** /purchaseOrderRequest/id/{id} | 
+*PurchaseOrderRequestApi* | [**purchaseOrderRequestPost**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestpost) | **POST** /purchaseOrderRequest | 
+*PurchaseRequisitionApi* | [**purchaseRequisitionCountGet**](docs/Api/PurchaseRequisitionApi.md#purchaserequisitioncountget) | **GET** /purchaseRequisition/count | 
 *PurchaseRequisitionApi* | [**purchaseRequisitionDeleteAllRequisitionsPost**](docs/Api/PurchaseRequisitionApi.md#purchaserequisitiondeleteallrequisitionspost) | **POST** /purchaseRequisition/deleteAllRequisitions | 
-*PurchaseRequisitionApi* | [**purchaseRequisitionGet**](docs/Api/PurchaseRequisitionApi.md#purchaserequisitionget) | **GET** /purchaseRequisition | query purchaseRequisition
-*PurchaseRequisitionApi* | [**purchaseRequisitionIdIdGet**](docs/Api/PurchaseRequisitionApi.md#purchaserequisitionididget) | **GET** /purchaseRequisition/id/{id} | query a specific purchaseRequisition
-*PurchaseRequisitionApi* | [**purchaseRequisitionIdIdPut**](docs/Api/PurchaseRequisitionApi.md#purchaserequisitionididput) | **PUT** /purchaseRequisition/id/{id} | update a purchaseRequisition
+*PurchaseRequisitionApi* | [**purchaseRequisitionGet**](docs/Api/PurchaseRequisitionApi.md#purchaserequisitionget) | **GET** /purchaseRequisition | 
+*PurchaseRequisitionApi* | [**purchaseRequisitionIdIdGet**](docs/Api/PurchaseRequisitionApi.md#purchaserequisitionididget) | **GET** /purchaseRequisition/id/{id} | 
+*PurchaseRequisitionApi* | [**purchaseRequisitionIdIdPut**](docs/Api/PurchaseRequisitionApi.md#purchaserequisitionididput) | **PUT** /purchaseRequisition/id/{id} | 
 *PurchaseRequisitionApi* | [**purchaseRequisitionStartMaterialPlanningRunPost**](docs/Api/PurchaseRequisitionApi.md#purchaserequisitionstartmaterialplanningrunpost) | **POST** /purchaseRequisition/startMaterialPlanningRun | 
-*QuotationApi* | [**quotationCountGet**](docs/Api/QuotationApi.md#quotationcountget) | **GET** /quotation/count | count quotation
-*QuotationApi* | [**quotationGet**](docs/Api/QuotationApi.md#quotationget) | **GET** /quotation | query quotation
+*QuotationApi* | [**quotationCountGet**](docs/Api/QuotationApi.md#quotationcountget) | **GET** /quotation/count | 
+*QuotationApi* | [**quotationGet**](docs/Api/QuotationApi.md#quotationget) | **GET** /quotation | 
 *QuotationApi* | [**quotationIdIdAcceptPost**](docs/Api/QuotationApi.md#quotationididacceptpost) | **POST** /quotation/id/{id}/accept | 
 *QuotationApi* | [**quotationIdIdAddDefaultScalePricesToItemsPost**](docs/Api/QuotationApi.md#quotationididadddefaultscalepricestoitemspost) | **POST** /quotation/id/{id}/addDefaultScalePricesToItems | 
 *QuotationApi* | [**quotationIdIdCalculateSalesPricesPost**](docs/Api/QuotationApi.md#quotationididcalculatesalespricespost) | **POST** /quotation/id/{id}/calculateSalesPrices | 
@@ -639,70 +639,70 @@ Class | Method | HTTP request | Description
 *QuotationApi* | [**quotationIdIdCreatePublicPageLinkPost**](docs/Api/QuotationApi.md#quotationididcreatepublicpagelinkpost) | **POST** /quotation/id/{id}/createPublicPageLink | 
 *QuotationApi* | [**quotationIdIdCreatePurchaseOrderRequestPost**](docs/Api/QuotationApi.md#quotationididcreatepurchaseorderrequestpost) | **POST** /quotation/id/{id}/createPurchaseOrderRequest | 
 *QuotationApi* | [**quotationIdIdCreateQuotationPdfPost**](docs/Api/QuotationApi.md#quotationididcreatequotationpdfpost) | **POST** /quotation/id/{id}/createQuotationPdf | 
-*QuotationApi* | [**quotationIdIdDelete**](docs/Api/QuotationApi.md#quotationididdelete) | **DELETE** /quotation/id/{id} | delete a quotation
+*QuotationApi* | [**quotationIdIdDelete**](docs/Api/QuotationApi.md#quotationididdelete) | **DELETE** /quotation/id/{id} | 
 *QuotationApi* | [**quotationIdIdDisablePublicPageLinkPost**](docs/Api/QuotationApi.md#quotationididdisablepublicpagelinkpost) | **POST** /quotation/id/{id}/disablePublicPageLink | 
 *QuotationApi* | [**quotationIdIdDownloadLatestQuotationPdfGet**](docs/Api/QuotationApi.md#quotationididdownloadlatestquotationpdfget) | **GET** /quotation/id/{id}/downloadLatestQuotationPdf | 
-*QuotationApi* | [**quotationIdIdGet**](docs/Api/QuotationApi.md#quotationididget) | **GET** /quotation/id/{id} | query a specific quotation
+*QuotationApi* | [**quotationIdIdGet**](docs/Api/QuotationApi.md#quotationididget) | **GET** /quotation/id/{id} | 
 *QuotationApi* | [**quotationIdIdInquirePost**](docs/Api/QuotationApi.md#quotationididinquirepost) | **POST** /quotation/id/{id}/inquire | 
 *QuotationApi* | [**quotationIdIdPrintLabelPost**](docs/Api/QuotationApi.md#quotationididprintlabelpost) | **POST** /quotation/id/{id}/printLabel | 
 *QuotationApi* | [**quotationIdIdPrintQuotationDataGet**](docs/Api/QuotationApi.md#quotationididprintquotationdataget) | **GET** /quotation/id/{id}/printQuotationData | 
-*QuotationApi* | [**quotationIdIdPut**](docs/Api/QuotationApi.md#quotationididput) | **PUT** /quotation/id/{id} | update a quotation
+*QuotationApi* | [**quotationIdIdPut**](docs/Api/QuotationApi.md#quotationididput) | **PUT** /quotation/id/{id} | 
 *QuotationApi* | [**quotationIdIdRecalculateCostsPost**](docs/Api/QuotationApi.md#quotationididrecalculatecostspost) | **POST** /quotation/id/{id}/recalculateCosts | 
 *QuotationApi* | [**quotationIdIdResetTaxesPost**](docs/Api/QuotationApi.md#quotationididresettaxespost) | **POST** /quotation/id/{id}/resetTaxes | 
 *QuotationApi* | [**quotationIdIdSetCostsForItemsWithoutCostPost**](docs/Api/QuotationApi.md#quotationididsetcostsforitemswithoutcostpost) | **POST** /quotation/id/{id}/setCostsForItemsWithoutCost | 
 *QuotationApi* | [**quotationIdIdUpdatePricesPost**](docs/Api/QuotationApi.md#quotationididupdatepricespost) | **POST** /quotation/id/{id}/updatePrices | 
-*QuotationApi* | [**quotationPost**](docs/Api/QuotationApi.md#quotationpost) | **POST** /quotation | create a quotation
-*RecordEmailingRuleApi* | [**recordEmailingRuleCountGet**](docs/Api/RecordEmailingRuleApi.md#recordemailingrulecountget) | **GET** /recordEmailingRule/count | count recordEmailingRule
-*RecordEmailingRuleApi* | [**recordEmailingRuleGet**](docs/Api/RecordEmailingRuleApi.md#recordemailingruleget) | **GET** /recordEmailingRule | query recordEmailingRule
-*RecordEmailingRuleApi* | [**recordEmailingRuleIdIdDelete**](docs/Api/RecordEmailingRuleApi.md#recordemailingruleididdelete) | **DELETE** /recordEmailingRule/id/{id} | delete a recordEmailingRule
-*RecordEmailingRuleApi* | [**recordEmailingRuleIdIdGet**](docs/Api/RecordEmailingRuleApi.md#recordemailingruleididget) | **GET** /recordEmailingRule/id/{id} | query a specific recordEmailingRule
-*RecordEmailingRuleApi* | [**recordEmailingRuleIdIdPut**](docs/Api/RecordEmailingRuleApi.md#recordemailingruleididput) | **PUT** /recordEmailingRule/id/{id} | update a recordEmailingRule
-*RecordEmailingRuleApi* | [**recordEmailingRulePost**](docs/Api/RecordEmailingRuleApi.md#recordemailingrulepost) | **POST** /recordEmailingRule | create a recordEmailingRule
-*RegionApi* | [**regionCountGet**](docs/Api/RegionApi.md#regioncountget) | **GET** /region/count | count region
-*RegionApi* | [**regionGet**](docs/Api/RegionApi.md#regionget) | **GET** /region | query region
-*RegionApi* | [**regionIdIdDelete**](docs/Api/RegionApi.md#regionididdelete) | **DELETE** /region/id/{id} | delete a region
-*RegionApi* | [**regionIdIdGet**](docs/Api/RegionApi.md#regionididget) | **GET** /region/id/{id} | query a specific region
-*RegionApi* | [**regionIdIdPut**](docs/Api/RegionApi.md#regionididput) | **PUT** /region/id/{id} | update a region
-*RegionApi* | [**regionPost**](docs/Api/RegionApi.md#regionpost) | **POST** /region | create a region
-*ReminderApi* | [**reminderCountGet**](docs/Api/ReminderApi.md#remindercountget) | **GET** /reminder/count | count reminder
-*ReminderApi* | [**reminderGet**](docs/Api/ReminderApi.md#reminderget) | **GET** /reminder | query reminder
-*ReminderApi* | [**reminderIdIdDelete**](docs/Api/ReminderApi.md#reminderididdelete) | **DELETE** /reminder/id/{id} | delete a reminder
-*ReminderApi* | [**reminderIdIdGet**](docs/Api/ReminderApi.md#reminderididget) | **GET** /reminder/id/{id} | query a specific reminder
-*ReminderApi* | [**reminderIdIdPut**](docs/Api/ReminderApi.md#reminderididput) | **PUT** /reminder/id/{id} | update a reminder
-*ReminderApi* | [**reminderPost**](docs/Api/ReminderApi.md#reminderpost) | **POST** /reminder | create a reminder
-*RemotePrintJobApi* | [**remotePrintJobCountGet**](docs/Api/RemotePrintJobApi.md#remoteprintjobcountget) | **GET** /remotePrintJob/count | count remotePrintJob
+*QuotationApi* | [**quotationPost**](docs/Api/QuotationApi.md#quotationpost) | **POST** /quotation | 
+*RecordEmailingRuleApi* | [**recordEmailingRuleCountGet**](docs/Api/RecordEmailingRuleApi.md#recordemailingrulecountget) | **GET** /recordEmailingRule/count | 
+*RecordEmailingRuleApi* | [**recordEmailingRuleGet**](docs/Api/RecordEmailingRuleApi.md#recordemailingruleget) | **GET** /recordEmailingRule | 
+*RecordEmailingRuleApi* | [**recordEmailingRuleIdIdDelete**](docs/Api/RecordEmailingRuleApi.md#recordemailingruleididdelete) | **DELETE** /recordEmailingRule/id/{id} | 
+*RecordEmailingRuleApi* | [**recordEmailingRuleIdIdGet**](docs/Api/RecordEmailingRuleApi.md#recordemailingruleididget) | **GET** /recordEmailingRule/id/{id} | 
+*RecordEmailingRuleApi* | [**recordEmailingRuleIdIdPut**](docs/Api/RecordEmailingRuleApi.md#recordemailingruleididput) | **PUT** /recordEmailingRule/id/{id} | 
+*RecordEmailingRuleApi* | [**recordEmailingRulePost**](docs/Api/RecordEmailingRuleApi.md#recordemailingrulepost) | **POST** /recordEmailingRule | 
+*RegionApi* | [**regionCountGet**](docs/Api/RegionApi.md#regioncountget) | **GET** /region/count | 
+*RegionApi* | [**regionGet**](docs/Api/RegionApi.md#regionget) | **GET** /region | 
+*RegionApi* | [**regionIdIdDelete**](docs/Api/RegionApi.md#regionididdelete) | **DELETE** /region/id/{id} | 
+*RegionApi* | [**regionIdIdGet**](docs/Api/RegionApi.md#regionididget) | **GET** /region/id/{id} | 
+*RegionApi* | [**regionIdIdPut**](docs/Api/RegionApi.md#regionididput) | **PUT** /region/id/{id} | 
+*RegionApi* | [**regionPost**](docs/Api/RegionApi.md#regionpost) | **POST** /region | 
+*ReminderApi* | [**reminderCountGet**](docs/Api/ReminderApi.md#remindercountget) | **GET** /reminder/count | 
+*ReminderApi* | [**reminderGet**](docs/Api/ReminderApi.md#reminderget) | **GET** /reminder | 
+*ReminderApi* | [**reminderIdIdDelete**](docs/Api/ReminderApi.md#reminderididdelete) | **DELETE** /reminder/id/{id} | 
+*ReminderApi* | [**reminderIdIdGet**](docs/Api/ReminderApi.md#reminderididget) | **GET** /reminder/id/{id} | 
+*ReminderApi* | [**reminderIdIdPut**](docs/Api/ReminderApi.md#reminderididput) | **PUT** /reminder/id/{id} | 
+*ReminderApi* | [**reminderPost**](docs/Api/ReminderApi.md#reminderpost) | **POST** /reminder | 
+*RemotePrintJobApi* | [**remotePrintJobCountGet**](docs/Api/RemotePrintJobApi.md#remoteprintjobcountget) | **GET** /remotePrintJob/count | 
 *RemotePrintJobApi* | [**remotePrintJobCreatePrintJobWithDocumentPost**](docs/Api/RemotePrintJobApi.md#remoteprintjobcreateprintjobwithdocumentpost) | **POST** /remotePrintJob/createPrintJobWithDocument | 
-*RemotePrintJobApi* | [**remotePrintJobGet**](docs/Api/RemotePrintJobApi.md#remoteprintjobget) | **GET** /remotePrintJob | query remotePrintJob
-*RemotePrintJobApi* | [**remotePrintJobIdIdDelete**](docs/Api/RemotePrintJobApi.md#remoteprintjobididdelete) | **DELETE** /remotePrintJob/id/{id} | delete a remotePrintJob
-*RemotePrintJobApi* | [**remotePrintJobIdIdGet**](docs/Api/RemotePrintJobApi.md#remoteprintjobididget) | **GET** /remotePrintJob/id/{id} | query a specific remotePrintJob
-*RemotePrintJobApi* | [**remotePrintJobIdIdPut**](docs/Api/RemotePrintJobApi.md#remoteprintjobididput) | **PUT** /remotePrintJob/id/{id} | update a remotePrintJob
-*RemotePrintJobApi* | [**remotePrintJobPost**](docs/Api/RemotePrintJobApi.md#remoteprintjobpost) | **POST** /remotePrintJob | create a remotePrintJob
+*RemotePrintJobApi* | [**remotePrintJobGet**](docs/Api/RemotePrintJobApi.md#remoteprintjobget) | **GET** /remotePrintJob | 
+*RemotePrintJobApi* | [**remotePrintJobIdIdDelete**](docs/Api/RemotePrintJobApi.md#remoteprintjobididdelete) | **DELETE** /remotePrintJob/id/{id} | 
+*RemotePrintJobApi* | [**remotePrintJobIdIdGet**](docs/Api/RemotePrintJobApi.md#remoteprintjobididget) | **GET** /remotePrintJob/id/{id} | 
+*RemotePrintJobApi* | [**remotePrintJobIdIdPut**](docs/Api/RemotePrintJobApi.md#remoteprintjobididput) | **PUT** /remotePrintJob/id/{id} | 
+*RemotePrintJobApi* | [**remotePrintJobPost**](docs/Api/RemotePrintJobApi.md#remoteprintjobpost) | **POST** /remotePrintJob | 
 *SalesChannelApi* | [**salesChannelActiveSalesChannelsGet**](docs/Api/SalesChannelApi.md#saleschannelactivesaleschannelsget) | **GET** /salesChannel/activeSalesChannels | 
-*SalesInvoiceApi* | [**salesInvoiceCountGet**](docs/Api/SalesInvoiceApi.md#salesinvoicecountget) | **GET** /salesInvoice/count | count salesInvoice
-*SalesInvoiceApi* | [**salesInvoiceGet**](docs/Api/SalesInvoiceApi.md#salesinvoiceget) | **GET** /salesInvoice | query salesInvoice
+*SalesInvoiceApi* | [**salesInvoiceCountGet**](docs/Api/SalesInvoiceApi.md#salesinvoicecountget) | **GET** /salesInvoice/count | 
+*SalesInvoiceApi* | [**salesInvoiceGet**](docs/Api/SalesInvoiceApi.md#salesinvoiceget) | **GET** /salesInvoice | 
 *SalesInvoiceApi* | [**salesInvoiceIdIdAddSalesOrdersPost**](docs/Api/SalesInvoiceApi.md#salesinvoiceididaddsalesorderspost) | **POST** /salesInvoice/id/{id}/addSalesOrders | 
 *SalesInvoiceApi* | [**salesInvoiceIdIdCalculateSalesPricesPost**](docs/Api/SalesInvoiceApi.md#salesinvoiceididcalculatesalespricespost) | **POST** /salesInvoice/id/{id}/calculateSalesPrices | 
 *SalesInvoiceApi* | [**salesInvoiceIdIdCreateContractPost**](docs/Api/SalesInvoiceApi.md#salesinvoiceididcreatecontractpost) | **POST** /salesInvoice/id/{id}/createContract | 
 *SalesInvoiceApi* | [**salesInvoiceIdIdCreateCreditNoteOpenItemPost**](docs/Api/SalesInvoiceApi.md#salesinvoiceididcreatecreditnoteopenitempost) | **POST** /salesInvoice/id/{id}/createCreditNoteOpenItem | 
 *SalesInvoiceApi* | [**salesInvoiceIdIdCreateCreditNotePost**](docs/Api/SalesInvoiceApi.md#salesinvoiceididcreatecreditnotepost) | **POST** /salesInvoice/id/{id}/createCreditNote | 
-*SalesInvoiceApi* | [**salesInvoiceIdIdDelete**](docs/Api/SalesInvoiceApi.md#salesinvoiceididdelete) | **DELETE** /salesInvoice/id/{id} | delete a salesInvoice
+*SalesInvoiceApi* | [**salesInvoiceIdIdDelete**](docs/Api/SalesInvoiceApi.md#salesinvoiceididdelete) | **DELETE** /salesInvoice/id/{id} | 
 *SalesInvoiceApi* | [**salesInvoiceIdIdDownloadLatestSalesInvoicePdfGet**](docs/Api/SalesInvoiceApi.md#salesinvoiceididdownloadlatestsalesinvoicepdfget) | **GET** /salesInvoice/id/{id}/downloadLatestSalesInvoicePdf | 
-*SalesInvoiceApi* | [**salesInvoiceIdIdGet**](docs/Api/SalesInvoiceApi.md#salesinvoiceididget) | **GET** /salesInvoice/id/{id} | query a specific salesInvoice
+*SalesInvoiceApi* | [**salesInvoiceIdIdGet**](docs/Api/SalesInvoiceApi.md#salesinvoiceididget) | **GET** /salesInvoice/id/{id} | 
 *SalesInvoiceApi* | [**salesInvoiceIdIdPrintLabelPost**](docs/Api/SalesInvoiceApi.md#salesinvoiceididprintlabelpost) | **POST** /salesInvoice/id/{id}/printLabel | 
-*SalesInvoiceApi* | [**salesInvoiceIdIdPut**](docs/Api/SalesInvoiceApi.md#salesinvoiceididput) | **PUT** /salesInvoice/id/{id} | update a salesInvoice
+*SalesInvoiceApi* | [**salesInvoiceIdIdPut**](docs/Api/SalesInvoiceApi.md#salesinvoiceididput) | **PUT** /salesInvoice/id/{id} | 
 *SalesInvoiceApi* | [**salesInvoiceIdIdRecalculateCostsPost**](docs/Api/SalesInvoiceApi.md#salesinvoiceididrecalculatecostspost) | **POST** /salesInvoice/id/{id}/recalculateCosts | 
 *SalesInvoiceApi* | [**salesInvoiceIdIdResetTaxesPost**](docs/Api/SalesInvoiceApi.md#salesinvoiceididresettaxespost) | **POST** /salesInvoice/id/{id}/resetTaxes | 
 *SalesInvoiceApi* | [**salesInvoiceIdIdSetCostsForItemsWithoutCostPost**](docs/Api/SalesInvoiceApi.md#salesinvoiceididsetcostsforitemswithoutcostpost) | **POST** /salesInvoice/id/{id}/setCostsForItemsWithoutCost | 
 *SalesInvoiceApi* | [**salesInvoiceIdIdUpdatePricesPost**](docs/Api/SalesInvoiceApi.md#salesinvoiceididupdatepricespost) | **POST** /salesInvoice/id/{id}/updatePrices | 
-*SalesInvoiceApi* | [**salesInvoicePost**](docs/Api/SalesInvoiceApi.md#salesinvoicepost) | **POST** /salesInvoice | create a salesInvoice
-*SalesOpenItemApi* | [**salesOpenItemCountGet**](docs/Api/SalesOpenItemApi.md#salesopenitemcountget) | **GET** /salesOpenItem/count | count salesOpenItem
-*SalesOpenItemApi* | [**salesOpenItemGet**](docs/Api/SalesOpenItemApi.md#salesopenitemget) | **GET** /salesOpenItem | query salesOpenItem
+*SalesInvoiceApi* | [**salesInvoicePost**](docs/Api/SalesInvoiceApi.md#salesinvoicepost) | **POST** /salesInvoice | 
+*SalesOpenItemApi* | [**salesOpenItemCountGet**](docs/Api/SalesOpenItemApi.md#salesopenitemcountget) | **GET** /salesOpenItem/count | 
+*SalesOpenItemApi* | [**salesOpenItemGet**](docs/Api/SalesOpenItemApi.md#salesopenitemget) | **GET** /salesOpenItem | 
 *SalesOpenItemApi* | [**salesOpenItemIdIdCreatePaymentApplicationPost**](docs/Api/SalesOpenItemApi.md#salesopenitemididcreatepaymentapplicationpost) | **POST** /salesOpenItem/id/{id}/createPaymentApplication | 
-*SalesOpenItemApi* | [**salesOpenItemIdIdGet**](docs/Api/SalesOpenItemApi.md#salesopenitemididget) | **GET** /salesOpenItem/id/{id} | query a specific salesOpenItem
+*SalesOpenItemApi* | [**salesOpenItemIdIdGet**](docs/Api/SalesOpenItemApi.md#salesopenitemididget) | **GET** /salesOpenItem/id/{id} | 
 *SalesOpenItemApi* | [**salesOpenItemIdIdUpdatePaymentStatePost**](docs/Api/SalesOpenItemApi.md#salesopenitemididupdatepaymentstatepost) | **POST** /salesOpenItem/id/{id}/updatePaymentState | 
-*SalesOrderApi* | [**salesOrderCountGet**](docs/Api/SalesOrderApi.md#salesordercountget) | **GET** /salesOrder/count | count salesOrder
+*SalesOrderApi* | [**salesOrderCountGet**](docs/Api/SalesOrderApi.md#salesordercountget) | **GET** /salesOrder/count | 
 *SalesOrderApi* | [**salesOrderDefaultValuesForCreateGet**](docs/Api/SalesOrderApi.md#salesorderdefaultvaluesforcreateget) | **GET** /salesOrder/defaultValuesForCreate | 
-*SalesOrderApi* | [**salesOrderGet**](docs/Api/SalesOrderApi.md#salesorderget) | **GET** /salesOrder | query salesOrder
+*SalesOrderApi* | [**salesOrderGet**](docs/Api/SalesOrderApi.md#salesorderget) | **GET** /salesOrder | 
 *SalesOrderApi* | [**salesOrderIdIdActivateProjectViewPost**](docs/Api/SalesOrderApi.md#salesorderididactivateprojectviewpost) | **POST** /salesOrder/id/{id}/activateProjectView | 
 *SalesOrderApi* | [**salesOrderIdIdCalculateSalesPricesPost**](docs/Api/SalesOrderApi.md#salesorderididcalculatesalespricespost) | **POST** /salesOrder/id/{id}/calculateSalesPrices | 
 *SalesOrderApi* | [**salesOrderIdIdCancelOrManuallyClosePost**](docs/Api/SalesOrderApi.md#salesorderididcancelormanuallyclosepost) | **POST** /salesOrder/id/{id}/cancelOrManuallyClose | 
@@ -719,14 +719,14 @@ Class | Method | HTTP request | Description
 *SalesOrderApi* | [**salesOrderIdIdCreateSalesInvoicePost**](docs/Api/SalesOrderApi.md#salesorderididcreatesalesinvoicepost) | **POST** /salesOrder/id/{id}/createSalesInvoice | 
 *SalesOrderApi* | [**salesOrderIdIdCreateShipmentPost**](docs/Api/SalesOrderApi.md#salesorderididcreateshipmentpost) | **POST** /salesOrder/id/{id}/createShipment | 
 *SalesOrderApi* | [**salesOrderIdIdCreateShippingLabelsPost**](docs/Api/SalesOrderApi.md#salesorderididcreateshippinglabelspost) | **POST** /salesOrder/id/{id}/createShippingLabels | 
-*SalesOrderApi* | [**salesOrderIdIdDelete**](docs/Api/SalesOrderApi.md#salesorderididdelete) | **DELETE** /salesOrder/id/{id} | delete a salesOrder
+*SalesOrderApi* | [**salesOrderIdIdDelete**](docs/Api/SalesOrderApi.md#salesorderididdelete) | **DELETE** /salesOrder/id/{id} | 
 *SalesOrderApi* | [**salesOrderIdIdDownloadLatestOrderConfirmationPdfGet**](docs/Api/SalesOrderApi.md#salesorderididdownloadlatestorderconfirmationpdfget) | **GET** /salesOrder/id/{id}/downloadLatestOrderConfirmationPdf | 
-*SalesOrderApi* | [**salesOrderIdIdGet**](docs/Api/SalesOrderApi.md#salesorderididget) | **GET** /salesOrder/id/{id} | query a specific salesOrder
+*SalesOrderApi* | [**salesOrderIdIdGet**](docs/Api/SalesOrderApi.md#salesorderididget) | **GET** /salesOrder/id/{id} | 
 *SalesOrderApi* | [**salesOrderIdIdManuallyClosePost**](docs/Api/SalesOrderApi.md#salesorderididmanuallyclosepost) | **POST** /salesOrder/id/{id}/manuallyClose | 
 *SalesOrderApi* | [**salesOrderIdIdPreviewSalesOrderConfirmationGet**](docs/Api/SalesOrderApi.md#salesorderididpreviewsalesorderconfirmationget) | **GET** /salesOrder/id/{id}/previewSalesOrderConfirmation | 
 *SalesOrderApi* | [**salesOrderIdIdPrintLabelPost**](docs/Api/SalesOrderApi.md#salesorderididprintlabelpost) | **POST** /salesOrder/id/{id}/printLabel | 
 *SalesOrderApi* | [**salesOrderIdIdPrintOrderDataGet**](docs/Api/SalesOrderApi.md#salesorderididprintorderdataget) | **GET** /salesOrder/id/{id}/printOrderData | 
-*SalesOrderApi* | [**salesOrderIdIdPut**](docs/Api/SalesOrderApi.md#salesorderididput) | **PUT** /salesOrder/id/{id} | update a salesOrder
+*SalesOrderApi* | [**salesOrderIdIdPut**](docs/Api/SalesOrderApi.md#salesorderididput) | **PUT** /salesOrder/id/{id} | 
 *SalesOrderApi* | [**salesOrderIdIdRecalculateCostsPost**](docs/Api/SalesOrderApi.md#salesorderididrecalculatecostspost) | **POST** /salesOrder/id/{id}/recalculateCosts | 
 *SalesOrderApi* | [**salesOrderIdIdResetTaxesPost**](docs/Api/SalesOrderApi.md#salesorderididresettaxespost) | **POST** /salesOrder/id/{id}/resetTaxes | 
 *SalesOrderApi* | [**salesOrderIdIdSetCostsForItemsWithoutCostPost**](docs/Api/SalesOrderApi.md#salesorderididsetcostsforitemswithoutcostpost) | **POST** /salesOrder/id/{id}/setCostsForItemsWithoutCost | 
@@ -734,323 +734,314 @@ Class | Method | HTTP request | Description
 *SalesOrderApi* | [**salesOrderIdIdToggleProjectTeamPost**](docs/Api/SalesOrderApi.md#salesorderididtoggleprojectteampost) | **POST** /salesOrder/id/{id}/toggleProjectTeam | 
 *SalesOrderApi* | [**salesOrderIdIdToggleServicesFinishedPost**](docs/Api/SalesOrderApi.md#salesorderididtoggleservicesfinishedpost) | **POST** /salesOrder/id/{id}/toggleServicesFinished | 
 *SalesOrderApi* | [**salesOrderIdIdUpdatePricesPost**](docs/Api/SalesOrderApi.md#salesorderididupdatepricespost) | **POST** /salesOrder/id/{id}/updatePrices | 
-*SalesOrderApi* | [**salesOrderPost**](docs/Api/SalesOrderApi.md#salesorderpost) | **POST** /salesOrder | create a salesOrder
-*SalesStageApi* | [**salesStageCountGet**](docs/Api/SalesStageApi.md#salesstagecountget) | **GET** /salesStage/count | count salesStage
-*SalesStageApi* | [**salesStageGet**](docs/Api/SalesStageApi.md#salesstageget) | **GET** /salesStage | query salesStage
-*SalesStageApi* | [**salesStageIdIdDelete**](docs/Api/SalesStageApi.md#salesstageididdelete) | **DELETE** /salesStage/id/{id} | delete a salesStage
-*SalesStageApi* | [**salesStageIdIdGet**](docs/Api/SalesStageApi.md#salesstageididget) | **GET** /salesStage/id/{id} | query a specific salesStage
-*SalesStageApi* | [**salesStageIdIdPut**](docs/Api/SalesStageApi.md#salesstageididput) | **PUT** /salesStage/id/{id} | update a salesStage
-*SalesStageApi* | [**salesStagePost**](docs/Api/SalesStageApi.md#salesstagepost) | **POST** /salesStage | create a salesStage
-*SectorApi* | [**sectorCountGet**](docs/Api/SectorApi.md#sectorcountget) | **GET** /sector/count | count sector
-*SectorApi* | [**sectorGet**](docs/Api/SectorApi.md#sectorget) | **GET** /sector | query sector
-*SectorApi* | [**sectorIdIdDelete**](docs/Api/SectorApi.md#sectorididdelete) | **DELETE** /sector/id/{id} | delete a sector
-*SectorApi* | [**sectorIdIdGet**](docs/Api/SectorApi.md#sectorididget) | **GET** /sector/id/{id} | query a specific sector
-*SectorApi* | [**sectorIdIdPut**](docs/Api/SectorApi.md#sectorididput) | **PUT** /sector/id/{id} | update a sector
-*SectorApi* | [**sectorPost**](docs/Api/SectorApi.md#sectorpost) | **POST** /sector | create a sector
-*SepaDirectDebitMandateApi* | [**sepaDirectDebitMandateCountGet**](docs/Api/SepaDirectDebitMandateApi.md#sepadirectdebitmandatecountget) | **GET** /sepaDirectDebitMandate/count | count sepaDirectDebitMandate
-*SepaDirectDebitMandateApi* | [**sepaDirectDebitMandateGet**](docs/Api/SepaDirectDebitMandateApi.md#sepadirectdebitmandateget) | **GET** /sepaDirectDebitMandate | query sepaDirectDebitMandate
-*SepaDirectDebitMandateApi* | [**sepaDirectDebitMandateIdIdDelete**](docs/Api/SepaDirectDebitMandateApi.md#sepadirectdebitmandateididdelete) | **DELETE** /sepaDirectDebitMandate/id/{id} | delete a sepaDirectDebitMandate
-*SepaDirectDebitMandateApi* | [**sepaDirectDebitMandateIdIdGet**](docs/Api/SepaDirectDebitMandateApi.md#sepadirectdebitmandateididget) | **GET** /sepaDirectDebitMandate/id/{id} | query a specific sepaDirectDebitMandate
-*SepaDirectDebitMandateApi* | [**sepaDirectDebitMandateIdIdPut**](docs/Api/SepaDirectDebitMandateApi.md#sepadirectdebitmandateididput) | **PUT** /sepaDirectDebitMandate/id/{id} | update a sepaDirectDebitMandate
-*SepaDirectDebitMandateApi* | [**sepaDirectDebitMandatePost**](docs/Api/SepaDirectDebitMandateApi.md#sepadirectdebitmandatepost) | **POST** /sepaDirectDebitMandate | create a sepaDirectDebitMandate
-*SerialNumberApi* | [**serialNumberCountGet**](docs/Api/SerialNumberApi.md#serialnumbercountget) | **GET** /serialNumber/count | count serialNumber
-*SerialNumberApi* | [**serialNumberGet**](docs/Api/SerialNumberApi.md#serialnumberget) | **GET** /serialNumber | query serialNumber
-*SerialNumberApi* | [**serialNumberIdIdGet**](docs/Api/SerialNumberApi.md#serialnumberididget) | **GET** /serialNumber/id/{id} | query a specific serialNumber
-*SerialNumberApi* | [**serialNumberIdIdPut**](docs/Api/SerialNumberApi.md#serialnumberididput) | **PUT** /serialNumber/id/{id} | update a serialNumber
-*ShelfApi* | [**shelfCountGet**](docs/Api/ShelfApi.md#shelfcountget) | **GET** /shelf/count | count shelf
-*ShelfApi* | [**shelfGet**](docs/Api/ShelfApi.md#shelfget) | **GET** /shelf | query shelf
+*SalesOrderApi* | [**salesOrderPost**](docs/Api/SalesOrderApi.md#salesorderpost) | **POST** /salesOrder | 
+*SalesStageApi* | [**salesStageCountGet**](docs/Api/SalesStageApi.md#salesstagecountget) | **GET** /salesStage/count | 
+*SalesStageApi* | [**salesStageGet**](docs/Api/SalesStageApi.md#salesstageget) | **GET** /salesStage | 
+*SalesStageApi* | [**salesStageIdIdDelete**](docs/Api/SalesStageApi.md#salesstageididdelete) | **DELETE** /salesStage/id/{id} | 
+*SalesStageApi* | [**salesStageIdIdGet**](docs/Api/SalesStageApi.md#salesstageididget) | **GET** /salesStage/id/{id} | 
+*SalesStageApi* | [**salesStageIdIdPut**](docs/Api/SalesStageApi.md#salesstageididput) | **PUT** /salesStage/id/{id} | 
+*SalesStageApi* | [**salesStagePost**](docs/Api/SalesStageApi.md#salesstagepost) | **POST** /salesStage | 
+*SectorApi* | [**sectorCountGet**](docs/Api/SectorApi.md#sectorcountget) | **GET** /sector/count | 
+*SectorApi* | [**sectorGet**](docs/Api/SectorApi.md#sectorget) | **GET** /sector | 
+*SectorApi* | [**sectorIdIdDelete**](docs/Api/SectorApi.md#sectorididdelete) | **DELETE** /sector/id/{id} | 
+*SectorApi* | [**sectorIdIdGet**](docs/Api/SectorApi.md#sectorididget) | **GET** /sector/id/{id} | 
+*SectorApi* | [**sectorIdIdPut**](docs/Api/SectorApi.md#sectorididput) | **PUT** /sector/id/{id} | 
+*SectorApi* | [**sectorPost**](docs/Api/SectorApi.md#sectorpost) | **POST** /sector | 
+*SepaDirectDebitMandateApi* | [**sepaDirectDebitMandateCountGet**](docs/Api/SepaDirectDebitMandateApi.md#sepadirectdebitmandatecountget) | **GET** /sepaDirectDebitMandate/count | 
+*SepaDirectDebitMandateApi* | [**sepaDirectDebitMandateGet**](docs/Api/SepaDirectDebitMandateApi.md#sepadirectdebitmandateget) | **GET** /sepaDirectDebitMandate | 
+*SepaDirectDebitMandateApi* | [**sepaDirectDebitMandateIdIdDelete**](docs/Api/SepaDirectDebitMandateApi.md#sepadirectdebitmandateididdelete) | **DELETE** /sepaDirectDebitMandate/id/{id} | 
+*SepaDirectDebitMandateApi* | [**sepaDirectDebitMandateIdIdGet**](docs/Api/SepaDirectDebitMandateApi.md#sepadirectdebitmandateididget) | **GET** /sepaDirectDebitMandate/id/{id} | 
+*SepaDirectDebitMandateApi* | [**sepaDirectDebitMandateIdIdPut**](docs/Api/SepaDirectDebitMandateApi.md#sepadirectdebitmandateididput) | **PUT** /sepaDirectDebitMandate/id/{id} | 
+*SepaDirectDebitMandateApi* | [**sepaDirectDebitMandatePost**](docs/Api/SepaDirectDebitMandateApi.md#sepadirectdebitmandatepost) | **POST** /sepaDirectDebitMandate | 
+*SerialNumberApi* | [**serialNumberCountGet**](docs/Api/SerialNumberApi.md#serialnumbercountget) | **GET** /serialNumber/count | 
+*SerialNumberApi* | [**serialNumberGet**](docs/Api/SerialNumberApi.md#serialnumberget) | **GET** /serialNumber | 
+*SerialNumberApi* | [**serialNumberIdIdGet**](docs/Api/SerialNumberApi.md#serialnumberididget) | **GET** /serialNumber/id/{id} | 
+*SerialNumberApi* | [**serialNumberIdIdPut**](docs/Api/SerialNumberApi.md#serialnumberididput) | **PUT** /serialNumber/id/{id} | 
+*ShelfApi* | [**shelfCountGet**](docs/Api/ShelfApi.md#shelfcountget) | **GET** /shelf/count | 
+*ShelfApi* | [**shelfGet**](docs/Api/ShelfApi.md#shelfget) | **GET** /shelf | 
 *ShelfApi* | [**shelfIdIdActivatePost**](docs/Api/ShelfApi.md#shelfididactivatepost) | **POST** /shelf/id/{id}/activate | 
 *ShelfApi* | [**shelfIdIdDeactivatePost**](docs/Api/ShelfApi.md#shelfididdeactivatepost) | **POST** /shelf/id/{id}/deactivate | 
-*ShelfApi* | [**shelfIdIdDelete**](docs/Api/ShelfApi.md#shelfididdelete) | **DELETE** /shelf/id/{id} | delete a shelf
-*ShelfApi* | [**shelfIdIdGet**](docs/Api/ShelfApi.md#shelfididget) | **GET** /shelf/id/{id} | query a specific shelf
-*ShelfApi* | [**shelfIdIdPut**](docs/Api/ShelfApi.md#shelfididput) | **PUT** /shelf/id/{id} | update a shelf
-*ShelfApi* | [**shelfPost**](docs/Api/ShelfApi.md#shelfpost) | **POST** /shelf | create a shelf
-*ShipmentApi* | [**shipmentCountGet**](docs/Api/ShipmentApi.md#shipmentcountget) | **GET** /shipment/count | count shipment
-*ShipmentApi* | [**shipmentGet**](docs/Api/ShipmentApi.md#shipmentget) | **GET** /shipment | query shipment
+*ShelfApi* | [**shelfIdIdDelete**](docs/Api/ShelfApi.md#shelfididdelete) | **DELETE** /shelf/id/{id} | 
+*ShelfApi* | [**shelfIdIdGet**](docs/Api/ShelfApi.md#shelfididget) | **GET** /shelf/id/{id} | 
+*ShelfApi* | [**shelfIdIdPut**](docs/Api/ShelfApi.md#shelfididput) | **PUT** /shelf/id/{id} | 
+*ShelfApi* | [**shelfPost**](docs/Api/ShelfApi.md#shelfpost) | **POST** /shelf | 
+*ShipmentApi* | [**shipmentCountGet**](docs/Api/ShipmentApi.md#shipmentcountget) | **GET** /shipment/count | 
+*ShipmentApi* | [**shipmentGet**](docs/Api/ShipmentApi.md#shipmentget) | **GET** /shipment | 
 *ShipmentApi* | [**shipmentIdIdCreatePickingListPost**](docs/Api/ShipmentApi.md#shipmentididcreatepickinglistpost) | **POST** /shipment/id/{id}/createPickingList | 
 *ShipmentApi* | [**shipmentIdIdCreateReturnLabelsPost**](docs/Api/ShipmentApi.md#shipmentididcreatereturnlabelspost) | **POST** /shipment/id/{id}/createReturnLabels | 
 *ShipmentApi* | [**shipmentIdIdCreateSalesInvoicePost**](docs/Api/ShipmentApi.md#shipmentididcreatesalesinvoicepost) | **POST** /shipment/id/{id}/createSalesInvoice | 
 *ShipmentApi* | [**shipmentIdIdCreateShippingLabelPdfPost**](docs/Api/ShipmentApi.md#shipmentididcreateshippinglabelpdfpost) | **POST** /shipment/id/{id}/createShippingLabelPdf | 
 *ShipmentApi* | [**shipmentIdIdCreateShippingLabelsPost**](docs/Api/ShipmentApi.md#shipmentididcreateshippinglabelspost) | **POST** /shipment/id/{id}/createShippingLabels | 
-*ShipmentApi* | [**shipmentIdIdDelete**](docs/Api/ShipmentApi.md#shipmentididdelete) | **DELETE** /shipment/id/{id} | delete a shipment
+*ShipmentApi* | [**shipmentIdIdDelete**](docs/Api/ShipmentApi.md#shipmentididdelete) | **DELETE** /shipment/id/{id} | 
 *ShipmentApi* | [**shipmentIdIdDownloadLatestDeliveryNotePdfGet**](docs/Api/ShipmentApi.md#shipmentididdownloadlatestdeliverynotepdfget) | **GET** /shipment/id/{id}/downloadLatestDeliveryNotePdf | 
 *ShipmentApi* | [**shipmentIdIdDownloadLatestPickingListPdfGet**](docs/Api/ShipmentApi.md#shipmentididdownloadlatestpickinglistpdfget) | **GET** /shipment/id/{id}/downloadLatestPickingListPdf | 
 *ShipmentApi* | [**shipmentIdIdDownloadLatestShippingLabelPdfGet**](docs/Api/ShipmentApi.md#shipmentididdownloadlatestshippinglabelpdfget) | **GET** /shipment/id/{id}/downloadLatestShippingLabelPdf | 
-*ShipmentApi* | [**shipmentIdIdGet**](docs/Api/ShipmentApi.md#shipmentididget) | **GET** /shipment/id/{id} | query a specific shipment
+*ShipmentApi* | [**shipmentIdIdGet**](docs/Api/ShipmentApi.md#shipmentididget) | **GET** /shipment/id/{id} | 
 *ShipmentApi* | [**shipmentIdIdPrintLabelPost**](docs/Api/ShipmentApi.md#shipmentididprintlabelpost) | **POST** /shipment/id/{id}/printLabel | 
-*ShipmentApi* | [**shipmentIdIdPut**](docs/Api/ShipmentApi.md#shipmentididput) | **PUT** /shipment/id/{id} | update a shipment
-*ShipmentApi* | [**shipmentPost**](docs/Api/ShipmentApi.md#shipmentpost) | **POST** /shipment | create a shipment
-*ShipmentMethodApi* | [**shipmentMethodCountGet**](docs/Api/ShipmentMethodApi.md#shipmentmethodcountget) | **GET** /shipmentMethod/count | count shipmentMethod
-*ShipmentMethodApi* | [**shipmentMethodGet**](docs/Api/ShipmentMethodApi.md#shipmentmethodget) | **GET** /shipmentMethod | query shipmentMethod
-*ShipmentMethodApi* | [**shipmentMethodIdIdDelete**](docs/Api/ShipmentMethodApi.md#shipmentmethodididdelete) | **DELETE** /shipmentMethod/id/{id} | delete a shipmentMethod
-*ShipmentMethodApi* | [**shipmentMethodIdIdGet**](docs/Api/ShipmentMethodApi.md#shipmentmethodididget) | **GET** /shipmentMethod/id/{id} | query a specific shipmentMethod
-*ShipmentMethodApi* | [**shipmentMethodIdIdPut**](docs/Api/ShipmentMethodApi.md#shipmentmethodididput) | **PUT** /shipmentMethod/id/{id} | update a shipmentMethod
-*ShipmentMethodApi* | [**shipmentMethodPost**](docs/Api/ShipmentMethodApi.md#shipmentmethodpost) | **POST** /shipmentMethod | create a shipmentMethod
-*ShipmentReturnAssessmentApi* | [**shipmentReturnAssessmentCountGet**](docs/Api/ShipmentReturnAssessmentApi.md#shipmentreturnassessmentcountget) | **GET** /shipmentReturnAssessment/count | count shipmentReturnAssessment
-*ShipmentReturnAssessmentApi* | [**shipmentReturnAssessmentGet**](docs/Api/ShipmentReturnAssessmentApi.md#shipmentreturnassessmentget) | **GET** /shipmentReturnAssessment | query shipmentReturnAssessment
-*ShipmentReturnAssessmentApi* | [**shipmentReturnAssessmentIdIdDelete**](docs/Api/ShipmentReturnAssessmentApi.md#shipmentreturnassessmentididdelete) | **DELETE** /shipmentReturnAssessment/id/{id} | delete a shipmentReturnAssessment
-*ShipmentReturnAssessmentApi* | [**shipmentReturnAssessmentIdIdGet**](docs/Api/ShipmentReturnAssessmentApi.md#shipmentreturnassessmentididget) | **GET** /shipmentReturnAssessment/id/{id} | query a specific shipmentReturnAssessment
-*ShipmentReturnAssessmentApi* | [**shipmentReturnAssessmentIdIdPut**](docs/Api/ShipmentReturnAssessmentApi.md#shipmentreturnassessmentididput) | **PUT** /shipmentReturnAssessment/id/{id} | update a shipmentReturnAssessment
-*ShipmentReturnAssessmentApi* | [**shipmentReturnAssessmentPost**](docs/Api/ShipmentReturnAssessmentApi.md#shipmentreturnassessmentpost) | **POST** /shipmentReturnAssessment | create a shipmentReturnAssessment
-*ShipmentReturnErrorApi* | [**shipmentReturnErrorCountGet**](docs/Api/ShipmentReturnErrorApi.md#shipmentreturnerrorcountget) | **GET** /shipmentReturnError/count | count shipmentReturnError
-*ShipmentReturnErrorApi* | [**shipmentReturnErrorGet**](docs/Api/ShipmentReturnErrorApi.md#shipmentreturnerrorget) | **GET** /shipmentReturnError | query shipmentReturnError
-*ShipmentReturnErrorApi* | [**shipmentReturnErrorIdIdDelete**](docs/Api/ShipmentReturnErrorApi.md#shipmentreturnerrorididdelete) | **DELETE** /shipmentReturnError/id/{id} | delete a shipmentReturnError
-*ShipmentReturnErrorApi* | [**shipmentReturnErrorIdIdGet**](docs/Api/ShipmentReturnErrorApi.md#shipmentreturnerrorididget) | **GET** /shipmentReturnError/id/{id} | query a specific shipmentReturnError
-*ShipmentReturnErrorApi* | [**shipmentReturnErrorIdIdPut**](docs/Api/ShipmentReturnErrorApi.md#shipmentreturnerrorididput) | **PUT** /shipmentReturnError/id/{id} | update a shipmentReturnError
-*ShipmentReturnErrorApi* | [**shipmentReturnErrorPost**](docs/Api/ShipmentReturnErrorApi.md#shipmentreturnerrorpost) | **POST** /shipmentReturnError | create a shipmentReturnError
-*ShipmentReturnReasonApi* | [**shipmentReturnReasonCountGet**](docs/Api/ShipmentReturnReasonApi.md#shipmentreturnreasoncountget) | **GET** /shipmentReturnReason/count | count shipmentReturnReason
-*ShipmentReturnReasonApi* | [**shipmentReturnReasonGet**](docs/Api/ShipmentReturnReasonApi.md#shipmentreturnreasonget) | **GET** /shipmentReturnReason | query shipmentReturnReason
-*ShipmentReturnReasonApi* | [**shipmentReturnReasonIdIdDelete**](docs/Api/ShipmentReturnReasonApi.md#shipmentreturnreasonididdelete) | **DELETE** /shipmentReturnReason/id/{id} | delete a shipmentReturnReason
-*ShipmentReturnReasonApi* | [**shipmentReturnReasonIdIdGet**](docs/Api/ShipmentReturnReasonApi.md#shipmentreturnreasonididget) | **GET** /shipmentReturnReason/id/{id} | query a specific shipmentReturnReason
-*ShipmentReturnReasonApi* | [**shipmentReturnReasonIdIdPut**](docs/Api/ShipmentReturnReasonApi.md#shipmentreturnreasonididput) | **PUT** /shipmentReturnReason/id/{id} | update a shipmentReturnReason
-*ShipmentReturnReasonApi* | [**shipmentReturnReasonPost**](docs/Api/ShipmentReturnReasonApi.md#shipmentreturnreasonpost) | **POST** /shipmentReturnReason | create a shipmentReturnReason
-*ShipmentReturnRectificationApi* | [**shipmentReturnRectificationCountGet**](docs/Api/ShipmentReturnRectificationApi.md#shipmentreturnrectificationcountget) | **GET** /shipmentReturnRectification/count | count shipmentReturnRectification
-*ShipmentReturnRectificationApi* | [**shipmentReturnRectificationGet**](docs/Api/ShipmentReturnRectificationApi.md#shipmentreturnrectificationget) | **GET** /shipmentReturnRectification | query shipmentReturnRectification
-*ShipmentReturnRectificationApi* | [**shipmentReturnRectificationIdIdDelete**](docs/Api/ShipmentReturnRectificationApi.md#shipmentreturnrectificationididdelete) | **DELETE** /shipmentReturnRectification/id/{id} | delete a shipmentReturnRectification
-*ShipmentReturnRectificationApi* | [**shipmentReturnRectificationIdIdGet**](docs/Api/ShipmentReturnRectificationApi.md#shipmentreturnrectificationididget) | **GET** /shipmentReturnRectification/id/{id} | query a specific shipmentReturnRectification
-*ShipmentReturnRectificationApi* | [**shipmentReturnRectificationIdIdPut**](docs/Api/ShipmentReturnRectificationApi.md#shipmentreturnrectificationididput) | **PUT** /shipmentReturnRectification/id/{id} | update a shipmentReturnRectification
-*ShipmentReturnRectificationApi* | [**shipmentReturnRectificationPost**](docs/Api/ShipmentReturnRectificationApi.md#shipmentreturnrectificationpost) | **POST** /shipmentReturnRectification | create a shipmentReturnRectification
-*ShippingCarrierApi* | [**shippingCarrierCountGet**](docs/Api/ShippingCarrierApi.md#shippingcarriercountget) | **GET** /shippingCarrier/count | count shippingCarrier
-*ShippingCarrierApi* | [**shippingCarrierGet**](docs/Api/ShippingCarrierApi.md#shippingcarrierget) | **GET** /shippingCarrier | query shippingCarrier
-*ShippingCarrierApi* | [**shippingCarrierIdIdDelete**](docs/Api/ShippingCarrierApi.md#shippingcarrierididdelete) | **DELETE** /shippingCarrier/id/{id} | delete a shippingCarrier
-*ShippingCarrierApi* | [**shippingCarrierIdIdGet**](docs/Api/ShippingCarrierApi.md#shippingcarrierididget) | **GET** /shippingCarrier/id/{id} | query a specific shippingCarrier
-*ShippingCarrierApi* | [**shippingCarrierIdIdPut**](docs/Api/ShippingCarrierApi.md#shippingcarrierididput) | **PUT** /shippingCarrier/id/{id} | update a shippingCarrier
-*ShippingCarrierApi* | [**shippingCarrierPost**](docs/Api/ShippingCarrierApi.md#shippingcarrierpost) | **POST** /shippingCarrier | create a shippingCarrier
-*StorageLocationApi* | [**storageLocationCountGet**](docs/Api/StorageLocationApi.md#storagelocationcountget) | **GET** /storageLocation/count | count storageLocation
-*StorageLocationApi* | [**storageLocationGet**](docs/Api/StorageLocationApi.md#storagelocationget) | **GET** /storageLocation | query storageLocation
+*ShipmentApi* | [**shipmentIdIdPut**](docs/Api/ShipmentApi.md#shipmentididput) | **PUT** /shipment/id/{id} | 
+*ShipmentApi* | [**shipmentPost**](docs/Api/ShipmentApi.md#shipmentpost) | **POST** /shipment | 
+*ShipmentMethodApi* | [**shipmentMethodCountGet**](docs/Api/ShipmentMethodApi.md#shipmentmethodcountget) | **GET** /shipmentMethod/count | 
+*ShipmentMethodApi* | [**shipmentMethodGet**](docs/Api/ShipmentMethodApi.md#shipmentmethodget) | **GET** /shipmentMethod | 
+*ShipmentMethodApi* | [**shipmentMethodIdIdDelete**](docs/Api/ShipmentMethodApi.md#shipmentmethodididdelete) | **DELETE** /shipmentMethod/id/{id} | 
+*ShipmentMethodApi* | [**shipmentMethodIdIdGet**](docs/Api/ShipmentMethodApi.md#shipmentmethodididget) | **GET** /shipmentMethod/id/{id} | 
+*ShipmentMethodApi* | [**shipmentMethodIdIdPut**](docs/Api/ShipmentMethodApi.md#shipmentmethodididput) | **PUT** /shipmentMethod/id/{id} | 
+*ShipmentMethodApi* | [**shipmentMethodPost**](docs/Api/ShipmentMethodApi.md#shipmentmethodpost) | **POST** /shipmentMethod | 
+*ShipmentReturnAssessmentApi* | [**shipmentReturnAssessmentCountGet**](docs/Api/ShipmentReturnAssessmentApi.md#shipmentreturnassessmentcountget) | **GET** /shipmentReturnAssessment/count | 
+*ShipmentReturnAssessmentApi* | [**shipmentReturnAssessmentGet**](docs/Api/ShipmentReturnAssessmentApi.md#shipmentreturnassessmentget) | **GET** /shipmentReturnAssessment | 
+*ShipmentReturnAssessmentApi* | [**shipmentReturnAssessmentIdIdDelete**](docs/Api/ShipmentReturnAssessmentApi.md#shipmentreturnassessmentididdelete) | **DELETE** /shipmentReturnAssessment/id/{id} | 
+*ShipmentReturnAssessmentApi* | [**shipmentReturnAssessmentIdIdGet**](docs/Api/ShipmentReturnAssessmentApi.md#shipmentreturnassessmentididget) | **GET** /shipmentReturnAssessment/id/{id} | 
+*ShipmentReturnAssessmentApi* | [**shipmentReturnAssessmentIdIdPut**](docs/Api/ShipmentReturnAssessmentApi.md#shipmentreturnassessmentididput) | **PUT** /shipmentReturnAssessment/id/{id} | 
+*ShipmentReturnAssessmentApi* | [**shipmentReturnAssessmentPost**](docs/Api/ShipmentReturnAssessmentApi.md#shipmentreturnassessmentpost) | **POST** /shipmentReturnAssessment | 
+*ShipmentReturnErrorApi* | [**shipmentReturnErrorCountGet**](docs/Api/ShipmentReturnErrorApi.md#shipmentreturnerrorcountget) | **GET** /shipmentReturnError/count | 
+*ShipmentReturnErrorApi* | [**shipmentReturnErrorGet**](docs/Api/ShipmentReturnErrorApi.md#shipmentreturnerrorget) | **GET** /shipmentReturnError | 
+*ShipmentReturnErrorApi* | [**shipmentReturnErrorIdIdDelete**](docs/Api/ShipmentReturnErrorApi.md#shipmentreturnerrorididdelete) | **DELETE** /shipmentReturnError/id/{id} | 
+*ShipmentReturnErrorApi* | [**shipmentReturnErrorIdIdGet**](docs/Api/ShipmentReturnErrorApi.md#shipmentreturnerrorididget) | **GET** /shipmentReturnError/id/{id} | 
+*ShipmentReturnErrorApi* | [**shipmentReturnErrorIdIdPut**](docs/Api/ShipmentReturnErrorApi.md#shipmentreturnerrorididput) | **PUT** /shipmentReturnError/id/{id} | 
+*ShipmentReturnErrorApi* | [**shipmentReturnErrorPost**](docs/Api/ShipmentReturnErrorApi.md#shipmentreturnerrorpost) | **POST** /shipmentReturnError | 
+*ShipmentReturnReasonApi* | [**shipmentReturnReasonCountGet**](docs/Api/ShipmentReturnReasonApi.md#shipmentreturnreasoncountget) | **GET** /shipmentReturnReason/count | 
+*ShipmentReturnReasonApi* | [**shipmentReturnReasonGet**](docs/Api/ShipmentReturnReasonApi.md#shipmentreturnreasonget) | **GET** /shipmentReturnReason | 
+*ShipmentReturnReasonApi* | [**shipmentReturnReasonIdIdDelete**](docs/Api/ShipmentReturnReasonApi.md#shipmentreturnreasonididdelete) | **DELETE** /shipmentReturnReason/id/{id} | 
+*ShipmentReturnReasonApi* | [**shipmentReturnReasonIdIdGet**](docs/Api/ShipmentReturnReasonApi.md#shipmentreturnreasonididget) | **GET** /shipmentReturnReason/id/{id} | 
+*ShipmentReturnReasonApi* | [**shipmentReturnReasonIdIdPut**](docs/Api/ShipmentReturnReasonApi.md#shipmentreturnreasonididput) | **PUT** /shipmentReturnReason/id/{id} | 
+*ShipmentReturnReasonApi* | [**shipmentReturnReasonPost**](docs/Api/ShipmentReturnReasonApi.md#shipmentreturnreasonpost) | **POST** /shipmentReturnReason | 
+*ShipmentReturnRectificationApi* | [**shipmentReturnRectificationCountGet**](docs/Api/ShipmentReturnRectificationApi.md#shipmentreturnrectificationcountget) | **GET** /shipmentReturnRectification/count | 
+*ShipmentReturnRectificationApi* | [**shipmentReturnRectificationGet**](docs/Api/ShipmentReturnRectificationApi.md#shipmentreturnrectificationget) | **GET** /shipmentReturnRectification | 
+*ShipmentReturnRectificationApi* | [**shipmentReturnRectificationIdIdDelete**](docs/Api/ShipmentReturnRectificationApi.md#shipmentreturnrectificationididdelete) | **DELETE** /shipmentReturnRectification/id/{id} | 
+*ShipmentReturnRectificationApi* | [**shipmentReturnRectificationIdIdGet**](docs/Api/ShipmentReturnRectificationApi.md#shipmentreturnrectificationididget) | **GET** /shipmentReturnRectification/id/{id} | 
+*ShipmentReturnRectificationApi* | [**shipmentReturnRectificationIdIdPut**](docs/Api/ShipmentReturnRectificationApi.md#shipmentreturnrectificationididput) | **PUT** /shipmentReturnRectification/id/{id} | 
+*ShipmentReturnRectificationApi* | [**shipmentReturnRectificationPost**](docs/Api/ShipmentReturnRectificationApi.md#shipmentreturnrectificationpost) | **POST** /shipmentReturnRectification | 
+*ShippingCarrierApi* | [**shippingCarrierCountGet**](docs/Api/ShippingCarrierApi.md#shippingcarriercountget) | **GET** /shippingCarrier/count | 
+*ShippingCarrierApi* | [**shippingCarrierGet**](docs/Api/ShippingCarrierApi.md#shippingcarrierget) | **GET** /shippingCarrier | 
+*ShippingCarrierApi* | [**shippingCarrierIdIdDelete**](docs/Api/ShippingCarrierApi.md#shippingcarrierididdelete) | **DELETE** /shippingCarrier/id/{id} | 
+*ShippingCarrierApi* | [**shippingCarrierIdIdGet**](docs/Api/ShippingCarrierApi.md#shippingcarrierididget) | **GET** /shippingCarrier/id/{id} | 
+*ShippingCarrierApi* | [**shippingCarrierIdIdPut**](docs/Api/ShippingCarrierApi.md#shippingcarrierididput) | **PUT** /shippingCarrier/id/{id} | 
+*ShippingCarrierApi* | [**shippingCarrierPost**](docs/Api/ShippingCarrierApi.md#shippingcarrierpost) | **POST** /shippingCarrier | 
+*StorageLocationApi* | [**storageLocationCountGet**](docs/Api/StorageLocationApi.md#storagelocationcountget) | **GET** /storageLocation/count | 
+*StorageLocationApi* | [**storageLocationGet**](docs/Api/StorageLocationApi.md#storagelocationget) | **GET** /storageLocation | 
 *StorageLocationApi* | [**storageLocationIdIdActivatePost**](docs/Api/StorageLocationApi.md#storagelocationididactivatepost) | **POST** /storageLocation/id/{id}/activate | 
 *StorageLocationApi* | [**storageLocationIdIdDeactivatePost**](docs/Api/StorageLocationApi.md#storagelocationididdeactivatepost) | **POST** /storageLocation/id/{id}/deactivate | 
-*StorageLocationApi* | [**storageLocationIdIdDelete**](docs/Api/StorageLocationApi.md#storagelocationididdelete) | **DELETE** /storageLocation/id/{id} | delete a storageLocation
-*StorageLocationApi* | [**storageLocationIdIdGet**](docs/Api/StorageLocationApi.md#storagelocationididget) | **GET** /storageLocation/id/{id} | query a specific storageLocation
-*StorageLocationApi* | [**storageLocationIdIdPut**](docs/Api/StorageLocationApi.md#storagelocationididput) | **PUT** /storageLocation/id/{id} | update a storageLocation
-*StorageLocationApi* | [**storageLocationPost**](docs/Api/StorageLocationApi.md#storagelocationpost) | **POST** /storageLocation | create a storageLocation
-*StoragePlaceApi* | [**storagePlaceCountGet**](docs/Api/StoragePlaceApi.md#storageplacecountget) | **GET** /storagePlace/count | count storagePlace
-*StoragePlaceApi* | [**storagePlaceGet**](docs/Api/StoragePlaceApi.md#storageplaceget) | **GET** /storagePlace | query storagePlace
-*StoragePlaceApi* | [**storagePlaceIdIdGet**](docs/Api/StoragePlaceApi.md#storageplaceididget) | **GET** /storagePlace/id/{id} | query a specific storagePlace
-*StoragePlaceBlockingReasonApi* | [**storagePlaceBlockingReasonCountGet**](docs/Api/StoragePlaceBlockingReasonApi.md#storageplaceblockingreasoncountget) | **GET** /storagePlaceBlockingReason/count | count storagePlaceBlockingReason
-*StoragePlaceBlockingReasonApi* | [**storagePlaceBlockingReasonGet**](docs/Api/StoragePlaceBlockingReasonApi.md#storageplaceblockingreasonget) | **GET** /storagePlaceBlockingReason | query storagePlaceBlockingReason
-*StoragePlaceBlockingReasonApi* | [**storagePlaceBlockingReasonIdIdDelete**](docs/Api/StoragePlaceBlockingReasonApi.md#storageplaceblockingreasonididdelete) | **DELETE** /storagePlaceBlockingReason/id/{id} | delete a storagePlaceBlockingReason
-*StoragePlaceBlockingReasonApi* | [**storagePlaceBlockingReasonIdIdGet**](docs/Api/StoragePlaceBlockingReasonApi.md#storageplaceblockingreasonididget) | **GET** /storagePlaceBlockingReason/id/{id} | query a specific storagePlaceBlockingReason
-*StoragePlaceBlockingReasonApi* | [**storagePlaceBlockingReasonIdIdPut**](docs/Api/StoragePlaceBlockingReasonApi.md#storageplaceblockingreasonididput) | **PUT** /storagePlaceBlockingReason/id/{id} | update a storagePlaceBlockingReason
-*StoragePlaceBlockingReasonApi* | [**storagePlaceBlockingReasonPost**](docs/Api/StoragePlaceBlockingReasonApi.md#storageplaceblockingreasonpost) | **POST** /storagePlaceBlockingReason | create a storagePlaceBlockingReason
-*StoragePlaceSizeApi* | [**storagePlaceSizeCountGet**](docs/Api/StoragePlaceSizeApi.md#storageplacesizecountget) | **GET** /storagePlaceSize/count | count storagePlaceSize
-*StoragePlaceSizeApi* | [**storagePlaceSizeGet**](docs/Api/StoragePlaceSizeApi.md#storageplacesizeget) | **GET** /storagePlaceSize | query storagePlaceSize
-*StoragePlaceSizeApi* | [**storagePlaceSizeIdIdDelete**](docs/Api/StoragePlaceSizeApi.md#storageplacesizeididdelete) | **DELETE** /storagePlaceSize/id/{id} | delete a storagePlaceSize
-*StoragePlaceSizeApi* | [**storagePlaceSizeIdIdGet**](docs/Api/StoragePlaceSizeApi.md#storageplacesizeididget) | **GET** /storagePlaceSize/id/{id} | query a specific storagePlaceSize
-*StoragePlaceSizeApi* | [**storagePlaceSizeIdIdPut**](docs/Api/StoragePlaceSizeApi.md#storageplacesizeididput) | **PUT** /storagePlaceSize/id/{id} | update a storagePlaceSize
-*StoragePlaceSizeApi* | [**storagePlaceSizePost**](docs/Api/StoragePlaceSizeApi.md#storageplacesizepost) | **POST** /storagePlaceSize | create a storagePlaceSize
-*SupplierApi* | [**supplierCountGet**](docs/Api/SupplierApi.md#suppliercountget) | **GET** /supplier/count | count supplier
-*SupplierApi* | [**supplierGet**](docs/Api/SupplierApi.md#supplierget) | **GET** /supplier | query supplier
-*SupplierApi* | [**supplierIdIdDelete**](docs/Api/SupplierApi.md#supplierididdelete) | **DELETE** /supplier/id/{id} | delete a supplier
+*StorageLocationApi* | [**storageLocationIdIdDelete**](docs/Api/StorageLocationApi.md#storagelocationididdelete) | **DELETE** /storageLocation/id/{id} | 
+*StorageLocationApi* | [**storageLocationIdIdGet**](docs/Api/StorageLocationApi.md#storagelocationididget) | **GET** /storageLocation/id/{id} | 
+*StorageLocationApi* | [**storageLocationIdIdPut**](docs/Api/StorageLocationApi.md#storagelocationididput) | **PUT** /storageLocation/id/{id} | 
+*StorageLocationApi* | [**storageLocationPost**](docs/Api/StorageLocationApi.md#storagelocationpost) | **POST** /storageLocation | 
+*StoragePlaceApi* | [**storagePlaceCountGet**](docs/Api/StoragePlaceApi.md#storageplacecountget) | **GET** /storagePlace/count | 
+*StoragePlaceApi* | [**storagePlaceGet**](docs/Api/StoragePlaceApi.md#storageplaceget) | **GET** /storagePlace | 
+*StoragePlaceApi* | [**storagePlaceIdIdGet**](docs/Api/StoragePlaceApi.md#storageplaceididget) | **GET** /storagePlace/id/{id} | 
+*StoragePlaceBlockingReasonApi* | [**storagePlaceBlockingReasonCountGet**](docs/Api/StoragePlaceBlockingReasonApi.md#storageplaceblockingreasoncountget) | **GET** /storagePlaceBlockingReason/count | 
+*StoragePlaceBlockingReasonApi* | [**storagePlaceBlockingReasonGet**](docs/Api/StoragePlaceBlockingReasonApi.md#storageplaceblockingreasonget) | **GET** /storagePlaceBlockingReason | 
+*StoragePlaceBlockingReasonApi* | [**storagePlaceBlockingReasonIdIdDelete**](docs/Api/StoragePlaceBlockingReasonApi.md#storageplaceblockingreasonididdelete) | **DELETE** /storagePlaceBlockingReason/id/{id} | 
+*StoragePlaceBlockingReasonApi* | [**storagePlaceBlockingReasonIdIdGet**](docs/Api/StoragePlaceBlockingReasonApi.md#storageplaceblockingreasonididget) | **GET** /storagePlaceBlockingReason/id/{id} | 
+*StoragePlaceBlockingReasonApi* | [**storagePlaceBlockingReasonIdIdPut**](docs/Api/StoragePlaceBlockingReasonApi.md#storageplaceblockingreasonididput) | **PUT** /storagePlaceBlockingReason/id/{id} | 
+*StoragePlaceBlockingReasonApi* | [**storagePlaceBlockingReasonPost**](docs/Api/StoragePlaceBlockingReasonApi.md#storageplaceblockingreasonpost) | **POST** /storagePlaceBlockingReason | 
+*StoragePlaceSizeApi* | [**storagePlaceSizeCountGet**](docs/Api/StoragePlaceSizeApi.md#storageplacesizecountget) | **GET** /storagePlaceSize/count | 
+*StoragePlaceSizeApi* | [**storagePlaceSizeGet**](docs/Api/StoragePlaceSizeApi.md#storageplacesizeget) | **GET** /storagePlaceSize | 
+*StoragePlaceSizeApi* | [**storagePlaceSizeIdIdDelete**](docs/Api/StoragePlaceSizeApi.md#storageplacesizeididdelete) | **DELETE** /storagePlaceSize/id/{id} | 
+*StoragePlaceSizeApi* | [**storagePlaceSizeIdIdGet**](docs/Api/StoragePlaceSizeApi.md#storageplacesizeididget) | **GET** /storagePlaceSize/id/{id} | 
+*StoragePlaceSizeApi* | [**storagePlaceSizeIdIdPut**](docs/Api/StoragePlaceSizeApi.md#storageplacesizeididput) | **PUT** /storagePlaceSize/id/{id} | 
+*StoragePlaceSizeApi* | [**storagePlaceSizePost**](docs/Api/StoragePlaceSizeApi.md#storageplacesizepost) | **POST** /storagePlaceSize | 
+*SupplierApi* | [**supplierCountGet**](docs/Api/SupplierApi.md#suppliercountget) | **GET** /supplier/count | 
+*SupplierApi* | [**supplierGet**](docs/Api/SupplierApi.md#supplierget) | **GET** /supplier | 
+*SupplierApi* | [**supplierIdIdDelete**](docs/Api/SupplierApi.md#supplierididdelete) | **DELETE** /supplier/id/{id} | 
 *SupplierApi* | [**supplierIdIdDownloadImageGet**](docs/Api/SupplierApi.md#supplierididdownloadimageget) | **GET** /supplier/id/{id}/downloadImage | 
-*SupplierApi* | [**supplierIdIdGet**](docs/Api/SupplierApi.md#supplierididget) | **GET** /supplier/id/{id} | query a specific supplier
-*SupplierApi* | [**supplierIdIdPut**](docs/Api/SupplierApi.md#supplierididput) | **PUT** /supplier/id/{id} | update a supplier
+*SupplierApi* | [**supplierIdIdGet**](docs/Api/SupplierApi.md#supplierididget) | **GET** /supplier/id/{id} | 
+*SupplierApi* | [**supplierIdIdPut**](docs/Api/SupplierApi.md#supplierididput) | **PUT** /supplier/id/{id} | 
 *SupplierApi* | [**supplierIdIdUploadImagePost**](docs/Api/SupplierApi.md#supplierididuploadimagepost) | **POST** /supplier/id/{id}/uploadImage | 
-*SupplierApi* | [**supplierPost**](docs/Api/SupplierApi.md#supplierpost) | **POST** /supplier | create a supplier
+*SupplierApi* | [**supplierPost**](docs/Api/SupplierApi.md#supplierpost) | **POST** /supplier | 
 *SystemApi* | [**systemCreateDemoTestSystemPost**](docs/Api/SystemApi.md#systemcreatedemotestsystempost) | **POST** /system/createDemoTestSystem | 
 *SystemApi* | [**systemDemoTestSystemInfoGet**](docs/Api/SystemApi.md#systemdemotestsysteminfoget) | **GET** /system/demoTestSystemInfo | 
 *SystemApi* | [**systemLicensesGet**](docs/Api/SystemApi.md#systemlicensesget) | **GET** /system/licenses | 
 *SystemApi* | [**systemPermissionsGet**](docs/Api/SystemApi.md#systempermissionsget) | **GET** /system/permissions | 
-*TagApi* | [**tagCountGet**](docs/Api/TagApi.md#tagcountget) | **GET** /tag/count | count tag
-*TagApi* | [**tagGet**](docs/Api/TagApi.md#tagget) | **GET** /tag | query tag
-*TagApi* | [**tagIdIdDelete**](docs/Api/TagApi.md#tagididdelete) | **DELETE** /tag/id/{id} | delete a tag
-*TagApi* | [**tagIdIdGet**](docs/Api/TagApi.md#tagididget) | **GET** /tag/id/{id} | query a specific tag
-*TagApi* | [**tagIdIdPut**](docs/Api/TagApi.md#tagididput) | **PUT** /tag/id/{id} | update a tag
-*TagApi* | [**tagPost**](docs/Api/TagApi.md#tagpost) | **POST** /tag | create a tag
+*TagApi* | [**tagCountGet**](docs/Api/TagApi.md#tagcountget) | **GET** /tag/count | 
+*TagApi* | [**tagGet**](docs/Api/TagApi.md#tagget) | **GET** /tag | 
+*TagApi* | [**tagIdIdDelete**](docs/Api/TagApi.md#tagididdelete) | **DELETE** /tag/id/{id} | 
+*TagApi* | [**tagIdIdGet**](docs/Api/TagApi.md#tagididget) | **GET** /tag/id/{id} | 
+*TagApi* | [**tagIdIdPut**](docs/Api/TagApi.md#tagididput) | **PUT** /tag/id/{id} | 
+*TagApi* | [**tagPost**](docs/Api/TagApi.md#tagpost) | **POST** /tag | 
 *TaxApi* | [**taxConfigurePurchaseTaxesPost**](docs/Api/TaxApi.md#taxconfigurepurchasetaxespost) | **POST** /tax/configurePurchaseTaxes | 
 *TaxApi* | [**taxConfigureSalesTaxesPost**](docs/Api/TaxApi.md#taxconfiguresalestaxespost) | **POST** /tax/configureSalesTaxes | 
-*TaxApi* | [**taxCountGet**](docs/Api/TaxApi.md#taxcountget) | **GET** /tax/count | count tax
+*TaxApi* | [**taxCountGet**](docs/Api/TaxApi.md#taxcountget) | **GET** /tax/count | 
 *TaxApi* | [**taxFindPurchaseTaxGet**](docs/Api/TaxApi.md#taxfindpurchasetaxget) | **GET** /tax/findPurchaseTax | 
 *TaxApi* | [**taxFindSalesTaxGet**](docs/Api/TaxApi.md#taxfindsalestaxget) | **GET** /tax/findSalesTax | 
-*TaxApi* | [**taxGet**](docs/Api/TaxApi.md#taxget) | **GET** /tax | query tax
-*TaxApi* | [**taxIdIdDelete**](docs/Api/TaxApi.md#taxididdelete) | **DELETE** /tax/id/{id} | delete a tax
-*TaxApi* | [**taxIdIdGet**](docs/Api/TaxApi.md#taxididget) | **GET** /tax/id/{id} | query a specific tax
-*TaxApi* | [**taxIdIdPut**](docs/Api/TaxApi.md#taxididput) | **PUT** /tax/id/{id} | update a tax
-*TaxApi* | [**taxPost**](docs/Api/TaxApi.md#taxpost) | **POST** /tax | create a tax
+*TaxApi* | [**taxGet**](docs/Api/TaxApi.md#taxget) | **GET** /tax | 
+*TaxApi* | [**taxIdIdDelete**](docs/Api/TaxApi.md#taxididdelete) | **DELETE** /tax/id/{id} | 
+*TaxApi* | [**taxIdIdGet**](docs/Api/TaxApi.md#taxididget) | **GET** /tax/id/{id} | 
+*TaxApi* | [**taxIdIdPut**](docs/Api/TaxApi.md#taxididput) | **PUT** /tax/id/{id} | 
+*TaxApi* | [**taxPost**](docs/Api/TaxApi.md#taxpost) | **POST** /tax | 
 *TaxApi* | [**taxResetSystemTaxesPost**](docs/Api/TaxApi.md#taxresetsystemtaxespost) | **POST** /tax/resetSystemTaxes | 
-*TaxDeterminationRuleApi* | [**taxDeterminationRuleCountGet**](docs/Api/TaxDeterminationRuleApi.md#taxdeterminationrulecountget) | **GET** /taxDeterminationRule/count | count taxDeterminationRule
-*TaxDeterminationRuleApi* | [**taxDeterminationRuleGet**](docs/Api/TaxDeterminationRuleApi.md#taxdeterminationruleget) | **GET** /taxDeterminationRule | query taxDeterminationRule
-*TaxDeterminationRuleApi* | [**taxDeterminationRuleIdIdDelete**](docs/Api/TaxDeterminationRuleApi.md#taxdeterminationruleididdelete) | **DELETE** /taxDeterminationRule/id/{id} | delete a taxDeterminationRule
-*TaxDeterminationRuleApi* | [**taxDeterminationRuleIdIdGet**](docs/Api/TaxDeterminationRuleApi.md#taxdeterminationruleididget) | **GET** /taxDeterminationRule/id/{id} | query a specific taxDeterminationRule
-*TaxDeterminationRuleApi* | [**taxDeterminationRuleIdIdPut**](docs/Api/TaxDeterminationRuleApi.md#taxdeterminationruleididput) | **PUT** /taxDeterminationRule/id/{id} | update a taxDeterminationRule
-*TaxDeterminationRuleApi* | [**taxDeterminationRulePost**](docs/Api/TaxDeterminationRuleApi.md#taxdeterminationrulepost) | **POST** /taxDeterminationRule | create a taxDeterminationRule
-*TermOfPaymentApi* | [**termOfPaymentCountGet**](docs/Api/TermOfPaymentApi.md#termofpaymentcountget) | **GET** /termOfPayment/count | count termOfPayment
-*TermOfPaymentApi* | [**termOfPaymentGet**](docs/Api/TermOfPaymentApi.md#termofpaymentget) | **GET** /termOfPayment | query termOfPayment
-*TermOfPaymentApi* | [**termOfPaymentIdIdDelete**](docs/Api/TermOfPaymentApi.md#termofpaymentididdelete) | **DELETE** /termOfPayment/id/{id} | delete a termOfPayment
-*TermOfPaymentApi* | [**termOfPaymentIdIdGet**](docs/Api/TermOfPaymentApi.md#termofpaymentididget) | **GET** /termOfPayment/id/{id} | query a specific termOfPayment
-*TermOfPaymentApi* | [**termOfPaymentIdIdPut**](docs/Api/TermOfPaymentApi.md#termofpaymentididput) | **PUT** /termOfPayment/id/{id} | update a termOfPayment
-*TermOfPaymentApi* | [**termOfPaymentPost**](docs/Api/TermOfPaymentApi.md#termofpaymentpost) | **POST** /termOfPayment | create a termOfPayment
-*TicketApi* | [**ticketCountGet**](docs/Api/TicketApi.md#ticketcountget) | **GET** /ticket/count | count ticket
-*TicketApi* | [**ticketGet**](docs/Api/TicketApi.md#ticketget) | **GET** /ticket | query ticket
+*TaxDeterminationRuleApi* | [**taxDeterminationRuleCountGet**](docs/Api/TaxDeterminationRuleApi.md#taxdeterminationrulecountget) | **GET** /taxDeterminationRule/count | 
+*TaxDeterminationRuleApi* | [**taxDeterminationRuleGet**](docs/Api/TaxDeterminationRuleApi.md#taxdeterminationruleget) | **GET** /taxDeterminationRule | 
+*TaxDeterminationRuleApi* | [**taxDeterminationRuleIdIdDelete**](docs/Api/TaxDeterminationRuleApi.md#taxdeterminationruleididdelete) | **DELETE** /taxDeterminationRule/id/{id} | 
+*TaxDeterminationRuleApi* | [**taxDeterminationRuleIdIdGet**](docs/Api/TaxDeterminationRuleApi.md#taxdeterminationruleididget) | **GET** /taxDeterminationRule/id/{id} | 
+*TaxDeterminationRuleApi* | [**taxDeterminationRuleIdIdPut**](docs/Api/TaxDeterminationRuleApi.md#taxdeterminationruleididput) | **PUT** /taxDeterminationRule/id/{id} | 
+*TaxDeterminationRuleApi* | [**taxDeterminationRulePost**](docs/Api/TaxDeterminationRuleApi.md#taxdeterminationrulepost) | **POST** /taxDeterminationRule | 
+*TermOfPaymentApi* | [**termOfPaymentCountGet**](docs/Api/TermOfPaymentApi.md#termofpaymentcountget) | **GET** /termOfPayment/count | 
+*TermOfPaymentApi* | [**termOfPaymentGet**](docs/Api/TermOfPaymentApi.md#termofpaymentget) | **GET** /termOfPayment | 
+*TermOfPaymentApi* | [**termOfPaymentIdIdDelete**](docs/Api/TermOfPaymentApi.md#termofpaymentididdelete) | **DELETE** /termOfPayment/id/{id} | 
+*TermOfPaymentApi* | [**termOfPaymentIdIdGet**](docs/Api/TermOfPaymentApi.md#termofpaymentididget) | **GET** /termOfPayment/id/{id} | 
+*TermOfPaymentApi* | [**termOfPaymentIdIdPut**](docs/Api/TermOfPaymentApi.md#termofpaymentididput) | **PUT** /termOfPayment/id/{id} | 
+*TermOfPaymentApi* | [**termOfPaymentPost**](docs/Api/TermOfPaymentApi.md#termofpaymentpost) | **POST** /termOfPayment | 
+*TicketApi* | [**ticketCountGet**](docs/Api/TicketApi.md#ticketcountget) | **GET** /ticket/count | 
+*TicketApi* | [**ticketGet**](docs/Api/TicketApi.md#ticketget) | **GET** /ticket | 
 *TicketApi* | [**ticketIdIdCreatePublicPagePost**](docs/Api/TicketApi.md#ticketididcreatepublicpagepost) | **POST** /ticket/id/{id}/createPublicPage | 
-*TicketApi* | [**ticketIdIdDelete**](docs/Api/TicketApi.md#ticketididdelete) | **DELETE** /ticket/id/{id} | delete a ticket
+*TicketApi* | [**ticketIdIdDelete**](docs/Api/TicketApi.md#ticketididdelete) | **DELETE** /ticket/id/{id} | 
 *TicketApi* | [**ticketIdIdDisablePublicPagePost**](docs/Api/TicketApi.md#ticketididdisablepublicpagepost) | **POST** /ticket/id/{id}/disablePublicPage | 
-*TicketApi* | [**ticketIdIdGet**](docs/Api/TicketApi.md#ticketididget) | **GET** /ticket/id/{id} | query a specific ticket
+*TicketApi* | [**ticketIdIdGet**](docs/Api/TicketApi.md#ticketididget) | **GET** /ticket/id/{id} | 
 *TicketApi* | [**ticketIdIdLinkSalesOrderPost**](docs/Api/TicketApi.md#ticketididlinksalesorderpost) | **POST** /ticket/id/{id}/linkSalesOrder | 
-*TicketApi* | [**ticketIdIdPut**](docs/Api/TicketApi.md#ticketididput) | **PUT** /ticket/id/{id} | update a ticket
+*TicketApi* | [**ticketIdIdPut**](docs/Api/TicketApi.md#ticketididput) | **PUT** /ticket/id/{id} | 
 *TicketApi* | [**ticketIdIdUnlinkSalesOrderPost**](docs/Api/TicketApi.md#ticketididunlinksalesorderpost) | **POST** /ticket/id/{id}/unlinkSalesOrder | 
-*TicketApi* | [**ticketPost**](docs/Api/TicketApi.md#ticketpost) | **POST** /ticket | create a ticket
-*TicketAssignmentRuleApi* | [**ticketAssignmentRuleCountGet**](docs/Api/TicketAssignmentRuleApi.md#ticketassignmentrulecountget) | **GET** /ticketAssignmentRule/count | count ticketAssignmentRule
-*TicketAssignmentRuleApi* | [**ticketAssignmentRuleGet**](docs/Api/TicketAssignmentRuleApi.md#ticketassignmentruleget) | **GET** /ticketAssignmentRule | query ticketAssignmentRule
-*TicketAssignmentRuleApi* | [**ticketAssignmentRuleIdIdDelete**](docs/Api/TicketAssignmentRuleApi.md#ticketassignmentruleididdelete) | **DELETE** /ticketAssignmentRule/id/{id} | delete a ticketAssignmentRule
-*TicketAssignmentRuleApi* | [**ticketAssignmentRuleIdIdGet**](docs/Api/TicketAssignmentRuleApi.md#ticketassignmentruleididget) | **GET** /ticketAssignmentRule/id/{id} | query a specific ticketAssignmentRule
-*TicketAssignmentRuleApi* | [**ticketAssignmentRuleIdIdPut**](docs/Api/TicketAssignmentRuleApi.md#ticketassignmentruleididput) | **PUT** /ticketAssignmentRule/id/{id} | update a ticketAssignmentRule
-*TicketAssignmentRuleApi* | [**ticketAssignmentRulePost**](docs/Api/TicketAssignmentRuleApi.md#ticketassignmentrulepost) | **POST** /ticketAssignmentRule | create a ticketAssignmentRule
-*TicketCategoryApi* | [**ticketCategoryCountGet**](docs/Api/TicketCategoryApi.md#ticketcategorycountget) | **GET** /ticketCategory/count | count ticketCategory
-*TicketCategoryApi* | [**ticketCategoryGet**](docs/Api/TicketCategoryApi.md#ticketcategoryget) | **GET** /ticketCategory | query ticketCategory
-*TicketCategoryApi* | [**ticketCategoryIdIdGet**](docs/Api/TicketCategoryApi.md#ticketcategoryididget) | **GET** /ticketCategory/id/{id} | query a specific ticketCategory
-*TicketChannelApi* | [**ticketChannelCountGet**](docs/Api/TicketChannelApi.md#ticketchannelcountget) | **GET** /ticketChannel/count | count ticketChannel
-*TicketChannelApi* | [**ticketChannelGet**](docs/Api/TicketChannelApi.md#ticketchannelget) | **GET** /ticketChannel | query ticketChannel
-*TicketChannelApi* | [**ticketChannelIdIdDelete**](docs/Api/TicketChannelApi.md#ticketchannelididdelete) | **DELETE** /ticketChannel/id/{id} | delete a ticketChannel
-*TicketChannelApi* | [**ticketChannelIdIdGet**](docs/Api/TicketChannelApi.md#ticketchannelididget) | **GET** /ticketChannel/id/{id} | query a specific ticketChannel
-*TicketChannelApi* | [**ticketChannelIdIdPut**](docs/Api/TicketChannelApi.md#ticketchannelididput) | **PUT** /ticketChannel/id/{id} | update a ticketChannel
-*TicketChannelApi* | [**ticketChannelPost**](docs/Api/TicketChannelApi.md#ticketchannelpost) | **POST** /ticketChannel | create a ticketChannel
-*TicketFaqApi* | [**ticketFaqCountGet**](docs/Api/TicketFaqApi.md#ticketfaqcountget) | **GET** /ticketFaq/count | count ticketFaq
-*TicketFaqApi* | [**ticketFaqGet**](docs/Api/TicketFaqApi.md#ticketfaqget) | **GET** /ticketFaq | query ticketFaq
-*TicketFaqApi* | [**ticketFaqIdIdDelete**](docs/Api/TicketFaqApi.md#ticketfaqididdelete) | **DELETE** /ticketFaq/id/{id} | delete a ticketFaq
-*TicketFaqApi* | [**ticketFaqIdIdGet**](docs/Api/TicketFaqApi.md#ticketfaqididget) | **GET** /ticketFaq/id/{id} | query a specific ticketFaq
-*TicketFaqApi* | [**ticketFaqIdIdPut**](docs/Api/TicketFaqApi.md#ticketfaqididput) | **PUT** /ticketFaq/id/{id} | update a ticketFaq
-*TicketFaqApi* | [**ticketFaqPost**](docs/Api/TicketFaqApi.md#ticketfaqpost) | **POST** /ticketFaq | create a ticketFaq
-*TicketPoolingGroupApi* | [**ticketPoolingGroupCountGet**](docs/Api/TicketPoolingGroupApi.md#ticketpoolinggroupcountget) | **GET** /ticketPoolingGroup/count | count ticketPoolingGroup
-*TicketPoolingGroupApi* | [**ticketPoolingGroupGet**](docs/Api/TicketPoolingGroupApi.md#ticketpoolinggroupget) | **GET** /ticketPoolingGroup | query ticketPoolingGroup
-*TicketPoolingGroupApi* | [**ticketPoolingGroupIdIdGet**](docs/Api/TicketPoolingGroupApi.md#ticketpoolinggroupididget) | **GET** /ticketPoolingGroup/id/{id} | query a specific ticketPoolingGroup
-*TicketServiceLevelAgreementApi* | [**ticketServiceLevelAgreementCountGet**](docs/Api/TicketServiceLevelAgreementApi.md#ticketservicelevelagreementcountget) | **GET** /ticketServiceLevelAgreement/count | count ticketServiceLevelAgreement
-*TicketServiceLevelAgreementApi* | [**ticketServiceLevelAgreementGet**](docs/Api/TicketServiceLevelAgreementApi.md#ticketservicelevelagreementget) | **GET** /ticketServiceLevelAgreement | query ticketServiceLevelAgreement
-*TicketServiceLevelAgreementApi* | [**ticketServiceLevelAgreementIdIdDelete**](docs/Api/TicketServiceLevelAgreementApi.md#ticketservicelevelagreementididdelete) | **DELETE** /ticketServiceLevelAgreement/id/{id} | delete a ticketServiceLevelAgreement
-*TicketServiceLevelAgreementApi* | [**ticketServiceLevelAgreementIdIdGet**](docs/Api/TicketServiceLevelAgreementApi.md#ticketservicelevelagreementididget) | **GET** /ticketServiceLevelAgreement/id/{id} | query a specific ticketServiceLevelAgreement
-*TicketServiceLevelAgreementApi* | [**ticketServiceLevelAgreementIdIdPut**](docs/Api/TicketServiceLevelAgreementApi.md#ticketservicelevelagreementididput) | **PUT** /ticketServiceLevelAgreement/id/{id} | update a ticketServiceLevelAgreement
-*TicketServiceLevelAgreementApi* | [**ticketServiceLevelAgreementPost**](docs/Api/TicketServiceLevelAgreementApi.md#ticketservicelevelagreementpost) | **POST** /ticketServiceLevelAgreement | create a ticketServiceLevelAgreement
-*TicketStatusApi* | [**ticketStatusCountGet**](docs/Api/TicketStatusApi.md#ticketstatuscountget) | **GET** /ticketStatus/count | count ticketStatus
-*TicketStatusApi* | [**ticketStatusGet**](docs/Api/TicketStatusApi.md#ticketstatusget) | **GET** /ticketStatus | query ticketStatus
-*TicketStatusApi* | [**ticketStatusIdIdDelete**](docs/Api/TicketStatusApi.md#ticketstatusididdelete) | **DELETE** /ticketStatus/id/{id} | delete a ticketStatus
-*TicketStatusApi* | [**ticketStatusIdIdGet**](docs/Api/TicketStatusApi.md#ticketstatusididget) | **GET** /ticketStatus/id/{id} | query a specific ticketStatus
-*TicketStatusApi* | [**ticketStatusIdIdPut**](docs/Api/TicketStatusApi.md#ticketstatusididput) | **PUT** /ticketStatus/id/{id} | update a ticketStatus
-*TicketStatusApi* | [**ticketStatusPost**](docs/Api/TicketStatusApi.md#ticketstatuspost) | **POST** /ticketStatus | create a ticketStatus
-*TicketTypeApi* | [**ticketTypeCountGet**](docs/Api/TicketTypeApi.md#tickettypecountget) | **GET** /ticketType/count | count ticketType
-*TicketTypeApi* | [**ticketTypeGet**](docs/Api/TicketTypeApi.md#tickettypeget) | **GET** /ticketType | query ticketType
-*TicketTypeApi* | [**ticketTypeIdIdDelete**](docs/Api/TicketTypeApi.md#tickettypeididdelete) | **DELETE** /ticketType/id/{id} | delete a ticketType
-*TicketTypeApi* | [**ticketTypeIdIdGet**](docs/Api/TicketTypeApi.md#tickettypeididget) | **GET** /ticketType/id/{id} | query a specific ticketType
-*TicketTypeApi* | [**ticketTypeIdIdPut**](docs/Api/TicketTypeApi.md#tickettypeididput) | **PUT** /ticketType/id/{id} | update a ticketType
-*TicketTypeApi* | [**ticketTypePost**](docs/Api/TicketTypeApi.md#tickettypepost) | **POST** /ticketType | create a ticketType
-*TitleApi* | [**titleCountGet**](docs/Api/TitleApi.md#titlecountget) | **GET** /title/count | count title
-*TitleApi* | [**titleGet**](docs/Api/TitleApi.md#titleget) | **GET** /title | query title
-*TitleApi* | [**titleIdIdDelete**](docs/Api/TitleApi.md#titleididdelete) | **DELETE** /title/id/{id} | delete a title
-*TitleApi* | [**titleIdIdGet**](docs/Api/TitleApi.md#titleididget) | **GET** /title/id/{id} | query a specific title
-*TitleApi* | [**titleIdIdPut**](docs/Api/TitleApi.md#titleididput) | **PUT** /title/id/{id} | update a title
-*TitleApi* | [**titlePost**](docs/Api/TitleApi.md#titlepost) | **POST** /title | create a title
-*TranslationApi* | [**translationCountGet**](docs/Api/TranslationApi.md#translationcountget) | **GET** /translation/count | count translation
-*TranslationApi* | [**translationGet**](docs/Api/TranslationApi.md#translationget) | **GET** /translation | query translation
-*TranslationApi* | [**translationIdIdDelete**](docs/Api/TranslationApi.md#translationididdelete) | **DELETE** /translation/id/{id} | delete a translation
-*TranslationApi* | [**translationIdIdGet**](docs/Api/TranslationApi.md#translationididget) | **GET** /translation/id/{id} | query a specific translation
-*TranslationApi* | [**translationIdIdPut**](docs/Api/TranslationApi.md#translationididput) | **PUT** /translation/id/{id} | update a translation
-*TranslationApi* | [**translationPost**](docs/Api/TranslationApi.md#translationpost) | **POST** /translation | create a translation
-*TransportationOrderApi* | [**transportationOrderCountGet**](docs/Api/TransportationOrderApi.md#transportationordercountget) | **GET** /transportationOrder/count | count transportationOrder
-*TransportationOrderApi* | [**transportationOrderGet**](docs/Api/TransportationOrderApi.md#transportationorderget) | **GET** /transportationOrder | query transportationOrder
+*TicketApi* | [**ticketPost**](docs/Api/TicketApi.md#ticketpost) | **POST** /ticket | 
+*TicketAssignmentRuleApi* | [**ticketAssignmentRuleCountGet**](docs/Api/TicketAssignmentRuleApi.md#ticketassignmentrulecountget) | **GET** /ticketAssignmentRule/count | 
+*TicketAssignmentRuleApi* | [**ticketAssignmentRuleGet**](docs/Api/TicketAssignmentRuleApi.md#ticketassignmentruleget) | **GET** /ticketAssignmentRule | 
+*TicketAssignmentRuleApi* | [**ticketAssignmentRuleIdIdDelete**](docs/Api/TicketAssignmentRuleApi.md#ticketassignmentruleididdelete) | **DELETE** /ticketAssignmentRule/id/{id} | 
+*TicketAssignmentRuleApi* | [**ticketAssignmentRuleIdIdGet**](docs/Api/TicketAssignmentRuleApi.md#ticketassignmentruleididget) | **GET** /ticketAssignmentRule/id/{id} | 
+*TicketAssignmentRuleApi* | [**ticketAssignmentRuleIdIdPut**](docs/Api/TicketAssignmentRuleApi.md#ticketassignmentruleididput) | **PUT** /ticketAssignmentRule/id/{id} | 
+*TicketAssignmentRuleApi* | [**ticketAssignmentRulePost**](docs/Api/TicketAssignmentRuleApi.md#ticketassignmentrulepost) | **POST** /ticketAssignmentRule | 
+*TicketCategoryApi* | [**ticketCategoryCountGet**](docs/Api/TicketCategoryApi.md#ticketcategorycountget) | **GET** /ticketCategory/count | 
+*TicketCategoryApi* | [**ticketCategoryGet**](docs/Api/TicketCategoryApi.md#ticketcategoryget) | **GET** /ticketCategory | 
+*TicketCategoryApi* | [**ticketCategoryIdIdGet**](docs/Api/TicketCategoryApi.md#ticketcategoryididget) | **GET** /ticketCategory/id/{id} | 
+*TicketChannelApi* | [**ticketChannelCountGet**](docs/Api/TicketChannelApi.md#ticketchannelcountget) | **GET** /ticketChannel/count | 
+*TicketChannelApi* | [**ticketChannelGet**](docs/Api/TicketChannelApi.md#ticketchannelget) | **GET** /ticketChannel | 
+*TicketChannelApi* | [**ticketChannelIdIdDelete**](docs/Api/TicketChannelApi.md#ticketchannelididdelete) | **DELETE** /ticketChannel/id/{id} | 
+*TicketChannelApi* | [**ticketChannelIdIdGet**](docs/Api/TicketChannelApi.md#ticketchannelididget) | **GET** /ticketChannel/id/{id} | 
+*TicketChannelApi* | [**ticketChannelIdIdPut**](docs/Api/TicketChannelApi.md#ticketchannelididput) | **PUT** /ticketChannel/id/{id} | 
+*TicketChannelApi* | [**ticketChannelPost**](docs/Api/TicketChannelApi.md#ticketchannelpost) | **POST** /ticketChannel | 
+*TicketFaqApi* | [**ticketFaqCountGet**](docs/Api/TicketFaqApi.md#ticketfaqcountget) | **GET** /ticketFaq/count | 
+*TicketFaqApi* | [**ticketFaqGet**](docs/Api/TicketFaqApi.md#ticketfaqget) | **GET** /ticketFaq | 
+*TicketFaqApi* | [**ticketFaqIdIdDelete**](docs/Api/TicketFaqApi.md#ticketfaqididdelete) | **DELETE** /ticketFaq/id/{id} | 
+*TicketFaqApi* | [**ticketFaqIdIdGet**](docs/Api/TicketFaqApi.md#ticketfaqididget) | **GET** /ticketFaq/id/{id} | 
+*TicketFaqApi* | [**ticketFaqIdIdPut**](docs/Api/TicketFaqApi.md#ticketfaqididput) | **PUT** /ticketFaq/id/{id} | 
+*TicketFaqApi* | [**ticketFaqPost**](docs/Api/TicketFaqApi.md#ticketfaqpost) | **POST** /ticketFaq | 
+*TicketPoolingGroupApi* | [**ticketPoolingGroupCountGet**](docs/Api/TicketPoolingGroupApi.md#ticketpoolinggroupcountget) | **GET** /ticketPoolingGroup/count | 
+*TicketPoolingGroupApi* | [**ticketPoolingGroupGet**](docs/Api/TicketPoolingGroupApi.md#ticketpoolinggroupget) | **GET** /ticketPoolingGroup | 
+*TicketPoolingGroupApi* | [**ticketPoolingGroupIdIdGet**](docs/Api/TicketPoolingGroupApi.md#ticketpoolinggroupididget) | **GET** /ticketPoolingGroup/id/{id} | 
+*TicketServiceLevelAgreementApi* | [**ticketServiceLevelAgreementCountGet**](docs/Api/TicketServiceLevelAgreementApi.md#ticketservicelevelagreementcountget) | **GET** /ticketServiceLevelAgreement/count | 
+*TicketServiceLevelAgreementApi* | [**ticketServiceLevelAgreementGet**](docs/Api/TicketServiceLevelAgreementApi.md#ticketservicelevelagreementget) | **GET** /ticketServiceLevelAgreement | 
+*TicketServiceLevelAgreementApi* | [**ticketServiceLevelAgreementIdIdDelete**](docs/Api/TicketServiceLevelAgreementApi.md#ticketservicelevelagreementididdelete) | **DELETE** /ticketServiceLevelAgreement/id/{id} | 
+*TicketServiceLevelAgreementApi* | [**ticketServiceLevelAgreementIdIdGet**](docs/Api/TicketServiceLevelAgreementApi.md#ticketservicelevelagreementididget) | **GET** /ticketServiceLevelAgreement/id/{id} | 
+*TicketServiceLevelAgreementApi* | [**ticketServiceLevelAgreementIdIdPut**](docs/Api/TicketServiceLevelAgreementApi.md#ticketservicelevelagreementididput) | **PUT** /ticketServiceLevelAgreement/id/{id} | 
+*TicketServiceLevelAgreementApi* | [**ticketServiceLevelAgreementPost**](docs/Api/TicketServiceLevelAgreementApi.md#ticketservicelevelagreementpost) | **POST** /ticketServiceLevelAgreement | 
+*TicketStatusApi* | [**ticketStatusCountGet**](docs/Api/TicketStatusApi.md#ticketstatuscountget) | **GET** /ticketStatus/count | 
+*TicketStatusApi* | [**ticketStatusGet**](docs/Api/TicketStatusApi.md#ticketstatusget) | **GET** /ticketStatus | 
+*TicketStatusApi* | [**ticketStatusIdIdDelete**](docs/Api/TicketStatusApi.md#ticketstatusididdelete) | **DELETE** /ticketStatus/id/{id} | 
+*TicketStatusApi* | [**ticketStatusIdIdGet**](docs/Api/TicketStatusApi.md#ticketstatusididget) | **GET** /ticketStatus/id/{id} | 
+*TicketStatusApi* | [**ticketStatusIdIdPut**](docs/Api/TicketStatusApi.md#ticketstatusididput) | **PUT** /ticketStatus/id/{id} | 
+*TicketStatusApi* | [**ticketStatusPost**](docs/Api/TicketStatusApi.md#ticketstatuspost) | **POST** /ticketStatus | 
+*TicketTypeApi* | [**ticketTypeCountGet**](docs/Api/TicketTypeApi.md#tickettypecountget) | **GET** /ticketType/count | 
+*TicketTypeApi* | [**ticketTypeGet**](docs/Api/TicketTypeApi.md#tickettypeget) | **GET** /ticketType | 
+*TicketTypeApi* | [**ticketTypeIdIdDelete**](docs/Api/TicketTypeApi.md#tickettypeididdelete) | **DELETE** /ticketType/id/{id} | 
+*TicketTypeApi* | [**ticketTypeIdIdGet**](docs/Api/TicketTypeApi.md#tickettypeididget) | **GET** /ticketType/id/{id} | 
+*TicketTypeApi* | [**ticketTypeIdIdPut**](docs/Api/TicketTypeApi.md#tickettypeididput) | **PUT** /ticketType/id/{id} | 
+*TicketTypeApi* | [**ticketTypePost**](docs/Api/TicketTypeApi.md#tickettypepost) | **POST** /ticketType | 
+*TitleApi* | [**titleCountGet**](docs/Api/TitleApi.md#titlecountget) | **GET** /title/count | 
+*TitleApi* | [**titleGet**](docs/Api/TitleApi.md#titleget) | **GET** /title | 
+*TitleApi* | [**titleIdIdDelete**](docs/Api/TitleApi.md#titleididdelete) | **DELETE** /title/id/{id} | 
+*TitleApi* | [**titleIdIdGet**](docs/Api/TitleApi.md#titleididget) | **GET** /title/id/{id} | 
+*TitleApi* | [**titleIdIdPut**](docs/Api/TitleApi.md#titleididput) | **PUT** /title/id/{id} | 
+*TitleApi* | [**titlePost**](docs/Api/TitleApi.md#titlepost) | **POST** /title | 
+*TranslationApi* | [**translationCountGet**](docs/Api/TranslationApi.md#translationcountget) | **GET** /translation/count | 
+*TranslationApi* | [**translationGet**](docs/Api/TranslationApi.md#translationget) | **GET** /translation | 
+*TranslationApi* | [**translationIdIdDelete**](docs/Api/TranslationApi.md#translationididdelete) | **DELETE** /translation/id/{id} | 
+*TranslationApi* | [**translationIdIdGet**](docs/Api/TranslationApi.md#translationididget) | **GET** /translation/id/{id} | 
+*TranslationApi* | [**translationIdIdPut**](docs/Api/TranslationApi.md#translationididput) | **PUT** /translation/id/{id} | 
+*TranslationApi* | [**translationPost**](docs/Api/TranslationApi.md#translationpost) | **POST** /translation | 
+*TransportationOrderApi* | [**transportationOrderCountGet**](docs/Api/TransportationOrderApi.md#transportationordercountget) | **GET** /transportationOrder/count | 
+*TransportationOrderApi* | [**transportationOrderGet**](docs/Api/TransportationOrderApi.md#transportationorderget) | **GET** /transportationOrder | 
 *TransportationOrderApi* | [**transportationOrderIdIdCreatePickPost**](docs/Api/TransportationOrderApi.md#transportationorderididcreatepickpost) | **POST** /transportationOrder/id/{id}/createPick | 
 *TransportationOrderApi* | [**transportationOrderIdIdCreatePickingListPost**](docs/Api/TransportationOrderApi.md#transportationorderididcreatepickinglistpost) | **POST** /transportationOrder/id/{id}/createPickingList | 
 *TransportationOrderApi* | [**transportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPost**](docs/Api/TransportationOrderApi.md#transportationorderididcreatetransportationorderfromunpickedrecordspost) | **POST** /transportationOrder/id/{id}/createTransportationOrderFromUnpickedRecords | 
-*TransportationOrderApi* | [**transportationOrderIdIdDelete**](docs/Api/TransportationOrderApi.md#transportationorderididdelete) | **DELETE** /transportationOrder/id/{id} | delete a transportationOrder
-*TransportationOrderApi* | [**transportationOrderIdIdGet**](docs/Api/TransportationOrderApi.md#transportationorderididget) | **GET** /transportationOrder/id/{id} | query a specific transportationOrder
+*TransportationOrderApi* | [**transportationOrderIdIdDelete**](docs/Api/TransportationOrderApi.md#transportationorderididdelete) | **DELETE** /transportationOrder/id/{id} | 
+*TransportationOrderApi* | [**transportationOrderIdIdGet**](docs/Api/TransportationOrderApi.md#transportationorderididget) | **GET** /transportationOrder/id/{id} | 
 *TransportationOrderApi* | [**transportationOrderIdIdInternalTransportReferencesForPickUpGet**](docs/Api/TransportationOrderApi.md#transportationorderididinternaltransportreferencesforpickupget) | **GET** /transportationOrder/id/{id}/internalTransportReferencesForPickUp | 
 *TransportationOrderApi* | [**transportationOrderIdIdPickPickPost**](docs/Api/TransportationOrderApi.md#transportationorderididpickpickpost) | **POST** /transportationOrder/id/{id}/pickPick | 
-*TransportationOrderApi* | [**transportationOrderIdIdPut**](docs/Api/TransportationOrderApi.md#transportationorderididput) | **PUT** /transportationOrder/id/{id} | update a transportationOrder
+*TransportationOrderApi* | [**transportationOrderIdIdPut**](docs/Api/TransportationOrderApi.md#transportationorderididput) | **PUT** /transportationOrder/id/{id} | 
 *TransportationOrderApi* | [**transportationOrderIdIdPutDownInternalTransportReferencePost**](docs/Api/TransportationOrderApi.md#transportationorderididputdowninternaltransportreferencepost) | **POST** /transportationOrder/id/{id}/putDownInternalTransportReference | 
-*TransportationOrderApi* | [**transportationOrderPost**](docs/Api/TransportationOrderApi.md#transportationorderpost) | **POST** /transportationOrder | create a transportationOrder
-*UnitApi* | [**unitCountGet**](docs/Api/UnitApi.md#unitcountget) | **GET** /unit/count | count unit
-*UnitApi* | [**unitGet**](docs/Api/UnitApi.md#unitget) | **GET** /unit | query unit
-*UnitApi* | [**unitIdIdDelete**](docs/Api/UnitApi.md#unitididdelete) | **DELETE** /unit/id/{id} | delete a unit
-*UnitApi* | [**unitIdIdGet**](docs/Api/UnitApi.md#unitididget) | **GET** /unit/id/{id} | query a specific unit
-*UnitApi* | [**unitIdIdPut**](docs/Api/UnitApi.md#unitididput) | **PUT** /unit/id/{id} | update a unit
-*UnitApi* | [**unitPost**](docs/Api/UnitApi.md#unitpost) | **POST** /unit | create a unit
-*UserApi* | [**userCountGet**](docs/Api/UserApi.md#usercountget) | **GET** /user/count | count user
+*TransportationOrderApi* | [**transportationOrderPost**](docs/Api/TransportationOrderApi.md#transportationorderpost) | **POST** /transportationOrder | 
+*UnitApi* | [**unitCountGet**](docs/Api/UnitApi.md#unitcountget) | **GET** /unit/count | 
+*UnitApi* | [**unitGet**](docs/Api/UnitApi.md#unitget) | **GET** /unit | 
+*UnitApi* | [**unitIdIdDelete**](docs/Api/UnitApi.md#unitididdelete) | **DELETE** /unit/id/{id} | 
+*UnitApi* | [**unitIdIdGet**](docs/Api/UnitApi.md#unitididget) | **GET** /unit/id/{id} | 
+*UnitApi* | [**unitIdIdPut**](docs/Api/UnitApi.md#unitididput) | **PUT** /unit/id/{id} | 
+*UnitApi* | [**unitPost**](docs/Api/UnitApi.md#unitpost) | **POST** /unit | 
+*UserApi* | [**userCountGet**](docs/Api/UserApi.md#usercountget) | **GET** /user/count | 
 *UserApi* | [**userCurrentUserGet**](docs/Api/UserApi.md#usercurrentuserget) | **GET** /user/currentUser | 
-*UserApi* | [**userGet**](docs/Api/UserApi.md#userget) | **GET** /user | query user
-*UserApi* | [**userIdIdDelete**](docs/Api/UserApi.md#userididdelete) | **DELETE** /user/id/{id} | delete a user
-*UserApi* | [**userIdIdGet**](docs/Api/UserApi.md#userididget) | **GET** /user/id/{id} | query a specific user
+*UserApi* | [**userGet**](docs/Api/UserApi.md#userget) | **GET** /user | 
+*UserApi* | [**userIdIdGet**](docs/Api/UserApi.md#userididget) | **GET** /user/id/{id} | 
 *UserApi* | [**userIdIdInvitePost**](docs/Api/UserApi.md#userididinvitepost) | **POST** /user/id/{id}/invite | 
-*UserApi* | [**userIdIdPut**](docs/Api/UserApi.md#userididput) | **PUT** /user/id/{id} | update a user
+*UserApi* | [**userIdIdPut**](docs/Api/UserApi.md#userididput) | **PUT** /user/id/{id} | 
 *UserApi* | [**userIdIdSoftDeletePost**](docs/Api/UserApi.md#userididsoftdeletepost) | **POST** /user/id/{id}/softDelete | 
 *UserApi* | [**userIdIdUserImageGet**](docs/Api/UserApi.md#userididuserimageget) | **GET** /user/id/{id}/userImage | 
 *UserApi* | [**userIdIdUserImageThumbnailGet**](docs/Api/UserApi.md#userididuserimagethumbnailget) | **GET** /user/id/{id}/userImageThumbnail | 
-*UserApi* | [**userPost**](docs/Api/UserApi.md#userpost) | **POST** /user | create a user
-*UserRoleApi* | [**userRoleCountGet**](docs/Api/UserRoleApi.md#userrolecountget) | **GET** /userRole/count | count userRole
+*UserApi* | [**userPost**](docs/Api/UserApi.md#userpost) | **POST** /user | 
+*UserRoleApi* | [**userRoleCountGet**](docs/Api/UserRoleApi.md#userrolecountget) | **GET** /userRole/count | 
 *UserRoleApi* | [**userRoleDisableUserRolesDuringTrialPost**](docs/Api/UserRoleApi.md#userroledisableuserrolesduringtrialpost) | **POST** /userRole/disableUserRolesDuringTrial | 
 *UserRoleApi* | [**userRoleEnableUserRolesDuringTrialPost**](docs/Api/UserRoleApi.md#userroleenableuserrolesduringtrialpost) | **POST** /userRole/enableUserRolesDuringTrial | 
-*UserRoleApi* | [**userRoleGet**](docs/Api/UserRoleApi.md#userroleget) | **GET** /userRole | query userRole
-*UserRoleApi* | [**userRoleIdIdDelete**](docs/Api/UserRoleApi.md#userroleididdelete) | **DELETE** /userRole/id/{id} | delete a userRole
-*UserRoleApi* | [**userRoleIdIdGet**](docs/Api/UserRoleApi.md#userroleididget) | **GET** /userRole/id/{id} | query a specific userRole
-*UserRoleApi* | [**userRoleIdIdPut**](docs/Api/UserRoleApi.md#userroleididput) | **PUT** /userRole/id/{id} | update a userRole
-*UserRoleApi* | [**userRolePost**](docs/Api/UserRoleApi.md#userrolepost) | **POST** /userRole | create a userRole
-*VariantArticleApi* | [**variantArticleCountGet**](docs/Api/VariantArticleApi.md#variantarticlecountget) | **GET** /variantArticle/count | count variantArticle
-*VariantArticleApi* | [**variantArticleGet**](docs/Api/VariantArticleApi.md#variantarticleget) | **GET** /variantArticle | query variantArticle
-*VariantArticleApi* | [**variantArticleIdIdDelete**](docs/Api/VariantArticleApi.md#variantarticleididdelete) | **DELETE** /variantArticle/id/{id} | delete a variantArticle
-*VariantArticleApi* | [**variantArticleIdIdGet**](docs/Api/VariantArticleApi.md#variantarticleididget) | **GET** /variantArticle/id/{id} | query a specific variantArticle
-*VariantArticleApi* | [**variantArticleIdIdPut**](docs/Api/VariantArticleApi.md#variantarticleididput) | **PUT** /variantArticle/id/{id} | update a variantArticle
-*VariantArticleApi* | [**variantArticlePost**](docs/Api/VariantArticleApi.md#variantarticlepost) | **POST** /variantArticle | create a variantArticle
-*VariantArticleAttributeApi* | [**variantArticleAttributeCountGet**](docs/Api/VariantArticleAttributeApi.md#variantarticleattributecountget) | **GET** /variantArticleAttribute/count | count variantArticleAttribute
-*VariantArticleAttributeApi* | [**variantArticleAttributeGet**](docs/Api/VariantArticleAttributeApi.md#variantarticleattributeget) | **GET** /variantArticleAttribute | query variantArticleAttribute
-*VariantArticleAttributeApi* | [**variantArticleAttributeIdIdDelete**](docs/Api/VariantArticleAttributeApi.md#variantarticleattributeididdelete) | **DELETE** /variantArticleAttribute/id/{id} | delete a variantArticleAttribute
-*VariantArticleAttributeApi* | [**variantArticleAttributeIdIdGet**](docs/Api/VariantArticleAttributeApi.md#variantarticleattributeididget) | **GET** /variantArticleAttribute/id/{id} | query a specific variantArticleAttribute
-*VariantArticleAttributeApi* | [**variantArticleAttributeIdIdPut**](docs/Api/VariantArticleAttributeApi.md#variantarticleattributeididput) | **PUT** /variantArticleAttribute/id/{id} | update a variantArticleAttribute
-*VariantArticleAttributeApi* | [**variantArticleAttributePost**](docs/Api/VariantArticleAttributeApi.md#variantarticleattributepost) | **POST** /variantArticleAttribute | create a variantArticleAttribute
-*VariantArticleVariantApi* | [**variantArticleVariantCountGet**](docs/Api/VariantArticleVariantApi.md#variantarticlevariantcountget) | **GET** /variantArticleVariant/count | count variantArticleVariant
-*VariantArticleVariantApi* | [**variantArticleVariantGet**](docs/Api/VariantArticleVariantApi.md#variantarticlevariantget) | **GET** /variantArticleVariant | query variantArticleVariant
-*VariantArticleVariantApi* | [**variantArticleVariantIdIdGet**](docs/Api/VariantArticleVariantApi.md#variantarticlevariantididget) | **GET** /variantArticleVariant/id/{id} | query a specific variantArticleVariant
-*WarehouseApi* | [**warehouseCountGet**](docs/Api/WarehouseApi.md#warehousecountget) | **GET** /warehouse/count | count warehouse
-*WarehouseApi* | [**warehouseGet**](docs/Api/WarehouseApi.md#warehouseget) | **GET** /warehouse | query warehouse
+*UserRoleApi* | [**userRoleGet**](docs/Api/UserRoleApi.md#userroleget) | **GET** /userRole | 
+*UserRoleApi* | [**userRoleIdIdDelete**](docs/Api/UserRoleApi.md#userroleididdelete) | **DELETE** /userRole/id/{id} | 
+*UserRoleApi* | [**userRoleIdIdGet**](docs/Api/UserRoleApi.md#userroleididget) | **GET** /userRole/id/{id} | 
+*UserRoleApi* | [**userRoleIdIdPut**](docs/Api/UserRoleApi.md#userroleididput) | **PUT** /userRole/id/{id} | 
+*UserRoleApi* | [**userRolePost**](docs/Api/UserRoleApi.md#userrolepost) | **POST** /userRole | 
+*VariantArticleApi* | [**variantArticleCountGet**](docs/Api/VariantArticleApi.md#variantarticlecountget) | **GET** /variantArticle/count | 
+*VariantArticleApi* | [**variantArticleGet**](docs/Api/VariantArticleApi.md#variantarticleget) | **GET** /variantArticle | 
+*VariantArticleApi* | [**variantArticleIdIdDelete**](docs/Api/VariantArticleApi.md#variantarticleididdelete) | **DELETE** /variantArticle/id/{id} | 
+*VariantArticleApi* | [**variantArticleIdIdGet**](docs/Api/VariantArticleApi.md#variantarticleididget) | **GET** /variantArticle/id/{id} | 
+*VariantArticleApi* | [**variantArticleIdIdPut**](docs/Api/VariantArticleApi.md#variantarticleididput) | **PUT** /variantArticle/id/{id} | 
+*VariantArticleApi* | [**variantArticlePost**](docs/Api/VariantArticleApi.md#variantarticlepost) | **POST** /variantArticle | 
+*VariantArticleAttributeApi* | [**variantArticleAttributeCountGet**](docs/Api/VariantArticleAttributeApi.md#variantarticleattributecountget) | **GET** /variantArticleAttribute/count | 
+*VariantArticleAttributeApi* | [**variantArticleAttributeGet**](docs/Api/VariantArticleAttributeApi.md#variantarticleattributeget) | **GET** /variantArticleAttribute | 
+*VariantArticleAttributeApi* | [**variantArticleAttributeIdIdDelete**](docs/Api/VariantArticleAttributeApi.md#variantarticleattributeididdelete) | **DELETE** /variantArticleAttribute/id/{id} | 
+*VariantArticleAttributeApi* | [**variantArticleAttributeIdIdGet**](docs/Api/VariantArticleAttributeApi.md#variantarticleattributeididget) | **GET** /variantArticleAttribute/id/{id} | 
+*VariantArticleAttributeApi* | [**variantArticleAttributeIdIdPut**](docs/Api/VariantArticleAttributeApi.md#variantarticleattributeididput) | **PUT** /variantArticleAttribute/id/{id} | 
+*VariantArticleAttributeApi* | [**variantArticleAttributePost**](docs/Api/VariantArticleAttributeApi.md#variantarticleattributepost) | **POST** /variantArticleAttribute | 
+*VariantArticleVariantApi* | [**variantArticleVariantCountGet**](docs/Api/VariantArticleVariantApi.md#variantarticlevariantcountget) | **GET** /variantArticleVariant/count | 
+*VariantArticleVariantApi* | [**variantArticleVariantGet**](docs/Api/VariantArticleVariantApi.md#variantarticlevariantget) | **GET** /variantArticleVariant | 
+*VariantArticleVariantApi* | [**variantArticleVariantIdIdGet**](docs/Api/VariantArticleVariantApi.md#variantarticlevariantididget) | **GET** /variantArticleVariant/id/{id} | 
+*WarehouseApi* | [**warehouseCountGet**](docs/Api/WarehouseApi.md#warehousecountget) | **GET** /warehouse/count | 
+*WarehouseApi* | [**warehouseGet**](docs/Api/WarehouseApi.md#warehouseget) | **GET** /warehouse | 
 *WarehouseApi* | [**warehouseIdIdActivatePost**](docs/Api/WarehouseApi.md#warehouseididactivatepost) | **POST** /warehouse/id/{id}/activate | 
 *WarehouseApi* | [**warehouseIdIdDeactivatePost**](docs/Api/WarehouseApi.md#warehouseididdeactivatepost) | **POST** /warehouse/id/{id}/deactivate | 
-*WarehouseApi* | [**warehouseIdIdDelete**](docs/Api/WarehouseApi.md#warehouseididdelete) | **DELETE** /warehouse/id/{id} | delete a warehouse
-*WarehouseApi* | [**warehouseIdIdGet**](docs/Api/WarehouseApi.md#warehouseididget) | **GET** /warehouse/id/{id} | query a specific warehouse
-*WarehouseApi* | [**warehouseIdIdPut**](docs/Api/WarehouseApi.md#warehouseididput) | **PUT** /warehouse/id/{id} | update a warehouse
-*WarehouseApi* | [**warehousePost**](docs/Api/WarehouseApi.md#warehousepost) | **POST** /warehouse | create a warehouse
-*WarehouseStockApi* | [**warehouseStockCountGet**](docs/Api/WarehouseStockApi.md#warehousestockcountget) | **GET** /warehouseStock/count | count warehouseStock
-*WarehouseStockApi* | [**warehouseStockGet**](docs/Api/WarehouseStockApi.md#warehousestockget) | **GET** /warehouseStock | query warehouseStock
-*WarehouseStockApi* | [**warehouseStockIdIdGet**](docs/Api/WarehouseStockApi.md#warehousestockididget) | **GET** /warehouseStock/id/{id} | query a specific warehouseStock
+*WarehouseApi* | [**warehouseIdIdDelete**](docs/Api/WarehouseApi.md#warehouseididdelete) | **DELETE** /warehouse/id/{id} | 
+*WarehouseApi* | [**warehouseIdIdGet**](docs/Api/WarehouseApi.md#warehouseididget) | **GET** /warehouse/id/{id} | 
+*WarehouseApi* | [**warehouseIdIdPut**](docs/Api/WarehouseApi.md#warehouseididput) | **PUT** /warehouse/id/{id} | 
+*WarehouseApi* | [**warehousePost**](docs/Api/WarehouseApi.md#warehousepost) | **POST** /warehouse | 
+*WarehouseStockApi* | [**warehouseStockCountGet**](docs/Api/WarehouseStockApi.md#warehousestockcountget) | **GET** /warehouseStock/count | 
+*WarehouseStockApi* | [**warehouseStockGet**](docs/Api/WarehouseStockApi.md#warehousestockget) | **GET** /warehouseStock | 
+*WarehouseStockApi* | [**warehouseStockIdIdGet**](docs/Api/WarehouseStockApi.md#warehousestockididget) | **GET** /warehouseStock/id/{id} | 
 *WarehouseStockMovementApi* | [**warehouseStockMovementBookDirectStockTransferPost**](docs/Api/WarehouseStockMovementApi.md#warehousestockmovementbookdirectstocktransferpost) | **POST** /warehouseStockMovement/bookDirectStockTransfer | 
 *WarehouseStockMovementApi* | [**warehouseStockMovementBookFromLoadingEquipmentPlacePost**](docs/Api/WarehouseStockMovementApi.md#warehousestockmovementbookfromloadingequipmentplacepost) | **POST** /warehouseStockMovement/bookFromLoadingEquipmentPlace | 
 *WarehouseStockMovementApi* | [**warehouseStockMovementBookIncomingMovementPost**](docs/Api/WarehouseStockMovementApi.md#warehousestockmovementbookincomingmovementpost) | **POST** /warehouseStockMovement/bookIncomingMovement | 
 *WarehouseStockMovementApi* | [**warehouseStockMovementBookOntoInternalTransportReferencePost**](docs/Api/WarehouseStockMovementApi.md#warehousestockmovementbookontointernaltransportreferencepost) | **POST** /warehouseStockMovement/bookOntoInternalTransportReference | 
 *WarehouseStockMovementApi* | [**warehouseStockMovementBookOutgoingMovementPost**](docs/Api/WarehouseStockMovementApi.md#warehousestockmovementbookoutgoingmovementpost) | **POST** /warehouseStockMovement/bookOutgoingMovement | 
 *WarehouseStockMovementApi* | [**warehouseStockMovementBookToLoadingEquipmentPlacePost**](docs/Api/WarehouseStockMovementApi.md#warehousestockmovementbooktoloadingequipmentplacepost) | **POST** /warehouseStockMovement/bookToLoadingEquipmentPlace | 
-*WarehouseStockMovementApi* | [**warehouseStockMovementCountGet**](docs/Api/WarehouseStockMovementApi.md#warehousestockmovementcountget) | **GET** /warehouseStockMovement/count | count warehouseStockMovement
-*WarehouseStockMovementApi* | [**warehouseStockMovementGet**](docs/Api/WarehouseStockMovementApi.md#warehousestockmovementget) | **GET** /warehouseStockMovement | query warehouseStockMovement
-*WarehouseStockMovementApi* | [**warehouseStockMovementIdIdGet**](docs/Api/WarehouseStockMovementApi.md#warehousestockmovementididget) | **GET** /warehouseStockMovement/id/{id} | query a specific warehouseStockMovement
-*WebhookApi* | [**webhookCountGet**](docs/Api/WebhookApi.md#webhookcountget) | **GET** /webhook/count | count webhook
-*WebhookApi* | [**webhookGet**](docs/Api/WebhookApi.md#webhookget) | **GET** /webhook | query webhook
-*WebhookApi* | [**webhookIdIdDelete**](docs/Api/WebhookApi.md#webhookididdelete) | **DELETE** /webhook/id/{id} | delete a webhook
-*WebhookApi* | [**webhookIdIdGet**](docs/Api/WebhookApi.md#webhookididget) | **GET** /webhook/id/{id} | query a specific webhook
-*WebhookApi* | [**webhookIdIdPut**](docs/Api/WebhookApi.md#webhookididput) | **PUT** /webhook/id/{id} | update a webhook
-*WebhookApi* | [**webhookPost**](docs/Api/WebhookApi.md#webhookpost) | **POST** /webhook | create a webhook
-*WeclappOsApi* | [**weclappOsCountGet**](docs/Api/WeclappOsApi.md#weclapposcountget) | **GET** /weclappOs/count | count weclappOs
-*WeclappOsApi* | [**weclappOsGet**](docs/Api/WeclappOsApi.md#weclapposget) | **GET** /weclappOs | query weclappOs
-*WeclappOsApi* | [**weclappOsIdIdDelete**](docs/Api/WeclappOsApi.md#weclapposididdelete) | **DELETE** /weclappOs/id/{id} | delete a weclappOs
-*WeclappOsApi* | [**weclappOsIdIdGet**](docs/Api/WeclappOsApi.md#weclapposididget) | **GET** /weclappOs/id/{id} | query a specific weclappOs
-*WeclappOsApi* | [**weclappOsIdIdPut**](docs/Api/WeclappOsApi.md#weclapposididput) | **PUT** /weclappOs/id/{id} | update a weclappOs
-*WeclappOsApi* | [**weclappOsPost**](docs/Api/WeclappOsApi.md#weclappospost) | **POST** /weclappOs | create a weclappOs
+*WarehouseStockMovementApi* | [**warehouseStockMovementCountGet**](docs/Api/WarehouseStockMovementApi.md#warehousestockmovementcountget) | **GET** /warehouseStockMovement/count | 
+*WarehouseStockMovementApi* | [**warehouseStockMovementGet**](docs/Api/WarehouseStockMovementApi.md#warehousestockmovementget) | **GET** /warehouseStockMovement | 
+*WarehouseStockMovementApi* | [**warehouseStockMovementIdIdGet**](docs/Api/WarehouseStockMovementApi.md#warehousestockmovementididget) | **GET** /warehouseStockMovement/id/{id} | 
+*WebhookApi* | [**webhookCountGet**](docs/Api/WebhookApi.md#webhookcountget) | **GET** /webhook/count | 
+*WebhookApi* | [**webhookGet**](docs/Api/WebhookApi.md#webhookget) | **GET** /webhook | 
+*WebhookApi* | [**webhookIdIdDelete**](docs/Api/WebhookApi.md#webhookididdelete) | **DELETE** /webhook/id/{id} | 
+*WebhookApi* | [**webhookIdIdGet**](docs/Api/WebhookApi.md#webhookididget) | **GET** /webhook/id/{id} | 
+*WebhookApi* | [**webhookIdIdPut**](docs/Api/WebhookApi.md#webhookididput) | **PUT** /webhook/id/{id} | 
+*WebhookApi* | [**webhookPost**](docs/Api/WebhookApi.md#webhookpost) | **POST** /webhook | 
+*WeclappOsApi* | [**weclappOsCountGet**](docs/Api/WeclappOsApi.md#weclapposcountget) | **GET** /weclappOs/count | 
+*WeclappOsApi* | [**weclappOsGet**](docs/Api/WeclappOsApi.md#weclapposget) | **GET** /weclappOs | 
+*WeclappOsApi* | [**weclappOsIdIdDelete**](docs/Api/WeclappOsApi.md#weclapposididdelete) | **DELETE** /weclappOs/id/{id} | 
+*WeclappOsApi* | [**weclappOsIdIdGet**](docs/Api/WeclappOsApi.md#weclapposididget) | **GET** /weclappOs/id/{id} | 
+*WeclappOsApi* | [**weclappOsIdIdPut**](docs/Api/WeclappOsApi.md#weclapposididput) | **PUT** /weclappOs/id/{id} | 
+*WeclappOsApi* | [**weclappOsPost**](docs/Api/WeclappOsApi.md#weclappospost) | **POST** /weclappOs | 
 
 ## Models
 
-- [AbstractBillOfMaterial](docs/Model/AbstractBillOfMaterial.md)
-- [AbstractBookRecord](docs/Model/AbstractBookRecord.md)
-- [AbstractEntity](docs/Model/AbstractEntity.md)
-- [AbstractEntityWithCustomAttributes](docs/Model/AbstractEntityWithCustomAttributes.md)
-- [AbstractParty](docs/Model/AbstractParty.md)
+- [AcceptQuotationItem](docs/Model/AcceptQuotationItem.md)
 - [AccountingTransaction](docs/Model/AccountingTransaction.md)
 - [AccountingTransactionBatchBookingPost200Response](docs/Model/AccountingTransactionBatchBookingPost200Response.md)
 - [AccountingTransactionBatchBookingPostRequest](docs/Model/AccountingTransactionBatchBookingPostRequest.md)
-- [AccountingTransactionBatchBookingPostRequestBatchBookingDto](docs/Model/AccountingTransactionBatchBookingPostRequestBatchBookingDto.md)
 - [AccountingTransactionCountGet200Response](docs/Model/AccountingTransactionCountGet200Response.md)
 - [AccountingTransactionDetail](docs/Model/AccountingTransactionDetail.md)
 - [AccountingTransactionGet200Response](docs/Model/AccountingTransactionGet200Response.md)
-- [AccountingTransactionStatus](docs/Model/AccountingTransactionStatus.md)
 - [Address](docs/Model/Address.md)
-- [AdvancePaymentStatus](docs/Model/AdvancePaymentStatus.md)
 - [AggregatePackagingUnit](docs/Model/AggregatePackagingUnit.md)
 - [AggregateStock](docs/Model/AggregateStock.md)
 - [Amount](docs/Model/Amount.md)
 - [ApiProblem](docs/Model/ApiProblem.md)
-- [ApiProblemType](docs/Model/ApiProblemType.md)
 - [ArchivedEmail](docs/Model/ArchivedEmail.md)
 - [ArchivedEmailGet200Response](docs/Model/ArchivedEmailGet200Response.md)
 - [ArchivedEmailIdIdRemoveReferencePostRequest](docs/Model/ArchivedEmailIdIdRemoveReferencePostRequest.md)
@@ -1058,7 +1049,6 @@ Class | Method | HTTP request | Description
 - [ArticleAccountingCodeGet200Response](docs/Model/ArticleAccountingCodeGet200Response.md)
 - [ArticleAlternativeQuantity](docs/Model/ArticleAlternativeQuantity.md)
 - [ArticleCalculationPrice](docs/Model/ArticleCalculationPrice.md)
-- [ArticleCalculationPriceType](docs/Model/ArticleCalculationPriceType.md)
 - [ArticleCategory](docs/Model/ArticleCategory.md)
 - [ArticleCategoryGet200Response](docs/Model/ArticleCategoryGet200Response.md)
 - [ArticleGet200Response](docs/Model/ArticleGet200Response.md)
@@ -1078,69 +1068,44 @@ Class | Method | HTTP request | Description
 - [ArticleSupplySource](docs/Model/ArticleSupplySource.md)
 - [ArticleSupplySourceGet200Response](docs/Model/ArticleSupplySourceGet200Response.md)
 - [ArticleSupplySourceGet200ResponseAdditionalProperties](docs/Model/ArticleSupplySourceGet200ResponseAdditionalProperties.md)
-- [ArticleType](docs/Model/ArticleType.md)
 - [Attendance](docs/Model/Attendance.md)
 - [AttendanceCurrentAttendanceGet200Response](docs/Model/AttendanceCurrentAttendanceGet200Response.md)
 - [AttendanceGet200Response](docs/Model/AttendanceGet200Response.md)
-- [BalanceSheetItem](docs/Model/BalanceSheetItem.md)
 - [BankAccount](docs/Model/BankAccount.md)
 - [BankAccountGet200Response](docs/Model/BankAccountGet200Response.md)
 - [BankTransaction](docs/Model/BankTransaction.md)
 - [BankTransactionGet200Response](docs/Model/BankTransactionGet200Response.md)
-- [BaseArticle](docs/Model/BaseArticle.md)
-- [BaseMinimalRecordItem](docs/Model/BaseMinimalRecordItem.md)
-- [BasePick](docs/Model/BasePick.md)
-- [BasePurchaseRecord](docs/Model/BasePurchaseRecord.md)
-- [BaseRecord](docs/Model/BaseRecord.md)
-- [BaseRecordItem](docs/Model/BaseRecordItem.md)
-- [BaseRecordItemWithMoney](docs/Model/BaseRecordItemWithMoney.md)
-- [BaseRecordItemWithPrintSettings](docs/Model/BaseRecordItemWithPrintSettings.md)
-- [BaseRecordWithMoney](docs/Model/BaseRecordWithMoney.md)
-- [BaseSalesRecord](docs/Model/BaseSalesRecord.md)
-- [BaseSalesRecordItemWithCost](docs/Model/BaseSalesRecordItemWithCost.md)
-- [BaseSalesRecordItemWithService](docs/Model/BaseSalesRecordItemWithService.md)
-- [BaseSalesRecordWithAddresses](docs/Model/BaseSalesRecordWithAddresses.md)
-- [BaseShipment](docs/Model/BaseShipment.md)
-- [BaseShippingCostItem](docs/Model/BaseShippingCostItem.md)
+- [BatchBooking](docs/Model/BatchBooking.md)
 - [BatchBookingRecord](docs/Model/BatchBookingRecord.md)
 - [BatchNumber](docs/Model/BatchNumber.md)
 - [BatchNumberGet200Response](docs/Model/BatchNumberGet200Response.md)
 - [BatchSerialNumber](docs/Model/BatchSerialNumber.md)
 - [BillOfMaterial](docs/Model/BillOfMaterial.md)
-- [BillUntil](docs/Model/BillUntil.md)
-- [BillableInvoiceStatus](docs/Model/BillableInvoiceStatus.md)
 - [BlanketPurchaseOrder](docs/Model/BlanketPurchaseOrder.md)
 - [BlanketPurchaseOrderGet200Response](docs/Model/BlanketPurchaseOrderGet200Response.md)
 - [BlanketPurchaseOrderIdIdGenerateReleasesPost200Response](docs/Model/BlanketPurchaseOrderIdIdGenerateReleasesPost200Response.md)
 - [BlanketPurchaseOrderIdIdGenerateReleasesPostRequest](docs/Model/BlanketPurchaseOrderIdIdGenerateReleasesPostRequest.md)
 - [BlanketPurchaseOrderStatusHistory](docs/Model/BlanketPurchaseOrderStatusHistory.md)
-- [BlanketPurchaseOrderStatusType](docs/Model/BlanketPurchaseOrderStatusType.md)
-- [BookingType](docs/Model/BookingType.md)
-- [CalculationType](docs/Model/CalculationType.md)
 - [Calendar](docs/Model/Calendar.md)
 - [CalendarEvent](docs/Model/CalendarEvent.md)
 - [CalendarEventAttendee](docs/Model/CalendarEventAttendee.md)
 - [CalendarEventGet200Response](docs/Model/CalendarEventGet200Response.md)
 - [CalendarGet200Response](docs/Model/CalendarGet200Response.md)
 - [CalendarIdIdDeleteCalendarAndMoveEventsPostRequest](docs/Model/CalendarIdIdDeleteCalendarAndMoveEventsPostRequest.md)
-- [CalendarSharingPermissionType](docs/Model/CalendarSharingPermissionType.md)
 - [CalendarSharingPermissions](docs/Model/CalendarSharingPermissions.md)
 - [Campaign](docs/Model/Campaign.md)
 - [CampaignGet200Response](docs/Model/CampaignGet200Response.md)
 - [CampaignParticipant](docs/Model/CampaignParticipant.md)
 - [CampaignParticipantGet200Response](docs/Model/CampaignParticipantGet200Response.md)
-- [CampaignType](docs/Model/CampaignType.md)
 - [CashAccount](docs/Model/CashAccount.md)
 - [CashAccountGet200Response](docs/Model/CashAccountGet200Response.md)
 - [CashAccountTransaction](docs/Model/CashAccountTransaction.md)
 - [CashAccountTransactionGet200Response](docs/Model/CashAccountTransactionGet200Response.md)
-- [CollectiveInvoicePositionPrintType](docs/Model/CollectiveInvoicePositionPrintType.md)
 - [Comment](docs/Model/Comment.md)
 - [CommentGet200Response](docs/Model/CommentGet200Response.md)
 - [CommercialLanguage](docs/Model/CommercialLanguage.md)
 - [CommercialLanguageGet200Response](docs/Model/CommercialLanguageGet200Response.md)
 - [CommissionSalesPartner](docs/Model/CommissionSalesPartner.md)
-- [CommissionType](docs/Model/CommissionType.md)
 - [ConditionsForEntityType](docs/Model/ConditionsForEntityType.md)
 - [Contact](docs/Model/Contact.md)
 - [ContactGet200Response](docs/Model/ContactGet200Response.md)
@@ -1148,17 +1113,9 @@ Class | Method | HTTP request | Description
 - [ContractAdditionalAddress](docs/Model/ContractAdditionalAddress.md)
 - [ContractAuthorizationUnit](docs/Model/ContractAuthorizationUnit.md)
 - [ContractAuthorizationUnitGet200Response](docs/Model/ContractAuthorizationUnitGet200Response.md)
-- [ContractBillingType](docs/Model/ContractBillingType.md)
-- [ContractChargeInterval](docs/Model/ContractChargeInterval.md)
-- [ContractChargeIntervalType](docs/Model/ContractChargeIntervalType.md)
-- [ContractChargeType](docs/Model/ContractChargeType.md)
 - [ContractCostItem](docs/Model/ContractCostItem.md)
 - [ContractGet200Response](docs/Model/ContractGet200Response.md)
 - [ContractItem](docs/Model/ContractItem.md)
-- [ContractReminderType](docs/Model/ContractReminderType.md)
-- [ContractSoftframe](docs/Model/ContractSoftframe.md)
-- [ContractStatus](docs/Model/ContractStatus.md)
-- [ContractUnitType](docs/Model/ContractUnitType.md)
 - [CostCenter](docs/Model/CostCenter.md)
 - [CostCenterGet200Response](docs/Model/CostCenterGet200Response.md)
 - [CostCenterWithDistributionPercentage](docs/Model/CostCenterWithDistributionPercentage.md)
@@ -1166,72 +1123,46 @@ Class | Method | HTTP request | Description
 - [CostTypeGet200Response](docs/Model/CostTypeGet200Response.md)
 - [CrmEvent](docs/Model/CrmEvent.md)
 - [CrmEventGet200Response](docs/Model/CrmEventGet200Response.md)
-- [CrmEventType](docs/Model/CrmEventType.md)
 - [Currency](docs/Model/Currency.md)
 - [CurrencyCompanyCurrencyGet200Response](docs/Model/CurrencyCompanyCurrencyGet200Response.md)
 - [CurrencyGet200Response](docs/Model/CurrencyGet200Response.md)
 - [CustomAttribute](docs/Model/CustomAttribute.md)
 - [CustomAttributeDefinition](docs/Model/CustomAttributeDefinition.md)
-- [CustomAttributeDefinitionConditionOperator](docs/Model/CustomAttributeDefinitionConditionOperator.md)
-- [CustomAttributeDefinitionConditionType](docs/Model/CustomAttributeDefinitionConditionType.md)
 - [CustomAttributeDefinitionConditions](docs/Model/CustomAttributeDefinitionConditions.md)
 - [CustomAttributeDefinitionGet200Response](docs/Model/CustomAttributeDefinitionGet200Response.md)
 - [CustomAttributeDefinitionListValue](docs/Model/CustomAttributeDefinitionListValue.md)
 - [CustomAttributeDefinitionOrder](docs/Model/CustomAttributeDefinitionOrder.md)
 - [CustomAttributeDefinitionPermission](docs/Model/CustomAttributeDefinitionPermission.md)
-- [CustomAttributeDefinitionPermissionType](docs/Model/CustomAttributeDefinitionPermissionType.md)
 - [CustomAttributeDefinitionPropertyCondition](docs/Model/CustomAttributeDefinitionPropertyCondition.md)
 - [CustomAttributeDefinitionReadOrderGet200Response](docs/Model/CustomAttributeDefinitionReadOrderGet200Response.md)
 - [CustomAttributeDefinitionTranslation](docs/Model/CustomAttributeDefinitionTranslation.md)
 - [CustomAttributeDefinitionUpdateOrderPostRequest](docs/Model/CustomAttributeDefinitionUpdateOrderPostRequest.md)
-- [CustomAttributeDefinitionUpdateOrderPostRequestOrderInner](docs/Model/CustomAttributeDefinitionUpdateOrderPostRequestOrderInner.md)
-- [CustomAttributeEntityType](docs/Model/CustomAttributeEntityType.md)
-- [CustomAttributeExtendableEntity](docs/Model/CustomAttributeExtendableEntity.md)
-- [CustomAttributePublicPageType](docs/Model/CustomAttributePublicPageType.md)
-- [CustomAttributeType](docs/Model/CustomAttributeType.md)
 - [CustomValue](docs/Model/CustomValue.md)
 - [Customer](docs/Model/Customer.md)
-- [CustomerBusinessType](docs/Model/CustomerBusinessType.md)
 - [CustomerGet200Response](docs/Model/CustomerGet200Response.md)
-- [CustomerOrLead](docs/Model/CustomerOrLead.md)
-- [CustomerSatisfaction](docs/Model/CustomerSatisfaction.md)
 - [CustomerSpecificArticleAttributes](docs/Model/CustomerSpecificArticleAttributes.md)
-- [DebitCreditIndicator](docs/Model/DebitCreditIndicator.md)
 - [DemoTestSystemInfo](docs/Model/DemoTestSystemInfo.md)
-- [DesiredInvoiceStatusType](docs/Model/DesiredInvoiceStatusType.md)
-- [DispositionInfoAvailabilityType](docs/Model/DispositionInfoAvailabilityType.md)
-- [DistributionChannel](docs/Model/DistributionChannel.md)
 - [Document](docs/Model/Document.md)
 - [DocumentCopyPost200Response](docs/Model/DocumentCopyPost200Response.md)
 - [DocumentCopyPostRequest](docs/Model/DocumentCopyPostRequest.md)
 - [DocumentGet200Response](docs/Model/DocumentGet200Response.md)
 - [DocumentIdIdCopyPostRequest](docs/Model/DocumentIdIdCopyPostRequest.md)
-- [DocumentType](docs/Model/DocumentType.md)
 - [DocumentVersion](docs/Model/DocumentVersion.md)
 - [DropshippingDeliveryNoteFormTextBlockData](docs/Model/DropshippingDeliveryNoteFormTextBlockData.md)
-- [DueDateOption](docs/Model/DueDateOption.md)
-- [DunningBlockState](docs/Model/DunningBlockState.md)
+- [DropshippingShipmentParameters](docs/Model/DropshippingShipmentParameters.md)
 - [Duration](docs/Model/Duration.md)
 - [EcommerceOrder](docs/Model/EcommerceOrder.md)
-- [EcommerceShippingCarrier](docs/Model/EcommerceShippingCarrier.md)
 - [EmailAddresses](docs/Model/EmailAddresses.md)
-- [Entity](docs/Model/Entity.md)
 - [EntityReference](docs/Model/EntityReference.md)
-- [EventInvitationStatus](docs/Model/EventInvitationStatus.md)
-- [EventRight](docs/Model/EventRight.md)
+- [ExistingReservation](docs/Model/ExistingReservation.md)
 - [ExternalConnection](docs/Model/ExternalConnection.md)
 - [ExternalConnectionGet200Response](docs/Model/ExternalConnectionGet200Response.md)
-- [ExternalConnectionType](docs/Model/ExternalConnectionType.md)
 - [FastProductionBookingResult](docs/Model/FastProductionBookingResult.md)
-- [FastProductionBookingResultMessage](docs/Model/FastProductionBookingResultMessage.md)
 - [FinancialYear](docs/Model/FinancialYear.md)
 - [FinancialYearGet200Response](docs/Model/FinancialYearGet200Response.md)
 - [FinancialYearIdIdGeneratePeriodsPost200Response](docs/Model/FinancialYearIdIdGeneratePeriodsPost200Response.md)
-- [FinancialYearStatus](docs/Model/FinancialYearStatus.md)
-- [FollowupBusyState](docs/Model/FollowupBusyState.md)
 - [FulfillmentProvider](docs/Model/FulfillmentProvider.md)
 - [FulfillmentProviderGet200Response](docs/Model/FulfillmentProviderGet200Response.md)
-- [FulfillmentProviderType](docs/Model/FulfillmentProviderType.md)
 - [IncomingBooking](docs/Model/IncomingBooking.md)
 - [IncomingGoods](docs/Model/IncomingGoods.md)
 - [IncomingGoodsGet200Response](docs/Model/IncomingGoodsGet200Response.md)
@@ -1243,43 +1174,30 @@ Class | Method | HTTP request | Description
 - [IncomingGoodsIdIdCreateSupplierReturnPostRequest](docs/Model/IncomingGoodsIdIdCreateSupplierReturnPostRequest.md)
 - [IncomingGoodsIdIdIncomingBookingsGet200Response](docs/Model/IncomingGoodsIdIdIncomingBookingsGet200Response.md)
 - [IncomingGoodsIdIdUpdateIncomingBookingsPostRequest](docs/Model/IncomingGoodsIdIdUpdateIncomingBookingsPostRequest.md)
-- [IncomingGoodsIdIdUpdateIncomingBookingsPostRequestIncomingBookingsInner](docs/Model/IncomingGoodsIdIdUpdateIncomingBookingsPostRequestIncomingBookingsInner.md)
 - [IncomingGoodsItem](docs/Model/IncomingGoodsItem.md)
-- [InternalShippingCarrier](docs/Model/InternalShippingCarrier.md)
-- [InternalTicketStatus](docs/Model/InternalTicketStatus.md)
 - [InternalTransportReference](docs/Model/InternalTransportReference.md)
 - [InternalTransportReferenceGet200Response](docs/Model/InternalTransportReferenceGet200Response.md)
 - [Inventory](docs/Model/Inventory.md)
 - [InventoryCreatePost200Response](docs/Model/InventoryCreatePost200Response.md)
 - [InventoryCreatePostRequest](docs/Model/InventoryCreatePostRequest.md)
-- [InventoryCreatePostRequestInventory](docs/Model/InventoryCreatePostRequestInventory.md)
 - [InventoryGet200Response](docs/Model/InventoryGet200Response.md)
 - [InventoryGroup](docs/Model/InventoryGroup.md)
 - [InventoryGroupGet200Response](docs/Model/InventoryGroupGet200Response.md)
 - [InventoryItem](docs/Model/InventoryItem.md)
 - [InventoryItemGet200Response](docs/Model/InventoryItemGet200Response.md)
 - [InventorySerialNumber](docs/Model/InventorySerialNumber.md)
-- [InventorySerialNumberStatus](docs/Model/InventorySerialNumberStatus.md)
 - [InventoryStatusHistory](docs/Model/InventoryStatusHistory.md)
-- [InventoryStatusType](docs/Model/InventoryStatusType.md)
 - [InventoryTransportReference](docs/Model/InventoryTransportReference.md)
 - [InventoryTransportReferenceGet200Response](docs/Model/InventoryTransportReferenceGet200Response.md)
-- [InvoicingType](docs/Model/InvoicingType.md)
 - [ItemPick](docs/Model/ItemPick.md)
-- [ItemType](docs/Model/ItemType.md)
 - [JobAbortGet200Response](docs/Model/JobAbortGet200Response.md)
 - [JobProgress](docs/Model/JobProgress.md)
 - [JobResult](docs/Model/JobResult.md)
-- [JobStatus](docs/Model/JobStatus.md)
-- [JobType](docs/Model/JobType.md)
 - [Lead](docs/Model/Lead.md)
 - [LeadGet200Response](docs/Model/LeadGet200Response.md)
 - [LeadIdIdConvertLeadToCustomerGet200Response](docs/Model/LeadIdIdConvertLeadToCustomerGet200Response.md)
-- [LeadStatus](docs/Model/LeadStatus.md)
 - [LedgerAccount](docs/Model/LedgerAccount.md)
 - [LedgerAccountGet200Response](docs/Model/LedgerAccountGet200Response.md)
-- [LedgerAccountType](docs/Model/LedgerAccountType.md)
-- [LevelOfDetail](docs/Model/LevelOfDetail.md)
 - [License](docs/Model/License.md)
 - [LoadingEquipmentIdentifier](docs/Model/LoadingEquipmentIdentifier.md)
 - [LoadingEquipmentIdentifierGet200Response](docs/Model/LoadingEquipmentIdentifierGet200Response.md)
@@ -1287,87 +1205,58 @@ Class | Method | HTTP request | Description
 - [MailTemplateGet200Response](docs/Model/MailTemplateGet200Response.md)
 - [Manufacturer](docs/Model/Manufacturer.md)
 - [ManufacturerGet200Response](docs/Model/ManufacturerGet200Response.md)
-- [MarginCalculationPriceType](docs/Model/MarginCalculationPriceType.md)
 - [MetaQueryFilterPropertiesGet200Response](docs/Model/MetaQueryFilterPropertiesGet200Response.md)
 - [MetaResourcesGet200Response](docs/Model/MetaResourcesGet200Response.md)
 - [MinimalStoragePlace](docs/Model/MinimalStoragePlace.md)
-- [MoneyTransaction](docs/Model/MoneyTransaction.md)
-- [MoneyTransactionProcessingStrategy](docs/Model/MoneyTransactionProcessingStrategy.md)
-- [MoneyTransactionSource](docs/Model/MoneyTransactionSource.md)
 - [NestedStoragePlace](docs/Model/NestedStoragePlace.md)
 - [Notification](docs/Model/Notification.md)
 - [NotificationGet200Response](docs/Model/NotificationGet200Response.md)
 - [NotificationIdIdMarkReadPost200Response](docs/Model/NotificationIdIdMarkReadPost200Response.md)
-- [NotificationPriority](docs/Model/NotificationPriority.md)
-- [OfferOutType](docs/Model/OfferOutType.md)
-- [OfferStatusType](docs/Model/OfferStatusType.md)
 - [OnlineAccount](docs/Model/OnlineAccount.md)
-- [OnlineAccountType](docs/Model/OnlineAccountType.md)
 - [OnlyId](docs/Model/OnlyId.md)
-- [OpenItem](docs/Model/OpenItem.md)
-- [OpenItemType](docs/Model/OpenItemType.md)
 - [Opportunity](docs/Model/Opportunity.md)
 - [OpportunityGet200Response](docs/Model/OpportunityGet200Response.md)
 - [OpportunityIdIdLinkQuotationPost200Response](docs/Model/OpportunityIdIdLinkQuotationPost200Response.md)
 - [OpportunityIdIdLinkQuotationPostRequest](docs/Model/OpportunityIdIdLinkQuotationPostRequest.md)
-- [OrderStatusType](docs/Model/OrderStatusType.md)
 - [PackagingUnit](docs/Model/PackagingUnit.md)
 - [Party](docs/Model/Party.md)
 - [PartyBankAccount](docs/Model/PartyBankAccount.md)
-- [PartyButNotContact](docs/Model/PartyButNotContact.md)
 - [PartyEmailAddresses](docs/Model/PartyEmailAddresses.md)
 - [PartyGet200Response](docs/Model/PartyGet200Response.md)
 - [PartyGet200ResponseAdditionalProperties](docs/Model/PartyGet200ResponseAdditionalProperties.md)
 - [PartyHabitualExporterLetterOfIntent](docs/Model/PartyHabitualExporterLetterOfIntent.md)
-- [PartyHabitualExporterLetterOfIntentType](docs/Model/PartyHabitualExporterLetterOfIntentType.md)
 - [PartyIdIdCreatePublicPagePost200Response](docs/Model/PartyIdIdCreatePublicPagePost200Response.md)
-- [PartyType](docs/Model/PartyType.md)
 - [PaymentApplication](docs/Model/PaymentApplication.md)
 - [PaymentMethod](docs/Model/PaymentMethod.md)
 - [PaymentMethodGet200Response](docs/Model/PaymentMethodGet200Response.md)
-- [PaymentMethodTypeKey](docs/Model/PaymentMethodTypeKey.md)
 - [PaymentRun](docs/Model/PaymentRun.md)
 - [PaymentRunGet200Response](docs/Model/PaymentRunGet200Response.md)
 - [PaymentRunItem](docs/Model/PaymentRunItem.md)
 - [PaymentRunItemGet200Response](docs/Model/PaymentRunItemGet200Response.md)
-- [PaymentRunPaymentType](docs/Model/PaymentRunPaymentType.md)
-- [PaymentStatus](docs/Model/PaymentStatus.md)
-- [PaymentType](docs/Model/PaymentType.md)
-- [PerformanceRecordedStatus](docs/Model/PerformanceRecordedStatus.md)
 - [Period](docs/Model/Period.md)
-- [PermissionString](docs/Model/PermissionString.md)
 - [Pick](docs/Model/Pick.md)
 - [PickGet200Response](docs/Model/PickGet200Response.md)
 - [PriceCalculationParameter](docs/Model/PriceCalculationParameter.md)
 - [PriceCalculationParameterGet200Response](docs/Model/PriceCalculationParameterGet200Response.md)
-- [PriceCalculationParameterV1](docs/Model/PriceCalculationParameterV1.md)
-- [PriceConditionType](docs/Model/PriceConditionType.md)
 - [PriceData](docs/Model/PriceData.md)
 - [PriceDataReductionAdditionItem](docs/Model/PriceDataReductionAdditionItem.md)
-- [PriceScaleType](docs/Model/PriceScaleType.md)
-- [ProductionArticleConfigurationRule](docs/Model/ProductionArticleConfigurationRule.md)
-- [ProductionCostCenterType](docs/Model/ProductionCostCenterType.md)
+- [ProcessPurchaseOrderItem](docs/Model/ProcessPurchaseOrderItem.md)
 - [ProductionOrder](docs/Model/ProductionOrder.md)
 - [ProductionOrderFastProductionBookingPost200Response](docs/Model/ProductionOrderFastProductionBookingPost200Response.md)
 - [ProductionOrderFastProductionBookingPostRequest](docs/Model/ProductionOrderFastProductionBookingPostRequest.md)
 - [ProductionOrderGet200Response](docs/Model/ProductionOrderGet200Response.md)
 - [ProductionOrderItem](docs/Model/ProductionOrderItem.md)
-- [ProductionOrderItemStatus](docs/Model/ProductionOrderItemStatus.md)
 - [ProductionOrderStatusHistory](docs/Model/ProductionOrderStatusHistory.md)
-- [ProductionOrderStatusType](docs/Model/ProductionOrderStatusType.md)
 - [ProductionOrderWorkItem](docs/Model/ProductionOrderWorkItem.md)
 - [ProductionWorkSchedule](docs/Model/ProductionWorkSchedule.md)
 - [ProductionWorkScheduleAssignment](docs/Model/ProductionWorkScheduleAssignment.md)
 - [ProductionWorkScheduleAssignmentGet200Response](docs/Model/ProductionWorkScheduleAssignmentGet200Response.md)
 - [ProductionWorkScheduleGet200Response](docs/Model/ProductionWorkScheduleGet200Response.md)
 - [ProductionWorkScheduleItem](docs/Model/ProductionWorkScheduleItem.md)
-- [ProductionWorkScheduleItemTimeType](docs/Model/ProductionWorkScheduleItemTimeType.md)
-- [ProductionWorkScheduleStatus](docs/Model/ProductionWorkScheduleStatus.md)
 - [ProjectMembers](docs/Model/ProjectMembers.md)
 - [PropertyTranslation](docs/Model/PropertyTranslation.md)
 - [PropertyTranslationReadPropertyTranslationsGet200Response](docs/Model/PropertyTranslationReadPropertyTranslationsGet200Response.md)
 - [PropertyTranslationUpdatePropertyTranslationsPostRequest](docs/Model/PropertyTranslationUpdatePropertyTranslationsPostRequest.md)
-- [PropertyTranslationUpdatePropertyTranslationsPostRequestPropertyTranslationsInner](docs/Model/PropertyTranslationUpdatePropertyTranslationsPostRequestPropertyTranslationsInner.md)
 - [PropertyTranslationValue](docs/Model/PropertyTranslationValue.md)
 - [PurchaseInvoice](docs/Model/PurchaseInvoice.md)
 - [PurchaseInvoiceGet200Response](docs/Model/PurchaseInvoiceGet200Response.md)
@@ -1378,8 +1267,6 @@ Class | Method | HTTP request | Description
 - [PurchaseInvoiceItemRelationship](docs/Model/PurchaseInvoiceItemRelationship.md)
 - [PurchaseInvoiceShippingCostItem](docs/Model/PurchaseInvoiceShippingCostItem.md)
 - [PurchaseInvoiceStatusHistory](docs/Model/PurchaseInvoiceStatusHistory.md)
-- [PurchaseInvoiceStatusType](docs/Model/PurchaseInvoiceStatusType.md)
-- [PurchaseInvoiceType](docs/Model/PurchaseInvoiceType.md)
 - [PurchaseOpenItem](docs/Model/PurchaseOpenItem.md)
 - [PurchaseOpenItemGet200Response](docs/Model/PurchaseOpenItemGet200Response.md)
 - [PurchaseOpenItemIdIdCreatePaymentApplicationPost200Response](docs/Model/PurchaseOpenItemIdIdCreatePaymentApplicationPost200Response.md)
@@ -1393,40 +1280,31 @@ Class | Method | HTTP request | Description
 - [PurchaseOrderIdIdCreatePurchaseInvoicePostRequest](docs/Model/PurchaseOrderIdIdCreatePurchaseInvoicePostRequest.md)
 - [PurchaseOrderIdIdPrintLabelPostRequest](docs/Model/PurchaseOrderIdIdPrintLabelPostRequest.md)
 - [PurchaseOrderIdIdProcessDropshippingPostRequest](docs/Model/PurchaseOrderIdIdProcessDropshippingPostRequest.md)
-- [PurchaseOrderIdIdProcessDropshippingPostRequestProcessPurchaseOrderItemsInner](docs/Model/PurchaseOrderIdIdProcessDropshippingPostRequestProcessPurchaseOrderItemsInner.md)
-- [PurchaseOrderIdIdProcessDropshippingPostRequestShipmentParameters](docs/Model/PurchaseOrderIdIdProcessDropshippingPostRequestShipmentParameters.md)
 - [PurchaseOrderItem](docs/Model/PurchaseOrderItem.md)
 - [PurchaseOrderRequest](docs/Model/PurchaseOrderRequest.md)
 - [PurchaseOrderRequestGet200Response](docs/Model/PurchaseOrderRequestGet200Response.md)
 - [PurchaseOrderRequestIdIdCreateBlanketPurchaseOrderPostRequest](docs/Model/PurchaseOrderRequestIdIdCreateBlanketPurchaseOrderPostRequest.md)
 - [PurchaseOrderRequestIdIdCreatePurchaseOrderPostRequest](docs/Model/PurchaseOrderRequestIdIdCreatePurchaseOrderPostRequest.md)
-- [PurchaseOrderRequestIdIdCreatePurchaseOrderPostRequestOfferItemToUpdateSupplierInformationInner](docs/Model/PurchaseOrderRequestIdIdCreatePurchaseOrderPostRequestOfferItemToUpdateSupplierInformationInner.md)
 - [PurchaseOrderRequestIdIdExportItemsAsCsvPostRequest](docs/Model/PurchaseOrderRequestIdIdExportItemsAsCsvPostRequest.md)
 - [PurchaseOrderRequestIdIdPushPurchasePricesPostRequest](docs/Model/PurchaseOrderRequestIdIdPushPurchasePricesPostRequest.md)
 - [PurchaseOrderRequestItem](docs/Model/PurchaseOrderRequestItem.md)
 - [PurchaseOrderRequestItemScaleValue](docs/Model/PurchaseOrderRequestItemScaleValue.md)
 - [PurchaseOrderRequestOffer](docs/Model/PurchaseOrderRequestOffer.md)
 - [PurchaseOrderRequestOfferItem](docs/Model/PurchaseOrderRequestOfferItem.md)
+- [PurchaseOrderRequestOfferItemInformation](docs/Model/PurchaseOrderRequestOfferItemInformation.md)
 - [PurchaseOrderRequestOfferItemScaleValue](docs/Model/PurchaseOrderRequestOfferItemScaleValue.md)
-- [PurchaseOrderRequestPurchasePriceUpdateMode](docs/Model/PurchaseOrderRequestPurchasePriceUpdateMode.md)
 - [PurchaseOrderRequestStatusHistory](docs/Model/PurchaseOrderRequestStatusHistory.md)
-- [PurchaseOrderRequestStatusType](docs/Model/PurchaseOrderRequestStatusType.md)
-- [PurchaseOrderRequestSupplierStatusType](docs/Model/PurchaseOrderRequestSupplierStatusType.md)
-- [PurchaseOrderRequestType](docs/Model/PurchaseOrderRequestType.md)
 - [PurchaseOrderShippingCostItem](docs/Model/PurchaseOrderShippingCostItem.md)
 - [PurchaseOrderStatusHistory](docs/Model/PurchaseOrderStatusHistory.md)
 - [PurchaseRequisition](docs/Model/PurchaseRequisition.md)
 - [PurchaseRequisitionGet200Response](docs/Model/PurchaseRequisitionGet200Response.md)
 - [PurchaseRequisitionStartMaterialPlanningRunPostRequest](docs/Model/PurchaseRequisitionStartMaterialPlanningRunPostRequest.md)
 - [PurchaseRequisitionStatusHistory](docs/Model/PurchaseRequisitionStatusHistory.md)
-- [PurchaseRequisitionStatusType](docs/Model/PurchaseRequisitionStatusType.md)
-- [PurchaseShippingCostItem](docs/Model/PurchaseShippingCostItem.md)
 - [QuantityConversion](docs/Model/QuantityConversion.md)
 - [Quotation](docs/Model/Quotation.md)
 - [QuotationGet200Response](docs/Model/QuotationGet200Response.md)
 - [QuotationIdIdAcceptPost200Response](docs/Model/QuotationIdIdAcceptPost200Response.md)
 - [QuotationIdIdAcceptPostRequest](docs/Model/QuotationIdIdAcceptPostRequest.md)
-- [QuotationIdIdAcceptPostRequestAcceptQuotationItemsInner](docs/Model/QuotationIdIdAcceptPostRequestAcceptQuotationItemsInner.md)
 - [QuotationIdIdAddDefaultScalePricesToItemsPostRequest](docs/Model/QuotationIdIdAddDefaultScalePricesToItemsPostRequest.md)
 - [QuotationIdIdCalculateSalesPricesPostRequest](docs/Model/QuotationIdIdCalculateSalesPricesPostRequest.md)
 - [QuotationIdIdCreatePurchaseOrderRequestPost200Response](docs/Model/QuotationIdIdCreatePurchaseOrderRequestPost200Response.md)
@@ -1438,16 +1316,10 @@ Class | Method | HTTP request | Description
 - [QuotationItemScaleValue](docs/Model/QuotationItemScaleValue.md)
 - [QuotationShippingCostItem](docs/Model/QuotationShippingCostItem.md)
 - [QuotationStatusHistory](docs/Model/QuotationStatusHistory.md)
-- [Rating](docs/Model/Rating.md)
 - [RecordAddress](docs/Model/RecordAddress.md)
 - [RecordEmailingRule](docs/Model/RecordEmailingRule.md)
-- [RecordEmailingRuleEventType](docs/Model/RecordEmailingRuleEventType.md)
 - [RecordEmailingRuleGet200Response](docs/Model/RecordEmailingRuleGet200Response.md)
-- [RecordEmailingRuleRecipientType](docs/Model/RecordEmailingRuleRecipientType.md)
-- [RecordItemReductionAdditionSource](docs/Model/RecordItemReductionAdditionSource.md)
-- [RecordItemReductionAdditionType](docs/Model/RecordItemReductionAdditionType.md)
 - [RecurringEvent](docs/Model/RecurringEvent.md)
-- [RecurringEventType](docs/Model/RecurringEventType.md)
 - [ReductionAddition](docs/Model/ReductionAddition.md)
 - [ReductionAdditionItem](docs/Model/ReductionAdditionItem.md)
 - [Region](docs/Model/Region.md)
@@ -1456,11 +1328,9 @@ Class | Method | HTTP request | Description
 - [Reminder](docs/Model/Reminder.md)
 - [ReminderGet200Response](docs/Model/ReminderGet200Response.md)
 - [ReminderRecurringEvent](docs/Model/ReminderRecurringEvent.md)
-- [ReminderSendType](docs/Model/ReminderSendType.md)
 - [RemotePrintJob](docs/Model/RemotePrintJob.md)
 - [RemotePrintJobCreatePrintJobWithDocumentPost200Response](docs/Model/RemotePrintJobCreatePrintJobWithDocumentPost200Response.md)
 - [RemotePrintJobGet200Response](docs/Model/RemotePrintJobGet200Response.md)
-- [RemotePrintJobStatus](docs/Model/RemotePrintJobStatus.md)
 - [SalesBillOfMaterialArticleItem](docs/Model/SalesBillOfMaterialArticleItem.md)
 - [SalesChannel](docs/Model/SalesChannel.md)
 - [SalesChannelActiveSalesChannelsGet200Response](docs/Model/SalesChannelActiveSalesChannelsGet200Response.md)
@@ -1472,11 +1342,8 @@ Class | Method | HTTP request | Description
 - [SalesInvoiceIdIdPrintLabelPostRequest](docs/Model/SalesInvoiceIdIdPrintLabelPostRequest.md)
 - [SalesInvoiceItem](docs/Model/SalesInvoiceItem.md)
 - [SalesInvoiceItemRelationship](docs/Model/SalesInvoiceItemRelationship.md)
-- [SalesInvoiceOrigin](docs/Model/SalesInvoiceOrigin.md)
 - [SalesInvoiceShippingCostItem](docs/Model/SalesInvoiceShippingCostItem.md)
 - [SalesInvoiceStatusHistory](docs/Model/SalesInvoiceStatusHistory.md)
-- [SalesInvoiceStatusType](docs/Model/SalesInvoiceStatusType.md)
-- [SalesInvoiceType](docs/Model/SalesInvoiceType.md)
 - [SalesOpenItem](docs/Model/SalesOpenItem.md)
 - [SalesOpenItemGet200Response](docs/Model/SalesOpenItemGet200Response.md)
 - [SalesOpenItemIdIdCreatePaymentApplicationPost200Response](docs/Model/SalesOpenItemIdIdCreatePaymentApplicationPost200Response.md)
@@ -1493,18 +1360,13 @@ Class | Method | HTTP request | Description
 - [SalesOrderIdIdPrintLabelPostRequest](docs/Model/SalesOrderIdIdPrintLabelPostRequest.md)
 - [SalesOrderItem](docs/Model/SalesOrderItem.md)
 - [SalesOrderPayment](docs/Model/SalesOrderPayment.md)
-- [SalesOrderPaymentType](docs/Model/SalesOrderPaymentType.md)
 - [SalesOrderShippingCostItem](docs/Model/SalesOrderShippingCostItem.md)
 - [SalesOrderStatusHistory](docs/Model/SalesOrderStatusHistory.md)
-- [SalesShippingCostItem](docs/Model/SalesShippingCostItem.md)
 - [SalesStage](docs/Model/SalesStage.md)
 - [SalesStageGet200Response](docs/Model/SalesStageGet200Response.md)
 - [SalesStageHistory](docs/Model/SalesStageHistory.md)
-- [Salutation](docs/Model/Salutation.md)
 - [SepaDirectDebitMandate](docs/Model/SepaDirectDebitMandate.md)
 - [SepaDirectDebitMandateGet200Response](docs/Model/SepaDirectDebitMandateGet200Response.md)
-- [SepaDirectDebitRuntime](docs/Model/SepaDirectDebitRuntime.md)
-- [SepaDirectDebitType](docs/Model/SepaDirectDebitType.md)
 - [SerialNumber](docs/Model/SerialNumber.md)
 - [SerialNumberGet200Response](docs/Model/SerialNumberGet200Response.md)
 - [Shelf](docs/Model/Shelf.md)
@@ -1513,20 +1375,14 @@ Class | Method | HTTP request | Description
 - [Shipment](docs/Model/Shipment.md)
 - [ShipmentGet200Response](docs/Model/ShipmentGet200Response.md)
 - [ShipmentIdIdPrintLabelPostRequest](docs/Model/ShipmentIdIdPrintLabelPostRequest.md)
-- [ShipmentInType](docs/Model/ShipmentInType.md)
 - [ShipmentItem](docs/Model/ShipmentItem.md)
 - [ShipmentMethod](docs/Model/ShipmentMethod.md)
 - [ShipmentMethodGet200Response](docs/Model/ShipmentMethodGet200Response.md)
-- [ShipmentOutType](docs/Model/ShipmentOutType.md)
 - [ShipmentReturnAssessmentGet200Response](docs/Model/ShipmentReturnAssessmentGet200Response.md)
 - [ShipmentReturnDescription](docs/Model/ShipmentReturnDescription.md)
 - [ShipmentStatus](docs/Model/ShipmentStatus.md)
-- [ShipmentStatusType](docs/Model/ShipmentStatusType.md)
 - [ShippingCarrier](docs/Model/ShippingCarrier.md)
 - [ShippingCarrierGet200Response](docs/Model/ShippingCarrierGet200Response.md)
-- [ShippingServiceProviderType](docs/Model/ShippingServiceProviderType.md)
-- [SpecialCalculationMode](docs/Model/SpecialCalculationMode.md)
-- [StockMovementType](docs/Model/StockMovementType.md)
 - [StorageLocation](docs/Model/StorageLocation.md)
 - [StorageLocationGet200Response](docs/Model/StorageLocationGet200Response.md)
 - [StorageLocationIdIdActivatePost200Response](docs/Model/StorageLocationIdIdActivatePost200Response.md)
@@ -1534,14 +1390,10 @@ Class | Method | HTTP request | Description
 - [StoragePlaceGet200Response](docs/Model/StoragePlaceGet200Response.md)
 - [StoragePlaceSize](docs/Model/StoragePlaceSize.md)
 - [StoragePlaceSizeGet200Response](docs/Model/StoragePlaceSizeGet200Response.md)
-- [StoragePlaceType](docs/Model/StoragePlaceType.md)
 - [StoragePlaceTypeSettings](docs/Model/StoragePlaceTypeSettings.md)
-- [StoreType](docs/Model/StoreType.md)
 - [SuccessResponse](docs/Model/SuccessResponse.md)
 - [Supplier](docs/Model/Supplier.md)
 - [SupplierGet200Response](docs/Model/SupplierGet200Response.md)
-- [SupplierOrderStatusType](docs/Model/SupplierOrderStatusType.md)
-- [SupplierOrderType](docs/Model/SupplierOrderType.md)
 - [SupplySource](docs/Model/SupplySource.md)
 - [SystemCreateDemoTestSystemPostRequest](docs/Model/SystemCreateDemoTestSystemPostRequest.md)
 - [SystemDemoTestSystemInfoGet200Response](docs/Model/SystemDemoTestSystemInfoGet200Response.md)
@@ -1556,24 +1408,17 @@ Class | Method | HTTP request | Description
 - [TaxDeterminationRuleGet200Response](docs/Model/TaxDeterminationRuleGet200Response.md)
 - [TaxFindPurchaseTaxGet200Response](docs/Model/TaxFindPurchaseTaxGet200Response.md)
 - [TaxGet200Response](docs/Model/TaxGet200Response.md)
-- [TaxKey](docs/Model/TaxKey.md)
-- [TaxRateType](docs/Model/TaxRateType.md)
 - [TaxResetSystemTaxesPostRequest](docs/Model/TaxResetSystemTaxesPostRequest.md)
-- [TaxType](docs/Model/TaxType.md)
-- [TeamRole](docs/Model/TeamRole.md)
-- [TemplateType](docs/Model/TemplateType.md)
 - [TermOfPayment](docs/Model/TermOfPayment.md)
 - [TermOfPaymentCondition](docs/Model/TermOfPaymentCondition.md)
 - [TermOfPaymentGet200Response](docs/Model/TermOfPaymentGet200Response.md)
 - [Ticket](docs/Model/Ticket.md)
-- [TicketAssigneeType](docs/Model/TicketAssigneeType.md)
 - [TicketAssignmentRule](docs/Model/TicketAssignmentRule.md)
 - [TicketAssignmentRuleGet200Response](docs/Model/TicketAssignmentRuleGet200Response.md)
 - [TicketCategory](docs/Model/TicketCategory.md)
 - [TicketCategoryGet200Response](docs/Model/TicketCategoryGet200Response.md)
 - [TicketFaq](docs/Model/TicketFaq.md)
 - [TicketFaqGet200Response](docs/Model/TicketFaqGet200Response.md)
-- [TicketFaqVisibility](docs/Model/TicketFaqVisibility.md)
 - [TicketGet200Response](docs/Model/TicketGet200Response.md)
 - [TicketGet200ResponseAdditionalProperties](docs/Model/TicketGet200ResponseAdditionalProperties.md)
 - [TicketIdIdCreatePublicPagePost200Response](docs/Model/TicketIdIdCreatePublicPagePost200Response.md)
@@ -1584,13 +1429,10 @@ Class | Method | HTTP request | Description
 - [TicketServiceLevelAgreement](docs/Model/TicketServiceLevelAgreement.md)
 - [TicketServiceLevelAgreementGet200Response](docs/Model/TicketServiceLevelAgreementGet200Response.md)
 - [TicketServiceLevelAgreementTarget](docs/Model/TicketServiceLevelAgreementTarget.md)
-- [TicketServiceLevelAgreementUnit](docs/Model/TicketServiceLevelAgreementUnit.md)
 - [TicketStatus](docs/Model/TicketStatus.md)
-- [TicketStatusColor](docs/Model/TicketStatusColor.md)
 - [TicketStatusGet200Response](docs/Model/TicketStatusGet200Response.md)
 - [TicketType](docs/Model/TicketType.md)
 - [TicketTypeGet200Response](docs/Model/TicketTypeGet200Response.md)
-- [TimeUnit](docs/Model/TimeUnit.md)
 - [Translation](docs/Model/Translation.md)
 - [TranslationGet200Response](docs/Model/TranslationGet200Response.md)
 - [TranslationValue](docs/Model/TranslationValue.md)
@@ -1599,13 +1441,10 @@ Class | Method | HTTP request | Description
 - [TransportationOrderGet200Response](docs/Model/TransportationOrderGet200Response.md)
 - [TransportationOrderIdIdCreatePickPost200Response](docs/Model/TransportationOrderIdIdCreatePickPost200Response.md)
 - [TransportationOrderIdIdCreatePickPostRequest](docs/Model/TransportationOrderIdIdCreatePickPostRequest.md)
-- [TransportationOrderIdIdCreatePickPostRequestExistingReservationsInner](docs/Model/TransportationOrderIdIdCreatePickPostRequestExistingReservationsInner.md)
 - [TransportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPostRequest](docs/Model/TransportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPostRequest.md)
 - [TransportationOrderIdIdPickPickPostRequest](docs/Model/TransportationOrderIdIdPickPickPostRequest.md)
 - [TransportationOrderIdIdPutDownInternalTransportReferencePostRequest](docs/Model/TransportationOrderIdIdPutDownInternalTransportReferencePostRequest.md)
 - [TransportationOrderStatusHistory](docs/Model/TransportationOrderStatusHistory.md)
-- [TransportationOrderStatusType](docs/Model/TransportationOrderStatusType.md)
-- [TransportationOrderType](docs/Model/TransportationOrderType.md)
 - [Unit](docs/Model/Unit.md)
 - [UnitGet200Response](docs/Model/UnitGet200Response.md)
 - [User](docs/Model/User.md)
@@ -1613,9 +1452,7 @@ Class | Method | HTTP request | Description
 - [UserGet200Response](docs/Model/UserGet200Response.md)
 - [UserRole](docs/Model/UserRole.md)
 - [UserRoleGet200Response](docs/Model/UserRoleGet200Response.md)
-- [UserStatus](docs/Model/UserStatus.md)
 - [ValidationError](docs/Model/ValidationError.md)
-- [ValidationErrorType](docs/Model/ValidationErrorType.md)
 - [VariantArticle](docs/Model/VariantArticle.md)
 - [VariantArticleAttribute](docs/Model/VariantArticleAttribute.md)
 - [VariantArticleAttributeGet200Response](docs/Model/VariantArticleAttributeGet200Response.md)
@@ -1632,7 +1469,6 @@ Class | Method | HTTP request | Description
 - [WarehouseStockGet200Response](docs/Model/WarehouseStockGet200Response.md)
 - [WarehouseStockMovement](docs/Model/WarehouseStockMovement.md)
 - [WarehouseStockMovementBookDirectStockTransferPostRequest](docs/Model/WarehouseStockMovementBookDirectStockTransferPostRequest.md)
-- [WarehouseStockMovementBookDirectStockTransferPostRequestCustomAttributesInner](docs/Model/WarehouseStockMovementBookDirectStockTransferPostRequestCustomAttributesInner.md)
 - [WarehouseStockMovementBookFromLoadingEquipmentPlacePostRequest](docs/Model/WarehouseStockMovementBookFromLoadingEquipmentPlacePostRequest.md)
 - [WarehouseStockMovementBookIncomingMovementPostRequest](docs/Model/WarehouseStockMovementBookIncomingMovementPostRequest.md)
 - [WarehouseStockMovementBookOntoInternalTransportReferencePostRequest](docs/Model/WarehouseStockMovementBookOntoInternalTransportReferencePostRequest.md)
@@ -1641,14 +1477,13 @@ Class | Method | HTTP request | Description
 - [WarehouseStockMovementGet200Response](docs/Model/WarehouseStockMovementGet200Response.md)
 - [Webhook](docs/Model/Webhook.md)
 - [WebhookGet200Response](docs/Model/WebhookGet200Response.md)
-- [WebhookRequestMethod](docs/Model/WebhookRequestMethod.md)
 - [WeclappOs](docs/Model/WeclappOs.md)
 - [WeclappOsGet200Response](docs/Model/WeclappOsGet200Response.md)
 
 ## Authorization
 
 Authentication schemes defined for the API:
-### api-token
+### API token
 
 - **Type**: API key
 - **API key parameter name**: AuthenticationToken

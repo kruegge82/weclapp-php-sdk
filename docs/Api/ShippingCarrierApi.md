@@ -1,24 +1,24 @@
 # kruegge82\weclapp\ShippingCarrierApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**shippingCarrierCountGet()**](ShippingCarrierApi.md#shippingCarrierCountGet) | **GET** /shippingCarrier/count | count shippingCarrier |
-| [**shippingCarrierGet()**](ShippingCarrierApi.md#shippingCarrierGet) | **GET** /shippingCarrier | query shippingCarrier |
-| [**shippingCarrierIdIdDelete()**](ShippingCarrierApi.md#shippingCarrierIdIdDelete) | **DELETE** /shippingCarrier/id/{id} | delete a shippingCarrier |
-| [**shippingCarrierIdIdGet()**](ShippingCarrierApi.md#shippingCarrierIdIdGet) | **GET** /shippingCarrier/id/{id} | query a specific shippingCarrier |
-| [**shippingCarrierIdIdPut()**](ShippingCarrierApi.md#shippingCarrierIdIdPut) | **PUT** /shippingCarrier/id/{id} | update a shippingCarrier |
-| [**shippingCarrierPost()**](ShippingCarrierApi.md#shippingCarrierPost) | **POST** /shippingCarrier | create a shippingCarrier |
+| [**shippingCarrierCountGet()**](ShippingCarrierApi.md#shippingCarrierCountGet) | **GET** /shippingCarrier/count |  |
+| [**shippingCarrierGet()**](ShippingCarrierApi.md#shippingCarrierGet) | **GET** /shippingCarrier |  |
+| [**shippingCarrierIdIdDelete()**](ShippingCarrierApi.md#shippingCarrierIdIdDelete) | **DELETE** /shippingCarrier/id/{id} |  |
+| [**shippingCarrierIdIdGet()**](ShippingCarrierApi.md#shippingCarrierIdIdGet) | **GET** /shippingCarrier/id/{id} |  |
+| [**shippingCarrierIdIdPut()**](ShippingCarrierApi.md#shippingCarrierIdIdPut) | **PUT** /shippingCarrier/id/{id} |  |
+| [**shippingCarrierPost()**](ShippingCarrierApi.md#shippingCarrierPost) | **POST** /shippingCarrier |  |
 
 
 ## `shippingCarrierCountGet()`
 
 ```php
-shippingCarrierCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+shippingCarrierCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count shippingCarrier
+
 
 count shippingCarrier
 
@@ -29,7 +29,7 @@ count shippingCarrier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\ShippingCarrierApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->shippingCarrierCountGet($filter);
+    $result = $apiInstance->shippingCarrierCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShippingCarrierApi->shippingCarrierCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `shippingCarrierGet()`
 
 ```php
-shippingCarrierGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ShippingCarrierGet200Response
+shippingCarrierGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ShippingCarrierGet200Response
 ```
 
-query shippingCarrier
+
 
 query shippingCarrier
 
@@ -91,7 +88,7 @@ query shippingCarrier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\ShippingCarrierApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->shippingCarrierGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->shippingCarrierGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShippingCarrierApi->shippingCarrierGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 shippingCarrierIdIdDelete($id, $dry_run)
 ```
 
-delete a shippingCarrier
+
 
 delete a shippingCarrier
 
@@ -165,7 +154,7 @@ delete a shippingCarrier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 shippingCarrierIdIdGet($id): \kruegge82\weclapp\Model\ShippingCarrier
 ```
 
-query a specific shippingCarrier
 
-query a specific shippingCarrier
+
+query shippingCarrier
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific shippingCarrier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `shippingCarrierIdIdPut()`
 
 ```php
-shippingCarrierIdIdPut($id, $shipping_carrier, $dry_run): \kruegge82\weclapp\Model\ShippingCarrier
+shippingCarrierIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\ShippingCarrier
 ```
 
-update a shippingCarrier
+
 
 update shippingCarrier
 
@@ -290,7 +279,7 @@ update shippingCarrier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\ShippingCarrierApi(
     $config
 );
 $id = 'id_example'; // string
-$shipping_carrier = new \kruegge82\weclapp\Model\ShippingCarrier(); // \kruegge82\weclapp\Model\ShippingCarrier
+$body = new \kruegge82\weclapp\Model\ShippingCarrier(); // \kruegge82\weclapp\Model\ShippingCarrier
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->shippingCarrierIdIdPut($id, $shipping_carrier, $dry_run);
+    $result = $apiInstance->shippingCarrierIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShippingCarrierApi->shippingCarrierIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **shipping_carrier** | [**\kruegge82\weclapp\Model\ShippingCarrier**](../Model/ShippingCarrier.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\ShippingCarrier**](../Model/ShippingCarrier.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `shippingCarrierPost()`
 
 ```php
-shippingCarrierPost($shipping_carrier, $dry_run): \kruegge82\weclapp\Model\ShippingCarrier
+shippingCarrierPost($body, $dry_run): \kruegge82\weclapp\Model\ShippingCarrier
 ```
 
-create a shippingCarrier
+
 
 create a shippingCarrier
 
@@ -356,7 +345,7 @@ create a shippingCarrier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\ShippingCarrierApi(
     new GuzzleHttp\Client(),
     $config
 );
-$shipping_carrier = new \kruegge82\weclapp\Model\ShippingCarrier(); // \kruegge82\weclapp\Model\ShippingCarrier
+$body = new \kruegge82\weclapp\Model\ShippingCarrier(); // \kruegge82\weclapp\Model\ShippingCarrier
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->shippingCarrierPost($shipping_carrier, $dry_run);
+    $result = $apiInstance->shippingCarrierPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShippingCarrierApi->shippingCarrierPost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **shipping_carrier** | [**\kruegge82\weclapp\Model\ShippingCarrier**](../Model/ShippingCarrier.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\ShippingCarrier**](../Model/ShippingCarrier.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

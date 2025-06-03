@@ -1,27 +1,27 @@
 # kruegge82\weclapp\PartyApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**partyCountGet()**](PartyApi.md#partyCountGet) | **GET** /party/count | count party |
-| [**partyGet()**](PartyApi.md#partyGet) | **GET** /party | query party |
+| [**partyCountGet()**](PartyApi.md#partyCountGet) | **GET** /party/count |  |
+| [**partyGet()**](PartyApi.md#partyGet) | **GET** /party |  |
 | [**partyIdIdCreatePublicPagePost()**](PartyApi.md#partyIdIdCreatePublicPagePost) | **POST** /party/id/{id}/createPublicPage |  |
-| [**partyIdIdDelete()**](PartyApi.md#partyIdIdDelete) | **DELETE** /party/id/{id} | delete a party |
+| [**partyIdIdDelete()**](PartyApi.md#partyIdIdDelete) | **DELETE** /party/id/{id} |  |
 | [**partyIdIdDownloadImageGet()**](PartyApi.md#partyIdIdDownloadImageGet) | **GET** /party/id/{id}/downloadImage |  |
-| [**partyIdIdGet()**](PartyApi.md#partyIdIdGet) | **GET** /party/id/{id} | query a specific party |
-| [**partyIdIdPut()**](PartyApi.md#partyIdIdPut) | **PUT** /party/id/{id} | update a party |
+| [**partyIdIdGet()**](PartyApi.md#partyIdIdGet) | **GET** /party/id/{id} |  |
+| [**partyIdIdPut()**](PartyApi.md#partyIdIdPut) | **PUT** /party/id/{id} |  |
 | [**partyIdIdUploadImagePost()**](PartyApi.md#partyIdIdUploadImagePost) | **POST** /party/id/{id}/uploadImage |  |
-| [**partyPost()**](PartyApi.md#partyPost) | **POST** /party | create a party |
+| [**partyPost()**](PartyApi.md#partyPost) | **POST** /party |  |
 
 
 ## `partyCountGet()`
 
 ```php
-partyCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+partyCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count party
+
 
 count party
 
@@ -32,7 +32,7 @@ count party
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -44,10 +44,9 @@ $apiInstance = new kruegge82\weclapp\Api\PartyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->partyCountGet($filter);
+    $result = $apiInstance->partyCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PartyApi->partyCountGet: ', $e->getMessage(), PHP_EOL;
@@ -56,9 +55,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -66,7 +63,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -80,10 +77,10 @@ try {
 ## `partyGet()`
 
 ```php
-partyGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\PartyGet200Response
+partyGet($page, $page_size, $sort, $additional_properties): \kruegge82\weclapp\Model\PartyGet200Response
 ```
 
-query party
+
 
 query party
 
@@ -94,7 +91,7 @@ query party
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -108,15 +105,11 @@ $apiInstance = new kruegge82\weclapp\Api\PartyApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 $additional_properties = 'additional_properties_example'; // string
 
 try {
-    $result = $apiInstance->partyGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
+    $result = $apiInstance->partyGet($page, $page_size, $sort, $additional_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PartyApi->partyGet: ', $e->getMessage(), PHP_EOL;
@@ -129,11 +122,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 | **additional_properties** | **string**|  | [optional] |
 
 ### Return type
@@ -142,7 +131,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -168,7 +157,7 @@ partyIdIdCreatePublicPagePost($id, $body): \kruegge82\weclapp\Model\PartyIdIdCre
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -204,7 +193,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -221,7 +210,7 @@ try {
 partyIdIdDelete($id, $dry_run)
 ```
 
-delete a party
+
 
 delete a party
 
@@ -232,7 +221,7 @@ delete a party
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -267,7 +256,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -281,7 +270,7 @@ void (empty response body)
 ## `partyIdIdDownloadImageGet()`
 
 ```php
-partyIdIdDownloadImageGet($id, $scale_width, $scale_height, $image_id): \SplFileObject
+partyIdIdDownloadImageGet($id, $scale_width, $scale_height, $image_id)
 ```
 
 
@@ -293,7 +282,7 @@ partyIdIdDownloadImageGet($id, $scale_width, $scale_height, $image_id): \SplFile
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -311,8 +300,7 @@ $scale_height = 56; // int
 $image_id = 'image_id_example'; // string
 
 try {
-    $result = $apiInstance->partyIdIdDownloadImageGet($id, $scale_width, $scale_height, $image_id);
-    print_r($result);
+    $apiInstance->partyIdIdDownloadImageGet($id, $scale_width, $scale_height, $image_id);
 } catch (Exception $e) {
     echo 'Exception when calling PartyApi->partyIdIdDownloadImageGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -329,16 +317,16 @@ try {
 
 ### Return type
 
-**\SplFileObject**
+void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -350,9 +338,9 @@ try {
 partyIdIdGet($id): \kruegge82\weclapp\Model\Party
 ```
 
-query a specific party
 
-query a specific party
+
+query party
 
 ### Example
 
@@ -361,7 +349,7 @@ query a specific party
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -395,7 +383,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -409,10 +397,10 @@ try {
 ## `partyIdIdPut()`
 
 ```php
-partyIdIdPut($id, $party, $dry_run): \kruegge82\weclapp\Model\Party
+partyIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Party
 ```
 
-update a party
+
 
 update party
 
@@ -423,7 +411,7 @@ update party
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -436,11 +424,11 @@ $apiInstance = new kruegge82\weclapp\Api\PartyApi(
     $config
 );
 $id = 'id_example'; // string
-$party = new \kruegge82\weclapp\Model\Party(); // \kruegge82\weclapp\Model\Party
+$body = new \kruegge82\weclapp\Model\Party(); // \kruegge82\weclapp\Model\Party
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->partyIdIdPut($id, $party, $dry_run);
+    $result = $apiInstance->partyIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PartyApi->partyIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -452,7 +440,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **party** | [**\kruegge82\weclapp\Model\Party**](../Model/Party.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Party**](../Model/Party.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -461,7 +449,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -475,7 +463,7 @@ try {
 ## `partyIdIdUploadImagePost()`
 
 ```php
-partyIdIdUploadImagePost($id, $body): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
+partyIdIdUploadImagePost($id): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
 ```
 
 
@@ -487,7 +475,7 @@ partyIdIdUploadImagePost($id, $body): \kruegge82\weclapp\Model\AccountingTransac
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -500,10 +488,9 @@ $apiInstance = new kruegge82\weclapp\Api\PartyApi(
     $config
 );
 $id = 'id_example'; // string
-$body = '/path/to/file.txt'; // \SplFileObject
 
 try {
-    $result = $apiInstance->partyIdIdUploadImagePost($id, $body);
+    $result = $apiInstance->partyIdIdUploadImagePost($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PartyApi->partyIdIdUploadImagePost: ', $e->getMessage(), PHP_EOL;
@@ -515,7 +502,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | **\SplFileObject****\SplFileObject**|  | |
 
 ### Return type
 
@@ -523,11 +509,11 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
-- **Content-Type**: `application/pdf`, `image/jpeg`, `image/png`
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -537,10 +523,10 @@ try {
 ## `partyPost()`
 
 ```php
-partyPost($party, $dry_run): \kruegge82\weclapp\Model\Party
+partyPost($body, $dry_run): \kruegge82\weclapp\Model\Party
 ```
 
-create a party
+
 
 create a party
 
@@ -551,7 +537,7 @@ create a party
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -563,11 +549,11 @@ $apiInstance = new kruegge82\weclapp\Api\PartyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$party = new \kruegge82\weclapp\Model\Party(); // \kruegge82\weclapp\Model\Party
+$body = new \kruegge82\weclapp\Model\Party(); // \kruegge82\weclapp\Model\Party
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->partyPost($party, $dry_run);
+    $result = $apiInstance->partyPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PartyApi->partyPost: ', $e->getMessage(), PHP_EOL;
@@ -578,7 +564,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **party** | [**\kruegge82\weclapp\Model\Party**](../Model/Party.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Party**](../Model/Party.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -587,7 +573,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] [readonly]
-**created_date** | **int** |  | [optional] [readonly]
-**last_modified_date** | **int** |  | [optional] [readonly]
+**id** | **string** |  | [optional]
 **version** | **string** |  | [optional]
-**amount** | **float** |  | [optional]
-**amount_discount** | **float** |  | [optional]
-**amount_open** | **float** |  | [optional]
-**amount_paid** | **float** |  | [optional]
+**amount** | **float** |  |
+**amount_discount** | **float** |  |
+**amount_open** | **float** |  |
+**amount_paid** | **float** |  |
 **clearance_date** | **int** |  | [optional]
 **cleared** | **bool** |  | [optional]
-**open_item_number** | **string** |  | [optional]
-**open_item_type** | [**\kruegge82\weclapp\Model\OpenItemType**](OpenItemType.md) |  | [optional]
+**created_date** | **int** |  | [optional]
+**last_modified_date** | **int** |  | [optional]
+**open_item_number** | **string** |  |
+**open_item_type** | **string** |  |
 **payment_applications** | [**\kruegge82\weclapp\Model\PaymentApplication[]**](PaymentApplication.md) |  | [optional]
 **sales_invoice_id** | **string** |  | [optional]
 

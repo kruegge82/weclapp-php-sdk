@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **string** |  | [optional]
 **amount** | **float** |  | [optional]
-**debit_credit** | [**\kruegge82\weclapp\Model\DebitCreditIndicator**](DebitCreditIndicator.md) |  | [optional]
+**debit_credit** | **string** |  | [optional]
 **description** | **string** |  | [optional]
 **tax_id** | **string** |  | [optional]
 

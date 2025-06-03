@@ -1,26 +1,26 @@
 # kruegge82\weclapp\SupplierApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**supplierCountGet()**](SupplierApi.md#supplierCountGet) | **GET** /supplier/count | count supplier |
-| [**supplierGet()**](SupplierApi.md#supplierGet) | **GET** /supplier | query supplier |
-| [**supplierIdIdDelete()**](SupplierApi.md#supplierIdIdDelete) | **DELETE** /supplier/id/{id} | delete a supplier |
+| [**supplierCountGet()**](SupplierApi.md#supplierCountGet) | **GET** /supplier/count |  |
+| [**supplierGet()**](SupplierApi.md#supplierGet) | **GET** /supplier |  |
+| [**supplierIdIdDelete()**](SupplierApi.md#supplierIdIdDelete) | **DELETE** /supplier/id/{id} |  |
 | [**supplierIdIdDownloadImageGet()**](SupplierApi.md#supplierIdIdDownloadImageGet) | **GET** /supplier/id/{id}/downloadImage |  |
-| [**supplierIdIdGet()**](SupplierApi.md#supplierIdIdGet) | **GET** /supplier/id/{id} | query a specific supplier |
-| [**supplierIdIdPut()**](SupplierApi.md#supplierIdIdPut) | **PUT** /supplier/id/{id} | update a supplier |
+| [**supplierIdIdGet()**](SupplierApi.md#supplierIdIdGet) | **GET** /supplier/id/{id} |  |
+| [**supplierIdIdPut()**](SupplierApi.md#supplierIdIdPut) | **PUT** /supplier/id/{id} |  |
 | [**supplierIdIdUploadImagePost()**](SupplierApi.md#supplierIdIdUploadImagePost) | **POST** /supplier/id/{id}/uploadImage |  |
-| [**supplierPost()**](SupplierApi.md#supplierPost) | **POST** /supplier | create a supplier |
+| [**supplierPost()**](SupplierApi.md#supplierPost) | **POST** /supplier |  |
 
 
 ## `supplierCountGet()`
 
 ```php
-supplierCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+supplierCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count supplier
+
 
 count supplier
 
@@ -31,7 +31,7 @@ count supplier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -43,10 +43,9 @@ $apiInstance = new kruegge82\weclapp\Api\SupplierApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->supplierCountGet($filter);
+    $result = $apiInstance->supplierCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SupplierApi->supplierCountGet: ', $e->getMessage(), PHP_EOL;
@@ -55,9 +54,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -65,7 +62,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -79,10 +76,10 @@ try {
 ## `supplierGet()`
 
 ```php
-supplierGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\SupplierGet200Response
+supplierGet($page, $page_size, $sort): \kruegge82\weclapp\Model\SupplierGet200Response
 ```
 
-query supplier
+
 
 query supplier
 
@@ -93,7 +90,7 @@ query supplier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -107,14 +104,10 @@ $apiInstance = new kruegge82\weclapp\Api\SupplierApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->supplierGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->supplierGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SupplierApi->supplierGet: ', $e->getMessage(), PHP_EOL;
@@ -127,11 +120,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -139,7 +128,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -156,7 +145,7 @@ try {
 supplierIdIdDelete($id, $dry_run)
 ```
 
-delete a supplier
+
 
 delete a supplier
 
@@ -167,7 +156,7 @@ delete a supplier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -202,7 +191,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -216,7 +205,7 @@ void (empty response body)
 ## `supplierIdIdDownloadImageGet()`
 
 ```php
-supplierIdIdDownloadImageGet($id, $scale_width, $scale_height): \SplFileObject
+supplierIdIdDownloadImageGet($id, $scale_width, $scale_height)
 ```
 
 
@@ -228,7 +217,7 @@ supplierIdIdDownloadImageGet($id, $scale_width, $scale_height): \SplFileObject
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -245,8 +234,7 @@ $scale_width = 56; // int
 $scale_height = 56; // int
 
 try {
-    $result = $apiInstance->supplierIdIdDownloadImageGet($id, $scale_width, $scale_height);
-    print_r($result);
+    $apiInstance->supplierIdIdDownloadImageGet($id, $scale_width, $scale_height);
 } catch (Exception $e) {
     echo 'Exception when calling SupplierApi->supplierIdIdDownloadImageGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -262,16 +250,16 @@ try {
 
 ### Return type
 
-**\SplFileObject**
+void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -283,9 +271,9 @@ try {
 supplierIdIdGet($id): \kruegge82\weclapp\Model\Supplier
 ```
 
-query a specific supplier
 
-query a specific supplier
+
+query supplier
 
 ### Example
 
@@ -294,7 +282,7 @@ query a specific supplier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -328,7 +316,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +330,10 @@ try {
 ## `supplierIdIdPut()`
 
 ```php
-supplierIdIdPut($id, $supplier, $dry_run): \kruegge82\weclapp\Model\Supplier
+supplierIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Supplier
 ```
 
-update a supplier
+
 
 update supplier
 
@@ -356,7 +344,7 @@ update supplier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -369,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\SupplierApi(
     $config
 );
 $id = 'id_example'; // string
-$supplier = new \kruegge82\weclapp\Model\Supplier(); // \kruegge82\weclapp\Model\Supplier
+$body = new \kruegge82\weclapp\Model\Supplier(); // \kruegge82\weclapp\Model\Supplier
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->supplierIdIdPut($id, $supplier, $dry_run);
+    $result = $apiInstance->supplierIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SupplierApi->supplierIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -385,7 +373,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **supplier** | [**\kruegge82\weclapp\Model\Supplier**](../Model/Supplier.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Supplier**](../Model/Supplier.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -394,7 +382,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -408,7 +396,7 @@ try {
 ## `supplierIdIdUploadImagePost()`
 
 ```php
-supplierIdIdUploadImagePost($id, $body): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
+supplierIdIdUploadImagePost($id): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
 ```
 
 
@@ -420,7 +408,7 @@ supplierIdIdUploadImagePost($id, $body): \kruegge82\weclapp\Model\AccountingTran
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -433,10 +421,9 @@ $apiInstance = new kruegge82\weclapp\Api\SupplierApi(
     $config
 );
 $id = 'id_example'; // string
-$body = '/path/to/file.txt'; // \SplFileObject
 
 try {
-    $result = $apiInstance->supplierIdIdUploadImagePost($id, $body);
+    $result = $apiInstance->supplierIdIdUploadImagePost($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SupplierApi->supplierIdIdUploadImagePost: ', $e->getMessage(), PHP_EOL;
@@ -448,7 +435,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | **\SplFileObject****\SplFileObject**|  | |
 
 ### Return type
 
@@ -456,11 +442,11 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
-- **Content-Type**: `application/pdf`, `image/jpeg`, `image/png`
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -470,10 +456,10 @@ try {
 ## `supplierPost()`
 
 ```php
-supplierPost($supplier, $dry_run): \kruegge82\weclapp\Model\Supplier
+supplierPost($body, $dry_run): \kruegge82\weclapp\Model\Supplier
 ```
 
-create a supplier
+
 
 create a supplier
 
@@ -484,7 +470,7 @@ create a supplier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -496,11 +482,11 @@ $apiInstance = new kruegge82\weclapp\Api\SupplierApi(
     new GuzzleHttp\Client(),
     $config
 );
-$supplier = new \kruegge82\weclapp\Model\Supplier(); // \kruegge82\weclapp\Model\Supplier
+$body = new \kruegge82\weclapp\Model\Supplier(); // \kruegge82\weclapp\Model\Supplier
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->supplierPost($supplier, $dry_run);
+    $result = $apiInstance->supplierPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SupplierApi->supplierPost: ', $e->getMessage(), PHP_EOL;
@@ -511,7 +497,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **supplier** | [**\kruegge82\weclapp\Model\Supplier**](../Model/Supplier.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Supplier**](../Model/Supplier.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -520,7 +506,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

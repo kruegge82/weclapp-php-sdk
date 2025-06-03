@@ -1,27 +1,27 @@
 # kruegge82\weclapp\LeadApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**leadCountGet()**](LeadApi.md#leadCountGet) | **GET** /lead/count | count lead |
-| [**leadGet()**](LeadApi.md#leadGet) | **GET** /lead | query lead |
+| [**leadCountGet()**](LeadApi.md#leadCountGet) | **GET** /lead/count |  |
+| [**leadGet()**](LeadApi.md#leadGet) | **GET** /lead |  |
 | [**leadIdIdConvertLeadToCustomerGet()**](LeadApi.md#leadIdIdConvertLeadToCustomerGet) | **GET** /lead/id/{id}/convertLeadToCustomer |  |
-| [**leadIdIdDelete()**](LeadApi.md#leadIdIdDelete) | **DELETE** /lead/id/{id} | delete a lead |
+| [**leadIdIdDelete()**](LeadApi.md#leadIdIdDelete) | **DELETE** /lead/id/{id} |  |
 | [**leadIdIdDownloadImageGet()**](LeadApi.md#leadIdIdDownloadImageGet) | **GET** /lead/id/{id}/downloadImage |  |
-| [**leadIdIdGet()**](LeadApi.md#leadIdIdGet) | **GET** /lead/id/{id} | query a specific lead |
-| [**leadIdIdPut()**](LeadApi.md#leadIdIdPut) | **PUT** /lead/id/{id} | update a lead |
+| [**leadIdIdGet()**](LeadApi.md#leadIdIdGet) | **GET** /lead/id/{id} |  |
+| [**leadIdIdPut()**](LeadApi.md#leadIdIdPut) | **PUT** /lead/id/{id} |  |
 | [**leadIdIdUploadImagePost()**](LeadApi.md#leadIdIdUploadImagePost) | **POST** /lead/id/{id}/uploadImage |  |
-| [**leadPost()**](LeadApi.md#leadPost) | **POST** /lead | create a lead |
+| [**leadPost()**](LeadApi.md#leadPost) | **POST** /lead |  |
 
 
 ## `leadCountGet()`
 
 ```php
-leadCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+leadCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count lead
+
 
 count lead
 
@@ -32,7 +32,7 @@ count lead
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -44,10 +44,9 @@ $apiInstance = new kruegge82\weclapp\Api\LeadApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->leadCountGet($filter);
+    $result = $apiInstance->leadCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadApi->leadCountGet: ', $e->getMessage(), PHP_EOL;
@@ -56,9 +55,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -66,7 +63,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -80,10 +77,10 @@ try {
 ## `leadGet()`
 
 ```php
-leadGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\LeadGet200Response
+leadGet($page, $page_size, $sort): \kruegge82\weclapp\Model\LeadGet200Response
 ```
 
-query lead
+
 
 query lead
 
@@ -94,7 +91,7 @@ query lead
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -108,14 +105,10 @@ $apiInstance = new kruegge82\weclapp\Api\LeadApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->leadGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->leadGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadApi->leadGet: ', $e->getMessage(), PHP_EOL;
@@ -128,11 +121,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -140,7 +129,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -166,7 +155,7 @@ leadIdIdConvertLeadToCustomerGet($id): \kruegge82\weclapp\Model\LeadIdIdConvertL
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,7 +206,7 @@ try {
 leadIdIdDelete($id, $dry_run)
 ```
 
-delete a lead
+
 
 delete a lead
 
@@ -228,7 +217,7 @@ delete a lead
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -263,7 +252,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -277,7 +266,7 @@ void (empty response body)
 ## `leadIdIdDownloadImageGet()`
 
 ```php
-leadIdIdDownloadImageGet($id, $scale_width, $scale_height): \SplFileObject
+leadIdIdDownloadImageGet($id, $scale_width, $scale_height)
 ```
 
 
@@ -289,7 +278,7 @@ leadIdIdDownloadImageGet($id, $scale_width, $scale_height): \SplFileObject
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -306,8 +295,7 @@ $scale_width = 56; // int
 $scale_height = 56; // int
 
 try {
-    $result = $apiInstance->leadIdIdDownloadImageGet($id, $scale_width, $scale_height);
-    print_r($result);
+    $apiInstance->leadIdIdDownloadImageGet($id, $scale_width, $scale_height);
 } catch (Exception $e) {
     echo 'Exception when calling LeadApi->leadIdIdDownloadImageGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -323,16 +311,16 @@ try {
 
 ### Return type
 
-**\SplFileObject**
+void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -344,9 +332,9 @@ try {
 leadIdIdGet($id): \kruegge82\weclapp\Model\Lead
 ```
 
-query a specific lead
 
-query a specific lead
+
+query lead
 
 ### Example
 
@@ -355,7 +343,7 @@ query a specific lead
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -389,7 +377,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -403,10 +391,10 @@ try {
 ## `leadIdIdPut()`
 
 ```php
-leadIdIdPut($id, $lead, $dry_run): \kruegge82\weclapp\Model\Lead
+leadIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Lead
 ```
 
-update a lead
+
 
 update lead
 
@@ -417,7 +405,7 @@ update lead
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -430,11 +418,11 @@ $apiInstance = new kruegge82\weclapp\Api\LeadApi(
     $config
 );
 $id = 'id_example'; // string
-$lead = new \kruegge82\weclapp\Model\Lead(); // \kruegge82\weclapp\Model\Lead
+$body = new \kruegge82\weclapp\Model\Lead(); // \kruegge82\weclapp\Model\Lead
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->leadIdIdPut($id, $lead, $dry_run);
+    $result = $apiInstance->leadIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadApi->leadIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -446,7 +434,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **lead** | [**\kruegge82\weclapp\Model\Lead**](../Model/Lead.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Lead**](../Model/Lead.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -455,7 +443,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -469,7 +457,7 @@ try {
 ## `leadIdIdUploadImagePost()`
 
 ```php
-leadIdIdUploadImagePost($id, $body): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
+leadIdIdUploadImagePost($id): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
 ```
 
 
@@ -481,7 +469,7 @@ leadIdIdUploadImagePost($id, $body): \kruegge82\weclapp\Model\AccountingTransact
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -494,10 +482,9 @@ $apiInstance = new kruegge82\weclapp\Api\LeadApi(
     $config
 );
 $id = 'id_example'; // string
-$body = '/path/to/file.txt'; // \SplFileObject
 
 try {
-    $result = $apiInstance->leadIdIdUploadImagePost($id, $body);
+    $result = $apiInstance->leadIdIdUploadImagePost($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadApi->leadIdIdUploadImagePost: ', $e->getMessage(), PHP_EOL;
@@ -509,7 +496,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | **\SplFileObject****\SplFileObject**|  | |
 
 ### Return type
 
@@ -517,11 +503,11 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
-- **Content-Type**: `application/pdf`, `image/jpeg`, `image/png`
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -531,10 +517,10 @@ try {
 ## `leadPost()`
 
 ```php
-leadPost($lead, $dry_run): \kruegge82\weclapp\Model\Lead
+leadPost($body, $dry_run): \kruegge82\weclapp\Model\Lead
 ```
 
-create a lead
+
 
 create a lead
 
@@ -545,7 +531,7 @@ create a lead
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -557,11 +543,11 @@ $apiInstance = new kruegge82\weclapp\Api\LeadApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lead = new \kruegge82\weclapp\Model\Lead(); // \kruegge82\weclapp\Model\Lead
+$body = new \kruegge82\weclapp\Model\Lead(); // \kruegge82\weclapp\Model\Lead
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->leadPost($lead, $dry_run);
+    $result = $apiInstance->leadPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LeadApi->leadPost: ', $e->getMessage(), PHP_EOL;
@@ -572,7 +558,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **lead** | [**\kruegge82\weclapp\Model\Lead**](../Model/Lead.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Lead**](../Model/Lead.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -581,7 +567,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

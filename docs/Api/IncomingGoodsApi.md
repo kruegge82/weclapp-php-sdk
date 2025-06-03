@@ -1,32 +1,32 @@
 # kruegge82\weclapp\IncomingGoodsApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**incomingGoodsCountGet()**](IncomingGoodsApi.md#incomingGoodsCountGet) | **GET** /incomingGoods/count | count incomingGoods |
-| [**incomingGoodsGet()**](IncomingGoodsApi.md#incomingGoodsGet) | **GET** /incomingGoods | query incomingGoods |
+| [**incomingGoodsCountGet()**](IncomingGoodsApi.md#incomingGoodsCountGet) | **GET** /incomingGoods/count |  |
+| [**incomingGoodsGet()**](IncomingGoodsApi.md#incomingGoodsGet) | **GET** /incomingGoods |  |
 | [**incomingGoodsIdIdAddPurchaseOrdersPost()**](IncomingGoodsApi.md#incomingGoodsIdIdAddPurchaseOrdersPost) | **POST** /incomingGoods/id/{id}/addPurchaseOrders |  |
 | [**incomingGoodsIdIdCreateCompensationShipmentPost()**](IncomingGoodsApi.md#incomingGoodsIdIdCreateCompensationShipmentPost) | **POST** /incomingGoods/id/{id}/createCompensationShipment |  |
 | [**incomingGoodsIdIdCreateCreditNotePost()**](IncomingGoodsApi.md#incomingGoodsIdIdCreateCreditNotePost) | **POST** /incomingGoods/id/{id}/createCreditNote |  |
 | [**incomingGoodsIdIdCreatePurchaseInvoicePost()**](IncomingGoodsApi.md#incomingGoodsIdIdCreatePurchaseInvoicePost) | **POST** /incomingGoods/id/{id}/createPurchaseInvoice |  |
 | [**incomingGoodsIdIdCreateReturnLabelsPost()**](IncomingGoodsApi.md#incomingGoodsIdIdCreateReturnLabelsPost) | **POST** /incomingGoods/id/{id}/createReturnLabels |  |
 | [**incomingGoodsIdIdCreateSupplierReturnPost()**](IncomingGoodsApi.md#incomingGoodsIdIdCreateSupplierReturnPost) | **POST** /incomingGoods/id/{id}/createSupplierReturn |  |
-| [**incomingGoodsIdIdDelete()**](IncomingGoodsApi.md#incomingGoodsIdIdDelete) | **DELETE** /incomingGoods/id/{id} | delete a incomingGoods |
-| [**incomingGoodsIdIdGet()**](IncomingGoodsApi.md#incomingGoodsIdIdGet) | **GET** /incomingGoods/id/{id} | query a specific incomingGoods |
+| [**incomingGoodsIdIdDelete()**](IncomingGoodsApi.md#incomingGoodsIdIdDelete) | **DELETE** /incomingGoods/id/{id} |  |
+| [**incomingGoodsIdIdGet()**](IncomingGoodsApi.md#incomingGoodsIdIdGet) | **GET** /incomingGoods/id/{id} |  |
 | [**incomingGoodsIdIdIncomingBookingsGet()**](IncomingGoodsApi.md#incomingGoodsIdIdIncomingBookingsGet) | **GET** /incomingGoods/id/{id}/incomingBookings |  |
-| [**incomingGoodsIdIdPut()**](IncomingGoodsApi.md#incomingGoodsIdIdPut) | **PUT** /incomingGoods/id/{id} | update a incomingGoods |
+| [**incomingGoodsIdIdPut()**](IncomingGoodsApi.md#incomingGoodsIdIdPut) | **PUT** /incomingGoods/id/{id} |  |
 | [**incomingGoodsIdIdUpdateIncomingBookingsPost()**](IncomingGoodsApi.md#incomingGoodsIdIdUpdateIncomingBookingsPost) | **POST** /incomingGoods/id/{id}/updateIncomingBookings |  |
-| [**incomingGoodsPost()**](IncomingGoodsApi.md#incomingGoodsPost) | **POST** /incomingGoods | create a incomingGoods |
+| [**incomingGoodsPost()**](IncomingGoodsApi.md#incomingGoodsPost) | **POST** /incomingGoods |  |
 
 
 ## `incomingGoodsCountGet()`
 
 ```php
-incomingGoodsCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+incomingGoodsCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count incomingGoods
+
 
 count incomingGoods
 
@@ -37,7 +37,7 @@ count incomingGoods
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -49,10 +49,9 @@ $apiInstance = new kruegge82\weclapp\Api\IncomingGoodsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->incomingGoodsCountGet($filter);
+    $result = $apiInstance->incomingGoodsCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IncomingGoodsApi->incomingGoodsCountGet: ', $e->getMessage(), PHP_EOL;
@@ -61,9 +60,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -71,7 +68,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -85,10 +82,10 @@ try {
 ## `incomingGoodsGet()`
 
 ```php
-incomingGoodsGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\IncomingGoodsGet200Response
+incomingGoodsGet($page, $page_size, $sort): \kruegge82\weclapp\Model\IncomingGoodsGet200Response
 ```
 
-query incomingGoods
+
 
 query incomingGoods
 
@@ -99,7 +96,7 @@ query incomingGoods
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -113,14 +110,10 @@ $apiInstance = new kruegge82\weclapp\Api\IncomingGoodsApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->incomingGoodsGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->incomingGoodsGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IncomingGoodsApi->incomingGoodsGet: ', $e->getMessage(), PHP_EOL;
@@ -133,11 +126,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -145,7 +134,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -159,7 +148,7 @@ try {
 ## `incomingGoodsIdIdAddPurchaseOrdersPost()`
 
 ```php
-incomingGoodsIdIdAddPurchaseOrdersPost($id, $incoming_goods_id_id_add_purchase_orders_post_request): \kruegge82\weclapp\Model\IncomingGoodsIdIdAddPurchaseOrdersPost200Response
+incomingGoodsIdIdAddPurchaseOrdersPost($id, $body): \kruegge82\weclapp\Model\IncomingGoodsIdIdAddPurchaseOrdersPost200Response
 ```
 
 
@@ -171,7 +160,7 @@ incomingGoodsIdIdAddPurchaseOrdersPost($id, $incoming_goods_id_id_add_purchase_o
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -184,10 +173,10 @@ $apiInstance = new kruegge82\weclapp\Api\IncomingGoodsApi(
     $config
 );
 $id = 'id_example'; // string
-$incoming_goods_id_id_add_purchase_orders_post_request = new \kruegge82\weclapp\Model\IncomingGoodsIdIdAddPurchaseOrdersPostRequest(); // \kruegge82\weclapp\Model\IncomingGoodsIdIdAddPurchaseOrdersPostRequest
+$body = new \kruegge82\weclapp\Model\IncomingGoodsIdIdAddPurchaseOrdersPostRequest(); // \kruegge82\weclapp\Model\IncomingGoodsIdIdAddPurchaseOrdersPostRequest
 
 try {
-    $result = $apiInstance->incomingGoodsIdIdAddPurchaseOrdersPost($id, $incoming_goods_id_id_add_purchase_orders_post_request);
+    $result = $apiInstance->incomingGoodsIdIdAddPurchaseOrdersPost($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IncomingGoodsApi->incomingGoodsIdIdAddPurchaseOrdersPost: ', $e->getMessage(), PHP_EOL;
@@ -199,7 +188,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **incoming_goods_id_id_add_purchase_orders_post_request** | [**\kruegge82\weclapp\Model\IncomingGoodsIdIdAddPurchaseOrdersPostRequest**](../Model/IncomingGoodsIdIdAddPurchaseOrdersPostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\IncomingGoodsIdIdAddPurchaseOrdersPostRequest**](../Model/IncomingGoodsIdIdAddPurchaseOrdersPostRequest.md)|  | |
 
 ### Return type
 
@@ -207,7 +196,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -233,7 +222,7 @@ incomingGoodsIdIdCreateCompensationShipmentPost($id, $body): \kruegge82\weclapp\
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -269,7 +258,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -295,7 +284,7 @@ incomingGoodsIdIdCreateCreditNotePost($id, $body): \kruegge82\weclapp\Model\Inco
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -331,7 +320,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -357,7 +346,7 @@ incomingGoodsIdIdCreatePurchaseInvoicePost($id, $body): \kruegge82\weclapp\Model
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -393,7 +382,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -419,7 +408,7 @@ incomingGoodsIdIdCreateReturnLabelsPost($id, $body): \kruegge82\weclapp\Model\Do
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -455,7 +444,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -469,7 +458,7 @@ try {
 ## `incomingGoodsIdIdCreateSupplierReturnPost()`
 
 ```php
-incomingGoodsIdIdCreateSupplierReturnPost($id, $incoming_goods_id_id_create_supplier_return_post_request): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCompensationShipmentPost200Response
+incomingGoodsIdIdCreateSupplierReturnPost($id, $body): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCompensationShipmentPost200Response
 ```
 
 
@@ -481,7 +470,7 @@ incomingGoodsIdIdCreateSupplierReturnPost($id, $incoming_goods_id_id_create_supp
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -494,10 +483,10 @@ $apiInstance = new kruegge82\weclapp\Api\IncomingGoodsApi(
     $config
 );
 $id = 'id_example'; // string
-$incoming_goods_id_id_create_supplier_return_post_request = new \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateSupplierReturnPostRequest(); // \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateSupplierReturnPostRequest
+$body = new \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateSupplierReturnPostRequest(); // \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateSupplierReturnPostRequest
 
 try {
-    $result = $apiInstance->incomingGoodsIdIdCreateSupplierReturnPost($id, $incoming_goods_id_id_create_supplier_return_post_request);
+    $result = $apiInstance->incomingGoodsIdIdCreateSupplierReturnPost($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IncomingGoodsApi->incomingGoodsIdIdCreateSupplierReturnPost: ', $e->getMessage(), PHP_EOL;
@@ -509,7 +498,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **incoming_goods_id_id_create_supplier_return_post_request** | [**\kruegge82\weclapp\Model\IncomingGoodsIdIdCreateSupplierReturnPostRequest**](../Model/IncomingGoodsIdIdCreateSupplierReturnPostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\IncomingGoodsIdIdCreateSupplierReturnPostRequest**](../Model/IncomingGoodsIdIdCreateSupplierReturnPostRequest.md)|  | |
 
 ### Return type
 
@@ -517,7 +506,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -534,7 +523,7 @@ try {
 incomingGoodsIdIdDelete($id, $dry_run)
 ```
 
-delete a incomingGoods
+
 
 delete a incomingGoods
 
@@ -545,7 +534,7 @@ delete a incomingGoods
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -580,7 +569,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -597,9 +586,9 @@ void (empty response body)
 incomingGoodsIdIdGet($id): \kruegge82\weclapp\Model\IncomingGoods
 ```
 
-query a specific incomingGoods
 
-query a specific incomingGoods
+
+query incomingGoods
 
 ### Example
 
@@ -608,7 +597,7 @@ query a specific incomingGoods
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -642,7 +631,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -668,7 +657,7 @@ incomingGoodsIdIdIncomingBookingsGet($id): \kruegge82\weclapp\Model\IncomingGood
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -702,7 +691,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -716,10 +705,10 @@ try {
 ## `incomingGoodsIdIdPut()`
 
 ```php
-incomingGoodsIdIdPut($id, $incoming_goods, $dry_run): \kruegge82\weclapp\Model\IncomingGoods
+incomingGoodsIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\IncomingGoods
 ```
 
-update a incomingGoods
+
 
 update incomingGoods
 
@@ -730,7 +719,7 @@ update incomingGoods
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -743,11 +732,11 @@ $apiInstance = new kruegge82\weclapp\Api\IncomingGoodsApi(
     $config
 );
 $id = 'id_example'; // string
-$incoming_goods = new \kruegge82\weclapp\Model\IncomingGoods(); // \kruegge82\weclapp\Model\IncomingGoods
+$body = new \kruegge82\weclapp\Model\IncomingGoods(); // \kruegge82\weclapp\Model\IncomingGoods
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->incomingGoodsIdIdPut($id, $incoming_goods, $dry_run);
+    $result = $apiInstance->incomingGoodsIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IncomingGoodsApi->incomingGoodsIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -759,7 +748,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **incoming_goods** | [**\kruegge82\weclapp\Model\IncomingGoods**](../Model/IncomingGoods.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\IncomingGoods**](../Model/IncomingGoods.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -768,7 +757,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -782,7 +771,7 @@ try {
 ## `incomingGoodsIdIdUpdateIncomingBookingsPost()`
 
 ```php
-incomingGoodsIdIdUpdateIncomingBookingsPost($id, $incoming_goods_id_id_update_incoming_bookings_post_request): \kruegge82\weclapp\Model\IncomingGoodsIdIdIncomingBookingsGet200Response
+incomingGoodsIdIdUpdateIncomingBookingsPost($id, $body): \kruegge82\weclapp\Model\IncomingGoodsIdIdIncomingBookingsGet200Response
 ```
 
 
@@ -794,7 +783,7 @@ incomingGoodsIdIdUpdateIncomingBookingsPost($id, $incoming_goods_id_id_update_in
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -807,10 +796,10 @@ $apiInstance = new kruegge82\weclapp\Api\IncomingGoodsApi(
     $config
 );
 $id = 'id_example'; // string
-$incoming_goods_id_id_update_incoming_bookings_post_request = new \kruegge82\weclapp\Model\IncomingGoodsIdIdUpdateIncomingBookingsPostRequest(); // \kruegge82\weclapp\Model\IncomingGoodsIdIdUpdateIncomingBookingsPostRequest
+$body = new \kruegge82\weclapp\Model\IncomingGoodsIdIdUpdateIncomingBookingsPostRequest(); // \kruegge82\weclapp\Model\IncomingGoodsIdIdUpdateIncomingBookingsPostRequest
 
 try {
-    $result = $apiInstance->incomingGoodsIdIdUpdateIncomingBookingsPost($id, $incoming_goods_id_id_update_incoming_bookings_post_request);
+    $result = $apiInstance->incomingGoodsIdIdUpdateIncomingBookingsPost($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IncomingGoodsApi->incomingGoodsIdIdUpdateIncomingBookingsPost: ', $e->getMessage(), PHP_EOL;
@@ -822,7 +811,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **incoming_goods_id_id_update_incoming_bookings_post_request** | [**\kruegge82\weclapp\Model\IncomingGoodsIdIdUpdateIncomingBookingsPostRequest**](../Model/IncomingGoodsIdIdUpdateIncomingBookingsPostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\IncomingGoodsIdIdUpdateIncomingBookingsPostRequest**](../Model/IncomingGoodsIdIdUpdateIncomingBookingsPostRequest.md)|  | |
 
 ### Return type
 
@@ -830,7 +819,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -844,10 +833,10 @@ try {
 ## `incomingGoodsPost()`
 
 ```php
-incomingGoodsPost($incoming_goods, $dry_run): \kruegge82\weclapp\Model\IncomingGoods
+incomingGoodsPost($body, $dry_run): \kruegge82\weclapp\Model\IncomingGoods
 ```
 
-create a incomingGoods
+
 
 create a incomingGoods
 
@@ -858,7 +847,7 @@ create a incomingGoods
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -870,11 +859,11 @@ $apiInstance = new kruegge82\weclapp\Api\IncomingGoodsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$incoming_goods = new \kruegge82\weclapp\Model\IncomingGoods(); // \kruegge82\weclapp\Model\IncomingGoods
+$body = new \kruegge82\weclapp\Model\IncomingGoods(); // \kruegge82\weclapp\Model\IncomingGoods
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->incomingGoodsPost($incoming_goods, $dry_run);
+    $result = $apiInstance->incomingGoodsPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IncomingGoodsApi->incomingGoodsPost: ', $e->getMessage(), PHP_EOL;
@@ -885,7 +874,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **incoming_goods** | [**\kruegge82\weclapp\Model\IncomingGoods**](../Model/IncomingGoods.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\IncomingGoods**](../Model/IncomingGoods.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -894,7 +883,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

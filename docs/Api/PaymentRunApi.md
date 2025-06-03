@@ -1,23 +1,23 @@
 # kruegge82\weclapp\PaymentRunApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**paymentRunCountGet()**](PaymentRunApi.md#paymentRunCountGet) | **GET** /paymentRun/count | count paymentRun |
-| [**paymentRunGet()**](PaymentRunApi.md#paymentRunGet) | **GET** /paymentRun | query paymentRun |
-| [**paymentRunIdIdDelete()**](PaymentRunApi.md#paymentRunIdIdDelete) | **DELETE** /paymentRun/id/{id} | delete a paymentRun |
-| [**paymentRunIdIdGet()**](PaymentRunApi.md#paymentRunIdIdGet) | **GET** /paymentRun/id/{id} | query a specific paymentRun |
-| [**paymentRunIdIdPut()**](PaymentRunApi.md#paymentRunIdIdPut) | **PUT** /paymentRun/id/{id} | update a paymentRun |
+| [**paymentRunCountGet()**](PaymentRunApi.md#paymentRunCountGet) | **GET** /paymentRun/count |  |
+| [**paymentRunGet()**](PaymentRunApi.md#paymentRunGet) | **GET** /paymentRun |  |
+| [**paymentRunIdIdDelete()**](PaymentRunApi.md#paymentRunIdIdDelete) | **DELETE** /paymentRun/id/{id} |  |
+| [**paymentRunIdIdGet()**](PaymentRunApi.md#paymentRunIdIdGet) | **GET** /paymentRun/id/{id} |  |
+| [**paymentRunIdIdPut()**](PaymentRunApi.md#paymentRunIdIdPut) | **PUT** /paymentRun/id/{id} |  |
 
 
 ## `paymentRunCountGet()`
 
 ```php
-paymentRunCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+paymentRunCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count paymentRun
+
 
 count paymentRun
 
@@ -28,7 +28,7 @@ count paymentRun
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -40,10 +40,9 @@ $apiInstance = new kruegge82\weclapp\Api\PaymentRunApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->paymentRunCountGet($filter);
+    $result = $apiInstance->paymentRunCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentRunApi->paymentRunCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,9 +51,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -62,7 +59,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -76,10 +73,10 @@ try {
 ## `paymentRunGet()`
 
 ```php
-paymentRunGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\PaymentRunGet200Response
+paymentRunGet($page, $page_size, $sort): \kruegge82\weclapp\Model\PaymentRunGet200Response
 ```
 
-query paymentRun
+
 
 query paymentRun
 
@@ -90,7 +87,7 @@ query paymentRun
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -104,14 +101,10 @@ $apiInstance = new kruegge82\weclapp\Api\PaymentRunApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->paymentRunGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->paymentRunGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentRunApi->paymentRunGet: ', $e->getMessage(), PHP_EOL;
@@ -124,11 +117,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -136,7 +125,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -153,7 +142,7 @@ try {
 paymentRunIdIdDelete($id, $dry_run)
 ```
 
-delete a paymentRun
+
 
 delete a paymentRun
 
@@ -164,7 +153,7 @@ delete a paymentRun
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -199,7 +188,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -216,9 +205,9 @@ void (empty response body)
 paymentRunIdIdGet($id): \kruegge82\weclapp\Model\PaymentRun
 ```
 
-query a specific paymentRun
 
-query a specific paymentRun
+
+query paymentRun
 
 ### Example
 
@@ -227,7 +216,7 @@ query a specific paymentRun
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -261,7 +250,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -275,10 +264,10 @@ try {
 ## `paymentRunIdIdPut()`
 
 ```php
-paymentRunIdIdPut($id, $payment_run, $dry_run): \kruegge82\weclapp\Model\PaymentRun
+paymentRunIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\PaymentRun
 ```
 
-update a paymentRun
+
 
 update paymentRun
 
@@ -289,7 +278,7 @@ update paymentRun
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -302,11 +291,11 @@ $apiInstance = new kruegge82\weclapp\Api\PaymentRunApi(
     $config
 );
 $id = 'id_example'; // string
-$payment_run = new \kruegge82\weclapp\Model\PaymentRun(); // \kruegge82\weclapp\Model\PaymentRun
+$body = new \kruegge82\weclapp\Model\PaymentRun(); // \kruegge82\weclapp\Model\PaymentRun
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->paymentRunIdIdPut($id, $payment_run, $dry_run);
+    $result = $apiInstance->paymentRunIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentRunApi->paymentRunIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -318,7 +307,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **payment_run** | [**\kruegge82\weclapp\Model\PaymentRun**](../Model/PaymentRun.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\PaymentRun**](../Model/PaymentRun.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -327,7 +316,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

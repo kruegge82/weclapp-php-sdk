@@ -1,24 +1,24 @@
 # kruegge82\weclapp\SalesStageApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**salesStageCountGet()**](SalesStageApi.md#salesStageCountGet) | **GET** /salesStage/count | count salesStage |
-| [**salesStageGet()**](SalesStageApi.md#salesStageGet) | **GET** /salesStage | query salesStage |
-| [**salesStageIdIdDelete()**](SalesStageApi.md#salesStageIdIdDelete) | **DELETE** /salesStage/id/{id} | delete a salesStage |
-| [**salesStageIdIdGet()**](SalesStageApi.md#salesStageIdIdGet) | **GET** /salesStage/id/{id} | query a specific salesStage |
-| [**salesStageIdIdPut()**](SalesStageApi.md#salesStageIdIdPut) | **PUT** /salesStage/id/{id} | update a salesStage |
-| [**salesStagePost()**](SalesStageApi.md#salesStagePost) | **POST** /salesStage | create a salesStage |
+| [**salesStageCountGet()**](SalesStageApi.md#salesStageCountGet) | **GET** /salesStage/count |  |
+| [**salesStageGet()**](SalesStageApi.md#salesStageGet) | **GET** /salesStage |  |
+| [**salesStageIdIdDelete()**](SalesStageApi.md#salesStageIdIdDelete) | **DELETE** /salesStage/id/{id} |  |
+| [**salesStageIdIdGet()**](SalesStageApi.md#salesStageIdIdGet) | **GET** /salesStage/id/{id} |  |
+| [**salesStageIdIdPut()**](SalesStageApi.md#salesStageIdIdPut) | **PUT** /salesStage/id/{id} |  |
+| [**salesStagePost()**](SalesStageApi.md#salesStagePost) | **POST** /salesStage |  |
 
 
 ## `salesStageCountGet()`
 
 ```php
-salesStageCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+salesStageCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count salesStage
+
 
 count salesStage
 
@@ -29,7 +29,7 @@ count salesStage
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\SalesStageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->salesStageCountGet($filter);
+    $result = $apiInstance->salesStageCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SalesStageApi->salesStageCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `salesStageGet()`
 
 ```php
-salesStageGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\SalesStageGet200Response
+salesStageGet($page, $page_size, $sort): \kruegge82\weclapp\Model\SalesStageGet200Response
 ```
 
-query salesStage
+
 
 query salesStage
 
@@ -91,7 +88,7 @@ query salesStage
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\SalesStageApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->salesStageGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->salesStageGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SalesStageApi->salesStageGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 salesStageIdIdDelete($id, $dry_run)
 ```
 
-delete a salesStage
+
 
 delete a salesStage
 
@@ -165,7 +154,7 @@ delete a salesStage
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 salesStageIdIdGet($id): \kruegge82\weclapp\Model\SalesStage
 ```
 
-query a specific salesStage
 
-query a specific salesStage
+
+query salesStage
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific salesStage
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `salesStageIdIdPut()`
 
 ```php
-salesStageIdIdPut($id, $sales_stage, $dry_run): \kruegge82\weclapp\Model\SalesStage
+salesStageIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\SalesStage
 ```
 
-update a salesStage
+
 
 update salesStage
 
@@ -290,7 +279,7 @@ update salesStage
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\SalesStageApi(
     $config
 );
 $id = 'id_example'; // string
-$sales_stage = new \kruegge82\weclapp\Model\SalesStage(); // \kruegge82\weclapp\Model\SalesStage
+$body = new \kruegge82\weclapp\Model\SalesStage(); // \kruegge82\weclapp\Model\SalesStage
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->salesStageIdIdPut($id, $sales_stage, $dry_run);
+    $result = $apiInstance->salesStageIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SalesStageApi->salesStageIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **sales_stage** | [**\kruegge82\weclapp\Model\SalesStage**](../Model/SalesStage.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\SalesStage**](../Model/SalesStage.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `salesStagePost()`
 
 ```php
-salesStagePost($sales_stage, $dry_run): \kruegge82\weclapp\Model\SalesStage
+salesStagePost($body, $dry_run): \kruegge82\weclapp\Model\SalesStage
 ```
 
-create a salesStage
+
 
 create a salesStage
 
@@ -356,7 +345,7 @@ create a salesStage
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\SalesStageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$sales_stage = new \kruegge82\weclapp\Model\SalesStage(); // \kruegge82\weclapp\Model\SalesStage
+$body = new \kruegge82\weclapp\Model\SalesStage(); // \kruegge82\weclapp\Model\SalesStage
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->salesStagePost($sales_stage, $dry_run);
+    $result = $apiInstance->salesStagePost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SalesStageApi->salesStagePost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **sales_stage** | [**\kruegge82\weclapp\Model\SalesStage**](../Model/SalesStage.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\SalesStage**](../Model/SalesStage.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

@@ -1,26 +1,26 @@
 # kruegge82\weclapp\ContactApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**contactCountGet()**](ContactApi.md#contactCountGet) | **GET** /contact/count | count contact |
-| [**contactGet()**](ContactApi.md#contactGet) | **GET** /contact | query contact |
-| [**contactIdIdDelete()**](ContactApi.md#contactIdIdDelete) | **DELETE** /contact/id/{id} | delete a contact |
+| [**contactCountGet()**](ContactApi.md#contactCountGet) | **GET** /contact/count |  |
+| [**contactGet()**](ContactApi.md#contactGet) | **GET** /contact |  |
+| [**contactIdIdDelete()**](ContactApi.md#contactIdIdDelete) | **DELETE** /contact/id/{id} |  |
 | [**contactIdIdDownloadImageGet()**](ContactApi.md#contactIdIdDownloadImageGet) | **GET** /contact/id/{id}/downloadImage |  |
-| [**contactIdIdGet()**](ContactApi.md#contactIdIdGet) | **GET** /contact/id/{id} | query a specific contact |
-| [**contactIdIdPut()**](ContactApi.md#contactIdIdPut) | **PUT** /contact/id/{id} | update a contact |
+| [**contactIdIdGet()**](ContactApi.md#contactIdIdGet) | **GET** /contact/id/{id} |  |
+| [**contactIdIdPut()**](ContactApi.md#contactIdIdPut) | **PUT** /contact/id/{id} |  |
 | [**contactIdIdUploadImagePost()**](ContactApi.md#contactIdIdUploadImagePost) | **POST** /contact/id/{id}/uploadImage |  |
-| [**contactPost()**](ContactApi.md#contactPost) | **POST** /contact | create a contact |
+| [**contactPost()**](ContactApi.md#contactPost) | **POST** /contact |  |
 
 
 ## `contactCountGet()`
 
 ```php
-contactCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+contactCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count contact
+
 
 count contact
 
@@ -31,7 +31,7 @@ count contact
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -43,10 +43,9 @@ $apiInstance = new kruegge82\weclapp\Api\ContactApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->contactCountGet($filter);
+    $result = $apiInstance->contactCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactApi->contactCountGet: ', $e->getMessage(), PHP_EOL;
@@ -55,9 +54,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -65,7 +62,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -79,10 +76,10 @@ try {
 ## `contactGet()`
 
 ```php
-contactGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ContactGet200Response
+contactGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ContactGet200Response
 ```
 
-query contact
+
 
 query contact
 
@@ -93,7 +90,7 @@ query contact
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -107,14 +104,10 @@ $apiInstance = new kruegge82\weclapp\Api\ContactApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->contactGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->contactGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactApi->contactGet: ', $e->getMessage(), PHP_EOL;
@@ -127,11 +120,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -139,7 +128,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -156,7 +145,7 @@ try {
 contactIdIdDelete($id, $dry_run)
 ```
 
-delete a contact
+
 
 delete a contact
 
@@ -167,7 +156,7 @@ delete a contact
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -202,7 +191,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -216,7 +205,7 @@ void (empty response body)
 ## `contactIdIdDownloadImageGet()`
 
 ```php
-contactIdIdDownloadImageGet($id, $scale_width, $scale_height): \SplFileObject
+contactIdIdDownloadImageGet($id, $scale_width, $scale_height)
 ```
 
 
@@ -228,7 +217,7 @@ contactIdIdDownloadImageGet($id, $scale_width, $scale_height): \SplFileObject
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -245,8 +234,7 @@ $scale_width = 56; // int
 $scale_height = 56; // int
 
 try {
-    $result = $apiInstance->contactIdIdDownloadImageGet($id, $scale_width, $scale_height);
-    print_r($result);
+    $apiInstance->contactIdIdDownloadImageGet($id, $scale_width, $scale_height);
 } catch (Exception $e) {
     echo 'Exception when calling ContactApi->contactIdIdDownloadImageGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -262,16 +250,16 @@ try {
 
 ### Return type
 
-**\SplFileObject**
+void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -283,9 +271,9 @@ try {
 contactIdIdGet($id): \kruegge82\weclapp\Model\Contact
 ```
 
-query a specific contact
 
-query a specific contact
+
+query contact
 
 ### Example
 
@@ -294,7 +282,7 @@ query a specific contact
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -328,7 +316,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +330,10 @@ try {
 ## `contactIdIdPut()`
 
 ```php
-contactIdIdPut($id, $contact, $dry_run): \kruegge82\weclapp\Model\Contact
+contactIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Contact
 ```
 
-update a contact
+
 
 update contact
 
@@ -356,7 +344,7 @@ update contact
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -369,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\ContactApi(
     $config
 );
 $id = 'id_example'; // string
-$contact = new \kruegge82\weclapp\Model\Contact(); // \kruegge82\weclapp\Model\Contact
+$body = new \kruegge82\weclapp\Model\Contact(); // \kruegge82\weclapp\Model\Contact
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->contactIdIdPut($id, $contact, $dry_run);
+    $result = $apiInstance->contactIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactApi->contactIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -385,7 +373,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **contact** | [**\kruegge82\weclapp\Model\Contact**](../Model/Contact.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Contact**](../Model/Contact.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -394,7 +382,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -408,7 +396,7 @@ try {
 ## `contactIdIdUploadImagePost()`
 
 ```php
-contactIdIdUploadImagePost($id, $body): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
+contactIdIdUploadImagePost($id): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
 ```
 
 
@@ -420,7 +408,7 @@ contactIdIdUploadImagePost($id, $body): \kruegge82\weclapp\Model\AccountingTrans
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -433,10 +421,9 @@ $apiInstance = new kruegge82\weclapp\Api\ContactApi(
     $config
 );
 $id = 'id_example'; // string
-$body = '/path/to/file.txt'; // \SplFileObject
 
 try {
-    $result = $apiInstance->contactIdIdUploadImagePost($id, $body);
+    $result = $apiInstance->contactIdIdUploadImagePost($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactApi->contactIdIdUploadImagePost: ', $e->getMessage(), PHP_EOL;
@@ -448,7 +435,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | **\SplFileObject****\SplFileObject**|  | |
 
 ### Return type
 
@@ -456,11 +442,11 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
-- **Content-Type**: `application/pdf`, `image/jpeg`, `image/png`
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -470,10 +456,10 @@ try {
 ## `contactPost()`
 
 ```php
-contactPost($contact, $dry_run): \kruegge82\weclapp\Model\Contact
+contactPost($body, $dry_run): \kruegge82\weclapp\Model\Contact
 ```
 
-create a contact
+
 
 create a contact
 
@@ -484,7 +470,7 @@ create a contact
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -496,11 +482,11 @@ $apiInstance = new kruegge82\weclapp\Api\ContactApi(
     new GuzzleHttp\Client(),
     $config
 );
-$contact = new \kruegge82\weclapp\Model\Contact(); // \kruegge82\weclapp\Model\Contact
+$body = new \kruegge82\weclapp\Model\Contact(); // \kruegge82\weclapp\Model\Contact
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->contactPost($contact, $dry_run);
+    $result = $apiInstance->contactPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactApi->contactPost: ', $e->getMessage(), PHP_EOL;
@@ -511,7 +497,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **contact** | [**\kruegge82\weclapp\Model\Contact**](../Model/Contact.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Contact**](../Model/Contact.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -520,7 +506,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

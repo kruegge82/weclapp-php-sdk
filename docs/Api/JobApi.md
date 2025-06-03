@@ -1,6 +1,6 @@
 # kruegge82\weclapp\JobApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -23,7 +23,7 @@ jobAbortGet($type): \kruegge82\weclapp\Model\JobAbortGet200Response
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -35,7 +35,7 @@ $apiInstance = new kruegge82\weclapp\Api\JobApi(
     new GuzzleHttp\Client(),
     $config
 );
-$type = new \kruegge82\weclapp\Model\\kruegge82\weclapp\Model\JobType(); // \kruegge82\weclapp\Model\JobType
+$type = 'type_example'; // string
 
 try {
     $result = $apiInstance->jobAbortGet($type);
@@ -49,7 +49,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **type** | [**\kruegge82\weclapp\Model\JobType**](../Model/.md)|  | |
+| **type** | **string**|  | |
 
 ### Return type
 
@@ -57,7 +57,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -83,7 +83,7 @@ jobStatusGet($type): \kruegge82\weclapp\Model\JobAbortGet200Response
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -95,7 +95,7 @@ $apiInstance = new kruegge82\weclapp\Api\JobApi(
     new GuzzleHttp\Client(),
     $config
 );
-$type = new \kruegge82\weclapp\Model\\kruegge82\weclapp\Model\JobType(); // \kruegge82\weclapp\Model\JobType
+$type = 'type_example'; // string
 
 try {
     $result = $apiInstance->jobStatusGet($type);
@@ -109,7 +109,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **type** | [**\kruegge82\weclapp\Model\JobType**](../Model/.md)|  | |
+| **type** | **string**|  | |
 
 ### Return type
 
@@ -117,7 +117,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

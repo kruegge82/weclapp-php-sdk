@@ -1,24 +1,24 @@
 # kruegge82\weclapp\CalendarEventApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**calendarEventCountGet()**](CalendarEventApi.md#calendarEventCountGet) | **GET** /calendarEvent/count | count calendarEvent |
-| [**calendarEventGet()**](CalendarEventApi.md#calendarEventGet) | **GET** /calendarEvent | query calendarEvent |
-| [**calendarEventIdIdDelete()**](CalendarEventApi.md#calendarEventIdIdDelete) | **DELETE** /calendarEvent/id/{id} | delete a calendarEvent |
-| [**calendarEventIdIdGet()**](CalendarEventApi.md#calendarEventIdIdGet) | **GET** /calendarEvent/id/{id} | query a specific calendarEvent |
-| [**calendarEventIdIdPut()**](CalendarEventApi.md#calendarEventIdIdPut) | **PUT** /calendarEvent/id/{id} | update a calendarEvent |
-| [**calendarEventPost()**](CalendarEventApi.md#calendarEventPost) | **POST** /calendarEvent | create a calendarEvent |
+| [**calendarEventCountGet()**](CalendarEventApi.md#calendarEventCountGet) | **GET** /calendarEvent/count |  |
+| [**calendarEventGet()**](CalendarEventApi.md#calendarEventGet) | **GET** /calendarEvent |  |
+| [**calendarEventIdIdDelete()**](CalendarEventApi.md#calendarEventIdIdDelete) | **DELETE** /calendarEvent/id/{id} |  |
+| [**calendarEventIdIdGet()**](CalendarEventApi.md#calendarEventIdIdGet) | **GET** /calendarEvent/id/{id} |  |
+| [**calendarEventIdIdPut()**](CalendarEventApi.md#calendarEventIdIdPut) | **PUT** /calendarEvent/id/{id} |  |
+| [**calendarEventPost()**](CalendarEventApi.md#calendarEventPost) | **POST** /calendarEvent |  |
 
 
 ## `calendarEventCountGet()`
 
 ```php
-calendarEventCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+calendarEventCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count calendarEvent
+
 
 count calendarEvent
 
@@ -29,7 +29,7 @@ count calendarEvent
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\CalendarEventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->calendarEventCountGet($filter);
+    $result = $apiInstance->calendarEventCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CalendarEventApi->calendarEventCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `calendarEventGet()`
 
 ```php
-calendarEventGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\CalendarEventGet200Response
+calendarEventGet($page, $page_size, $sort): \kruegge82\weclapp\Model\CalendarEventGet200Response
 ```
 
-query calendarEvent
+
 
 query calendarEvent
 
@@ -91,7 +88,7 @@ query calendarEvent
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\CalendarEventApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->calendarEventGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->calendarEventGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CalendarEventApi->calendarEventGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 calendarEventIdIdDelete($id, $dry_run)
 ```
 
-delete a calendarEvent
+
 
 delete a calendarEvent
 
@@ -165,7 +154,7 @@ delete a calendarEvent
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 calendarEventIdIdGet($id): \kruegge82\weclapp\Model\CalendarEvent
 ```
 
-query a specific calendarEvent
 
-query a specific calendarEvent
+
+query calendarEvent
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific calendarEvent
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `calendarEventIdIdPut()`
 
 ```php
-calendarEventIdIdPut($id, $calendar_event, $dry_run): \kruegge82\weclapp\Model\CalendarEvent
+calendarEventIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\CalendarEvent
 ```
 
-update a calendarEvent
+
 
 update calendarEvent
 
@@ -290,7 +279,7 @@ update calendarEvent
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\CalendarEventApi(
     $config
 );
 $id = 'id_example'; // string
-$calendar_event = new \kruegge82\weclapp\Model\CalendarEvent(); // \kruegge82\weclapp\Model\CalendarEvent
+$body = new \kruegge82\weclapp\Model\CalendarEvent(); // \kruegge82\weclapp\Model\CalendarEvent
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->calendarEventIdIdPut($id, $calendar_event, $dry_run);
+    $result = $apiInstance->calendarEventIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CalendarEventApi->calendarEventIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **calendar_event** | [**\kruegge82\weclapp\Model\CalendarEvent**](../Model/CalendarEvent.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CalendarEvent**](../Model/CalendarEvent.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `calendarEventPost()`
 
 ```php
-calendarEventPost($calendar_event, $dry_run): \kruegge82\weclapp\Model\CalendarEvent
+calendarEventPost($body, $dry_run): \kruegge82\weclapp\Model\CalendarEvent
 ```
 
-create a calendarEvent
+
 
 create a calendarEvent
 
@@ -356,7 +345,7 @@ create a calendarEvent
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\CalendarEventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$calendar_event = new \kruegge82\weclapp\Model\CalendarEvent(); // \kruegge82\weclapp\Model\CalendarEvent
+$body = new \kruegge82\weclapp\Model\CalendarEvent(); // \kruegge82\weclapp\Model\CalendarEvent
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->calendarEventPost($calendar_event, $dry_run);
+    $result = $apiInstance->calendarEventPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CalendarEventApi->calendarEventPost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **calendar_event** | [**\kruegge82\weclapp\Model\CalendarEvent**](../Model/CalendarEvent.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CalendarEvent**](../Model/CalendarEvent.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] [readonly]
-**created_date** | **int** |  | [optional] [readonly]
-**last_modified_date** | **int** |  | [optional] [readonly]
+**id** | **string** |  | [optional]
 **version** | **string** |  | [optional]
-**permission_type** | [**\kruegge82\weclapp\Model\CustomAttributeDefinitionPermissionType**](CustomAttributeDefinitionPermissionType.md) |  | [optional]
+**created_date** | **int** |  | [optional]
+**last_modified_date** | **int** |  | [optional]
+**permission_type** | **string** |  |
 **user_role_id** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

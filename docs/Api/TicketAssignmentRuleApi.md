@@ -1,24 +1,24 @@
 # kruegge82\weclapp\TicketAssignmentRuleApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**ticketAssignmentRuleCountGet()**](TicketAssignmentRuleApi.md#ticketAssignmentRuleCountGet) | **GET** /ticketAssignmentRule/count | count ticketAssignmentRule |
-| [**ticketAssignmentRuleGet()**](TicketAssignmentRuleApi.md#ticketAssignmentRuleGet) | **GET** /ticketAssignmentRule | query ticketAssignmentRule |
-| [**ticketAssignmentRuleIdIdDelete()**](TicketAssignmentRuleApi.md#ticketAssignmentRuleIdIdDelete) | **DELETE** /ticketAssignmentRule/id/{id} | delete a ticketAssignmentRule |
-| [**ticketAssignmentRuleIdIdGet()**](TicketAssignmentRuleApi.md#ticketAssignmentRuleIdIdGet) | **GET** /ticketAssignmentRule/id/{id} | query a specific ticketAssignmentRule |
-| [**ticketAssignmentRuleIdIdPut()**](TicketAssignmentRuleApi.md#ticketAssignmentRuleIdIdPut) | **PUT** /ticketAssignmentRule/id/{id} | update a ticketAssignmentRule |
-| [**ticketAssignmentRulePost()**](TicketAssignmentRuleApi.md#ticketAssignmentRulePost) | **POST** /ticketAssignmentRule | create a ticketAssignmentRule |
+| [**ticketAssignmentRuleCountGet()**](TicketAssignmentRuleApi.md#ticketAssignmentRuleCountGet) | **GET** /ticketAssignmentRule/count |  |
+| [**ticketAssignmentRuleGet()**](TicketAssignmentRuleApi.md#ticketAssignmentRuleGet) | **GET** /ticketAssignmentRule |  |
+| [**ticketAssignmentRuleIdIdDelete()**](TicketAssignmentRuleApi.md#ticketAssignmentRuleIdIdDelete) | **DELETE** /ticketAssignmentRule/id/{id} |  |
+| [**ticketAssignmentRuleIdIdGet()**](TicketAssignmentRuleApi.md#ticketAssignmentRuleIdIdGet) | **GET** /ticketAssignmentRule/id/{id} |  |
+| [**ticketAssignmentRuleIdIdPut()**](TicketAssignmentRuleApi.md#ticketAssignmentRuleIdIdPut) | **PUT** /ticketAssignmentRule/id/{id} |  |
+| [**ticketAssignmentRulePost()**](TicketAssignmentRuleApi.md#ticketAssignmentRulePost) | **POST** /ticketAssignmentRule |  |
 
 
 ## `ticketAssignmentRuleCountGet()`
 
 ```php
-ticketAssignmentRuleCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+ticketAssignmentRuleCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count ticketAssignmentRule
+
 
 count ticketAssignmentRule
 
@@ -29,7 +29,7 @@ count ticketAssignmentRule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\TicketAssignmentRuleApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->ticketAssignmentRuleCountGet($filter);
+    $result = $apiInstance->ticketAssignmentRuleCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketAssignmentRuleApi->ticketAssignmentRuleCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `ticketAssignmentRuleGet()`
 
 ```php
-ticketAssignmentRuleGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\TicketAssignmentRuleGet200Response
+ticketAssignmentRuleGet($page, $page_size, $sort): \kruegge82\weclapp\Model\TicketAssignmentRuleGet200Response
 ```
 
-query ticketAssignmentRule
+
 
 query ticketAssignmentRule
 
@@ -91,7 +88,7 @@ query ticketAssignmentRule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\TicketAssignmentRuleApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->ticketAssignmentRuleGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->ticketAssignmentRuleGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketAssignmentRuleApi->ticketAssignmentRuleGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 ticketAssignmentRuleIdIdDelete($id, $dry_run)
 ```
 
-delete a ticketAssignmentRule
+
 
 delete a ticketAssignmentRule
 
@@ -165,7 +154,7 @@ delete a ticketAssignmentRule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 ticketAssignmentRuleIdIdGet($id): \kruegge82\weclapp\Model\TicketAssignmentRule
 ```
 
-query a specific ticketAssignmentRule
 
-query a specific ticketAssignmentRule
+
+query ticketAssignmentRule
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific ticketAssignmentRule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `ticketAssignmentRuleIdIdPut()`
 
 ```php
-ticketAssignmentRuleIdIdPut($id, $ticket_assignment_rule, $dry_run): \kruegge82\weclapp\Model\TicketAssignmentRule
+ticketAssignmentRuleIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\TicketAssignmentRule
 ```
 
-update a ticketAssignmentRule
+
 
 update ticketAssignmentRule
 
@@ -290,7 +279,7 @@ update ticketAssignmentRule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\TicketAssignmentRuleApi(
     $config
 );
 $id = 'id_example'; // string
-$ticket_assignment_rule = new \kruegge82\weclapp\Model\TicketAssignmentRule(); // \kruegge82\weclapp\Model\TicketAssignmentRule
+$body = new \kruegge82\weclapp\Model\TicketAssignmentRule(); // \kruegge82\weclapp\Model\TicketAssignmentRule
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->ticketAssignmentRuleIdIdPut($id, $ticket_assignment_rule, $dry_run);
+    $result = $apiInstance->ticketAssignmentRuleIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketAssignmentRuleApi->ticketAssignmentRuleIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **ticket_assignment_rule** | [**\kruegge82\weclapp\Model\TicketAssignmentRule**](../Model/TicketAssignmentRule.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\TicketAssignmentRule**](../Model/TicketAssignmentRule.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `ticketAssignmentRulePost()`
 
 ```php
-ticketAssignmentRulePost($ticket_assignment_rule, $dry_run): \kruegge82\weclapp\Model\TicketAssignmentRule
+ticketAssignmentRulePost($body, $dry_run): \kruegge82\weclapp\Model\TicketAssignmentRule
 ```
 
-create a ticketAssignmentRule
+
 
 create a ticketAssignmentRule
 
@@ -356,7 +345,7 @@ create a ticketAssignmentRule
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\TicketAssignmentRuleApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ticket_assignment_rule = new \kruegge82\weclapp\Model\TicketAssignmentRule(); // \kruegge82\weclapp\Model\TicketAssignmentRule
+$body = new \kruegge82\weclapp\Model\TicketAssignmentRule(); // \kruegge82\weclapp\Model\TicketAssignmentRule
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->ticketAssignmentRulePost($ticket_assignment_rule, $dry_run);
+    $result = $apiInstance->ticketAssignmentRulePost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketAssignmentRuleApi->ticketAssignmentRulePost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ticket_assignment_rule** | [**\kruegge82\weclapp\Model\TicketAssignmentRule**](../Model/TicketAssignmentRule.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\TicketAssignmentRule**](../Model/TicketAssignmentRule.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

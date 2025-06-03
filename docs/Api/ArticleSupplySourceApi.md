@@ -1,24 +1,24 @@
 # kruegge82\weclapp\ArticleSupplySourceApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**articleSupplySourceCountGet()**](ArticleSupplySourceApi.md#articleSupplySourceCountGet) | **GET** /articleSupplySource/count | count articleSupplySource |
-| [**articleSupplySourceGet()**](ArticleSupplySourceApi.md#articleSupplySourceGet) | **GET** /articleSupplySource | query articleSupplySource |
-| [**articleSupplySourceIdIdDelete()**](ArticleSupplySourceApi.md#articleSupplySourceIdIdDelete) | **DELETE** /articleSupplySource/id/{id} | delete a articleSupplySource |
-| [**articleSupplySourceIdIdGet()**](ArticleSupplySourceApi.md#articleSupplySourceIdIdGet) | **GET** /articleSupplySource/id/{id} | query a specific articleSupplySource |
-| [**articleSupplySourceIdIdPut()**](ArticleSupplySourceApi.md#articleSupplySourceIdIdPut) | **PUT** /articleSupplySource/id/{id} | update a articleSupplySource |
-| [**articleSupplySourcePost()**](ArticleSupplySourceApi.md#articleSupplySourcePost) | **POST** /articleSupplySource | create a articleSupplySource |
+| [**articleSupplySourceCountGet()**](ArticleSupplySourceApi.md#articleSupplySourceCountGet) | **GET** /articleSupplySource/count |  |
+| [**articleSupplySourceGet()**](ArticleSupplySourceApi.md#articleSupplySourceGet) | **GET** /articleSupplySource |  |
+| [**articleSupplySourceIdIdDelete()**](ArticleSupplySourceApi.md#articleSupplySourceIdIdDelete) | **DELETE** /articleSupplySource/id/{id} |  |
+| [**articleSupplySourceIdIdGet()**](ArticleSupplySourceApi.md#articleSupplySourceIdIdGet) | **GET** /articleSupplySource/id/{id} |  |
+| [**articleSupplySourceIdIdPut()**](ArticleSupplySourceApi.md#articleSupplySourceIdIdPut) | **PUT** /articleSupplySource/id/{id} |  |
+| [**articleSupplySourcePost()**](ArticleSupplySourceApi.md#articleSupplySourcePost) | **POST** /articleSupplySource |  |
 
 
 ## `articleSupplySourceCountGet()`
 
 ```php
-articleSupplySourceCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+articleSupplySourceCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count articleSupplySource
+
 
 count articleSupplySource
 
@@ -29,7 +29,7 @@ count articleSupplySource
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleSupplySourceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->articleSupplySourceCountGet($filter);
+    $result = $apiInstance->articleSupplySourceCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleSupplySourceApi->articleSupplySourceCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `articleSupplySourceGet()`
 
 ```php
-articleSupplySourceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\ArticleSupplySourceGet200Response
+articleSupplySourceGet($page, $page_size, $sort, $additional_properties): \kruegge82\weclapp\Model\ArticleSupplySourceGet200Response
 ```
 
-query articleSupplySource
+
 
 query articleSupplySource
 
@@ -91,7 +88,7 @@ query articleSupplySource
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,15 +102,11 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleSupplySourceApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 $additional_properties = 'additional_properties_example'; // string
 
 try {
-    $result = $apiInstance->articleSupplySourceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
+    $result = $apiInstance->articleSupplySourceGet($page, $page_size, $sort, $additional_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleSupplySourceApi->articleSupplySourceGet: ', $e->getMessage(), PHP_EOL;
@@ -126,11 +119,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 | **additional_properties** | **string**|  | [optional] |
 
 ### Return type
@@ -139,7 +128,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -156,7 +145,7 @@ try {
 articleSupplySourceIdIdDelete($id, $dry_run)
 ```
 
-delete a articleSupplySource
+
 
 delete a articleSupplySource
 
@@ -167,7 +156,7 @@ delete a articleSupplySource
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -202,7 +191,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -219,9 +208,9 @@ void (empty response body)
 articleSupplySourceIdIdGet($id): \kruegge82\weclapp\Model\ArticleSupplySource
 ```
 
-query a specific articleSupplySource
 
-query a specific articleSupplySource
+
+query articleSupplySource
 
 ### Example
 
@@ -230,7 +219,7 @@ query a specific articleSupplySource
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -264,7 +253,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -278,10 +267,10 @@ try {
 ## `articleSupplySourceIdIdPut()`
 
 ```php
-articleSupplySourceIdIdPut($id, $article_supply_source, $dry_run): \kruegge82\weclapp\Model\ArticleSupplySource
+articleSupplySourceIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\ArticleSupplySource
 ```
 
-update a articleSupplySource
+
 
 update articleSupplySource
 
@@ -292,7 +281,7 @@ update articleSupplySource
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -305,11 +294,11 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleSupplySourceApi(
     $config
 );
 $id = 'id_example'; // string
-$article_supply_source = new \kruegge82\weclapp\Model\ArticleSupplySource(); // \kruegge82\weclapp\Model\ArticleSupplySource
+$body = new \kruegge82\weclapp\Model\ArticleSupplySource(); // \kruegge82\weclapp\Model\ArticleSupplySource
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->articleSupplySourceIdIdPut($id, $article_supply_source, $dry_run);
+    $result = $apiInstance->articleSupplySourceIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleSupplySourceApi->articleSupplySourceIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -321,7 +310,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **article_supply_source** | [**\kruegge82\weclapp\Model\ArticleSupplySource**](../Model/ArticleSupplySource.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\ArticleSupplySource**](../Model/ArticleSupplySource.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -330,7 +319,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -344,10 +333,10 @@ try {
 ## `articleSupplySourcePost()`
 
 ```php
-articleSupplySourcePost($article_supply_source, $dry_run): \kruegge82\weclapp\Model\ArticleSupplySource
+articleSupplySourcePost($body, $dry_run): \kruegge82\weclapp\Model\ArticleSupplySource
 ```
 
-create a articleSupplySource
+
 
 create a articleSupplySource
 
@@ -358,7 +347,7 @@ create a articleSupplySource
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -370,11 +359,11 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleSupplySourceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$article_supply_source = new \kruegge82\weclapp\Model\ArticleSupplySource(); // \kruegge82\weclapp\Model\ArticleSupplySource
+$body = new \kruegge82\weclapp\Model\ArticleSupplySource(); // \kruegge82\weclapp\Model\ArticleSupplySource
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->articleSupplySourcePost($article_supply_source, $dry_run);
+    $result = $apiInstance->articleSupplySourcePost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleSupplySourceApi->articleSupplySourcePost: ', $e->getMessage(), PHP_EOL;
@@ -385,7 +374,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **article_supply_source** | [**\kruegge82\weclapp\Model\ArticleSupplySource**](../Model/ArticleSupplySource.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\ArticleSupplySource**](../Model/ArticleSupplySource.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -394,7 +383,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

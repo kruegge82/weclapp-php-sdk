@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] [readonly]
-**created_date** | **int** |  | [optional] [readonly]
-**last_modified_date** | **int** |  | [optional] [readonly]
+**id** | **string** |  | [optional]
 **version** | **string** |  | [optional]
-**quantity** | **float** |  | [optional]
-**shipment_item_id** | **string** |  | [optional]
-**supplier_order_item_id** | **string** |  | [optional]
+**created_date** | **int** |  | [optional]
+**incoming_goods_item_id** | **string** |  | [optional]
+**last_modified_date** | **int** |  | [optional]
+**purchase_order_item_id** | **string** |  | [optional]
+**quantity** | **float** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

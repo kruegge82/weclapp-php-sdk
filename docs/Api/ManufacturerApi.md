@@ -1,24 +1,24 @@
 # kruegge82\weclapp\ManufacturerApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**manufacturerCountGet()**](ManufacturerApi.md#manufacturerCountGet) | **GET** /manufacturer/count | count manufacturer |
-| [**manufacturerGet()**](ManufacturerApi.md#manufacturerGet) | **GET** /manufacturer | query manufacturer |
-| [**manufacturerIdIdDelete()**](ManufacturerApi.md#manufacturerIdIdDelete) | **DELETE** /manufacturer/id/{id} | delete a manufacturer |
-| [**manufacturerIdIdGet()**](ManufacturerApi.md#manufacturerIdIdGet) | **GET** /manufacturer/id/{id} | query a specific manufacturer |
-| [**manufacturerIdIdPut()**](ManufacturerApi.md#manufacturerIdIdPut) | **PUT** /manufacturer/id/{id} | update a manufacturer |
-| [**manufacturerPost()**](ManufacturerApi.md#manufacturerPost) | **POST** /manufacturer | create a manufacturer |
+| [**manufacturerCountGet()**](ManufacturerApi.md#manufacturerCountGet) | **GET** /manufacturer/count |  |
+| [**manufacturerGet()**](ManufacturerApi.md#manufacturerGet) | **GET** /manufacturer |  |
+| [**manufacturerIdIdDelete()**](ManufacturerApi.md#manufacturerIdIdDelete) | **DELETE** /manufacturer/id/{id} |  |
+| [**manufacturerIdIdGet()**](ManufacturerApi.md#manufacturerIdIdGet) | **GET** /manufacturer/id/{id} |  |
+| [**manufacturerIdIdPut()**](ManufacturerApi.md#manufacturerIdIdPut) | **PUT** /manufacturer/id/{id} |  |
+| [**manufacturerPost()**](ManufacturerApi.md#manufacturerPost) | **POST** /manufacturer |  |
 
 
 ## `manufacturerCountGet()`
 
 ```php
-manufacturerCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+manufacturerCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count manufacturer
+
 
 count manufacturer
 
@@ -29,7 +29,7 @@ count manufacturer
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\ManufacturerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->manufacturerCountGet($filter);
+    $result = $apiInstance->manufacturerCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ManufacturerApi->manufacturerCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `manufacturerGet()`
 
 ```php
-manufacturerGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ManufacturerGet200Response
+manufacturerGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ManufacturerGet200Response
 ```
 
-query manufacturer
+
 
 query manufacturer
 
@@ -91,7 +88,7 @@ query manufacturer
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\ManufacturerApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->manufacturerGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->manufacturerGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ManufacturerApi->manufacturerGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 manufacturerIdIdDelete($id, $dry_run)
 ```
 
-delete a manufacturer
+
 
 delete a manufacturer
 
@@ -165,7 +154,7 @@ delete a manufacturer
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 manufacturerIdIdGet($id): \kruegge82\weclapp\Model\Manufacturer
 ```
 
-query a specific manufacturer
 
-query a specific manufacturer
+
+query manufacturer
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific manufacturer
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `manufacturerIdIdPut()`
 
 ```php
-manufacturerIdIdPut($id, $manufacturer, $dry_run): \kruegge82\weclapp\Model\Manufacturer
+manufacturerIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Manufacturer
 ```
 
-update a manufacturer
+
 
 update manufacturer
 
@@ -290,7 +279,7 @@ update manufacturer
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\ManufacturerApi(
     $config
 );
 $id = 'id_example'; // string
-$manufacturer = new \kruegge82\weclapp\Model\Manufacturer(); // \kruegge82\weclapp\Model\Manufacturer
+$body = new \kruegge82\weclapp\Model\Manufacturer(); // \kruegge82\weclapp\Model\Manufacturer
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->manufacturerIdIdPut($id, $manufacturer, $dry_run);
+    $result = $apiInstance->manufacturerIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ManufacturerApi->manufacturerIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **manufacturer** | [**\kruegge82\weclapp\Model\Manufacturer**](../Model/Manufacturer.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Manufacturer**](../Model/Manufacturer.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `manufacturerPost()`
 
 ```php
-manufacturerPost($manufacturer, $dry_run): \kruegge82\weclapp\Model\Manufacturer
+manufacturerPost($body, $dry_run): \kruegge82\weclapp\Model\Manufacturer
 ```
 
-create a manufacturer
+
 
 create a manufacturer
 
@@ -356,7 +345,7 @@ create a manufacturer
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\ManufacturerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$manufacturer = new \kruegge82\weclapp\Model\Manufacturer(); // \kruegge82\weclapp\Model\Manufacturer
+$body = new \kruegge82\weclapp\Model\Manufacturer(); // \kruegge82\weclapp\Model\Manufacturer
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->manufacturerPost($manufacturer, $dry_run);
+    $result = $apiInstance->manufacturerPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ManufacturerApi->manufacturerPost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **manufacturer** | [**\kruegge82\weclapp\Model\Manufacturer**](../Model/Manufacturer.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Manufacturer**](../Model/Manufacturer.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | [**\kruegge82\weclapp\Model\PurchaseInvoiceStatusType**](PurchaseInvoiceStatusType.md) |  | [optional]
+**status** | **string** |  | [optional]
 **status_date** | **int** |  | [optional]
 **user_id** | **string** |  | [optional]
 

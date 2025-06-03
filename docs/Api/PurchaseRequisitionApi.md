@@ -1,24 +1,24 @@
 # kruegge82\weclapp\PurchaseRequisitionApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**purchaseRequisitionCountGet()**](PurchaseRequisitionApi.md#purchaseRequisitionCountGet) | **GET** /purchaseRequisition/count | count purchaseRequisition |
+| [**purchaseRequisitionCountGet()**](PurchaseRequisitionApi.md#purchaseRequisitionCountGet) | **GET** /purchaseRequisition/count |  |
 | [**purchaseRequisitionDeleteAllRequisitionsPost()**](PurchaseRequisitionApi.md#purchaseRequisitionDeleteAllRequisitionsPost) | **POST** /purchaseRequisition/deleteAllRequisitions |  |
-| [**purchaseRequisitionGet()**](PurchaseRequisitionApi.md#purchaseRequisitionGet) | **GET** /purchaseRequisition | query purchaseRequisition |
-| [**purchaseRequisitionIdIdGet()**](PurchaseRequisitionApi.md#purchaseRequisitionIdIdGet) | **GET** /purchaseRequisition/id/{id} | query a specific purchaseRequisition |
-| [**purchaseRequisitionIdIdPut()**](PurchaseRequisitionApi.md#purchaseRequisitionIdIdPut) | **PUT** /purchaseRequisition/id/{id} | update a purchaseRequisition |
+| [**purchaseRequisitionGet()**](PurchaseRequisitionApi.md#purchaseRequisitionGet) | **GET** /purchaseRequisition |  |
+| [**purchaseRequisitionIdIdGet()**](PurchaseRequisitionApi.md#purchaseRequisitionIdIdGet) | **GET** /purchaseRequisition/id/{id} |  |
+| [**purchaseRequisitionIdIdPut()**](PurchaseRequisitionApi.md#purchaseRequisitionIdIdPut) | **PUT** /purchaseRequisition/id/{id} |  |
 | [**purchaseRequisitionStartMaterialPlanningRunPost()**](PurchaseRequisitionApi.md#purchaseRequisitionStartMaterialPlanningRunPost) | **POST** /purchaseRequisition/startMaterialPlanningRun |  |
 
 
 ## `purchaseRequisitionCountGet()`
 
 ```php
-purchaseRequisitionCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+purchaseRequisitionCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count purchaseRequisition
+
 
 count purchaseRequisition
 
@@ -29,7 +29,7 @@ count purchaseRequisition
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseRequisitionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->purchaseRequisitionCountGet($filter);
+    $result = $apiInstance->purchaseRequisitionCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseRequisitionApi->purchaseRequisitionCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -89,7 +86,7 @@ purchaseRequisitionDeleteAllRequisitionsPost($body)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -122,7 +119,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -136,10 +133,10 @@ void (empty response body)
 ## `purchaseRequisitionGet()`
 
 ```php
-purchaseRequisitionGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\PurchaseRequisitionGet200Response
+purchaseRequisitionGet($page, $page_size, $sort): \kruegge82\weclapp\Model\PurchaseRequisitionGet200Response
 ```
 
-query purchaseRequisition
+
 
 query purchaseRequisition
 
@@ -150,7 +147,7 @@ query purchaseRequisition
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -164,14 +161,10 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseRequisitionApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->purchaseRequisitionGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->purchaseRequisitionGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseRequisitionApi->purchaseRequisitionGet: ', $e->getMessage(), PHP_EOL;
@@ -184,11 +177,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -196,7 +185,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -213,9 +202,9 @@ try {
 purchaseRequisitionIdIdGet($id): \kruegge82\weclapp\Model\PurchaseRequisition
 ```
 
-query a specific purchaseRequisition
 
-query a specific purchaseRequisition
+
+query purchaseRequisition
 
 ### Example
 
@@ -224,7 +213,7 @@ query a specific purchaseRequisition
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -258,7 +247,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -272,10 +261,10 @@ try {
 ## `purchaseRequisitionIdIdPut()`
 
 ```php
-purchaseRequisitionIdIdPut($id, $purchase_requisition, $dry_run): \kruegge82\weclapp\Model\PurchaseRequisition
+purchaseRequisitionIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\PurchaseRequisition
 ```
 
-update a purchaseRequisition
+
 
 update purchaseRequisition
 
@@ -286,7 +275,7 @@ update purchaseRequisition
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -299,11 +288,11 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseRequisitionApi(
     $config
 );
 $id = 'id_example'; // string
-$purchase_requisition = new \kruegge82\weclapp\Model\PurchaseRequisition(); // \kruegge82\weclapp\Model\PurchaseRequisition
+$body = new \kruegge82\weclapp\Model\PurchaseRequisition(); // \kruegge82\weclapp\Model\PurchaseRequisition
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->purchaseRequisitionIdIdPut($id, $purchase_requisition, $dry_run);
+    $result = $apiInstance->purchaseRequisitionIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseRequisitionApi->purchaseRequisitionIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -315,7 +304,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **purchase_requisition** | [**\kruegge82\weclapp\Model\PurchaseRequisition**](../Model/PurchaseRequisition.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\PurchaseRequisition**](../Model/PurchaseRequisition.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -324,7 +313,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -338,7 +327,7 @@ try {
 ## `purchaseRequisitionStartMaterialPlanningRunPost()`
 
 ```php
-purchaseRequisitionStartMaterialPlanningRunPost($purchase_requisition_start_material_planning_run_post_request): \kruegge82\weclapp\Model\JobAbortGet200Response
+purchaseRequisitionStartMaterialPlanningRunPost($body): \kruegge82\weclapp\Model\JobAbortGet200Response
 ```
 
 
@@ -350,7 +339,7 @@ purchaseRequisitionStartMaterialPlanningRunPost($purchase_requisition_start_mate
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -362,10 +351,10 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseRequisitionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$purchase_requisition_start_material_planning_run_post_request = new \kruegge82\weclapp\Model\PurchaseRequisitionStartMaterialPlanningRunPostRequest(); // \kruegge82\weclapp\Model\PurchaseRequisitionStartMaterialPlanningRunPostRequest
+$body = new \kruegge82\weclapp\Model\PurchaseRequisitionStartMaterialPlanningRunPostRequest(); // \kruegge82\weclapp\Model\PurchaseRequisitionStartMaterialPlanningRunPostRequest
 
 try {
-    $result = $apiInstance->purchaseRequisitionStartMaterialPlanningRunPost($purchase_requisition_start_material_planning_run_post_request);
+    $result = $apiInstance->purchaseRequisitionStartMaterialPlanningRunPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseRequisitionApi->purchaseRequisitionStartMaterialPlanningRunPost: ', $e->getMessage(), PHP_EOL;
@@ -376,7 +365,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **purchase_requisition_start_material_planning_run_post_request** | [**\kruegge82\weclapp\Model\PurchaseRequisitionStartMaterialPlanningRunPostRequest**](../Model/PurchaseRequisitionStartMaterialPlanningRunPostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\PurchaseRequisitionStartMaterialPlanningRunPostRequest**](../Model/PurchaseRequisitionStartMaterialPlanningRunPostRequest.md)|  | |
 
 ### Return type
 
@@ -384,7 +373,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

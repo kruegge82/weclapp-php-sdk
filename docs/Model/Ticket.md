@@ -4,11 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] [readonly]
-**created_date** | **int** |  | [optional] [readonly]
-**last_modified_date** | **int** |  | [optional] [readonly]
+**id** | **string** |  | [optional]
 **version** | **string** |  | [optional]
-**custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
 **assigned_pooling_group_id** | **string** |  | [optional]
 **assigned_user_id** | **string** |  | [optional]
 **billable** | **bool** |  | [optional]
@@ -16,6 +13,8 @@ Name | Type | Description | Notes
 **cc_email_addresses** | **string** |  | [optional]
 **contact_id** | **string** |  | [optional]
 **contract_id** | **string** |  | [optional]
+**created_date** | **int** |  | [optional]
+**custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
 **description** | **string** |  | [optional]
 **disable_email_templates** | **bool** |  | [optional]
 **email** | **string** |  | [optional]
@@ -23,9 +22,10 @@ Name | Type | Description | Notes
 **finished_date** | **int** |  | [optional]
 **first_name** | **string** |  | [optional]
 **follow_up_date** | **int** |  | [optional]
-**invoicing_status** | [**\kruegge82\weclapp\Model\BillableInvoiceStatus**](BillableInvoiceStatus.md) |  | [optional]
+**invoicing_status** | **string** |  | [optional]
 **is_template** | **bool** |  | [optional]
 **language** | **string** |  | [optional]
+**last_modified_date** | **int** |  | [optional]
 **last_name** | **string** |  | [optional]
 **legacy_article_id** | **string** |  | [optional]
 **legacy_time_and_material_ticket** | **bool** |  | [optional]
@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **mobile_phone_number** | **string** |  | [optional]
 **note** | **string** |  | [optional]
 **party_id** | **string** |  | [optional]
-**performance_recorded_status** | [**\kruegge82\weclapp\Model\PerformanceRecordedStatus**](PerformanceRecordedStatus.md) |  | [optional]
+**performance_recorded_status** | **string** |  | [optional]
 **phone_number** | **string** |  | [optional]
 **public_page_expiration_date** | **int** |  | [optional]
 **public_page_uuid** | **string** |  | [optional]
@@ -47,12 +47,12 @@ Name | Type | Description | Notes
 **ticket_category_id** | **string** |  | [optional]
 **ticket_channel_id** | **string** |  | [optional]
 **ticket_number** | **string** |  | [optional]
-**ticket_priority_id** | **string** |  | [optional]
-**ticket_rating** | [**\kruegge82\weclapp\Model\Rating**](Rating.md) |  | [optional]
+**ticket_priority_id** | **string** |  |
+**ticket_rating** | **string** |  | [optional]
 **ticket_rating_comment** | **string** |  | [optional]
 **ticket_rating_date** | **int** |  | [optional]
 **ticket_service_level_agreement_id** | **string** |  | [optional]
-**ticket_status_id** | **string** |  | [optional]
+**ticket_status_id** | **string** |  |
 **ticket_type_id** | **string** |  | [optional]
 **watchers** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
 

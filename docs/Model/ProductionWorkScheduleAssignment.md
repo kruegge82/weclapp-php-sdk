@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] [readonly]
-**created_date** | **int** |  | [optional] [readonly]
-**last_modified_date** | **int** |  | [optional] [readonly]
+**id** | **string** |  | [optional]
 **version** | **string** |  | [optional]
-**custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
 **alternative** | **bool** |  | [optional]
-**article_id** | **string** |  | [optional]
-**production_work_schedule_id** | **string** |  | [optional]
+**article_id** | **string** |  |
+**created_date** | **int** |  | [optional]
+**custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
+**last_modified_date** | **int** |  | [optional]
+**production_work_schedule_id** | **string** |  |
 **valid_from** | **int** |  | [optional]
 **valid_to** | **int** |  | [optional]
 

@@ -1,24 +1,24 @@
 # kruegge82\weclapp\WebhookApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**webhookCountGet()**](WebhookApi.md#webhookCountGet) | **GET** /webhook/count | count webhook |
-| [**webhookGet()**](WebhookApi.md#webhookGet) | **GET** /webhook | query webhook |
-| [**webhookIdIdDelete()**](WebhookApi.md#webhookIdIdDelete) | **DELETE** /webhook/id/{id} | delete a webhook |
-| [**webhookIdIdGet()**](WebhookApi.md#webhookIdIdGet) | **GET** /webhook/id/{id} | query a specific webhook |
-| [**webhookIdIdPut()**](WebhookApi.md#webhookIdIdPut) | **PUT** /webhook/id/{id} | update a webhook |
-| [**webhookPost()**](WebhookApi.md#webhookPost) | **POST** /webhook | create a webhook |
+| [**webhookCountGet()**](WebhookApi.md#webhookCountGet) | **GET** /webhook/count |  |
+| [**webhookGet()**](WebhookApi.md#webhookGet) | **GET** /webhook |  |
+| [**webhookIdIdDelete()**](WebhookApi.md#webhookIdIdDelete) | **DELETE** /webhook/id/{id} |  |
+| [**webhookIdIdGet()**](WebhookApi.md#webhookIdIdGet) | **GET** /webhook/id/{id} |  |
+| [**webhookIdIdPut()**](WebhookApi.md#webhookIdIdPut) | **PUT** /webhook/id/{id} |  |
+| [**webhookPost()**](WebhookApi.md#webhookPost) | **POST** /webhook |  |
 
 
 ## `webhookCountGet()`
 
 ```php
-webhookCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+webhookCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count webhook
+
 
 count webhook
 
@@ -29,7 +29,7 @@ count webhook
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\WebhookApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->webhookCountGet($filter);
+    $result = $apiInstance->webhookCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->webhookCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `webhookGet()`
 
 ```php
-webhookGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\WebhookGet200Response
+webhookGet($page, $page_size, $sort): \kruegge82\weclapp\Model\WebhookGet200Response
 ```
 
-query webhook
+
 
 query webhook
 
@@ -91,7 +88,7 @@ query webhook
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\WebhookApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->webhookGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->webhookGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->webhookGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 webhookIdIdDelete($id, $dry_run)
 ```
 
-delete a webhook
+
 
 delete a webhook
 
@@ -165,7 +154,7 @@ delete a webhook
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 webhookIdIdGet($id): \kruegge82\weclapp\Model\Webhook
 ```
 
-query a specific webhook
 
-query a specific webhook
+
+query webhook
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific webhook
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `webhookIdIdPut()`
 
 ```php
-webhookIdIdPut($id, $webhook, $dry_run): \kruegge82\weclapp\Model\Webhook
+webhookIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Webhook
 ```
 
-update a webhook
+
 
 update webhook
 
@@ -290,7 +279,7 @@ update webhook
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\WebhookApi(
     $config
 );
 $id = 'id_example'; // string
-$webhook = new \kruegge82\weclapp\Model\Webhook(); // \kruegge82\weclapp\Model\Webhook
+$body = new \kruegge82\weclapp\Model\Webhook(); // \kruegge82\weclapp\Model\Webhook
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->webhookIdIdPut($id, $webhook, $dry_run);
+    $result = $apiInstance->webhookIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->webhookIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **webhook** | [**\kruegge82\weclapp\Model\Webhook**](../Model/Webhook.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Webhook**](../Model/Webhook.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `webhookPost()`
 
 ```php
-webhookPost($webhook, $dry_run): \kruegge82\weclapp\Model\Webhook
+webhookPost($body, $dry_run): \kruegge82\weclapp\Model\Webhook
 ```
 
-create a webhook
+
 
 create a webhook
 
@@ -356,7 +345,7 @@ create a webhook
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\WebhookApi(
     new GuzzleHttp\Client(),
     $config
 );
-$webhook = new \kruegge82\weclapp\Model\Webhook(); // \kruegge82\weclapp\Model\Webhook
+$body = new \kruegge82\weclapp\Model\Webhook(); // \kruegge82\weclapp\Model\Webhook
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->webhookPost($webhook, $dry_run);
+    $result = $apiInstance->webhookPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->webhookPost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **webhook** | [**\kruegge82\weclapp\Model\Webhook**](../Model/Webhook.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Webhook**](../Model/Webhook.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

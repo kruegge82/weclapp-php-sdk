@@ -1,15 +1,15 @@
 # kruegge82\weclapp\CustomAttributeDefinitionApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**customAttributeDefinitionCountGet()**](CustomAttributeDefinitionApi.md#customAttributeDefinitionCountGet) | **GET** /customAttributeDefinition/count | count customAttributeDefinition |
-| [**customAttributeDefinitionGet()**](CustomAttributeDefinitionApi.md#customAttributeDefinitionGet) | **GET** /customAttributeDefinition | query customAttributeDefinition |
-| [**customAttributeDefinitionIdIdDelete()**](CustomAttributeDefinitionApi.md#customAttributeDefinitionIdIdDelete) | **DELETE** /customAttributeDefinition/id/{id} | delete a customAttributeDefinition |
-| [**customAttributeDefinitionIdIdGet()**](CustomAttributeDefinitionApi.md#customAttributeDefinitionIdIdGet) | **GET** /customAttributeDefinition/id/{id} | query a specific customAttributeDefinition |
-| [**customAttributeDefinitionIdIdPut()**](CustomAttributeDefinitionApi.md#customAttributeDefinitionIdIdPut) | **PUT** /customAttributeDefinition/id/{id} | update a customAttributeDefinition |
-| [**customAttributeDefinitionPost()**](CustomAttributeDefinitionApi.md#customAttributeDefinitionPost) | **POST** /customAttributeDefinition | create a customAttributeDefinition |
+| [**customAttributeDefinitionCountGet()**](CustomAttributeDefinitionApi.md#customAttributeDefinitionCountGet) | **GET** /customAttributeDefinition/count |  |
+| [**customAttributeDefinitionGet()**](CustomAttributeDefinitionApi.md#customAttributeDefinitionGet) | **GET** /customAttributeDefinition |  |
+| [**customAttributeDefinitionIdIdDelete()**](CustomAttributeDefinitionApi.md#customAttributeDefinitionIdIdDelete) | **DELETE** /customAttributeDefinition/id/{id} |  |
+| [**customAttributeDefinitionIdIdGet()**](CustomAttributeDefinitionApi.md#customAttributeDefinitionIdIdGet) | **GET** /customAttributeDefinition/id/{id} |  |
+| [**customAttributeDefinitionIdIdPut()**](CustomAttributeDefinitionApi.md#customAttributeDefinitionIdIdPut) | **PUT** /customAttributeDefinition/id/{id} |  |
+| [**customAttributeDefinitionPost()**](CustomAttributeDefinitionApi.md#customAttributeDefinitionPost) | **POST** /customAttributeDefinition |  |
 | [**customAttributeDefinitionReadOrderGet()**](CustomAttributeDefinitionApi.md#customAttributeDefinitionReadOrderGet) | **GET** /customAttributeDefinition/readOrder |  |
 | [**customAttributeDefinitionUpdateOrderPost()**](CustomAttributeDefinitionApi.md#customAttributeDefinitionUpdateOrderPost) | **POST** /customAttributeDefinition/updateOrder |  |
 
@@ -17,10 +17,10 @@ All URIs are relative to https://localhost:80/webapp/api/v1, except if the opera
 ## `customAttributeDefinitionCountGet()`
 
 ```php
-customAttributeDefinitionCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+customAttributeDefinitionCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count customAttributeDefinition
+
 
 count customAttributeDefinition
 
@@ -31,7 +31,7 @@ count customAttributeDefinition
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -43,10 +43,9 @@ $apiInstance = new kruegge82\weclapp\Api\CustomAttributeDefinitionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->customAttributeDefinitionCountGet($filter);
+    $result = $apiInstance->customAttributeDefinitionCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomAttributeDefinitionApi->customAttributeDefinitionCountGet: ', $e->getMessage(), PHP_EOL;
@@ -55,9 +54,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -65,7 +62,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -79,10 +76,10 @@ try {
 ## `customAttributeDefinitionGet()`
 
 ```php
-customAttributeDefinitionGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\CustomAttributeDefinitionGet200Response
+customAttributeDefinitionGet($page, $page_size, $sort): \kruegge82\weclapp\Model\CustomAttributeDefinitionGet200Response
 ```
 
-query customAttributeDefinition
+
 
 query customAttributeDefinition
 
@@ -93,7 +90,7 @@ query customAttributeDefinition
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -107,14 +104,10 @@ $apiInstance = new kruegge82\weclapp\Api\CustomAttributeDefinitionApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->customAttributeDefinitionGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->customAttributeDefinitionGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomAttributeDefinitionApi->customAttributeDefinitionGet: ', $e->getMessage(), PHP_EOL;
@@ -127,11 +120,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -139,7 +128,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -156,7 +145,7 @@ try {
 customAttributeDefinitionIdIdDelete($id, $dry_run)
 ```
 
-delete a customAttributeDefinition
+
 
 delete a customAttributeDefinition
 
@@ -167,7 +156,7 @@ delete a customAttributeDefinition
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -202,7 +191,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -219,9 +208,9 @@ void (empty response body)
 customAttributeDefinitionIdIdGet($id): \kruegge82\weclapp\Model\CustomAttributeDefinition
 ```
 
-query a specific customAttributeDefinition
 
-query a specific customAttributeDefinition
+
+query customAttributeDefinition
 
 ### Example
 
@@ -230,7 +219,7 @@ query a specific customAttributeDefinition
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -264,7 +253,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -278,10 +267,10 @@ try {
 ## `customAttributeDefinitionIdIdPut()`
 
 ```php
-customAttributeDefinitionIdIdPut($id, $custom_attribute_definition, $dry_run): \kruegge82\weclapp\Model\CustomAttributeDefinition
+customAttributeDefinitionIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\CustomAttributeDefinition
 ```
 
-update a customAttributeDefinition
+
 
 update customAttributeDefinition
 
@@ -292,7 +281,7 @@ update customAttributeDefinition
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -305,11 +294,11 @@ $apiInstance = new kruegge82\weclapp\Api\CustomAttributeDefinitionApi(
     $config
 );
 $id = 'id_example'; // string
-$custom_attribute_definition = new \kruegge82\weclapp\Model\CustomAttributeDefinition(); // \kruegge82\weclapp\Model\CustomAttributeDefinition
+$body = new \kruegge82\weclapp\Model\CustomAttributeDefinition(); // \kruegge82\weclapp\Model\CustomAttributeDefinition
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->customAttributeDefinitionIdIdPut($id, $custom_attribute_definition, $dry_run);
+    $result = $apiInstance->customAttributeDefinitionIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomAttributeDefinitionApi->customAttributeDefinitionIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -321,7 +310,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **custom_attribute_definition** | [**\kruegge82\weclapp\Model\CustomAttributeDefinition**](../Model/CustomAttributeDefinition.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CustomAttributeDefinition**](../Model/CustomAttributeDefinition.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -330,7 +319,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -344,10 +333,10 @@ try {
 ## `customAttributeDefinitionPost()`
 
 ```php
-customAttributeDefinitionPost($custom_attribute_definition, $dry_run): \kruegge82\weclapp\Model\CustomAttributeDefinition
+customAttributeDefinitionPost($body, $dry_run): \kruegge82\weclapp\Model\CustomAttributeDefinition
 ```
 
-create a customAttributeDefinition
+
 
 create a customAttributeDefinition
 
@@ -358,7 +347,7 @@ create a customAttributeDefinition
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -370,11 +359,11 @@ $apiInstance = new kruegge82\weclapp\Api\CustomAttributeDefinitionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$custom_attribute_definition = new \kruegge82\weclapp\Model\CustomAttributeDefinition(); // \kruegge82\weclapp\Model\CustomAttributeDefinition
+$body = new \kruegge82\weclapp\Model\CustomAttributeDefinition(); // \kruegge82\weclapp\Model\CustomAttributeDefinition
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->customAttributeDefinitionPost($custom_attribute_definition, $dry_run);
+    $result = $apiInstance->customAttributeDefinitionPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomAttributeDefinitionApi->customAttributeDefinitionPost: ', $e->getMessage(), PHP_EOL;
@@ -385,7 +374,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **custom_attribute_definition** | [**\kruegge82\weclapp\Model\CustomAttributeDefinition**](../Model/CustomAttributeDefinition.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CustomAttributeDefinition**](../Model/CustomAttributeDefinition.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -394,7 +383,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -420,7 +409,7 @@ customAttributeDefinitionReadOrderGet($entity_type): \kruegge82\weclapp\Model\Cu
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -432,7 +421,7 @@ $apiInstance = new kruegge82\weclapp\Api\CustomAttributeDefinitionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$entity_type = new \kruegge82\weclapp\Model\\kruegge82\weclapp\Model\CustomAttributeExtendableEntity(); // \kruegge82\weclapp\Model\CustomAttributeExtendableEntity
+$entity_type = 'entity_type_example'; // string
 
 try {
     $result = $apiInstance->customAttributeDefinitionReadOrderGet($entity_type);
@@ -446,7 +435,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **entity_type** | [**\kruegge82\weclapp\Model\CustomAttributeExtendableEntity**](../Model/.md)|  | |
+| **entity_type** | **string**|  | |
 
 ### Return type
 
@@ -454,7 +443,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -468,7 +457,7 @@ try {
 ## `customAttributeDefinitionUpdateOrderPost()`
 
 ```php
-customAttributeDefinitionUpdateOrderPost($custom_attribute_definition_update_order_post_request): \kruegge82\weclapp\Model\CustomAttributeDefinitionReadOrderGet200Response
+customAttributeDefinitionUpdateOrderPost($body): \kruegge82\weclapp\Model\CustomAttributeDefinitionReadOrderGet200Response
 ```
 
 
@@ -480,7 +469,7 @@ customAttributeDefinitionUpdateOrderPost($custom_attribute_definition_update_ord
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -492,10 +481,10 @@ $apiInstance = new kruegge82\weclapp\Api\CustomAttributeDefinitionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$custom_attribute_definition_update_order_post_request = new \kruegge82\weclapp\Model\CustomAttributeDefinitionUpdateOrderPostRequest(); // \kruegge82\weclapp\Model\CustomAttributeDefinitionUpdateOrderPostRequest
+$body = new \kruegge82\weclapp\Model\CustomAttributeDefinitionUpdateOrderPostRequest(); // \kruegge82\weclapp\Model\CustomAttributeDefinitionUpdateOrderPostRequest
 
 try {
-    $result = $apiInstance->customAttributeDefinitionUpdateOrderPost($custom_attribute_definition_update_order_post_request);
+    $result = $apiInstance->customAttributeDefinitionUpdateOrderPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomAttributeDefinitionApi->customAttributeDefinitionUpdateOrderPost: ', $e->getMessage(), PHP_EOL;
@@ -506,7 +495,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **custom_attribute_definition_update_order_post_request** | [**\kruegge82\weclapp\Model\CustomAttributeDefinitionUpdateOrderPostRequest**](../Model/CustomAttributeDefinitionUpdateOrderPostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\CustomAttributeDefinitionUpdateOrderPostRequest**](../Model/CustomAttributeDefinitionUpdateOrderPostRequest.md)|  | |
 
 ### Return type
 
@@ -514,7 +503,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

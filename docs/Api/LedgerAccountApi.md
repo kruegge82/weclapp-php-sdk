@@ -1,24 +1,24 @@
 # kruegge82\weclapp\LedgerAccountApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**ledgerAccountCountGet()**](LedgerAccountApi.md#ledgerAccountCountGet) | **GET** /ledgerAccount/count | count ledgerAccount |
-| [**ledgerAccountGet()**](LedgerAccountApi.md#ledgerAccountGet) | **GET** /ledgerAccount | query ledgerAccount |
-| [**ledgerAccountIdIdDelete()**](LedgerAccountApi.md#ledgerAccountIdIdDelete) | **DELETE** /ledgerAccount/id/{id} | delete a ledgerAccount |
-| [**ledgerAccountIdIdGet()**](LedgerAccountApi.md#ledgerAccountIdIdGet) | **GET** /ledgerAccount/id/{id} | query a specific ledgerAccount |
-| [**ledgerAccountIdIdPut()**](LedgerAccountApi.md#ledgerAccountIdIdPut) | **PUT** /ledgerAccount/id/{id} | update a ledgerAccount |
-| [**ledgerAccountPost()**](LedgerAccountApi.md#ledgerAccountPost) | **POST** /ledgerAccount | create a ledgerAccount |
+| [**ledgerAccountCountGet()**](LedgerAccountApi.md#ledgerAccountCountGet) | **GET** /ledgerAccount/count |  |
+| [**ledgerAccountGet()**](LedgerAccountApi.md#ledgerAccountGet) | **GET** /ledgerAccount |  |
+| [**ledgerAccountIdIdDelete()**](LedgerAccountApi.md#ledgerAccountIdIdDelete) | **DELETE** /ledgerAccount/id/{id} |  |
+| [**ledgerAccountIdIdGet()**](LedgerAccountApi.md#ledgerAccountIdIdGet) | **GET** /ledgerAccount/id/{id} |  |
+| [**ledgerAccountIdIdPut()**](LedgerAccountApi.md#ledgerAccountIdIdPut) | **PUT** /ledgerAccount/id/{id} |  |
+| [**ledgerAccountPost()**](LedgerAccountApi.md#ledgerAccountPost) | **POST** /ledgerAccount |  |
 
 
 ## `ledgerAccountCountGet()`
 
 ```php
-ledgerAccountCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+ledgerAccountCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count ledgerAccount
+
 
 count ledgerAccount
 
@@ -29,7 +29,7 @@ count ledgerAccount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\LedgerAccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->ledgerAccountCountGet($filter);
+    $result = $apiInstance->ledgerAccountCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LedgerAccountApi->ledgerAccountCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `ledgerAccountGet()`
 
 ```php
-ledgerAccountGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\LedgerAccountGet200Response
+ledgerAccountGet($page, $page_size, $sort): \kruegge82\weclapp\Model\LedgerAccountGet200Response
 ```
 
-query ledgerAccount
+
 
 query ledgerAccount
 
@@ -91,7 +88,7 @@ query ledgerAccount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\LedgerAccountApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->ledgerAccountGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->ledgerAccountGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LedgerAccountApi->ledgerAccountGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 ledgerAccountIdIdDelete($id, $dry_run)
 ```
 
-delete a ledgerAccount
+
 
 delete a ledgerAccount
 
@@ -165,7 +154,7 @@ delete a ledgerAccount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 ledgerAccountIdIdGet($id): \kruegge82\weclapp\Model\LedgerAccount
 ```
 
-query a specific ledgerAccount
 
-query a specific ledgerAccount
+
+query ledgerAccount
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific ledgerAccount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `ledgerAccountIdIdPut()`
 
 ```php
-ledgerAccountIdIdPut($id, $ledger_account, $dry_run): \kruegge82\weclapp\Model\LedgerAccount
+ledgerAccountIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\LedgerAccount
 ```
 
-update a ledgerAccount
+
 
 update ledgerAccount
 
@@ -290,7 +279,7 @@ update ledgerAccount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\LedgerAccountApi(
     $config
 );
 $id = 'id_example'; // string
-$ledger_account = new \kruegge82\weclapp\Model\LedgerAccount(); // \kruegge82\weclapp\Model\LedgerAccount
+$body = new \kruegge82\weclapp\Model\LedgerAccount(); // \kruegge82\weclapp\Model\LedgerAccount
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->ledgerAccountIdIdPut($id, $ledger_account, $dry_run);
+    $result = $apiInstance->ledgerAccountIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LedgerAccountApi->ledgerAccountIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **ledger_account** | [**\kruegge82\weclapp\Model\LedgerAccount**](../Model/LedgerAccount.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\LedgerAccount**](../Model/LedgerAccount.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `ledgerAccountPost()`
 
 ```php
-ledgerAccountPost($ledger_account, $dry_run): \kruegge82\weclapp\Model\LedgerAccount
+ledgerAccountPost($body, $dry_run): \kruegge82\weclapp\Model\LedgerAccount
 ```
 
-create a ledgerAccount
+
 
 create a ledgerAccount
 
@@ -356,7 +345,7 @@ create a ledgerAccount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\LedgerAccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ledger_account = new \kruegge82\weclapp\Model\LedgerAccount(); // \kruegge82\weclapp\Model\LedgerAccount
+$body = new \kruegge82\weclapp\Model\LedgerAccount(); // \kruegge82\weclapp\Model\LedgerAccount
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->ledgerAccountPost($ledger_account, $dry_run);
+    $result = $apiInstance->ledgerAccountPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LedgerAccountApi->ledgerAccountPost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ledger_account** | [**\kruegge82\weclapp\Model\LedgerAccount**](../Model/LedgerAccount.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\LedgerAccount**](../Model/LedgerAccount.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

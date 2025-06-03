@@ -1,24 +1,24 @@
 # kruegge82\weclapp\ReminderApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**reminderCountGet()**](ReminderApi.md#reminderCountGet) | **GET** /reminder/count | count reminder |
-| [**reminderGet()**](ReminderApi.md#reminderGet) | **GET** /reminder | query reminder |
-| [**reminderIdIdDelete()**](ReminderApi.md#reminderIdIdDelete) | **DELETE** /reminder/id/{id} | delete a reminder |
-| [**reminderIdIdGet()**](ReminderApi.md#reminderIdIdGet) | **GET** /reminder/id/{id} | query a specific reminder |
-| [**reminderIdIdPut()**](ReminderApi.md#reminderIdIdPut) | **PUT** /reminder/id/{id} | update a reminder |
-| [**reminderPost()**](ReminderApi.md#reminderPost) | **POST** /reminder | create a reminder |
+| [**reminderCountGet()**](ReminderApi.md#reminderCountGet) | **GET** /reminder/count |  |
+| [**reminderGet()**](ReminderApi.md#reminderGet) | **GET** /reminder |  |
+| [**reminderIdIdDelete()**](ReminderApi.md#reminderIdIdDelete) | **DELETE** /reminder/id/{id} |  |
+| [**reminderIdIdGet()**](ReminderApi.md#reminderIdIdGet) | **GET** /reminder/id/{id} |  |
+| [**reminderIdIdPut()**](ReminderApi.md#reminderIdIdPut) | **PUT** /reminder/id/{id} |  |
+| [**reminderPost()**](ReminderApi.md#reminderPost) | **POST** /reminder |  |
 
 
 ## `reminderCountGet()`
 
 ```php
-reminderCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+reminderCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count reminder
+
 
 count reminder
 
@@ -29,7 +29,7 @@ count reminder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\ReminderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->reminderCountGet($filter);
+    $result = $apiInstance->reminderCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReminderApi->reminderCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `reminderGet()`
 
 ```php
-reminderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ReminderGet200Response
+reminderGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ReminderGet200Response
 ```
 
-query reminder
+
 
 query reminder
 
@@ -91,7 +88,7 @@ query reminder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\ReminderApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->reminderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->reminderGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReminderApi->reminderGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 reminderIdIdDelete($id, $dry_run)
 ```
 
-delete a reminder
+
 
 delete a reminder
 
@@ -165,7 +154,7 @@ delete a reminder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 reminderIdIdGet($id): \kruegge82\weclapp\Model\Reminder
 ```
 
-query a specific reminder
 
-query a specific reminder
+
+query reminder
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific reminder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `reminderIdIdPut()`
 
 ```php
-reminderIdIdPut($id, $reminder, $dry_run): \kruegge82\weclapp\Model\Reminder
+reminderIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Reminder
 ```
 
-update a reminder
+
 
 update reminder
 
@@ -290,7 +279,7 @@ update reminder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\ReminderApi(
     $config
 );
 $id = 'id_example'; // string
-$reminder = new \kruegge82\weclapp\Model\Reminder(); // \kruegge82\weclapp\Model\Reminder
+$body = new \kruegge82\weclapp\Model\Reminder(); // \kruegge82\weclapp\Model\Reminder
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->reminderIdIdPut($id, $reminder, $dry_run);
+    $result = $apiInstance->reminderIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReminderApi->reminderIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **reminder** | [**\kruegge82\weclapp\Model\Reminder**](../Model/Reminder.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Reminder**](../Model/Reminder.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `reminderPost()`
 
 ```php
-reminderPost($reminder, $dry_run): \kruegge82\weclapp\Model\Reminder
+reminderPost($body, $dry_run): \kruegge82\weclapp\Model\Reminder
 ```
 
-create a reminder
+
 
 create a reminder
 
@@ -356,7 +345,7 @@ create a reminder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\ReminderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$reminder = new \kruegge82\weclapp\Model\Reminder(); // \kruegge82\weclapp\Model\Reminder
+$body = new \kruegge82\weclapp\Model\Reminder(); // \kruegge82\weclapp\Model\Reminder
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->reminderPost($reminder, $dry_run);
+    $result = $apiInstance->reminderPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReminderApi->reminderPost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **reminder** | [**\kruegge82\weclapp\Model\Reminder**](../Model/Reminder.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Reminder**](../Model/Reminder.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

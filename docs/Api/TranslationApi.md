@@ -1,24 +1,24 @@
 # kruegge82\weclapp\TranslationApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**translationCountGet()**](TranslationApi.md#translationCountGet) | **GET** /translation/count | count translation |
-| [**translationGet()**](TranslationApi.md#translationGet) | **GET** /translation | query translation |
-| [**translationIdIdDelete()**](TranslationApi.md#translationIdIdDelete) | **DELETE** /translation/id/{id} | delete a translation |
-| [**translationIdIdGet()**](TranslationApi.md#translationIdIdGet) | **GET** /translation/id/{id} | query a specific translation |
-| [**translationIdIdPut()**](TranslationApi.md#translationIdIdPut) | **PUT** /translation/id/{id} | update a translation |
-| [**translationPost()**](TranslationApi.md#translationPost) | **POST** /translation | create a translation |
+| [**translationCountGet()**](TranslationApi.md#translationCountGet) | **GET** /translation/count |  |
+| [**translationGet()**](TranslationApi.md#translationGet) | **GET** /translation |  |
+| [**translationIdIdDelete()**](TranslationApi.md#translationIdIdDelete) | **DELETE** /translation/id/{id} |  |
+| [**translationIdIdGet()**](TranslationApi.md#translationIdIdGet) | **GET** /translation/id/{id} |  |
+| [**translationIdIdPut()**](TranslationApi.md#translationIdIdPut) | **PUT** /translation/id/{id} |  |
+| [**translationPost()**](TranslationApi.md#translationPost) | **POST** /translation |  |
 
 
 ## `translationCountGet()`
 
 ```php
-translationCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+translationCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count translation
+
 
 count translation
 
@@ -29,7 +29,7 @@ count translation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\TranslationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->translationCountGet($filter);
+    $result = $apiInstance->translationCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TranslationApi->translationCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,10 +74,10 @@ try {
 ## `translationGet()`
 
 ```php
-translationGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\TranslationGet200Response
+translationGet($page, $page_size, $sort): \kruegge82\weclapp\Model\TranslationGet200Response
 ```
 
-query translation
+
 
 query translation
 
@@ -91,7 +88,7 @@ query translation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -105,14 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\TranslationApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->translationGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->translationGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TranslationApi->translationGet: ', $e->getMessage(), PHP_EOL;
@@ -125,11 +118,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -137,7 +126,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -154,7 +143,7 @@ try {
 translationIdIdDelete($id, $dry_run)
 ```
 
-delete a translation
+
 
 delete a translation
 
@@ -165,7 +154,7 @@ delete a translation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -200,7 +189,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -217,9 +206,9 @@ void (empty response body)
 translationIdIdGet($id): \kruegge82\weclapp\Model\Translation
 ```
 
-query a specific translation
 
-query a specific translation
+
+query translation
 
 ### Example
 
@@ -228,7 +217,7 @@ query a specific translation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -262,7 +251,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -276,10 +265,10 @@ try {
 ## `translationIdIdPut()`
 
 ```php
-translationIdIdPut($id, $translation, $dry_run): \kruegge82\weclapp\Model\Translation
+translationIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Translation
 ```
 
-update a translation
+
 
 update translation
 
@@ -290,7 +279,7 @@ update translation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -303,11 +292,11 @@ $apiInstance = new kruegge82\weclapp\Api\TranslationApi(
     $config
 );
 $id = 'id_example'; // string
-$translation = new \kruegge82\weclapp\Model\Translation(); // \kruegge82\weclapp\Model\Translation
+$body = new \kruegge82\weclapp\Model\Translation(); // \kruegge82\weclapp\Model\Translation
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->translationIdIdPut($id, $translation, $dry_run);
+    $result = $apiInstance->translationIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TranslationApi->translationIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -319,7 +308,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **translation** | [**\kruegge82\weclapp\Model\Translation**](../Model/Translation.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Translation**](../Model/Translation.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -328,7 +317,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -342,10 +331,10 @@ try {
 ## `translationPost()`
 
 ```php
-translationPost($translation, $dry_run): \kruegge82\weclapp\Model\Translation
+translationPost($body, $dry_run): \kruegge82\weclapp\Model\Translation
 ```
 
-create a translation
+
 
 create a translation
 
@@ -356,7 +345,7 @@ create a translation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,11 +357,11 @@ $apiInstance = new kruegge82\weclapp\Api\TranslationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$translation = new \kruegge82\weclapp\Model\Translation(); // \kruegge82\weclapp\Model\Translation
+$body = new \kruegge82\weclapp\Model\Translation(); // \kruegge82\weclapp\Model\Translation
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->translationPost($translation, $dry_run);
+    $result = $apiInstance->translationPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TranslationApi->translationPost: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +372,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **translation** | [**\kruegge82\weclapp\Model\Translation**](../Model/Translation.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Translation**](../Model/Translation.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -392,7 +381,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

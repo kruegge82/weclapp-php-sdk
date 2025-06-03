@@ -1,6 +1,6 @@
 # kruegge82\weclapp\WarehouseStockMovementApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -10,15 +10,15 @@ All URIs are relative to https://localhost:80/webapp/api/v1, except if the opera
 | [**warehouseStockMovementBookOntoInternalTransportReferencePost()**](WarehouseStockMovementApi.md#warehouseStockMovementBookOntoInternalTransportReferencePost) | **POST** /warehouseStockMovement/bookOntoInternalTransportReference |  |
 | [**warehouseStockMovementBookOutgoingMovementPost()**](WarehouseStockMovementApi.md#warehouseStockMovementBookOutgoingMovementPost) | **POST** /warehouseStockMovement/bookOutgoingMovement |  |
 | [**warehouseStockMovementBookToLoadingEquipmentPlacePost()**](WarehouseStockMovementApi.md#warehouseStockMovementBookToLoadingEquipmentPlacePost) | **POST** /warehouseStockMovement/bookToLoadingEquipmentPlace |  |
-| [**warehouseStockMovementCountGet()**](WarehouseStockMovementApi.md#warehouseStockMovementCountGet) | **GET** /warehouseStockMovement/count | count warehouseStockMovement |
-| [**warehouseStockMovementGet()**](WarehouseStockMovementApi.md#warehouseStockMovementGet) | **GET** /warehouseStockMovement | query warehouseStockMovement |
-| [**warehouseStockMovementIdIdGet()**](WarehouseStockMovementApi.md#warehouseStockMovementIdIdGet) | **GET** /warehouseStockMovement/id/{id} | query a specific warehouseStockMovement |
+| [**warehouseStockMovementCountGet()**](WarehouseStockMovementApi.md#warehouseStockMovementCountGet) | **GET** /warehouseStockMovement/count |  |
+| [**warehouseStockMovementGet()**](WarehouseStockMovementApi.md#warehouseStockMovementGet) | **GET** /warehouseStockMovement |  |
+| [**warehouseStockMovementIdIdGet()**](WarehouseStockMovementApi.md#warehouseStockMovementIdIdGet) | **GET** /warehouseStockMovement/id/{id} |  |
 
 
 ## `warehouseStockMovementBookDirectStockTransferPost()`
 
 ```php
-warehouseStockMovementBookDirectStockTransferPost($warehouse_stock_movement_book_direct_stock_transfer_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
+warehouseStockMovementBookDirectStockTransferPost($body): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
 ```
 
 
@@ -30,7 +30,7 @@ warehouseStockMovementBookDirectStockTransferPost($warehouse_stock_movement_book
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -42,10 +42,10 @@ $apiInstance = new kruegge82\weclapp\Api\WarehouseStockMovementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$warehouse_stock_movement_book_direct_stock_transfer_post_request = new \kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPostRequest(); // \kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPostRequest
+$body = new \kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPostRequest(); // \kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPostRequest
 
 try {
-    $result = $apiInstance->warehouseStockMovementBookDirectStockTransferPost($warehouse_stock_movement_book_direct_stock_transfer_post_request);
+    $result = $apiInstance->warehouseStockMovementBookDirectStockTransferPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WarehouseStockMovementApi->warehouseStockMovementBookDirectStockTransferPost: ', $e->getMessage(), PHP_EOL;
@@ -56,7 +56,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **warehouse_stock_movement_book_direct_stock_transfer_post_request** | [**\kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPostRequest**](../Model/WarehouseStockMovementBookDirectStockTransferPostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPostRequest**](../Model/WarehouseStockMovementBookDirectStockTransferPostRequest.md)|  | |
 
 ### Return type
 
@@ -64,7 +64,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -78,7 +78,7 @@ try {
 ## `warehouseStockMovementBookFromLoadingEquipmentPlacePost()`
 
 ```php
-warehouseStockMovementBookFromLoadingEquipmentPlacePost($warehouse_stock_movement_book_from_loading_equipment_place_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
+warehouseStockMovementBookFromLoadingEquipmentPlacePost($body): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
 ```
 
 
@@ -90,7 +90,7 @@ warehouseStockMovementBookFromLoadingEquipmentPlacePost($warehouse_stock_movemen
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -102,10 +102,10 @@ $apiInstance = new kruegge82\weclapp\Api\WarehouseStockMovementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$warehouse_stock_movement_book_from_loading_equipment_place_post_request = new \kruegge82\weclapp\Model\WarehouseStockMovementBookFromLoadingEquipmentPlacePostRequest(); // \kruegge82\weclapp\Model\WarehouseStockMovementBookFromLoadingEquipmentPlacePostRequest
+$body = new \kruegge82\weclapp\Model\WarehouseStockMovementBookFromLoadingEquipmentPlacePostRequest(); // \kruegge82\weclapp\Model\WarehouseStockMovementBookFromLoadingEquipmentPlacePostRequest
 
 try {
-    $result = $apiInstance->warehouseStockMovementBookFromLoadingEquipmentPlacePost($warehouse_stock_movement_book_from_loading_equipment_place_post_request);
+    $result = $apiInstance->warehouseStockMovementBookFromLoadingEquipmentPlacePost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WarehouseStockMovementApi->warehouseStockMovementBookFromLoadingEquipmentPlacePost: ', $e->getMessage(), PHP_EOL;
@@ -116,7 +116,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **warehouse_stock_movement_book_from_loading_equipment_place_post_request** | [**\kruegge82\weclapp\Model\WarehouseStockMovementBookFromLoadingEquipmentPlacePostRequest**](../Model/WarehouseStockMovementBookFromLoadingEquipmentPlacePostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\WarehouseStockMovementBookFromLoadingEquipmentPlacePostRequest**](../Model/WarehouseStockMovementBookFromLoadingEquipmentPlacePostRequest.md)|  | |
 
 ### Return type
 
@@ -124,7 +124,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -138,7 +138,7 @@ try {
 ## `warehouseStockMovementBookIncomingMovementPost()`
 
 ```php
-warehouseStockMovementBookIncomingMovementPost($warehouse_stock_movement_book_incoming_movement_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
+warehouseStockMovementBookIncomingMovementPost($body): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
 ```
 
 
@@ -150,7 +150,7 @@ warehouseStockMovementBookIncomingMovementPost($warehouse_stock_movement_book_in
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -162,10 +162,10 @@ $apiInstance = new kruegge82\weclapp\Api\WarehouseStockMovementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$warehouse_stock_movement_book_incoming_movement_post_request = new \kruegge82\weclapp\Model\WarehouseStockMovementBookIncomingMovementPostRequest(); // \kruegge82\weclapp\Model\WarehouseStockMovementBookIncomingMovementPostRequest
+$body = new \kruegge82\weclapp\Model\WarehouseStockMovementBookIncomingMovementPostRequest(); // \kruegge82\weclapp\Model\WarehouseStockMovementBookIncomingMovementPostRequest
 
 try {
-    $result = $apiInstance->warehouseStockMovementBookIncomingMovementPost($warehouse_stock_movement_book_incoming_movement_post_request);
+    $result = $apiInstance->warehouseStockMovementBookIncomingMovementPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WarehouseStockMovementApi->warehouseStockMovementBookIncomingMovementPost: ', $e->getMessage(), PHP_EOL;
@@ -176,7 +176,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **warehouse_stock_movement_book_incoming_movement_post_request** | [**\kruegge82\weclapp\Model\WarehouseStockMovementBookIncomingMovementPostRequest**](../Model/WarehouseStockMovementBookIncomingMovementPostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\WarehouseStockMovementBookIncomingMovementPostRequest**](../Model/WarehouseStockMovementBookIncomingMovementPostRequest.md)|  | |
 
 ### Return type
 
@@ -184,7 +184,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -198,7 +198,7 @@ try {
 ## `warehouseStockMovementBookOntoInternalTransportReferencePost()`
 
 ```php
-warehouseStockMovementBookOntoInternalTransportReferencePost($warehouse_stock_movement_book_onto_internal_transport_reference_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
+warehouseStockMovementBookOntoInternalTransportReferencePost($body): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
 ```
 
 
@@ -210,7 +210,7 @@ warehouseStockMovementBookOntoInternalTransportReferencePost($warehouse_stock_mo
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -222,10 +222,10 @@ $apiInstance = new kruegge82\weclapp\Api\WarehouseStockMovementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$warehouse_stock_movement_book_onto_internal_transport_reference_post_request = new \kruegge82\weclapp\Model\WarehouseStockMovementBookOntoInternalTransportReferencePostRequest(); // \kruegge82\weclapp\Model\WarehouseStockMovementBookOntoInternalTransportReferencePostRequest
+$body = new \kruegge82\weclapp\Model\WarehouseStockMovementBookOntoInternalTransportReferencePostRequest(); // \kruegge82\weclapp\Model\WarehouseStockMovementBookOntoInternalTransportReferencePostRequest
 
 try {
-    $result = $apiInstance->warehouseStockMovementBookOntoInternalTransportReferencePost($warehouse_stock_movement_book_onto_internal_transport_reference_post_request);
+    $result = $apiInstance->warehouseStockMovementBookOntoInternalTransportReferencePost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WarehouseStockMovementApi->warehouseStockMovementBookOntoInternalTransportReferencePost: ', $e->getMessage(), PHP_EOL;
@@ -236,7 +236,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **warehouse_stock_movement_book_onto_internal_transport_reference_post_request** | [**\kruegge82\weclapp\Model\WarehouseStockMovementBookOntoInternalTransportReferencePostRequest**](../Model/WarehouseStockMovementBookOntoInternalTransportReferencePostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\WarehouseStockMovementBookOntoInternalTransportReferencePostRequest**](../Model/WarehouseStockMovementBookOntoInternalTransportReferencePostRequest.md)|  | |
 
 ### Return type
 
@@ -244,7 +244,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -258,7 +258,7 @@ try {
 ## `warehouseStockMovementBookOutgoingMovementPost()`
 
 ```php
-warehouseStockMovementBookOutgoingMovementPost($warehouse_stock_movement_book_outgoing_movement_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
+warehouseStockMovementBookOutgoingMovementPost($body): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
 ```
 
 
@@ -270,7 +270,7 @@ warehouseStockMovementBookOutgoingMovementPost($warehouse_stock_movement_book_ou
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -282,10 +282,10 @@ $apiInstance = new kruegge82\weclapp\Api\WarehouseStockMovementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$warehouse_stock_movement_book_outgoing_movement_post_request = new \kruegge82\weclapp\Model\WarehouseStockMovementBookOutgoingMovementPostRequest(); // \kruegge82\weclapp\Model\WarehouseStockMovementBookOutgoingMovementPostRequest
+$body = new \kruegge82\weclapp\Model\WarehouseStockMovementBookOutgoingMovementPostRequest(); // \kruegge82\weclapp\Model\WarehouseStockMovementBookOutgoingMovementPostRequest
 
 try {
-    $result = $apiInstance->warehouseStockMovementBookOutgoingMovementPost($warehouse_stock_movement_book_outgoing_movement_post_request);
+    $result = $apiInstance->warehouseStockMovementBookOutgoingMovementPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WarehouseStockMovementApi->warehouseStockMovementBookOutgoingMovementPost: ', $e->getMessage(), PHP_EOL;
@@ -296,7 +296,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **warehouse_stock_movement_book_outgoing_movement_post_request** | [**\kruegge82\weclapp\Model\WarehouseStockMovementBookOutgoingMovementPostRequest**](../Model/WarehouseStockMovementBookOutgoingMovementPostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\WarehouseStockMovementBookOutgoingMovementPostRequest**](../Model/WarehouseStockMovementBookOutgoingMovementPostRequest.md)|  | |
 
 ### Return type
 
@@ -304,7 +304,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -318,7 +318,7 @@ try {
 ## `warehouseStockMovementBookToLoadingEquipmentPlacePost()`
 
 ```php
-warehouseStockMovementBookToLoadingEquipmentPlacePost($warehouse_stock_movement_book_to_loading_equipment_place_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
+warehouseStockMovementBookToLoadingEquipmentPlacePost($body): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
 ```
 
 
@@ -330,7 +330,7 @@ warehouseStockMovementBookToLoadingEquipmentPlacePost($warehouse_stock_movement_
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -342,10 +342,10 @@ $apiInstance = new kruegge82\weclapp\Api\WarehouseStockMovementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$warehouse_stock_movement_book_to_loading_equipment_place_post_request = new \kruegge82\weclapp\Model\WarehouseStockMovementBookToLoadingEquipmentPlacePostRequest(); // \kruegge82\weclapp\Model\WarehouseStockMovementBookToLoadingEquipmentPlacePostRequest
+$body = new \kruegge82\weclapp\Model\WarehouseStockMovementBookToLoadingEquipmentPlacePostRequest(); // \kruegge82\weclapp\Model\WarehouseStockMovementBookToLoadingEquipmentPlacePostRequest
 
 try {
-    $result = $apiInstance->warehouseStockMovementBookToLoadingEquipmentPlacePost($warehouse_stock_movement_book_to_loading_equipment_place_post_request);
+    $result = $apiInstance->warehouseStockMovementBookToLoadingEquipmentPlacePost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WarehouseStockMovementApi->warehouseStockMovementBookToLoadingEquipmentPlacePost: ', $e->getMessage(), PHP_EOL;
@@ -356,7 +356,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **warehouse_stock_movement_book_to_loading_equipment_place_post_request** | [**\kruegge82\weclapp\Model\WarehouseStockMovementBookToLoadingEquipmentPlacePostRequest**](../Model/WarehouseStockMovementBookToLoadingEquipmentPlacePostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\WarehouseStockMovementBookToLoadingEquipmentPlacePostRequest**](../Model/WarehouseStockMovementBookToLoadingEquipmentPlacePostRequest.md)|  | |
 
 ### Return type
 
@@ -364,7 +364,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -378,10 +378,10 @@ try {
 ## `warehouseStockMovementCountGet()`
 
 ```php
-warehouseStockMovementCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+warehouseStockMovementCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count warehouseStockMovement
+
 
 count warehouseStockMovement
 
@@ -392,7 +392,7 @@ count warehouseStockMovement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -404,10 +404,9 @@ $apiInstance = new kruegge82\weclapp\Api\WarehouseStockMovementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->warehouseStockMovementCountGet($filter);
+    $result = $apiInstance->warehouseStockMovementCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WarehouseStockMovementApi->warehouseStockMovementCountGet: ', $e->getMessage(), PHP_EOL;
@@ -416,9 +415,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -426,7 +423,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -440,10 +437,10 @@ try {
 ## `warehouseStockMovementGet()`
 
 ```php
-warehouseStockMovementGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
+warehouseStockMovementGet($page, $page_size, $sort): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
 ```
 
-query warehouseStockMovement
+
 
 query warehouseStockMovement
 
@@ -454,7 +451,7 @@ query warehouseStockMovement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -468,14 +465,10 @@ $apiInstance = new kruegge82\weclapp\Api\WarehouseStockMovementApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->warehouseStockMovementGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->warehouseStockMovementGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WarehouseStockMovementApi->warehouseStockMovementGet: ', $e->getMessage(), PHP_EOL;
@@ -488,11 +481,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -500,7 +489,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -517,9 +506,9 @@ try {
 warehouseStockMovementIdIdGet($id): \kruegge82\weclapp\Model\WarehouseStockMovement
 ```
 
-query a specific warehouseStockMovement
 
-query a specific warehouseStockMovement
+
+query warehouseStockMovement
 
 ### Example
 
@@ -528,7 +517,7 @@ query a specific warehouseStockMovement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -562,7 +551,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

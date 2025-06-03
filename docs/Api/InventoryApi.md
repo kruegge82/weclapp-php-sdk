@@ -1,24 +1,24 @@
 # kruegge82\weclapp\InventoryApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**inventoryCountGet()**](InventoryApi.md#inventoryCountGet) | **GET** /inventory/count | count inventory |
+| [**inventoryCountGet()**](InventoryApi.md#inventoryCountGet) | **GET** /inventory/count |  |
 | [**inventoryCreatePost()**](InventoryApi.md#inventoryCreatePost) | **POST** /inventory/create |  |
-| [**inventoryGet()**](InventoryApi.md#inventoryGet) | **GET** /inventory | query inventory |
-| [**inventoryIdIdGet()**](InventoryApi.md#inventoryIdIdGet) | **GET** /inventory/id/{id} | query a specific inventory |
-| [**inventoryIdIdPut()**](InventoryApi.md#inventoryIdIdPut) | **PUT** /inventory/id/{id} | update a inventory |
-| [**inventoryPost()**](InventoryApi.md#inventoryPost) | **POST** /inventory | create a inventory |
+| [**inventoryGet()**](InventoryApi.md#inventoryGet) | **GET** /inventory |  |
+| [**inventoryIdIdGet()**](InventoryApi.md#inventoryIdIdGet) | **GET** /inventory/id/{id} |  |
+| [**inventoryIdIdPut()**](InventoryApi.md#inventoryIdIdPut) | **PUT** /inventory/id/{id} |  |
+| [**inventoryPost()**](InventoryApi.md#inventoryPost) | **POST** /inventory |  |
 
 
 ## `inventoryCountGet()`
 
 ```php
-inventoryCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+inventoryCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count inventory
+
 
 count inventory
 
@@ -29,7 +29,7 @@ count inventory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,10 +41,9 @@ $apiInstance = new kruegge82\weclapp\Api\InventoryApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->inventoryCountGet($filter);
+    $result = $apiInstance->inventoryCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryApi->inventoryCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +52,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,7 +60,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -77,7 +74,7 @@ try {
 ## `inventoryCreatePost()`
 
 ```php
-inventoryCreatePost($inventory_create_post_request): \kruegge82\weclapp\Model\InventoryCreatePost200Response
+inventoryCreatePost($body): \kruegge82\weclapp\Model\InventoryCreatePost200Response
 ```
 
 
@@ -89,7 +86,7 @@ inventoryCreatePost($inventory_create_post_request): \kruegge82\weclapp\Model\In
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -101,10 +98,10 @@ $apiInstance = new kruegge82\weclapp\Api\InventoryApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inventory_create_post_request = new \kruegge82\weclapp\Model\InventoryCreatePostRequest(); // \kruegge82\weclapp\Model\InventoryCreatePostRequest
+$body = new \kruegge82\weclapp\Model\InventoryCreatePostRequest(); // \kruegge82\weclapp\Model\InventoryCreatePostRequest
 
 try {
-    $result = $apiInstance->inventoryCreatePost($inventory_create_post_request);
+    $result = $apiInstance->inventoryCreatePost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryApi->inventoryCreatePost: ', $e->getMessage(), PHP_EOL;
@@ -115,7 +112,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inventory_create_post_request** | [**\kruegge82\weclapp\Model\InventoryCreatePostRequest**](../Model/InventoryCreatePostRequest.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\InventoryCreatePostRequest**](../Model/InventoryCreatePostRequest.md)|  | |
 
 ### Return type
 
@@ -123,7 +120,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -137,10 +134,10 @@ try {
 ## `inventoryGet()`
 
 ```php
-inventoryGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InventoryGet200Response
+inventoryGet($page, $page_size, $sort): \kruegge82\weclapp\Model\InventoryGet200Response
 ```
 
-query inventory
+
 
 query inventory
 
@@ -151,7 +148,7 @@ query inventory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -165,14 +162,10 @@ $apiInstance = new kruegge82\weclapp\Api\InventoryApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->inventoryGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->inventoryGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryApi->inventoryGet: ', $e->getMessage(), PHP_EOL;
@@ -185,11 +178,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -197,7 +186,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -214,9 +203,9 @@ try {
 inventoryIdIdGet($id): \kruegge82\weclapp\Model\Inventory
 ```
 
-query a specific inventory
 
-query a specific inventory
+
+query inventory
 
 ### Example
 
@@ -225,7 +214,7 @@ query a specific inventory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -259,7 +248,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -273,10 +262,10 @@ try {
 ## `inventoryIdIdPut()`
 
 ```php
-inventoryIdIdPut($id, $inventory, $dry_run): \kruegge82\weclapp\Model\Inventory
+inventoryIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Inventory
 ```
 
-update a inventory
+
 
 update inventory
 
@@ -287,7 +276,7 @@ update inventory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -300,11 +289,11 @@ $apiInstance = new kruegge82\weclapp\Api\InventoryApi(
     $config
 );
 $id = 'id_example'; // string
-$inventory = new \kruegge82\weclapp\Model\Inventory(); // \kruegge82\weclapp\Model\Inventory
+$body = new \kruegge82\weclapp\Model\Inventory(); // \kruegge82\weclapp\Model\Inventory
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->inventoryIdIdPut($id, $inventory, $dry_run);
+    $result = $apiInstance->inventoryIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryApi->inventoryIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -316,7 +305,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **inventory** | [**\kruegge82\weclapp\Model\Inventory**](../Model/Inventory.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Inventory**](../Model/Inventory.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -325,7 +314,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -339,10 +328,10 @@ try {
 ## `inventoryPost()`
 
 ```php
-inventoryPost($inventory, $dry_run): \kruegge82\weclapp\Model\Inventory
+inventoryPost($body, $dry_run): \kruegge82\weclapp\Model\Inventory
 ```
 
-create a inventory
+
 
 create a inventory
 
@@ -353,7 +342,7 @@ create a inventory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -365,11 +354,11 @@ $apiInstance = new kruegge82\weclapp\Api\InventoryApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inventory = new \kruegge82\weclapp\Model\Inventory(); // \kruegge82\weclapp\Model\Inventory
+$body = new \kruegge82\weclapp\Model\Inventory(); // \kruegge82\weclapp\Model\Inventory
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->inventoryPost($inventory, $dry_run);
+    $result = $apiInstance->inventoryPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryApi->inventoryPost: ', $e->getMessage(), PHP_EOL;
@@ -380,7 +369,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inventory** | [**\kruegge82\weclapp\Model\Inventory**](../Model/Inventory.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\Inventory**](../Model/Inventory.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -389,7 +378,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional] [readonly]
-**created_date** | **int** |  | [optional] [readonly]
-**last_modified_date** | **int** |  | [optional] [readonly]
+**id** | **string** |  | [optional]
 **version** | **string** |  | [optional]
+**created_date** | **int** |  | [optional]
 **description** | **string** |  | [optional]
 **document_size** | **int** |  | [optional]
-**document_type** | [**\kruegge82\weclapp\Model\DocumentType**](DocumentType.md) |  | [optional]
-**media_type** | **string** |  | [optional]
-**name** | **string** |  | [optional]
+**document_type** | **string** |  | [optional]
+**last_modified_date** | **int** |  | [optional]
+**media_type** | **string** |  |
+**name** | **string** |  |
 **user_id** | **string** |  | [optional]
 **versions** | [**\kruegge82\weclapp\Model\DocumentVersion[]**](DocumentVersion.md) |  | [optional]
 

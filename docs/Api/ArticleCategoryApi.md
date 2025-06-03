@@ -1,26 +1,26 @@
 # kruegge82\weclapp\ArticleCategoryApi
 
-All URIs are relative to https://localhost:80/webapp/api/v1, except if the operation defines another base path.
+All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**articleCategoryCountGet()**](ArticleCategoryApi.md#articleCategoryCountGet) | **GET** /articleCategory/count | count articleCategory |
-| [**articleCategoryGet()**](ArticleCategoryApi.md#articleCategoryGet) | **GET** /articleCategory | query articleCategory |
-| [**articleCategoryIdIdDelete()**](ArticleCategoryApi.md#articleCategoryIdIdDelete) | **DELETE** /articleCategory/id/{id} | delete a articleCategory |
+| [**articleCategoryCountGet()**](ArticleCategoryApi.md#articleCategoryCountGet) | **GET** /articleCategory/count |  |
+| [**articleCategoryGet()**](ArticleCategoryApi.md#articleCategoryGet) | **GET** /articleCategory |  |
+| [**articleCategoryIdIdDelete()**](ArticleCategoryApi.md#articleCategoryIdIdDelete) | **DELETE** /articleCategory/id/{id} |  |
 | [**articleCategoryIdIdDownloadImageGet()**](ArticleCategoryApi.md#articleCategoryIdIdDownloadImageGet) | **GET** /articleCategory/id/{id}/downloadImage |  |
-| [**articleCategoryIdIdGet()**](ArticleCategoryApi.md#articleCategoryIdIdGet) | **GET** /articleCategory/id/{id} | query a specific articleCategory |
-| [**articleCategoryIdIdPut()**](ArticleCategoryApi.md#articleCategoryIdIdPut) | **PUT** /articleCategory/id/{id} | update a articleCategory |
+| [**articleCategoryIdIdGet()**](ArticleCategoryApi.md#articleCategoryIdIdGet) | **GET** /articleCategory/id/{id} |  |
+| [**articleCategoryIdIdPut()**](ArticleCategoryApi.md#articleCategoryIdIdPut) | **PUT** /articleCategory/id/{id} |  |
 | [**articleCategoryIdIdUploadImagePost()**](ArticleCategoryApi.md#articleCategoryIdIdUploadImagePost) | **POST** /articleCategory/id/{id}/uploadImage |  |
-| [**articleCategoryPost()**](ArticleCategoryApi.md#articleCategoryPost) | **POST** /articleCategory | create a articleCategory |
+| [**articleCategoryPost()**](ArticleCategoryApi.md#articleCategoryPost) | **POST** /articleCategory |  |
 
 
 ## `articleCategoryCountGet()`
 
 ```php
-articleCategoryCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+articleCategoryCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-count articleCategory
+
 
 count articleCategory
 
@@ -31,7 +31,7 @@ count articleCategory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -43,10 +43,9 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleCategoryApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->articleCategoryCountGet($filter);
+    $result = $apiInstance->articleCategoryCountGet();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleCategoryApi->articleCategoryCountGet: ', $e->getMessage(), PHP_EOL;
@@ -55,9 +54,7 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **filter** | **string**|  | [optional] |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -65,7 +62,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -79,10 +76,10 @@ try {
 ## `articleCategoryGet()`
 
 ```php
-articleCategoryGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ArticleCategoryGet200Response
+articleCategoryGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ArticleCategoryGet200Response
 ```
 
-query articleCategory
+
 
 query articleCategory
 
@@ -93,7 +90,7 @@ query articleCategory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -107,14 +104,10 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleCategoryApi(
 );
 $page = 56; // int
 $page_size = 56; // int
-$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
-$filter = 'filter_example'; // string
-$properties = 'properties_example'; // string
-$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->articleCategoryGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->articleCategoryGet($page, $page_size, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleCategoryApi->articleCategoryGet: ', $e->getMessage(), PHP_EOL;
@@ -127,11 +120,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
-| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
-| **filter** | **string**|  | [optional] |
-| **properties** | **string**|  | [optional] |
-| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -139,7 +128,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -156,7 +145,7 @@ try {
 articleCategoryIdIdDelete($id, $dry_run)
 ```
 
-delete a articleCategory
+
 
 delete a articleCategory
 
@@ -167,7 +156,7 @@ delete a articleCategory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -202,7 +191,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -216,7 +205,7 @@ void (empty response body)
 ## `articleCategoryIdIdDownloadImageGet()`
 
 ```php
-articleCategoryIdIdDownloadImageGet($id, $scale_width, $scale_height, $image_id): \SplFileObject
+articleCategoryIdIdDownloadImageGet($id, $scale_width, $scale_height, $image_id)
 ```
 
 
@@ -228,7 +217,7 @@ articleCategoryIdIdDownloadImageGet($id, $scale_width, $scale_height, $image_id)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -246,8 +235,7 @@ $scale_height = 56; // int
 $image_id = 'image_id_example'; // string
 
 try {
-    $result = $apiInstance->articleCategoryIdIdDownloadImageGet($id, $scale_width, $scale_height, $image_id);
-    print_r($result);
+    $apiInstance->articleCategoryIdIdDownloadImageGet($id, $scale_width, $scale_height, $image_id);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleCategoryApi->articleCategoryIdIdDownloadImageGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -264,16 +252,16 @@ try {
 
 ### Return type
 
-**\SplFileObject**
+void (empty response body)
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -285,9 +273,9 @@ try {
 articleCategoryIdIdGet($id): \kruegge82\weclapp\Model\ArticleCategory
 ```
 
-query a specific articleCategory
 
-query a specific articleCategory
+
+query articleCategory
 
 ### Example
 
@@ -296,7 +284,7 @@ query a specific articleCategory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -330,7 +318,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -344,10 +332,10 @@ try {
 ## `articleCategoryIdIdPut()`
 
 ```php
-articleCategoryIdIdPut($id, $article_category, $dry_run): \kruegge82\weclapp\Model\ArticleCategory
+articleCategoryIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\ArticleCategory
 ```
 
-update a articleCategory
+
 
 update articleCategory
 
@@ -358,7 +346,7 @@ update articleCategory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -371,11 +359,11 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleCategoryApi(
     $config
 );
 $id = 'id_example'; // string
-$article_category = new \kruegge82\weclapp\Model\ArticleCategory(); // \kruegge82\weclapp\Model\ArticleCategory
+$body = new \kruegge82\weclapp\Model\ArticleCategory(); // \kruegge82\weclapp\Model\ArticleCategory
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->articleCategoryIdIdPut($id, $article_category, $dry_run);
+    $result = $apiInstance->articleCategoryIdIdPut($id, $body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleCategoryApi->articleCategoryIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -387,7 +375,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **article_category** | [**\kruegge82\weclapp\Model\ArticleCategory**](../Model/ArticleCategory.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\ArticleCategory**](../Model/ArticleCategory.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -396,7 +384,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
@@ -410,7 +398,7 @@ try {
 ## `articleCategoryIdIdUploadImagePost()`
 
 ```php
-articleCategoryIdIdUploadImagePost($id, $body): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
+articleCategoryIdIdUploadImagePost($id): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
 ```
 
 
@@ -422,7 +410,7 @@ articleCategoryIdIdUploadImagePost($id, $body): \kruegge82\weclapp\Model\Account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -435,10 +423,9 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleCategoryApi(
     $config
 );
 $id = 'id_example'; // string
-$body = '/path/to/file.txt'; // \SplFileObject
 
 try {
-    $result = $apiInstance->articleCategoryIdIdUploadImagePost($id, $body);
+    $result = $apiInstance->articleCategoryIdIdUploadImagePost($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleCategoryApi->articleCategoryIdIdUploadImagePost: ', $e->getMessage(), PHP_EOL;
@@ -450,7 +437,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | **\SplFileObject****\SplFileObject**|  | |
 
 ### Return type
 
@@ -458,11 +444,11 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
-- **Content-Type**: `application/pdf`, `image/jpeg`, `image/png`
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -472,10 +458,10 @@ try {
 ## `articleCategoryPost()`
 
 ```php
-articleCategoryPost($article_category, $dry_run): \kruegge82\weclapp\Model\ArticleCategory
+articleCategoryPost($body, $dry_run): \kruegge82\weclapp\Model\ArticleCategory
 ```
 
-create a articleCategory
+
 
 create a articleCategory
 
@@ -486,7 +472,7 @@ create a articleCategory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api-token
+// Configure API key authorization: API token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -498,11 +484,11 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleCategoryApi(
     new GuzzleHttp\Client(),
     $config
 );
-$article_category = new \kruegge82\weclapp\Model\ArticleCategory(); // \kruegge82\weclapp\Model\ArticleCategory
+$body = new \kruegge82\weclapp\Model\ArticleCategory(); // \kruegge82\weclapp\Model\ArticleCategory
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->articleCategoryPost($article_category, $dry_run);
+    $result = $apiInstance->articleCategoryPost($body, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleCategoryApi->articleCategoryPost: ', $e->getMessage(), PHP_EOL;
@@ -513,7 +499,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **article_category** | [**\kruegge82\weclapp\Model\ArticleCategory**](../Model/ArticleCategory.md)|  | |
+| **body** | [**\kruegge82\weclapp\Model\ArticleCategory**](../Model/ArticleCategory.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -522,7 +508,7 @@ try {
 
 ### Authorization
 
-[api-token](../../README.md#api-token)
+[API token](../../README.md#API token)
 
 ### HTTP request headers
 
