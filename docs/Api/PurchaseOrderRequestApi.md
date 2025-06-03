@@ -347,8 +347,6 @@ purchaseOrderRequestIdIdExportItemsAsCsvPost($id, $purchase_order_request_id_id_
 
 
 
-export purchaseOrderRequest offer to csv  # Endpoint to export the purchase order request offer items for a supplier to a comma-separated values (CSV) file.  ## Explanation of the `supplierId` parameter The `supplierId` parameter is used to get the specific purchase order request offer. If the supplier does not exist or does not have an offer in the purchase order request, an error will be thrown.  It is only possible to create a CSV file if the purchaseOrderRequest status is not `CANCELLED` or `CLOSED`.
-
 ### Example
 
 ```php
@@ -472,8 +470,6 @@ purchaseOrderRequestIdIdPushPurchasePricesPost($id, $purchase_order_request_id_i
 ```
 
 
-
-transfer offer item prices to supply sources  # Endpoint for transferring the purchase order request offer item prices to the corresponding supply sources  When creating a purchase order from a purchase order request (`/purchaseOrderRequest/id/:id/createPurchaseOrder`), it is possible to update the supply sources of the accepted article items with the offer item prices of the respective supplier. With the present endpoint, this can be done without the need to accept items or to create a purchase order.  Restrictions: * The purchase order request must not be in one of the following status: `NEW`, `DOCUMENT_PRINTED`, `CANCELLED`. * Unavailable items and items without article are skipped. This means that the offer for a given supplier must contain at least one available item with an article.  If the price of an item with article `A` from an offer of supplier `S` is transferred and `A` has no supply source at `S`, it will be created.
 
 ### Example
 

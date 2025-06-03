@@ -16,6 +16,7 @@ All URIs are relative to https://localhost:80/webapp/api/v1, except if the opera
 | [**shipmentIdIdDownloadLatestPickingListPdfGet()**](ShipmentApi.md#shipmentIdIdDownloadLatestPickingListPdfGet) | **GET** /shipment/id/{id}/downloadLatestPickingListPdf |  |
 | [**shipmentIdIdDownloadLatestShippingLabelPdfGet()**](ShipmentApi.md#shipmentIdIdDownloadLatestShippingLabelPdfGet) | **GET** /shipment/id/{id}/downloadLatestShippingLabelPdf |  |
 | [**shipmentIdIdGet()**](ShipmentApi.md#shipmentIdIdGet) | **GET** /shipment/id/{id} | query a specific shipment |
+| [**shipmentIdIdPrintLabelPost()**](ShipmentApi.md#shipmentIdIdPrintLabelPost) | **POST** /shipment/id/{id}/printLabel |  |
 | [**shipmentIdIdPut()**](ShipmentApi.md#shipmentIdIdPut) | **PUT** /shipment/id/{id} | update a shipment |
 | [**shipmentPost()**](ShipmentApi.md#shipmentPost) | **POST** /shipment | create a shipment |
 
@@ -770,6 +771,68 @@ try {
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `shipmentIdIdPrintLabelPost()`
+
+```php
+shipmentIdIdPrintLabelPost($id, $shipment_id_id_print_label_post_request): \SplFileObject
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\ShipmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$shipment_id_id_print_label_post_request = new \kruegge82\weclapp\Model\ShipmentIdIdPrintLabelPostRequest(); // \kruegge82\weclapp\Model\ShipmentIdIdPrintLabelPostRequest
+
+try {
+    $result = $apiInstance->shipmentIdIdPrintLabelPost($id, $shipment_id_id_print_label_post_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ShipmentApi->shipmentIdIdPrintLabelPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **shipment_id_id_print_label_post_request** | [**\kruegge82\weclapp\Model\ShipmentIdIdPrintLabelPostRequest**](../Model/ShipmentIdIdPrintLabelPostRequest.md)|  | |
+
+### Return type
+
+**\SplFileObject**
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

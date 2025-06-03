@@ -27,6 +27,8 @@ All URIs are relative to https://localhost:80/webapp/api/v1, except if the opera
 | [**salesOrderIdIdDownloadLatestOrderConfirmationPdfGet()**](SalesOrderApi.md#salesOrderIdIdDownloadLatestOrderConfirmationPdfGet) | **GET** /salesOrder/id/{id}/downloadLatestOrderConfirmationPdf |  |
 | [**salesOrderIdIdGet()**](SalesOrderApi.md#salesOrderIdIdGet) | **GET** /salesOrder/id/{id} | query a specific salesOrder |
 | [**salesOrderIdIdManuallyClosePost()**](SalesOrderApi.md#salesOrderIdIdManuallyClosePost) | **POST** /salesOrder/id/{id}/manuallyClose |  |
+| [**salesOrderIdIdPreviewSalesOrderConfirmationGet()**](SalesOrderApi.md#salesOrderIdIdPreviewSalesOrderConfirmationGet) | **GET** /salesOrder/id/{id}/previewSalesOrderConfirmation |  |
+| [**salesOrderIdIdPrintLabelPost()**](SalesOrderApi.md#salesOrderIdIdPrintLabelPost) | **POST** /salesOrder/id/{id}/printLabel |  |
 | [**salesOrderIdIdPrintOrderDataGet()**](SalesOrderApi.md#salesOrderIdIdPrintOrderDataGet) | **GET** /salesOrder/id/{id}/printOrderData |  |
 | [**salesOrderIdIdPut()**](SalesOrderApi.md#salesOrderIdIdPut) | **PUT** /salesOrder/id/{id} | update a salesOrder |
 | [**salesOrderIdIdRecalculateCostsPost()**](SalesOrderApi.md#salesOrderIdIdRecalculateCostsPost) | **POST** /salesOrder/id/{id}/recalculateCosts |  |
@@ -309,8 +311,6 @@ salesOrderIdIdCalculateSalesPricesPost($id, $sales_order_id_id_calculate_sales_p
 
 
 
-calculate sales prices # Endpoint for calculating sales prices calculates the sales prices for items based on calculation mode and percentage. Prices can be either calculated for all items and shipping costs with stored costs of the sales order, or for a list of specified item Ids. The new net item price is calculated either by adding up the item costs plus a percentage surcharge on these costs, or based on the desired target margin.  The parameter `calculationMode` determines how the prices are calculated: * `COST_SURCHARGE`: The new net price is set to purchase costs plus a percent surcharge.     Net price=purchase costs + purchase costs * surcharge / 100. * `TARGET_MARGIN`: The new net price is set to purchase costs multiplied by 100 and divided by 100 minus the target margin.     Net price=purchase costs * 100 / (100 - target margin).  The parameter 'percentage' specifies the target margin or surcharge percentage  With the optional parameter 'orderItemIds' a list of item Ids can be specified. If given, the sales prices are only calculated for the given items. If no item Ids are specified, the prices are calculated for all items of the sales order  ## When can prices be calculated? The optional workflow option 'Calculate Sales Prices' must be activated for Sales Orders General sales setting 'Allow manual article prices ins sales' must be activated
-
 ### Example
 
 ```php
@@ -497,8 +497,6 @@ salesOrderIdIdCreateContractPost($id, $body): \kruegge82\weclapp\Model\PurchaseI
 
 
 
-create a contract from a sales order  # Endpoint for creating a contract for the specified sales order  To use this endpoint, the optional sales order workflow action \"Create contract\" must be enabled.
-
 ### Example
 
 ```php
@@ -560,8 +558,6 @@ salesOrderIdIdCreateCustomerReturnPost($id, $purchase_invoice_id_id_create_credi
 ```
 
 
-
-create a customer return for a sales order  # Endpoint for creating a customer return for the specified sales order  ## Information on optional parameters  * If no `itemIds` will be provided, all possible items of the  sales order will be used to create the customer return.
 
 ### Example
 
@@ -934,8 +930,6 @@ salesOrderIdIdCreatePurchaseOrderRequestPost($id, $sales_order_id_id_create_purc
 ```
 
 
-
-create a purchase order request  # Endpoint for creating a purchase order request for the specified sales order  To create a purchase order request from a quotation see `/quotation/id/{id}/createPurchaseOrderRequest`  ## Information on optional parameters  * If no `orderItemIds` will be provided, all order items of the sales order will be used to create the purchase order request. * The parameter `useItemQuantity` can only be set to true for the request types `PURCHASE_ORDER_REQUEST` and `BLANKET_ORDER_REQUEST`. * The parameter `mergeItems` may only be set to true if `useItemQuantity` is also set to true.
 
 ### Example
 
@@ -1486,6 +1480,128 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `salesOrderIdIdPreviewSalesOrderConfirmationGet()`
+
+```php
+salesOrderIdIdPreviewSalesOrderConfirmationGet($id): \SplFileObject
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\SalesOrderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+
+try {
+    $result = $apiInstance->salesOrderIdIdPreviewSalesOrderConfirmationGet($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SalesOrderApi->salesOrderIdIdPreviewSalesOrderConfirmationGet: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+
+### Return type
+
+**\SplFileObject**
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `salesOrderIdIdPrintLabelPost()`
+
+```php
+salesOrderIdIdPrintLabelPost($id, $sales_order_id_id_print_label_post_request): \SplFileObject
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\SalesOrderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$sales_order_id_id_print_label_post_request = new \kruegge82\weclapp\Model\SalesOrderIdIdPrintLabelPostRequest(); // \kruegge82\weclapp\Model\SalesOrderIdIdPrintLabelPostRequest
+
+try {
+    $result = $apiInstance->salesOrderIdIdPrintLabelPost($id, $sales_order_id_id_print_label_post_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SalesOrderApi->salesOrderIdIdPrintLabelPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **sales_order_id_id_print_label_post_request** | [**\kruegge82\weclapp\Model\SalesOrderIdIdPrintLabelPostRequest**](../Model/SalesOrderIdIdPrintLabelPostRequest.md)|  | |
+
+### Return type
+
+**\SplFileObject**
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `salesOrderIdIdPrintOrderDataGet()`
 
 ```php
@@ -1620,8 +1736,6 @@ salesOrderIdIdRecalculateCostsPost($id, $body): \kruegge82\weclapp\Model\SalesOr
 
 
 
-Recalculate costs for the sales order.  # Endpoint to recalculate the costs of the sales order  Recalculate costs of the items and with it the costs of the sales order. Costs are usually set/calculated for an item when added or edited. The costs usually have a source. The source can change at some time. The item costs are not recalculated. If you want to recalculate the costs based on the environment, you can use this method.
-
 ### Example
 
 ```php
@@ -1684,8 +1798,6 @@ salesOrderIdIdResetTaxesPost($id, $body): \kruegge82\weclapp\Model\SalesOrderDef
 
 
 
-reset taxes of order items for a sales order # Endpoint for resetting taxes Resets the taxes to the default for the specified entity. ## When can taxes be reset? General sales setting \"Non-compliant item tax rates\" needs to be set to \"Allow and warn\" or \"manual correction required\" Optional sales order workflow action \"reset taxes\" needs to be enabled
-
 ### Example
 
 ```php
@@ -1747,8 +1859,6 @@ salesOrderIdIdSetCostsForItemsWithoutCostPost($id, $quotation_id_id_set_costs_fo
 ```
 
 
-
-set unitCost of sales order items without unitCost  # Endpoint for setting the unit cost of sales order items and shipping cost items without unit cost to a fixed value  For a sales record item (or shipping cost item) with an article, `unitCost` is typically set based on the currently valid purchase price of the article's primary supply source. If the unit cost cannot be determined, e.g. because there is no valid purchase price or the item has no article, `unitCost` will be null. Instead of setting `unitCost` separately for each of these items, all of them can be updated at once with the present endpoint.  The parameter `costUpdateMode` determines the target value for `unitCost`: * `SET_TO_NET_UNIT_PRICE`: If the sales order's `salesChannel` is of type net, use `unitPrice`, otherwise use its net value `100 * unitPrice / (100 + taxValue)` (where `taxValue` is the value of the tax given by the item's `taxId`). * `SET_TO_ZERO`: Use zero.  For all updated items, `manualUnitCost` is set to true.  Items where `unitCost` is not null will not be touched.
 
 ### Example
 

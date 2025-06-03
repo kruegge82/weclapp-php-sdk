@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **amount_applied_origin_currency** | **float** |  | [optional]
 **amount_costs_of_monetary_traffic** | **float** |  | [optional]
 **amount_discount_applied** | **float** |  | [optional]
+**bank_transaction_id** | **string** |  | [optional]
+**cash_transaction_id** | **string** |  | [optional]
 **created_by_id** | **string** |  | [optional]
 **money_transaction_id** | **string** |  | [optional]
 

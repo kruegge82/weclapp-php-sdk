@@ -42,6 +42,7 @@ Name | Type | Description | Notes
 **company_size_name** | **string** |  | [optional]
 **competitor** | **bool** |  | [optional]
 **contacts** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
+**converted_on_date** | **int** |  | [optional]
 **currency_id** | **string** |  | [optional]
 **currency_name** | **string** |  | [optional]
 **customer** | **bool** |  | [optional]

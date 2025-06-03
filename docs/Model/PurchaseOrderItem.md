@@ -43,8 +43,11 @@ Name | Type | Description | Notes
 **invoiced_quantity** | **float** |  | [optional]
 **planned_delivery_date** | **int** |  | [optional]
 **planned_shipping_date** | **int** |  | [optional]
+**purchase_order_request_offer_item_id** | **string** |  | [optional]
 **received_quantity** | **float** |  | [optional]
 **sales_order_item_id** | **int** |  | [optional]
+**service_period_from_date** | **int** |  | [optional]
+**service_period_to_date** | **int** |  | [optional]
 **supplier_article_id** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

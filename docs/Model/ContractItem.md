@@ -39,6 +39,7 @@ Name | Type | Description | Notes
 **group_name** | **string** |  | [optional]
 **billing_group_id** | **string** |  | [optional]
 **commission_sales_partners** | [**\kruegge82\weclapp\Model\CommissionSalesPartner[]**](CommissionSalesPartner.md) |  | [optional]
+**cost_center_items** | [**\kruegge82\weclapp\Model\CostCenterWithDistributionPercentage[]**](CostCenterWithDistributionPercentage.md) |  | [optional]
 **cost_type_id** | **string** |  | [optional]
 **interval** | [**\kruegge82\weclapp\Model\ContractChargeInterval**](ContractChargeInterval.md) |  | [optional]
 **interval_type** | [**\kruegge82\weclapp\Model\ContractChargeIntervalType**](ContractChargeIntervalType.md) |  | [optional]

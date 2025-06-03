@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **amount_discount** | **float** |  | [optional]
 **amount_payment** | **float** |  | [optional]
 **bank_account_id** | **string** |  | [optional]
+**bank_transaction_id** | **string** |  | [optional]
 **cleared** | **bool** |  | [optional]
 **conversion_rate** | **float** |  | [optional]
 **conversion_rate_date** | **int** |  | [optional]

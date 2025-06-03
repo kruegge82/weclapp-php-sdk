@@ -162,8 +162,6 @@ transportationOrderIdIdCreatePickPost($id, $transportation_order_id_id_create_pi
 
 
 
-create a pick for a transportationOrder  # Endpoint for creating picks  ## Explanation of the `existingReservations` parameter The existingReservations parameter can be used to specify other reserved picks, that need to be part of the transportationOrder. These picks will not be directly linked to the transportationOrder, but considered as parts of the single pick that is created by this endpoint. Processing the transportationOrder will also update the storagePlace and internalTransportReference of the specified picks and editing these picks manually is not possible, while the transportationOrder is still in progress.  The pickId of an existingReservations element must refer to a pick with the exact same * storagePlaceId * internalTransportReferenceId * packagingUnitBaseArticleId * batchNumber * orderItemId  as the remaining parameters. The referenced pick will be split into two picks, if the given quantity does not match its own quantity.  The quantity parameter of this endpoint specifies the total quantity of the transportationOrder pick, the quantity of an existingReservations element is already included in it. The same applies for the serialNumbers parameter.
-
 ### Example
 
 ```php

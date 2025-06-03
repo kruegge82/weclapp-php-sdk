@@ -11,6 +11,7 @@ All URIs are relative to https://localhost:80/webapp/api/v1, except if the opera
 | [**purchaseInvoiceIdIdDelete()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdDelete) | **DELETE** /purchaseInvoice/id/{id} | delete a purchaseInvoice |
 | [**purchaseInvoiceIdIdDownloadLatestPurchaseInvoiceDocumentGet()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdDownloadLatestPurchaseInvoiceDocumentGet) | **GET** /purchaseInvoice/id/{id}/downloadLatestPurchaseInvoiceDocument |  |
 | [**purchaseInvoiceIdIdGet()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdGet) | **GET** /purchaseInvoice/id/{id} | query a specific purchaseInvoice |
+| [**purchaseInvoiceIdIdPrintLabelPost()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdPrintLabelPost) | **POST** /purchaseInvoice/id/{id}/printLabel |  |
 | [**purchaseInvoiceIdIdPut()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdPut) | **PUT** /purchaseInvoice/id/{id} | update a purchaseInvoice |
 | [**purchaseInvoiceIdIdResetTaxesPost()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdResetTaxesPost) | **POST** /purchaseInvoice/id/{id}/resetTaxes |  |
 | [**purchaseInvoiceIdIdSaveDuplicateInvoiceAsOriginalPost()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdSaveDuplicateInvoiceAsOriginalPost) | **POST** /purchaseInvoice/id/{id}/saveDuplicateInvoiceAsOriginal |  |
@@ -161,8 +162,6 @@ purchaseInvoiceIdIdCreateContractPost($id, $body): \kruegge82\weclapp\Model\Purc
 ```
 
 
-
-create a contract from a purchase invoice  # Endpoint for creating a contract for the specified purchase invoice  To use this endpoint, the optional purchase invoice workflow action \"Create contract\" must be enabled.  Furthermore, the purchase invoice must have * type `STANDARD_INVOICE` or `FINAL_INVOICE` or * type `CREDIT_NOTE` without a preceding invoice, or with a preceding invoice having type `STANDARD_INVOICE` or `FINAL_INVOICE`.
 
 ### Example
 
@@ -465,6 +464,68 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `purchaseInvoiceIdIdPrintLabelPost()`
+
+```php
+purchaseInvoiceIdIdPrintLabelPost($id, $purchase_invoice_id_id_print_label_post_request): \SplFileObject
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\PurchaseInvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$purchase_invoice_id_id_print_label_post_request = new \kruegge82\weclapp\Model\PurchaseInvoiceIdIdPrintLabelPostRequest(); // \kruegge82\weclapp\Model\PurchaseInvoiceIdIdPrintLabelPostRequest
+
+try {
+    $result = $apiInstance->purchaseInvoiceIdIdPrintLabelPost($id, $purchase_invoice_id_id_print_label_post_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PurchaseInvoiceApi->purchaseInvoiceIdIdPrintLabelPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **purchase_invoice_id_id_print_label_post_request** | [**\kruegge82\weclapp\Model\PurchaseInvoiceIdIdPrintLabelPostRequest**](../Model/PurchaseInvoiceIdIdPrintLabelPostRequest.md)|  | |
+
+### Return type
+
+**\SplFileObject**
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `purchaseInvoiceIdIdPut()`
 
 ```php
@@ -538,8 +599,6 @@ purchaseInvoiceIdIdResetTaxesPost($id, $body): \kruegge82\weclapp\Model\Incoming
 ```
 
 
-
-reset taxes of invoice items for a purchase invoice # Endpoint for resetting taxes Resets the taxes to the default for the specified entity. ## When can taxes be reset? General purchase setting \"Non-compliant item tax rates\" needs to be set to \"Allow and warn\" or \"manual correction required\" Optional purchase invoice workflow action \"reset taxes\" needs to be enabled
 
 ### Example
 
@@ -728,8 +787,6 @@ purchaseInvoiceStartInvoiceDocumentProcessingMultipartUploadPost($filename): \kr
 ```
 
 
-
-upload purchase invoice documents and process them via OCR or e-invoice detection  # Endpoint for uploading purchase invoice documents and processing them  This endpoint can be used to quickly turn invoice documents received from suppliers into weclapp purchase invoices. Supported file types are XML, PDF (with or without embedded XML) and images (PNG, JPEG, GIF, TIFF).  The documents are uploaded via HTTP multipart request (multiple documents can be uploaded at the same time) and processing is started as a background job. For each document, the appropriate processing strategy is selected based on the file type: * Image files and PDF files without embedded XML are processed using Optical Character Recognition (OCR). **Note:** This will only work if your weclapp admin has previously given consent to the use of our OCR provider Klippa App B.V. This can only be done in the weclapp UI. * XML files and PDF files with embedded XML will be processed using e-invoice detection.  If processing is successful, a purchase invoice with status `INVOICE_RECEIVED` will be created, otherwise a validation error will be shown in the background job log.
 
 ### Example
 

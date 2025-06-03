@@ -11,6 +11,7 @@ All URIs are relative to https://localhost:80/webapp/api/v1, except if the opera
 | [**userIdIdGet()**](UserApi.md#userIdIdGet) | **GET** /user/id/{id} | query a specific user |
 | [**userIdIdInvitePost()**](UserApi.md#userIdIdInvitePost) | **POST** /user/id/{id}/invite |  |
 | [**userIdIdPut()**](UserApi.md#userIdIdPut) | **PUT** /user/id/{id} | update a user |
+| [**userIdIdSoftDeletePost()**](UserApi.md#userIdIdSoftDeletePost) | **POST** /user/id/{id}/softDelete |  |
 | [**userIdIdUserImageGet()**](UserApi.md#userIdIdUserImageGet) | **GET** /user/id/{id}/userImage |  |
 | [**userIdIdUserImageThumbnailGet()**](UserApi.md#userIdIdUserImageThumbnailGet) | **GET** /user/id/{id}/userImageThumbnail |  |
 | [**userPost()**](UserApi.md#userPost) | **POST** /user | create a user |
@@ -448,6 +449,68 @@ try {
 ### Return type
 
 [**\kruegge82\weclapp\Model\User**](../Model/User.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `userIdIdSoftDeletePost()`
+
+```php
+userIdIdSoftDeletePost($id, $body): \kruegge82\weclapp\Model\UserCurrentUserGet200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$body = array('key' => new \stdClass); // object
+
+try {
+    $result = $apiInstance->userIdIdSoftDeletePost($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UserApi->userIdIdSoftDeletePost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **body** | **object**|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\UserCurrentUserGet200Response**](../Model/UserCurrentUserGet200Response.md)
 
 ### Authorization
 
