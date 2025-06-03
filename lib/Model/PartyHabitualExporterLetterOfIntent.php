@@ -360,8 +360,8 @@ class PartyHabitualExporterLetterOfIntent implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'number_supplier', the character length must be smaller than or equal to 30.";
         }
 
-        if (!is_null($this->container['total_amount']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['total_amount'])) {
-            $invalidProperties[] = "invalid value for 'total_amount', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['total_amount']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['total_amount'])) {
+            $invalidProperties[] = "invalid value for 'total_amount', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -680,8 +680,8 @@ class PartyHabitualExporterLetterOfIntent implements ModelInterface, ArrayAccess
             throw new \InvalidArgumentException('non-nullable total_amount cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($total_amount)))) {
-            throw new \InvalidArgumentException("invalid value for \$total_amount when calling PartyHabitualExporterLetterOfIntent., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($total_amount)))) {
+            throw new \InvalidArgumentException("invalid value for \$total_amount when calling PartyHabitualExporterLetterOfIntent., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['total_amount'] = $total_amount;

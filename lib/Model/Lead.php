@@ -809,8 +809,8 @@ class Lead implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'website', the character length must be smaller than or equal to 1000.";
         }
 
-        if (!is_null($this->container['annual_revenue']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['annual_revenue'])) {
-            $invalidProperties[] = "invalid value for 'annual_revenue', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['annual_revenue']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['annual_revenue'])) {
+            $invalidProperties[] = "invalid value for 'annual_revenue', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['vat_registration_number']) && (mb_strlen($this->container['vat_registration_number']) > 1000)) {
@@ -1893,8 +1893,8 @@ class Lead implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable annual_revenue cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($annual_revenue)))) {
-            throw new \InvalidArgumentException("invalid value for \$annual_revenue when calling Lead., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($annual_revenue)))) {
+            throw new \InvalidArgumentException("invalid value for \$annual_revenue when calling Lead., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['annual_revenue'] = $annual_revenue;

@@ -987,8 +987,8 @@ class Article implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'ean', the character length must be smaller than or equal to 18.";
         }
 
-        if (!is_null($this->container['fixed_purchase_quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['fixed_purchase_quantity'])) {
-            $invalidProperties[] = "invalid value for 'fixed_purchase_quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['fixed_purchase_quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['fixed_purchase_quantity'])) {
+            $invalidProperties[] = "invalid value for 'fixed_purchase_quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['internal_note']) && (mb_strlen($this->container['internal_note']) > 1000)) {
@@ -1003,8 +1003,8 @@ class Article implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'match_code', the character length must be smaller than or equal to 1000.";
         }
 
-        if (!is_null($this->container['minimum_purchase_quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['minimum_purchase_quantity'])) {
-            $invalidProperties[] = "invalid value for 'minimum_purchase_quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['minimum_purchase_quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['minimum_purchase_quantity'])) {
+            $invalidProperties[] = "invalid value for 'minimum_purchase_quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) > 300)) {
@@ -1019,24 +1019,24 @@ class Article implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'short_description2', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['article_gross_weight']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['article_gross_weight'])) {
-            $invalidProperties[] = "invalid value for 'article_gross_weight', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['article_gross_weight']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['article_gross_weight'])) {
+            $invalidProperties[] = "invalid value for 'article_gross_weight', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['article_height']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['article_height'])) {
-            $invalidProperties[] = "invalid value for 'article_height', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['article_height']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['article_height'])) {
+            $invalidProperties[] = "invalid value for 'article_height', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['article_length']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['article_length'])) {
-            $invalidProperties[] = "invalid value for 'article_length', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['article_length']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['article_length'])) {
+            $invalidProperties[] = "invalid value for 'article_length', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['article_net_weight']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['article_net_weight'])) {
-            $invalidProperties[] = "invalid value for 'article_net_weight', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['article_net_weight']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['article_net_weight'])) {
+            $invalidProperties[] = "invalid value for 'article_net_weight', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['article_width']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['article_width'])) {
-            $invalidProperties[] = "invalid value for 'article_width', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['article_width']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['article_width'])) {
+            $invalidProperties[] = "invalid value for 'article_width', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['barcode']) && (mb_strlen($this->container['barcode']) > 4000)) {
@@ -1047,8 +1047,8 @@ class Article implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'catalog_code', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['commission_rate']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['commission_rate'])) {
-            $invalidProperties[] = "invalid value for 'commission_rate', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['commission_rate']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['commission_rate'])) {
+            $invalidProperties[] = "invalid value for 'commission_rate', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['customs_description']) && (mb_strlen($this->container['customs_description']) > 256)) {
@@ -1059,8 +1059,8 @@ class Article implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'long_text', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['minimum_stock_quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['minimum_stock_quantity'])) {
-            $invalidProperties[] = "invalid value for 'minimum_stock_quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['minimum_stock_quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['minimum_stock_quantity'])) {
+            $invalidProperties[] = "invalid value for 'minimum_stock_quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['producer_type']) && (mb_strlen($this->container['producer_type']) > 63)) {
@@ -1075,8 +1075,8 @@ class Article implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'system_code', the character length must be smaller than or equal to 4000.";
         }
 
-        if (!is_null($this->container['target_stock_quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['target_stock_quantity'])) {
-            $invalidProperties[] = "invalid value for 'target_stock_quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['target_stock_quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['target_stock_quantity'])) {
+            $invalidProperties[] = "invalid value for 'target_stock_quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -1345,8 +1345,8 @@ class Article implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable fixed_purchase_quantity cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($fixed_purchase_quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$fixed_purchase_quantity when calling Article., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($fixed_purchase_quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$fixed_purchase_quantity when calling Article., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['fixed_purchase_quantity'] = $fixed_purchase_quantity;
@@ -1470,8 +1470,8 @@ class Article implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable minimum_purchase_quantity cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($minimum_purchase_quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$minimum_purchase_quantity when calling Article., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($minimum_purchase_quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$minimum_purchase_quantity when calling Article., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['minimum_purchase_quantity'] = $minimum_purchase_quantity;
@@ -1896,8 +1896,8 @@ class Article implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable article_gross_weight cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($article_gross_weight)))) {
-            throw new \InvalidArgumentException("invalid value for \$article_gross_weight when calling Article., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($article_gross_weight)))) {
+            throw new \InvalidArgumentException("invalid value for \$article_gross_weight when calling Article., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['article_gross_weight'] = $article_gross_weight;
@@ -1928,8 +1928,8 @@ class Article implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable article_height cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($article_height)))) {
-            throw new \InvalidArgumentException("invalid value for \$article_height when calling Article., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($article_height)))) {
+            throw new \InvalidArgumentException("invalid value for \$article_height when calling Article., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['article_height'] = $article_height;
@@ -1987,8 +1987,8 @@ class Article implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable article_length cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($article_length)))) {
-            throw new \InvalidArgumentException("invalid value for \$article_length when calling Article., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($article_length)))) {
+            throw new \InvalidArgumentException("invalid value for \$article_length when calling Article., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['article_length'] = $article_length;
@@ -2019,8 +2019,8 @@ class Article implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable article_net_weight cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($article_net_weight)))) {
-            throw new \InvalidArgumentException("invalid value for \$article_net_weight when calling Article., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($article_net_weight)))) {
+            throw new \InvalidArgumentException("invalid value for \$article_net_weight when calling Article., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['article_net_weight'] = $article_net_weight;
@@ -2105,8 +2105,8 @@ class Article implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable article_width cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($article_width)))) {
-            throw new \InvalidArgumentException("invalid value for \$article_width when calling Article., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($article_width)))) {
+            throw new \InvalidArgumentException("invalid value for \$article_width when calling Article., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['article_width'] = $article_width;
@@ -2334,8 +2334,8 @@ class Article implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable commission_rate cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($commission_rate)))) {
-            throw new \InvalidArgumentException("invalid value for \$commission_rate when calling Article., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($commission_rate)))) {
+            throw new \InvalidArgumentException("invalid value for \$commission_rate when calling Article., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['commission_rate'] = $commission_rate;
@@ -2974,8 +2974,8 @@ class Article implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable minimum_stock_quantity cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($minimum_stock_quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$minimum_stock_quantity when calling Article., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($minimum_stock_quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$minimum_stock_quantity when calling Article., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['minimum_stock_quantity'] = $minimum_stock_quantity;
@@ -3836,8 +3836,8 @@ class Article implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable target_stock_quantity cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($target_stock_quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$target_stock_quantity when calling Article., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($target_stock_quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$target_stock_quantity when calling Article., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['target_stock_quantity'] = $target_stock_quantity;

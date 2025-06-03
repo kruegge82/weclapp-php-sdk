@@ -1394,8 +1394,8 @@ class Party implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'customer_amount_insured', must be conform to the pattern /^([0-9]{1,14})([.][0-9]{1,4})?$/.";
         }
 
-        if (!is_null($this->container['customer_annual_revenue']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['customer_annual_revenue'])) {
-            $invalidProperties[] = "invalid value for 'customer_annual_revenue', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['customer_annual_revenue']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['customer_annual_revenue'])) {
+            $invalidProperties[] = "invalid value for 'customer_annual_revenue', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['customer_block_notice']) && (mb_strlen($this->container['customer_block_notice']) > 1000)) {
@@ -1406,12 +1406,12 @@ class Party implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'customer_credit_limit', must be conform to the pattern /^([0-9]{1,14})([.][0-9]{1,4})?$/.";
         }
 
-        if (!is_null($this->container['customer_default_header_discount']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['customer_default_header_discount'])) {
-            $invalidProperties[] = "invalid value for 'customer_default_header_discount', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['customer_default_header_discount']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['customer_default_header_discount'])) {
+            $invalidProperties[] = "invalid value for 'customer_default_header_discount', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['customer_default_header_surcharge']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['customer_default_header_surcharge'])) {
-            $invalidProperties[] = "invalid value for 'customer_default_header_surcharge', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['customer_default_header_surcharge']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['customer_default_header_surcharge'])) {
+            $invalidProperties[] = "invalid value for 'customer_default_header_surcharge', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['customer_internal_note']) && (mb_strlen($this->container['customer_internal_note']) > 4000)) {
@@ -1462,12 +1462,12 @@ class Party implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'reference_number', the character length must be smaller than or equal to 1000.";
         }
 
-        if (!is_null($this->container['sales_partner_default_commission_fix']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['sales_partner_default_commission_fix'])) {
-            $invalidProperties[] = "invalid value for 'sales_partner_default_commission_fix', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['sales_partner_default_commission_fix']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['sales_partner_default_commission_fix'])) {
+            $invalidProperties[] = "invalid value for 'sales_partner_default_commission_fix', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['sales_partner_default_commission_percentage']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['sales_partner_default_commission_percentage'])) {
-            $invalidProperties[] = "invalid value for 'sales_partner_default_commission_percentage', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['sales_partner_default_commission_percentage']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['sales_partner_default_commission_percentage'])) {
+            $invalidProperties[] = "invalid value for 'sales_partner_default_commission_percentage', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['supplier_customer_number_at_supplier']) && (mb_strlen($this->container['supplier_customer_number_at_supplier']) > 64)) {
@@ -1478,8 +1478,8 @@ class Party implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'supplier_internal_note', the character length must be smaller than or equal to 1000.";
         }
 
-        if (!is_null($this->container['supplier_minimum_purchase_order_amount']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['supplier_minimum_purchase_order_amount'])) {
-            $invalidProperties[] = "invalid value for 'supplier_minimum_purchase_order_amount', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['supplier_minimum_purchase_order_amount']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['supplier_minimum_purchase_order_amount'])) {
+            $invalidProperties[] = "invalid value for 'supplier_minimum_purchase_order_amount', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['supplier_number']) && (mb_strlen($this->container['supplier_number']) > 1000)) {
@@ -2785,8 +2785,8 @@ class Party implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable customer_annual_revenue cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($customer_annual_revenue)))) {
-            throw new \InvalidArgumentException("invalid value for \$customer_annual_revenue when calling Party., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($customer_annual_revenue)))) {
+            throw new \InvalidArgumentException("invalid value for \$customer_annual_revenue when calling Party., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['customer_annual_revenue'] = $customer_annual_revenue;
@@ -3129,8 +3129,8 @@ class Party implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable customer_default_header_discount cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($customer_default_header_discount)))) {
-            throw new \InvalidArgumentException("invalid value for \$customer_default_header_discount when calling Party., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($customer_default_header_discount)))) {
+            throw new \InvalidArgumentException("invalid value for \$customer_default_header_discount when calling Party., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['customer_default_header_discount'] = $customer_default_header_discount;
@@ -3161,8 +3161,8 @@ class Party implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable customer_default_header_surcharge cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($customer_default_header_surcharge)))) {
-            throw new \InvalidArgumentException("invalid value for \$customer_default_header_surcharge when calling Party., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($customer_default_header_surcharge)))) {
+            throw new \InvalidArgumentException("invalid value for \$customer_default_header_surcharge when calling Party., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['customer_default_header_surcharge'] = $customer_default_header_surcharge;
@@ -5122,8 +5122,8 @@ class Party implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable sales_partner_default_commission_fix cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($sales_partner_default_commission_fix)))) {
-            throw new \InvalidArgumentException("invalid value for \$sales_partner_default_commission_fix when calling Party., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($sales_partner_default_commission_fix)))) {
+            throw new \InvalidArgumentException("invalid value for \$sales_partner_default_commission_fix when calling Party., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['sales_partner_default_commission_fix'] = $sales_partner_default_commission_fix;
@@ -5154,8 +5154,8 @@ class Party implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable sales_partner_default_commission_percentage cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($sales_partner_default_commission_percentage)))) {
-            throw new \InvalidArgumentException("invalid value for \$sales_partner_default_commission_percentage when calling Party., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($sales_partner_default_commission_percentage)))) {
+            throw new \InvalidArgumentException("invalid value for \$sales_partner_default_commission_percentage when calling Party., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['sales_partner_default_commission_percentage'] = $sales_partner_default_commission_percentage;
@@ -5468,8 +5468,8 @@ class Party implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable supplier_minimum_purchase_order_amount cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($supplier_minimum_purchase_order_amount)))) {
-            throw new \InvalidArgumentException("invalid value for \$supplier_minimum_purchase_order_amount when calling Party., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($supplier_minimum_purchase_order_amount)))) {
+            throw new \InvalidArgumentException("invalid value for \$supplier_minimum_purchase_order_amount when calling Party., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['supplier_minimum_purchase_order_amount'] = $supplier_minimum_purchase_order_amount;

@@ -314,8 +314,8 @@ class ReductionAdditionItem implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = "invalid value for 'title', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['value']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['value'])) {
-            $invalidProperties[] = "invalid value for 'value', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['value']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['value'])) {
+            $invalidProperties[] = "invalid value for 'value', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -495,8 +495,8 @@ class ReductionAdditionItem implements ModelInterface, ArrayAccess, \JsonSeriali
             throw new \InvalidArgumentException('non-nullable value cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($value)))) {
-            throw new \InvalidArgumentException("invalid value for \$value when calling ReductionAdditionItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($value)))) {
+            throw new \InvalidArgumentException("invalid value for \$value when calling ReductionAdditionItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['value'] = $value;

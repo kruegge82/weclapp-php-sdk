@@ -401,36 +401,36 @@ class SalesOrderShippingCostItem implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['gross_amount']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['gross_amount'])) {
-            $invalidProperties[] = "invalid value for 'gross_amount', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['gross_amount']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['gross_amount'])) {
+            $invalidProperties[] = "invalid value for 'gross_amount', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['gross_amount_in_company_currency']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['gross_amount_in_company_currency'])) {
-            $invalidProperties[] = "invalid value for 'gross_amount_in_company_currency', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['gross_amount_in_company_currency']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['gross_amount_in_company_currency'])) {
+            $invalidProperties[] = "invalid value for 'gross_amount_in_company_currency', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['net_amount']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['net_amount'])) {
-            $invalidProperties[] = "invalid value for 'net_amount', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['net_amount']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['net_amount'])) {
+            $invalidProperties[] = "invalid value for 'net_amount', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['net_amount_in_company_currency']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['net_amount_in_company_currency'])) {
-            $invalidProperties[] = "invalid value for 'net_amount_in_company_currency', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['net_amount_in_company_currency']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['net_amount_in_company_currency'])) {
+            $invalidProperties[] = "invalid value for 'net_amount_in_company_currency', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['unit_price']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['unit_price'])) {
-            $invalidProperties[] = "invalid value for 'unit_price', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['unit_price']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['unit_price'])) {
+            $invalidProperties[] = "invalid value for 'unit_price', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['unit_price_in_company_currency']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['unit_price_in_company_currency'])) {
-            $invalidProperties[] = "invalid value for 'unit_price_in_company_currency', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['unit_price_in_company_currency']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['unit_price_in_company_currency'])) {
+            $invalidProperties[] = "invalid value for 'unit_price_in_company_currency', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['unit_cost']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['unit_cost'])) {
-            $invalidProperties[] = "invalid value for 'unit_cost', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['unit_cost']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['unit_cost'])) {
+            $invalidProperties[] = "invalid value for 'unit_cost', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['unit_cost_in_company_currency']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['unit_cost_in_company_currency'])) {
-            $invalidProperties[] = "invalid value for 'unit_cost_in_company_currency', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['unit_cost_in_company_currency']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['unit_cost_in_company_currency'])) {
+            $invalidProperties[] = "invalid value for 'unit_cost_in_company_currency', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -635,8 +635,8 @@ class SalesOrderShippingCostItem implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable gross_amount cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($gross_amount)))) {
-            throw new \InvalidArgumentException("invalid value for \$gross_amount when calling SalesOrderShippingCostItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($gross_amount)))) {
+            throw new \InvalidArgumentException("invalid value for \$gross_amount when calling SalesOrderShippingCostItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['gross_amount'] = $gross_amount;
@@ -667,8 +667,8 @@ class SalesOrderShippingCostItem implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable gross_amount_in_company_currency cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($gross_amount_in_company_currency)))) {
-            throw new \InvalidArgumentException("invalid value for \$gross_amount_in_company_currency when calling SalesOrderShippingCostItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($gross_amount_in_company_currency)))) {
+            throw new \InvalidArgumentException("invalid value for \$gross_amount_in_company_currency when calling SalesOrderShippingCostItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['gross_amount_in_company_currency'] = $gross_amount_in_company_currency;
@@ -726,8 +726,8 @@ class SalesOrderShippingCostItem implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable net_amount cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($net_amount)))) {
-            throw new \InvalidArgumentException("invalid value for \$net_amount when calling SalesOrderShippingCostItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($net_amount)))) {
+            throw new \InvalidArgumentException("invalid value for \$net_amount when calling SalesOrderShippingCostItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['net_amount'] = $net_amount;
@@ -758,8 +758,8 @@ class SalesOrderShippingCostItem implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable net_amount_in_company_currency cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($net_amount_in_company_currency)))) {
-            throw new \InvalidArgumentException("invalid value for \$net_amount_in_company_currency when calling SalesOrderShippingCostItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($net_amount_in_company_currency)))) {
+            throw new \InvalidArgumentException("invalid value for \$net_amount_in_company_currency when calling SalesOrderShippingCostItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['net_amount_in_company_currency'] = $net_amount_in_company_currency;
@@ -790,8 +790,8 @@ class SalesOrderShippingCostItem implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable unit_price cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($unit_price)))) {
-            throw new \InvalidArgumentException("invalid value for \$unit_price when calling SalesOrderShippingCostItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($unit_price)))) {
+            throw new \InvalidArgumentException("invalid value for \$unit_price when calling SalesOrderShippingCostItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['unit_price'] = $unit_price;
@@ -822,8 +822,8 @@ class SalesOrderShippingCostItem implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable unit_price_in_company_currency cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($unit_price_in_company_currency)))) {
-            throw new \InvalidArgumentException("invalid value for \$unit_price_in_company_currency when calling SalesOrderShippingCostItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($unit_price_in_company_currency)))) {
+            throw new \InvalidArgumentException("invalid value for \$unit_price_in_company_currency when calling SalesOrderShippingCostItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['unit_price_in_company_currency'] = $unit_price_in_company_currency;
@@ -937,8 +937,8 @@ class SalesOrderShippingCostItem implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable unit_cost cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($unit_cost)))) {
-            throw new \InvalidArgumentException("invalid value for \$unit_cost when calling SalesOrderShippingCostItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($unit_cost)))) {
+            throw new \InvalidArgumentException("invalid value for \$unit_cost when calling SalesOrderShippingCostItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['unit_cost'] = $unit_cost;
@@ -969,8 +969,8 @@ class SalesOrderShippingCostItem implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable unit_cost_in_company_currency cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($unit_cost_in_company_currency)))) {
-            throw new \InvalidArgumentException("invalid value for \$unit_cost_in_company_currency when calling SalesOrderShippingCostItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($unit_cost_in_company_currency)))) {
+            throw new \InvalidArgumentException("invalid value for \$unit_cost_in_company_currency when calling SalesOrderShippingCostItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['unit_cost_in_company_currency'] = $unit_cost_in_company_currency;

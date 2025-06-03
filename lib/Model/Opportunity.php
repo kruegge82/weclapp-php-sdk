@@ -490,8 +490,8 @@ class Opportunity implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'opportunity_number', the character length must be smaller than or equal to 64.";
         }
 
-        if (!is_null($this->container['revenue']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['revenue'])) {
-            $invalidProperties[] = "invalid value for 'revenue', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['revenue']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['revenue'])) {
+            $invalidProperties[] = "invalid value for 'revenue', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['win_loss_description']) && (mb_strlen($this->container['win_loss_description']) > 255)) {
@@ -1038,8 +1038,8 @@ class Opportunity implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable revenue cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($revenue)))) {
-            throw new \InvalidArgumentException("invalid value for \$revenue when calling Opportunity., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($revenue)))) {
+            throw new \InvalidArgumentException("invalid value for \$revenue when calling Opportunity., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['revenue'] = $revenue;

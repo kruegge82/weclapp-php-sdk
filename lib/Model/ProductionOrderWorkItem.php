@@ -388,8 +388,8 @@ class ProductionOrderWorkItem implements ModelInterface, ArrayAccess, \JsonSeria
             $invalidProperties[] = "invalid value for 'short_description', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['unit_time']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['unit_time'])) {
-            $invalidProperties[] = "invalid value for 'unit_time', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['unit_time']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['unit_time'])) {
+            $invalidProperties[] = "invalid value for 'unit_time', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -843,8 +843,8 @@ class ProductionOrderWorkItem implements ModelInterface, ArrayAccess, \JsonSeria
             throw new \InvalidArgumentException('non-nullable unit_time cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($unit_time)))) {
-            throw new \InvalidArgumentException("invalid value for \$unit_time when calling ProductionOrderWorkItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($unit_time)))) {
+            throw new \InvalidArgumentException("invalid value for \$unit_time when calling ProductionOrderWorkItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['unit_time'] = $unit_time;

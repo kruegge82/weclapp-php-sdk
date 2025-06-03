@@ -356,8 +356,8 @@ class PaymentMethod implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'discount_percentage', must be conform to the pattern /^([0-9]{1,3})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['discount_value']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['discount_value'])) {
-            $invalidProperties[] = "invalid value for 'discount_value', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['discount_value']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['discount_value'])) {
+            $invalidProperties[] = "invalid value for 'discount_value', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['document_text']) && (mb_strlen($this->container['document_text']) > 255)) {
@@ -604,8 +604,8 @@ class PaymentMethod implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable discount_value cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($discount_value)))) {
-            throw new \InvalidArgumentException("invalid value for \$discount_value when calling PaymentMethod., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($discount_value)))) {
+            throw new \InvalidArgumentException("invalid value for \$discount_value when calling PaymentMethod., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['discount_value'] = $discount_value;

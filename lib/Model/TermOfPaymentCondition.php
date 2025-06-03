@@ -317,8 +317,8 @@ class TermOfPaymentCondition implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['discount_percentage']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['discount_percentage'])) {
-            $invalidProperties[] = "invalid value for 'discount_percentage', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['discount_percentage']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['discount_percentage'])) {
+            $invalidProperties[] = "invalid value for 'discount_percentage', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) > 255)) {
@@ -471,8 +471,8 @@ class TermOfPaymentCondition implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('non-nullable discount_percentage cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($discount_percentage)))) {
-            throw new \InvalidArgumentException("invalid value for \$discount_percentage when calling TermOfPaymentCondition., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($discount_percentage)))) {
+            throw new \InvalidArgumentException("invalid value for \$discount_percentage when calling TermOfPaymentCondition., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['discount_percentage'] = $discount_percentage;
