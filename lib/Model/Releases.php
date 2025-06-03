@@ -331,8 +331,8 @@ class Releases implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['released_quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['released_quantity'])) {
-            $invalidProperties[] = "invalid value for 'released_quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['released_quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['released_quantity'])) {
+            $invalidProperties[] = "invalid value for 'released_quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -589,8 +589,8 @@ class Releases implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable released_quantity cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($released_quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$released_quantity when calling Releases., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($released_quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$released_quantity when calling Releases., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['released_quantity'] = $released_quantity;

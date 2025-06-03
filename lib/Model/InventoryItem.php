@@ -409,20 +409,20 @@ class InventoryItem implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'comment', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['counted_quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['counted_quantity'])) {
-            $invalidProperties[] = "invalid value for 'counted_quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['counted_quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['counted_quantity'])) {
+            $invalidProperties[] = "invalid value for 'counted_quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['expected_quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['expected_quantity'])) {
-            $invalidProperties[] = "invalid value for 'expected_quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['expected_quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['expected_quantity'])) {
+            $invalidProperties[] = "invalid value for 'expected_quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['position_number']) && (mb_strlen($this->container['position_number']) > 255)) {
             $invalidProperties[] = "invalid value for 'position_number', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['replacement_value']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['replacement_value'])) {
-            $invalidProperties[] = "invalid value for 'replacement_value', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['replacement_value']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['replacement_value'])) {
+            $invalidProperties[] = "invalid value for 'replacement_value', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -660,8 +660,8 @@ class InventoryItem implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable counted_quantity cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($counted_quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$counted_quantity when calling InventoryItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($counted_quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$counted_quantity when calling InventoryItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['counted_quantity'] = $counted_quantity;
@@ -692,8 +692,8 @@ class InventoryItem implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable expected_quantity cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($expected_quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$expected_quantity when calling InventoryItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($expected_quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$expected_quantity when calling InventoryItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['expected_quantity'] = $expected_quantity;
@@ -944,8 +944,8 @@ class InventoryItem implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable replacement_value cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($replacement_value)))) {
-            throw new \InvalidArgumentException("invalid value for \$replacement_value when calling InventoryItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($replacement_value)))) {
+            throw new \InvalidArgumentException("invalid value for \$replacement_value when calling InventoryItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['replacement_value'] = $replacement_value;

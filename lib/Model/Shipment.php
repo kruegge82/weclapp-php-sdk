@@ -765,8 +765,8 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'customer_purchase_order_number', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['declared_value_amount']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['declared_value_amount'])) {
-            $invalidProperties[] = "invalid value for 'declared_value_amount', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['declared_value_amount']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['declared_value_amount'])) {
+            $invalidProperties[] = "invalid value for 'declared_value_amount', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['dhl_receiver_id']) && (mb_strlen($this->container['dhl_receiver_id']) > 1000)) {
@@ -793,8 +793,8 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'package_tracking_url', the character length must be smaller than or equal to 1000.";
         }
 
-        if (!is_null($this->container['package_weight']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['package_weight'])) {
-            $invalidProperties[] = "invalid value for 'package_weight', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['package_weight']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['package_weight'])) {
+            $invalidProperties[] = "invalid value for 'package_weight', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['picking_instructions']) && (mb_strlen($this->container['picking_instructions']) > 255)) {
@@ -1579,8 +1579,8 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable declared_value_amount cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($declared_value_amount)))) {
-            throw new \InvalidArgumentException("invalid value for \$declared_value_amount when calling Shipment., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($declared_value_amount)))) {
+            throw new \InvalidArgumentException("invalid value for \$declared_value_amount when calling Shipment., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['declared_value_amount'] = $declared_value_amount;
@@ -2044,8 +2044,8 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable package_weight cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($package_weight)))) {
-            throw new \InvalidArgumentException("invalid value for \$package_weight when calling Shipment., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($package_weight)))) {
+            throw new \InvalidArgumentException("invalid value for \$package_weight when calling Shipment., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['package_weight'] = $package_weight;

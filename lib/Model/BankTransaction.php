@@ -401,12 +401,12 @@ class BankTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['amount']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount'])) {
-            $invalidProperties[] = "invalid value for 'amount', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['amount']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount'])) {
+            $invalidProperties[] = "invalid value for 'amount', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['amount_costs_of_monetary_traffic']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_costs_of_monetary_traffic'])) {
-            $invalidProperties[] = "invalid value for 'amount_costs_of_monetary_traffic', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['amount_costs_of_monetary_traffic']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_costs_of_monetary_traffic'])) {
+            $invalidProperties[] = "invalid value for 'amount_costs_of_monetary_traffic', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 255)) {
@@ -617,8 +617,8 @@ class BankTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable amount cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount)))) {
-            throw new \InvalidArgumentException("invalid value for \$amount when calling BankTransaction., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount)))) {
+            throw new \InvalidArgumentException("invalid value for \$amount when calling BankTransaction., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['amount'] = $amount;
@@ -649,8 +649,8 @@ class BankTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable amount_costs_of_monetary_traffic cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_costs_of_monetary_traffic)))) {
-            throw new \InvalidArgumentException("invalid value for \$amount_costs_of_monetary_traffic when calling BankTransaction., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_costs_of_monetary_traffic)))) {
+            throw new \InvalidArgumentException("invalid value for \$amount_costs_of_monetary_traffic when calling BankTransaction., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['amount_costs_of_monetary_traffic'] = $amount_costs_of_monetary_traffic;

@@ -331,8 +331,8 @@ class ArticleCalculationPrice implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['price']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['price'])) {
-            $invalidProperties[] = "invalid value for 'price', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['price']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['price'])) {
+            $invalidProperties[] = "invalid value for 'price', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -535,8 +535,8 @@ class ArticleCalculationPrice implements ModelInterface, ArrayAccess, \JsonSeria
             throw new \InvalidArgumentException('non-nullable price cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($price)))) {
-            throw new \InvalidArgumentException("invalid value for \$price when calling ArticleCalculationPrice., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($price)))) {
+            throw new \InvalidArgumentException("invalid value for \$price when calling ArticleCalculationPrice., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['price'] = $price;

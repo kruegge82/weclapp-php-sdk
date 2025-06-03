@@ -331,12 +331,12 @@ class CommissionSalesPartner implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['commission_fix']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['commission_fix'])) {
-            $invalidProperties[] = "invalid value for 'commission_fix', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['commission_fix']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['commission_fix'])) {
+            $invalidProperties[] = "invalid value for 'commission_fix', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['commission_percentage']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['commission_percentage'])) {
-            $invalidProperties[] = "invalid value for 'commission_percentage', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['commission_percentage']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['commission_percentage'])) {
+            $invalidProperties[] = "invalid value for 'commission_percentage', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -485,8 +485,8 @@ class CommissionSalesPartner implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('non-nullable commission_fix cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($commission_fix)))) {
-            throw new \InvalidArgumentException("invalid value for \$commission_fix when calling CommissionSalesPartner., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($commission_fix)))) {
+            throw new \InvalidArgumentException("invalid value for \$commission_fix when calling CommissionSalesPartner., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['commission_fix'] = $commission_fix;
@@ -517,8 +517,8 @@ class CommissionSalesPartner implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('non-nullable commission_percentage cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($commission_percentage)))) {
-            throw new \InvalidArgumentException("invalid value for \$commission_percentage when calling CommissionSalesPartner., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($commission_percentage)))) {
+            throw new \InvalidArgumentException("invalid value for \$commission_percentage when calling CommissionSalesPartner., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['commission_percentage'] = $commission_percentage;

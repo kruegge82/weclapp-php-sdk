@@ -349,8 +349,8 @@ class CashAccount implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 300.";
         }
 
-        if (!is_null($this->container['opening_balance']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['opening_balance'])) {
-            $invalidProperties[] = "invalid value for 'opening_balance', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['opening_balance']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['opening_balance'])) {
+            $invalidProperties[] = "invalid value for 'opening_balance', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -640,8 +640,8 @@ class CashAccount implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable opening_balance cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($opening_balance)))) {
-            throw new \InvalidArgumentException("invalid value for \$opening_balance when calling CashAccount., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($opening_balance)))) {
+            throw new \InvalidArgumentException("invalid value for \$opening_balance when calling CashAccount., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['opening_balance'] = $opening_balance;

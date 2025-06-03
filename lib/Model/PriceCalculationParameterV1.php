@@ -345,12 +345,12 @@ class PriceCalculationParameterV1 implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['from_scale']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['from_scale'])) {
-            $invalidProperties[] = "invalid value for 'from_scale', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['from_scale']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['from_scale'])) {
+            $invalidProperties[] = "invalid value for 'from_scale', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['lower_purchase_price_bound']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['lower_purchase_price_bound'])) {
-            $invalidProperties[] = "invalid value for 'lower_purchase_price_bound', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['lower_purchase_price_bound']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['lower_purchase_price_bound'])) {
+            $invalidProperties[] = "invalid value for 'lower_purchase_price_bound', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -526,8 +526,8 @@ class PriceCalculationParameterV1 implements ModelInterface, ArrayAccess, \JsonS
             throw new \InvalidArgumentException('non-nullable from_scale cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($from_scale)))) {
-            throw new \InvalidArgumentException("invalid value for \$from_scale when calling PriceCalculationParameterV1., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($from_scale)))) {
+            throw new \InvalidArgumentException("invalid value for \$from_scale when calling PriceCalculationParameterV1., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['from_scale'] = $from_scale;
@@ -558,8 +558,8 @@ class PriceCalculationParameterV1 implements ModelInterface, ArrayAccess, \JsonS
             throw new \InvalidArgumentException('non-nullable lower_purchase_price_bound cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($lower_purchase_price_bound)))) {
-            throw new \InvalidArgumentException("invalid value for \$lower_purchase_price_bound when calling PriceCalculationParameterV1., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($lower_purchase_price_bound)))) {
+            throw new \InvalidArgumentException("invalid value for \$lower_purchase_price_bound when calling PriceCalculationParameterV1., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['lower_purchase_price_bound'] = $lower_purchase_price_bound;

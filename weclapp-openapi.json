@@ -17875,7 +17875,7 @@
                       "properties": {
                         "articleValuationPrice": {
                           "format": "decimal",
-                          "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                          "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                           "type": "string"
                         },
                         "batchNumber": {
@@ -17946,7 +17946,7 @@
                         },
                         "quantity": {
                           "format": "decimal",
-                          "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                          "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                           "type": "string"
                         },
                         "serialNumbers": {
@@ -55472,7 +55472,7 @@
               },
               "quantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               }
             },
@@ -55511,7 +55511,7 @@
               },
               "quantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "serialNumbers": {
@@ -55716,7 +55716,7 @@
               },
               "conversionRate": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "conversionRateDate": {
@@ -55799,7 +55799,7 @@
           },
           "amount": {
             "format": "decimal",
-            "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+            "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
             "type": "string",
             "x-weclapp": {
               "required": true
@@ -56197,12 +56197,12 @@
               },
               "articleGrossWeight": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "articleHeight": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "articleImages": {
@@ -56213,12 +56213,12 @@
               },
               "articleLength": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "articleNetWeight": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "articlePrices": {
@@ -56235,7 +56235,7 @@
               },
               "articleWidth": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "availableForSalesChannels": {
@@ -56276,7 +56276,7 @@
               },
               "commissionRate": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "contractBillingCycle": {
@@ -56392,7 +56392,7 @@
               },
               "minimumStockQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "packagingQuantity": {
@@ -56559,7 +56559,7 @@
               },
               "targetStockQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "useAvailableForSalesChannels": {
@@ -56600,17 +56600,17 @@
             "properties": {
               "minimumOrderQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "minimumStockQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "targetStockQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "warehouseId": {
@@ -56649,7 +56649,7 @@
               },
               "price": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -56811,7 +56811,7 @@
               },
               "quantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -56908,7 +56908,7 @@
               },
               "price": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -56922,7 +56922,7 @@
               },
               "priceScaleValue": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -57114,7 +57114,7 @@
               },
               "balance": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "bankCode": {
@@ -57143,7 +57143,7 @@
               },
               "creditLine": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "currencyId": {
@@ -57231,7 +57231,7 @@
               },
               "amount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -57239,7 +57239,7 @@
               },
               "amountCostsOfMonetaryTraffic": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -57341,7 +57341,7 @@
               },
               "fixedPurchaseQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "internalNote": {
@@ -57359,7 +57359,7 @@
               },
               "minimumPurchaseQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "name": {
@@ -57428,7 +57428,7 @@
               },
               "quantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               }
             },
@@ -57622,17 +57622,17 @@
             "properties": {
               "discountPercentage": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "grossAmount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "grossAmountInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "manualUnitPrice": {
@@ -57640,22 +57640,22 @@
               },
               "netAmount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "netAmountForStatistics": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "netAmountForStatisticsInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "netAmountInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "reductionAdditionItems": {
@@ -57677,12 +57677,12 @@
               },
               "unitPrice": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "unitPriceInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               }
             },
@@ -57723,37 +57723,37 @@
               "currencyConversionRate": {
                 "deprecated": true,
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "grossAmount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "grossAmountInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "headerDiscount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "headerSurcharge": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "netAmount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "netAmountInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "nonStandardTaxId": {
@@ -57899,7 +57899,7 @@
               },
               "recommendedRetailPrice": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "servicePeriodFrom": {
@@ -57912,12 +57912,12 @@
               },
               "unitCost": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "unitCostInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               }
             },
@@ -58070,7 +58070,7 @@
               },
               "grossAmount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -58078,7 +58078,7 @@
               },
               "grossAmountInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -58092,7 +58092,7 @@
               },
               "netAmount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -58100,7 +58100,7 @@
               },
               "netAmountInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -58108,12 +58108,12 @@
               },
               "unitPrice": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "unitPriceInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -58209,7 +58209,7 @@
               },
               "quantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -58362,7 +58362,7 @@
               },
               "discountPercentage": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -58381,12 +58381,12 @@
               },
               "headerDiscount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "headerSurcharge": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "invoiceAddress": {
@@ -58408,7 +58408,7 @@
               },
               "orderQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -58549,7 +58549,7 @@
               },
               "unitPrice": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -59028,7 +59028,7 @@
               },
               "openingBalance": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -59063,7 +59063,7 @@
               },
               "amount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -59259,12 +59259,12 @@
             "properties": {
               "commissionFix": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "commissionPercentage": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "commissionType": {
@@ -59815,7 +59815,7 @@
               },
               "discountPercentage": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -59841,7 +59841,7 @@
               },
               "netAmount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -59849,7 +59849,7 @@
               },
               "netAmountInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -59861,7 +59861,7 @@
               },
               "quantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -59888,7 +59888,7 @@
               },
               "unitPrice": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -59896,7 +59896,7 @@
               },
               "unitPriceInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -60074,7 +60074,7 @@
               },
               "distributionPercentage": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -60739,12 +60739,12 @@
               },
               "defaultHeaderDiscount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "defaultHeaderSurcharge": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "deliveryBlock": {
@@ -60899,7 +60899,7 @@
             "properties": {
               "annualRevenue": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "companySizeId": {
@@ -62138,7 +62138,7 @@
             "properties": {
               "articleValuationPrice": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -62632,12 +62632,12 @@
               },
               "countedQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "expectedQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -62690,7 +62690,7 @@
               },
               "replacementValue": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "storagePlaceId": {
@@ -63769,7 +63769,7 @@
               },
               "amount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -63777,7 +63777,7 @@
               },
               "amountDiscount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -64109,7 +64109,7 @@
             "properties": {
               "amount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -64117,7 +64117,7 @@
               },
               "amountDiscount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -64125,7 +64125,7 @@
               },
               "amountOpen": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -64133,7 +64133,7 @@
               },
               "amountPaid": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -64272,7 +64272,7 @@
               },
               "revenue": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "salesChannel": {
@@ -64479,7 +64479,7 @@
               },
               "customerAnnualRevenue": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "customerBlockNotice": {
@@ -64545,12 +64545,12 @@
               },
               "customerDefaultHeaderDiscount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "customerDefaultHeaderSurcharge": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "customerDefaultShippingCarrierId": {
@@ -64904,12 +64904,12 @@
               },
               "salesPartnerDefaultCommissionFix": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "salesPartnerDefaultCommissionPercentage": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "salesPartnerDefaultCommissionType": {
@@ -64968,7 +64968,7 @@
               },
               "supplierMinimumPurchaseOrderAmount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "supplierNonStandardTaxId": {
@@ -65221,7 +65221,7 @@
               },
               "totalAmount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "type": {
@@ -65258,7 +65258,7 @@
             "properties": {
               "amountApplied": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -65266,7 +65266,7 @@
               },
               "amountAppliedOriginCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -65274,7 +65274,7 @@
               },
               "amountCostsOfMonetaryTraffic": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -65282,7 +65282,7 @@
               },
               "amountDiscountApplied": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -65345,7 +65345,7 @@
               },
               "discountValue": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "documentText": {
@@ -65423,7 +65423,7 @@
             "properties": {
               "amountDiscount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -65431,7 +65431,7 @@
               },
               "amountPayment": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -65455,7 +65455,7 @@
               },
               "conversionRate": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -66278,7 +66278,7 @@
               },
               "fromScale": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -66286,7 +66286,7 @@
               },
               "lowerPurchasePriceBound": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -66328,7 +66328,7 @@
               },
               "fromScale": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -66336,7 +66336,7 @@
               },
               "lowerPurchasePriceBound": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -66475,7 +66475,7 @@
               },
               "actualQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -66554,7 +66554,7 @@
               },
               "targetQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -66603,7 +66603,7 @@
               },
               "actualQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -66636,7 +66636,7 @@
               },
               "targetQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -66758,7 +66758,7 @@
               },
               "unitTime": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -66896,7 +66896,7 @@
               },
               "setupTime": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -66920,7 +66920,7 @@
               },
               "unitTime": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -66963,7 +66963,7 @@
             "properties": {
               "hourlyCost": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -67072,7 +67072,7 @@
               },
               "grossAmountOfHeaderTaxes": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -67080,7 +67080,7 @@
               },
               "grossAmountOfHeaderTaxesInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -67094,7 +67094,7 @@
               },
               "importSalesTaxAmount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "importSalesTaxId": {
@@ -67306,7 +67306,7 @@
             "properties": {
               "quantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -67619,7 +67619,7 @@
               },
               "invoicedQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -67638,7 +67638,7 @@
               },
               "receivedQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -67845,7 +67845,7 @@
               "currencyConversionRate": {
                 "deprecated": true,
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -67866,7 +67866,7 @@
               },
               "grossAmount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -67874,7 +67874,7 @@
               },
               "grossAmountInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -67882,17 +67882,17 @@
               },
               "headerDiscount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "headerSurcharge": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "netAmount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -67900,7 +67900,7 @@
               },
               "netAmountInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -68071,7 +68071,7 @@
               },
               "containerQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "description": {
@@ -68088,7 +68088,7 @@
               },
               "discountPercentage": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -68096,12 +68096,12 @@
               },
               "grossAmount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "grossAmountInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "manualQuantity": {
@@ -68114,12 +68114,12 @@
               },
               "minQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "netAmount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -68127,7 +68127,7 @@
               },
               "netAmountForStatistics": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -68135,7 +68135,7 @@
               },
               "netAmountForStatisticsInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -68143,7 +68143,7 @@
               },
               "netAmountInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -68178,7 +68178,7 @@
               "quantity": {
                 "deprecated": true,
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -68234,7 +68234,7 @@
               },
               "unitPrice": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -68242,7 +68242,7 @@
               },
               "unitPriceInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -68425,7 +68425,7 @@
               },
               "proposedQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -68436,7 +68436,7 @@
               },
               "requirementQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -68548,7 +68548,7 @@
             "properties": {
               "conversionQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -69198,7 +69198,7 @@
               },
               "value": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -69242,7 +69242,7 @@
           },
           "value": {
             "format": "decimal",
-            "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+            "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
             "type": "string",
             "x-weclapp": {
               "required": true
@@ -69323,7 +69323,7 @@
               },
               "releasedQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -69817,7 +69817,7 @@
           },
           "quantity": {
             "format": "decimal",
-            "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+            "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
             "type": "string",
             "x-weclapp": {
               "required": true
@@ -70204,7 +70204,7 @@
               },
               "invoicedQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -70225,7 +70225,7 @@
               },
               "shippedQuantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -70251,7 +70251,7 @@
             "properties": {
               "amount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -70378,12 +70378,12 @@
               },
               "unitCost": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "unitCostInCompanyCurrency": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               }
             },
@@ -70627,7 +70627,7 @@
               },
               "declaredValueAmount": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "declaredValueAmountCurrencyId": {
@@ -70704,7 +70704,7 @@
               },
               "packageWeight": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "packageWidth": {
@@ -71592,7 +71592,7 @@
               },
               "taxValue": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -72591,7 +72591,7 @@
             "properties": {
               "discountPercentage": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -74185,7 +74185,7 @@
               },
               "quantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string"
               },
               "salesOrderItemId": {
@@ -74289,7 +74289,7 @@
               },
               "quantity": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true
@@ -74342,7 +74342,7 @@
               },
               "valuationPrice": {
                 "format": "decimal",
-                "pattern": "^([0-9]{1,13})([.][0-9]{1,5})?$",
+                "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
                 "type": "string",
                 "x-weclapp": {
                   "required": true

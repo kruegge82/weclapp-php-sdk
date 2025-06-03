@@ -387,8 +387,8 @@ class CashAccountTransaction implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['amount']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount'])) {
-            $invalidProperties[] = "invalid value for 'amount', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['amount']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount'])) {
+            $invalidProperties[] = "invalid value for 'amount', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 255)) {
@@ -572,8 +572,8 @@ class CashAccountTransaction implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('non-nullable amount cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount)))) {
-            throw new \InvalidArgumentException("invalid value for \$amount when calling CashAccountTransaction., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount)))) {
+            throw new \InvalidArgumentException("invalid value for \$amount when calling CashAccountTransaction., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['amount'] = $amount;

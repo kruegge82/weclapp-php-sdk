@@ -479,8 +479,8 @@ class BankAccount implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'account_number', the character length must be smaller than or equal to 100.";
         }
 
-        if (!is_null($this->container['balance']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['balance'])) {
-            $invalidProperties[] = "invalid value for 'balance', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['balance']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['balance'])) {
+            $invalidProperties[] = "invalid value for 'balance', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['bank_code']) && (mb_strlen($this->container['bank_code']) > 100)) {
@@ -507,8 +507,8 @@ class BankAccount implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'credit_institute_zip', the character length must be smaller than or equal to 1000.";
         }
 
-        if (!is_null($this->container['credit_line']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['credit_line'])) {
-            $invalidProperties[] = "invalid value for 'credit_line', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['credit_line']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['credit_line'])) {
+            $invalidProperties[] = "invalid value for 'credit_line', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['different_sepa_creditor_identifier']) && (mb_strlen($this->container['different_sepa_creditor_identifier']) > 120)) {
@@ -847,8 +847,8 @@ class BankAccount implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable balance cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($balance)))) {
-            throw new \InvalidArgumentException("invalid value for \$balance when calling BankAccount., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($balance)))) {
+            throw new \InvalidArgumentException("invalid value for \$balance when calling BankAccount., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['balance'] = $balance;
@@ -1065,8 +1065,8 @@ class BankAccount implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable credit_line cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($credit_line)))) {
-            throw new \InvalidArgumentException("invalid value for \$credit_line when calling BankAccount., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($credit_line)))) {
+            throw new \InvalidArgumentException("invalid value for \$credit_line when calling BankAccount., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['credit_line'] = $credit_line;

@@ -377,8 +377,8 @@ class BasePick implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'batch_number', the character length must be smaller than or equal to 1000.";
         }
 
-        if (!is_null($this->container['quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['quantity'])) {
-            $invalidProperties[] = "invalid value for 'quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['quantity'])) {
+            $invalidProperties[] = "invalid value for 'quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -639,8 +639,8 @@ class BasePick implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable quantity cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$quantity when calling BasePick., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$quantity when calling BasePick., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['quantity'] = $quantity;

@@ -391,8 +391,8 @@ class Tax implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 256.";
         }
 
-        if (!is_null($this->container['tax_value']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['tax_value'])) {
-            $invalidProperties[] = "invalid value for 'tax_value', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['tax_value']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['tax_value'])) {
+            $invalidProperties[] = "invalid value for 'tax_value', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -877,8 +877,8 @@ class Tax implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable tax_value cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($tax_value)))) {
-            throw new \InvalidArgumentException("invalid value for \$tax_value when calling Tax., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($tax_value)))) {
+            throw new \InvalidArgumentException("invalid value for \$tax_value when calling Tax., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['tax_value'] = $tax_value;

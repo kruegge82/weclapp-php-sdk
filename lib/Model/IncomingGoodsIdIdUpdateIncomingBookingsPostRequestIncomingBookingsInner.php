@@ -401,8 +401,8 @@ class IncomingGoodsIdIdUpdateIncomingBookingsPostRequestIncomingBookingsInner im
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['article_valuation_price']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['article_valuation_price'])) {
-            $invalidProperties[] = "invalid value for 'article_valuation_price', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['article_valuation_price']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['article_valuation_price'])) {
+            $invalidProperties[] = "invalid value for 'article_valuation_price', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['batch_number']) && (mb_strlen($this->container['batch_number']) > 1000)) {
@@ -413,8 +413,8 @@ class IncomingGoodsIdIdUpdateIncomingBookingsPostRequestIncomingBookingsInner im
             $invalidProperties[] = "invalid value for 'confirmed_quantity_deprecated', must be conform to the pattern /^([0-9]{1,13})/.";
         }
 
-        if (!is_null($this->container['quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['quantity'])) {
-            $invalidProperties[] = "invalid value for 'quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['quantity'])) {
+            $invalidProperties[] = "invalid value for 'quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -455,8 +455,8 @@ class IncomingGoodsIdIdUpdateIncomingBookingsPostRequestIncomingBookingsInner im
             throw new \InvalidArgumentException('non-nullable article_valuation_price cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($article_valuation_price)))) {
-            throw new \InvalidArgumentException("invalid value for \$article_valuation_price when calling IncomingGoodsIdIdUpdateIncomingBookingsPostRequestIncomingBookingsInner., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($article_valuation_price)))) {
+            throw new \InvalidArgumentException("invalid value for \$article_valuation_price when calling IncomingGoodsIdIdUpdateIncomingBookingsPostRequestIncomingBookingsInner., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['article_valuation_price'] = $article_valuation_price;
@@ -874,8 +874,8 @@ class IncomingGoodsIdIdUpdateIncomingBookingsPostRequestIncomingBookingsInner im
             throw new \InvalidArgumentException('non-nullable quantity cannot be null');
         }
 
-        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$quantity when calling IncomingGoodsIdIdUpdateIncomingBookingsPostRequestIncomingBookingsInner., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$quantity when calling IncomingGoodsIdIdUpdateIncomingBookingsPostRequestIncomingBookingsInner., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['quantity'] = $quantity;
