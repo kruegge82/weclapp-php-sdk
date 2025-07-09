@@ -1,24 +1,24 @@
 # kruegge82\weclapp\ShipmentMethodApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**shipmentMethodCountGet()**](ShipmentMethodApi.md#shipmentMethodCountGet) | **GET** /shipmentMethod/count |  |
-| [**shipmentMethodGet()**](ShipmentMethodApi.md#shipmentMethodGet) | **GET** /shipmentMethod |  |
-| [**shipmentMethodIdIdDelete()**](ShipmentMethodApi.md#shipmentMethodIdIdDelete) | **DELETE** /shipmentMethod/id/{id} |  |
-| [**shipmentMethodIdIdGet()**](ShipmentMethodApi.md#shipmentMethodIdIdGet) | **GET** /shipmentMethod/id/{id} |  |
-| [**shipmentMethodIdIdPut()**](ShipmentMethodApi.md#shipmentMethodIdIdPut) | **PUT** /shipmentMethod/id/{id} |  |
-| [**shipmentMethodPost()**](ShipmentMethodApi.md#shipmentMethodPost) | **POST** /shipmentMethod |  |
+| [**shipmentMethodCountGet()**](ShipmentMethodApi.md#shipmentMethodCountGet) | **GET** /shipmentMethod/count | count shipmentMethod |
+| [**shipmentMethodGet()**](ShipmentMethodApi.md#shipmentMethodGet) | **GET** /shipmentMethod | query shipmentMethod |
+| [**shipmentMethodIdIdDelete()**](ShipmentMethodApi.md#shipmentMethodIdIdDelete) | **DELETE** /shipmentMethod/id/{id} | delete a shipmentMethod |
+| [**shipmentMethodIdIdGet()**](ShipmentMethodApi.md#shipmentMethodIdIdGet) | **GET** /shipmentMethod/id/{id} | query a specific shipmentMethod |
+| [**shipmentMethodIdIdPut()**](ShipmentMethodApi.md#shipmentMethodIdIdPut) | **PUT** /shipmentMethod/id/{id} | update a shipmentMethod |
+| [**shipmentMethodPost()**](ShipmentMethodApi.md#shipmentMethodPost) | **POST** /shipmentMethod | create a shipmentMethod |
 
 
 ## `shipmentMethodCountGet()`
 
 ```php
-shipmentMethodCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+shipmentMethodCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count shipmentMethod
 
 count shipmentMethod
 
@@ -29,7 +29,7 @@ count shipmentMethod
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,9 +41,10 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentMethodApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->shipmentMethodCountGet();
+    $result = $apiInstance->shipmentMethodCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentMethodApi->shipmentMethodCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -60,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -74,10 +77,10 @@ This endpoint does not need any parameter.
 ## `shipmentMethodGet()`
 
 ```php
-shipmentMethodGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ShipmentMethodGet200Response
+shipmentMethodGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ShipmentMethodGet200Response
 ```
 
-
+query shipmentMethod
 
 query shipmentMethod
 
@@ -88,7 +91,7 @@ query shipmentMethod
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -102,10 +105,14 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentMethodApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->shipmentMethodGet($page, $page_size, $sort);
+    $result = $apiInstance->shipmentMethodGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentMethodApi->shipmentMethodGet: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +125,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -126,7 +137,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -143,7 +154,7 @@ try {
 shipmentMethodIdIdDelete($id, $dry_run)
 ```
 
-
+delete a shipmentMethod
 
 delete a shipmentMethod
 
@@ -154,7 +165,7 @@ delete a shipmentMethod
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -189,7 +200,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -206,9 +217,9 @@ void (empty response body)
 shipmentMethodIdIdGet($id): \kruegge82\weclapp\Model\ShipmentMethod
 ```
 
+query a specific shipmentMethod
 
-
-query shipmentMethod
+query a specific shipmentMethod
 
 ### Example
 
@@ -217,7 +228,7 @@ query shipmentMethod
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -251,7 +262,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -265,10 +276,10 @@ try {
 ## `shipmentMethodIdIdPut()`
 
 ```php
-shipmentMethodIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\ShipmentMethod
+shipmentMethodIdIdPut($id, $shipment_method, $dry_run): \kruegge82\weclapp\Model\ShipmentMethod
 ```
 
-
+update a shipmentMethod
 
 update shipmentMethod
 
@@ -279,7 +290,7 @@ update shipmentMethod
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -292,11 +303,11 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentMethodApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\ShipmentMethod(); // \kruegge82\weclapp\Model\ShipmentMethod
+$shipment_method = new \kruegge82\weclapp\Model\ShipmentMethod(); // \kruegge82\weclapp\Model\ShipmentMethod
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->shipmentMethodIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->shipmentMethodIdIdPut($id, $shipment_method, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentMethodApi->shipmentMethodIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +319,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\ShipmentMethod**](../Model/ShipmentMethod.md)|  | |
+| **shipment_method** | [**\kruegge82\weclapp\Model\ShipmentMethod**](../Model/ShipmentMethod.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -317,7 +328,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -331,10 +342,10 @@ try {
 ## `shipmentMethodPost()`
 
 ```php
-shipmentMethodPost($body, $dry_run): \kruegge82\weclapp\Model\ShipmentMethod
+shipmentMethodPost($shipment_method, $dry_run): \kruegge82\weclapp\Model\ShipmentMethod
 ```
 
-
+create a shipmentMethod
 
 create a shipmentMethod
 
@@ -345,7 +356,7 @@ create a shipmentMethod
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -357,11 +368,11 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentMethodApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\ShipmentMethod(); // \kruegge82\weclapp\Model\ShipmentMethod
+$shipment_method = new \kruegge82\weclapp\Model\ShipmentMethod(); // \kruegge82\weclapp\Model\ShipmentMethod
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->shipmentMethodPost($body, $dry_run);
+    $result = $apiInstance->shipmentMethodPost($shipment_method, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentMethodApi->shipmentMethodPost: ', $e->getMessage(), PHP_EOL;
@@ -372,7 +383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\ShipmentMethod**](../Model/ShipmentMethod.md)|  | |
+| **shipment_method** | [**\kruegge82\weclapp\Model\ShipmentMethod**](../Model/ShipmentMethod.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -381,7 +392,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

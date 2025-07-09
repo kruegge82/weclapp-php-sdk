@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional]
-**version** | **string** |  | [optional]
-**created_date** | **int** |  | [optional]
-**fulfillment_provider_type** | **string** |  |
-**last_modified_date** | **int** |  | [optional]
-**name** | **string** |  |
+**id** | **string** |  | [optional] [readonly]
+**created_date** | **int** |  | [optional] [readonly]
+**last_modified_date** | **int** |  | [optional] [readonly]
+**version** | **string** |  | [optional] [readonly]
+**fulfillment_provider_type** | [**\kruegge82\weclapp\Model\FulfillmentProviderType**](FulfillmentProviderType.md) |  | [optional]
+**name** | **string** |  | [optional]
 **warehouse_id** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

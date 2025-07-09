@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional]
-**version** | **string** |  | [optional]
+**id** | **string** |  | [optional] [readonly]
+**created_date** | **int** |  | [optional] [readonly]
+**last_modified_date** | **int** |  | [optional] [readonly]
+**version** | **string** |  | [optional] [readonly]
 **active** | **bool** |  | [optional]
-**created_date** | **int** |  | [optional]
 **default_value** | **bool** |  | [optional]
-**last_modified_date** | **int** |  | [optional]
 **position_number** | **int** |  | [optional]
 **value** | **string** |  | [optional]
 

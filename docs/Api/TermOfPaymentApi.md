@@ -1,24 +1,24 @@
 # kruegge82\weclapp\TermOfPaymentApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**termOfPaymentCountGet()**](TermOfPaymentApi.md#termOfPaymentCountGet) | **GET** /termOfPayment/count |  |
-| [**termOfPaymentGet()**](TermOfPaymentApi.md#termOfPaymentGet) | **GET** /termOfPayment |  |
-| [**termOfPaymentIdIdDelete()**](TermOfPaymentApi.md#termOfPaymentIdIdDelete) | **DELETE** /termOfPayment/id/{id} |  |
-| [**termOfPaymentIdIdGet()**](TermOfPaymentApi.md#termOfPaymentIdIdGet) | **GET** /termOfPayment/id/{id} |  |
-| [**termOfPaymentIdIdPut()**](TermOfPaymentApi.md#termOfPaymentIdIdPut) | **PUT** /termOfPayment/id/{id} |  |
-| [**termOfPaymentPost()**](TermOfPaymentApi.md#termOfPaymentPost) | **POST** /termOfPayment |  |
+| [**termOfPaymentCountGet()**](TermOfPaymentApi.md#termOfPaymentCountGet) | **GET** /termOfPayment/count | count termOfPayment |
+| [**termOfPaymentGet()**](TermOfPaymentApi.md#termOfPaymentGet) | **GET** /termOfPayment | query termOfPayment |
+| [**termOfPaymentIdIdDelete()**](TermOfPaymentApi.md#termOfPaymentIdIdDelete) | **DELETE** /termOfPayment/id/{id} | delete a termOfPayment |
+| [**termOfPaymentIdIdGet()**](TermOfPaymentApi.md#termOfPaymentIdIdGet) | **GET** /termOfPayment/id/{id} | query a specific termOfPayment |
+| [**termOfPaymentIdIdPut()**](TermOfPaymentApi.md#termOfPaymentIdIdPut) | **PUT** /termOfPayment/id/{id} | update a termOfPayment |
+| [**termOfPaymentPost()**](TermOfPaymentApi.md#termOfPaymentPost) | **POST** /termOfPayment | create a termOfPayment |
 
 
 ## `termOfPaymentCountGet()`
 
 ```php
-termOfPaymentCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+termOfPaymentCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count termOfPayment
 
 count termOfPayment
 
@@ -29,7 +29,7 @@ count termOfPayment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,9 +41,10 @@ $apiInstance = new kruegge82\weclapp\Api\TermOfPaymentApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->termOfPaymentCountGet();
+    $result = $apiInstance->termOfPaymentCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TermOfPaymentApi->termOfPaymentCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -60,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -74,10 +77,10 @@ This endpoint does not need any parameter.
 ## `termOfPaymentGet()`
 
 ```php
-termOfPaymentGet($page, $page_size, $sort): \kruegge82\weclapp\Model\TermOfPaymentGet200Response
+termOfPaymentGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\TermOfPaymentGet200Response
 ```
 
-
+query termOfPayment
 
 query termOfPayment
 
@@ -88,7 +91,7 @@ query termOfPayment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -102,10 +105,14 @@ $apiInstance = new kruegge82\weclapp\Api\TermOfPaymentApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->termOfPaymentGet($page, $page_size, $sort);
+    $result = $apiInstance->termOfPaymentGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TermOfPaymentApi->termOfPaymentGet: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +125,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -126,7 +137,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -143,7 +154,7 @@ try {
 termOfPaymentIdIdDelete($id, $dry_run)
 ```
 
-
+delete a termOfPayment
 
 delete a termOfPayment
 
@@ -154,7 +165,7 @@ delete a termOfPayment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -189,7 +200,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -206,9 +217,9 @@ void (empty response body)
 termOfPaymentIdIdGet($id): \kruegge82\weclapp\Model\TermOfPayment
 ```
 
+query a specific termOfPayment
 
-
-query termOfPayment
+query a specific termOfPayment
 
 ### Example
 
@@ -217,7 +228,7 @@ query termOfPayment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -251,7 +262,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -265,10 +276,10 @@ try {
 ## `termOfPaymentIdIdPut()`
 
 ```php
-termOfPaymentIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\TermOfPayment
+termOfPaymentIdIdPut($id, $term_of_payment, $dry_run): \kruegge82\weclapp\Model\TermOfPayment
 ```
 
-
+update a termOfPayment
 
 update termOfPayment
 
@@ -279,7 +290,7 @@ update termOfPayment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -292,11 +303,11 @@ $apiInstance = new kruegge82\weclapp\Api\TermOfPaymentApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\TermOfPayment(); // \kruegge82\weclapp\Model\TermOfPayment
+$term_of_payment = new \kruegge82\weclapp\Model\TermOfPayment(); // \kruegge82\weclapp\Model\TermOfPayment
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->termOfPaymentIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->termOfPaymentIdIdPut($id, $term_of_payment, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TermOfPaymentApi->termOfPaymentIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +319,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\TermOfPayment**](../Model/TermOfPayment.md)|  | |
+| **term_of_payment** | [**\kruegge82\weclapp\Model\TermOfPayment**](../Model/TermOfPayment.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -317,7 +328,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -331,10 +342,10 @@ try {
 ## `termOfPaymentPost()`
 
 ```php
-termOfPaymentPost($body, $dry_run): \kruegge82\weclapp\Model\TermOfPayment
+termOfPaymentPost($term_of_payment, $dry_run): \kruegge82\weclapp\Model\TermOfPayment
 ```
 
-
+create a termOfPayment
 
 create a termOfPayment
 
@@ -345,7 +356,7 @@ create a termOfPayment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -357,11 +368,11 @@ $apiInstance = new kruegge82\weclapp\Api\TermOfPaymentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\TermOfPayment(); // \kruegge82\weclapp\Model\TermOfPayment
+$term_of_payment = new \kruegge82\weclapp\Model\TermOfPayment(); // \kruegge82\weclapp\Model\TermOfPayment
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->termOfPaymentPost($body, $dry_run);
+    $result = $apiInstance->termOfPaymentPost($term_of_payment, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TermOfPaymentApi->termOfPaymentPost: ', $e->getMessage(), PHP_EOL;
@@ -372,7 +383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\TermOfPayment**](../Model/TermOfPayment.md)|  | |
+| **term_of_payment** | [**\kruegge82\weclapp\Model\TermOfPayment**](../Model/TermOfPayment.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -381,7 +392,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

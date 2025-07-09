@@ -1,24 +1,24 @@
 # kruegge82\weclapp\ArticleStatusApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**articleStatusCountGet()**](ArticleStatusApi.md#articleStatusCountGet) | **GET** /articleStatus/count |  |
-| [**articleStatusGet()**](ArticleStatusApi.md#articleStatusGet) | **GET** /articleStatus |  |
-| [**articleStatusIdIdDelete()**](ArticleStatusApi.md#articleStatusIdIdDelete) | **DELETE** /articleStatus/id/{id} |  |
-| [**articleStatusIdIdGet()**](ArticleStatusApi.md#articleStatusIdIdGet) | **GET** /articleStatus/id/{id} |  |
-| [**articleStatusIdIdPut()**](ArticleStatusApi.md#articleStatusIdIdPut) | **PUT** /articleStatus/id/{id} |  |
-| [**articleStatusPost()**](ArticleStatusApi.md#articleStatusPost) | **POST** /articleStatus |  |
+| [**articleStatusCountGet()**](ArticleStatusApi.md#articleStatusCountGet) | **GET** /articleStatus/count | count articleStatus |
+| [**articleStatusGet()**](ArticleStatusApi.md#articleStatusGet) | **GET** /articleStatus | query articleStatus |
+| [**articleStatusIdIdDelete()**](ArticleStatusApi.md#articleStatusIdIdDelete) | **DELETE** /articleStatus/id/{id} | delete a articleStatus |
+| [**articleStatusIdIdGet()**](ArticleStatusApi.md#articleStatusIdIdGet) | **GET** /articleStatus/id/{id} | query a specific articleStatus |
+| [**articleStatusIdIdPut()**](ArticleStatusApi.md#articleStatusIdIdPut) | **PUT** /articleStatus/id/{id} | update a articleStatus |
+| [**articleStatusPost()**](ArticleStatusApi.md#articleStatusPost) | **POST** /articleStatus | create a articleStatus |
 
 
 ## `articleStatusCountGet()`
 
 ```php
-articleStatusCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+articleStatusCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count articleStatus
 
 count articleStatus
 
@@ -29,7 +29,7 @@ count articleStatus
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,9 +41,10 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleStatusApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->articleStatusCountGet();
+    $result = $apiInstance->articleStatusCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleStatusApi->articleStatusCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -60,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -74,10 +77,10 @@ This endpoint does not need any parameter.
 ## `articleStatusGet()`
 
 ```php
-articleStatusGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
+articleStatusGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
 ```
 
-
+query articleStatus
 
 query articleStatus
 
@@ -88,7 +91,7 @@ query articleStatus
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -102,10 +105,14 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleStatusApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->articleStatusGet($page, $page_size, $sort);
+    $result = $apiInstance->articleStatusGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleStatusApi->articleStatusGet: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +125,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -126,7 +137,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -143,7 +154,7 @@ try {
 articleStatusIdIdDelete($id, $dry_run)
 ```
 
-
+delete a articleStatus
 
 delete a articleStatus
 
@@ -154,7 +165,7 @@ delete a articleStatus
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -189,7 +200,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -206,9 +217,9 @@ void (empty response body)
 articleStatusIdIdGet($id): \kruegge82\weclapp\Model\CustomValue
 ```
 
+query a specific articleStatus
 
-
-query articleStatus
+query a specific articleStatus
 
 ### Example
 
@@ -217,7 +228,7 @@ query articleStatus
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -251,7 +262,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -265,10 +276,10 @@ try {
 ## `articleStatusIdIdPut()`
 
 ```php
-articleStatusIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\CustomValue
+articleStatusIdIdPut($id, $custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-
+update a articleStatus
 
 update articleStatus
 
@@ -279,7 +290,7 @@ update articleStatus
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -292,11 +303,11 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleStatusApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->articleStatusIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->articleStatusIdIdPut($id, $custom_value, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleStatusApi->articleStatusIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +319,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -317,7 +328,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -331,10 +342,10 @@ try {
 ## `articleStatusPost()`
 
 ```php
-articleStatusPost($body, $dry_run): \kruegge82\weclapp\Model\CustomValue
+articleStatusPost($custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-
+create a articleStatus
 
 create a articleStatus
 
@@ -345,7 +356,7 @@ create a articleStatus
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -357,11 +368,11 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleStatusApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->articleStatusPost($body, $dry_run);
+    $result = $apiInstance->articleStatusPost($custom_value, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleStatusApi->articleStatusPost: ', $e->getMessage(), PHP_EOL;
@@ -372,7 +383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -381,7 +392,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

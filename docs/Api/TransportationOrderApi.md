@@ -1,30 +1,30 @@
 # kruegge82\weclapp\TransportationOrderApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**transportationOrderCountGet()**](TransportationOrderApi.md#transportationOrderCountGet) | **GET** /transportationOrder/count |  |
-| [**transportationOrderGet()**](TransportationOrderApi.md#transportationOrderGet) | **GET** /transportationOrder |  |
+| [**transportationOrderCountGet()**](TransportationOrderApi.md#transportationOrderCountGet) | **GET** /transportationOrder/count | count transportationOrder |
+| [**transportationOrderGet()**](TransportationOrderApi.md#transportationOrderGet) | **GET** /transportationOrder | query transportationOrder |
 | [**transportationOrderIdIdCreatePickPost()**](TransportationOrderApi.md#transportationOrderIdIdCreatePickPost) | **POST** /transportationOrder/id/{id}/createPick |  |
 | [**transportationOrderIdIdCreatePickingListPost()**](TransportationOrderApi.md#transportationOrderIdIdCreatePickingListPost) | **POST** /transportationOrder/id/{id}/createPickingList |  |
 | [**transportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPost()**](TransportationOrderApi.md#transportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPost) | **POST** /transportationOrder/id/{id}/createTransportationOrderFromUnpickedRecords |  |
-| [**transportationOrderIdIdDelete()**](TransportationOrderApi.md#transportationOrderIdIdDelete) | **DELETE** /transportationOrder/id/{id} |  |
-| [**transportationOrderIdIdGet()**](TransportationOrderApi.md#transportationOrderIdIdGet) | **GET** /transportationOrder/id/{id} |  |
+| [**transportationOrderIdIdDelete()**](TransportationOrderApi.md#transportationOrderIdIdDelete) | **DELETE** /transportationOrder/id/{id} | delete a transportationOrder |
+| [**transportationOrderIdIdGet()**](TransportationOrderApi.md#transportationOrderIdIdGet) | **GET** /transportationOrder/id/{id} | query a specific transportationOrder |
 | [**transportationOrderIdIdInternalTransportReferencesForPickUpGet()**](TransportationOrderApi.md#transportationOrderIdIdInternalTransportReferencesForPickUpGet) | **GET** /transportationOrder/id/{id}/internalTransportReferencesForPickUp |  |
 | [**transportationOrderIdIdPickPickPost()**](TransportationOrderApi.md#transportationOrderIdIdPickPickPost) | **POST** /transportationOrder/id/{id}/pickPick |  |
-| [**transportationOrderIdIdPut()**](TransportationOrderApi.md#transportationOrderIdIdPut) | **PUT** /transportationOrder/id/{id} |  |
+| [**transportationOrderIdIdPut()**](TransportationOrderApi.md#transportationOrderIdIdPut) | **PUT** /transportationOrder/id/{id} | update a transportationOrder |
 | [**transportationOrderIdIdPutDownInternalTransportReferencePost()**](TransportationOrderApi.md#transportationOrderIdIdPutDownInternalTransportReferencePost) | **POST** /transportationOrder/id/{id}/putDownInternalTransportReference |  |
-| [**transportationOrderPost()**](TransportationOrderApi.md#transportationOrderPost) | **POST** /transportationOrder |  |
+| [**transportationOrderPost()**](TransportationOrderApi.md#transportationOrderPost) | **POST** /transportationOrder | create a transportationOrder |
 
 
 ## `transportationOrderCountGet()`
 
 ```php
-transportationOrderCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+transportationOrderCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count transportationOrder
 
 count transportationOrder
 
@@ -35,7 +35,7 @@ count transportationOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -47,9 +47,10 @@ $apiInstance = new kruegge82\weclapp\Api\TransportationOrderApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->transportationOrderCountGet();
+    $result = $apiInstance->transportationOrderCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransportationOrderApi->transportationOrderCountGet: ', $e->getMessage(), PHP_EOL;
@@ -58,7 +59,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -66,7 +69,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -80,10 +83,10 @@ This endpoint does not need any parameter.
 ## `transportationOrderGet()`
 
 ```php
-transportationOrderGet($page, $page_size, $sort): \kruegge82\weclapp\Model\TransportationOrderGet200Response
+transportationOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\TransportationOrderGet200Response
 ```
 
-
+query transportationOrder
 
 query transportationOrder
 
@@ -94,7 +97,7 @@ query transportationOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -108,10 +111,14 @@ $apiInstance = new kruegge82\weclapp\Api\TransportationOrderApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->transportationOrderGet($page, $page_size, $sort);
+    $result = $apiInstance->transportationOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransportationOrderApi->transportationOrderGet: ', $e->getMessage(), PHP_EOL;
@@ -124,7 +131,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -132,7 +143,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -146,7 +157,7 @@ try {
 ## `transportationOrderIdIdCreatePickPost()`
 
 ```php
-transportationOrderIdIdCreatePickPost($id, $body): \kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPost200Response
+transportationOrderIdIdCreatePickPost($id, $transportation_order_id_id_create_pick_post_request): \kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPost200Response
 ```
 
 
@@ -158,7 +169,7 @@ transportationOrderIdIdCreatePickPost($id, $body): \kruegge82\weclapp\Model\Tran
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -171,10 +182,10 @@ $apiInstance = new kruegge82\weclapp\Api\TransportationOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPostRequest(); // \kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPostRequest
+$transportation_order_id_id_create_pick_post_request = new \kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPostRequest(); // \kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPostRequest
 
 try {
-    $result = $apiInstance->transportationOrderIdIdCreatePickPost($id, $body);
+    $result = $apiInstance->transportationOrderIdIdCreatePickPost($id, $transportation_order_id_id_create_pick_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransportationOrderApi->transportationOrderIdIdCreatePickPost: ', $e->getMessage(), PHP_EOL;
@@ -186,7 +197,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPostRequest**](../Model/TransportationOrderIdIdCreatePickPostRequest.md)|  | |
+| **transportation_order_id_id_create_pick_post_request** | [**\kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPostRequest**](../Model/TransportationOrderIdIdCreatePickPostRequest.md)|  | |
 
 ### Return type
 
@@ -194,7 +205,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -208,7 +219,7 @@ try {
 ## `transportationOrderIdIdCreatePickingListPost()`
 
 ```php
-transportationOrderIdIdCreatePickingListPost($id, $body)
+transportationOrderIdIdCreatePickingListPost($id, $body): \SplFileObject
 ```
 
 
@@ -220,7 +231,7 @@ transportationOrderIdIdCreatePickingListPost($id, $body)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -236,7 +247,8 @@ $id = 'id_example'; // string
 $body = array('key' => new \stdClass); // object
 
 try {
-    $apiInstance->transportationOrderIdIdCreatePickingListPost($id, $body);
+    $result = $apiInstance->transportationOrderIdIdCreatePickingListPost($id, $body);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransportationOrderApi->transportationOrderIdIdCreatePickingListPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -251,16 +263,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -269,7 +281,7 @@ void (empty response body)
 ## `transportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPost()`
 
 ```php
-transportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPost($id, $body): \kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPost200Response
+transportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPost($id, $transportation_order_id_id_create_transportation_order_from_unpicked_records_post_request): \kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPost200Response
 ```
 
 
@@ -281,7 +293,7 @@ transportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPost($id, $bo
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -294,10 +306,10 @@ $apiInstance = new kruegge82\weclapp\Api\TransportationOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\TransportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPostRequest(); // \kruegge82\weclapp\Model\TransportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPostRequest
+$transportation_order_id_id_create_transportation_order_from_unpicked_records_post_request = new \kruegge82\weclapp\Model\TransportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPostRequest(); // \kruegge82\weclapp\Model\TransportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPostRequest
 
 try {
-    $result = $apiInstance->transportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPost($id, $body);
+    $result = $apiInstance->transportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPost($id, $transportation_order_id_id_create_transportation_order_from_unpicked_records_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransportationOrderApi->transportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPost: ', $e->getMessage(), PHP_EOL;
@@ -309,7 +321,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\TransportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPostRequest**](../Model/TransportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPostRequest.md)|  | |
+| **transportation_order_id_id_create_transportation_order_from_unpicked_records_post_request** | [**\kruegge82\weclapp\Model\TransportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPostRequest**](../Model/TransportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPostRequest.md)|  | |
 
 ### Return type
 
@@ -317,7 +329,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -334,7 +346,7 @@ try {
 transportationOrderIdIdDelete($id, $dry_run)
 ```
 
-
+delete a transportationOrder
 
 delete a transportationOrder
 
@@ -345,7 +357,7 @@ delete a transportationOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -380,7 +392,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -397,9 +409,9 @@ void (empty response body)
 transportationOrderIdIdGet($id): \kruegge82\weclapp\Model\TransportationOrder
 ```
 
+query a specific transportationOrder
 
-
-query transportationOrder
+query a specific transportationOrder
 
 ### Example
 
@@ -408,7 +420,7 @@ query transportationOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -442,7 +454,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -468,7 +480,7 @@ transportationOrderIdIdInternalTransportReferencesForPickUpGet($id, $ignore_curr
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -504,7 +516,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -518,7 +530,7 @@ try {
 ## `transportationOrderIdIdPickPickPost()`
 
 ```php
-transportationOrderIdIdPickPickPost($id, $body): \kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPost200Response
+transportationOrderIdIdPickPickPost($id, $transportation_order_id_id_pick_pick_post_request): \kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPost200Response
 ```
 
 
@@ -530,7 +542,7 @@ transportationOrderIdIdPickPickPost($id, $body): \kruegge82\weclapp\Model\Transp
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -543,10 +555,10 @@ $apiInstance = new kruegge82\weclapp\Api\TransportationOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\TransportationOrderIdIdPickPickPostRequest(); // \kruegge82\weclapp\Model\TransportationOrderIdIdPickPickPostRequest
+$transportation_order_id_id_pick_pick_post_request = new \kruegge82\weclapp\Model\TransportationOrderIdIdPickPickPostRequest(); // \kruegge82\weclapp\Model\TransportationOrderIdIdPickPickPostRequest
 
 try {
-    $result = $apiInstance->transportationOrderIdIdPickPickPost($id, $body);
+    $result = $apiInstance->transportationOrderIdIdPickPickPost($id, $transportation_order_id_id_pick_pick_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransportationOrderApi->transportationOrderIdIdPickPickPost: ', $e->getMessage(), PHP_EOL;
@@ -558,7 +570,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\TransportationOrderIdIdPickPickPostRequest**](../Model/TransportationOrderIdIdPickPickPostRequest.md)|  | |
+| **transportation_order_id_id_pick_pick_post_request** | [**\kruegge82\weclapp\Model\TransportationOrderIdIdPickPickPostRequest**](../Model/TransportationOrderIdIdPickPickPostRequest.md)|  | |
 
 ### Return type
 
@@ -566,7 +578,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -580,10 +592,10 @@ try {
 ## `transportationOrderIdIdPut()`
 
 ```php
-transportationOrderIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\TransportationOrder
+transportationOrderIdIdPut($id, $transportation_order, $dry_run): \kruegge82\weclapp\Model\TransportationOrder
 ```
 
-
+update a transportationOrder
 
 update transportationOrder
 
@@ -594,7 +606,7 @@ update transportationOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -607,11 +619,11 @@ $apiInstance = new kruegge82\weclapp\Api\TransportationOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\TransportationOrder(); // \kruegge82\weclapp\Model\TransportationOrder
+$transportation_order = new \kruegge82\weclapp\Model\TransportationOrder(); // \kruegge82\weclapp\Model\TransportationOrder
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->transportationOrderIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->transportationOrderIdIdPut($id, $transportation_order, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransportationOrderApi->transportationOrderIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -623,7 +635,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\TransportationOrder**](../Model/TransportationOrder.md)|  | |
+| **transportation_order** | [**\kruegge82\weclapp\Model\TransportationOrder**](../Model/TransportationOrder.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -632,7 +644,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -646,7 +658,7 @@ try {
 ## `transportationOrderIdIdPutDownInternalTransportReferencePost()`
 
 ```php
-transportationOrderIdIdPutDownInternalTransportReferencePost($id, $body): \kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPost200Response
+transportationOrderIdIdPutDownInternalTransportReferencePost($id, $transportation_order_id_id_put_down_internal_transport_reference_post_request): \kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPost200Response
 ```
 
 
@@ -658,7 +670,7 @@ transportationOrderIdIdPutDownInternalTransportReferencePost($id, $body): \krueg
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -671,10 +683,10 @@ $apiInstance = new kruegge82\weclapp\Api\TransportationOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\TransportationOrderIdIdPutDownInternalTransportReferencePostRequest(); // \kruegge82\weclapp\Model\TransportationOrderIdIdPutDownInternalTransportReferencePostRequest
+$transportation_order_id_id_put_down_internal_transport_reference_post_request = new \kruegge82\weclapp\Model\TransportationOrderIdIdPutDownInternalTransportReferencePostRequest(); // \kruegge82\weclapp\Model\TransportationOrderIdIdPutDownInternalTransportReferencePostRequest
 
 try {
-    $result = $apiInstance->transportationOrderIdIdPutDownInternalTransportReferencePost($id, $body);
+    $result = $apiInstance->transportationOrderIdIdPutDownInternalTransportReferencePost($id, $transportation_order_id_id_put_down_internal_transport_reference_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransportationOrderApi->transportationOrderIdIdPutDownInternalTransportReferencePost: ', $e->getMessage(), PHP_EOL;
@@ -686,7 +698,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\TransportationOrderIdIdPutDownInternalTransportReferencePostRequest**](../Model/TransportationOrderIdIdPutDownInternalTransportReferencePostRequest.md)|  | |
+| **transportation_order_id_id_put_down_internal_transport_reference_post_request** | [**\kruegge82\weclapp\Model\TransportationOrderIdIdPutDownInternalTransportReferencePostRequest**](../Model/TransportationOrderIdIdPutDownInternalTransportReferencePostRequest.md)|  | |
 
 ### Return type
 
@@ -694,7 +706,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -708,10 +720,10 @@ try {
 ## `transportationOrderPost()`
 
 ```php
-transportationOrderPost($body, $dry_run): \kruegge82\weclapp\Model\TransportationOrder
+transportationOrderPost($transportation_order, $dry_run): \kruegge82\weclapp\Model\TransportationOrder
 ```
 
-
+create a transportationOrder
 
 create a transportationOrder
 
@@ -722,7 +734,7 @@ create a transportationOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -734,11 +746,11 @@ $apiInstance = new kruegge82\weclapp\Api\TransportationOrderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\TransportationOrder(); // \kruegge82\weclapp\Model\TransportationOrder
+$transportation_order = new \kruegge82\weclapp\Model\TransportationOrder(); // \kruegge82\weclapp\Model\TransportationOrder
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->transportationOrderPost($body, $dry_run);
+    $result = $apiInstance->transportationOrderPost($transportation_order, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransportationOrderApi->transportationOrderPost: ', $e->getMessage(), PHP_EOL;
@@ -749,7 +761,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\TransportationOrder**](../Model/TransportationOrder.md)|  | |
+| **transportation_order** | [**\kruegge82\weclapp\Model\TransportationOrder**](../Model/TransportationOrder.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -758,7 +770,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

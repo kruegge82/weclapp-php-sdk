@@ -1,24 +1,24 @@
 # kruegge82\weclapp\RegionApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**regionCountGet()**](RegionApi.md#regionCountGet) | **GET** /region/count |  |
-| [**regionGet()**](RegionApi.md#regionGet) | **GET** /region |  |
-| [**regionIdIdDelete()**](RegionApi.md#regionIdIdDelete) | **DELETE** /region/id/{id} |  |
-| [**regionIdIdGet()**](RegionApi.md#regionIdIdGet) | **GET** /region/id/{id} |  |
-| [**regionIdIdPut()**](RegionApi.md#regionIdIdPut) | **PUT** /region/id/{id} |  |
-| [**regionPost()**](RegionApi.md#regionPost) | **POST** /region |  |
+| [**regionCountGet()**](RegionApi.md#regionCountGet) | **GET** /region/count | count region |
+| [**regionGet()**](RegionApi.md#regionGet) | **GET** /region | query region |
+| [**regionIdIdDelete()**](RegionApi.md#regionIdIdDelete) | **DELETE** /region/id/{id} | delete a region |
+| [**regionIdIdGet()**](RegionApi.md#regionIdIdGet) | **GET** /region/id/{id} | query a specific region |
+| [**regionIdIdPut()**](RegionApi.md#regionIdIdPut) | **PUT** /region/id/{id} | update a region |
+| [**regionPost()**](RegionApi.md#regionPost) | **POST** /region | create a region |
 
 
 ## `regionCountGet()`
 
 ```php
-regionCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+regionCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count region
 
 count region
 
@@ -29,7 +29,7 @@ count region
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,9 +41,10 @@ $apiInstance = new kruegge82\weclapp\Api\RegionApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->regionCountGet();
+    $result = $apiInstance->regionCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RegionApi->regionCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -60,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -74,10 +77,10 @@ This endpoint does not need any parameter.
 ## `regionGet()`
 
 ```php
-regionGet($page, $page_size, $sort): \kruegge82\weclapp\Model\RegionGet200Response
+regionGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\RegionGet200Response
 ```
 
-
+query region
 
 query region
 
@@ -88,7 +91,7 @@ query region
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -102,10 +105,14 @@ $apiInstance = new kruegge82\weclapp\Api\RegionApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->regionGet($page, $page_size, $sort);
+    $result = $apiInstance->regionGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RegionApi->regionGet: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +125,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -126,7 +137,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -143,7 +154,7 @@ try {
 regionIdIdDelete($id, $dry_run)
 ```
 
-
+delete a region
 
 delete a region
 
@@ -154,7 +165,7 @@ delete a region
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -189,7 +200,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -206,9 +217,9 @@ void (empty response body)
 regionIdIdGet($id): \kruegge82\weclapp\Model\Region
 ```
 
+query a specific region
 
-
-query region
+query a specific region
 
 ### Example
 
@@ -217,7 +228,7 @@ query region
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -251,7 +262,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -265,10 +276,10 @@ try {
 ## `regionIdIdPut()`
 
 ```php
-regionIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Region
+regionIdIdPut($id, $region, $dry_run): \kruegge82\weclapp\Model\Region
 ```
 
-
+update a region
 
 update region
 
@@ -279,7 +290,7 @@ update region
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -292,11 +303,11 @@ $apiInstance = new kruegge82\weclapp\Api\RegionApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\Region(); // \kruegge82\weclapp\Model\Region
+$region = new \kruegge82\weclapp\Model\Region(); // \kruegge82\weclapp\Model\Region
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->regionIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->regionIdIdPut($id, $region, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RegionApi->regionIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +319,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\Region**](../Model/Region.md)|  | |
+| **region** | [**\kruegge82\weclapp\Model\Region**](../Model/Region.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -317,7 +328,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -331,10 +342,10 @@ try {
 ## `regionPost()`
 
 ```php
-regionPost($body, $dry_run): \kruegge82\weclapp\Model\Region
+regionPost($region, $dry_run): \kruegge82\weclapp\Model\Region
 ```
 
-
+create a region
 
 create a region
 
@@ -345,7 +356,7 @@ create a region
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -357,11 +368,11 @@ $apiInstance = new kruegge82\weclapp\Api\RegionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\Region(); // \kruegge82\weclapp\Model\Region
+$region = new \kruegge82\weclapp\Model\Region(); // \kruegge82\weclapp\Model\Region
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->regionPost($body, $dry_run);
+    $result = $apiInstance->regionPost($region, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RegionApi->regionPost: ', $e->getMessage(), PHP_EOL;
@@ -372,7 +383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\Region**](../Model/Region.md)|  | |
+| **region** | [**\kruegge82\weclapp\Model\Region**](../Model/Region.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -381,7 +392,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

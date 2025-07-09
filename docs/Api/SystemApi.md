@@ -1,6 +1,6 @@
 # kruegge82\weclapp\SystemApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -13,7 +13,7 @@ All URIs are relative to http://nullapi/v2, except if the operation defines anot
 ## `systemCreateDemoTestSystemPost()`
 
 ```php
-systemCreateDemoTestSystemPost($body): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
+systemCreateDemoTestSystemPost($system_create_demo_test_system_post_request): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
 ```
 
 
@@ -25,7 +25,7 @@ systemCreateDemoTestSystemPost($body): \kruegge82\weclapp\Model\AccountingTransa
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -37,10 +37,10 @@ $apiInstance = new kruegge82\weclapp\Api\SystemApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\SystemCreateDemoTestSystemPostRequest(); // \kruegge82\weclapp\Model\SystemCreateDemoTestSystemPostRequest
+$system_create_demo_test_system_post_request = new \kruegge82\weclapp\Model\SystemCreateDemoTestSystemPostRequest(); // \kruegge82\weclapp\Model\SystemCreateDemoTestSystemPostRequest
 
 try {
-    $result = $apiInstance->systemCreateDemoTestSystemPost($body);
+    $result = $apiInstance->systemCreateDemoTestSystemPost($system_create_demo_test_system_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SystemApi->systemCreateDemoTestSystemPost: ', $e->getMessage(), PHP_EOL;
@@ -51,7 +51,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\SystemCreateDemoTestSystemPostRequest**](../Model/SystemCreateDemoTestSystemPostRequest.md)|  | |
+| **system_create_demo_test_system_post_request** | [**\kruegge82\weclapp\Model\SystemCreateDemoTestSystemPostRequest**](../Model/SystemCreateDemoTestSystemPostRequest.md)|  | |
 
 ### Return type
 
@@ -59,7 +59,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -85,7 +85,7 @@ systemDemoTestSystemInfoGet(): \kruegge82\weclapp\Model\SystemDemoTestSystemInfo
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -116,7 +116,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -142,7 +142,7 @@ systemLicensesGet(): \kruegge82\weclapp\Model\SystemLicensesGet200Response
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -173,7 +173,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -199,7 +199,7 @@ systemPermissionsGet(): \kruegge82\weclapp\Model\SystemPermissionsGet200Response
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -230,7 +230,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

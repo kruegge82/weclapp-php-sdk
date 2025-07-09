@@ -1,21 +1,21 @@
 # kruegge82\weclapp\CommercialLanguageApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**commercialLanguageCountGet()**](CommercialLanguageApi.md#commercialLanguageCountGet) | **GET** /commercialLanguage/count |  |
-| [**commercialLanguageGet()**](CommercialLanguageApi.md#commercialLanguageGet) | **GET** /commercialLanguage |  |
-| [**commercialLanguageIdIdGet()**](CommercialLanguageApi.md#commercialLanguageIdIdGet) | **GET** /commercialLanguage/id/{id} |  |
+| [**commercialLanguageCountGet()**](CommercialLanguageApi.md#commercialLanguageCountGet) | **GET** /commercialLanguage/count | count commercialLanguage |
+| [**commercialLanguageGet()**](CommercialLanguageApi.md#commercialLanguageGet) | **GET** /commercialLanguage | query commercialLanguage |
+| [**commercialLanguageIdIdGet()**](CommercialLanguageApi.md#commercialLanguageIdIdGet) | **GET** /commercialLanguage/id/{id} | query a specific commercialLanguage |
 
 
 ## `commercialLanguageCountGet()`
 
 ```php
-commercialLanguageCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+commercialLanguageCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count commercialLanguage
 
 count commercialLanguage
 
@@ -26,7 +26,7 @@ count commercialLanguage
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -38,9 +38,10 @@ $apiInstance = new kruegge82\weclapp\Api\CommercialLanguageApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->commercialLanguageCountGet();
+    $result = $apiInstance->commercialLanguageCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CommercialLanguageApi->commercialLanguageCountGet: ', $e->getMessage(), PHP_EOL;
@@ -49,7 +50,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -57,7 +60,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -71,10 +74,10 @@ This endpoint does not need any parameter.
 ## `commercialLanguageGet()`
 
 ```php
-commercialLanguageGet($page, $page_size, $sort): \kruegge82\weclapp\Model\CommercialLanguageGet200Response
+commercialLanguageGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\CommercialLanguageGet200Response
 ```
 
-
+query commercialLanguage
 
 query commercialLanguage
 
@@ -85,7 +88,7 @@ query commercialLanguage
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -99,10 +102,14 @@ $apiInstance = new kruegge82\weclapp\Api\CommercialLanguageApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->commercialLanguageGet($page, $page_size, $sort);
+    $result = $apiInstance->commercialLanguageGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CommercialLanguageApi->commercialLanguageGet: ', $e->getMessage(), PHP_EOL;
@@ -115,7 +122,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -123,7 +134,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -140,9 +151,9 @@ try {
 commercialLanguageIdIdGet($id): \kruegge82\weclapp\Model\CommercialLanguage
 ```
 
+query a specific commercialLanguage
 
-
-query commercialLanguage
+query a specific commercialLanguage
 
 ### Example
 
@@ -151,7 +162,7 @@ query commercialLanguage
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -185,7 +196,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

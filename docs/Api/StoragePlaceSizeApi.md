@@ -1,24 +1,24 @@
 # kruegge82\weclapp\StoragePlaceSizeApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**storagePlaceSizeCountGet()**](StoragePlaceSizeApi.md#storagePlaceSizeCountGet) | **GET** /storagePlaceSize/count |  |
-| [**storagePlaceSizeGet()**](StoragePlaceSizeApi.md#storagePlaceSizeGet) | **GET** /storagePlaceSize |  |
-| [**storagePlaceSizeIdIdDelete()**](StoragePlaceSizeApi.md#storagePlaceSizeIdIdDelete) | **DELETE** /storagePlaceSize/id/{id} |  |
-| [**storagePlaceSizeIdIdGet()**](StoragePlaceSizeApi.md#storagePlaceSizeIdIdGet) | **GET** /storagePlaceSize/id/{id} |  |
-| [**storagePlaceSizeIdIdPut()**](StoragePlaceSizeApi.md#storagePlaceSizeIdIdPut) | **PUT** /storagePlaceSize/id/{id} |  |
-| [**storagePlaceSizePost()**](StoragePlaceSizeApi.md#storagePlaceSizePost) | **POST** /storagePlaceSize |  |
+| [**storagePlaceSizeCountGet()**](StoragePlaceSizeApi.md#storagePlaceSizeCountGet) | **GET** /storagePlaceSize/count | count storagePlaceSize |
+| [**storagePlaceSizeGet()**](StoragePlaceSizeApi.md#storagePlaceSizeGet) | **GET** /storagePlaceSize | query storagePlaceSize |
+| [**storagePlaceSizeIdIdDelete()**](StoragePlaceSizeApi.md#storagePlaceSizeIdIdDelete) | **DELETE** /storagePlaceSize/id/{id} | delete a storagePlaceSize |
+| [**storagePlaceSizeIdIdGet()**](StoragePlaceSizeApi.md#storagePlaceSizeIdIdGet) | **GET** /storagePlaceSize/id/{id} | query a specific storagePlaceSize |
+| [**storagePlaceSizeIdIdPut()**](StoragePlaceSizeApi.md#storagePlaceSizeIdIdPut) | **PUT** /storagePlaceSize/id/{id} | update a storagePlaceSize |
+| [**storagePlaceSizePost()**](StoragePlaceSizeApi.md#storagePlaceSizePost) | **POST** /storagePlaceSize | create a storagePlaceSize |
 
 
 ## `storagePlaceSizeCountGet()`
 
 ```php
-storagePlaceSizeCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+storagePlaceSizeCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count storagePlaceSize
 
 count storagePlaceSize
 
@@ -29,7 +29,7 @@ count storagePlaceSize
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,9 +41,10 @@ $apiInstance = new kruegge82\weclapp\Api\StoragePlaceSizeApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->storagePlaceSizeCountGet();
+    $result = $apiInstance->storagePlaceSizeCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StoragePlaceSizeApi->storagePlaceSizeCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -60,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -74,10 +77,10 @@ This endpoint does not need any parameter.
 ## `storagePlaceSizeGet()`
 
 ```php
-storagePlaceSizeGet($page, $page_size, $sort): \kruegge82\weclapp\Model\StoragePlaceSizeGet200Response
+storagePlaceSizeGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\StoragePlaceSizeGet200Response
 ```
 
-
+query storagePlaceSize
 
 query storagePlaceSize
 
@@ -88,7 +91,7 @@ query storagePlaceSize
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -102,10 +105,14 @@ $apiInstance = new kruegge82\weclapp\Api\StoragePlaceSizeApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->storagePlaceSizeGet($page, $page_size, $sort);
+    $result = $apiInstance->storagePlaceSizeGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StoragePlaceSizeApi->storagePlaceSizeGet: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +125,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -126,7 +137,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -143,7 +154,7 @@ try {
 storagePlaceSizeIdIdDelete($id, $dry_run)
 ```
 
-
+delete a storagePlaceSize
 
 delete a storagePlaceSize
 
@@ -154,7 +165,7 @@ delete a storagePlaceSize
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -189,7 +200,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -206,9 +217,9 @@ void (empty response body)
 storagePlaceSizeIdIdGet($id): \kruegge82\weclapp\Model\StoragePlaceSize
 ```
 
+query a specific storagePlaceSize
 
-
-query storagePlaceSize
+query a specific storagePlaceSize
 
 ### Example
 
@@ -217,7 +228,7 @@ query storagePlaceSize
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -251,7 +262,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -265,10 +276,10 @@ try {
 ## `storagePlaceSizeIdIdPut()`
 
 ```php
-storagePlaceSizeIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\StoragePlaceSize
+storagePlaceSizeIdIdPut($id, $storage_place_size, $dry_run): \kruegge82\weclapp\Model\StoragePlaceSize
 ```
 
-
+update a storagePlaceSize
 
 update storagePlaceSize
 
@@ -279,7 +290,7 @@ update storagePlaceSize
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -292,11 +303,11 @@ $apiInstance = new kruegge82\weclapp\Api\StoragePlaceSizeApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\StoragePlaceSize(); // \kruegge82\weclapp\Model\StoragePlaceSize
+$storage_place_size = new \kruegge82\weclapp\Model\StoragePlaceSize(); // \kruegge82\weclapp\Model\StoragePlaceSize
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->storagePlaceSizeIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->storagePlaceSizeIdIdPut($id, $storage_place_size, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StoragePlaceSizeApi->storagePlaceSizeIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +319,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\StoragePlaceSize**](../Model/StoragePlaceSize.md)|  | |
+| **storage_place_size** | [**\kruegge82\weclapp\Model\StoragePlaceSize**](../Model/StoragePlaceSize.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -317,7 +328,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -331,10 +342,10 @@ try {
 ## `storagePlaceSizePost()`
 
 ```php
-storagePlaceSizePost($body, $dry_run): \kruegge82\weclapp\Model\StoragePlaceSize
+storagePlaceSizePost($storage_place_size, $dry_run): \kruegge82\weclapp\Model\StoragePlaceSize
 ```
 
-
+create a storagePlaceSize
 
 create a storagePlaceSize
 
@@ -345,7 +356,7 @@ create a storagePlaceSize
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -357,11 +368,11 @@ $apiInstance = new kruegge82\weclapp\Api\StoragePlaceSizeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\StoragePlaceSize(); // \kruegge82\weclapp\Model\StoragePlaceSize
+$storage_place_size = new \kruegge82\weclapp\Model\StoragePlaceSize(); // \kruegge82\weclapp\Model\StoragePlaceSize
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->storagePlaceSizePost($body, $dry_run);
+    $result = $apiInstance->storagePlaceSizePost($storage_place_size, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StoragePlaceSizeApi->storagePlaceSizePost: ', $e->getMessage(), PHP_EOL;
@@ -372,7 +383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\StoragePlaceSize**](../Model/StoragePlaceSize.md)|  | |
+| **storage_place_size** | [**\kruegge82\weclapp\Model\StoragePlaceSize**](../Model/StoragePlaceSize.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -381,7 +392,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

@@ -1,24 +1,24 @@
 # kruegge82\weclapp\PaymentMethodApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**paymentMethodCountGet()**](PaymentMethodApi.md#paymentMethodCountGet) | **GET** /paymentMethod/count |  |
-| [**paymentMethodGet()**](PaymentMethodApi.md#paymentMethodGet) | **GET** /paymentMethod |  |
-| [**paymentMethodIdIdDelete()**](PaymentMethodApi.md#paymentMethodIdIdDelete) | **DELETE** /paymentMethod/id/{id} |  |
-| [**paymentMethodIdIdGet()**](PaymentMethodApi.md#paymentMethodIdIdGet) | **GET** /paymentMethod/id/{id} |  |
-| [**paymentMethodIdIdPut()**](PaymentMethodApi.md#paymentMethodIdIdPut) | **PUT** /paymentMethod/id/{id} |  |
-| [**paymentMethodPost()**](PaymentMethodApi.md#paymentMethodPost) | **POST** /paymentMethod |  |
+| [**paymentMethodCountGet()**](PaymentMethodApi.md#paymentMethodCountGet) | **GET** /paymentMethod/count | count paymentMethod |
+| [**paymentMethodGet()**](PaymentMethodApi.md#paymentMethodGet) | **GET** /paymentMethod | query paymentMethod |
+| [**paymentMethodIdIdDelete()**](PaymentMethodApi.md#paymentMethodIdIdDelete) | **DELETE** /paymentMethod/id/{id} | delete a paymentMethod |
+| [**paymentMethodIdIdGet()**](PaymentMethodApi.md#paymentMethodIdIdGet) | **GET** /paymentMethod/id/{id} | query a specific paymentMethod |
+| [**paymentMethodIdIdPut()**](PaymentMethodApi.md#paymentMethodIdIdPut) | **PUT** /paymentMethod/id/{id} | update a paymentMethod |
+| [**paymentMethodPost()**](PaymentMethodApi.md#paymentMethodPost) | **POST** /paymentMethod | create a paymentMethod |
 
 
 ## `paymentMethodCountGet()`
 
 ```php
-paymentMethodCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+paymentMethodCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count paymentMethod
 
 count paymentMethod
 
@@ -29,7 +29,7 @@ count paymentMethod
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,9 +41,10 @@ $apiInstance = new kruegge82\weclapp\Api\PaymentMethodApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->paymentMethodCountGet();
+    $result = $apiInstance->paymentMethodCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentMethodApi->paymentMethodCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -60,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -74,10 +77,10 @@ This endpoint does not need any parameter.
 ## `paymentMethodGet()`
 
 ```php
-paymentMethodGet($page, $page_size, $sort): \kruegge82\weclapp\Model\PaymentMethodGet200Response
+paymentMethodGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\PaymentMethodGet200Response
 ```
 
-
+query paymentMethod
 
 query paymentMethod
 
@@ -88,7 +91,7 @@ query paymentMethod
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -102,10 +105,14 @@ $apiInstance = new kruegge82\weclapp\Api\PaymentMethodApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->paymentMethodGet($page, $page_size, $sort);
+    $result = $apiInstance->paymentMethodGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentMethodApi->paymentMethodGet: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +125,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -126,7 +137,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -143,7 +154,7 @@ try {
 paymentMethodIdIdDelete($id, $dry_run)
 ```
 
-
+delete a paymentMethod
 
 delete a paymentMethod
 
@@ -154,7 +165,7 @@ delete a paymentMethod
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -189,7 +200,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -206,9 +217,9 @@ void (empty response body)
 paymentMethodIdIdGet($id): \kruegge82\weclapp\Model\PaymentMethod
 ```
 
+query a specific paymentMethod
 
-
-query paymentMethod
+query a specific paymentMethod
 
 ### Example
 
@@ -217,7 +228,7 @@ query paymentMethod
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -251,7 +262,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -265,10 +276,10 @@ try {
 ## `paymentMethodIdIdPut()`
 
 ```php
-paymentMethodIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\PaymentMethod
+paymentMethodIdIdPut($id, $payment_method, $dry_run): \kruegge82\weclapp\Model\PaymentMethod
 ```
 
-
+update a paymentMethod
 
 update paymentMethod
 
@@ -279,7 +290,7 @@ update paymentMethod
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -292,11 +303,11 @@ $apiInstance = new kruegge82\weclapp\Api\PaymentMethodApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\PaymentMethod(); // \kruegge82\weclapp\Model\PaymentMethod
+$payment_method = new \kruegge82\weclapp\Model\PaymentMethod(); // \kruegge82\weclapp\Model\PaymentMethod
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->paymentMethodIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->paymentMethodIdIdPut($id, $payment_method, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentMethodApi->paymentMethodIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +319,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\PaymentMethod**](../Model/PaymentMethod.md)|  | |
+| **payment_method** | [**\kruegge82\weclapp\Model\PaymentMethod**](../Model/PaymentMethod.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -317,7 +328,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -331,10 +342,10 @@ try {
 ## `paymentMethodPost()`
 
 ```php
-paymentMethodPost($body, $dry_run): \kruegge82\weclapp\Model\PaymentMethod
+paymentMethodPost($payment_method, $dry_run): \kruegge82\weclapp\Model\PaymentMethod
 ```
 
-
+create a paymentMethod
 
 create a paymentMethod
 
@@ -345,7 +356,7 @@ create a paymentMethod
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -357,11 +368,11 @@ $apiInstance = new kruegge82\weclapp\Api\PaymentMethodApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\PaymentMethod(); // \kruegge82\weclapp\Model\PaymentMethod
+$payment_method = new \kruegge82\weclapp\Model\PaymentMethod(); // \kruegge82\weclapp\Model\PaymentMethod
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->paymentMethodPost($body, $dry_run);
+    $result = $apiInstance->paymentMethodPost($payment_method, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentMethodApi->paymentMethodPost: ', $e->getMessage(), PHP_EOL;
@@ -372,7 +383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\PaymentMethod**](../Model/PaymentMethod.md)|  | |
+| **payment_method** | [**\kruegge82\weclapp\Model\PaymentMethod**](../Model/PaymentMethod.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -381,7 +392,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

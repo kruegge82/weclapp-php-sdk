@@ -1,24 +1,24 @@
 # kruegge82\weclapp\ShipmentReturnRectificationApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**shipmentReturnRectificationCountGet()**](ShipmentReturnRectificationApi.md#shipmentReturnRectificationCountGet) | **GET** /shipmentReturnRectification/count |  |
-| [**shipmentReturnRectificationGet()**](ShipmentReturnRectificationApi.md#shipmentReturnRectificationGet) | **GET** /shipmentReturnRectification |  |
-| [**shipmentReturnRectificationIdIdDelete()**](ShipmentReturnRectificationApi.md#shipmentReturnRectificationIdIdDelete) | **DELETE** /shipmentReturnRectification/id/{id} |  |
-| [**shipmentReturnRectificationIdIdGet()**](ShipmentReturnRectificationApi.md#shipmentReturnRectificationIdIdGet) | **GET** /shipmentReturnRectification/id/{id} |  |
-| [**shipmentReturnRectificationIdIdPut()**](ShipmentReturnRectificationApi.md#shipmentReturnRectificationIdIdPut) | **PUT** /shipmentReturnRectification/id/{id} |  |
-| [**shipmentReturnRectificationPost()**](ShipmentReturnRectificationApi.md#shipmentReturnRectificationPost) | **POST** /shipmentReturnRectification |  |
+| [**shipmentReturnRectificationCountGet()**](ShipmentReturnRectificationApi.md#shipmentReturnRectificationCountGet) | **GET** /shipmentReturnRectification/count | count shipmentReturnRectification |
+| [**shipmentReturnRectificationGet()**](ShipmentReturnRectificationApi.md#shipmentReturnRectificationGet) | **GET** /shipmentReturnRectification | query shipmentReturnRectification |
+| [**shipmentReturnRectificationIdIdDelete()**](ShipmentReturnRectificationApi.md#shipmentReturnRectificationIdIdDelete) | **DELETE** /shipmentReturnRectification/id/{id} | delete a shipmentReturnRectification |
+| [**shipmentReturnRectificationIdIdGet()**](ShipmentReturnRectificationApi.md#shipmentReturnRectificationIdIdGet) | **GET** /shipmentReturnRectification/id/{id} | query a specific shipmentReturnRectification |
+| [**shipmentReturnRectificationIdIdPut()**](ShipmentReturnRectificationApi.md#shipmentReturnRectificationIdIdPut) | **PUT** /shipmentReturnRectification/id/{id} | update a shipmentReturnRectification |
+| [**shipmentReturnRectificationPost()**](ShipmentReturnRectificationApi.md#shipmentReturnRectificationPost) | **POST** /shipmentReturnRectification | create a shipmentReturnRectification |
 
 
 ## `shipmentReturnRectificationCountGet()`
 
 ```php
-shipmentReturnRectificationCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+shipmentReturnRectificationCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count shipmentReturnRectification
 
 count shipmentReturnRectification
 
@@ -29,7 +29,7 @@ count shipmentReturnRectification
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,9 +41,10 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentReturnRectificationApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->shipmentReturnRectificationCountGet();
+    $result = $apiInstance->shipmentReturnRectificationCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentReturnRectificationApi->shipmentReturnRectificationCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -60,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -74,10 +77,10 @@ This endpoint does not need any parameter.
 ## `shipmentReturnRectificationGet()`
 
 ```php
-shipmentReturnRectificationGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ShipmentReturnAssessmentGet200Response
+shipmentReturnRectificationGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ShipmentReturnAssessmentGet200Response
 ```
 
-
+query shipmentReturnRectification
 
 query shipmentReturnRectification
 
@@ -88,7 +91,7 @@ query shipmentReturnRectification
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -102,10 +105,14 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentReturnRectificationApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->shipmentReturnRectificationGet($page, $page_size, $sort);
+    $result = $apiInstance->shipmentReturnRectificationGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentReturnRectificationApi->shipmentReturnRectificationGet: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +125,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -126,7 +137,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -143,7 +154,7 @@ try {
 shipmentReturnRectificationIdIdDelete($id, $dry_run)
 ```
 
-
+delete a shipmentReturnRectification
 
 delete a shipmentReturnRectification
 
@@ -154,7 +165,7 @@ delete a shipmentReturnRectification
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -189,7 +200,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -206,9 +217,9 @@ void (empty response body)
 shipmentReturnRectificationIdIdGet($id): \kruegge82\weclapp\Model\ShipmentReturnDescription
 ```
 
+query a specific shipmentReturnRectification
 
-
-query shipmentReturnRectification
+query a specific shipmentReturnRectification
 
 ### Example
 
@@ -217,7 +228,7 @@ query shipmentReturnRectification
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -251,7 +262,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -265,10 +276,10 @@ try {
 ## `shipmentReturnRectificationIdIdPut()`
 
 ```php
-shipmentReturnRectificationIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\ShipmentReturnDescription
+shipmentReturnRectificationIdIdPut($id, $shipment_return_description, $dry_run): \kruegge82\weclapp\Model\ShipmentReturnDescription
 ```
 
-
+update a shipmentReturnRectification
 
 update shipmentReturnRectification
 
@@ -279,7 +290,7 @@ update shipmentReturnRectification
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -292,11 +303,11 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentReturnRectificationApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\ShipmentReturnDescription(); // \kruegge82\weclapp\Model\ShipmentReturnDescription
+$shipment_return_description = new \kruegge82\weclapp\Model\ShipmentReturnDescription(); // \kruegge82\weclapp\Model\ShipmentReturnDescription
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->shipmentReturnRectificationIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->shipmentReturnRectificationIdIdPut($id, $shipment_return_description, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentReturnRectificationApi->shipmentReturnRectificationIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +319,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\ShipmentReturnDescription**](../Model/ShipmentReturnDescription.md)|  | |
+| **shipment_return_description** | [**\kruegge82\weclapp\Model\ShipmentReturnDescription**](../Model/ShipmentReturnDescription.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -317,7 +328,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -331,10 +342,10 @@ try {
 ## `shipmentReturnRectificationPost()`
 
 ```php
-shipmentReturnRectificationPost($body, $dry_run): \kruegge82\weclapp\Model\ShipmentReturnDescription
+shipmentReturnRectificationPost($shipment_return_description, $dry_run): \kruegge82\weclapp\Model\ShipmentReturnDescription
 ```
 
-
+create a shipmentReturnRectification
 
 create a shipmentReturnRectification
 
@@ -345,7 +356,7 @@ create a shipmentReturnRectification
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -357,11 +368,11 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentReturnRectificationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\ShipmentReturnDescription(); // \kruegge82\weclapp\Model\ShipmentReturnDescription
+$shipment_return_description = new \kruegge82\weclapp\Model\ShipmentReturnDescription(); // \kruegge82\weclapp\Model\ShipmentReturnDescription
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->shipmentReturnRectificationPost($body, $dry_run);
+    $result = $apiInstance->shipmentReturnRectificationPost($shipment_return_description, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentReturnRectificationApi->shipmentReturnRectificationPost: ', $e->getMessage(), PHP_EOL;
@@ -372,7 +383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\ShipmentReturnDescription**](../Model/ShipmentReturnDescription.md)|  | |
+| **shipment_return_description** | [**\kruegge82\weclapp\Model\ShipmentReturnDescription**](../Model/ShipmentReturnDescription.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -381,7 +392,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

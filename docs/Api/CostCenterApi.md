@@ -1,24 +1,24 @@
 # kruegge82\weclapp\CostCenterApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**costCenterCountGet()**](CostCenterApi.md#costCenterCountGet) | **GET** /costCenter/count |  |
-| [**costCenterGet()**](CostCenterApi.md#costCenterGet) | **GET** /costCenter |  |
-| [**costCenterIdIdDelete()**](CostCenterApi.md#costCenterIdIdDelete) | **DELETE** /costCenter/id/{id} |  |
-| [**costCenterIdIdGet()**](CostCenterApi.md#costCenterIdIdGet) | **GET** /costCenter/id/{id} |  |
-| [**costCenterIdIdPut()**](CostCenterApi.md#costCenterIdIdPut) | **PUT** /costCenter/id/{id} |  |
-| [**costCenterPost()**](CostCenterApi.md#costCenterPost) | **POST** /costCenter |  |
+| [**costCenterCountGet()**](CostCenterApi.md#costCenterCountGet) | **GET** /costCenter/count | count costCenter |
+| [**costCenterGet()**](CostCenterApi.md#costCenterGet) | **GET** /costCenter | query costCenter |
+| [**costCenterIdIdDelete()**](CostCenterApi.md#costCenterIdIdDelete) | **DELETE** /costCenter/id/{id} | delete a costCenter |
+| [**costCenterIdIdGet()**](CostCenterApi.md#costCenterIdIdGet) | **GET** /costCenter/id/{id} | query a specific costCenter |
+| [**costCenterIdIdPut()**](CostCenterApi.md#costCenterIdIdPut) | **PUT** /costCenter/id/{id} | update a costCenter |
+| [**costCenterPost()**](CostCenterApi.md#costCenterPost) | **POST** /costCenter | create a costCenter |
 
 
 ## `costCenterCountGet()`
 
 ```php
-costCenterCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+costCenterCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count costCenter
 
 count costCenter
 
@@ -29,7 +29,7 @@ count costCenter
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,9 +41,10 @@ $apiInstance = new kruegge82\weclapp\Api\CostCenterApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->costCenterCountGet();
+    $result = $apiInstance->costCenterCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CostCenterApi->costCenterCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -60,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -74,10 +77,10 @@ This endpoint does not need any parameter.
 ## `costCenterGet()`
 
 ```php
-costCenterGet($page, $page_size, $sort): \kruegge82\weclapp\Model\CostCenterGet200Response
+costCenterGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\CostCenterGet200Response
 ```
 
-
+query costCenter
 
 query costCenter
 
@@ -88,7 +91,7 @@ query costCenter
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -102,10 +105,14 @@ $apiInstance = new kruegge82\weclapp\Api\CostCenterApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->costCenterGet($page, $page_size, $sort);
+    $result = $apiInstance->costCenterGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CostCenterApi->costCenterGet: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +125,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -126,7 +137,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -143,7 +154,7 @@ try {
 costCenterIdIdDelete($id, $dry_run)
 ```
 
-
+delete a costCenter
 
 delete a costCenter
 
@@ -154,7 +165,7 @@ delete a costCenter
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -189,7 +200,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -206,9 +217,9 @@ void (empty response body)
 costCenterIdIdGet($id): \kruegge82\weclapp\Model\CostCenter
 ```
 
+query a specific costCenter
 
-
-query costCenter
+query a specific costCenter
 
 ### Example
 
@@ -217,7 +228,7 @@ query costCenter
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -251,7 +262,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -265,10 +276,10 @@ try {
 ## `costCenterIdIdPut()`
 
 ```php
-costCenterIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\CostCenter
+costCenterIdIdPut($id, $cost_center, $dry_run): \kruegge82\weclapp\Model\CostCenter
 ```
 
-
+update a costCenter
 
 update costCenter
 
@@ -279,7 +290,7 @@ update costCenter
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -292,11 +303,11 @@ $apiInstance = new kruegge82\weclapp\Api\CostCenterApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\CostCenter(); // \kruegge82\weclapp\Model\CostCenter
+$cost_center = new \kruegge82\weclapp\Model\CostCenter(); // \kruegge82\weclapp\Model\CostCenter
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->costCenterIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->costCenterIdIdPut($id, $cost_center, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CostCenterApi->costCenterIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +319,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\CostCenter**](../Model/CostCenter.md)|  | |
+| **cost_center** | [**\kruegge82\weclapp\Model\CostCenter**](../Model/CostCenter.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -317,7 +328,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -331,10 +342,10 @@ try {
 ## `costCenterPost()`
 
 ```php
-costCenterPost($body, $dry_run): \kruegge82\weclapp\Model\CostCenter
+costCenterPost($cost_center, $dry_run): \kruegge82\weclapp\Model\CostCenter
 ```
 
-
+create a costCenter
 
 create a costCenter
 
@@ -345,7 +356,7 @@ create a costCenter
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -357,11 +368,11 @@ $apiInstance = new kruegge82\weclapp\Api\CostCenterApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\CostCenter(); // \kruegge82\weclapp\Model\CostCenter
+$cost_center = new \kruegge82\weclapp\Model\CostCenter(); // \kruegge82\weclapp\Model\CostCenter
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->costCenterPost($body, $dry_run);
+    $result = $apiInstance->costCenterPost($cost_center, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CostCenterApi->costCenterPost: ', $e->getMessage(), PHP_EOL;
@@ -372,7 +383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\CostCenter**](../Model/CostCenter.md)|  | |
+| **cost_center** | [**\kruegge82\weclapp\Model\CostCenter**](../Model/CostCenter.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -381,7 +392,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

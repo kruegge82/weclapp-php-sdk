@@ -1,24 +1,24 @@
 # kruegge82\weclapp\ContractBillingGroupApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**contractBillingGroupCountGet()**](ContractBillingGroupApi.md#contractBillingGroupCountGet) | **GET** /contractBillingGroup/count |  |
-| [**contractBillingGroupGet()**](ContractBillingGroupApi.md#contractBillingGroupGet) | **GET** /contractBillingGroup |  |
-| [**contractBillingGroupIdIdDelete()**](ContractBillingGroupApi.md#contractBillingGroupIdIdDelete) | **DELETE** /contractBillingGroup/id/{id} |  |
-| [**contractBillingGroupIdIdGet()**](ContractBillingGroupApi.md#contractBillingGroupIdIdGet) | **GET** /contractBillingGroup/id/{id} |  |
-| [**contractBillingGroupIdIdPut()**](ContractBillingGroupApi.md#contractBillingGroupIdIdPut) | **PUT** /contractBillingGroup/id/{id} |  |
-| [**contractBillingGroupPost()**](ContractBillingGroupApi.md#contractBillingGroupPost) | **POST** /contractBillingGroup |  |
+| [**contractBillingGroupCountGet()**](ContractBillingGroupApi.md#contractBillingGroupCountGet) | **GET** /contractBillingGroup/count | count contractBillingGroup |
+| [**contractBillingGroupGet()**](ContractBillingGroupApi.md#contractBillingGroupGet) | **GET** /contractBillingGroup | query contractBillingGroup |
+| [**contractBillingGroupIdIdDelete()**](ContractBillingGroupApi.md#contractBillingGroupIdIdDelete) | **DELETE** /contractBillingGroup/id/{id} | delete a contractBillingGroup |
+| [**contractBillingGroupIdIdGet()**](ContractBillingGroupApi.md#contractBillingGroupIdIdGet) | **GET** /contractBillingGroup/id/{id} | query a specific contractBillingGroup |
+| [**contractBillingGroupIdIdPut()**](ContractBillingGroupApi.md#contractBillingGroupIdIdPut) | **PUT** /contractBillingGroup/id/{id} | update a contractBillingGroup |
+| [**contractBillingGroupPost()**](ContractBillingGroupApi.md#contractBillingGroupPost) | **POST** /contractBillingGroup | create a contractBillingGroup |
 
 
 ## `contractBillingGroupCountGet()`
 
 ```php
-contractBillingGroupCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+contractBillingGroupCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count contractBillingGroup
 
 count contractBillingGroup
 
@@ -29,7 +29,7 @@ count contractBillingGroup
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,9 +41,10 @@ $apiInstance = new kruegge82\weclapp\Api\ContractBillingGroupApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->contractBillingGroupCountGet();
+    $result = $apiInstance->contractBillingGroupCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContractBillingGroupApi->contractBillingGroupCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -60,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -74,10 +77,10 @@ This endpoint does not need any parameter.
 ## `contractBillingGroupGet()`
 
 ```php
-contractBillingGroupGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
+contractBillingGroupGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
 ```
 
-
+query contractBillingGroup
 
 query contractBillingGroup
 
@@ -88,7 +91,7 @@ query contractBillingGroup
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -102,10 +105,14 @@ $apiInstance = new kruegge82\weclapp\Api\ContractBillingGroupApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->contractBillingGroupGet($page, $page_size, $sort);
+    $result = $apiInstance->contractBillingGroupGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContractBillingGroupApi->contractBillingGroupGet: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +125,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -126,7 +137,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -143,7 +154,7 @@ try {
 contractBillingGroupIdIdDelete($id, $dry_run)
 ```
 
-
+delete a contractBillingGroup
 
 delete a contractBillingGroup
 
@@ -154,7 +165,7 @@ delete a contractBillingGroup
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -189,7 +200,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -206,9 +217,9 @@ void (empty response body)
 contractBillingGroupIdIdGet($id): \kruegge82\weclapp\Model\CustomValue
 ```
 
+query a specific contractBillingGroup
 
-
-query contractBillingGroup
+query a specific contractBillingGroup
 
 ### Example
 
@@ -217,7 +228,7 @@ query contractBillingGroup
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -251,7 +262,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -265,10 +276,10 @@ try {
 ## `contractBillingGroupIdIdPut()`
 
 ```php
-contractBillingGroupIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\CustomValue
+contractBillingGroupIdIdPut($id, $custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-
+update a contractBillingGroup
 
 update contractBillingGroup
 
@@ -279,7 +290,7 @@ update contractBillingGroup
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -292,11 +303,11 @@ $apiInstance = new kruegge82\weclapp\Api\ContractBillingGroupApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->contractBillingGroupIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->contractBillingGroupIdIdPut($id, $custom_value, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContractBillingGroupApi->contractBillingGroupIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +319,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -317,7 +328,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -331,10 +342,10 @@ try {
 ## `contractBillingGroupPost()`
 
 ```php
-contractBillingGroupPost($body, $dry_run): \kruegge82\weclapp\Model\CustomValue
+contractBillingGroupPost($custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-
+create a contractBillingGroup
 
 create a contractBillingGroup
 
@@ -345,7 +356,7 @@ create a contractBillingGroup
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -357,11 +368,11 @@ $apiInstance = new kruegge82\weclapp\Api\ContractBillingGroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->contractBillingGroupPost($body, $dry_run);
+    $result = $apiInstance->contractBillingGroupPost($custom_value, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContractBillingGroupApi->contractBillingGroupPost: ', $e->getMessage(), PHP_EOL;
@@ -372,7 +383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -381,7 +392,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

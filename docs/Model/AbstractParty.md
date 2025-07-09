@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional] [readonly]
 **created_date** | **int** |  | [optional] [readonly]
 **last_modified_date** | **int** |  | [optional] [readonly]
-**version** | **string** |  | [optional]
+**version** | **string** |  | [optional] [readonly]
 **custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
 **addresses** | [**\kruegge82\weclapp\Model\Address[]**](Address.md) |  | [optional]
 **birth_date** | **int** |  | [optional]
@@ -30,7 +30,6 @@ Name | Type | Description | Notes
 **primary_address_id** | **string** |  | [optional]
 **salutation** | [**\kruegge82\weclapp\Model\Salutation**](Salutation.md) |  | [optional]
 **tags** | **string[]** |  | [optional]
-**title** | **string** |  | [optional]
 **title_id** | **string** |  | [optional]
 **website** | **string** |  | [optional]
 

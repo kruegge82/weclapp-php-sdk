@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional]
-**version** | **string** |  | [optional]
-**all_permissions_enabled** | **bool** |  | [optional]
-**created_date** | **int** |  | [optional]
-**included_user_roles** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  |
-**last_modified_date** | **int** |  | [optional]
-**name** | **string** |  |
+**id** | **string** |  | [optional] [readonly]
+**created_date** | **int** |  | [optional] [readonly]
+**last_modified_date** | **int** |  | [optional] [readonly]
+**version** | **string** |  | [optional] [readonly]
+**all_permissions_enabled** | **bool** |  | [optional] [readonly]
+**included_user_roles** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
+**name** | **string** |  | [optional]
 **permissions** | **string[]** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

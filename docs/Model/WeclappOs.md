@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional]
-**version** | **string** |  | [optional]
-**created_date** | **int** |  | [optional]
+**id** | **string** |  | [optional] [readonly]
+**created_date** | **int** |  | [optional] [readonly]
+**last_modified_date** | **int** |  | [optional] [readonly]
+**version** | **string** |  | [optional] [readonly]
 **description** | **string** |  | [optional]
-**hardware_id** | **string** |  |
-**last_modified_date** | **int** |  | [optional]
+**hardware_id** | **string** |  | [optional]
 **name** | **string** |  | [optional]
 **printer_names** | **string[]** |  | [optional]
 

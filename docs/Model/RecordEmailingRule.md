@@ -4,8 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional]
-**version** | **string** |  | [optional]
+**id** | **string** |  | [optional] [readonly]
+**created_date** | **int** |  | [optional] [readonly]
+**last_modified_date** | **int** |  | [optional] [readonly]
+**version** | **string** |  | [optional] [readonly]
 **active** | **bool** |  | [optional]
 **attach_purchase_order_request_csv_file** | **bool** |  | [optional]
 **attach_record_document** | **bool** |  | [optional]
@@ -13,18 +15,17 @@ Name | Type | Description | Notes
 **attach_shipping_label** | **bool** |  | [optional]
 **bcc_recipients** | **string** |  | [optional]
 **cc_recipients** | **string** |  | [optional]
-**created_date** | **int** |  | [optional]
-**event** | **string** |  |
-**last_modified_date** | **int** |  | [optional]
+**event** | [**\kruegge82\weclapp\Model\RecordEmailingRuleEventType**](RecordEmailingRuleEventType.md) |  | [optional]
 **mail_account_id** | **string** |  | [optional]
 **name** | **string** |  | [optional]
 **other_recipients** | **string** |  | [optional]
-**payment_method_types** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
-**recipient_type** | **string** |  |
-**sales_channels** | **string[]** |  | [optional]
-**sales_invoice_origin** | **string** |  | [optional]
-**sales_invoice_types** | **string[]** |  | [optional]
-**shipment_out_types** | **string[]** |  | [optional]
-**template_id** | **string** |  |
+**payment_methods** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
+**recipient_type** | [**\kruegge82\weclapp\Model\RecordEmailingRuleRecipientType**](RecordEmailingRuleRecipientType.md) |  | [optional]
+**sales_channels** | [**\kruegge82\weclapp\Model\DistributionChannel[]**](DistributionChannel.md) |  | [optional]
+**sales_invoice_origin** | [**\kruegge82\weclapp\Model\SalesInvoiceOrigin**](SalesInvoiceOrigin.md) |  | [optional]
+**sales_invoice_types** | [**\kruegge82\weclapp\Model\SalesInvoiceType[]**](SalesInvoiceType.md) |  | [optional]
+**sales_order_origins** | [**\kruegge82\weclapp\Model\SalesOrderOrigin[]**](SalesOrderOrigin.md) |  | [optional]
+**shipment_out_types** | [**\kruegge82\weclapp\Model\ShipmentOutType[]**](ShipmentOutType.md) |  | [optional]
+**template_id** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

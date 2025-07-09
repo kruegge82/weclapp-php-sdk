@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional]
-**version** | **string** |  | [optional]
+**id** | **string** |  | [optional] [readonly]
+**created_date** | **int** |  | [optional] [readonly]
+**last_modified_date** | **int** |  | [optional] [readonly]
+**version** | **string** |  | [optional] [readonly]
 **bcc_addresses** | **string[]** |  | [optional]
 **body** | **string** |  | [optional]
 **cc_addresses** | **string[]** |  | [optional]
-**created_date** | **int** |  | [optional]
 **from_address** | **string** |  | [optional]
-**last_modified_date** | **int** |  | [optional]
 **message_identifier** | **string** |  | [optional]
 **received_date** | **int** |  | [optional]
 **reply_to_address** | **string[]** |  | [optional]

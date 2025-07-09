@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional]
-**version** | **string** |  | [optional]
-**created_date** | **int** |  | [optional]
+**id** | **string** |  | [optional] [readonly]
+**created_date** | **int** |  | [optional] [readonly]
+**last_modified_date** | **int** |  | [optional] [readonly]
+**version** | **string** |  | [optional] [readonly]
 **discount_percentage** | **float** |  | [optional]
-**last_modified_date** | **int** |  | [optional]
 **name** | **string** |  | [optional]
 **number_of_days** | **int** |  | [optional]
 

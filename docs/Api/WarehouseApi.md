@@ -1,26 +1,26 @@
 # kruegge82\weclapp\WarehouseApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**warehouseCountGet()**](WarehouseApi.md#warehouseCountGet) | **GET** /warehouse/count |  |
-| [**warehouseGet()**](WarehouseApi.md#warehouseGet) | **GET** /warehouse |  |
+| [**warehouseCountGet()**](WarehouseApi.md#warehouseCountGet) | **GET** /warehouse/count | count warehouse |
+| [**warehouseGet()**](WarehouseApi.md#warehouseGet) | **GET** /warehouse | query warehouse |
 | [**warehouseIdIdActivatePost()**](WarehouseApi.md#warehouseIdIdActivatePost) | **POST** /warehouse/id/{id}/activate |  |
 | [**warehouseIdIdDeactivatePost()**](WarehouseApi.md#warehouseIdIdDeactivatePost) | **POST** /warehouse/id/{id}/deactivate |  |
-| [**warehouseIdIdDelete()**](WarehouseApi.md#warehouseIdIdDelete) | **DELETE** /warehouse/id/{id} |  |
-| [**warehouseIdIdGet()**](WarehouseApi.md#warehouseIdIdGet) | **GET** /warehouse/id/{id} |  |
-| [**warehouseIdIdPut()**](WarehouseApi.md#warehouseIdIdPut) | **PUT** /warehouse/id/{id} |  |
-| [**warehousePost()**](WarehouseApi.md#warehousePost) | **POST** /warehouse |  |
+| [**warehouseIdIdDelete()**](WarehouseApi.md#warehouseIdIdDelete) | **DELETE** /warehouse/id/{id} | delete a warehouse |
+| [**warehouseIdIdGet()**](WarehouseApi.md#warehouseIdIdGet) | **GET** /warehouse/id/{id} | query a specific warehouse |
+| [**warehouseIdIdPut()**](WarehouseApi.md#warehouseIdIdPut) | **PUT** /warehouse/id/{id} | update a warehouse |
+| [**warehousePost()**](WarehouseApi.md#warehousePost) | **POST** /warehouse | create a warehouse |
 
 
 ## `warehouseCountGet()`
 
 ```php
-warehouseCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+warehouseCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count warehouse
 
 count warehouse
 
@@ -31,7 +31,7 @@ count warehouse
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -43,9 +43,10 @@ $apiInstance = new kruegge82\weclapp\Api\WarehouseApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->warehouseCountGet();
+    $result = $apiInstance->warehouseCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WarehouseApi->warehouseCountGet: ', $e->getMessage(), PHP_EOL;
@@ -54,7 +55,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -62,7 +65,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -76,10 +79,10 @@ This endpoint does not need any parameter.
 ## `warehouseGet()`
 
 ```php
-warehouseGet($page, $page_size, $sort): \kruegge82\weclapp\Model\WarehouseGet200Response
+warehouseGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\WarehouseGet200Response
 ```
 
-
+query warehouse
 
 query warehouse
 
@@ -90,7 +93,7 @@ query warehouse
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -104,10 +107,14 @@ $apiInstance = new kruegge82\weclapp\Api\WarehouseApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->warehouseGet($page, $page_size, $sort);
+    $result = $apiInstance->warehouseGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WarehouseApi->warehouseGet: ', $e->getMessage(), PHP_EOL;
@@ -120,7 +127,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -128,7 +139,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -154,7 +165,7 @@ warehouseIdIdActivatePost($id, $body): \kruegge82\weclapp\Model\WarehouseIdIdAct
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -190,7 +201,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -216,7 +227,7 @@ warehouseIdIdDeactivatePost($id, $body): \kruegge82\weclapp\Model\WarehouseIdIdA
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -252,7 +263,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -269,7 +280,7 @@ try {
 warehouseIdIdDelete($id, $dry_run)
 ```
 
-
+delete a warehouse
 
 delete a warehouse
 
@@ -280,7 +291,7 @@ delete a warehouse
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -315,7 +326,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -332,9 +343,9 @@ void (empty response body)
 warehouseIdIdGet($id): \kruegge82\weclapp\Model\Warehouse
 ```
 
+query a specific warehouse
 
-
-query warehouse
+query a specific warehouse
 
 ### Example
 
@@ -343,7 +354,7 @@ query warehouse
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -377,7 +388,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -391,10 +402,10 @@ try {
 ## `warehouseIdIdPut()`
 
 ```php
-warehouseIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Warehouse
+warehouseIdIdPut($id, $warehouse, $dry_run): \kruegge82\weclapp\Model\Warehouse
 ```
 
-
+update a warehouse
 
 update warehouse
 
@@ -405,7 +416,7 @@ update warehouse
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -418,11 +429,11 @@ $apiInstance = new kruegge82\weclapp\Api\WarehouseApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\Warehouse(); // \kruegge82\weclapp\Model\Warehouse
+$warehouse = new \kruegge82\weclapp\Model\Warehouse(); // \kruegge82\weclapp\Model\Warehouse
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->warehouseIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->warehouseIdIdPut($id, $warehouse, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WarehouseApi->warehouseIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -434,7 +445,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\Warehouse**](../Model/Warehouse.md)|  | |
+| **warehouse** | [**\kruegge82\weclapp\Model\Warehouse**](../Model/Warehouse.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -443,7 +454,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -457,10 +468,10 @@ try {
 ## `warehousePost()`
 
 ```php
-warehousePost($body, $dry_run): \kruegge82\weclapp\Model\Warehouse
+warehousePost($warehouse, $dry_run): \kruegge82\weclapp\Model\Warehouse
 ```
 
-
+create a warehouse
 
 create a warehouse
 
@@ -471,7 +482,7 @@ create a warehouse
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -483,11 +494,11 @@ $apiInstance = new kruegge82\weclapp\Api\WarehouseApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\Warehouse(); // \kruegge82\weclapp\Model\Warehouse
+$warehouse = new \kruegge82\weclapp\Model\Warehouse(); // \kruegge82\weclapp\Model\Warehouse
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->warehousePost($body, $dry_run);
+    $result = $apiInstance->warehousePost($warehouse, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WarehouseApi->warehousePost: ', $e->getMessage(), PHP_EOL;
@@ -498,7 +509,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\Warehouse**](../Model/Warehouse.md)|  | |
+| **warehouse** | [**\kruegge82\weclapp\Model\Warehouse**](../Model/Warehouse.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -507,7 +518,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

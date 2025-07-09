@@ -1,22 +1,22 @@
 # kruegge82\weclapp\NotificationApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**notificationCountGet()**](NotificationApi.md#notificationCountGet) | **GET** /notification/count |  |
-| [**notificationGet()**](NotificationApi.md#notificationGet) | **GET** /notification |  |
-| [**notificationIdIdGet()**](NotificationApi.md#notificationIdIdGet) | **GET** /notification/id/{id} |  |
+| [**notificationCountGet()**](NotificationApi.md#notificationCountGet) | **GET** /notification/count | count notification |
+| [**notificationGet()**](NotificationApi.md#notificationGet) | **GET** /notification | query notification |
+| [**notificationIdIdGet()**](NotificationApi.md#notificationIdIdGet) | **GET** /notification/id/{id} | query a specific notification |
 | [**notificationIdIdMarkReadPost()**](NotificationApi.md#notificationIdIdMarkReadPost) | **POST** /notification/id/{id}/markRead |  |
 
 
 ## `notificationCountGet()`
 
 ```php
-notificationCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+notificationCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count notification
 
 count notification
 
@@ -27,7 +27,7 @@ count notification
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -39,9 +39,10 @@ $apiInstance = new kruegge82\weclapp\Api\NotificationApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->notificationCountGet();
+    $result = $apiInstance->notificationCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NotificationApi->notificationCountGet: ', $e->getMessage(), PHP_EOL;
@@ -50,7 +51,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -58,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -72,10 +75,10 @@ This endpoint does not need any parameter.
 ## `notificationGet()`
 
 ```php
-notificationGet($page, $page_size, $sort): \kruegge82\weclapp\Model\NotificationGet200Response
+notificationGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\NotificationGet200Response
 ```
 
-
+query notification
 
 query notification
 
@@ -86,7 +89,7 @@ query notification
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -100,10 +103,14 @@ $apiInstance = new kruegge82\weclapp\Api\NotificationApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->notificationGet($page, $page_size, $sort);
+    $result = $apiInstance->notificationGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NotificationApi->notificationGet: ', $e->getMessage(), PHP_EOL;
@@ -116,7 +123,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -124,7 +135,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -141,9 +152,9 @@ try {
 notificationIdIdGet($id): \kruegge82\weclapp\Model\Notification
 ```
 
+query a specific notification
 
-
-query notification
+query a specific notification
 
 ### Example
 
@@ -152,7 +163,7 @@ query notification
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -186,7 +197,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -212,7 +223,7 @@ notificationIdIdMarkReadPost($id, $body): \kruegge82\weclapp\Model\NotificationI
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -248,7 +259,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

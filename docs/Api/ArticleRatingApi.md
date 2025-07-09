@@ -1,24 +1,24 @@
 # kruegge82\weclapp\ArticleRatingApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**articleRatingCountGet()**](ArticleRatingApi.md#articleRatingCountGet) | **GET** /articleRating/count |  |
-| [**articleRatingGet()**](ArticleRatingApi.md#articleRatingGet) | **GET** /articleRating |  |
-| [**articleRatingIdIdDelete()**](ArticleRatingApi.md#articleRatingIdIdDelete) | **DELETE** /articleRating/id/{id} |  |
-| [**articleRatingIdIdGet()**](ArticleRatingApi.md#articleRatingIdIdGet) | **GET** /articleRating/id/{id} |  |
-| [**articleRatingIdIdPut()**](ArticleRatingApi.md#articleRatingIdIdPut) | **PUT** /articleRating/id/{id} |  |
-| [**articleRatingPost()**](ArticleRatingApi.md#articleRatingPost) | **POST** /articleRating |  |
+| [**articleRatingCountGet()**](ArticleRatingApi.md#articleRatingCountGet) | **GET** /articleRating/count | count articleRating |
+| [**articleRatingGet()**](ArticleRatingApi.md#articleRatingGet) | **GET** /articleRating | query articleRating |
+| [**articleRatingIdIdDelete()**](ArticleRatingApi.md#articleRatingIdIdDelete) | **DELETE** /articleRating/id/{id} | delete a articleRating |
+| [**articleRatingIdIdGet()**](ArticleRatingApi.md#articleRatingIdIdGet) | **GET** /articleRating/id/{id} | query a specific articleRating |
+| [**articleRatingIdIdPut()**](ArticleRatingApi.md#articleRatingIdIdPut) | **PUT** /articleRating/id/{id} | update a articleRating |
+| [**articleRatingPost()**](ArticleRatingApi.md#articleRatingPost) | **POST** /articleRating | create a articleRating |
 
 
 ## `articleRatingCountGet()`
 
 ```php
-articleRatingCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+articleRatingCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count articleRating
 
 count articleRating
 
@@ -29,7 +29,7 @@ count articleRating
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,9 +41,10 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleRatingApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->articleRatingCountGet();
+    $result = $apiInstance->articleRatingCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleRatingApi->articleRatingCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -60,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -74,10 +77,10 @@ This endpoint does not need any parameter.
 ## `articleRatingGet()`
 
 ```php
-articleRatingGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
+articleRatingGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
 ```
 
-
+query articleRating
 
 query articleRating
 
@@ -88,7 +91,7 @@ query articleRating
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -102,10 +105,14 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleRatingApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->articleRatingGet($page, $page_size, $sort);
+    $result = $apiInstance->articleRatingGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleRatingApi->articleRatingGet: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +125,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -126,7 +137,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -143,7 +154,7 @@ try {
 articleRatingIdIdDelete($id, $dry_run)
 ```
 
-
+delete a articleRating
 
 delete a articleRating
 
@@ -154,7 +165,7 @@ delete a articleRating
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -189,7 +200,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -206,9 +217,9 @@ void (empty response body)
 articleRatingIdIdGet($id): \kruegge82\weclapp\Model\CustomValue
 ```
 
+query a specific articleRating
 
-
-query articleRating
+query a specific articleRating
 
 ### Example
 
@@ -217,7 +228,7 @@ query articleRating
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -251,7 +262,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -265,10 +276,10 @@ try {
 ## `articleRatingIdIdPut()`
 
 ```php
-articleRatingIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\CustomValue
+articleRatingIdIdPut($id, $custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-
+update a articleRating
 
 update articleRating
 
@@ -279,7 +290,7 @@ update articleRating
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -292,11 +303,11 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleRatingApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->articleRatingIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->articleRatingIdIdPut($id, $custom_value, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleRatingApi->articleRatingIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +319,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -317,7 +328,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -331,10 +342,10 @@ try {
 ## `articleRatingPost()`
 
 ```php
-articleRatingPost($body, $dry_run): \kruegge82\weclapp\Model\CustomValue
+articleRatingPost($custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-
+create a articleRating
 
 create a articleRating
 
@@ -345,7 +356,7 @@ create a articleRating
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -357,11 +368,11 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleRatingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->articleRatingPost($body, $dry_run);
+    $result = $apiInstance->articleRatingPost($custom_value, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleRatingApi->articleRatingPost: ', $e->getMessage(), PHP_EOL;
@@ -372,7 +383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -381,7 +392,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

@@ -1,25 +1,25 @@
 # kruegge82\weclapp\RemotePrintJobApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**remotePrintJobCountGet()**](RemotePrintJobApi.md#remotePrintJobCountGet) | **GET** /remotePrintJob/count |  |
+| [**remotePrintJobCountGet()**](RemotePrintJobApi.md#remotePrintJobCountGet) | **GET** /remotePrintJob/count | count remotePrintJob |
 | [**remotePrintJobCreatePrintJobWithDocumentPost()**](RemotePrintJobApi.md#remotePrintJobCreatePrintJobWithDocumentPost) | **POST** /remotePrintJob/createPrintJobWithDocument |  |
-| [**remotePrintJobGet()**](RemotePrintJobApi.md#remotePrintJobGet) | **GET** /remotePrintJob |  |
-| [**remotePrintJobIdIdDelete()**](RemotePrintJobApi.md#remotePrintJobIdIdDelete) | **DELETE** /remotePrintJob/id/{id} |  |
-| [**remotePrintJobIdIdGet()**](RemotePrintJobApi.md#remotePrintJobIdIdGet) | **GET** /remotePrintJob/id/{id} |  |
-| [**remotePrintJobIdIdPut()**](RemotePrintJobApi.md#remotePrintJobIdIdPut) | **PUT** /remotePrintJob/id/{id} |  |
-| [**remotePrintJobPost()**](RemotePrintJobApi.md#remotePrintJobPost) | **POST** /remotePrintJob |  |
+| [**remotePrintJobGet()**](RemotePrintJobApi.md#remotePrintJobGet) | **GET** /remotePrintJob | query remotePrintJob |
+| [**remotePrintJobIdIdDelete()**](RemotePrintJobApi.md#remotePrintJobIdIdDelete) | **DELETE** /remotePrintJob/id/{id} | delete a remotePrintJob |
+| [**remotePrintJobIdIdGet()**](RemotePrintJobApi.md#remotePrintJobIdIdGet) | **GET** /remotePrintJob/id/{id} | query a specific remotePrintJob |
+| [**remotePrintJobIdIdPut()**](RemotePrintJobApi.md#remotePrintJobIdIdPut) | **PUT** /remotePrintJob/id/{id} | update a remotePrintJob |
+| [**remotePrintJobPost()**](RemotePrintJobApi.md#remotePrintJobPost) | **POST** /remotePrintJob | create a remotePrintJob |
 
 
 ## `remotePrintJobCountGet()`
 
 ```php
-remotePrintJobCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+remotePrintJobCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count remotePrintJob
 
 count remotePrintJob
 
@@ -30,7 +30,7 @@ count remotePrintJob
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -42,9 +42,10 @@ $apiInstance = new kruegge82\weclapp\Api\RemotePrintJobApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->remotePrintJobCountGet();
+    $result = $apiInstance->remotePrintJobCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RemotePrintJobApi->remotePrintJobCountGet: ', $e->getMessage(), PHP_EOL;
@@ -53,7 +54,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -61,7 +64,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -75,7 +78,7 @@ This endpoint does not need any parameter.
 ## `remotePrintJobCreatePrintJobWithDocumentPost()`
 
 ```php
-remotePrintJobCreatePrintJobWithDocumentPost($weclapp_os_id, $printer_name, $quantity, $document_name, $document_description): \kruegge82\weclapp\Model\RemotePrintJobCreatePrintJobWithDocumentPost200Response
+remotePrintJobCreatePrintJobWithDocumentPost($weclapp_os_id, $printer_name, $quantity, $document_name, $body, $document_description): \kruegge82\weclapp\Model\RemotePrintJobCreatePrintJobWithDocumentPost200Response
 ```
 
 
@@ -87,7 +90,7 @@ remotePrintJobCreatePrintJobWithDocumentPost($weclapp_os_id, $printer_name, $qua
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -103,10 +106,11 @@ $weclapp_os_id = 'weclapp_os_id_example'; // string
 $printer_name = 'printer_name_example'; // string
 $quantity = 56; // int
 $document_name = 'document_name_example'; // string
+$body = '/path/to/file.txt'; // \SplFileObject
 $document_description = 'document_description_example'; // string
 
 try {
-    $result = $apiInstance->remotePrintJobCreatePrintJobWithDocumentPost($weclapp_os_id, $printer_name, $quantity, $document_name, $document_description);
+    $result = $apiInstance->remotePrintJobCreatePrintJobWithDocumentPost($weclapp_os_id, $printer_name, $quantity, $document_name, $body, $document_description);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RemotePrintJobApi->remotePrintJobCreatePrintJobWithDocumentPost: ', $e->getMessage(), PHP_EOL;
@@ -121,6 +125,7 @@ try {
 | **printer_name** | **string**|  | |
 | **quantity** | **int**|  | |
 | **document_name** | **string**|  | |
+| **body** | **\SplFileObject****\SplFileObject**|  | |
 | **document_description** | **string**|  | [optional] |
 
 ### Return type
@@ -129,11 +134,11 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/pdf`, `image/jpeg`, `image/png`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -143,10 +148,10 @@ try {
 ## `remotePrintJobGet()`
 
 ```php
-remotePrintJobGet($page, $page_size, $sort): \kruegge82\weclapp\Model\RemotePrintJobGet200Response
+remotePrintJobGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\RemotePrintJobGet200Response
 ```
 
-
+query remotePrintJob
 
 query remotePrintJob
 
@@ -157,7 +162,7 @@ query remotePrintJob
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -171,10 +176,14 @@ $apiInstance = new kruegge82\weclapp\Api\RemotePrintJobApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->remotePrintJobGet($page, $page_size, $sort);
+    $result = $apiInstance->remotePrintJobGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RemotePrintJobApi->remotePrintJobGet: ', $e->getMessage(), PHP_EOL;
@@ -187,7 +196,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -195,7 +208,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -212,7 +225,7 @@ try {
 remotePrintJobIdIdDelete($id, $dry_run)
 ```
 
-
+delete a remotePrintJob
 
 delete a remotePrintJob
 
@@ -223,7 +236,7 @@ delete a remotePrintJob
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -258,7 +271,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -275,9 +288,9 @@ void (empty response body)
 remotePrintJobIdIdGet($id): \kruegge82\weclapp\Model\RemotePrintJob
 ```
 
+query a specific remotePrintJob
 
-
-query remotePrintJob
+query a specific remotePrintJob
 
 ### Example
 
@@ -286,7 +299,7 @@ query remotePrintJob
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -320,7 +333,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -334,10 +347,10 @@ try {
 ## `remotePrintJobIdIdPut()`
 
 ```php
-remotePrintJobIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\RemotePrintJob
+remotePrintJobIdIdPut($id, $remote_print_job, $dry_run): \kruegge82\weclapp\Model\RemotePrintJob
 ```
 
-
+update a remotePrintJob
 
 update remotePrintJob
 
@@ -348,7 +361,7 @@ update remotePrintJob
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -361,11 +374,11 @@ $apiInstance = new kruegge82\weclapp\Api\RemotePrintJobApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\RemotePrintJob(); // \kruegge82\weclapp\Model\RemotePrintJob
+$remote_print_job = new \kruegge82\weclapp\Model\RemotePrintJob(); // \kruegge82\weclapp\Model\RemotePrintJob
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->remotePrintJobIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->remotePrintJobIdIdPut($id, $remote_print_job, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RemotePrintJobApi->remotePrintJobIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -377,7 +390,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\RemotePrintJob**](../Model/RemotePrintJob.md)|  | |
+| **remote_print_job** | [**\kruegge82\weclapp\Model\RemotePrintJob**](../Model/RemotePrintJob.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -386,7 +399,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -400,10 +413,10 @@ try {
 ## `remotePrintJobPost()`
 
 ```php
-remotePrintJobPost($body, $dry_run): \kruegge82\weclapp\Model\RemotePrintJob
+remotePrintJobPost($remote_print_job, $dry_run): \kruegge82\weclapp\Model\RemotePrintJob
 ```
 
-
+create a remotePrintJob
 
 create a remotePrintJob
 
@@ -414,7 +427,7 @@ create a remotePrintJob
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -426,11 +439,11 @@ $apiInstance = new kruegge82\weclapp\Api\RemotePrintJobApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\RemotePrintJob(); // \kruegge82\weclapp\Model\RemotePrintJob
+$remote_print_job = new \kruegge82\weclapp\Model\RemotePrintJob(); // \kruegge82\weclapp\Model\RemotePrintJob
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->remotePrintJobPost($body, $dry_run);
+    $result = $apiInstance->remotePrintJobPost($remote_print_job, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RemotePrintJobApi->remotePrintJobPost: ', $e->getMessage(), PHP_EOL;
@@ -441,7 +454,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\RemotePrintJob**](../Model/RemotePrintJob.md)|  | |
+| **remote_print_job** | [**\kruegge82\weclapp\Model\RemotePrintJob**](../Model/RemotePrintJob.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -450,7 +463,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

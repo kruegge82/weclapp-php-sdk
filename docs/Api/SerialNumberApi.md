@@ -1,22 +1,22 @@
 # kruegge82\weclapp\SerialNumberApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**serialNumberCountGet()**](SerialNumberApi.md#serialNumberCountGet) | **GET** /serialNumber/count |  |
-| [**serialNumberGet()**](SerialNumberApi.md#serialNumberGet) | **GET** /serialNumber |  |
-| [**serialNumberIdIdGet()**](SerialNumberApi.md#serialNumberIdIdGet) | **GET** /serialNumber/id/{id} |  |
-| [**serialNumberIdIdPut()**](SerialNumberApi.md#serialNumberIdIdPut) | **PUT** /serialNumber/id/{id} |  |
+| [**serialNumberCountGet()**](SerialNumberApi.md#serialNumberCountGet) | **GET** /serialNumber/count | count serialNumber |
+| [**serialNumberGet()**](SerialNumberApi.md#serialNumberGet) | **GET** /serialNumber | query serialNumber |
+| [**serialNumberIdIdGet()**](SerialNumberApi.md#serialNumberIdIdGet) | **GET** /serialNumber/id/{id} | query a specific serialNumber |
+| [**serialNumberIdIdPut()**](SerialNumberApi.md#serialNumberIdIdPut) | **PUT** /serialNumber/id/{id} | update a serialNumber |
 
 
 ## `serialNumberCountGet()`
 
 ```php
-serialNumberCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+serialNumberCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count serialNumber
 
 count serialNumber
 
@@ -27,7 +27,7 @@ count serialNumber
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -39,9 +39,10 @@ $apiInstance = new kruegge82\weclapp\Api\SerialNumberApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->serialNumberCountGet();
+    $result = $apiInstance->serialNumberCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SerialNumberApi->serialNumberCountGet: ', $e->getMessage(), PHP_EOL;
@@ -50,7 +51,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -58,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -72,10 +75,10 @@ This endpoint does not need any parameter.
 ## `serialNumberGet()`
 
 ```php
-serialNumberGet($page, $page_size, $sort): \kruegge82\weclapp\Model\SerialNumberGet200Response
+serialNumberGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\SerialNumberGet200Response
 ```
 
-
+query serialNumber
 
 query serialNumber
 
@@ -86,7 +89,7 @@ query serialNumber
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -100,10 +103,14 @@ $apiInstance = new kruegge82\weclapp\Api\SerialNumberApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->serialNumberGet($page, $page_size, $sort);
+    $result = $apiInstance->serialNumberGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SerialNumberApi->serialNumberGet: ', $e->getMessage(), PHP_EOL;
@@ -116,7 +123,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -124,7 +135,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -141,9 +152,9 @@ try {
 serialNumberIdIdGet($id): \kruegge82\weclapp\Model\SerialNumber
 ```
 
+query a specific serialNumber
 
-
-query serialNumber
+query a specific serialNumber
 
 ### Example
 
@@ -152,7 +163,7 @@ query serialNumber
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -186,7 +197,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -200,10 +211,10 @@ try {
 ## `serialNumberIdIdPut()`
 
 ```php
-serialNumberIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\SerialNumber
+serialNumberIdIdPut($id, $serial_number, $dry_run): \kruegge82\weclapp\Model\SerialNumber
 ```
 
-
+update a serialNumber
 
 update serialNumber
 
@@ -214,7 +225,7 @@ update serialNumber
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -227,11 +238,11 @@ $apiInstance = new kruegge82\weclapp\Api\SerialNumberApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\SerialNumber(); // \kruegge82\weclapp\Model\SerialNumber
+$serial_number = new \kruegge82\weclapp\Model\SerialNumber(); // \kruegge82\weclapp\Model\SerialNumber
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->serialNumberIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->serialNumberIdIdPut($id, $serial_number, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SerialNumberApi->serialNumberIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -243,7 +254,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\SerialNumber**](../Model/SerialNumber.md)|  | |
+| **serial_number** | [**\kruegge82\weclapp\Model\SerialNumber**](../Model/SerialNumber.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -252,7 +263,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

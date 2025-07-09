@@ -1,26 +1,26 @@
 # kruegge82\weclapp\ContractApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**contractCountGet()**](ContractApi.md#contractCountGet) | **GET** /contract/count |  |
-| [**contractGet()**](ContractApi.md#contractGet) | **GET** /contract |  |
+| [**contractCountGet()**](ContractApi.md#contractCountGet) | **GET** /contract/count | count contract |
+| [**contractGet()**](ContractApi.md#contractGet) | **GET** /contract | query contract |
 | [**contractIdIdCreateContractDocumentPost()**](ContractApi.md#contractIdIdCreateContractDocumentPost) | **POST** /contract/id/{id}/createContractDocument |  |
-| [**contractIdIdDelete()**](ContractApi.md#contractIdIdDelete) | **DELETE** /contract/id/{id} |  |
+| [**contractIdIdDelete()**](ContractApi.md#contractIdIdDelete) | **DELETE** /contract/id/{id} | delete a contract |
 | [**contractIdIdDownloadLatestContractDocumentPdfGet()**](ContractApi.md#contractIdIdDownloadLatestContractDocumentPdfGet) | **GET** /contract/id/{id}/downloadLatestContractDocumentPdf |  |
-| [**contractIdIdGet()**](ContractApi.md#contractIdIdGet) | **GET** /contract/id/{id} |  |
-| [**contractIdIdPut()**](ContractApi.md#contractIdIdPut) | **PUT** /contract/id/{id} |  |
-| [**contractPost()**](ContractApi.md#contractPost) | **POST** /contract |  |
+| [**contractIdIdGet()**](ContractApi.md#contractIdIdGet) | **GET** /contract/id/{id} | query a specific contract |
+| [**contractIdIdPut()**](ContractApi.md#contractIdIdPut) | **PUT** /contract/id/{id} | update a contract |
+| [**contractPost()**](ContractApi.md#contractPost) | **POST** /contract | create a contract |
 
 
 ## `contractCountGet()`
 
 ```php
-contractCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+contractCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count contract
 
 count contract
 
@@ -31,7 +31,7 @@ count contract
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -43,9 +43,10 @@ $apiInstance = new kruegge82\weclapp\Api\ContractApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->contractCountGet();
+    $result = $apiInstance->contractCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContractApi->contractCountGet: ', $e->getMessage(), PHP_EOL;
@@ -54,7 +55,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -62,7 +65,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -76,10 +79,10 @@ This endpoint does not need any parameter.
 ## `contractGet()`
 
 ```php
-contractGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ContractGet200Response
+contractGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ContractGet200Response
 ```
 
-
+query contract
 
 query contract
 
@@ -90,7 +93,7 @@ query contract
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -104,10 +107,14 @@ $apiInstance = new kruegge82\weclapp\Api\ContractApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->contractGet($page, $page_size, $sort);
+    $result = $apiInstance->contractGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContractApi->contractGet: ', $e->getMessage(), PHP_EOL;
@@ -120,7 +127,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -128,7 +139,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -142,7 +153,7 @@ try {
 ## `contractIdIdCreateContractDocumentPost()`
 
 ```php
-contractIdIdCreateContractDocumentPost($id, $body)
+contractIdIdCreateContractDocumentPost($id, $body): \SplFileObject
 ```
 
 
@@ -154,7 +165,7 @@ contractIdIdCreateContractDocumentPost($id, $body)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -170,7 +181,8 @@ $id = 'id_example'; // string
 $body = array('key' => new \stdClass); // object
 
 try {
-    $apiInstance->contractIdIdCreateContractDocumentPost($id, $body);
+    $result = $apiInstance->contractIdIdCreateContractDocumentPost($id, $body);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContractApi->contractIdIdCreateContractDocumentPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -185,16 +197,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -206,7 +218,7 @@ void (empty response body)
 contractIdIdDelete($id, $dry_run)
 ```
 
-
+delete a contract
 
 delete a contract
 
@@ -217,7 +229,7 @@ delete a contract
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -252,7 +264,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -266,7 +278,7 @@ void (empty response body)
 ## `contractIdIdDownloadLatestContractDocumentPdfGet()`
 
 ```php
-contractIdIdDownloadLatestContractDocumentPdfGet($id)
+contractIdIdDownloadLatestContractDocumentPdfGet($id): \SplFileObject
 ```
 
 
@@ -278,7 +290,7 @@ contractIdIdDownloadLatestContractDocumentPdfGet($id)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -293,7 +305,8 @@ $apiInstance = new kruegge82\weclapp\Api\ContractApi(
 $id = 'id_example'; // string
 
 try {
-    $apiInstance->contractIdIdDownloadLatestContractDocumentPdfGet($id);
+    $result = $apiInstance->contractIdIdDownloadLatestContractDocumentPdfGet($id);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContractApi->contractIdIdDownloadLatestContractDocumentPdfGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -307,16 +320,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -328,9 +341,9 @@ void (empty response body)
 contractIdIdGet($id): \kruegge82\weclapp\Model\Contract
 ```
 
+query a specific contract
 
-
-query contract
+query a specific contract
 
 ### Example
 
@@ -339,7 +352,7 @@ query contract
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -373,7 +386,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -387,10 +400,10 @@ try {
 ## `contractIdIdPut()`
 
 ```php
-contractIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Contract
+contractIdIdPut($id, $contract, $dry_run): \kruegge82\weclapp\Model\Contract
 ```
 
-
+update a contract
 
 update contract
 
@@ -401,7 +414,7 @@ update contract
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -414,11 +427,11 @@ $apiInstance = new kruegge82\weclapp\Api\ContractApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\Contract(); // \kruegge82\weclapp\Model\Contract
+$contract = new \kruegge82\weclapp\Model\Contract(); // \kruegge82\weclapp\Model\Contract
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->contractIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->contractIdIdPut($id, $contract, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContractApi->contractIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -430,7 +443,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\Contract**](../Model/Contract.md)|  | |
+| **contract** | [**\kruegge82\weclapp\Model\Contract**](../Model/Contract.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -439,7 +452,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -453,10 +466,10 @@ try {
 ## `contractPost()`
 
 ```php
-contractPost($body, $dry_run): \kruegge82\weclapp\Model\Contract
+contractPost($contract, $dry_run): \kruegge82\weclapp\Model\Contract
 ```
 
-
+create a contract
 
 create a contract
 
@@ -467,7 +480,7 @@ create a contract
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -479,11 +492,11 @@ $apiInstance = new kruegge82\weclapp\Api\ContractApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\Contract(); // \kruegge82\weclapp\Model\Contract
+$contract = new \kruegge82\weclapp\Model\Contract(); // \kruegge82\weclapp\Model\Contract
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->contractPost($body, $dry_run);
+    $result = $apiInstance->contractPost($contract, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContractApi->contractPost: ', $e->getMessage(), PHP_EOL;
@@ -494,7 +507,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\Contract**](../Model/Contract.md)|  | |
+| **contract** | [**\kruegge82\weclapp\Model\Contract**](../Model/Contract.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -503,7 +516,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

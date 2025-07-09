@@ -1,21 +1,21 @@
 # kruegge82\weclapp\PickApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**pickCountGet()**](PickApi.md#pickCountGet) | **GET** /pick/count |  |
-| [**pickGet()**](PickApi.md#pickGet) | **GET** /pick |  |
-| [**pickIdIdGet()**](PickApi.md#pickIdIdGet) | **GET** /pick/id/{id} |  |
+| [**pickCountGet()**](PickApi.md#pickCountGet) | **GET** /pick/count | count pick |
+| [**pickGet()**](PickApi.md#pickGet) | **GET** /pick | query pick |
+| [**pickIdIdGet()**](PickApi.md#pickIdIdGet) | **GET** /pick/id/{id} | query a specific pick |
 
 
 ## `pickCountGet()`
 
 ```php
-pickCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+pickCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count pick
 
 count pick
 
@@ -26,7 +26,7 @@ count pick
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -38,9 +38,10 @@ $apiInstance = new kruegge82\weclapp\Api\PickApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->pickCountGet();
+    $result = $apiInstance->pickCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PickApi->pickCountGet: ', $e->getMessage(), PHP_EOL;
@@ -49,7 +50,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -57,7 +60,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -71,10 +74,10 @@ This endpoint does not need any parameter.
 ## `pickGet()`
 
 ```php
-pickGet($page, $page_size, $sort): \kruegge82\weclapp\Model\PickGet200Response
+pickGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\PickGet200Response
 ```
 
-
+query pick
 
 query pick
 
@@ -85,7 +88,7 @@ query pick
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -99,10 +102,14 @@ $apiInstance = new kruegge82\weclapp\Api\PickApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->pickGet($page, $page_size, $sort);
+    $result = $apiInstance->pickGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PickApi->pickGet: ', $e->getMessage(), PHP_EOL;
@@ -115,7 +122,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -123,7 +134,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -140,9 +151,9 @@ try {
 pickIdIdGet($id): \kruegge82\weclapp\Model\Pick
 ```
 
+query a specific pick
 
-
-query pick
+query a specific pick
 
 ### Example
 
@@ -151,7 +162,7 @@ query pick
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -185,7 +196,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

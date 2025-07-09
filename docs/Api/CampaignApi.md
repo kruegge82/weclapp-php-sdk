@@ -1,24 +1,24 @@
 # kruegge82\weclapp\CampaignApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**campaignCountGet()**](CampaignApi.md#campaignCountGet) | **GET** /campaign/count |  |
-| [**campaignGet()**](CampaignApi.md#campaignGet) | **GET** /campaign |  |
-| [**campaignIdIdDelete()**](CampaignApi.md#campaignIdIdDelete) | **DELETE** /campaign/id/{id} |  |
-| [**campaignIdIdGet()**](CampaignApi.md#campaignIdIdGet) | **GET** /campaign/id/{id} |  |
-| [**campaignIdIdPut()**](CampaignApi.md#campaignIdIdPut) | **PUT** /campaign/id/{id} |  |
-| [**campaignPost()**](CampaignApi.md#campaignPost) | **POST** /campaign |  |
+| [**campaignCountGet()**](CampaignApi.md#campaignCountGet) | **GET** /campaign/count | count campaign |
+| [**campaignGet()**](CampaignApi.md#campaignGet) | **GET** /campaign | query campaign |
+| [**campaignIdIdDelete()**](CampaignApi.md#campaignIdIdDelete) | **DELETE** /campaign/id/{id} | delete a campaign |
+| [**campaignIdIdGet()**](CampaignApi.md#campaignIdIdGet) | **GET** /campaign/id/{id} | query a specific campaign |
+| [**campaignIdIdPut()**](CampaignApi.md#campaignIdIdPut) | **PUT** /campaign/id/{id} | update a campaign |
+| [**campaignPost()**](CampaignApi.md#campaignPost) | **POST** /campaign | create a campaign |
 
 
 ## `campaignCountGet()`
 
 ```php
-campaignCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+campaignCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count campaign
 
 count campaign
 
@@ -29,7 +29,7 @@ count campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,9 +41,10 @@ $apiInstance = new kruegge82\weclapp\Api\CampaignApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->campaignCountGet();
+    $result = $apiInstance->campaignCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignApi->campaignCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -60,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -74,10 +77,10 @@ This endpoint does not need any parameter.
 ## `campaignGet()`
 
 ```php
-campaignGet($page, $page_size, $sort): \kruegge82\weclapp\Model\CampaignGet200Response
+campaignGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\CampaignGet200Response
 ```
 
-
+query campaign
 
 query campaign
 
@@ -88,7 +91,7 @@ query campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -102,10 +105,14 @@ $apiInstance = new kruegge82\weclapp\Api\CampaignApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->campaignGet($page, $page_size, $sort);
+    $result = $apiInstance->campaignGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignApi->campaignGet: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +125,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -126,7 +137,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -143,7 +154,7 @@ try {
 campaignIdIdDelete($id, $dry_run)
 ```
 
-
+delete a campaign
 
 delete a campaign
 
@@ -154,7 +165,7 @@ delete a campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -189,7 +200,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -206,9 +217,9 @@ void (empty response body)
 campaignIdIdGet($id): \kruegge82\weclapp\Model\Campaign
 ```
 
+query a specific campaign
 
-
-query campaign
+query a specific campaign
 
 ### Example
 
@@ -217,7 +228,7 @@ query campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -251,7 +262,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -265,10 +276,10 @@ try {
 ## `campaignIdIdPut()`
 
 ```php
-campaignIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Campaign
+campaignIdIdPut($id, $campaign, $dry_run): \kruegge82\weclapp\Model\Campaign
 ```
 
-
+update a campaign
 
 update campaign
 
@@ -279,7 +290,7 @@ update campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -292,11 +303,11 @@ $apiInstance = new kruegge82\weclapp\Api\CampaignApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\Campaign(); // \kruegge82\weclapp\Model\Campaign
+$campaign = new \kruegge82\weclapp\Model\Campaign(); // \kruegge82\weclapp\Model\Campaign
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->campaignIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->campaignIdIdPut($id, $campaign, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignApi->campaignIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +319,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\Campaign**](../Model/Campaign.md)|  | |
+| **campaign** | [**\kruegge82\weclapp\Model\Campaign**](../Model/Campaign.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -317,7 +328,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -331,10 +342,10 @@ try {
 ## `campaignPost()`
 
 ```php
-campaignPost($body, $dry_run): \kruegge82\weclapp\Model\Campaign
+campaignPost($campaign, $dry_run): \kruegge82\weclapp\Model\Campaign
 ```
 
-
+create a campaign
 
 create a campaign
 
@@ -345,7 +356,7 @@ create a campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -357,11 +368,11 @@ $apiInstance = new kruegge82\weclapp\Api\CampaignApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\Campaign(); // \kruegge82\weclapp\Model\Campaign
+$campaign = new \kruegge82\weclapp\Model\Campaign(); // \kruegge82\weclapp\Model\Campaign
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->campaignPost($body, $dry_run);
+    $result = $apiInstance->campaignPost($campaign, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CampaignApi->campaignPost: ', $e->getMessage(), PHP_EOL;
@@ -372,7 +383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\Campaign**](../Model/Campaign.md)|  | |
+| **campaign** | [**\kruegge82\weclapp\Model\Campaign**](../Model/Campaign.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -381,7 +392,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

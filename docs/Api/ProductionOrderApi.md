@@ -1,27 +1,27 @@
 # kruegge82\weclapp\ProductionOrderApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**productionOrderCountGet()**](ProductionOrderApi.md#productionOrderCountGet) | **GET** /productionOrder/count |  |
+| [**productionOrderCountGet()**](ProductionOrderApi.md#productionOrderCountGet) | **GET** /productionOrder/count | count productionOrder |
 | [**productionOrderFastProductionBookingPost()**](ProductionOrderApi.md#productionOrderFastProductionBookingPost) | **POST** /productionOrder/fastProductionBooking |  |
-| [**productionOrderGet()**](ProductionOrderApi.md#productionOrderGet) | **GET** /productionOrder |  |
+| [**productionOrderGet()**](ProductionOrderApi.md#productionOrderGet) | **GET** /productionOrder | query productionOrder |
 | [**productionOrderIdIdCreatePickingListPost()**](ProductionOrderApi.md#productionOrderIdIdCreatePickingListPost) | **POST** /productionOrder/id/{id}/createPickingList |  |
-| [**productionOrderIdIdDelete()**](ProductionOrderApi.md#productionOrderIdIdDelete) | **DELETE** /productionOrder/id/{id} |  |
+| [**productionOrderIdIdDelete()**](ProductionOrderApi.md#productionOrderIdIdDelete) | **DELETE** /productionOrder/id/{id} | delete a productionOrder |
 | [**productionOrderIdIdDownloadLatestProductionOrderPdfGet()**](ProductionOrderApi.md#productionOrderIdIdDownloadLatestProductionOrderPdfGet) | **GET** /productionOrder/id/{id}/downloadLatestProductionOrderPdf |  |
-| [**productionOrderIdIdGet()**](ProductionOrderApi.md#productionOrderIdIdGet) | **GET** /productionOrder/id/{id} |  |
-| [**productionOrderIdIdPut()**](ProductionOrderApi.md#productionOrderIdIdPut) | **PUT** /productionOrder/id/{id} |  |
-| [**productionOrderPost()**](ProductionOrderApi.md#productionOrderPost) | **POST** /productionOrder |  |
+| [**productionOrderIdIdGet()**](ProductionOrderApi.md#productionOrderIdIdGet) | **GET** /productionOrder/id/{id} | query a specific productionOrder |
+| [**productionOrderIdIdPut()**](ProductionOrderApi.md#productionOrderIdIdPut) | **PUT** /productionOrder/id/{id} | update a productionOrder |
+| [**productionOrderPost()**](ProductionOrderApi.md#productionOrderPost) | **POST** /productionOrder | create a productionOrder |
 
 
 ## `productionOrderCountGet()`
 
 ```php
-productionOrderCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+productionOrderCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count productionOrder
 
 count productionOrder
 
@@ -32,7 +32,7 @@ count productionOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -44,9 +44,10 @@ $apiInstance = new kruegge82\weclapp\Api\ProductionOrderApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->productionOrderCountGet();
+    $result = $apiInstance->productionOrderCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductionOrderApi->productionOrderCountGet: ', $e->getMessage(), PHP_EOL;
@@ -55,7 +56,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -63,7 +66,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -77,7 +80,7 @@ This endpoint does not need any parameter.
 ## `productionOrderFastProductionBookingPost()`
 
 ```php
-productionOrderFastProductionBookingPost($body): \kruegge82\weclapp\Model\ProductionOrderFastProductionBookingPost200Response
+productionOrderFastProductionBookingPost($production_order_fast_production_booking_post_request): \kruegge82\weclapp\Model\ProductionOrderFastProductionBookingPost200Response
 ```
 
 
@@ -89,7 +92,7 @@ productionOrderFastProductionBookingPost($body): \kruegge82\weclapp\Model\Produc
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -101,10 +104,10 @@ $apiInstance = new kruegge82\weclapp\Api\ProductionOrderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\ProductionOrderFastProductionBookingPostRequest(); // \kruegge82\weclapp\Model\ProductionOrderFastProductionBookingPostRequest
+$production_order_fast_production_booking_post_request = new \kruegge82\weclapp\Model\ProductionOrderFastProductionBookingPostRequest(); // \kruegge82\weclapp\Model\ProductionOrderFastProductionBookingPostRequest
 
 try {
-    $result = $apiInstance->productionOrderFastProductionBookingPost($body);
+    $result = $apiInstance->productionOrderFastProductionBookingPost($production_order_fast_production_booking_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductionOrderApi->productionOrderFastProductionBookingPost: ', $e->getMessage(), PHP_EOL;
@@ -115,7 +118,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\ProductionOrderFastProductionBookingPostRequest**](../Model/ProductionOrderFastProductionBookingPostRequest.md)|  | |
+| **production_order_fast_production_booking_post_request** | [**\kruegge82\weclapp\Model\ProductionOrderFastProductionBookingPostRequest**](../Model/ProductionOrderFastProductionBookingPostRequest.md)|  | |
 
 ### Return type
 
@@ -123,7 +126,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -137,10 +140,10 @@ try {
 ## `productionOrderGet()`
 
 ```php
-productionOrderGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ProductionOrderGet200Response
+productionOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ProductionOrderGet200Response
 ```
 
-
+query productionOrder
 
 query productionOrder
 
@@ -151,7 +154,7 @@ query productionOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -165,10 +168,14 @@ $apiInstance = new kruegge82\weclapp\Api\ProductionOrderApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->productionOrderGet($page, $page_size, $sort);
+    $result = $apiInstance->productionOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductionOrderApi->productionOrderGet: ', $e->getMessage(), PHP_EOL;
@@ -181,7 +188,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -189,7 +200,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -203,7 +214,7 @@ try {
 ## `productionOrderIdIdCreatePickingListPost()`
 
 ```php
-productionOrderIdIdCreatePickingListPost($id, $body)
+productionOrderIdIdCreatePickingListPost($id, $body): \SplFileObject
 ```
 
 
@@ -215,7 +226,7 @@ productionOrderIdIdCreatePickingListPost($id, $body)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -231,7 +242,8 @@ $id = 'id_example'; // string
 $body = array('key' => new \stdClass); // object
 
 try {
-    $apiInstance->productionOrderIdIdCreatePickingListPost($id, $body);
+    $result = $apiInstance->productionOrderIdIdCreatePickingListPost($id, $body);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductionOrderApi->productionOrderIdIdCreatePickingListPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -246,16 +258,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -267,7 +279,7 @@ void (empty response body)
 productionOrderIdIdDelete($id, $dry_run)
 ```
 
-
+delete a productionOrder
 
 delete a productionOrder
 
@@ -278,7 +290,7 @@ delete a productionOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -313,7 +325,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -327,7 +339,7 @@ void (empty response body)
 ## `productionOrderIdIdDownloadLatestProductionOrderPdfGet()`
 
 ```php
-productionOrderIdIdDownloadLatestProductionOrderPdfGet($id)
+productionOrderIdIdDownloadLatestProductionOrderPdfGet($id): \SplFileObject
 ```
 
 
@@ -339,7 +351,7 @@ productionOrderIdIdDownloadLatestProductionOrderPdfGet($id)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -354,7 +366,8 @@ $apiInstance = new kruegge82\weclapp\Api\ProductionOrderApi(
 $id = 'id_example'; // string
 
 try {
-    $apiInstance->productionOrderIdIdDownloadLatestProductionOrderPdfGet($id);
+    $result = $apiInstance->productionOrderIdIdDownloadLatestProductionOrderPdfGet($id);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductionOrderApi->productionOrderIdIdDownloadLatestProductionOrderPdfGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -368,16 +381,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -389,9 +402,9 @@ void (empty response body)
 productionOrderIdIdGet($id): \kruegge82\weclapp\Model\ProductionOrder
 ```
 
+query a specific productionOrder
 
-
-query productionOrder
+query a specific productionOrder
 
 ### Example
 
@@ -400,7 +413,7 @@ query productionOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -434,7 +447,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -448,10 +461,10 @@ try {
 ## `productionOrderIdIdPut()`
 
 ```php
-productionOrderIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\ProductionOrder
+productionOrderIdIdPut($id, $production_order, $dry_run): \kruegge82\weclapp\Model\ProductionOrder
 ```
 
-
+update a productionOrder
 
 update productionOrder
 
@@ -462,7 +475,7 @@ update productionOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -475,11 +488,11 @@ $apiInstance = new kruegge82\weclapp\Api\ProductionOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\ProductionOrder(); // \kruegge82\weclapp\Model\ProductionOrder
+$production_order = new \kruegge82\weclapp\Model\ProductionOrder(); // \kruegge82\weclapp\Model\ProductionOrder
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->productionOrderIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->productionOrderIdIdPut($id, $production_order, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductionOrderApi->productionOrderIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -491,7 +504,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\ProductionOrder**](../Model/ProductionOrder.md)|  | |
+| **production_order** | [**\kruegge82\weclapp\Model\ProductionOrder**](../Model/ProductionOrder.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -500,7 +513,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -514,10 +527,10 @@ try {
 ## `productionOrderPost()`
 
 ```php
-productionOrderPost($body, $dry_run): \kruegge82\weclapp\Model\ProductionOrder
+productionOrderPost($production_order, $dry_run): \kruegge82\weclapp\Model\ProductionOrder
 ```
 
-
+create a productionOrder
 
 create a productionOrder
 
@@ -528,7 +541,7 @@ create a productionOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -540,11 +553,11 @@ $apiInstance = new kruegge82\weclapp\Api\ProductionOrderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\ProductionOrder(); // \kruegge82\weclapp\Model\ProductionOrder
+$production_order = new \kruegge82\weclapp\Model\ProductionOrder(); // \kruegge82\weclapp\Model\ProductionOrder
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->productionOrderPost($body, $dry_run);
+    $result = $apiInstance->productionOrderPost($production_order, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductionOrderApi->productionOrderPost: ', $e->getMessage(), PHP_EOL;
@@ -555,7 +568,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\ProductionOrder**](../Model/ProductionOrder.md)|  | |
+| **production_order** | [**\kruegge82\weclapp\Model\ProductionOrder**](../Model/ProductionOrder.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -564,7 +577,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

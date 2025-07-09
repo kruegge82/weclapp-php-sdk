@@ -1,24 +1,24 @@
 # kruegge82\weclapp\ProductionWorkScheduleAssignmentApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**productionWorkScheduleAssignmentCountGet()**](ProductionWorkScheduleAssignmentApi.md#productionWorkScheduleAssignmentCountGet) | **GET** /productionWorkScheduleAssignment/count |  |
-| [**productionWorkScheduleAssignmentGet()**](ProductionWorkScheduleAssignmentApi.md#productionWorkScheduleAssignmentGet) | **GET** /productionWorkScheduleAssignment |  |
-| [**productionWorkScheduleAssignmentIdIdDelete()**](ProductionWorkScheduleAssignmentApi.md#productionWorkScheduleAssignmentIdIdDelete) | **DELETE** /productionWorkScheduleAssignment/id/{id} |  |
-| [**productionWorkScheduleAssignmentIdIdGet()**](ProductionWorkScheduleAssignmentApi.md#productionWorkScheduleAssignmentIdIdGet) | **GET** /productionWorkScheduleAssignment/id/{id} |  |
-| [**productionWorkScheduleAssignmentIdIdPut()**](ProductionWorkScheduleAssignmentApi.md#productionWorkScheduleAssignmentIdIdPut) | **PUT** /productionWorkScheduleAssignment/id/{id} |  |
-| [**productionWorkScheduleAssignmentPost()**](ProductionWorkScheduleAssignmentApi.md#productionWorkScheduleAssignmentPost) | **POST** /productionWorkScheduleAssignment |  |
+| [**productionWorkScheduleAssignmentCountGet()**](ProductionWorkScheduleAssignmentApi.md#productionWorkScheduleAssignmentCountGet) | **GET** /productionWorkScheduleAssignment/count | count productionWorkScheduleAssignment |
+| [**productionWorkScheduleAssignmentGet()**](ProductionWorkScheduleAssignmentApi.md#productionWorkScheduleAssignmentGet) | **GET** /productionWorkScheduleAssignment | query productionWorkScheduleAssignment |
+| [**productionWorkScheduleAssignmentIdIdDelete()**](ProductionWorkScheduleAssignmentApi.md#productionWorkScheduleAssignmentIdIdDelete) | **DELETE** /productionWorkScheduleAssignment/id/{id} | delete a productionWorkScheduleAssignment |
+| [**productionWorkScheduleAssignmentIdIdGet()**](ProductionWorkScheduleAssignmentApi.md#productionWorkScheduleAssignmentIdIdGet) | **GET** /productionWorkScheduleAssignment/id/{id} | query a specific productionWorkScheduleAssignment |
+| [**productionWorkScheduleAssignmentIdIdPut()**](ProductionWorkScheduleAssignmentApi.md#productionWorkScheduleAssignmentIdIdPut) | **PUT** /productionWorkScheduleAssignment/id/{id} | update a productionWorkScheduleAssignment |
+| [**productionWorkScheduleAssignmentPost()**](ProductionWorkScheduleAssignmentApi.md#productionWorkScheduleAssignmentPost) | **POST** /productionWorkScheduleAssignment | create a productionWorkScheduleAssignment |
 
 
 ## `productionWorkScheduleAssignmentCountGet()`
 
 ```php
-productionWorkScheduleAssignmentCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+productionWorkScheduleAssignmentCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count productionWorkScheduleAssignment
 
 count productionWorkScheduleAssignment
 
@@ -29,7 +29,7 @@ count productionWorkScheduleAssignment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,9 +41,10 @@ $apiInstance = new kruegge82\weclapp\Api\ProductionWorkScheduleAssignmentApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->productionWorkScheduleAssignmentCountGet();
+    $result = $apiInstance->productionWorkScheduleAssignmentCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductionWorkScheduleAssignmentApi->productionWorkScheduleAssignmentCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -60,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -74,10 +77,10 @@ This endpoint does not need any parameter.
 ## `productionWorkScheduleAssignmentGet()`
 
 ```php
-productionWorkScheduleAssignmentGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ProductionWorkScheduleAssignmentGet200Response
+productionWorkScheduleAssignmentGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ProductionWorkScheduleAssignmentGet200Response
 ```
 
-
+query productionWorkScheduleAssignment
 
 query productionWorkScheduleAssignment
 
@@ -88,7 +91,7 @@ query productionWorkScheduleAssignment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -102,10 +105,14 @@ $apiInstance = new kruegge82\weclapp\Api\ProductionWorkScheduleAssignmentApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->productionWorkScheduleAssignmentGet($page, $page_size, $sort);
+    $result = $apiInstance->productionWorkScheduleAssignmentGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductionWorkScheduleAssignmentApi->productionWorkScheduleAssignmentGet: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +125,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -126,7 +137,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -143,7 +154,7 @@ try {
 productionWorkScheduleAssignmentIdIdDelete($id, $dry_run)
 ```
 
-
+delete a productionWorkScheduleAssignment
 
 delete a productionWorkScheduleAssignment
 
@@ -154,7 +165,7 @@ delete a productionWorkScheduleAssignment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -189,7 +200,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -206,9 +217,9 @@ void (empty response body)
 productionWorkScheduleAssignmentIdIdGet($id): \kruegge82\weclapp\Model\ProductionWorkScheduleAssignment
 ```
 
+query a specific productionWorkScheduleAssignment
 
-
-query productionWorkScheduleAssignment
+query a specific productionWorkScheduleAssignment
 
 ### Example
 
@@ -217,7 +228,7 @@ query productionWorkScheduleAssignment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -251,7 +262,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -265,10 +276,10 @@ try {
 ## `productionWorkScheduleAssignmentIdIdPut()`
 
 ```php
-productionWorkScheduleAssignmentIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\ProductionWorkScheduleAssignment
+productionWorkScheduleAssignmentIdIdPut($id, $production_work_schedule_assignment, $dry_run): \kruegge82\weclapp\Model\ProductionWorkScheduleAssignment
 ```
 
-
+update a productionWorkScheduleAssignment
 
 update productionWorkScheduleAssignment
 
@@ -279,7 +290,7 @@ update productionWorkScheduleAssignment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -292,11 +303,11 @@ $apiInstance = new kruegge82\weclapp\Api\ProductionWorkScheduleAssignmentApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\ProductionWorkScheduleAssignment(); // \kruegge82\weclapp\Model\ProductionWorkScheduleAssignment
+$production_work_schedule_assignment = new \kruegge82\weclapp\Model\ProductionWorkScheduleAssignment(); // \kruegge82\weclapp\Model\ProductionWorkScheduleAssignment
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->productionWorkScheduleAssignmentIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->productionWorkScheduleAssignmentIdIdPut($id, $production_work_schedule_assignment, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductionWorkScheduleAssignmentApi->productionWorkScheduleAssignmentIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +319,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\ProductionWorkScheduleAssignment**](../Model/ProductionWorkScheduleAssignment.md)|  | |
+| **production_work_schedule_assignment** | [**\kruegge82\weclapp\Model\ProductionWorkScheduleAssignment**](../Model/ProductionWorkScheduleAssignment.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -317,7 +328,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -331,10 +342,10 @@ try {
 ## `productionWorkScheduleAssignmentPost()`
 
 ```php
-productionWorkScheduleAssignmentPost($body, $dry_run): \kruegge82\weclapp\Model\ProductionWorkScheduleAssignment
+productionWorkScheduleAssignmentPost($production_work_schedule_assignment, $dry_run): \kruegge82\weclapp\Model\ProductionWorkScheduleAssignment
 ```
 
-
+create a productionWorkScheduleAssignment
 
 create a productionWorkScheduleAssignment
 
@@ -345,7 +356,7 @@ create a productionWorkScheduleAssignment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -357,11 +368,11 @@ $apiInstance = new kruegge82\weclapp\Api\ProductionWorkScheduleAssignmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\ProductionWorkScheduleAssignment(); // \kruegge82\weclapp\Model\ProductionWorkScheduleAssignment
+$production_work_schedule_assignment = new \kruegge82\weclapp\Model\ProductionWorkScheduleAssignment(); // \kruegge82\weclapp\Model\ProductionWorkScheduleAssignment
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->productionWorkScheduleAssignmentPost($body, $dry_run);
+    $result = $apiInstance->productionWorkScheduleAssignmentPost($production_work_schedule_assignment, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductionWorkScheduleAssignmentApi->productionWorkScheduleAssignmentPost: ', $e->getMessage(), PHP_EOL;
@@ -372,7 +383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\ProductionWorkScheduleAssignment**](../Model/ProductionWorkScheduleAssignment.md)|  | |
+| **production_work_schedule_assignment** | [**\kruegge82\weclapp\Model\ProductionWorkScheduleAssignment**](../Model/ProductionWorkScheduleAssignment.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -381,7 +392,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

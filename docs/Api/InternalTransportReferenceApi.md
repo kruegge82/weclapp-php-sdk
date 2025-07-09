@@ -1,26 +1,26 @@
 # kruegge82\weclapp\InternalTransportReferenceApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**internalTransportReferenceCountGet()**](InternalTransportReferenceApi.md#internalTransportReferenceCountGet) | **GET** /internalTransportReference/count |  |
-| [**internalTransportReferenceGet()**](InternalTransportReferenceApi.md#internalTransportReferenceGet) | **GET** /internalTransportReference |  |
+| [**internalTransportReferenceCountGet()**](InternalTransportReferenceApi.md#internalTransportReferenceCountGet) | **GET** /internalTransportReference/count | count internalTransportReference |
+| [**internalTransportReferenceGet()**](InternalTransportReferenceApi.md#internalTransportReferenceGet) | **GET** /internalTransportReference | query internalTransportReference |
 | [**internalTransportReferenceIdIdCreateLabelPost()**](InternalTransportReferenceApi.md#internalTransportReferenceIdIdCreateLabelPost) | **POST** /internalTransportReference/id/{id}/createLabel |  |
-| [**internalTransportReferenceIdIdDelete()**](InternalTransportReferenceApi.md#internalTransportReferenceIdIdDelete) | **DELETE** /internalTransportReference/id/{id} |  |
+| [**internalTransportReferenceIdIdDelete()**](InternalTransportReferenceApi.md#internalTransportReferenceIdIdDelete) | **DELETE** /internalTransportReference/id/{id} | delete a internalTransportReference |
 | [**internalTransportReferenceIdIdDownloadLatestLabelGet()**](InternalTransportReferenceApi.md#internalTransportReferenceIdIdDownloadLatestLabelGet) | **GET** /internalTransportReference/id/{id}/downloadLatestLabel |  |
-| [**internalTransportReferenceIdIdGet()**](InternalTransportReferenceApi.md#internalTransportReferenceIdIdGet) | **GET** /internalTransportReference/id/{id} |  |
-| [**internalTransportReferenceIdIdPut()**](InternalTransportReferenceApi.md#internalTransportReferenceIdIdPut) | **PUT** /internalTransportReference/id/{id} |  |
-| [**internalTransportReferencePost()**](InternalTransportReferenceApi.md#internalTransportReferencePost) | **POST** /internalTransportReference |  |
+| [**internalTransportReferenceIdIdGet()**](InternalTransportReferenceApi.md#internalTransportReferenceIdIdGet) | **GET** /internalTransportReference/id/{id} | query a specific internalTransportReference |
+| [**internalTransportReferenceIdIdPut()**](InternalTransportReferenceApi.md#internalTransportReferenceIdIdPut) | **PUT** /internalTransportReference/id/{id} | update a internalTransportReference |
+| [**internalTransportReferencePost()**](InternalTransportReferenceApi.md#internalTransportReferencePost) | **POST** /internalTransportReference | create a internalTransportReference |
 
 
 ## `internalTransportReferenceCountGet()`
 
 ```php
-internalTransportReferenceCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+internalTransportReferenceCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count internalTransportReference
 
 count internalTransportReference
 
@@ -31,7 +31,7 @@ count internalTransportReference
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -43,9 +43,10 @@ $apiInstance = new kruegge82\weclapp\Api\InternalTransportReferenceApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->internalTransportReferenceCountGet();
+    $result = $apiInstance->internalTransportReferenceCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InternalTransportReferenceApi->internalTransportReferenceCountGet: ', $e->getMessage(), PHP_EOL;
@@ -54,7 +55,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -62,7 +65,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -76,10 +79,10 @@ This endpoint does not need any parameter.
 ## `internalTransportReferenceGet()`
 
 ```php
-internalTransportReferenceGet($page, $page_size, $sort): \kruegge82\weclapp\Model\InternalTransportReferenceGet200Response
+internalTransportReferenceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InternalTransportReferenceGet200Response
 ```
 
-
+query internalTransportReference
 
 query internalTransportReference
 
@@ -90,7 +93,7 @@ query internalTransportReference
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -104,10 +107,14 @@ $apiInstance = new kruegge82\weclapp\Api\InternalTransportReferenceApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->internalTransportReferenceGet($page, $page_size, $sort);
+    $result = $apiInstance->internalTransportReferenceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InternalTransportReferenceApi->internalTransportReferenceGet: ', $e->getMessage(), PHP_EOL;
@@ -120,7 +127,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -128,7 +139,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -142,7 +153,7 @@ try {
 ## `internalTransportReferenceIdIdCreateLabelPost()`
 
 ```php
-internalTransportReferenceIdIdCreateLabelPost($id, $body)
+internalTransportReferenceIdIdCreateLabelPost($id, $body): \SplFileObject
 ```
 
 
@@ -154,7 +165,7 @@ internalTransportReferenceIdIdCreateLabelPost($id, $body)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -170,7 +181,8 @@ $id = 'id_example'; // string
 $body = array('key' => new \stdClass); // object
 
 try {
-    $apiInstance->internalTransportReferenceIdIdCreateLabelPost($id, $body);
+    $result = $apiInstance->internalTransportReferenceIdIdCreateLabelPost($id, $body);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InternalTransportReferenceApi->internalTransportReferenceIdIdCreateLabelPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -185,16 +197,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -206,7 +218,7 @@ void (empty response body)
 internalTransportReferenceIdIdDelete($id, $dry_run)
 ```
 
-
+delete a internalTransportReference
 
 delete a internalTransportReference
 
@@ -217,7 +229,7 @@ delete a internalTransportReference
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -252,7 +264,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -266,7 +278,7 @@ void (empty response body)
 ## `internalTransportReferenceIdIdDownloadLatestLabelGet()`
 
 ```php
-internalTransportReferenceIdIdDownloadLatestLabelGet($id)
+internalTransportReferenceIdIdDownloadLatestLabelGet($id): \SplFileObject
 ```
 
 
@@ -278,7 +290,7 @@ internalTransportReferenceIdIdDownloadLatestLabelGet($id)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -293,7 +305,8 @@ $apiInstance = new kruegge82\weclapp\Api\InternalTransportReferenceApi(
 $id = 'id_example'; // string
 
 try {
-    $apiInstance->internalTransportReferenceIdIdDownloadLatestLabelGet($id);
+    $result = $apiInstance->internalTransportReferenceIdIdDownloadLatestLabelGet($id);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InternalTransportReferenceApi->internalTransportReferenceIdIdDownloadLatestLabelGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -307,16 +320,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -328,9 +341,9 @@ void (empty response body)
 internalTransportReferenceIdIdGet($id): \kruegge82\weclapp\Model\InternalTransportReference
 ```
 
+query a specific internalTransportReference
 
-
-query internalTransportReference
+query a specific internalTransportReference
 
 ### Example
 
@@ -339,7 +352,7 @@ query internalTransportReference
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -373,7 +386,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -387,10 +400,10 @@ try {
 ## `internalTransportReferenceIdIdPut()`
 
 ```php
-internalTransportReferenceIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\InternalTransportReference
+internalTransportReferenceIdIdPut($id, $internal_transport_reference, $dry_run): \kruegge82\weclapp\Model\InternalTransportReference
 ```
 
-
+update a internalTransportReference
 
 update internalTransportReference
 
@@ -401,7 +414,7 @@ update internalTransportReference
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -414,11 +427,11 @@ $apiInstance = new kruegge82\weclapp\Api\InternalTransportReferenceApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\InternalTransportReference(); // \kruegge82\weclapp\Model\InternalTransportReference
+$internal_transport_reference = new \kruegge82\weclapp\Model\InternalTransportReference(); // \kruegge82\weclapp\Model\InternalTransportReference
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->internalTransportReferenceIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->internalTransportReferenceIdIdPut($id, $internal_transport_reference, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InternalTransportReferenceApi->internalTransportReferenceIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -430,7 +443,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\InternalTransportReference**](../Model/InternalTransportReference.md)|  | |
+| **internal_transport_reference** | [**\kruegge82\weclapp\Model\InternalTransportReference**](../Model/InternalTransportReference.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -439,7 +452,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -453,10 +466,10 @@ try {
 ## `internalTransportReferencePost()`
 
 ```php
-internalTransportReferencePost($body, $dry_run): \kruegge82\weclapp\Model\InternalTransportReference
+internalTransportReferencePost($internal_transport_reference, $dry_run): \kruegge82\weclapp\Model\InternalTransportReference
 ```
 
-
+create a internalTransportReference
 
 create a internalTransportReference
 
@@ -467,7 +480,7 @@ create a internalTransportReference
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -479,11 +492,11 @@ $apiInstance = new kruegge82\weclapp\Api\InternalTransportReferenceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\InternalTransportReference(); // \kruegge82\weclapp\Model\InternalTransportReference
+$internal_transport_reference = new \kruegge82\weclapp\Model\InternalTransportReference(); // \kruegge82\weclapp\Model\InternalTransportReference
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->internalTransportReferencePost($body, $dry_run);
+    $result = $apiInstance->internalTransportReferencePost($internal_transport_reference, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InternalTransportReferenceApi->internalTransportReferencePost: ', $e->getMessage(), PHP_EOL;
@@ -494,7 +507,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\InternalTransportReference**](../Model/InternalTransportReference.md)|  | |
+| **internal_transport_reference** | [**\kruegge82\weclapp\Model\InternalTransportReference**](../Model/InternalTransportReference.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -503,7 +516,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

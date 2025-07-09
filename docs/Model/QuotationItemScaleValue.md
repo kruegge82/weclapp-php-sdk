@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **from_sales_price** | **bool** |  | [optional]
 **price** | **float** |  | [optional]
 **quantity** | **float** |  | [optional]
-**reduction_addition_items** | [**\kruegge82\weclapp\Model\PriceDataReductionAdditionItem[]**](PriceDataReductionAdditionItem.md) |  | [optional]
+**reduction_addition_items** | [**\kruegge82\weclapp\Model\PriceDataReductionAdditionItem[]**](PriceDataReductionAdditionItem.md) |  | [optional] [readonly]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

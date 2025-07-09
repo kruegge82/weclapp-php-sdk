@@ -1,26 +1,26 @@
 # kruegge82\weclapp\BlanketPurchaseOrderApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**blanketPurchaseOrderCountGet()**](BlanketPurchaseOrderApi.md#blanketPurchaseOrderCountGet) | **GET** /blanketPurchaseOrder/count |  |
-| [**blanketPurchaseOrderGet()**](BlanketPurchaseOrderApi.md#blanketPurchaseOrderGet) | **GET** /blanketPurchaseOrder |  |
-| [**blanketPurchaseOrderIdIdDelete()**](BlanketPurchaseOrderApi.md#blanketPurchaseOrderIdIdDelete) | **DELETE** /blanketPurchaseOrder/id/{id} |  |
+| [**blanketPurchaseOrderCountGet()**](BlanketPurchaseOrderApi.md#blanketPurchaseOrderCountGet) | **GET** /blanketPurchaseOrder/count | count blanketPurchaseOrder |
+| [**blanketPurchaseOrderGet()**](BlanketPurchaseOrderApi.md#blanketPurchaseOrderGet) | **GET** /blanketPurchaseOrder | query blanketPurchaseOrder |
+| [**blanketPurchaseOrderIdIdDelete()**](BlanketPurchaseOrderApi.md#blanketPurchaseOrderIdIdDelete) | **DELETE** /blanketPurchaseOrder/id/{id} | delete a blanketPurchaseOrder |
 | [**blanketPurchaseOrderIdIdDownloadLatestBlanketPurchaseOrderPdfGet()**](BlanketPurchaseOrderApi.md#blanketPurchaseOrderIdIdDownloadLatestBlanketPurchaseOrderPdfGet) | **GET** /blanketPurchaseOrder/id/{id}/downloadLatestBlanketPurchaseOrderPdf |  |
 | [**blanketPurchaseOrderIdIdGenerateReleasesPost()**](BlanketPurchaseOrderApi.md#blanketPurchaseOrderIdIdGenerateReleasesPost) | **POST** /blanketPurchaseOrder/id/{id}/generateReleases |  |
-| [**blanketPurchaseOrderIdIdGet()**](BlanketPurchaseOrderApi.md#blanketPurchaseOrderIdIdGet) | **GET** /blanketPurchaseOrder/id/{id} |  |
-| [**blanketPurchaseOrderIdIdPut()**](BlanketPurchaseOrderApi.md#blanketPurchaseOrderIdIdPut) | **PUT** /blanketPurchaseOrder/id/{id} |  |
-| [**blanketPurchaseOrderPost()**](BlanketPurchaseOrderApi.md#blanketPurchaseOrderPost) | **POST** /blanketPurchaseOrder |  |
+| [**blanketPurchaseOrderIdIdGet()**](BlanketPurchaseOrderApi.md#blanketPurchaseOrderIdIdGet) | **GET** /blanketPurchaseOrder/id/{id} | query a specific blanketPurchaseOrder |
+| [**blanketPurchaseOrderIdIdPut()**](BlanketPurchaseOrderApi.md#blanketPurchaseOrderIdIdPut) | **PUT** /blanketPurchaseOrder/id/{id} | update a blanketPurchaseOrder |
+| [**blanketPurchaseOrderPost()**](BlanketPurchaseOrderApi.md#blanketPurchaseOrderPost) | **POST** /blanketPurchaseOrder | create a blanketPurchaseOrder |
 
 
 ## `blanketPurchaseOrderCountGet()`
 
 ```php
-blanketPurchaseOrderCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+blanketPurchaseOrderCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count blanketPurchaseOrder
 
 count blanketPurchaseOrder
 
@@ -31,7 +31,7 @@ count blanketPurchaseOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -43,9 +43,10 @@ $apiInstance = new kruegge82\weclapp\Api\BlanketPurchaseOrderApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->blanketPurchaseOrderCountGet();
+    $result = $apiInstance->blanketPurchaseOrderCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlanketPurchaseOrderApi->blanketPurchaseOrderCountGet: ', $e->getMessage(), PHP_EOL;
@@ -54,7 +55,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -62,7 +65,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -76,10 +79,10 @@ This endpoint does not need any parameter.
 ## `blanketPurchaseOrderGet()`
 
 ```php
-blanketPurchaseOrderGet($page, $page_size, $sort): \kruegge82\weclapp\Model\BlanketPurchaseOrderGet200Response
+blanketPurchaseOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\BlanketPurchaseOrderGet200Response
 ```
 
-
+query blanketPurchaseOrder
 
 query blanketPurchaseOrder
 
@@ -90,7 +93,7 @@ query blanketPurchaseOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -104,10 +107,14 @@ $apiInstance = new kruegge82\weclapp\Api\BlanketPurchaseOrderApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->blanketPurchaseOrderGet($page, $page_size, $sort);
+    $result = $apiInstance->blanketPurchaseOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlanketPurchaseOrderApi->blanketPurchaseOrderGet: ', $e->getMessage(), PHP_EOL;
@@ -120,7 +127,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -128,7 +139,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -145,7 +156,7 @@ try {
 blanketPurchaseOrderIdIdDelete($id, $dry_run)
 ```
 
-
+delete a blanketPurchaseOrder
 
 delete a blanketPurchaseOrder
 
@@ -156,7 +167,7 @@ delete a blanketPurchaseOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -191,7 +202,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -205,7 +216,7 @@ void (empty response body)
 ## `blanketPurchaseOrderIdIdDownloadLatestBlanketPurchaseOrderPdfGet()`
 
 ```php
-blanketPurchaseOrderIdIdDownloadLatestBlanketPurchaseOrderPdfGet($id)
+blanketPurchaseOrderIdIdDownloadLatestBlanketPurchaseOrderPdfGet($id): \SplFileObject
 ```
 
 
@@ -217,7 +228,7 @@ blanketPurchaseOrderIdIdDownloadLatestBlanketPurchaseOrderPdfGet($id)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -232,7 +243,8 @@ $apiInstance = new kruegge82\weclapp\Api\BlanketPurchaseOrderApi(
 $id = 'id_example'; // string
 
 try {
-    $apiInstance->blanketPurchaseOrderIdIdDownloadLatestBlanketPurchaseOrderPdfGet($id);
+    $result = $apiInstance->blanketPurchaseOrderIdIdDownloadLatestBlanketPurchaseOrderPdfGet($id);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlanketPurchaseOrderApi->blanketPurchaseOrderIdIdDownloadLatestBlanketPurchaseOrderPdfGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -246,16 +258,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -264,7 +276,7 @@ void (empty response body)
 ## `blanketPurchaseOrderIdIdGenerateReleasesPost()`
 
 ```php
-blanketPurchaseOrderIdIdGenerateReleasesPost($id, $body): \kruegge82\weclapp\Model\BlanketPurchaseOrderIdIdGenerateReleasesPost200Response
+blanketPurchaseOrderIdIdGenerateReleasesPost($id, $blanket_purchase_order_id_id_generate_releases_post_request): \kruegge82\weclapp\Model\BlanketPurchaseOrderIdIdGenerateReleasesPost200Response
 ```
 
 
@@ -276,7 +288,7 @@ blanketPurchaseOrderIdIdGenerateReleasesPost($id, $body): \kruegge82\weclapp\Mod
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -289,10 +301,10 @@ $apiInstance = new kruegge82\weclapp\Api\BlanketPurchaseOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\BlanketPurchaseOrderIdIdGenerateReleasesPostRequest(); // \kruegge82\weclapp\Model\BlanketPurchaseOrderIdIdGenerateReleasesPostRequest
+$blanket_purchase_order_id_id_generate_releases_post_request = new \kruegge82\weclapp\Model\BlanketPurchaseOrderIdIdGenerateReleasesPostRequest(); // \kruegge82\weclapp\Model\BlanketPurchaseOrderIdIdGenerateReleasesPostRequest
 
 try {
-    $result = $apiInstance->blanketPurchaseOrderIdIdGenerateReleasesPost($id, $body);
+    $result = $apiInstance->blanketPurchaseOrderIdIdGenerateReleasesPost($id, $blanket_purchase_order_id_id_generate_releases_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlanketPurchaseOrderApi->blanketPurchaseOrderIdIdGenerateReleasesPost: ', $e->getMessage(), PHP_EOL;
@@ -304,7 +316,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\BlanketPurchaseOrderIdIdGenerateReleasesPostRequest**](../Model/BlanketPurchaseOrderIdIdGenerateReleasesPostRequest.md)|  | |
+| **blanket_purchase_order_id_id_generate_releases_post_request** | [**\kruegge82\weclapp\Model\BlanketPurchaseOrderIdIdGenerateReleasesPostRequest**](../Model/BlanketPurchaseOrderIdIdGenerateReleasesPostRequest.md)|  | |
 
 ### Return type
 
@@ -312,7 +324,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -329,9 +341,9 @@ try {
 blanketPurchaseOrderIdIdGet($id): \kruegge82\weclapp\Model\BlanketPurchaseOrder
 ```
 
+query a specific blanketPurchaseOrder
 
-
-query blanketPurchaseOrder
+query a specific blanketPurchaseOrder
 
 ### Example
 
@@ -340,7 +352,7 @@ query blanketPurchaseOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -374,7 +386,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -388,10 +400,10 @@ try {
 ## `blanketPurchaseOrderIdIdPut()`
 
 ```php
-blanketPurchaseOrderIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\BlanketPurchaseOrder
+blanketPurchaseOrderIdIdPut($id, $blanket_purchase_order, $dry_run): \kruegge82\weclapp\Model\BlanketPurchaseOrder
 ```
 
-
+update a blanketPurchaseOrder
 
 update blanketPurchaseOrder
 
@@ -402,7 +414,7 @@ update blanketPurchaseOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -415,11 +427,11 @@ $apiInstance = new kruegge82\weclapp\Api\BlanketPurchaseOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\BlanketPurchaseOrder(); // \kruegge82\weclapp\Model\BlanketPurchaseOrder
+$blanket_purchase_order = new \kruegge82\weclapp\Model\BlanketPurchaseOrder(); // \kruegge82\weclapp\Model\BlanketPurchaseOrder
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->blanketPurchaseOrderIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->blanketPurchaseOrderIdIdPut($id, $blanket_purchase_order, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlanketPurchaseOrderApi->blanketPurchaseOrderIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -431,7 +443,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\BlanketPurchaseOrder**](../Model/BlanketPurchaseOrder.md)|  | |
+| **blanket_purchase_order** | [**\kruegge82\weclapp\Model\BlanketPurchaseOrder**](../Model/BlanketPurchaseOrder.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -440,7 +452,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -454,10 +466,10 @@ try {
 ## `blanketPurchaseOrderPost()`
 
 ```php
-blanketPurchaseOrderPost($body, $dry_run): \kruegge82\weclapp\Model\BlanketPurchaseOrder
+blanketPurchaseOrderPost($blanket_purchase_order, $dry_run): \kruegge82\weclapp\Model\BlanketPurchaseOrder
 ```
 
-
+create a blanketPurchaseOrder
 
 create a blanketPurchaseOrder
 
@@ -468,7 +480,7 @@ create a blanketPurchaseOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -480,11 +492,11 @@ $apiInstance = new kruegge82\weclapp\Api\BlanketPurchaseOrderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\BlanketPurchaseOrder(); // \kruegge82\weclapp\Model\BlanketPurchaseOrder
+$blanket_purchase_order = new \kruegge82\weclapp\Model\BlanketPurchaseOrder(); // \kruegge82\weclapp\Model\BlanketPurchaseOrder
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->blanketPurchaseOrderPost($body, $dry_run);
+    $result = $apiInstance->blanketPurchaseOrderPost($blanket_purchase_order, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlanketPurchaseOrderApi->blanketPurchaseOrderPost: ', $e->getMessage(), PHP_EOL;
@@ -495,7 +507,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\BlanketPurchaseOrder**](../Model/BlanketPurchaseOrder.md)|  | |
+| **blanket_purchase_order** | [**\kruegge82\weclapp\Model\BlanketPurchaseOrder**](../Model/BlanketPurchaseOrder.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -504,7 +516,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

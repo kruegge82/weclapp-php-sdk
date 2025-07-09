@@ -1,26 +1,26 @@
 # kruegge82\weclapp\TaxApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**taxConfigurePurchaseTaxesPost()**](TaxApi.md#taxConfigurePurchaseTaxesPost) | **POST** /tax/configurePurchaseTaxes |  |
 | [**taxConfigureSalesTaxesPost()**](TaxApi.md#taxConfigureSalesTaxesPost) | **POST** /tax/configureSalesTaxes |  |
-| [**taxCountGet()**](TaxApi.md#taxCountGet) | **GET** /tax/count |  |
+| [**taxCountGet()**](TaxApi.md#taxCountGet) | **GET** /tax/count | count tax |
 | [**taxFindPurchaseTaxGet()**](TaxApi.md#taxFindPurchaseTaxGet) | **GET** /tax/findPurchaseTax |  |
 | [**taxFindSalesTaxGet()**](TaxApi.md#taxFindSalesTaxGet) | **GET** /tax/findSalesTax |  |
-| [**taxGet()**](TaxApi.md#taxGet) | **GET** /tax |  |
-| [**taxIdIdDelete()**](TaxApi.md#taxIdIdDelete) | **DELETE** /tax/id/{id} |  |
-| [**taxIdIdGet()**](TaxApi.md#taxIdIdGet) | **GET** /tax/id/{id} |  |
-| [**taxIdIdPut()**](TaxApi.md#taxIdIdPut) | **PUT** /tax/id/{id} |  |
-| [**taxPost()**](TaxApi.md#taxPost) | **POST** /tax |  |
+| [**taxGet()**](TaxApi.md#taxGet) | **GET** /tax | query tax |
+| [**taxIdIdDelete()**](TaxApi.md#taxIdIdDelete) | **DELETE** /tax/id/{id} | delete a tax |
+| [**taxIdIdGet()**](TaxApi.md#taxIdIdGet) | **GET** /tax/id/{id} | query a specific tax |
+| [**taxIdIdPut()**](TaxApi.md#taxIdIdPut) | **PUT** /tax/id/{id} | update a tax |
+| [**taxPost()**](TaxApi.md#taxPost) | **POST** /tax | create a tax |
 | [**taxResetSystemTaxesPost()**](TaxApi.md#taxResetSystemTaxesPost) | **POST** /tax/resetSystemTaxes |  |
 
 
 ## `taxConfigurePurchaseTaxesPost()`
 
 ```php
-taxConfigurePurchaseTaxesPost($body): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
+taxConfigurePurchaseTaxesPost($tax_configure_purchase_taxes_post_request): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
 ```
 
 
@@ -32,7 +32,7 @@ taxConfigurePurchaseTaxesPost($body): \kruegge82\weclapp\Model\AccountingTransac
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -44,10 +44,10 @@ $apiInstance = new kruegge82\weclapp\Api\TaxApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\TaxConfigurePurchaseTaxesPostRequest(); // \kruegge82\weclapp\Model\TaxConfigurePurchaseTaxesPostRequest
+$tax_configure_purchase_taxes_post_request = new \kruegge82\weclapp\Model\TaxConfigurePurchaseTaxesPostRequest(); // \kruegge82\weclapp\Model\TaxConfigurePurchaseTaxesPostRequest
 
 try {
-    $result = $apiInstance->taxConfigurePurchaseTaxesPost($body);
+    $result = $apiInstance->taxConfigurePurchaseTaxesPost($tax_configure_purchase_taxes_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxApi->taxConfigurePurchaseTaxesPost: ', $e->getMessage(), PHP_EOL;
@@ -58,7 +58,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\TaxConfigurePurchaseTaxesPostRequest**](../Model/TaxConfigurePurchaseTaxesPostRequest.md)|  | |
+| **tax_configure_purchase_taxes_post_request** | [**\kruegge82\weclapp\Model\TaxConfigurePurchaseTaxesPostRequest**](../Model/TaxConfigurePurchaseTaxesPostRequest.md)|  | |
 
 ### Return type
 
@@ -66,7 +66,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -80,7 +80,7 @@ try {
 ## `taxConfigureSalesTaxesPost()`
 
 ```php
-taxConfigureSalesTaxesPost($body): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
+taxConfigureSalesTaxesPost($tax_configure_sales_taxes_post_request): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
 ```
 
 
@@ -92,7 +92,7 @@ taxConfigureSalesTaxesPost($body): \kruegge82\weclapp\Model\AccountingTransactio
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -104,10 +104,10 @@ $apiInstance = new kruegge82\weclapp\Api\TaxApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\TaxConfigureSalesTaxesPostRequest(); // \kruegge82\weclapp\Model\TaxConfigureSalesTaxesPostRequest
+$tax_configure_sales_taxes_post_request = new \kruegge82\weclapp\Model\TaxConfigureSalesTaxesPostRequest(); // \kruegge82\weclapp\Model\TaxConfigureSalesTaxesPostRequest
 
 try {
-    $result = $apiInstance->taxConfigureSalesTaxesPost($body);
+    $result = $apiInstance->taxConfigureSalesTaxesPost($tax_configure_sales_taxes_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxApi->taxConfigureSalesTaxesPost: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +118,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\TaxConfigureSalesTaxesPostRequest**](../Model/TaxConfigureSalesTaxesPostRequest.md)|  | |
+| **tax_configure_sales_taxes_post_request** | [**\kruegge82\weclapp\Model\TaxConfigureSalesTaxesPostRequest**](../Model/TaxConfigureSalesTaxesPostRequest.md)|  | |
 
 ### Return type
 
@@ -126,7 +126,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -140,10 +140,10 @@ try {
 ## `taxCountGet()`
 
 ```php
-taxCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+taxCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count tax
 
 count tax
 
@@ -154,7 +154,7 @@ count tax
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -166,9 +166,10 @@ $apiInstance = new kruegge82\weclapp\Api\TaxApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->taxCountGet();
+    $result = $apiInstance->taxCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxApi->taxCountGet: ', $e->getMessage(), PHP_EOL;
@@ -177,7 +178,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -185,7 +188,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -211,7 +214,7 @@ taxFindPurchaseTaxGet($recipient_country_code, $dispatch_country_code, $tax_rate
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -225,8 +228,8 @@ $apiInstance = new kruegge82\weclapp\Api\TaxApi(
 );
 $recipient_country_code = 'recipient_country_code_example'; // string
 $dispatch_country_code = 'dispatch_country_code_example'; // string
-$tax_rate_type = 'tax_rate_type_example'; // string
-$party_type = 'party_type_example'; // string
+$tax_rate_type = new \kruegge82\weclapp\Model\\kruegge82\weclapp\Model\TaxRateType(); // \kruegge82\weclapp\Model\TaxRateType
+$party_type = new \kruegge82\weclapp\Model\\kruegge82\weclapp\Model\PartyType(); // \kruegge82\weclapp\Model\PartyType
 $debtor_creditor_code_id = 'debtor_creditor_code_id_example'; // string
 $product_code_id = 'product_code_id_example'; // string
 $date = 56; // int
@@ -245,8 +248,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **recipient_country_code** | **string**|  | |
 | **dispatch_country_code** | **string**|  | [optional] |
-| **tax_rate_type** | **string**|  | [optional] |
-| **party_type** | **string**|  | [optional] |
+| **tax_rate_type** | [**\kruegge82\weclapp\Model\TaxRateType**](../Model/.md)|  | [optional] |
+| **party_type** | [**\kruegge82\weclapp\Model\PartyType**](../Model/.md)|  | [optional] |
 | **debtor_creditor_code_id** | **string**|  | [optional] |
 | **product_code_id** | **string**|  | [optional] |
 | **date** | **int**|  | [optional] |
@@ -257,7 +260,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -283,7 +286,7 @@ taxFindSalesTaxGet($dispatch_country_code, $recipient_country_code, $tax_rate_ty
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -297,8 +300,8 @@ $apiInstance = new kruegge82\weclapp\Api\TaxApi(
 );
 $dispatch_country_code = 'dispatch_country_code_example'; // string
 $recipient_country_code = 'recipient_country_code_example'; // string
-$tax_rate_type = 'tax_rate_type_example'; // string
-$party_type = 'party_type_example'; // string
+$tax_rate_type = new \kruegge82\weclapp\Model\\kruegge82\weclapp\Model\TaxRateType(); // \kruegge82\weclapp\Model\TaxRateType
+$party_type = new \kruegge82\weclapp\Model\\kruegge82\weclapp\Model\PartyType(); // \kruegge82\weclapp\Model\PartyType
 $debtor_creditor_code_id = 'debtor_creditor_code_id_example'; // string
 $product_code_id = 'product_code_id_example'; // string
 $valid_vat_id = True; // bool
@@ -318,8 +321,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **dispatch_country_code** | **string**|  | |
 | **recipient_country_code** | **string**|  | [optional] |
-| **tax_rate_type** | **string**|  | [optional] |
-| **party_type** | **string**|  | [optional] |
+| **tax_rate_type** | [**\kruegge82\weclapp\Model\TaxRateType**](../Model/.md)|  | [optional] |
+| **party_type** | [**\kruegge82\weclapp\Model\PartyType**](../Model/.md)|  | [optional] |
 | **debtor_creditor_code_id** | **string**|  | [optional] |
 | **product_code_id** | **string**|  | [optional] |
 | **valid_vat_id** | **bool**|  | [optional] |
@@ -331,7 +334,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -345,10 +348,10 @@ try {
 ## `taxGet()`
 
 ```php
-taxGet($page, $page_size, $sort): \kruegge82\weclapp\Model\TaxGet200Response
+taxGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\TaxGet200Response
 ```
 
-
+query tax
 
 query tax
 
@@ -359,7 +362,7 @@ query tax
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -373,10 +376,14 @@ $apiInstance = new kruegge82\weclapp\Api\TaxApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->taxGet($page, $page_size, $sort);
+    $result = $apiInstance->taxGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxApi->taxGet: ', $e->getMessage(), PHP_EOL;
@@ -389,7 +396,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -397,7 +408,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -414,7 +425,7 @@ try {
 taxIdIdDelete($id, $dry_run)
 ```
 
-
+delete a tax
 
 delete a tax
 
@@ -425,7 +436,7 @@ delete a tax
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -460,7 +471,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -477,9 +488,9 @@ void (empty response body)
 taxIdIdGet($id): \kruegge82\weclapp\Model\Tax
 ```
 
+query a specific tax
 
-
-query tax
+query a specific tax
 
 ### Example
 
@@ -488,7 +499,7 @@ query tax
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -522,7 +533,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -536,10 +547,10 @@ try {
 ## `taxIdIdPut()`
 
 ```php
-taxIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Tax
+taxIdIdPut($id, $tax, $dry_run): \kruegge82\weclapp\Model\Tax
 ```
 
-
+update a tax
 
 update tax
 
@@ -550,7 +561,7 @@ update tax
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -563,11 +574,11 @@ $apiInstance = new kruegge82\weclapp\Api\TaxApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\Tax(); // \kruegge82\weclapp\Model\Tax
+$tax = new \kruegge82\weclapp\Model\Tax(); // \kruegge82\weclapp\Model\Tax
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->taxIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->taxIdIdPut($id, $tax, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxApi->taxIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -579,7 +590,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\Tax**](../Model/Tax.md)|  | |
+| **tax** | [**\kruegge82\weclapp\Model\Tax**](../Model/Tax.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -588,7 +599,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -602,10 +613,10 @@ try {
 ## `taxPost()`
 
 ```php
-taxPost($body, $dry_run): \kruegge82\weclapp\Model\Tax
+taxPost($tax, $dry_run): \kruegge82\weclapp\Model\Tax
 ```
 
-
+create a tax
 
 create a tax
 
@@ -616,7 +627,7 @@ create a tax
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -628,11 +639,11 @@ $apiInstance = new kruegge82\weclapp\Api\TaxApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\Tax(); // \kruegge82\weclapp\Model\Tax
+$tax = new \kruegge82\weclapp\Model\Tax(); // \kruegge82\weclapp\Model\Tax
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->taxPost($body, $dry_run);
+    $result = $apiInstance->taxPost($tax, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxApi->taxPost: ', $e->getMessage(), PHP_EOL;
@@ -643,7 +654,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\Tax**](../Model/Tax.md)|  | |
+| **tax** | [**\kruegge82\weclapp\Model\Tax**](../Model/Tax.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -652,7 +663,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -666,7 +677,7 @@ try {
 ## `taxResetSystemTaxesPost()`
 
 ```php
-taxResetSystemTaxesPost($body): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
+taxResetSystemTaxesPost($tax_reset_system_taxes_post_request): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
 ```
 
 
@@ -678,7 +689,7 @@ taxResetSystemTaxesPost($body): \kruegge82\weclapp\Model\AccountingTransactionBa
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -690,10 +701,10 @@ $apiInstance = new kruegge82\weclapp\Api\TaxApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\TaxResetSystemTaxesPostRequest(); // \kruegge82\weclapp\Model\TaxResetSystemTaxesPostRequest
+$tax_reset_system_taxes_post_request = new \kruegge82\weclapp\Model\TaxResetSystemTaxesPostRequest(); // \kruegge82\weclapp\Model\TaxResetSystemTaxesPostRequest
 
 try {
-    $result = $apiInstance->taxResetSystemTaxesPost($body);
+    $result = $apiInstance->taxResetSystemTaxesPost($tax_reset_system_taxes_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxApi->taxResetSystemTaxesPost: ', $e->getMessage(), PHP_EOL;
@@ -704,7 +715,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\TaxResetSystemTaxesPostRequest**](../Model/TaxResetSystemTaxesPostRequest.md)|  | |
+| **tax_reset_system_taxes_post_request** | [**\kruegge82\weclapp\Model\TaxResetSystemTaxesPostRequest**](../Model/TaxResetSystemTaxesPostRequest.md)|  | |
 
 ### Return type
 
@@ -712,7 +723,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

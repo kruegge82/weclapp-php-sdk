@@ -1,24 +1,24 @@
 # kruegge82\weclapp\LoadingEquipmentIdentifierApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**loadingEquipmentIdentifierCountGet()**](LoadingEquipmentIdentifierApi.md#loadingEquipmentIdentifierCountGet) | **GET** /loadingEquipmentIdentifier/count |  |
-| [**loadingEquipmentIdentifierGet()**](LoadingEquipmentIdentifierApi.md#loadingEquipmentIdentifierGet) | **GET** /loadingEquipmentIdentifier |  |
-| [**loadingEquipmentIdentifierIdIdDelete()**](LoadingEquipmentIdentifierApi.md#loadingEquipmentIdentifierIdIdDelete) | **DELETE** /loadingEquipmentIdentifier/id/{id} |  |
-| [**loadingEquipmentIdentifierIdIdGet()**](LoadingEquipmentIdentifierApi.md#loadingEquipmentIdentifierIdIdGet) | **GET** /loadingEquipmentIdentifier/id/{id} |  |
-| [**loadingEquipmentIdentifierIdIdPut()**](LoadingEquipmentIdentifierApi.md#loadingEquipmentIdentifierIdIdPut) | **PUT** /loadingEquipmentIdentifier/id/{id} |  |
-| [**loadingEquipmentIdentifierPost()**](LoadingEquipmentIdentifierApi.md#loadingEquipmentIdentifierPost) | **POST** /loadingEquipmentIdentifier |  |
+| [**loadingEquipmentIdentifierCountGet()**](LoadingEquipmentIdentifierApi.md#loadingEquipmentIdentifierCountGet) | **GET** /loadingEquipmentIdentifier/count | count loadingEquipmentIdentifier |
+| [**loadingEquipmentIdentifierGet()**](LoadingEquipmentIdentifierApi.md#loadingEquipmentIdentifierGet) | **GET** /loadingEquipmentIdentifier | query loadingEquipmentIdentifier |
+| [**loadingEquipmentIdentifierIdIdDelete()**](LoadingEquipmentIdentifierApi.md#loadingEquipmentIdentifierIdIdDelete) | **DELETE** /loadingEquipmentIdentifier/id/{id} | delete a loadingEquipmentIdentifier |
+| [**loadingEquipmentIdentifierIdIdGet()**](LoadingEquipmentIdentifierApi.md#loadingEquipmentIdentifierIdIdGet) | **GET** /loadingEquipmentIdentifier/id/{id} | query a specific loadingEquipmentIdentifier |
+| [**loadingEquipmentIdentifierIdIdPut()**](LoadingEquipmentIdentifierApi.md#loadingEquipmentIdentifierIdIdPut) | **PUT** /loadingEquipmentIdentifier/id/{id} | update a loadingEquipmentIdentifier |
+| [**loadingEquipmentIdentifierPost()**](LoadingEquipmentIdentifierApi.md#loadingEquipmentIdentifierPost) | **POST** /loadingEquipmentIdentifier | create a loadingEquipmentIdentifier |
 
 
 ## `loadingEquipmentIdentifierCountGet()`
 
 ```php
-loadingEquipmentIdentifierCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+loadingEquipmentIdentifierCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count loadingEquipmentIdentifier
 
 count loadingEquipmentIdentifier
 
@@ -29,7 +29,7 @@ count loadingEquipmentIdentifier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,9 +41,10 @@ $apiInstance = new kruegge82\weclapp\Api\LoadingEquipmentIdentifierApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->loadingEquipmentIdentifierCountGet();
+    $result = $apiInstance->loadingEquipmentIdentifierCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoadingEquipmentIdentifierApi->loadingEquipmentIdentifierCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -60,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -74,10 +77,10 @@ This endpoint does not need any parameter.
 ## `loadingEquipmentIdentifierGet()`
 
 ```php
-loadingEquipmentIdentifierGet($page, $page_size, $sort): \kruegge82\weclapp\Model\LoadingEquipmentIdentifierGet200Response
+loadingEquipmentIdentifierGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\LoadingEquipmentIdentifierGet200Response
 ```
 
-
+query loadingEquipmentIdentifier
 
 query loadingEquipmentIdentifier
 
@@ -88,7 +91,7 @@ query loadingEquipmentIdentifier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -102,10 +105,14 @@ $apiInstance = new kruegge82\weclapp\Api\LoadingEquipmentIdentifierApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->loadingEquipmentIdentifierGet($page, $page_size, $sort);
+    $result = $apiInstance->loadingEquipmentIdentifierGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoadingEquipmentIdentifierApi->loadingEquipmentIdentifierGet: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +125,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -126,7 +137,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -143,7 +154,7 @@ try {
 loadingEquipmentIdentifierIdIdDelete($id, $dry_run)
 ```
 
-
+delete a loadingEquipmentIdentifier
 
 delete a loadingEquipmentIdentifier
 
@@ -154,7 +165,7 @@ delete a loadingEquipmentIdentifier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -189,7 +200,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -206,9 +217,9 @@ void (empty response body)
 loadingEquipmentIdentifierIdIdGet($id): \kruegge82\weclapp\Model\LoadingEquipmentIdentifier
 ```
 
+query a specific loadingEquipmentIdentifier
 
-
-query loadingEquipmentIdentifier
+query a specific loadingEquipmentIdentifier
 
 ### Example
 
@@ -217,7 +228,7 @@ query loadingEquipmentIdentifier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -251,7 +262,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -265,10 +276,10 @@ try {
 ## `loadingEquipmentIdentifierIdIdPut()`
 
 ```php
-loadingEquipmentIdentifierIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\LoadingEquipmentIdentifier
+loadingEquipmentIdentifierIdIdPut($id, $loading_equipment_identifier, $dry_run): \kruegge82\weclapp\Model\LoadingEquipmentIdentifier
 ```
 
-
+update a loadingEquipmentIdentifier
 
 update loadingEquipmentIdentifier
 
@@ -279,7 +290,7 @@ update loadingEquipmentIdentifier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -292,11 +303,11 @@ $apiInstance = new kruegge82\weclapp\Api\LoadingEquipmentIdentifierApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\LoadingEquipmentIdentifier(); // \kruegge82\weclapp\Model\LoadingEquipmentIdentifier
+$loading_equipment_identifier = new \kruegge82\weclapp\Model\LoadingEquipmentIdentifier(); // \kruegge82\weclapp\Model\LoadingEquipmentIdentifier
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->loadingEquipmentIdentifierIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->loadingEquipmentIdentifierIdIdPut($id, $loading_equipment_identifier, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoadingEquipmentIdentifierApi->loadingEquipmentIdentifierIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +319,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\LoadingEquipmentIdentifier**](../Model/LoadingEquipmentIdentifier.md)|  | |
+| **loading_equipment_identifier** | [**\kruegge82\weclapp\Model\LoadingEquipmentIdentifier**](../Model/LoadingEquipmentIdentifier.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -317,7 +328,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -331,10 +342,10 @@ try {
 ## `loadingEquipmentIdentifierPost()`
 
 ```php
-loadingEquipmentIdentifierPost($body, $dry_run): \kruegge82\weclapp\Model\LoadingEquipmentIdentifier
+loadingEquipmentIdentifierPost($loading_equipment_identifier, $dry_run): \kruegge82\weclapp\Model\LoadingEquipmentIdentifier
 ```
 
-
+create a loadingEquipmentIdentifier
 
 create a loadingEquipmentIdentifier
 
@@ -345,7 +356,7 @@ create a loadingEquipmentIdentifier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -357,11 +368,11 @@ $apiInstance = new kruegge82\weclapp\Api\LoadingEquipmentIdentifierApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\LoadingEquipmentIdentifier(); // \kruegge82\weclapp\Model\LoadingEquipmentIdentifier
+$loading_equipment_identifier = new \kruegge82\weclapp\Model\LoadingEquipmentIdentifier(); // \kruegge82\weclapp\Model\LoadingEquipmentIdentifier
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->loadingEquipmentIdentifierPost($body, $dry_run);
+    $result = $apiInstance->loadingEquipmentIdentifierPost($loading_equipment_identifier, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoadingEquipmentIdentifierApi->loadingEquipmentIdentifierPost: ', $e->getMessage(), PHP_EOL;
@@ -372,7 +383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\LoadingEquipmentIdentifier**](../Model/LoadingEquipmentIdentifier.md)|  | |
+| **loading_equipment_identifier** | [**\kruegge82\weclapp\Model\LoadingEquipmentIdentifier**](../Model/LoadingEquipmentIdentifier.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -381,7 +392,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

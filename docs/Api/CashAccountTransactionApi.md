@@ -1,23 +1,23 @@
 # kruegge82\weclapp\CashAccountTransactionApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**cashAccountTransactionCountGet()**](CashAccountTransactionApi.md#cashAccountTransactionCountGet) | **GET** /cashAccountTransaction/count |  |
-| [**cashAccountTransactionGet()**](CashAccountTransactionApi.md#cashAccountTransactionGet) | **GET** /cashAccountTransaction |  |
-| [**cashAccountTransactionIdIdDelete()**](CashAccountTransactionApi.md#cashAccountTransactionIdIdDelete) | **DELETE** /cashAccountTransaction/id/{id} |  |
-| [**cashAccountTransactionIdIdGet()**](CashAccountTransactionApi.md#cashAccountTransactionIdIdGet) | **GET** /cashAccountTransaction/id/{id} |  |
-| [**cashAccountTransactionPost()**](CashAccountTransactionApi.md#cashAccountTransactionPost) | **POST** /cashAccountTransaction |  |
+| [**cashAccountTransactionCountGet()**](CashAccountTransactionApi.md#cashAccountTransactionCountGet) | **GET** /cashAccountTransaction/count | count cashAccountTransaction |
+| [**cashAccountTransactionGet()**](CashAccountTransactionApi.md#cashAccountTransactionGet) | **GET** /cashAccountTransaction | query cashAccountTransaction |
+| [**cashAccountTransactionIdIdDelete()**](CashAccountTransactionApi.md#cashAccountTransactionIdIdDelete) | **DELETE** /cashAccountTransaction/id/{id} | delete a cashAccountTransaction |
+| [**cashAccountTransactionIdIdGet()**](CashAccountTransactionApi.md#cashAccountTransactionIdIdGet) | **GET** /cashAccountTransaction/id/{id} | query a specific cashAccountTransaction |
+| [**cashAccountTransactionPost()**](CashAccountTransactionApi.md#cashAccountTransactionPost) | **POST** /cashAccountTransaction | create a cashAccountTransaction |
 
 
 ## `cashAccountTransactionCountGet()`
 
 ```php
-cashAccountTransactionCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+cashAccountTransactionCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count cashAccountTransaction
 
 count cashAccountTransaction
 
@@ -28,7 +28,7 @@ count cashAccountTransaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -40,9 +40,10 @@ $apiInstance = new kruegge82\weclapp\Api\CashAccountTransactionApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->cashAccountTransactionCountGet();
+    $result = $apiInstance->cashAccountTransactionCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CashAccountTransactionApi->cashAccountTransactionCountGet: ', $e->getMessage(), PHP_EOL;
@@ -51,7 +52,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -59,7 +62,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -73,10 +76,10 @@ This endpoint does not need any parameter.
 ## `cashAccountTransactionGet()`
 
 ```php
-cashAccountTransactionGet($page, $page_size, $sort): \kruegge82\weclapp\Model\CashAccountTransactionGet200Response
+cashAccountTransactionGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\CashAccountTransactionGet200Response
 ```
 
-
+query cashAccountTransaction
 
 query cashAccountTransaction
 
@@ -87,7 +90,7 @@ query cashAccountTransaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -101,10 +104,14 @@ $apiInstance = new kruegge82\weclapp\Api\CashAccountTransactionApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->cashAccountTransactionGet($page, $page_size, $sort);
+    $result = $apiInstance->cashAccountTransactionGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CashAccountTransactionApi->cashAccountTransactionGet: ', $e->getMessage(), PHP_EOL;
@@ -117,7 +124,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -125,7 +136,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -142,7 +153,7 @@ try {
 cashAccountTransactionIdIdDelete($id, $dry_run)
 ```
 
-
+delete a cashAccountTransaction
 
 delete a cashAccountTransaction
 
@@ -153,7 +164,7 @@ delete a cashAccountTransaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -188,7 +199,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -205,9 +216,9 @@ void (empty response body)
 cashAccountTransactionIdIdGet($id): \kruegge82\weclapp\Model\CashAccountTransaction
 ```
 
+query a specific cashAccountTransaction
 
-
-query cashAccountTransaction
+query a specific cashAccountTransaction
 
 ### Example
 
@@ -216,7 +227,7 @@ query cashAccountTransaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -250,7 +261,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -264,10 +275,10 @@ try {
 ## `cashAccountTransactionPost()`
 
 ```php
-cashAccountTransactionPost($body, $dry_run): \kruegge82\weclapp\Model\CashAccountTransaction
+cashAccountTransactionPost($cash_account_transaction, $dry_run): \kruegge82\weclapp\Model\CashAccountTransaction
 ```
 
-
+create a cashAccountTransaction
 
 create a cashAccountTransaction
 
@@ -278,7 +289,7 @@ create a cashAccountTransaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -290,11 +301,11 @@ $apiInstance = new kruegge82\weclapp\Api\CashAccountTransactionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\CashAccountTransaction(); // \kruegge82\weclapp\Model\CashAccountTransaction
+$cash_account_transaction = new \kruegge82\weclapp\Model\CashAccountTransaction(); // \kruegge82\weclapp\Model\CashAccountTransaction
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->cashAccountTransactionPost($body, $dry_run);
+    $result = $apiInstance->cashAccountTransactionPost($cash_account_transaction, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CashAccountTransactionApi->cashAccountTransactionPost: ', $e->getMessage(), PHP_EOL;
@@ -305,7 +316,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\CashAccountTransaction**](../Model/CashAccountTransaction.md)|  | |
+| **cash_account_transaction** | [**\kruegge82\weclapp\Model\CashAccountTransaction**](../Model/CashAccountTransaction.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -314,7 +325,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

@@ -1,6 +1,6 @@
 # kruegge82\weclapp\PropertyTranslationApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -23,7 +23,7 @@ propertyTranslationReadPropertyTranslationsGet($entity_name, $entity_id, $locale
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -63,7 +63,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -77,7 +77,7 @@ try {
 ## `propertyTranslationUpdatePropertyTranslationsPost()`
 
 ```php
-propertyTranslationUpdatePropertyTranslationsPost($body): \kruegge82\weclapp\Model\PropertyTranslationReadPropertyTranslationsGet200Response
+propertyTranslationUpdatePropertyTranslationsPost($property_translation_update_property_translations_post_request): \kruegge82\weclapp\Model\PropertyTranslationReadPropertyTranslationsGet200Response
 ```
 
 
@@ -89,7 +89,7 @@ propertyTranslationUpdatePropertyTranslationsPost($body): \kruegge82\weclapp\Mod
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -101,10 +101,10 @@ $apiInstance = new kruegge82\weclapp\Api\PropertyTranslationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\PropertyTranslationUpdatePropertyTranslationsPostRequest(); // \kruegge82\weclapp\Model\PropertyTranslationUpdatePropertyTranslationsPostRequest
+$property_translation_update_property_translations_post_request = new \kruegge82\weclapp\Model\PropertyTranslationUpdatePropertyTranslationsPostRequest(); // \kruegge82\weclapp\Model\PropertyTranslationUpdatePropertyTranslationsPostRequest
 
 try {
-    $result = $apiInstance->propertyTranslationUpdatePropertyTranslationsPost($body);
+    $result = $apiInstance->propertyTranslationUpdatePropertyTranslationsPost($property_translation_update_property_translations_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PropertyTranslationApi->propertyTranslationUpdatePropertyTranslationsPost: ', $e->getMessage(), PHP_EOL;
@@ -115,7 +115,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\PropertyTranslationUpdatePropertyTranslationsPostRequest**](../Model/PropertyTranslationUpdatePropertyTranslationsPostRequest.md)|  | |
+| **property_translation_update_property_translations_post_request** | [**\kruegge82\weclapp\Model\PropertyTranslationUpdatePropertyTranslationsPostRequest**](../Model/PropertyTranslationUpdatePropertyTranslationsPostRequest.md)|  | |
 
 ### Return type
 
@@ -123,7 +123,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional]
-**version** | **string** |  | [optional]
-**created_date** | **int** |  | [optional]
-**currency_id** | **string** |  |
+**id** | **string** |  | [optional] [readonly]
+**created_date** | **int** |  | [optional] [readonly]
+**last_modified_date** | **int** |  | [optional] [readonly]
+**version** | **string** |  | [optional] [readonly]
+**currency_id** | **string** |  | [optional]
 **customer_id** | **string** |  | [optional]
 **description** | **string** |  | [optional]
 **end_date** | **int** |  | [optional]
-**last_modified_by_user_id** | **string** |  | [optional]
-**last_modified_date** | **int** |  | [optional]
-**price** | **float** |  |
-**price_scale_type** | **string** |  |
-**price_scale_value** | **float** |  |
+**last_modified_by_user_id** | **string** |  | [optional] [readonly]
+**price** | **float** |  | [optional]
+**price_scale_type** | [**\kruegge82\weclapp\Model\PriceScaleType**](PriceScaleType.md) |  | [optional]
+**price_scale_value** | **float** |  | [optional]
 **reduction_additions** | [**\kruegge82\weclapp\Model\ReductionAddition[]**](ReductionAddition.md) |  | [optional]
 **start_date** | **int** |  | [optional]
 

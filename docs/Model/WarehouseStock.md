@@ -4,21 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | [optional]
-**version** | **string** |  | [optional]
-**article_id** | **string** |  |
+**id** | **string** |  | [optional] [readonly]
+**created_date** | **int** |  | [optional] [readonly]
+**last_modified_date** | **int** |  | [optional] [readonly]
+**version** | **string** |  | [optional] [readonly]
+**article_id** | **string** |  | [optional]
 **batch_number** | **string** |  | [optional]
 **batch_number_id** | **string** |  | [optional]
-**created_date** | **int** |  | [optional]
-**inbound_date** | **int** |  |
+**inbound_date** | **int** |  | [optional]
 **internal_transport_reference_id** | **string** |  | [optional]
-**last_modified_date** | **int** |  | [optional]
 **packaging_units** | [**\kruegge82\weclapp\Model\PackagingUnit[]**](PackagingUnit.md) |  | [optional]
 **picks** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
 **quantity** | **float** |  | [optional]
 **sales_order_item_id** | **string** |  | [optional]
 **serial_numbers** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
-**storage_place_id** | **string** |  |
-**warehouse_id** | **string** |  |
+**storage_place_id** | **string** |  | [optional]
+**warehouse_id** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

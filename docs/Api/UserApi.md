@@ -1,28 +1,28 @@
 # kruegge82\weclapp\UserApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**userCountGet()**](UserApi.md#userCountGet) | **GET** /user/count |  |
+| [**userCountGet()**](UserApi.md#userCountGet) | **GET** /user/count | count user |
 | [**userCurrentUserGet()**](UserApi.md#userCurrentUserGet) | **GET** /user/currentUser |  |
-| [**userGet()**](UserApi.md#userGet) | **GET** /user |  |
-| [**userIdIdGet()**](UserApi.md#userIdIdGet) | **GET** /user/id/{id} |  |
+| [**userGet()**](UserApi.md#userGet) | **GET** /user | query user |
+| [**userIdIdGet()**](UserApi.md#userIdIdGet) | **GET** /user/id/{id} | query a specific user |
 | [**userIdIdInvitePost()**](UserApi.md#userIdIdInvitePost) | **POST** /user/id/{id}/invite |  |
-| [**userIdIdPut()**](UserApi.md#userIdIdPut) | **PUT** /user/id/{id} |  |
+| [**userIdIdPut()**](UserApi.md#userIdIdPut) | **PUT** /user/id/{id} | update a user |
 | [**userIdIdSoftDeletePost()**](UserApi.md#userIdIdSoftDeletePost) | **POST** /user/id/{id}/softDelete |  |
 | [**userIdIdUserImageGet()**](UserApi.md#userIdIdUserImageGet) | **GET** /user/id/{id}/userImage |  |
 | [**userIdIdUserImageThumbnailGet()**](UserApi.md#userIdIdUserImageThumbnailGet) | **GET** /user/id/{id}/userImageThumbnail |  |
-| [**userPost()**](UserApi.md#userPost) | **POST** /user |  |
+| [**userPost()**](UserApi.md#userPost) | **POST** /user | create a user |
 
 
 ## `userCountGet()`
 
 ```php
-userCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+userCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count user
 
 count user
 
@@ -33,7 +33,7 @@ count user
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -45,9 +45,10 @@ $apiInstance = new kruegge82\weclapp\Api\UserApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->userCountGet();
+    $result = $apiInstance->userCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->userCountGet: ', $e->getMessage(), PHP_EOL;
@@ -56,7 +57,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -64,7 +67,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -90,7 +93,7 @@ userCurrentUserGet(): \kruegge82\weclapp\Model\UserCurrentUserGet200Response
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -121,7 +124,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -135,10 +138,10 @@ This endpoint does not need any parameter.
 ## `userGet()`
 
 ```php
-userGet($page, $page_size, $sort): \kruegge82\weclapp\Model\UserGet200Response
+userGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\UserGet200Response
 ```
 
-
+query user
 
 query user
 
@@ -149,7 +152,7 @@ query user
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -163,10 +166,14 @@ $apiInstance = new kruegge82\weclapp\Api\UserApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->userGet($page, $page_size, $sort);
+    $result = $apiInstance->userGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->userGet: ', $e->getMessage(), PHP_EOL;
@@ -179,7 +186,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -187,7 +198,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -204,9 +215,9 @@ try {
 userIdIdGet($id): \kruegge82\weclapp\Model\User
 ```
 
+query a specific user
 
-
-query user
+query a specific user
 
 ### Example
 
@@ -215,7 +226,7 @@ query user
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -249,7 +260,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -275,7 +286,7 @@ userIdIdInvitePost($id, $body): \kruegge82\weclapp\Model\UserCurrentUserGet200Re
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -311,7 +322,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -325,10 +336,10 @@ try {
 ## `userIdIdPut()`
 
 ```php
-userIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\User
+userIdIdPut($id, $user, $dry_run): \kruegge82\weclapp\Model\User
 ```
 
-
+update a user
 
 update user
 
@@ -339,7 +350,7 @@ update user
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -352,11 +363,11 @@ $apiInstance = new kruegge82\weclapp\Api\UserApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\User(); // \kruegge82\weclapp\Model\User
+$user = new \kruegge82\weclapp\Model\User(); // \kruegge82\weclapp\Model\User
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->userIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->userIdIdPut($id, $user, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->userIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -368,7 +379,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\User**](../Model/User.md)|  | |
+| **user** | [**\kruegge82\weclapp\Model\User**](../Model/User.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -377,7 +388,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -403,7 +414,7 @@ userIdIdSoftDeletePost($id, $body): \kruegge82\weclapp\Model\UserCurrentUserGet2
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -439,7 +450,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -453,7 +464,7 @@ try {
 ## `userIdIdUserImageGet()`
 
 ```php
-userIdIdUserImageGet($id, $scale_width, $scale_height, $image_id)
+userIdIdUserImageGet($id, $scale_width, $scale_height, $image_id): \SplFileObject
 ```
 
 
@@ -465,7 +476,7 @@ userIdIdUserImageGet($id, $scale_width, $scale_height, $image_id)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -483,7 +494,8 @@ $scale_height = 56; // int
 $image_id = 'image_id_example'; // string
 
 try {
-    $apiInstance->userIdIdUserImageGet($id, $scale_width, $scale_height, $image_id);
+    $result = $apiInstance->userIdIdUserImageGet($id, $scale_width, $scale_height, $image_id);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->userIdIdUserImageGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -500,16 +512,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -518,7 +530,7 @@ void (empty response body)
 ## `userIdIdUserImageThumbnailGet()`
 
 ```php
-userIdIdUserImageThumbnailGet($id, $scale_width, $scale_height, $image_id)
+userIdIdUserImageThumbnailGet($id, $scale_width, $scale_height, $image_id): \SplFileObject
 ```
 
 
@@ -530,7 +542,7 @@ userIdIdUserImageThumbnailGet($id, $scale_width, $scale_height, $image_id)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -548,7 +560,8 @@ $scale_height = 56; // int
 $image_id = 'image_id_example'; // string
 
 try {
-    $apiInstance->userIdIdUserImageThumbnailGet($id, $scale_width, $scale_height, $image_id);
+    $result = $apiInstance->userIdIdUserImageThumbnailGet($id, $scale_width, $scale_height, $image_id);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->userIdIdUserImageThumbnailGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -565,16 +578,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -583,10 +596,10 @@ void (empty response body)
 ## `userPost()`
 
 ```php
-userPost($body, $dry_run): \kruegge82\weclapp\Model\User
+userPost($user, $dry_run): \kruegge82\weclapp\Model\User
 ```
 
-
+create a user
 
 create a user
 
@@ -597,7 +610,7 @@ create a user
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -609,11 +622,11 @@ $apiInstance = new kruegge82\weclapp\Api\UserApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\User(); // \kruegge82\weclapp\Model\User
+$user = new \kruegge82\weclapp\Model\User(); // \kruegge82\weclapp\Model\User
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->userPost($body, $dry_run);
+    $result = $apiInstance->userPost($user, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->userPost: ', $e->getMessage(), PHP_EOL;
@@ -624,7 +637,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\User**](../Model/User.md)|  | |
+| **user** | [**\kruegge82\weclapp\Model\User**](../Model/User.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -633,7 +646,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

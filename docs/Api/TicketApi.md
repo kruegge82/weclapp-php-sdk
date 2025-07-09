@@ -1,28 +1,28 @@
 # kruegge82\weclapp\TicketApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**ticketCountGet()**](TicketApi.md#ticketCountGet) | **GET** /ticket/count |  |
-| [**ticketGet()**](TicketApi.md#ticketGet) | **GET** /ticket |  |
+| [**ticketCountGet()**](TicketApi.md#ticketCountGet) | **GET** /ticket/count | count ticket |
+| [**ticketGet()**](TicketApi.md#ticketGet) | **GET** /ticket | query ticket |
 | [**ticketIdIdCreatePublicPagePost()**](TicketApi.md#ticketIdIdCreatePublicPagePost) | **POST** /ticket/id/{id}/createPublicPage |  |
-| [**ticketIdIdDelete()**](TicketApi.md#ticketIdIdDelete) | **DELETE** /ticket/id/{id} |  |
+| [**ticketIdIdDelete()**](TicketApi.md#ticketIdIdDelete) | **DELETE** /ticket/id/{id} | delete a ticket |
 | [**ticketIdIdDisablePublicPagePost()**](TicketApi.md#ticketIdIdDisablePublicPagePost) | **POST** /ticket/id/{id}/disablePublicPage |  |
-| [**ticketIdIdGet()**](TicketApi.md#ticketIdIdGet) | **GET** /ticket/id/{id} |  |
+| [**ticketIdIdGet()**](TicketApi.md#ticketIdIdGet) | **GET** /ticket/id/{id} | query a specific ticket |
 | [**ticketIdIdLinkSalesOrderPost()**](TicketApi.md#ticketIdIdLinkSalesOrderPost) | **POST** /ticket/id/{id}/linkSalesOrder |  |
-| [**ticketIdIdPut()**](TicketApi.md#ticketIdIdPut) | **PUT** /ticket/id/{id} |  |
+| [**ticketIdIdPut()**](TicketApi.md#ticketIdIdPut) | **PUT** /ticket/id/{id} | update a ticket |
 | [**ticketIdIdUnlinkSalesOrderPost()**](TicketApi.md#ticketIdIdUnlinkSalesOrderPost) | **POST** /ticket/id/{id}/unlinkSalesOrder |  |
-| [**ticketPost()**](TicketApi.md#ticketPost) | **POST** /ticket |  |
+| [**ticketPost()**](TicketApi.md#ticketPost) | **POST** /ticket | create a ticket |
 
 
 ## `ticketCountGet()`
 
 ```php
-ticketCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+ticketCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count ticket
 
 count ticket
 
@@ -33,7 +33,7 @@ count ticket
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -45,9 +45,10 @@ $apiInstance = new kruegge82\weclapp\Api\TicketApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->ticketCountGet();
+    $result = $apiInstance->ticketCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketApi->ticketCountGet: ', $e->getMessage(), PHP_EOL;
@@ -56,7 +57,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -64,7 +67,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -78,10 +81,10 @@ This endpoint does not need any parameter.
 ## `ticketGet()`
 
 ```php
-ticketGet($page, $page_size, $sort, $additional_properties): \kruegge82\weclapp\Model\TicketGet200Response
+ticketGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\TicketGet200Response
 ```
 
-
+query ticket
 
 query ticket
 
@@ -92,7 +95,7 @@ query ticket
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -106,11 +109,15 @@ $apiInstance = new kruegge82\weclapp\Api\TicketApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 $additional_properties = 'additional_properties_example'; // string
 
 try {
-    $result = $apiInstance->ticketGet($page, $page_size, $sort, $additional_properties);
+    $result = $apiInstance->ticketGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketApi->ticketGet: ', $e->getMessage(), PHP_EOL;
@@ -123,7 +130,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 | **additional_properties** | **string**|  | [optional] |
 
 ### Return type
@@ -132,7 +143,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -158,7 +169,7 @@ ticketIdIdCreatePublicPagePost($id, $body): \kruegge82\weclapp\Model\TicketIdIdC
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -194,7 +205,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -211,7 +222,7 @@ try {
 ticketIdIdDelete($id, $dry_run)
 ```
 
-
+delete a ticket
 
 delete a ticket
 
@@ -222,7 +233,7 @@ delete a ticket
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -257,7 +268,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -283,7 +294,7 @@ ticketIdIdDisablePublicPagePost($id, $body): \kruegge82\weclapp\Model\TicketIdId
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -319,7 +330,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -336,9 +347,9 @@ try {
 ticketIdIdGet($id): \kruegge82\weclapp\Model\Ticket
 ```
 
+query a specific ticket
 
-
-query ticket
+query a specific ticket
 
 ### Example
 
@@ -347,7 +358,7 @@ query ticket
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -381,7 +392,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -395,7 +406,7 @@ try {
 ## `ticketIdIdLinkSalesOrderPost()`
 
 ```php
-ticketIdIdLinkSalesOrderPost($id, $body): \kruegge82\weclapp\Model\TicketIdIdCreatePublicPagePost200Response
+ticketIdIdLinkSalesOrderPost($id, $ticket_id_id_link_sales_order_post_request): \kruegge82\weclapp\Model\TicketIdIdCreatePublicPagePost200Response
 ```
 
 
@@ -407,7 +418,7 @@ ticketIdIdLinkSalesOrderPost($id, $body): \kruegge82\weclapp\Model\TicketIdIdCre
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -420,10 +431,10 @@ $apiInstance = new kruegge82\weclapp\Api\TicketApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\TicketIdIdLinkSalesOrderPostRequest(); // \kruegge82\weclapp\Model\TicketIdIdLinkSalesOrderPostRequest
+$ticket_id_id_link_sales_order_post_request = new \kruegge82\weclapp\Model\TicketIdIdLinkSalesOrderPostRequest(); // \kruegge82\weclapp\Model\TicketIdIdLinkSalesOrderPostRequest
 
 try {
-    $result = $apiInstance->ticketIdIdLinkSalesOrderPost($id, $body);
+    $result = $apiInstance->ticketIdIdLinkSalesOrderPost($id, $ticket_id_id_link_sales_order_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketApi->ticketIdIdLinkSalesOrderPost: ', $e->getMessage(), PHP_EOL;
@@ -435,7 +446,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\TicketIdIdLinkSalesOrderPostRequest**](../Model/TicketIdIdLinkSalesOrderPostRequest.md)|  | |
+| **ticket_id_id_link_sales_order_post_request** | [**\kruegge82\weclapp\Model\TicketIdIdLinkSalesOrderPostRequest**](../Model/TicketIdIdLinkSalesOrderPostRequest.md)|  | |
 
 ### Return type
 
@@ -443,7 +454,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -457,10 +468,10 @@ try {
 ## `ticketIdIdPut()`
 
 ```php
-ticketIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Ticket
+ticketIdIdPut($id, $ticket, $dry_run): \kruegge82\weclapp\Model\Ticket
 ```
 
-
+update a ticket
 
 update ticket
 
@@ -471,7 +482,7 @@ update ticket
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -484,11 +495,11 @@ $apiInstance = new kruegge82\weclapp\Api\TicketApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\Ticket(); // \kruegge82\weclapp\Model\Ticket
+$ticket = new \kruegge82\weclapp\Model\Ticket(); // \kruegge82\weclapp\Model\Ticket
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->ticketIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->ticketIdIdPut($id, $ticket, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketApi->ticketIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -500,7 +511,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\Ticket**](../Model/Ticket.md)|  | |
+| **ticket** | [**\kruegge82\weclapp\Model\Ticket**](../Model/Ticket.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -509,7 +520,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -535,7 +546,7 @@ ticketIdIdUnlinkSalesOrderPost($id, $body): \kruegge82\weclapp\Model\TicketIdIdC
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -571,7 +582,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -585,10 +596,10 @@ try {
 ## `ticketPost()`
 
 ```php
-ticketPost($body, $dry_run): \kruegge82\weclapp\Model\Ticket
+ticketPost($ticket, $dry_run): \kruegge82\weclapp\Model\Ticket
 ```
 
-
+create a ticket
 
 create a ticket
 
@@ -599,7 +610,7 @@ create a ticket
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -611,11 +622,11 @@ $apiInstance = new kruegge82\weclapp\Api\TicketApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\Ticket(); // \kruegge82\weclapp\Model\Ticket
+$ticket = new \kruegge82\weclapp\Model\Ticket(); // \kruegge82\weclapp\Model\Ticket
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->ticketPost($body, $dry_run);
+    $result = $apiInstance->ticketPost($ticket, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketApi->ticketPost: ', $e->getMessage(), PHP_EOL;
@@ -626,7 +637,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\Ticket**](../Model/Ticket.md)|  | |
+| **ticket** | [**\kruegge82\weclapp\Model\Ticket**](../Model/Ticket.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -635,7 +646,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

@@ -1,31 +1,31 @@
 # kruegge82\weclapp\PurchaseInvoiceApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**purchaseInvoiceCountGet()**](PurchaseInvoiceApi.md#purchaseInvoiceCountGet) | **GET** /purchaseInvoice/count |  |
-| [**purchaseInvoiceGet()**](PurchaseInvoiceApi.md#purchaseInvoiceGet) | **GET** /purchaseInvoice |  |
+| [**purchaseInvoiceCountGet()**](PurchaseInvoiceApi.md#purchaseInvoiceCountGet) | **GET** /purchaseInvoice/count | count purchaseInvoice |
+| [**purchaseInvoiceGet()**](PurchaseInvoiceApi.md#purchaseInvoiceGet) | **GET** /purchaseInvoice | query purchaseInvoice |
 | [**purchaseInvoiceIdIdCreateContractPost()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdCreateContractPost) | **POST** /purchaseInvoice/id/{id}/createContract |  |
 | [**purchaseInvoiceIdIdCreateCreditNotePost()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdCreateCreditNotePost) | **POST** /purchaseInvoice/id/{id}/createCreditNote |  |
-| [**purchaseInvoiceIdIdDelete()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdDelete) | **DELETE** /purchaseInvoice/id/{id} |  |
+| [**purchaseInvoiceIdIdDelete()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdDelete) | **DELETE** /purchaseInvoice/id/{id} | delete a purchaseInvoice |
 | [**purchaseInvoiceIdIdDownloadLatestPurchaseInvoiceDocumentGet()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdDownloadLatestPurchaseInvoiceDocumentGet) | **GET** /purchaseInvoice/id/{id}/downloadLatestPurchaseInvoiceDocument |  |
-| [**purchaseInvoiceIdIdGet()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdGet) | **GET** /purchaseInvoice/id/{id} |  |
+| [**purchaseInvoiceIdIdGet()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdGet) | **GET** /purchaseInvoice/id/{id} | query a specific purchaseInvoice |
 | [**purchaseInvoiceIdIdPrintLabelPost()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdPrintLabelPost) | **POST** /purchaseInvoice/id/{id}/printLabel |  |
-| [**purchaseInvoiceIdIdPut()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdPut) | **PUT** /purchaseInvoice/id/{id} |  |
+| [**purchaseInvoiceIdIdPut()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdPut) | **PUT** /purchaseInvoice/id/{id} | update a purchaseInvoice |
 | [**purchaseInvoiceIdIdResetTaxesPost()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdResetTaxesPost) | **POST** /purchaseInvoice/id/{id}/resetTaxes |  |
 | [**purchaseInvoiceIdIdSaveDuplicateInvoiceAsOriginalPost()**](PurchaseInvoiceApi.md#purchaseInvoiceIdIdSaveDuplicateInvoiceAsOriginalPost) | **POST** /purchaseInvoice/id/{id}/saveDuplicateInvoiceAsOriginal |  |
-| [**purchaseInvoicePost()**](PurchaseInvoiceApi.md#purchaseInvoicePost) | **POST** /purchaseInvoice |  |
-| [**purchaseInvoiceStartInvoiceDocumentProcessingPost()**](PurchaseInvoiceApi.md#purchaseInvoiceStartInvoiceDocumentProcessingPost) | **POST** /purchaseInvoice/startInvoiceDocumentProcessing |  |
+| [**purchaseInvoicePost()**](PurchaseInvoiceApi.md#purchaseInvoicePost) | **POST** /purchaseInvoice | create a purchaseInvoice |
+| [**purchaseInvoiceStartInvoiceDocumentProcessingMultipartUploadPost()**](PurchaseInvoiceApi.md#purchaseInvoiceStartInvoiceDocumentProcessingMultipartUploadPost) | **POST** /purchaseInvoice/startInvoiceDocumentProcessing/multipartUpload |  |
 
 
 ## `purchaseInvoiceCountGet()`
 
 ```php
-purchaseInvoiceCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+purchaseInvoiceCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count purchaseInvoice
 
 count purchaseInvoice
 
@@ -36,7 +36,7 @@ count purchaseInvoice
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -48,9 +48,10 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseInvoiceApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->purchaseInvoiceCountGet();
+    $result = $apiInstance->purchaseInvoiceCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseInvoiceApi->purchaseInvoiceCountGet: ', $e->getMessage(), PHP_EOL;
@@ -59,7 +60,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -67,7 +70,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -81,10 +84,10 @@ This endpoint does not need any parameter.
 ## `purchaseInvoiceGet()`
 
 ```php
-purchaseInvoiceGet($page, $page_size, $sort): \kruegge82\weclapp\Model\PurchaseInvoiceGet200Response
+purchaseInvoiceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\PurchaseInvoiceGet200Response
 ```
 
-
+query purchaseInvoice
 
 query purchaseInvoice
 
@@ -95,7 +98,7 @@ query purchaseInvoice
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -109,10 +112,14 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseInvoiceApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->purchaseInvoiceGet($page, $page_size, $sort);
+    $result = $apiInstance->purchaseInvoiceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseInvoiceApi->purchaseInvoiceGet: ', $e->getMessage(), PHP_EOL;
@@ -125,7 +132,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -133,7 +144,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -159,7 +170,7 @@ purchaseInvoiceIdIdCreateContractPost($id, $body): \kruegge82\weclapp\Model\Purc
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -195,7 +206,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -209,7 +220,7 @@ try {
 ## `purchaseInvoiceIdIdCreateCreditNotePost()`
 
 ```php
-purchaseInvoiceIdIdCreateCreditNotePost($id, $body): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreatePurchaseInvoicePost200Response
+purchaseInvoiceIdIdCreateCreditNotePost($id, $purchase_invoice_id_id_create_credit_note_post_request): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreatePurchaseInvoicePost200Response
 ```
 
 
@@ -221,7 +232,7 @@ purchaseInvoiceIdIdCreateCreditNotePost($id, $body): \kruegge82\weclapp\Model\In
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -234,10 +245,10 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseInvoiceApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateCreditNotePostRequest(); // \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateCreditNotePostRequest
+$purchase_invoice_id_id_create_credit_note_post_request = new \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateCreditNotePostRequest(); // \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateCreditNotePostRequest
 
 try {
-    $result = $apiInstance->purchaseInvoiceIdIdCreateCreditNotePost($id, $body);
+    $result = $apiInstance->purchaseInvoiceIdIdCreateCreditNotePost($id, $purchase_invoice_id_id_create_credit_note_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseInvoiceApi->purchaseInvoiceIdIdCreateCreditNotePost: ', $e->getMessage(), PHP_EOL;
@@ -249,7 +260,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateCreditNotePostRequest**](../Model/PurchaseInvoiceIdIdCreateCreditNotePostRequest.md)|  | |
+| **purchase_invoice_id_id_create_credit_note_post_request** | [**\kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateCreditNotePostRequest**](../Model/PurchaseInvoiceIdIdCreateCreditNotePostRequest.md)|  | |
 
 ### Return type
 
@@ -257,7 +268,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -274,7 +285,7 @@ try {
 purchaseInvoiceIdIdDelete($id, $dry_run)
 ```
 
-
+delete a purchaseInvoice
 
 delete a purchaseInvoice
 
@@ -285,7 +296,7 @@ delete a purchaseInvoice
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -320,7 +331,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -334,7 +345,7 @@ void (empty response body)
 ## `purchaseInvoiceIdIdDownloadLatestPurchaseInvoiceDocumentGet()`
 
 ```php
-purchaseInvoiceIdIdDownloadLatestPurchaseInvoiceDocumentGet($id)
+purchaseInvoiceIdIdDownloadLatestPurchaseInvoiceDocumentGet($id): \SplFileObject
 ```
 
 
@@ -346,7 +357,7 @@ purchaseInvoiceIdIdDownloadLatestPurchaseInvoiceDocumentGet($id)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -361,7 +372,8 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseInvoiceApi(
 $id = 'id_example'; // string
 
 try {
-    $apiInstance->purchaseInvoiceIdIdDownloadLatestPurchaseInvoiceDocumentGet($id);
+    $result = $apiInstance->purchaseInvoiceIdIdDownloadLatestPurchaseInvoiceDocumentGet($id);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseInvoiceApi->purchaseInvoiceIdIdDownloadLatestPurchaseInvoiceDocumentGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -375,16 +387,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -396,9 +408,9 @@ void (empty response body)
 purchaseInvoiceIdIdGet($id): \kruegge82\weclapp\Model\PurchaseInvoice
 ```
 
+query a specific purchaseInvoice
 
-
-query purchaseInvoice
+query a specific purchaseInvoice
 
 ### Example
 
@@ -407,7 +419,7 @@ query purchaseInvoice
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -441,7 +453,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -455,7 +467,7 @@ try {
 ## `purchaseInvoiceIdIdPrintLabelPost()`
 
 ```php
-purchaseInvoiceIdIdPrintLabelPost($id, $body)
+purchaseInvoiceIdIdPrintLabelPost($id, $purchase_invoice_id_id_print_label_post_request): \SplFileObject
 ```
 
 
@@ -467,7 +479,7 @@ purchaseInvoiceIdIdPrintLabelPost($id, $body)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -480,10 +492,11 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseInvoiceApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\PurchaseInvoiceIdIdPrintLabelPostRequest(); // \kruegge82\weclapp\Model\PurchaseInvoiceIdIdPrintLabelPostRequest
+$purchase_invoice_id_id_print_label_post_request = new \kruegge82\weclapp\Model\PurchaseInvoiceIdIdPrintLabelPostRequest(); // \kruegge82\weclapp\Model\PurchaseInvoiceIdIdPrintLabelPostRequest
 
 try {
-    $apiInstance->purchaseInvoiceIdIdPrintLabelPost($id, $body);
+    $result = $apiInstance->purchaseInvoiceIdIdPrintLabelPost($id, $purchase_invoice_id_id_print_label_post_request);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseInvoiceApi->purchaseInvoiceIdIdPrintLabelPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -494,20 +507,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\PurchaseInvoiceIdIdPrintLabelPostRequest**](../Model/PurchaseInvoiceIdIdPrintLabelPostRequest.md)|  | |
+| **purchase_invoice_id_id_print_label_post_request** | [**\kruegge82\weclapp\Model\PurchaseInvoiceIdIdPrintLabelPostRequest**](../Model/PurchaseInvoiceIdIdPrintLabelPostRequest.md)|  | |
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -516,10 +529,10 @@ void (empty response body)
 ## `purchaseInvoiceIdIdPut()`
 
 ```php
-purchaseInvoiceIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\PurchaseInvoice
+purchaseInvoiceIdIdPut($id, $purchase_invoice, $dry_run): \kruegge82\weclapp\Model\PurchaseInvoice
 ```
 
-
+update a purchaseInvoice
 
 update purchaseInvoice
 
@@ -530,7 +543,7 @@ update purchaseInvoice
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -543,11 +556,11 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseInvoiceApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\PurchaseInvoice(); // \kruegge82\weclapp\Model\PurchaseInvoice
+$purchase_invoice = new \kruegge82\weclapp\Model\PurchaseInvoice(); // \kruegge82\weclapp\Model\PurchaseInvoice
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->purchaseInvoiceIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->purchaseInvoiceIdIdPut($id, $purchase_invoice, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseInvoiceApi->purchaseInvoiceIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -559,7 +572,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\PurchaseInvoice**](../Model/PurchaseInvoice.md)|  | |
+| **purchase_invoice** | [**\kruegge82\weclapp\Model\PurchaseInvoice**](../Model/PurchaseInvoice.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -568,7 +581,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -594,7 +607,7 @@ purchaseInvoiceIdIdResetTaxesPost($id, $body): \kruegge82\weclapp\Model\Incoming
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -630,7 +643,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -656,7 +669,7 @@ purchaseInvoiceIdIdSaveDuplicateInvoiceAsOriginalPost($id, $body): \kruegge82\we
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -692,7 +705,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -706,10 +719,10 @@ try {
 ## `purchaseInvoicePost()`
 
 ```php
-purchaseInvoicePost($body, $dry_run): \kruegge82\weclapp\Model\PurchaseInvoice
+purchaseInvoicePost($purchase_invoice, $dry_run): \kruegge82\weclapp\Model\PurchaseInvoice
 ```
 
-
+create a purchaseInvoice
 
 create a purchaseInvoice
 
@@ -720,7 +733,7 @@ create a purchaseInvoice
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -732,11 +745,11 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseInvoiceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\PurchaseInvoice(); // \kruegge82\weclapp\Model\PurchaseInvoice
+$purchase_invoice = new \kruegge82\weclapp\Model\PurchaseInvoice(); // \kruegge82\weclapp\Model\PurchaseInvoice
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->purchaseInvoicePost($body, $dry_run);
+    $result = $apiInstance->purchaseInvoicePost($purchase_invoice, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseInvoiceApi->purchaseInvoicePost: ', $e->getMessage(), PHP_EOL;
@@ -747,7 +760,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\PurchaseInvoice**](../Model/PurchaseInvoice.md)|  | |
+| **purchase_invoice** | [**\kruegge82\weclapp\Model\PurchaseInvoice**](../Model/PurchaseInvoice.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -756,7 +769,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -767,10 +780,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `purchaseInvoiceStartInvoiceDocumentProcessingPost()`
+## `purchaseInvoiceStartInvoiceDocumentProcessingMultipartUploadPost()`
 
 ```php
-purchaseInvoiceStartInvoiceDocumentProcessingPost(): \kruegge82\weclapp\Model\JobAbortGet200Response
+purchaseInvoiceStartInvoiceDocumentProcessingMultipartUploadPost($filename): \kruegge82\weclapp\Model\JobAbortGet200Response
 ```
 
 
@@ -782,7 +795,7 @@ purchaseInvoiceStartInvoiceDocumentProcessingPost(): \kruegge82\weclapp\Model\Jo
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -794,18 +807,21 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseInvoiceApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filename = array('/path/to/file.txt'); // \SplFileObject[]
 
 try {
-    $result = $apiInstance->purchaseInvoiceStartInvoiceDocumentProcessingPost();
+    $result = $apiInstance->purchaseInvoiceStartInvoiceDocumentProcessingMultipartUploadPost($filename);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PurchaseInvoiceApi->purchaseInvoiceStartInvoiceDocumentProcessingPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PurchaseInvoiceApi->purchaseInvoiceStartInvoiceDocumentProcessingMultipartUploadPost: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filename** | **\SplFileObject[]**|  | [optional] |
 
 ### Return type
 
@@ -813,11 +829,11 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `multipart/form-data`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

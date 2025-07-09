@@ -1,26 +1,26 @@
 # kruegge82\weclapp\StorageLocationApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**storageLocationCountGet()**](StorageLocationApi.md#storageLocationCountGet) | **GET** /storageLocation/count |  |
-| [**storageLocationGet()**](StorageLocationApi.md#storageLocationGet) | **GET** /storageLocation |  |
+| [**storageLocationCountGet()**](StorageLocationApi.md#storageLocationCountGet) | **GET** /storageLocation/count | count storageLocation |
+| [**storageLocationGet()**](StorageLocationApi.md#storageLocationGet) | **GET** /storageLocation | query storageLocation |
 | [**storageLocationIdIdActivatePost()**](StorageLocationApi.md#storageLocationIdIdActivatePost) | **POST** /storageLocation/id/{id}/activate |  |
 | [**storageLocationIdIdDeactivatePost()**](StorageLocationApi.md#storageLocationIdIdDeactivatePost) | **POST** /storageLocation/id/{id}/deactivate |  |
-| [**storageLocationIdIdDelete()**](StorageLocationApi.md#storageLocationIdIdDelete) | **DELETE** /storageLocation/id/{id} |  |
-| [**storageLocationIdIdGet()**](StorageLocationApi.md#storageLocationIdIdGet) | **GET** /storageLocation/id/{id} |  |
-| [**storageLocationIdIdPut()**](StorageLocationApi.md#storageLocationIdIdPut) | **PUT** /storageLocation/id/{id} |  |
-| [**storageLocationPost()**](StorageLocationApi.md#storageLocationPost) | **POST** /storageLocation |  |
+| [**storageLocationIdIdDelete()**](StorageLocationApi.md#storageLocationIdIdDelete) | **DELETE** /storageLocation/id/{id} | delete a storageLocation |
+| [**storageLocationIdIdGet()**](StorageLocationApi.md#storageLocationIdIdGet) | **GET** /storageLocation/id/{id} | query a specific storageLocation |
+| [**storageLocationIdIdPut()**](StorageLocationApi.md#storageLocationIdIdPut) | **PUT** /storageLocation/id/{id} | update a storageLocation |
+| [**storageLocationPost()**](StorageLocationApi.md#storageLocationPost) | **POST** /storageLocation | create a storageLocation |
 
 
 ## `storageLocationCountGet()`
 
 ```php
-storageLocationCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+storageLocationCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count storageLocation
 
 count storageLocation
 
@@ -31,7 +31,7 @@ count storageLocation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -43,9 +43,10 @@ $apiInstance = new kruegge82\weclapp\Api\StorageLocationApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->storageLocationCountGet();
+    $result = $apiInstance->storageLocationCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageLocationApi->storageLocationCountGet: ', $e->getMessage(), PHP_EOL;
@@ -54,7 +55,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -62,7 +65,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -76,10 +79,10 @@ This endpoint does not need any parameter.
 ## `storageLocationGet()`
 
 ```php
-storageLocationGet($page, $page_size, $sort): \kruegge82\weclapp\Model\StorageLocationGet200Response
+storageLocationGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\StorageLocationGet200Response
 ```
 
-
+query storageLocation
 
 query storageLocation
 
@@ -90,7 +93,7 @@ query storageLocation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -104,10 +107,14 @@ $apiInstance = new kruegge82\weclapp\Api\StorageLocationApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->storageLocationGet($page, $page_size, $sort);
+    $result = $apiInstance->storageLocationGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageLocationApi->storageLocationGet: ', $e->getMessage(), PHP_EOL;
@@ -120,7 +127,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -128,7 +139,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -154,7 +165,7 @@ storageLocationIdIdActivatePost($id, $body): \kruegge82\weclapp\Model\StorageLoc
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -190,7 +201,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -216,7 +227,7 @@ storageLocationIdIdDeactivatePost($id, $body): \kruegge82\weclapp\Model\StorageL
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -252,7 +263,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -269,7 +280,7 @@ try {
 storageLocationIdIdDelete($id, $dry_run)
 ```
 
-
+delete a storageLocation
 
 delete a storageLocation
 
@@ -280,7 +291,7 @@ delete a storageLocation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -315,7 +326,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -332,9 +343,9 @@ void (empty response body)
 storageLocationIdIdGet($id): \kruegge82\weclapp\Model\StorageLocation
 ```
 
+query a specific storageLocation
 
-
-query storageLocation
+query a specific storageLocation
 
 ### Example
 
@@ -343,7 +354,7 @@ query storageLocation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -377,7 +388,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -391,10 +402,10 @@ try {
 ## `storageLocationIdIdPut()`
 
 ```php
-storageLocationIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\StorageLocation
+storageLocationIdIdPut($id, $storage_location, $dry_run): \kruegge82\weclapp\Model\StorageLocation
 ```
 
-
+update a storageLocation
 
 update storageLocation
 
@@ -405,7 +416,7 @@ update storageLocation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -418,11 +429,11 @@ $apiInstance = new kruegge82\weclapp\Api\StorageLocationApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\StorageLocation(); // \kruegge82\weclapp\Model\StorageLocation
+$storage_location = new \kruegge82\weclapp\Model\StorageLocation(); // \kruegge82\weclapp\Model\StorageLocation
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->storageLocationIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->storageLocationIdIdPut($id, $storage_location, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageLocationApi->storageLocationIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -434,7 +445,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\StorageLocation**](../Model/StorageLocation.md)|  | |
+| **storage_location** | [**\kruegge82\weclapp\Model\StorageLocation**](../Model/StorageLocation.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -443,7 +454,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -457,10 +468,10 @@ try {
 ## `storageLocationPost()`
 
 ```php
-storageLocationPost($body, $dry_run): \kruegge82\weclapp\Model\StorageLocation
+storageLocationPost($storage_location, $dry_run): \kruegge82\weclapp\Model\StorageLocation
 ```
 
-
+create a storageLocation
 
 create a storageLocation
 
@@ -471,7 +482,7 @@ create a storageLocation
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -483,11 +494,11 @@ $apiInstance = new kruegge82\weclapp\Api\StorageLocationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\StorageLocation(); // \kruegge82\weclapp\Model\StorageLocation
+$storage_location = new \kruegge82\weclapp\Model\StorageLocation(); // \kruegge82\weclapp\Model\StorageLocation
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->storageLocationPost($body, $dry_run);
+    $result = $apiInstance->storageLocationPost($storage_location, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorageLocationApi->storageLocationPost: ', $e->getMessage(), PHP_EOL;
@@ -498,7 +509,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\StorageLocation**](../Model/StorageLocation.md)|  | |
+| **storage_location** | [**\kruegge82\weclapp\Model\StorageLocation**](../Model/StorageLocation.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -507,7 +518,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

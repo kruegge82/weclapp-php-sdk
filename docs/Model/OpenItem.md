@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional] [readonly]
 **created_date** | **int** |  | [optional] [readonly]
 **last_modified_date** | **int** |  | [optional] [readonly]
-**version** | **string** |  | [optional]
+**version** | **string** |  | [optional] [readonly]
 **amount** | **float** |  | [optional]
 **amount_discount** | **float** |  | [optional]
 **amount_open** | **float** |  | [optional]

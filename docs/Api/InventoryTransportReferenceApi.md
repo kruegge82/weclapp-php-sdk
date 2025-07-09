@@ -1,23 +1,23 @@
 # kruegge82\weclapp\InventoryTransportReferenceApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**inventoryTransportReferenceCountGet()**](InventoryTransportReferenceApi.md#inventoryTransportReferenceCountGet) | **GET** /inventoryTransportReference/count |  |
-| [**inventoryTransportReferenceGet()**](InventoryTransportReferenceApi.md#inventoryTransportReferenceGet) | **GET** /inventoryTransportReference |  |
-| [**inventoryTransportReferenceIdIdGet()**](InventoryTransportReferenceApi.md#inventoryTransportReferenceIdIdGet) | **GET** /inventoryTransportReference/id/{id} |  |
-| [**inventoryTransportReferenceIdIdPut()**](InventoryTransportReferenceApi.md#inventoryTransportReferenceIdIdPut) | **PUT** /inventoryTransportReference/id/{id} |  |
-| [**inventoryTransportReferencePost()**](InventoryTransportReferenceApi.md#inventoryTransportReferencePost) | **POST** /inventoryTransportReference |  |
+| [**inventoryTransportReferenceCountGet()**](InventoryTransportReferenceApi.md#inventoryTransportReferenceCountGet) | **GET** /inventoryTransportReference/count | count inventoryTransportReference |
+| [**inventoryTransportReferenceGet()**](InventoryTransportReferenceApi.md#inventoryTransportReferenceGet) | **GET** /inventoryTransportReference | query inventoryTransportReference |
+| [**inventoryTransportReferenceIdIdGet()**](InventoryTransportReferenceApi.md#inventoryTransportReferenceIdIdGet) | **GET** /inventoryTransportReference/id/{id} | query a specific inventoryTransportReference |
+| [**inventoryTransportReferenceIdIdPut()**](InventoryTransportReferenceApi.md#inventoryTransportReferenceIdIdPut) | **PUT** /inventoryTransportReference/id/{id} | update a inventoryTransportReference |
+| [**inventoryTransportReferencePost()**](InventoryTransportReferenceApi.md#inventoryTransportReferencePost) | **POST** /inventoryTransportReference | create a inventoryTransportReference |
 
 
 ## `inventoryTransportReferenceCountGet()`
 
 ```php
-inventoryTransportReferenceCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+inventoryTransportReferenceCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count inventoryTransportReference
 
 count inventoryTransportReference
 
@@ -28,7 +28,7 @@ count inventoryTransportReference
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -40,9 +40,10 @@ $apiInstance = new kruegge82\weclapp\Api\InventoryTransportReferenceApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->inventoryTransportReferenceCountGet();
+    $result = $apiInstance->inventoryTransportReferenceCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryTransportReferenceApi->inventoryTransportReferenceCountGet: ', $e->getMessage(), PHP_EOL;
@@ -51,7 +52,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -59,7 +62,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -73,10 +76,10 @@ This endpoint does not need any parameter.
 ## `inventoryTransportReferenceGet()`
 
 ```php
-inventoryTransportReferenceGet($page, $page_size, $sort): \kruegge82\weclapp\Model\InventoryTransportReferenceGet200Response
+inventoryTransportReferenceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InventoryTransportReferenceGet200Response
 ```
 
-
+query inventoryTransportReference
 
 query inventoryTransportReference
 
@@ -87,7 +90,7 @@ query inventoryTransportReference
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -101,10 +104,14 @@ $apiInstance = new kruegge82\weclapp\Api\InventoryTransportReferenceApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->inventoryTransportReferenceGet($page, $page_size, $sort);
+    $result = $apiInstance->inventoryTransportReferenceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryTransportReferenceApi->inventoryTransportReferenceGet: ', $e->getMessage(), PHP_EOL;
@@ -117,7 +124,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -125,7 +136,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -142,9 +153,9 @@ try {
 inventoryTransportReferenceIdIdGet($id): \kruegge82\weclapp\Model\InventoryTransportReference
 ```
 
+query a specific inventoryTransportReference
 
-
-query inventoryTransportReference
+query a specific inventoryTransportReference
 
 ### Example
 
@@ -153,7 +164,7 @@ query inventoryTransportReference
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -187,7 +198,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -201,10 +212,10 @@ try {
 ## `inventoryTransportReferenceIdIdPut()`
 
 ```php
-inventoryTransportReferenceIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\InventoryTransportReference
+inventoryTransportReferenceIdIdPut($id, $inventory_transport_reference, $dry_run): \kruegge82\weclapp\Model\InventoryTransportReference
 ```
 
-
+update a inventoryTransportReference
 
 update inventoryTransportReference
 
@@ -215,7 +226,7 @@ update inventoryTransportReference
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -228,11 +239,11 @@ $apiInstance = new kruegge82\weclapp\Api\InventoryTransportReferenceApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\InventoryTransportReference(); // \kruegge82\weclapp\Model\InventoryTransportReference
+$inventory_transport_reference = new \kruegge82\weclapp\Model\InventoryTransportReference(); // \kruegge82\weclapp\Model\InventoryTransportReference
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->inventoryTransportReferenceIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->inventoryTransportReferenceIdIdPut($id, $inventory_transport_reference, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryTransportReferenceApi->inventoryTransportReferenceIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -244,7 +255,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\InventoryTransportReference**](../Model/InventoryTransportReference.md)|  | |
+| **inventory_transport_reference** | [**\kruegge82\weclapp\Model\InventoryTransportReference**](../Model/InventoryTransportReference.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -253,7 +264,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -267,10 +278,10 @@ try {
 ## `inventoryTransportReferencePost()`
 
 ```php
-inventoryTransportReferencePost($body, $dry_run): \kruegge82\weclapp\Model\InventoryTransportReference
+inventoryTransportReferencePost($inventory_transport_reference, $dry_run): \kruegge82\weclapp\Model\InventoryTransportReference
 ```
 
-
+create a inventoryTransportReference
 
 create a inventoryTransportReference
 
@@ -281,7 +292,7 @@ create a inventoryTransportReference
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -293,11 +304,11 @@ $apiInstance = new kruegge82\weclapp\Api\InventoryTransportReferenceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\InventoryTransportReference(); // \kruegge82\weclapp\Model\InventoryTransportReference
+$inventory_transport_reference = new \kruegge82\weclapp\Model\InventoryTransportReference(); // \kruegge82\weclapp\Model\InventoryTransportReference
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->inventoryTransportReferencePost($body, $dry_run);
+    $result = $apiInstance->inventoryTransportReferencePost($inventory_transport_reference, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryTransportReferenceApi->inventoryTransportReferencePost: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +319,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\InventoryTransportReference**](../Model/InventoryTransportReference.md)|  | |
+| **inventory_transport_reference** | [**\kruegge82\weclapp\Model\InventoryTransportReference**](../Model/InventoryTransportReference.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -317,7 +328,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

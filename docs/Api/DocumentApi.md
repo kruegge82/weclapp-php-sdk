@@ -1,19 +1,19 @@
 # kruegge82\weclapp\DocumentApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**documentCopyPost()**](DocumentApi.md#documentCopyPost) | **POST** /document/copy |  |
-| [**documentCountGet()**](DocumentApi.md#documentCountGet) | **GET** /document/count |  |
-| [**documentGet()**](DocumentApi.md#documentGet) | **GET** /document |  |
+| [**documentCountGet()**](DocumentApi.md#documentCountGet) | **GET** /document/count | count document |
+| [**documentGet()**](DocumentApi.md#documentGet) | **GET** /document | query document |
 | [**documentIdIdCopyPost()**](DocumentApi.md#documentIdIdCopyPost) | **POST** /document/id/{id}/copy |  |
-| [**documentIdIdDelete()**](DocumentApi.md#documentIdIdDelete) | **DELETE** /document/id/{id} |  |
+| [**documentIdIdDelete()**](DocumentApi.md#documentIdIdDelete) | **DELETE** /document/id/{id} | delete a document |
 | [**documentIdIdDownloadDocumentVersionGet()**](DocumentApi.md#documentIdIdDownloadDocumentVersionGet) | **GET** /document/id/{id}/downloadDocumentVersion |  |
 | [**documentIdIdDownloadDocumentVersionsZippedGet()**](DocumentApi.md#documentIdIdDownloadDocumentVersionsZippedGet) | **GET** /document/id/{id}/downloadDocumentVersionsZipped |  |
 | [**documentIdIdDownloadGet()**](DocumentApi.md#documentIdIdDownloadGet) | **GET** /document/id/{id}/download |  |
-| [**documentIdIdGet()**](DocumentApi.md#documentIdIdGet) | **GET** /document/id/{id} |  |
-| [**documentIdIdPut()**](DocumentApi.md#documentIdIdPut) | **PUT** /document/id/{id} |  |
+| [**documentIdIdGet()**](DocumentApi.md#documentIdIdGet) | **GET** /document/id/{id} | query a specific document |
+| [**documentIdIdPut()**](DocumentApi.md#documentIdIdPut) | **PUT** /document/id/{id} | update a document |
 | [**documentIdIdUploadPost()**](DocumentApi.md#documentIdIdUploadPost) | **POST** /document/id/{id}/upload |  |
 | [**documentUploadPost()**](DocumentApi.md#documentUploadPost) | **POST** /document/upload |  |
 
@@ -21,7 +21,7 @@ All URIs are relative to http://nullapi/v2, except if the operation defines anot
 ## `documentCopyPost()`
 
 ```php
-documentCopyPost($body): \kruegge82\weclapp\Model\DocumentCopyPost200Response
+documentCopyPost($document_copy_post_request): \kruegge82\weclapp\Model\DocumentCopyPost200Response
 ```
 
 
@@ -33,7 +33,7 @@ documentCopyPost($body): \kruegge82\weclapp\Model\DocumentCopyPost200Response
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -45,10 +45,10 @@ $apiInstance = new kruegge82\weclapp\Api\DocumentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\DocumentCopyPostRequest(); // \kruegge82\weclapp\Model\DocumentCopyPostRequest
+$document_copy_post_request = new \kruegge82\weclapp\Model\DocumentCopyPostRequest(); // \kruegge82\weclapp\Model\DocumentCopyPostRequest
 
 try {
-    $result = $apiInstance->documentCopyPost($body);
+    $result = $apiInstance->documentCopyPost($document_copy_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentApi->documentCopyPost: ', $e->getMessage(), PHP_EOL;
@@ -59,7 +59,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\DocumentCopyPostRequest**](../Model/DocumentCopyPostRequest.md)|  | |
+| **document_copy_post_request** | [**\kruegge82\weclapp\Model\DocumentCopyPostRequest**](../Model/DocumentCopyPostRequest.md)|  | |
 
 ### Return type
 
@@ -67,7 +67,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -81,10 +81,10 @@ try {
 ## `documentCountGet()`
 
 ```php
-documentCountGet($entity_id, $entity_name): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+documentCountGet($entity_id, $entity_name, $filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count document
 
 count document
 
@@ -95,7 +95,7 @@ count document
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -109,9 +109,10 @@ $apiInstance = new kruegge82\weclapp\Api\DocumentApi(
 );
 $entity_id = 'entity_id_example'; // string
 $entity_name = 'entity_name_example'; // string
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->documentCountGet($entity_id, $entity_name);
+    $result = $apiInstance->documentCountGet($entity_id, $entity_name, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentApi->documentCountGet: ', $e->getMessage(), PHP_EOL;
@@ -124,6 +125,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **entity_id** | **string**|  | |
 | **entity_name** | **string**|  | |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -131,7 +133,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -145,10 +147,10 @@ try {
 ## `documentGet()`
 
 ```php
-documentGet($entity_id, $entity_name, $page, $page_size, $sort): \kruegge82\weclapp\Model\DocumentGet200Response
+documentGet($entity_id, $entity_name, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\DocumentGet200Response
 ```
 
-
+query document
 
 query document
 
@@ -159,7 +161,7 @@ query document
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -175,10 +177,14 @@ $entity_id = 'entity_id_example'; // string
 $entity_name = 'entity_name_example'; // string
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->documentGet($entity_id, $entity_name, $page, $page_size, $sort);
+    $result = $apiInstance->documentGet($entity_id, $entity_name, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentApi->documentGet: ', $e->getMessage(), PHP_EOL;
@@ -193,7 +199,11 @@ try {
 | **entity_name** | **string**|  | |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -201,7 +211,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -215,7 +225,7 @@ try {
 ## `documentIdIdCopyPost()`
 
 ```php
-documentIdIdCopyPost($id, $body): \kruegge82\weclapp\Model\DocumentCopyPost200Response
+documentIdIdCopyPost($id, $document_id_id_copy_post_request): \kruegge82\weclapp\Model\DocumentCopyPost200Response
 ```
 
 
@@ -227,7 +237,7 @@ documentIdIdCopyPost($id, $body): \kruegge82\weclapp\Model\DocumentCopyPost200Re
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -240,10 +250,10 @@ $apiInstance = new kruegge82\weclapp\Api\DocumentApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\DocumentIdIdCopyPostRequest(); // \kruegge82\weclapp\Model\DocumentIdIdCopyPostRequest
+$document_id_id_copy_post_request = new \kruegge82\weclapp\Model\DocumentIdIdCopyPostRequest(); // \kruegge82\weclapp\Model\DocumentIdIdCopyPostRequest
 
 try {
-    $result = $apiInstance->documentIdIdCopyPost($id, $body);
+    $result = $apiInstance->documentIdIdCopyPost($id, $document_id_id_copy_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentApi->documentIdIdCopyPost: ', $e->getMessage(), PHP_EOL;
@@ -255,7 +265,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\DocumentIdIdCopyPostRequest**](../Model/DocumentIdIdCopyPostRequest.md)|  | |
+| **document_id_id_copy_post_request** | [**\kruegge82\weclapp\Model\DocumentIdIdCopyPostRequest**](../Model/DocumentIdIdCopyPostRequest.md)|  | |
 
 ### Return type
 
@@ -263,7 +273,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -280,7 +290,7 @@ try {
 documentIdIdDelete($id, $dry_run)
 ```
 
-
+delete a document
 
 delete a document
 
@@ -291,7 +301,7 @@ delete a document
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -326,7 +336,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -340,7 +350,7 @@ void (empty response body)
 ## `documentIdIdDownloadDocumentVersionGet()`
 
 ```php
-documentIdIdDownloadDocumentVersionGet($id, $version_id)
+documentIdIdDownloadDocumentVersionGet($id, $version_id): \SplFileObject
 ```
 
 
@@ -352,7 +362,7 @@ documentIdIdDownloadDocumentVersionGet($id, $version_id)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -368,7 +378,8 @@ $id = 'id_example'; // string
 $version_id = 'version_id_example'; // string
 
 try {
-    $apiInstance->documentIdIdDownloadDocumentVersionGet($id, $version_id);
+    $result = $apiInstance->documentIdIdDownloadDocumentVersionGet($id, $version_id);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentApi->documentIdIdDownloadDocumentVersionGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -383,16 +394,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -401,7 +412,7 @@ void (empty response body)
 ## `documentIdIdDownloadDocumentVersionsZippedGet()`
 
 ```php
-documentIdIdDownloadDocumentVersionsZippedGet($id, $filename, $ids)
+documentIdIdDownloadDocumentVersionsZippedGet($id, $filename, $ids): \SplFileObject
 ```
 
 
@@ -413,7 +424,7 @@ documentIdIdDownloadDocumentVersionsZippedGet($id, $filename, $ids)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -430,7 +441,8 @@ $filename = 'filename_example'; // string
 $ids = array('ids_example'); // string[]
 
 try {
-    $apiInstance->documentIdIdDownloadDocumentVersionsZippedGet($id, $filename, $ids);
+    $result = $apiInstance->documentIdIdDownloadDocumentVersionsZippedGet($id, $filename, $ids);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentApi->documentIdIdDownloadDocumentVersionsZippedGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -446,16 +458,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -464,7 +476,7 @@ void (empty response body)
 ## `documentIdIdDownloadGet()`
 
 ```php
-documentIdIdDownloadGet($id)
+documentIdIdDownloadGet($id): \SplFileObject
 ```
 
 
@@ -476,7 +488,7 @@ documentIdIdDownloadGet($id)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -491,7 +503,8 @@ $apiInstance = new kruegge82\weclapp\Api\DocumentApi(
 $id = 'id_example'; // string
 
 try {
-    $apiInstance->documentIdIdDownloadGet($id);
+    $result = $apiInstance->documentIdIdDownloadGet($id);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentApi->documentIdIdDownloadGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -505,16 +518,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -526,9 +539,9 @@ void (empty response body)
 documentIdIdGet($id): \kruegge82\weclapp\Model\Document
 ```
 
+query a specific document
 
-
-query document
+query a specific document
 
 ### Example
 
@@ -537,7 +550,7 @@ query document
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -571,7 +584,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -585,10 +598,10 @@ try {
 ## `documentIdIdPut()`
 
 ```php
-documentIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Document
+documentIdIdPut($id, $document, $dry_run): \kruegge82\weclapp\Model\Document
 ```
 
-
+update a document
 
 update document
 
@@ -599,7 +612,7 @@ update document
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -612,11 +625,11 @@ $apiInstance = new kruegge82\weclapp\Api\DocumentApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\Document(); // \kruegge82\weclapp\Model\Document
+$document = new \kruegge82\weclapp\Model\Document(); // \kruegge82\weclapp\Model\Document
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->documentIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->documentIdIdPut($id, $document, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentApi->documentIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -628,7 +641,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\Document**](../Model/Document.md)|  | |
+| **document** | [**\kruegge82\weclapp\Model\Document**](../Model/Document.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -637,7 +650,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -651,7 +664,7 @@ try {
 ## `documentIdIdUploadPost()`
 
 ```php
-documentIdIdUploadPost($id, $comment): \kruegge82\weclapp\Model\DocumentCopyPost200Response
+documentIdIdUploadPost($id, $body, $comment): \kruegge82\weclapp\Model\DocumentCopyPost200Response
 ```
 
 
@@ -663,7 +676,7 @@ documentIdIdUploadPost($id, $comment): \kruegge82\weclapp\Model\DocumentCopyPost
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -676,10 +689,11 @@ $apiInstance = new kruegge82\weclapp\Api\DocumentApi(
     $config
 );
 $id = 'id_example'; // string
+$body = '/path/to/file.txt'; // \SplFileObject
 $comment = 'comment_example'; // string
 
 try {
-    $result = $apiInstance->documentIdIdUploadPost($id, $comment);
+    $result = $apiInstance->documentIdIdUploadPost($id, $body, $comment);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentApi->documentIdIdUploadPost: ', $e->getMessage(), PHP_EOL;
@@ -691,6 +705,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
+| **body** | **\SplFileObject****\SplFileObject**|  | |
 | **comment** | **string**|  | [optional] |
 
 ### Return type
@@ -699,11 +714,11 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/pdf`, `image/jpeg`, `image/png`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -713,7 +728,7 @@ try {
 ## `documentUploadPost()`
 
 ```php
-documentUploadPost($entity_name, $entity_id, $name, $description, $document_type): \kruegge82\weclapp\Model\DocumentCopyPost200Response
+documentUploadPost($entity_name, $entity_id, $name, $body, $description, $document_type): \kruegge82\weclapp\Model\DocumentCopyPost200Response
 ```
 
 
@@ -725,7 +740,7 @@ documentUploadPost($entity_name, $entity_id, $name, $description, $document_type
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -740,11 +755,12 @@ $apiInstance = new kruegge82\weclapp\Api\DocumentApi(
 $entity_name = 'entity_name_example'; // string
 $entity_id = 'entity_id_example'; // string
 $name = 'name_example'; // string
+$body = '/path/to/file.txt'; // \SplFileObject
 $description = 'description_example'; // string
-$document_type = 'document_type_example'; // string
+$document_type = new \kruegge82\weclapp\Model\\kruegge82\weclapp\Model\DocumentType(); // \kruegge82\weclapp\Model\DocumentType
 
 try {
-    $result = $apiInstance->documentUploadPost($entity_name, $entity_id, $name, $description, $document_type);
+    $result = $apiInstance->documentUploadPost($entity_name, $entity_id, $name, $body, $description, $document_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentApi->documentUploadPost: ', $e->getMessage(), PHP_EOL;
@@ -758,8 +774,9 @@ try {
 | **entity_name** | **string**|  | |
 | **entity_id** | **string**|  | |
 | **name** | **string**|  | |
+| **body** | **\SplFileObject****\SplFileObject**|  | |
 | **description** | **string**|  | [optional] |
-| **document_type** | **string**|  | [optional] |
+| **document_type** | [**\kruegge82\weclapp\Model\DocumentType**](../Model/.md)|  | [optional] |
 
 ### Return type
 
@@ -767,11 +784,11 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/pdf`, `image/jpeg`, `image/png`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **booked_billable_work** | [**\kruegge82\weclapp\Model\Duration[]**](Duration.md) |  | [optional]
 **booked_work** | [**\kruegge82\weclapp\Model\Duration[]**](Duration.md) |  | [optional]
+**consignment** | **bool[]** |  | [optional]
 **cost_of_services** | [**\kruegge82\weclapp\Model\Amount[]**](Amount.md) |  | [optional]
 **invoiceable_services** | [**\kruegge82\weclapp\Model\Amount[]**](Amount.md) |  | [optional]
 **invoiced_services** | [**\kruegge82\weclapp\Model\Amount[]**](Amount.md) |  | [optional]

@@ -1,24 +1,24 @@
 # kruegge82\weclapp\CrmCallCategoryApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**crmCallCategoryCountGet()**](CrmCallCategoryApi.md#crmCallCategoryCountGet) | **GET** /crmCallCategory/count |  |
-| [**crmCallCategoryGet()**](CrmCallCategoryApi.md#crmCallCategoryGet) | **GET** /crmCallCategory |  |
-| [**crmCallCategoryIdIdDelete()**](CrmCallCategoryApi.md#crmCallCategoryIdIdDelete) | **DELETE** /crmCallCategory/id/{id} |  |
-| [**crmCallCategoryIdIdGet()**](CrmCallCategoryApi.md#crmCallCategoryIdIdGet) | **GET** /crmCallCategory/id/{id} |  |
-| [**crmCallCategoryIdIdPut()**](CrmCallCategoryApi.md#crmCallCategoryIdIdPut) | **PUT** /crmCallCategory/id/{id} |  |
-| [**crmCallCategoryPost()**](CrmCallCategoryApi.md#crmCallCategoryPost) | **POST** /crmCallCategory |  |
+| [**crmCallCategoryCountGet()**](CrmCallCategoryApi.md#crmCallCategoryCountGet) | **GET** /crmCallCategory/count | count crmCallCategory |
+| [**crmCallCategoryGet()**](CrmCallCategoryApi.md#crmCallCategoryGet) | **GET** /crmCallCategory | query crmCallCategory |
+| [**crmCallCategoryIdIdDelete()**](CrmCallCategoryApi.md#crmCallCategoryIdIdDelete) | **DELETE** /crmCallCategory/id/{id} | delete a crmCallCategory |
+| [**crmCallCategoryIdIdGet()**](CrmCallCategoryApi.md#crmCallCategoryIdIdGet) | **GET** /crmCallCategory/id/{id} | query a specific crmCallCategory |
+| [**crmCallCategoryIdIdPut()**](CrmCallCategoryApi.md#crmCallCategoryIdIdPut) | **PUT** /crmCallCategory/id/{id} | update a crmCallCategory |
+| [**crmCallCategoryPost()**](CrmCallCategoryApi.md#crmCallCategoryPost) | **POST** /crmCallCategory | create a crmCallCategory |
 
 
 ## `crmCallCategoryCountGet()`
 
 ```php
-crmCallCategoryCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+crmCallCategoryCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count crmCallCategory
 
 count crmCallCategory
 
@@ -29,7 +29,7 @@ count crmCallCategory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,9 +41,10 @@ $apiInstance = new kruegge82\weclapp\Api\CrmCallCategoryApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->crmCallCategoryCountGet();
+    $result = $apiInstance->crmCallCategoryCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CrmCallCategoryApi->crmCallCategoryCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -60,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -74,10 +77,10 @@ This endpoint does not need any parameter.
 ## `crmCallCategoryGet()`
 
 ```php
-crmCallCategoryGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
+crmCallCategoryGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
 ```
 
-
+query crmCallCategory
 
 query crmCallCategory
 
@@ -88,7 +91,7 @@ query crmCallCategory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -102,10 +105,14 @@ $apiInstance = new kruegge82\weclapp\Api\CrmCallCategoryApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->crmCallCategoryGet($page, $page_size, $sort);
+    $result = $apiInstance->crmCallCategoryGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CrmCallCategoryApi->crmCallCategoryGet: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +125,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -126,7 +137,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -143,7 +154,7 @@ try {
 crmCallCategoryIdIdDelete($id, $dry_run)
 ```
 
-
+delete a crmCallCategory
 
 delete a crmCallCategory
 
@@ -154,7 +165,7 @@ delete a crmCallCategory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -189,7 +200,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -206,9 +217,9 @@ void (empty response body)
 crmCallCategoryIdIdGet($id): \kruegge82\weclapp\Model\CustomValue
 ```
 
+query a specific crmCallCategory
 
-
-query crmCallCategory
+query a specific crmCallCategory
 
 ### Example
 
@@ -217,7 +228,7 @@ query crmCallCategory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -251,7 +262,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -265,10 +276,10 @@ try {
 ## `crmCallCategoryIdIdPut()`
 
 ```php
-crmCallCategoryIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\CustomValue
+crmCallCategoryIdIdPut($id, $custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-
+update a crmCallCategory
 
 update crmCallCategory
 
@@ -279,7 +290,7 @@ update crmCallCategory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -292,11 +303,11 @@ $apiInstance = new kruegge82\weclapp\Api\CrmCallCategoryApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->crmCallCategoryIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->crmCallCategoryIdIdPut($id, $custom_value, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CrmCallCategoryApi->crmCallCategoryIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +319,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -317,7 +328,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -331,10 +342,10 @@ try {
 ## `crmCallCategoryPost()`
 
 ```php
-crmCallCategoryPost($body, $dry_run): \kruegge82\weclapp\Model\CustomValue
+crmCallCategoryPost($custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-
+create a crmCallCategory
 
 create a crmCallCategory
 
@@ -345,7 +356,7 @@ create a crmCallCategory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -357,11 +368,11 @@ $apiInstance = new kruegge82\weclapp\Api\CrmCallCategoryApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->crmCallCategoryPost($body, $dry_run);
+    $result = $apiInstance->crmCallCategoryPost($custom_value, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CrmCallCategoryApi->crmCallCategoryPost: ', $e->getMessage(), PHP_EOL;
@@ -372,7 +383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -381,7 +392,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

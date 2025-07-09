@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **post_office_box_city** | **string** |  | [optional]
 **post_office_box_number** | **string** |  | [optional]
 **post_office_box_zip_code** | **string** |  | [optional]
-**salutation** | **string** |  | [optional]
+**salutation** | [**\kruegge82\weclapp\Model\Salutation**](Salutation.md) |  | [optional]
 **state** | **string** |  | [optional]
 **street1** | **string** |  | [optional]
 **street2** | **string** |  | [optional]

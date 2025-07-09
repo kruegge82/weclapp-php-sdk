@@ -1,24 +1,24 @@
 # kruegge82\weclapp\CommentApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**commentCountGet()**](CommentApi.md#commentCountGet) | **GET** /comment/count |  |
-| [**commentGet()**](CommentApi.md#commentGet) | **GET** /comment |  |
-| [**commentIdIdDelete()**](CommentApi.md#commentIdIdDelete) | **DELETE** /comment/id/{id} |  |
-| [**commentIdIdGet()**](CommentApi.md#commentIdIdGet) | **GET** /comment/id/{id} |  |
-| [**commentIdIdPut()**](CommentApi.md#commentIdIdPut) | **PUT** /comment/id/{id} |  |
-| [**commentPost()**](CommentApi.md#commentPost) | **POST** /comment |  |
+| [**commentCountGet()**](CommentApi.md#commentCountGet) | **GET** /comment/count | count comment |
+| [**commentGet()**](CommentApi.md#commentGet) | **GET** /comment | query comment |
+| [**commentIdIdDelete()**](CommentApi.md#commentIdIdDelete) | **DELETE** /comment/id/{id} | delete a comment |
+| [**commentIdIdGet()**](CommentApi.md#commentIdIdGet) | **GET** /comment/id/{id} | query a specific comment |
+| [**commentIdIdPut()**](CommentApi.md#commentIdIdPut) | **PUT** /comment/id/{id} | update a comment |
+| [**commentPost()**](CommentApi.md#commentPost) | **POST** /comment | create a comment |
 
 
 ## `commentCountGet()`
 
 ```php
-commentCountGet($entity_id, $entity_name): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+commentCountGet($entity_id, $entity_name, $filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count comment
 
 count comment
 
@@ -29,7 +29,7 @@ count comment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -43,9 +43,10 @@ $apiInstance = new kruegge82\weclapp\Api\CommentApi(
 );
 $entity_id = 'entity_id_example'; // string
 $entity_name = 'entity_name_example'; // string
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->commentCountGet($entity_id, $entity_name);
+    $result = $apiInstance->commentCountGet($entity_id, $entity_name, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CommentApi->commentCountGet: ', $e->getMessage(), PHP_EOL;
@@ -58,6 +59,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **entity_id** | **string**|  | |
 | **entity_name** | **string**|  | |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -65,7 +67,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -79,10 +81,10 @@ try {
 ## `commentGet()`
 
 ```php
-commentGet($entity_id, $entity_name, $page, $page_size, $sort): \kruegge82\weclapp\Model\CommentGet200Response
+commentGet($entity_id, $entity_name, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\CommentGet200Response
 ```
 
-
+query comment
 
 query comment
 
@@ -93,7 +95,7 @@ query comment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -109,10 +111,14 @@ $entity_id = 'entity_id_example'; // string
 $entity_name = 'entity_name_example'; // string
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->commentGet($entity_id, $entity_name, $page, $page_size, $sort);
+    $result = $apiInstance->commentGet($entity_id, $entity_name, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CommentApi->commentGet: ', $e->getMessage(), PHP_EOL;
@@ -127,7 +133,11 @@ try {
 | **entity_name** | **string**|  | |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -135,7 +145,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -152,7 +162,7 @@ try {
 commentIdIdDelete($id, $dry_run)
 ```
 
-
+delete a comment
 
 delete a comment
 
@@ -163,7 +173,7 @@ delete a comment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -198,7 +208,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -215,9 +225,9 @@ void (empty response body)
 commentIdIdGet($id): \kruegge82\weclapp\Model\Comment
 ```
 
+query a specific comment
 
-
-query comment
+query a specific comment
 
 ### Example
 
@@ -226,7 +236,7 @@ query comment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -260,7 +270,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -274,10 +284,10 @@ try {
 ## `commentIdIdPut()`
 
 ```php
-commentIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Comment
+commentIdIdPut($id, $comment, $dry_run): \kruegge82\weclapp\Model\Comment
 ```
 
-
+update a comment
 
 update comment
 
@@ -288,7 +298,7 @@ update comment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -301,11 +311,11 @@ $apiInstance = new kruegge82\weclapp\Api\CommentApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\Comment(); // \kruegge82\weclapp\Model\Comment
+$comment = new \kruegge82\weclapp\Model\Comment(); // \kruegge82\weclapp\Model\Comment
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->commentIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->commentIdIdPut($id, $comment, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CommentApi->commentIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -317,7 +327,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\Comment**](../Model/Comment.md)|  | |
+| **comment** | [**\kruegge82\weclapp\Model\Comment**](../Model/Comment.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -326,7 +336,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -340,10 +350,10 @@ try {
 ## `commentPost()`
 
 ```php
-commentPost($body, $dry_run): \kruegge82\weclapp\Model\Comment
+commentPost($comment, $dry_run): \kruegge82\weclapp\Model\Comment
 ```
 
-
+create a comment
 
 create a comment
 
@@ -354,7 +364,7 @@ create a comment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -366,11 +376,11 @@ $apiInstance = new kruegge82\weclapp\Api\CommentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\Comment(); // \kruegge82\weclapp\Model\Comment
+$comment = new \kruegge82\weclapp\Model\Comment(); // \kruegge82\weclapp\Model\Comment
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->commentPost($body, $dry_run);
+    $result = $apiInstance->commentPost($comment, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CommentApi->commentPost: ', $e->getMessage(), PHP_EOL;
@@ -381,7 +391,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\Comment**](../Model/Comment.md)|  | |
+| **comment** | [**\kruegge82\weclapp\Model\Comment**](../Model/Comment.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -390,7 +400,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

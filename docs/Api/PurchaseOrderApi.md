@@ -1,11 +1,11 @@
 # kruegge82\weclapp\PurchaseOrderApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**purchaseOrderCountGet()**](PurchaseOrderApi.md#purchaseOrderCountGet) | **GET** /purchaseOrder/count |  |
-| [**purchaseOrderGet()**](PurchaseOrderApi.md#purchaseOrderGet) | **GET** /purchaseOrder |  |
+| [**purchaseOrderCountGet()**](PurchaseOrderApi.md#purchaseOrderCountGet) | **GET** /purchaseOrder/count | count purchaseOrder |
+| [**purchaseOrderGet()**](PurchaseOrderApi.md#purchaseOrderGet) | **GET** /purchaseOrder | query purchaseOrder |
 | [**purchaseOrderIdIdCancelDropshippingShipmentsPost()**](PurchaseOrderApi.md#purchaseOrderIdIdCancelDropshippingShipmentsPost) | **POST** /purchaseOrder/id/{id}/cancelDropshippingShipments |  |
 | [**purchaseOrderIdIdCreateCancellationSlipPdfPost()**](PurchaseOrderApi.md#purchaseOrderIdIdCreateCancellationSlipPdfPost) | **POST** /purchaseOrder/id/{id}/createCancellationSlipPdf |  |
 | [**purchaseOrderIdIdCreateContractPost()**](PurchaseOrderApi.md#purchaseOrderIdIdCreateContractPost) | **POST** /purchaseOrder/id/{id}/createContract |  |
@@ -13,24 +13,24 @@ All URIs are relative to http://nullapi/v2, except if the operation defines anot
 | [**purchaseOrderIdIdCreateIncomingGoodsPost()**](PurchaseOrderApi.md#purchaseOrderIdIdCreateIncomingGoodsPost) | **POST** /purchaseOrder/id/{id}/createIncomingGoods |  |
 | [**purchaseOrderIdIdCreatePurchaseInvoicePost()**](PurchaseOrderApi.md#purchaseOrderIdIdCreatePurchaseInvoicePost) | **POST** /purchaseOrder/id/{id}/createPurchaseInvoice |  |
 | [**purchaseOrderIdIdCreateSupplierReturnPost()**](PurchaseOrderApi.md#purchaseOrderIdIdCreateSupplierReturnPost) | **POST** /purchaseOrder/id/{id}/createSupplierReturn |  |
-| [**purchaseOrderIdIdDelete()**](PurchaseOrderApi.md#purchaseOrderIdIdDelete) | **DELETE** /purchaseOrder/id/{id} |  |
+| [**purchaseOrderIdIdDelete()**](PurchaseOrderApi.md#purchaseOrderIdIdDelete) | **DELETE** /purchaseOrder/id/{id} | delete a purchaseOrder |
 | [**purchaseOrderIdIdDownloadLatestCancellationSlipPdfGet()**](PurchaseOrderApi.md#purchaseOrderIdIdDownloadLatestCancellationSlipPdfGet) | **GET** /purchaseOrder/id/{id}/downloadLatestCancellationSlipPdf |  |
 | [**purchaseOrderIdIdDownloadLatestDropshippingDeliveryNotePdfGet()**](PurchaseOrderApi.md#purchaseOrderIdIdDownloadLatestDropshippingDeliveryNotePdfGet) | **GET** /purchaseOrder/id/{id}/downloadLatestDropshippingDeliveryNotePdf |  |
 | [**purchaseOrderIdIdDownloadLatestPurchaseOrderPdfGet()**](PurchaseOrderApi.md#purchaseOrderIdIdDownloadLatestPurchaseOrderPdfGet) | **GET** /purchaseOrder/id/{id}/downloadLatestPurchaseOrderPdf |  |
-| [**purchaseOrderIdIdGet()**](PurchaseOrderApi.md#purchaseOrderIdIdGet) | **GET** /purchaseOrder/id/{id} |  |
+| [**purchaseOrderIdIdGet()**](PurchaseOrderApi.md#purchaseOrderIdIdGet) | **GET** /purchaseOrder/id/{id} | query a specific purchaseOrder |
 | [**purchaseOrderIdIdPrintLabelPost()**](PurchaseOrderApi.md#purchaseOrderIdIdPrintLabelPost) | **POST** /purchaseOrder/id/{id}/printLabel |  |
 | [**purchaseOrderIdIdProcessDropshippingPost()**](PurchaseOrderApi.md#purchaseOrderIdIdProcessDropshippingPost) | **POST** /purchaseOrder/id/{id}/processDropshipping |  |
-| [**purchaseOrderIdIdPut()**](PurchaseOrderApi.md#purchaseOrderIdIdPut) | **PUT** /purchaseOrder/id/{id} |  |
-| [**purchaseOrderPost()**](PurchaseOrderApi.md#purchaseOrderPost) | **POST** /purchaseOrder |  |
+| [**purchaseOrderIdIdPut()**](PurchaseOrderApi.md#purchaseOrderIdIdPut) | **PUT** /purchaseOrder/id/{id} | update a purchaseOrder |
+| [**purchaseOrderPost()**](PurchaseOrderApi.md#purchaseOrderPost) | **POST** /purchaseOrder | create a purchaseOrder |
 
 
 ## `purchaseOrderCountGet()`
 
 ```php
-purchaseOrderCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+purchaseOrderCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count purchaseOrder
 
 count purchaseOrder
 
@@ -41,7 +41,7 @@ count purchaseOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -53,9 +53,10 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->purchaseOrderCountGet();
+    $result = $apiInstance->purchaseOrderCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOrderApi->purchaseOrderCountGet: ', $e->getMessage(), PHP_EOL;
@@ -64,7 +65,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -72,7 +75,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -86,10 +89,10 @@ This endpoint does not need any parameter.
 ## `purchaseOrderGet()`
 
 ```php
-purchaseOrderGet($page, $page_size, $sort): \kruegge82\weclapp\Model\PurchaseOrderGet200Response
+purchaseOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\PurchaseOrderGet200Response
 ```
 
-
+query purchaseOrder
 
 query purchaseOrder
 
@@ -100,7 +103,7 @@ query purchaseOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -114,10 +117,14 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->purchaseOrderGet($page, $page_size, $sort);
+    $result = $apiInstance->purchaseOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOrderApi->purchaseOrderGet: ', $e->getMessage(), PHP_EOL;
@@ -130,7 +137,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -138,7 +149,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -152,7 +163,7 @@ try {
 ## `purchaseOrderIdIdCancelDropshippingShipmentsPost()`
 
 ```php
-purchaseOrderIdIdCancelDropshippingShipmentsPost($id, $body): \kruegge82\weclapp\Model\PurchaseOrderIdIdCancelDropshippingShipmentsPost200Response
+purchaseOrderIdIdCancelDropshippingShipmentsPost($id, $purchase_order_id_id_cancel_dropshipping_shipments_post_request): \kruegge82\weclapp\Model\PurchaseOrderIdIdCancelDropshippingShipmentsPost200Response
 ```
 
 
@@ -164,7 +175,7 @@ purchaseOrderIdIdCancelDropshippingShipmentsPost($id, $body): \kruegge82\weclapp
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -177,10 +188,10 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\PurchaseOrderIdIdCancelDropshippingShipmentsPostRequest(); // \kruegge82\weclapp\Model\PurchaseOrderIdIdCancelDropshippingShipmentsPostRequest
+$purchase_order_id_id_cancel_dropshipping_shipments_post_request = new \kruegge82\weclapp\Model\PurchaseOrderIdIdCancelDropshippingShipmentsPostRequest(); // \kruegge82\weclapp\Model\PurchaseOrderIdIdCancelDropshippingShipmentsPostRequest
 
 try {
-    $result = $apiInstance->purchaseOrderIdIdCancelDropshippingShipmentsPost($id, $body);
+    $result = $apiInstance->purchaseOrderIdIdCancelDropshippingShipmentsPost($id, $purchase_order_id_id_cancel_dropshipping_shipments_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOrderApi->purchaseOrderIdIdCancelDropshippingShipmentsPost: ', $e->getMessage(), PHP_EOL;
@@ -192,7 +203,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\PurchaseOrderIdIdCancelDropshippingShipmentsPostRequest**](../Model/PurchaseOrderIdIdCancelDropshippingShipmentsPostRequest.md)|  | |
+| **purchase_order_id_id_cancel_dropshipping_shipments_post_request** | [**\kruegge82\weclapp\Model\PurchaseOrderIdIdCancelDropshippingShipmentsPostRequest**](../Model/PurchaseOrderIdIdCancelDropshippingShipmentsPostRequest.md)|  | |
 
 ### Return type
 
@@ -200,7 +211,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -226,7 +237,7 @@ purchaseOrderIdIdCreateCancellationSlipPdfPost($id, $body)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -261,7 +272,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -287,7 +298,7 @@ purchaseOrderIdIdCreateContractPost($id, $body): \kruegge82\weclapp\Model\Purcha
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -323,7 +334,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -337,7 +348,7 @@ try {
 ## `purchaseOrderIdIdCreateDropshippingDeliveryNotePdfPost()`
 
 ```php
-purchaseOrderIdIdCreateDropshippingDeliveryNotePdfPost($id, $body)
+purchaseOrderIdIdCreateDropshippingDeliveryNotePdfPost($id, $body): \SplFileObject
 ```
 
 
@@ -349,7 +360,7 @@ purchaseOrderIdIdCreateDropshippingDeliveryNotePdfPost($id, $body)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -365,7 +376,8 @@ $id = 'id_example'; // string
 $body = array('key' => new \stdClass); // object
 
 try {
-    $apiInstance->purchaseOrderIdIdCreateDropshippingDeliveryNotePdfPost($id, $body);
+    $result = $apiInstance->purchaseOrderIdIdCreateDropshippingDeliveryNotePdfPost($id, $body);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOrderApi->purchaseOrderIdIdCreateDropshippingDeliveryNotePdfPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -380,16 +392,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -398,7 +410,7 @@ void (empty response body)
 ## `purchaseOrderIdIdCreateIncomingGoodsPost()`
 
 ```php
-purchaseOrderIdIdCreateIncomingGoodsPost($id, $body): \kruegge82\weclapp\Model\IncomingGoodsIdIdAddPurchaseOrdersPost200Response
+purchaseOrderIdIdCreateIncomingGoodsPost($id, $purchase_order_id_id_create_incoming_goods_post_request): \kruegge82\weclapp\Model\IncomingGoodsIdIdAddPurchaseOrdersPost200Response
 ```
 
 
@@ -410,7 +422,7 @@ purchaseOrderIdIdCreateIncomingGoodsPost($id, $body): \kruegge82\weclapp\Model\I
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -423,10 +435,10 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\PurchaseOrderIdIdCreateIncomingGoodsPostRequest(); // \kruegge82\weclapp\Model\PurchaseOrderIdIdCreateIncomingGoodsPostRequest
+$purchase_order_id_id_create_incoming_goods_post_request = new \kruegge82\weclapp\Model\PurchaseOrderIdIdCreateIncomingGoodsPostRequest(); // \kruegge82\weclapp\Model\PurchaseOrderIdIdCreateIncomingGoodsPostRequest
 
 try {
-    $result = $apiInstance->purchaseOrderIdIdCreateIncomingGoodsPost($id, $body);
+    $result = $apiInstance->purchaseOrderIdIdCreateIncomingGoodsPost($id, $purchase_order_id_id_create_incoming_goods_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOrderApi->purchaseOrderIdIdCreateIncomingGoodsPost: ', $e->getMessage(), PHP_EOL;
@@ -438,7 +450,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\PurchaseOrderIdIdCreateIncomingGoodsPostRequest**](../Model/PurchaseOrderIdIdCreateIncomingGoodsPostRequest.md)|  | |
+| **purchase_order_id_id_create_incoming_goods_post_request** | [**\kruegge82\weclapp\Model\PurchaseOrderIdIdCreateIncomingGoodsPostRequest**](../Model/PurchaseOrderIdIdCreateIncomingGoodsPostRequest.md)|  | |
 
 ### Return type
 
@@ -446,7 +458,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -460,7 +472,7 @@ try {
 ## `purchaseOrderIdIdCreatePurchaseInvoicePost()`
 
 ```php
-purchaseOrderIdIdCreatePurchaseInvoicePost($id, $body): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreatePurchaseInvoicePost200Response
+purchaseOrderIdIdCreatePurchaseInvoicePost($id, $purchase_order_id_id_create_purchase_invoice_post_request): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreatePurchaseInvoicePost200Response
 ```
 
 
@@ -472,7 +484,7 @@ purchaseOrderIdIdCreatePurchaseInvoicePost($id, $body): \kruegge82\weclapp\Model
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -485,10 +497,10 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\PurchaseOrderIdIdCreatePurchaseInvoicePostRequest(); // \kruegge82\weclapp\Model\PurchaseOrderIdIdCreatePurchaseInvoicePostRequest
+$purchase_order_id_id_create_purchase_invoice_post_request = new \kruegge82\weclapp\Model\PurchaseOrderIdIdCreatePurchaseInvoicePostRequest(); // \kruegge82\weclapp\Model\PurchaseOrderIdIdCreatePurchaseInvoicePostRequest
 
 try {
-    $result = $apiInstance->purchaseOrderIdIdCreatePurchaseInvoicePost($id, $body);
+    $result = $apiInstance->purchaseOrderIdIdCreatePurchaseInvoicePost($id, $purchase_order_id_id_create_purchase_invoice_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOrderApi->purchaseOrderIdIdCreatePurchaseInvoicePost: ', $e->getMessage(), PHP_EOL;
@@ -500,7 +512,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\PurchaseOrderIdIdCreatePurchaseInvoicePostRequest**](../Model/PurchaseOrderIdIdCreatePurchaseInvoicePostRequest.md)|  | |
+| **purchase_order_id_id_create_purchase_invoice_post_request** | [**\kruegge82\weclapp\Model\PurchaseOrderIdIdCreatePurchaseInvoicePostRequest**](../Model/PurchaseOrderIdIdCreatePurchaseInvoicePostRequest.md)|  | |
 
 ### Return type
 
@@ -508,7 +520,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -534,7 +546,7 @@ purchaseOrderIdIdCreateSupplierReturnPost($id, $body): \kruegge82\weclapp\Model\
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -570,7 +582,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -587,7 +599,7 @@ try {
 purchaseOrderIdIdDelete($id, $dry_run)
 ```
 
-
+delete a purchaseOrder
 
 delete a purchaseOrder
 
@@ -598,7 +610,7 @@ delete a purchaseOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -633,7 +645,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -647,7 +659,7 @@ void (empty response body)
 ## `purchaseOrderIdIdDownloadLatestCancellationSlipPdfGet()`
 
 ```php
-purchaseOrderIdIdDownloadLatestCancellationSlipPdfGet($id)
+purchaseOrderIdIdDownloadLatestCancellationSlipPdfGet($id): \SplFileObject
 ```
 
 
@@ -659,7 +671,7 @@ purchaseOrderIdIdDownloadLatestCancellationSlipPdfGet($id)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -674,7 +686,8 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
 $id = 'id_example'; // string
 
 try {
-    $apiInstance->purchaseOrderIdIdDownloadLatestCancellationSlipPdfGet($id);
+    $result = $apiInstance->purchaseOrderIdIdDownloadLatestCancellationSlipPdfGet($id);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOrderApi->purchaseOrderIdIdDownloadLatestCancellationSlipPdfGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -688,16 +701,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -706,7 +719,7 @@ void (empty response body)
 ## `purchaseOrderIdIdDownloadLatestDropshippingDeliveryNotePdfGet()`
 
 ```php
-purchaseOrderIdIdDownloadLatestDropshippingDeliveryNotePdfGet($id)
+purchaseOrderIdIdDownloadLatestDropshippingDeliveryNotePdfGet($id): \SplFileObject
 ```
 
 
@@ -718,7 +731,7 @@ purchaseOrderIdIdDownloadLatestDropshippingDeliveryNotePdfGet($id)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -733,7 +746,8 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
 $id = 'id_example'; // string
 
 try {
-    $apiInstance->purchaseOrderIdIdDownloadLatestDropshippingDeliveryNotePdfGet($id);
+    $result = $apiInstance->purchaseOrderIdIdDownloadLatestDropshippingDeliveryNotePdfGet($id);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOrderApi->purchaseOrderIdIdDownloadLatestDropshippingDeliveryNotePdfGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -747,16 +761,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -765,7 +779,7 @@ void (empty response body)
 ## `purchaseOrderIdIdDownloadLatestPurchaseOrderPdfGet()`
 
 ```php
-purchaseOrderIdIdDownloadLatestPurchaseOrderPdfGet($id)
+purchaseOrderIdIdDownloadLatestPurchaseOrderPdfGet($id): \SplFileObject
 ```
 
 
@@ -777,7 +791,7 @@ purchaseOrderIdIdDownloadLatestPurchaseOrderPdfGet($id)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -792,7 +806,8 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
 $id = 'id_example'; // string
 
 try {
-    $apiInstance->purchaseOrderIdIdDownloadLatestPurchaseOrderPdfGet($id);
+    $result = $apiInstance->purchaseOrderIdIdDownloadLatestPurchaseOrderPdfGet($id);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOrderApi->purchaseOrderIdIdDownloadLatestPurchaseOrderPdfGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -806,16 +821,16 @@ try {
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -827,9 +842,9 @@ void (empty response body)
 purchaseOrderIdIdGet($id): \kruegge82\weclapp\Model\PurchaseOrder
 ```
 
+query a specific purchaseOrder
 
-
-query purchaseOrder
+query a specific purchaseOrder
 
 ### Example
 
@@ -838,7 +853,7 @@ query purchaseOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -872,7 +887,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -886,7 +901,7 @@ try {
 ## `purchaseOrderIdIdPrintLabelPost()`
 
 ```php
-purchaseOrderIdIdPrintLabelPost($id, $body)
+purchaseOrderIdIdPrintLabelPost($id, $purchase_order_id_id_print_label_post_request): \SplFileObject
 ```
 
 
@@ -898,7 +913,7 @@ purchaseOrderIdIdPrintLabelPost($id, $body)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -911,10 +926,11 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\PurchaseOrderIdIdPrintLabelPostRequest(); // \kruegge82\weclapp\Model\PurchaseOrderIdIdPrintLabelPostRequest
+$purchase_order_id_id_print_label_post_request = new \kruegge82\weclapp\Model\PurchaseOrderIdIdPrintLabelPostRequest(); // \kruegge82\weclapp\Model\PurchaseOrderIdIdPrintLabelPostRequest
 
 try {
-    $apiInstance->purchaseOrderIdIdPrintLabelPost($id, $body);
+    $result = $apiInstance->purchaseOrderIdIdPrintLabelPost($id, $purchase_order_id_id_print_label_post_request);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOrderApi->purchaseOrderIdIdPrintLabelPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -925,20 +941,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\PurchaseOrderIdIdPrintLabelPostRequest**](../Model/PurchaseOrderIdIdPrintLabelPostRequest.md)|  | |
+| **purchase_order_id_id_print_label_post_request** | [**\kruegge82\weclapp\Model\PurchaseOrderIdIdPrintLabelPostRequest**](../Model/PurchaseOrderIdIdPrintLabelPostRequest.md)|  | |
 
 ### Return type
 
-void (empty response body)
+**\SplFileObject**
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `image/jpeg`, `image/png`, `application/pdf`, `*/*`
+- **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -947,7 +963,7 @@ void (empty response body)
 ## `purchaseOrderIdIdProcessDropshippingPost()`
 
 ```php
-purchaseOrderIdIdProcessDropshippingPost($id, $body): \kruegge82\weclapp\Model\PurchaseOrderIdIdCancelDropshippingShipmentsPost200Response
+purchaseOrderIdIdProcessDropshippingPost($id, $purchase_order_id_id_process_dropshipping_post_request): \kruegge82\weclapp\Model\PurchaseOrderIdIdCancelDropshippingShipmentsPost200Response
 ```
 
 
@@ -959,7 +975,7 @@ purchaseOrderIdIdProcessDropshippingPost($id, $body): \kruegge82\weclapp\Model\P
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -972,10 +988,10 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\PurchaseOrderIdIdProcessDropshippingPostRequest(); // \kruegge82\weclapp\Model\PurchaseOrderIdIdProcessDropshippingPostRequest
+$purchase_order_id_id_process_dropshipping_post_request = new \kruegge82\weclapp\Model\PurchaseOrderIdIdProcessDropshippingPostRequest(); // \kruegge82\weclapp\Model\PurchaseOrderIdIdProcessDropshippingPostRequest
 
 try {
-    $result = $apiInstance->purchaseOrderIdIdProcessDropshippingPost($id, $body);
+    $result = $apiInstance->purchaseOrderIdIdProcessDropshippingPost($id, $purchase_order_id_id_process_dropshipping_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOrderApi->purchaseOrderIdIdProcessDropshippingPost: ', $e->getMessage(), PHP_EOL;
@@ -987,7 +1003,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\PurchaseOrderIdIdProcessDropshippingPostRequest**](../Model/PurchaseOrderIdIdProcessDropshippingPostRequest.md)|  | |
+| **purchase_order_id_id_process_dropshipping_post_request** | [**\kruegge82\weclapp\Model\PurchaseOrderIdIdProcessDropshippingPostRequest**](../Model/PurchaseOrderIdIdProcessDropshippingPostRequest.md)|  | |
 
 ### Return type
 
@@ -995,7 +1011,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -1009,10 +1025,10 @@ try {
 ## `purchaseOrderIdIdPut()`
 
 ```php
-purchaseOrderIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\PurchaseOrder
+purchaseOrderIdIdPut($id, $purchase_order, $dry_run): \kruegge82\weclapp\Model\PurchaseOrder
 ```
 
-
+update a purchaseOrder
 
 update purchaseOrder
 
@@ -1023,7 +1039,7 @@ update purchaseOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -1036,11 +1052,11 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\PurchaseOrder(); // \kruegge82\weclapp\Model\PurchaseOrder
+$purchase_order = new \kruegge82\weclapp\Model\PurchaseOrder(); // \kruegge82\weclapp\Model\PurchaseOrder
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->purchaseOrderIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->purchaseOrderIdIdPut($id, $purchase_order, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOrderApi->purchaseOrderIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -1052,7 +1068,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\PurchaseOrder**](../Model/PurchaseOrder.md)|  | |
+| **purchase_order** | [**\kruegge82\weclapp\Model\PurchaseOrder**](../Model/PurchaseOrder.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -1061,7 +1077,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -1075,10 +1091,10 @@ try {
 ## `purchaseOrderPost()`
 
 ```php
-purchaseOrderPost($body, $dry_run): \kruegge82\weclapp\Model\PurchaseOrder
+purchaseOrderPost($purchase_order, $dry_run): \kruegge82\weclapp\Model\PurchaseOrder
 ```
 
-
+create a purchaseOrder
 
 create a purchaseOrder
 
@@ -1089,7 +1105,7 @@ create a purchaseOrder
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -1101,11 +1117,11 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\PurchaseOrder(); // \kruegge82\weclapp\Model\PurchaseOrder
+$purchase_order = new \kruegge82\weclapp\Model\PurchaseOrder(); // \kruegge82\weclapp\Model\PurchaseOrder
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->purchaseOrderPost($body, $dry_run);
+    $result = $apiInstance->purchaseOrderPost($purchase_order, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOrderApi->purchaseOrderPost: ', $e->getMessage(), PHP_EOL;
@@ -1116,7 +1132,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\PurchaseOrder**](../Model/PurchaseOrder.md)|  | |
+| **purchase_order** | [**\kruegge82\weclapp\Model\PurchaseOrder**](../Model/PurchaseOrder.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -1125,7 +1141,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

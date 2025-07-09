@@ -1,24 +1,24 @@
 # kruegge82\weclapp\UnitApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**unitCountGet()**](UnitApi.md#unitCountGet) | **GET** /unit/count |  |
-| [**unitGet()**](UnitApi.md#unitGet) | **GET** /unit |  |
-| [**unitIdIdDelete()**](UnitApi.md#unitIdIdDelete) | **DELETE** /unit/id/{id} |  |
-| [**unitIdIdGet()**](UnitApi.md#unitIdIdGet) | **GET** /unit/id/{id} |  |
-| [**unitIdIdPut()**](UnitApi.md#unitIdIdPut) | **PUT** /unit/id/{id} |  |
-| [**unitPost()**](UnitApi.md#unitPost) | **POST** /unit |  |
+| [**unitCountGet()**](UnitApi.md#unitCountGet) | **GET** /unit/count | count unit |
+| [**unitGet()**](UnitApi.md#unitGet) | **GET** /unit | query unit |
+| [**unitIdIdDelete()**](UnitApi.md#unitIdIdDelete) | **DELETE** /unit/id/{id} | delete a unit |
+| [**unitIdIdGet()**](UnitApi.md#unitIdIdGet) | **GET** /unit/id/{id} | query a specific unit |
+| [**unitIdIdPut()**](UnitApi.md#unitIdIdPut) | **PUT** /unit/id/{id} | update a unit |
+| [**unitPost()**](UnitApi.md#unitPost) | **POST** /unit | create a unit |
 
 
 ## `unitCountGet()`
 
 ```php
-unitCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+unitCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count unit
 
 count unit
 
@@ -29,7 +29,7 @@ count unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,9 +41,10 @@ $apiInstance = new kruegge82\weclapp\Api\UnitApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->unitCountGet();
+    $result = $apiInstance->unitCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UnitApi->unitCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -60,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -74,10 +77,10 @@ This endpoint does not need any parameter.
 ## `unitGet()`
 
 ```php
-unitGet($page, $page_size, $sort): \kruegge82\weclapp\Model\UnitGet200Response
+unitGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\UnitGet200Response
 ```
 
-
+query unit
 
 query unit
 
@@ -88,7 +91,7 @@ query unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -102,10 +105,14 @@ $apiInstance = new kruegge82\weclapp\Api\UnitApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->unitGet($page, $page_size, $sort);
+    $result = $apiInstance->unitGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UnitApi->unitGet: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +125,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -126,7 +137,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -143,7 +154,7 @@ try {
 unitIdIdDelete($id, $dry_run)
 ```
 
-
+delete a unit
 
 delete a unit
 
@@ -154,7 +165,7 @@ delete a unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -189,7 +200,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -206,9 +217,9 @@ void (empty response body)
 unitIdIdGet($id): \kruegge82\weclapp\Model\Unit
 ```
 
+query a specific unit
 
-
-query unit
+query a specific unit
 
 ### Example
 
@@ -217,7 +228,7 @@ query unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -251,7 +262,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -265,10 +276,10 @@ try {
 ## `unitIdIdPut()`
 
 ```php
-unitIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\Unit
+unitIdIdPut($id, $unit, $dry_run): \kruegge82\weclapp\Model\Unit
 ```
 
-
+update a unit
 
 update unit
 
@@ -279,7 +290,7 @@ update unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -292,11 +303,11 @@ $apiInstance = new kruegge82\weclapp\Api\UnitApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\Unit(); // \kruegge82\weclapp\Model\Unit
+$unit = new \kruegge82\weclapp\Model\Unit(); // \kruegge82\weclapp\Model\Unit
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->unitIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->unitIdIdPut($id, $unit, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UnitApi->unitIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +319,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\Unit**](../Model/Unit.md)|  | |
+| **unit** | [**\kruegge82\weclapp\Model\Unit**](../Model/Unit.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -317,7 +328,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -331,10 +342,10 @@ try {
 ## `unitPost()`
 
 ```php
-unitPost($body, $dry_run): \kruegge82\weclapp\Model\Unit
+unitPost($unit, $dry_run): \kruegge82\weclapp\Model\Unit
 ```
 
-
+create a unit
 
 create a unit
 
@@ -345,7 +356,7 @@ create a unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -357,11 +368,11 @@ $apiInstance = new kruegge82\weclapp\Api\UnitApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\Unit(); // \kruegge82\weclapp\Model\Unit
+$unit = new \kruegge82\weclapp\Model\Unit(); // \kruegge82\weclapp\Model\Unit
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->unitPost($body, $dry_run);
+    $result = $apiInstance->unitPost($unit, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UnitApi->unitPost: ', $e->getMessage(), PHP_EOL;
@@ -372,7 +383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\Unit**](../Model/Unit.md)|  | |
+| **unit** | [**\kruegge82\weclapp\Model\Unit**](../Model/Unit.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -381,7 +392,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 

@@ -1,24 +1,24 @@
 # kruegge82\weclapp\CustomsTariffNumberApi
 
-All URIs are relative to http://nullapi/v2, except if the operation defines another base path.
+All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**customsTariffNumberCountGet()**](CustomsTariffNumberApi.md#customsTariffNumberCountGet) | **GET** /customsTariffNumber/count |  |
-| [**customsTariffNumberGet()**](CustomsTariffNumberApi.md#customsTariffNumberGet) | **GET** /customsTariffNumber |  |
-| [**customsTariffNumberIdIdDelete()**](CustomsTariffNumberApi.md#customsTariffNumberIdIdDelete) | **DELETE** /customsTariffNumber/id/{id} |  |
-| [**customsTariffNumberIdIdGet()**](CustomsTariffNumberApi.md#customsTariffNumberIdIdGet) | **GET** /customsTariffNumber/id/{id} |  |
-| [**customsTariffNumberIdIdPut()**](CustomsTariffNumberApi.md#customsTariffNumberIdIdPut) | **PUT** /customsTariffNumber/id/{id} |  |
-| [**customsTariffNumberPost()**](CustomsTariffNumberApi.md#customsTariffNumberPost) | **POST** /customsTariffNumber |  |
+| [**customsTariffNumberCountGet()**](CustomsTariffNumberApi.md#customsTariffNumberCountGet) | **GET** /customsTariffNumber/count | count customsTariffNumber |
+| [**customsTariffNumberGet()**](CustomsTariffNumberApi.md#customsTariffNumberGet) | **GET** /customsTariffNumber | query customsTariffNumber |
+| [**customsTariffNumberIdIdDelete()**](CustomsTariffNumberApi.md#customsTariffNumberIdIdDelete) | **DELETE** /customsTariffNumber/id/{id} | delete a customsTariffNumber |
+| [**customsTariffNumberIdIdGet()**](CustomsTariffNumberApi.md#customsTariffNumberIdIdGet) | **GET** /customsTariffNumber/id/{id} | query a specific customsTariffNumber |
+| [**customsTariffNumberIdIdPut()**](CustomsTariffNumberApi.md#customsTariffNumberIdIdPut) | **PUT** /customsTariffNumber/id/{id} | update a customsTariffNumber |
+| [**customsTariffNumberPost()**](CustomsTariffNumberApi.md#customsTariffNumberPost) | **POST** /customsTariffNumber | create a customsTariffNumber |
 
 
 ## `customsTariffNumberCountGet()`
 
 ```php
-customsTariffNumberCountGet(): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+customsTariffNumberCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
 ```
 
-
+count customsTariffNumber
 
 count customsTariffNumber
 
@@ -29,7 +29,7 @@ count customsTariffNumber
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -41,9 +41,10 @@ $apiInstance = new kruegge82\weclapp\Api\CustomsTariffNumberApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->customsTariffNumberCountGet();
+    $result = $apiInstance->customsTariffNumberCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomsTariffNumberApi->customsTariffNumberCountGet: ', $e->getMessage(), PHP_EOL;
@@ -52,7 +53,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -60,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -74,10 +77,10 @@ This endpoint does not need any parameter.
 ## `customsTariffNumberGet()`
 
 ```php
-customsTariffNumberGet($page, $page_size, $sort): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
+customsTariffNumberGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
 ```
 
-
+query customsTariffNumber
 
 query customsTariffNumber
 
@@ -88,7 +91,7 @@ query customsTariffNumber
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -102,10 +105,14 @@ $apiInstance = new kruegge82\weclapp\Api\CustomsTariffNumberApi(
 );
 $page = 56; // int
 $page_size = 56; // int
+$serialize_nulls = True; // bool
 $sort = 'sort_example'; // string
+$filter = 'filter_example'; // string
+$properties = 'properties_example'; // string
+$include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->customsTariffNumberGet($page, $page_size, $sort);
+    $result = $apiInstance->customsTariffNumberGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomsTariffNumberApi->customsTariffNumberGet: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +125,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
+| **serialize_nulls** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
+| **filter** | **string**|  | [optional] |
+| **properties** | **string**|  | [optional] |
+| **include_referenced_entities** | **string**|  | [optional] |
 
 ### Return type
 
@@ -126,7 +137,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -143,7 +154,7 @@ try {
 customsTariffNumberIdIdDelete($id, $dry_run)
 ```
 
-
+delete a customsTariffNumber
 
 delete a customsTariffNumber
 
@@ -154,7 +165,7 @@ delete a customsTariffNumber
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -189,7 +200,7 @@ void (empty response body)
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -206,9 +217,9 @@ void (empty response body)
 customsTariffNumberIdIdGet($id): \kruegge82\weclapp\Model\CustomValue
 ```
 
+query a specific customsTariffNumber
 
-
-query customsTariffNumber
+query a specific customsTariffNumber
 
 ### Example
 
@@ -217,7 +228,7 @@ query customsTariffNumber
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -251,7 +262,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -265,10 +276,10 @@ try {
 ## `customsTariffNumberIdIdPut()`
 
 ```php
-customsTariffNumberIdIdPut($id, $body, $dry_run): \kruegge82\weclapp\Model\CustomValue
+customsTariffNumberIdIdPut($id, $custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-
+update a customsTariffNumber
 
 update customsTariffNumber
 
@@ -279,7 +290,7 @@ update customsTariffNumber
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -292,11 +303,11 @@ $apiInstance = new kruegge82\weclapp\Api\CustomsTariffNumberApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->customsTariffNumberIdIdPut($id, $body, $dry_run);
+    $result = $apiInstance->customsTariffNumberIdIdPut($id, $custom_value, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomsTariffNumberApi->customsTariffNumberIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +319,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -317,7 +328,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
@@ -331,10 +342,10 @@ try {
 ## `customsTariffNumberPost()`
 
 ```php
-customsTariffNumberPost($body, $dry_run): \kruegge82\weclapp\Model\CustomValue
+customsTariffNumberPost($custom_value, $dry_run): \kruegge82\weclapp\Model\CustomValue
 ```
 
-
+create a customsTariffNumber
 
 create a customsTariffNumber
 
@@ -345,7 +356,7 @@ create a customsTariffNumber
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: API token
+// Configure API key authorization: api-token
 $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
@@ -357,11 +368,11 @@ $apiInstance = new kruegge82\weclapp\Api\CustomsTariffNumberApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
+$custom_value = new \kruegge82\weclapp\Model\CustomValue(); // \kruegge82\weclapp\Model\CustomValue
 $dry_run = True; // bool
 
 try {
-    $result = $apiInstance->customsTariffNumberPost($body, $dry_run);
+    $result = $apiInstance->customsTariffNumberPost($custom_value, $dry_run);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomsTariffNumberApi->customsTariffNumberPost: ', $e->getMessage(), PHP_EOL;
@@ -372,7 +383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
+| **custom_value** | [**\kruegge82\weclapp\Model\CustomValue**](../Model/CustomValue.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
 
 ### Return type
@@ -381,7 +392,7 @@ try {
 
 ### Authorization
 
-[API token](../../README.md#API token)
+[api-token](../../README.md#api-token)
 
 ### HTTP request headers
 
