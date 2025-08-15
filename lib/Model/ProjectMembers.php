@@ -317,8 +317,8 @@ class ProjectMembers implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['hourly_cost']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['hourly_cost'])) {
-            $invalidProperties[] = "invalid value for 'hourly_cost', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['hourly_cost']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['hourly_cost'])) {
+            $invalidProperties[] = "invalid value for 'hourly_cost', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -467,8 +467,8 @@ class ProjectMembers implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable hourly_cost cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($hourly_cost)))) {
-            throw new \InvalidArgumentException("invalid value for \$hourly_cost when calling ProjectMembers., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($hourly_cost)))) {
+            throw new \InvalidArgumentException("invalid value for \$hourly_cost when calling ProjectMembers., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['hourly_cost'] = $hourly_cost;

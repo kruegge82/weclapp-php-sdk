@@ -63,7 +63,6 @@ class WarehouseStock implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_modified_date' => 'int',
         'version' => 'string',
         'article_id' => 'string',
-        'batch_number' => 'string',
         'batch_number_id' => 'string',
         'inbound_date' => 'int',
         'internal_transport_reference_id' => 'string',
@@ -89,7 +88,6 @@ class WarehouseStock implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_modified_date' => 'timestamp',
         'version' => null,
         'article_id' => null,
-        'batch_number' => null,
         'batch_number_id' => null,
         'inbound_date' => 'timestamp',
         'internal_transport_reference_id' => null,
@@ -113,7 +111,6 @@ class WarehouseStock implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_modified_date' => false,
         'version' => false,
         'article_id' => false,
-        'batch_number' => false,
         'batch_number_id' => false,
         'inbound_date' => false,
         'internal_transport_reference_id' => false,
@@ -217,7 +214,6 @@ class WarehouseStock implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_modified_date' => 'lastModifiedDate',
         'version' => 'version',
         'article_id' => 'articleId',
-        'batch_number' => 'batchNumber',
         'batch_number_id' => 'batchNumberId',
         'inbound_date' => 'inboundDate',
         'internal_transport_reference_id' => 'internalTransportReferenceId',
@@ -241,7 +237,6 @@ class WarehouseStock implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_modified_date' => 'setLastModifiedDate',
         'version' => 'setVersion',
         'article_id' => 'setArticleId',
-        'batch_number' => 'setBatchNumber',
         'batch_number_id' => 'setBatchNumberId',
         'inbound_date' => 'setInboundDate',
         'internal_transport_reference_id' => 'setInternalTransportReferenceId',
@@ -265,7 +260,6 @@ class WarehouseStock implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_modified_date' => 'getLastModifiedDate',
         'version' => 'getVersion',
         'article_id' => 'getArticleId',
-        'batch_number' => 'getBatchNumber',
         'batch_number_id' => 'getBatchNumberId',
         'inbound_date' => 'getInboundDate',
         'internal_transport_reference_id' => 'getInternalTransportReferenceId',
@@ -340,7 +334,6 @@ class WarehouseStock implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('last_modified_date', $data ?? [], null);
         $this->setIfExists('version', $data ?? [], null);
         $this->setIfExists('article_id', $data ?? [], null);
-        $this->setIfExists('batch_number', $data ?? [], null);
         $this->setIfExists('batch_number_id', $data ?? [], null);
         $this->setIfExists('inbound_date', $data ?? [], null);
         $this->setIfExists('internal_transport_reference_id', $data ?? [], null);
@@ -380,12 +373,8 @@ class WarehouseStock implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['batch_number']) && (mb_strlen($this->container['batch_number']) > 1000)) {
-            $invalidProperties[] = "invalid value for 'batch_number', the character length must be smaller than or equal to 1000.";
-        }
-
-        if (!is_null($this->container['quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['quantity'])) {
-            $invalidProperties[] = "invalid value for 'quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['quantity'])) {
+            $invalidProperties[] = "invalid value for 'quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -534,37 +523,6 @@ class WarehouseStock implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable article_id cannot be null');
         }
         $this->container['article_id'] = $article_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets batch_number
-     *
-     * @return string|null
-     */
-    public function getBatchNumber()
-    {
-        return $this->container['batch_number'];
-    }
-
-    /**
-     * Sets batch_number
-     *
-     * @param string|null $batch_number batch_number
-     *
-     * @return self
-     */
-    public function setBatchNumber($batch_number)
-    {
-        if (is_null($batch_number)) {
-            throw new \InvalidArgumentException('non-nullable batch_number cannot be null');
-        }
-        if ((mb_strlen($batch_number) > 1000)) {
-            throw new \InvalidArgumentException('invalid length for $batch_number when calling WarehouseStock., must be smaller than or equal to 1000.');
-        }
-
-        $this->container['batch_number'] = $batch_number;
 
         return $this;
     }
@@ -727,8 +685,8 @@ class WarehouseStock implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable quantity cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$quantity when calling WarehouseStock., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$quantity when calling WarehouseStock., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['quantity'] = $quantity;

@@ -46,8 +46,6 @@ Name | Type | Description | Notes
 **planned_delivery_date** | **int** |  | [optional]
 **planned_shipping_date** | **int** |  | [optional]
 **planned_working_time_per_unit** | **int** |  | [optional]
-**availability** | [**\kruegge82\weclapp\Model\DispositionInfoAvailabilityType**](DispositionInfoAvailabilityType.md) |  | [optional]
-**availability_for_all_warehouses** | [**\kruegge82\weclapp\Model\DispositionInfoAvailabilityType**](DispositionInfoAvailabilityType.md) |  | [optional]
 **contract_charge_id** | **string** |  | [optional] [readonly]
 **ecommerce_order_item_ids** | **string[]** |  | [optional]
 **invoiced_quantity** | **float** |  | [optional] [readonly]

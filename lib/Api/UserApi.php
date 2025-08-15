@@ -84,6 +84,9 @@ class UserApi
         'userGet' => [
             'application/json',
         ],
+        'userIdIdDeleteMfaDevicePost' => [
+            'application/json',
+        ],
         'userIdIdGet' => [
             'application/json',
         ],
@@ -91,6 +94,9 @@ class UserApi
             'application/json',
         ],
         'userIdIdPut' => [
+            'application/json',
+        ],
+        'userIdIdReadMfaDevicesGet' => [
             'application/json',
         ],
         'userIdIdSoftDeletePost' => [
@@ -1067,6 +1073,248 @@ class UserApi
     }
 
     /**
+     * Operation userIdIdDeleteMfaDevicePost
+     *
+     * @param  string $id id (required)
+     * @param  \kruegge82\weclapp\Model\UserIdIdDeleteMfaDevicePostRequest $user_id_id_delete_mfa_device_post_request user_id_id_delete_mfa_device_post_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userIdIdDeleteMfaDevicePost'] to see the possible values for this operation
+     *
+     * @throws \kruegge82\weclapp\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function userIdIdDeleteMfaDevicePost($id, $user_id_id_delete_mfa_device_post_request, string $contentType = self::contentTypes['userIdIdDeleteMfaDevicePost'][0])
+    {
+        $this->userIdIdDeleteMfaDevicePostWithHttpInfo($id, $user_id_id_delete_mfa_device_post_request, $contentType);
+    }
+
+    /**
+     * Operation userIdIdDeleteMfaDevicePostWithHttpInfo
+     *
+     * @param  string $id (required)
+     * @param  \kruegge82\weclapp\Model\UserIdIdDeleteMfaDevicePostRequest $user_id_id_delete_mfa_device_post_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userIdIdDeleteMfaDevicePost'] to see the possible values for this operation
+     *
+     * @throws \kruegge82\weclapp\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function userIdIdDeleteMfaDevicePostWithHttpInfo($id, $user_id_id_delete_mfa_device_post_request, string $contentType = self::contentTypes['userIdIdDeleteMfaDevicePost'][0])
+    {
+        $request = $this->userIdIdDeleteMfaDevicePostRequest($id, $user_id_id_delete_mfa_device_post_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                default:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\kruegge82\weclapp\Model\ApiProblem',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation userIdIdDeleteMfaDevicePostAsync
+     *
+     * @param  string $id (required)
+     * @param  \kruegge82\weclapp\Model\UserIdIdDeleteMfaDevicePostRequest $user_id_id_delete_mfa_device_post_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userIdIdDeleteMfaDevicePost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function userIdIdDeleteMfaDevicePostAsync($id, $user_id_id_delete_mfa_device_post_request, string $contentType = self::contentTypes['userIdIdDeleteMfaDevicePost'][0])
+    {
+        return $this->userIdIdDeleteMfaDevicePostAsyncWithHttpInfo($id, $user_id_id_delete_mfa_device_post_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation userIdIdDeleteMfaDevicePostAsyncWithHttpInfo
+     *
+     * @param  string $id (required)
+     * @param  \kruegge82\weclapp\Model\UserIdIdDeleteMfaDevicePostRequest $user_id_id_delete_mfa_device_post_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userIdIdDeleteMfaDevicePost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function userIdIdDeleteMfaDevicePostAsyncWithHttpInfo($id, $user_id_id_delete_mfa_device_post_request, string $contentType = self::contentTypes['userIdIdDeleteMfaDevicePost'][0])
+    {
+        $returnType = '';
+        $request = $this->userIdIdDeleteMfaDevicePostRequest($id, $user_id_id_delete_mfa_device_post_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'userIdIdDeleteMfaDevicePost'
+     *
+     * @param  string $id (required)
+     * @param  \kruegge82\weclapp\Model\UserIdIdDeleteMfaDevicePostRequest $user_id_id_delete_mfa_device_post_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userIdIdDeleteMfaDevicePost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function userIdIdDeleteMfaDevicePostRequest($id, $user_id_id_delete_mfa_device_post_request, string $contentType = self::contentTypes['userIdIdDeleteMfaDevicePost'][0])
+    {
+
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling userIdIdDeleteMfaDevicePost'
+            );
+        }
+
+        // verify the required parameter 'user_id_id_delete_mfa_device_post_request' is set
+        if ($user_id_id_delete_mfa_device_post_request === null || (is_array($user_id_id_delete_mfa_device_post_request) && count($user_id_id_delete_mfa_device_post_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $user_id_id_delete_mfa_device_post_request when calling userIdIdDeleteMfaDevicePost'
+            );
+        }
+
+
+        $resourcePath = '/user/id/{id}/deleteMfaDevice';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($user_id_id_delete_mfa_device_post_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($user_id_id_delete_mfa_device_post_request));
+            } else {
+                $httpBody = $user_id_id_delete_mfa_device_post_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('AuthenticationToken');
+        if ($apiKey !== null) {
+            $headers['AuthenticationToken'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation userIdIdGet
      *
      * query a specific user
@@ -1966,6 +2214,285 @@ class UserApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'PUT',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation userIdIdReadMfaDevicesGet
+     *
+     * @param  string $id id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userIdIdReadMfaDevicesGet'] to see the possible values for this operation
+     *
+     * @throws \kruegge82\weclapp\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \kruegge82\weclapp\Model\UserIdIdReadMfaDevicesGet200Response|\kruegge82\weclapp\Model\ApiProblem
+     */
+    public function userIdIdReadMfaDevicesGet($id, string $contentType = self::contentTypes['userIdIdReadMfaDevicesGet'][0])
+    {
+        list($response) = $this->userIdIdReadMfaDevicesGetWithHttpInfo($id, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation userIdIdReadMfaDevicesGetWithHttpInfo
+     *
+     * @param  string $id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userIdIdReadMfaDevicesGet'] to see the possible values for this operation
+     *
+     * @throws \kruegge82\weclapp\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \kruegge82\weclapp\Model\UserIdIdReadMfaDevicesGet200Response|\kruegge82\weclapp\Model\ApiProblem, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function userIdIdReadMfaDevicesGetWithHttpInfo($id, string $contentType = self::contentTypes['userIdIdReadMfaDevicesGet'][0])
+    {
+        $request = $this->userIdIdReadMfaDevicesGetRequest($id, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\kruegge82\weclapp\Model\UserIdIdReadMfaDevicesGet200Response',
+                        $request,
+                        $response,
+                    );
+                default:
+                    return $this->handleResponseWithDataType(
+                        '\kruegge82\weclapp\Model\ApiProblem',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\kruegge82\weclapp\Model\UserIdIdReadMfaDevicesGet200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\kruegge82\weclapp\Model\UserIdIdReadMfaDevicesGet200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                default:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\kruegge82\weclapp\Model\ApiProblem',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation userIdIdReadMfaDevicesGetAsync
+     *
+     * @param  string $id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userIdIdReadMfaDevicesGet'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function userIdIdReadMfaDevicesGetAsync($id, string $contentType = self::contentTypes['userIdIdReadMfaDevicesGet'][0])
+    {
+        return $this->userIdIdReadMfaDevicesGetAsyncWithHttpInfo($id, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation userIdIdReadMfaDevicesGetAsyncWithHttpInfo
+     *
+     * @param  string $id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userIdIdReadMfaDevicesGet'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function userIdIdReadMfaDevicesGetAsyncWithHttpInfo($id, string $contentType = self::contentTypes['userIdIdReadMfaDevicesGet'][0])
+    {
+        $returnType = '\kruegge82\weclapp\Model\UserIdIdReadMfaDevicesGet200Response';
+        $request = $this->userIdIdReadMfaDevicesGetRequest($id, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'userIdIdReadMfaDevicesGet'
+     *
+     * @param  string $id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userIdIdReadMfaDevicesGet'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function userIdIdReadMfaDevicesGetRequest($id, string $contentType = self::contentTypes['userIdIdReadMfaDevicesGet'][0])
+    {
+
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling userIdIdReadMfaDevicesGet'
+            );
+        }
+
+
+        $resourcePath = '/user/id/{id}/readMfaDevices';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('AuthenticationToken');
+        if ($apiKey !== null) {
+            $headers['AuthenticationToken'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

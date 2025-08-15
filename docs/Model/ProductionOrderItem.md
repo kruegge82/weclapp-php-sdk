@@ -15,8 +15,6 @@ Name | Type | Description | Notes
 **quantity** | **float** |  | [optional]
 **actual_pick_date** | **int** |  | [optional] [readonly]
 **actual_quantity** | **float** |  | [optional] [readonly]
-**availability** | [**\kruegge82\weclapp\Model\DispositionInfoAvailabilityType**](DispositionInfoAvailabilityType.md) |  | [optional]
-**availability_for_all_warehouses** | [**\kruegge82\weclapp\Model\DispositionInfoAvailabilityType**](DispositionInfoAvailabilityType.md) |  | [optional]
 **picks** | [**\kruegge82\weclapp\Model\ItemPick[]**](ItemPick.md) |  | [optional]
 **target_pick_date** | **int** |  | [optional]
 **target_quantity** | **float** |  | [optional] [readonly]

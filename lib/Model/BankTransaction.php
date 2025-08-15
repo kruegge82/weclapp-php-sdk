@@ -64,13 +64,16 @@ class BankTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
         'version' => 'string',
         'account_for_costs_of_monetary_traffic_id' => 'string',
         'account_for_dunning_fee_id' => 'string',
+        'additional_ecommerce_id' => 'string',
         'amount' => 'float',
         'amount_costs_of_monetary_traffic' => 'float',
         'cleared' => 'bool',
         'created_by_id' => 'string',
         'currency_id' => 'string',
         'description' => 'string',
+        'ecommerce_id' => 'string',
         'effective_date' => 'int',
+        'external_connection_id' => 'string',
         'external_record_number' => 'string',
         'origin' => '\kruegge82\weclapp\Model\MoneyTransactionSource',
         'party_id' => 'string',
@@ -93,13 +96,16 @@ class BankTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
         'version' => null,
         'account_for_costs_of_monetary_traffic_id' => null,
         'account_for_dunning_fee_id' => null,
+        'additional_ecommerce_id' => null,
         'amount' => 'decimal',
         'amount_costs_of_monetary_traffic' => 'decimal',
         'cleared' => null,
         'created_by_id' => null,
         'currency_id' => null,
         'description' => null,
+        'ecommerce_id' => null,
         'effective_date' => 'timestamp',
+        'external_connection_id' => null,
         'external_record_number' => null,
         'origin' => null,
         'party_id' => null,
@@ -120,13 +126,16 @@ class BankTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
         'version' => false,
         'account_for_costs_of_monetary_traffic_id' => false,
         'account_for_dunning_fee_id' => false,
+        'additional_ecommerce_id' => false,
         'amount' => false,
         'amount_costs_of_monetary_traffic' => false,
         'cleared' => false,
         'created_by_id' => false,
         'currency_id' => false,
         'description' => false,
+        'ecommerce_id' => false,
         'effective_date' => false,
+        'external_connection_id' => false,
         'external_record_number' => false,
         'origin' => false,
         'party_id' => false,
@@ -227,13 +236,16 @@ class BankTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
         'version' => 'version',
         'account_for_costs_of_monetary_traffic_id' => 'accountForCostsOfMonetaryTrafficId',
         'account_for_dunning_fee_id' => 'accountForDunningFeeId',
+        'additional_ecommerce_id' => 'additionalEcommerceId',
         'amount' => 'amount',
         'amount_costs_of_monetary_traffic' => 'amountCostsOfMonetaryTraffic',
         'cleared' => 'cleared',
         'created_by_id' => 'createdById',
         'currency_id' => 'currencyId',
         'description' => 'description',
+        'ecommerce_id' => 'ecommerceId',
         'effective_date' => 'effectiveDate',
+        'external_connection_id' => 'externalConnectionId',
         'external_record_number' => 'externalRecordNumber',
         'origin' => 'origin',
         'party_id' => 'partyId',
@@ -254,13 +266,16 @@ class BankTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
         'version' => 'setVersion',
         'account_for_costs_of_monetary_traffic_id' => 'setAccountForCostsOfMonetaryTrafficId',
         'account_for_dunning_fee_id' => 'setAccountForDunningFeeId',
+        'additional_ecommerce_id' => 'setAdditionalEcommerceId',
         'amount' => 'setAmount',
         'amount_costs_of_monetary_traffic' => 'setAmountCostsOfMonetaryTraffic',
         'cleared' => 'setCleared',
         'created_by_id' => 'setCreatedById',
         'currency_id' => 'setCurrencyId',
         'description' => 'setDescription',
+        'ecommerce_id' => 'setEcommerceId',
         'effective_date' => 'setEffectiveDate',
+        'external_connection_id' => 'setExternalConnectionId',
         'external_record_number' => 'setExternalRecordNumber',
         'origin' => 'setOrigin',
         'party_id' => 'setPartyId',
@@ -281,13 +296,16 @@ class BankTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
         'version' => 'getVersion',
         'account_for_costs_of_monetary_traffic_id' => 'getAccountForCostsOfMonetaryTrafficId',
         'account_for_dunning_fee_id' => 'getAccountForDunningFeeId',
+        'additional_ecommerce_id' => 'getAdditionalEcommerceId',
         'amount' => 'getAmount',
         'amount_costs_of_monetary_traffic' => 'getAmountCostsOfMonetaryTraffic',
         'cleared' => 'getCleared',
         'created_by_id' => 'getCreatedById',
         'currency_id' => 'getCurrencyId',
         'description' => 'getDescription',
+        'ecommerce_id' => 'getEcommerceId',
         'effective_date' => 'getEffectiveDate',
+        'external_connection_id' => 'getExternalConnectionId',
         'external_record_number' => 'getExternalRecordNumber',
         'origin' => 'getOrigin',
         'party_id' => 'getPartyId',
@@ -359,13 +377,16 @@ class BankTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('version', $data ?? [], null);
         $this->setIfExists('account_for_costs_of_monetary_traffic_id', $data ?? [], null);
         $this->setIfExists('account_for_dunning_fee_id', $data ?? [], null);
+        $this->setIfExists('additional_ecommerce_id', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
         $this->setIfExists('amount_costs_of_monetary_traffic', $data ?? [], null);
         $this->setIfExists('cleared', $data ?? [], null);
         $this->setIfExists('created_by_id', $data ?? [], null);
         $this->setIfExists('currency_id', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
+        $this->setIfExists('ecommerce_id', $data ?? [], null);
         $this->setIfExists('effective_date', $data ?? [], null);
+        $this->setIfExists('external_connection_id', $data ?? [], null);
         $this->setIfExists('external_record_number', $data ?? [], null);
         $this->setIfExists('origin', $data ?? [], null);
         $this->setIfExists('party_id', $data ?? [], null);
@@ -401,16 +422,24 @@ class BankTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['amount']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount'])) {
-            $invalidProperties[] = "invalid value for 'amount', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['additional_ecommerce_id']) && (mb_strlen($this->container['additional_ecommerce_id']) > 1000)) {
+            $invalidProperties[] = "invalid value for 'additional_ecommerce_id', the character length must be smaller than or equal to 1000.";
         }
 
-        if (!is_null($this->container['amount_costs_of_monetary_traffic']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_costs_of_monetary_traffic'])) {
-            $invalidProperties[] = "invalid value for 'amount_costs_of_monetary_traffic', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['amount']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount'])) {
+            $invalidProperties[] = "invalid value for 'amount', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        }
+
+        if (!is_null($this->container['amount_costs_of_monetary_traffic']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_costs_of_monetary_traffic'])) {
+            $invalidProperties[] = "invalid value for 'amount_costs_of_monetary_traffic', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 255)) {
             $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['ecommerce_id']) && (mb_strlen($this->container['ecommerce_id']) > 1000)) {
+            $invalidProperties[] = "invalid value for 'ecommerce_id', the character length must be smaller than or equal to 1000.";
         }
 
         if (!is_null($this->container['external_record_number']) && (mb_strlen($this->container['external_record_number']) > 1000)) {
@@ -595,6 +624,37 @@ class BankTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets additional_ecommerce_id
+     *
+     * @return string|null
+     */
+    public function getAdditionalEcommerceId()
+    {
+        return $this->container['additional_ecommerce_id'];
+    }
+
+    /**
+     * Sets additional_ecommerce_id
+     *
+     * @param string|null $additional_ecommerce_id additional_ecommerce_id
+     *
+     * @return self
+     */
+    public function setAdditionalEcommerceId($additional_ecommerce_id)
+    {
+        if (is_null($additional_ecommerce_id)) {
+            throw new \InvalidArgumentException('non-nullable additional_ecommerce_id cannot be null');
+        }
+        if ((mb_strlen($additional_ecommerce_id) > 1000)) {
+            throw new \InvalidArgumentException('invalid length for $additional_ecommerce_id when calling BankTransaction., must be smaller than or equal to 1000.');
+        }
+
+        $this->container['additional_ecommerce_id'] = $additional_ecommerce_id;
+
+        return $this;
+    }
+
+    /**
      * Gets amount
      *
      * @return float|null
@@ -617,8 +677,8 @@ class BankTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable amount cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount)))) {
-            throw new \InvalidArgumentException("invalid value for \$amount when calling BankTransaction., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount)))) {
+            throw new \InvalidArgumentException("invalid value for \$amount when calling BankTransaction., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['amount'] = $amount;
@@ -649,8 +709,8 @@ class BankTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable amount_costs_of_monetary_traffic cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_costs_of_monetary_traffic)))) {
-            throw new \InvalidArgumentException("invalid value for \$amount_costs_of_monetary_traffic when calling BankTransaction., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_costs_of_monetary_traffic)))) {
+            throw new \InvalidArgumentException("invalid value for \$amount_costs_of_monetary_traffic when calling BankTransaction., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['amount_costs_of_monetary_traffic'] = $amount_costs_of_monetary_traffic;
@@ -771,6 +831,37 @@ class BankTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets ecommerce_id
+     *
+     * @return string|null
+     */
+    public function getEcommerceId()
+    {
+        return $this->container['ecommerce_id'];
+    }
+
+    /**
+     * Sets ecommerce_id
+     *
+     * @param string|null $ecommerce_id ecommerce_id
+     *
+     * @return self
+     */
+    public function setEcommerceId($ecommerce_id)
+    {
+        if (is_null($ecommerce_id)) {
+            throw new \InvalidArgumentException('non-nullable ecommerce_id cannot be null');
+        }
+        if ((mb_strlen($ecommerce_id) > 1000)) {
+            throw new \InvalidArgumentException('invalid length for $ecommerce_id when calling BankTransaction., must be smaller than or equal to 1000.');
+        }
+
+        $this->container['ecommerce_id'] = $ecommerce_id;
+
+        return $this;
+    }
+
+    /**
      * Gets effective_date
      *
      * @return int|null
@@ -793,6 +884,33 @@ class BankTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable effective_date cannot be null');
         }
         $this->container['effective_date'] = $effective_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_connection_id
+     *
+     * @return string|null
+     */
+    public function getExternalConnectionId()
+    {
+        return $this->container['external_connection_id'];
+    }
+
+    /**
+     * Sets external_connection_id
+     *
+     * @param string|null $external_connection_id external_connection_id
+     *
+     * @return self
+     */
+    public function setExternalConnectionId($external_connection_id)
+    {
+        if (is_null($external_connection_id)) {
+            throw new \InvalidArgumentException('non-nullable external_connection_id cannot be null');
+        }
+        $this->container['external_connection_id'] = $external_connection_id;
 
         return $this;
     }

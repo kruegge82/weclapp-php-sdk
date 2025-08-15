@@ -21,8 +21,6 @@ Name | Type | Description | Notes
 **title** | **string** |  | [optional]
 **unit_id** | **string** |  | [optional]
 **add_page_break_before** | **bool** |  | [optional]
-**availability** | [**\kruegge82\weclapp\Model\DispositionInfoAvailabilityType**](DispositionInfoAvailabilityType.md) |  | [optional]
-**availability_for_all_warehouses** | [**\kruegge82\weclapp\Model\DispositionInfoAvailabilityType**](DispositionInfoAvailabilityType.md) |  | [optional]
 **group_name** | **string** |  | [optional]
 **picks** | [**\kruegge82\weclapp\Model\ItemPick[]**](ItemPick.md) |  | [optional]
 **purchase_order_item_id** | **string** |  | [optional]

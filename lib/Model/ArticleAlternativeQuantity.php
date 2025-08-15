@@ -324,16 +324,16 @@ class ArticleAlternativeQuantity implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['minimum_order_quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['minimum_order_quantity'])) {
-            $invalidProperties[] = "invalid value for 'minimum_order_quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['minimum_order_quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['minimum_order_quantity'])) {
+            $invalidProperties[] = "invalid value for 'minimum_order_quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['minimum_stock_quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['minimum_stock_quantity'])) {
-            $invalidProperties[] = "invalid value for 'minimum_stock_quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['minimum_stock_quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['minimum_stock_quantity'])) {
+            $invalidProperties[] = "invalid value for 'minimum_stock_quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['target_stock_quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['target_stock_quantity'])) {
-            $invalidProperties[] = "invalid value for 'target_stock_quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['target_stock_quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['target_stock_quantity'])) {
+            $invalidProperties[] = "invalid value for 'target_stock_quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -482,8 +482,8 @@ class ArticleAlternativeQuantity implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable minimum_order_quantity cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($minimum_order_quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$minimum_order_quantity when calling ArticleAlternativeQuantity., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($minimum_order_quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$minimum_order_quantity when calling ArticleAlternativeQuantity., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['minimum_order_quantity'] = $minimum_order_quantity;
@@ -514,8 +514,8 @@ class ArticleAlternativeQuantity implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable minimum_stock_quantity cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($minimum_stock_quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$minimum_stock_quantity when calling ArticleAlternativeQuantity., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($minimum_stock_quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$minimum_stock_quantity when calling ArticleAlternativeQuantity., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['minimum_stock_quantity'] = $minimum_stock_quantity;
@@ -546,8 +546,8 @@ class ArticleAlternativeQuantity implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable target_stock_quantity cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($target_stock_quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$target_stock_quantity when calling ArticleAlternativeQuantity., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($target_stock_quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$target_stock_quantity when calling ArticleAlternativeQuantity., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['target_stock_quantity'] = $target_stock_quantity;

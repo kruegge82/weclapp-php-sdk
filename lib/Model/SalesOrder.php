@@ -107,8 +107,6 @@ class SalesOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'advance_payment_amount' => 'float',
         'advance_payment_status' => '\kruegge82\weclapp\Model\AdvancePaymentStatus',
         'apply_shipping_costs_only_once' => 'bool',
-        'availability' => '\kruegge82\weclapp\Model\DispositionInfoAvailabilityType',
-        'availability_for_all_warehouses' => '\kruegge82\weclapp\Model\DispositionInfoAvailabilityType',
         'cash_account_id' => 'string',
         'customer_habitual_exporter_letter_of_intent_id' => 'string',
         'default_shipping_return_carrier_id' => 'string',
@@ -204,8 +202,6 @@ class SalesOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'advance_payment_amount' => 'decimal',
         'advance_payment_status' => null,
         'apply_shipping_costs_only_once' => null,
-        'availability' => null,
-        'availability_for_all_warehouses' => null,
         'cash_account_id' => null,
         'customer_habitual_exporter_letter_of_intent_id' => null,
         'default_shipping_return_carrier_id' => null,
@@ -299,8 +295,6 @@ class SalesOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'advance_payment_amount' => false,
         'advance_payment_status' => false,
         'apply_shipping_costs_only_once' => false,
-        'availability' => false,
-        'availability_for_all_warehouses' => false,
         'cash_account_id' => false,
         'customer_habitual_exporter_letter_of_intent_id' => false,
         'default_shipping_return_carrier_id' => false,
@@ -474,8 +468,6 @@ class SalesOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'advance_payment_amount' => 'advancePaymentAmount',
         'advance_payment_status' => 'advancePaymentStatus',
         'apply_shipping_costs_only_once' => 'applyShippingCostsOnlyOnce',
-        'availability' => 'availability',
-        'availability_for_all_warehouses' => 'availabilityForAllWarehouses',
         'cash_account_id' => 'cashAccountId',
         'customer_habitual_exporter_letter_of_intent_id' => 'customerHabitualExporterLetterOfIntentId',
         'default_shipping_return_carrier_id' => 'defaultShippingReturnCarrierId',
@@ -569,8 +561,6 @@ class SalesOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'advance_payment_amount' => 'setAdvancePaymentAmount',
         'advance_payment_status' => 'setAdvancePaymentStatus',
         'apply_shipping_costs_only_once' => 'setApplyShippingCostsOnlyOnce',
-        'availability' => 'setAvailability',
-        'availability_for_all_warehouses' => 'setAvailabilityForAllWarehouses',
         'cash_account_id' => 'setCashAccountId',
         'customer_habitual_exporter_letter_of_intent_id' => 'setCustomerHabitualExporterLetterOfIntentId',
         'default_shipping_return_carrier_id' => 'setDefaultShippingReturnCarrierId',
@@ -664,8 +654,6 @@ class SalesOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'advance_payment_amount' => 'getAdvancePaymentAmount',
         'advance_payment_status' => 'getAdvancePaymentStatus',
         'apply_shipping_costs_only_once' => 'getApplyShippingCostsOnlyOnce',
-        'availability' => 'getAvailability',
-        'availability_for_all_warehouses' => 'getAvailabilityForAllWarehouses',
         'cash_account_id' => 'getCashAccountId',
         'customer_habitual_exporter_letter_of_intent_id' => 'getCustomerHabitualExporterLetterOfIntentId',
         'default_shipping_return_carrier_id' => 'getDefaultShippingReturnCarrierId',
@@ -810,8 +798,6 @@ class SalesOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('advance_payment_amount', $data ?? [], null);
         $this->setIfExists('advance_payment_status', $data ?? [], null);
         $this->setIfExists('apply_shipping_costs_only_once', $data ?? [], null);
-        $this->setIfExists('availability', $data ?? [], null);
-        $this->setIfExists('availability_for_all_warehouses', $data ?? [], null);
         $this->setIfExists('cash_account_id', $data ?? [], null);
         $this->setIfExists('customer_habitual_exporter_letter_of_intent_id', $data ?? [], null);
         $this->setIfExists('default_shipping_return_carrier_id', $data ?? [], null);
@@ -897,32 +883,32 @@ class SalesOrder implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'record_opening', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['currency_conversion_rate']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['currency_conversion_rate'])) {
-            $invalidProperties[] = "invalid value for 'currency_conversion_rate', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['currency_conversion_rate']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['currency_conversion_rate'])) {
+            $invalidProperties[] = "invalid value for 'currency_conversion_rate', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['gross_amount']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['gross_amount'])) {
-            $invalidProperties[] = "invalid value for 'gross_amount', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['gross_amount']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['gross_amount'])) {
+            $invalidProperties[] = "invalid value for 'gross_amount', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['gross_amount_in_company_currency']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['gross_amount_in_company_currency'])) {
-            $invalidProperties[] = "invalid value for 'gross_amount_in_company_currency', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['gross_amount_in_company_currency']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['gross_amount_in_company_currency'])) {
+            $invalidProperties[] = "invalid value for 'gross_amount_in_company_currency', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['header_discount']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['header_discount'])) {
-            $invalidProperties[] = "invalid value for 'header_discount', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['header_discount']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['header_discount'])) {
+            $invalidProperties[] = "invalid value for 'header_discount', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['header_surcharge']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['header_surcharge'])) {
-            $invalidProperties[] = "invalid value for 'header_surcharge', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['header_surcharge']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['header_surcharge'])) {
+            $invalidProperties[] = "invalid value for 'header_surcharge', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['net_amount']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['net_amount'])) {
-            $invalidProperties[] = "invalid value for 'net_amount', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['net_amount']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['net_amount'])) {
+            $invalidProperties[] = "invalid value for 'net_amount', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['net_amount_in_company_currency']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['net_amount_in_company_currency'])) {
-            $invalidProperties[] = "invalid value for 'net_amount_in_company_currency', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['net_amount_in_company_currency']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['net_amount_in_company_currency'])) {
+            $invalidProperties[] = "invalid value for 'net_amount_in_company_currency', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['commission']) && (mb_strlen($this->container['commission']) > 255)) {
@@ -1443,8 +1429,8 @@ class SalesOrder implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable currency_conversion_rate cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($currency_conversion_rate)))) {
-            throw new \InvalidArgumentException("invalid value for \$currency_conversion_rate when calling SalesOrder., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($currency_conversion_rate)))) {
+            throw new \InvalidArgumentException("invalid value for \$currency_conversion_rate when calling SalesOrder., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['currency_conversion_rate'] = $currency_conversion_rate;
@@ -1475,8 +1461,8 @@ class SalesOrder implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable gross_amount cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($gross_amount)))) {
-            throw new \InvalidArgumentException("invalid value for \$gross_amount when calling SalesOrder., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($gross_amount)))) {
+            throw new \InvalidArgumentException("invalid value for \$gross_amount when calling SalesOrder., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['gross_amount'] = $gross_amount;
@@ -1507,8 +1493,8 @@ class SalesOrder implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable gross_amount_in_company_currency cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($gross_amount_in_company_currency)))) {
-            throw new \InvalidArgumentException("invalid value for \$gross_amount_in_company_currency when calling SalesOrder., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($gross_amount_in_company_currency)))) {
+            throw new \InvalidArgumentException("invalid value for \$gross_amount_in_company_currency when calling SalesOrder., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['gross_amount_in_company_currency'] = $gross_amount_in_company_currency;
@@ -1539,8 +1525,8 @@ class SalesOrder implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable header_discount cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($header_discount)))) {
-            throw new \InvalidArgumentException("invalid value for \$header_discount when calling SalesOrder., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($header_discount)))) {
+            throw new \InvalidArgumentException("invalid value for \$header_discount when calling SalesOrder., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['header_discount'] = $header_discount;
@@ -1571,8 +1557,8 @@ class SalesOrder implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable header_surcharge cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($header_surcharge)))) {
-            throw new \InvalidArgumentException("invalid value for \$header_surcharge when calling SalesOrder., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($header_surcharge)))) {
+            throw new \InvalidArgumentException("invalid value for \$header_surcharge when calling SalesOrder., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['header_surcharge'] = $header_surcharge;
@@ -1603,8 +1589,8 @@ class SalesOrder implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable net_amount cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($net_amount)))) {
-            throw new \InvalidArgumentException("invalid value for \$net_amount when calling SalesOrder., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($net_amount)))) {
+            throw new \InvalidArgumentException("invalid value for \$net_amount when calling SalesOrder., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['net_amount'] = $net_amount;
@@ -1635,8 +1621,8 @@ class SalesOrder implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable net_amount_in_company_currency cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($net_amount_in_company_currency)))) {
-            throw new \InvalidArgumentException("invalid value for \$net_amount_in_company_currency when calling SalesOrder., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($net_amount_in_company_currency)))) {
+            throw new \InvalidArgumentException("invalid value for \$net_amount_in_company_currency when calling SalesOrder., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['net_amount_in_company_currency'] = $net_amount_in_company_currency;
@@ -2350,60 +2336,6 @@ class SalesOrder implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable apply_shipping_costs_only_once cannot be null');
         }
         $this->container['apply_shipping_costs_only_once'] = $apply_shipping_costs_only_once;
-
-        return $this;
-    }
-
-    /**
-     * Gets availability
-     *
-     * @return \kruegge82\weclapp\Model\DispositionInfoAvailabilityType|null
-     */
-    public function getAvailability()
-    {
-        return $this->container['availability'];
-    }
-
-    /**
-     * Sets availability
-     *
-     * @param \kruegge82\weclapp\Model\DispositionInfoAvailabilityType|null $availability availability
-     *
-     * @return self
-     */
-    public function setAvailability($availability)
-    {
-        if (is_null($availability)) {
-            throw new \InvalidArgumentException('non-nullable availability cannot be null');
-        }
-        $this->container['availability'] = $availability;
-
-        return $this;
-    }
-
-    /**
-     * Gets availability_for_all_warehouses
-     *
-     * @return \kruegge82\weclapp\Model\DispositionInfoAvailabilityType|null
-     */
-    public function getAvailabilityForAllWarehouses()
-    {
-        return $this->container['availability_for_all_warehouses'];
-    }
-
-    /**
-     * Sets availability_for_all_warehouses
-     *
-     * @param \kruegge82\weclapp\Model\DispositionInfoAvailabilityType|null $availability_for_all_warehouses availability_for_all_warehouses
-     *
-     * @return self
-     */
-    public function setAvailabilityForAllWarehouses($availability_for_all_warehouses)
-    {
-        if (is_null($availability_for_all_warehouses)) {
-            throw new \InvalidArgumentException('non-nullable availability_for_all_warehouses cannot be null');
-        }
-        $this->container['availability_for_all_warehouses'] = $availability_for_all_warehouses;
 
         return $this;
     }

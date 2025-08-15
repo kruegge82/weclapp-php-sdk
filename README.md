@@ -250,6 +250,12 @@ Class | Method | HTTP request | Description
 *ContractTerminationReasonApi* | [**contractTerminationReasonIdIdGet**](docs/Api/ContractTerminationReasonApi.md#contractterminationreasonididget) | **GET** /contractTerminationReason/id/{id} | query a specific contractTerminationReason
 *ContractTerminationReasonApi* | [**contractTerminationReasonIdIdPut**](docs/Api/ContractTerminationReasonApi.md#contractterminationreasonididput) | **PUT** /contractTerminationReason/id/{id} | update a contractTerminationReason
 *ContractTerminationReasonApi* | [**contractTerminationReasonPost**](docs/Api/ContractTerminationReasonApi.md#contractterminationreasonpost) | **POST** /contractTerminationReason | create a contractTerminationReason
+*ContractTypeApi* | [**contractTypeCountGet**](docs/Api/ContractTypeApi.md#contracttypecountget) | **GET** /contractType/count | count contractType
+*ContractTypeApi* | [**contractTypeGet**](docs/Api/ContractTypeApi.md#contracttypeget) | **GET** /contractType | query contractType
+*ContractTypeApi* | [**contractTypeIdIdDelete**](docs/Api/ContractTypeApi.md#contracttypeididdelete) | **DELETE** /contractType/id/{id} | delete a contractType
+*ContractTypeApi* | [**contractTypeIdIdGet**](docs/Api/ContractTypeApi.md#contracttypeididget) | **GET** /contractType/id/{id} | query a specific contractType
+*ContractTypeApi* | [**contractTypeIdIdPut**](docs/Api/ContractTypeApi.md#contracttypeididput) | **PUT** /contractType/id/{id} | update a contractType
+*ContractTypeApi* | [**contractTypePost**](docs/Api/ContractTypeApi.md#contracttypepost) | **POST** /contractType | create a contractType
 *CostCenterApi* | [**costCenterCountGet**](docs/Api/CostCenterApi.md#costcentercountget) | **GET** /costCenter/count | count costCenter
 *CostCenterApi* | [**costCenterGet**](docs/Api/CostCenterApi.md#costcenterget) | **GET** /costCenter | query costCenter
 *CostCenterApi* | [**costCenterIdIdDelete**](docs/Api/CostCenterApi.md#costcenterididdelete) | **DELETE** /costCenter/id/{id} | delete a costCenter
@@ -555,6 +561,7 @@ Class | Method | HTTP request | Description
 *PropertyTranslationApi* | [**propertyTranslationUpdatePropertyTranslationsPost**](docs/Api/PropertyTranslationApi.md#propertytranslationupdatepropertytranslationspost) | **POST** /propertyTranslation/updatePropertyTranslations | 
 *PurchaseInvoiceApi* | [**purchaseInvoiceCountGet**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoicecountget) | **GET** /purchaseInvoice/count | count purchaseInvoice
 *PurchaseInvoiceApi* | [**purchaseInvoiceGet**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceget) | **GET** /purchaseInvoice | query purchaseInvoice
+*PurchaseInvoiceApi* | [**purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididconvertpurchaseinvoicetocreditnotepost) | **POST** /purchaseInvoice/id/{id}/convertPurchaseInvoiceToCreditNote | 
 *PurchaseInvoiceApi* | [**purchaseInvoiceIdIdCreateContractPost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididcreatecontractpost) | **POST** /purchaseInvoice/id/{id}/createContract | 
 *PurchaseInvoiceApi* | [**purchaseInvoiceIdIdCreateCreditNotePost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididcreatecreditnotepost) | **POST** /purchaseInvoice/id/{id}/createCreditNote | 
 *PurchaseInvoiceApi* | [**purchaseInvoiceIdIdDelete**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididdelete) | **DELETE** /purchaseInvoice/id/{id} | delete a purchaseInvoice
@@ -935,9 +942,11 @@ Class | Method | HTTP request | Description
 *UserApi* | [**userCountGet**](docs/Api/UserApi.md#usercountget) | **GET** /user/count | count user
 *UserApi* | [**userCurrentUserGet**](docs/Api/UserApi.md#usercurrentuserget) | **GET** /user/currentUser | 
 *UserApi* | [**userGet**](docs/Api/UserApi.md#userget) | **GET** /user | query user
+*UserApi* | [**userIdIdDeleteMfaDevicePost**](docs/Api/UserApi.md#userididdeletemfadevicepost) | **POST** /user/id/{id}/deleteMfaDevice | 
 *UserApi* | [**userIdIdGet**](docs/Api/UserApi.md#userididget) | **GET** /user/id/{id} | query a specific user
 *UserApi* | [**userIdIdInvitePost**](docs/Api/UserApi.md#userididinvitepost) | **POST** /user/id/{id}/invite | 
 *UserApi* | [**userIdIdPut**](docs/Api/UserApi.md#userididput) | **PUT** /user/id/{id} | update a user
+*UserApi* | [**userIdIdReadMfaDevicesGet**](docs/Api/UserApi.md#userididreadmfadevicesget) | **GET** /user/id/{id}/readMfaDevices | 
 *UserApi* | [**userIdIdSoftDeletePost**](docs/Api/UserApi.md#userididsoftdeletepost) | **POST** /user/id/{id}/softDelete | 
 *UserApi* | [**userIdIdUserImageGet**](docs/Api/UserApi.md#userididuserimageget) | **GET** /user/id/{id}/userImage | 
 *UserApi* | [**userIdIdUserImageThumbnailGet**](docs/Api/UserApi.md#userididuserimagethumbnailget) | **GET** /user/id/{id}/userImageThumbnail | 
@@ -1125,6 +1134,8 @@ Class | Method | HTTP request | Description
 - [ContractReminderType](docs/Model/ContractReminderType.md)
 - [ContractSoftframe](docs/Model/ContractSoftframe.md)
 - [ContractStatus](docs/Model/ContractStatus.md)
+- [ContractType](docs/Model/ContractType.md)
+- [ContractTypeGet200Response](docs/Model/ContractTypeGet200Response.md)
 - [ContractUnitType](docs/Model/ContractUnitType.md)
 - [CostCenter](docs/Model/CostCenter.md)
 - [CostCenterGet200Response](docs/Model/CostCenterGet200Response.md)
@@ -1228,6 +1239,7 @@ Class | Method | HTTP request | Description
 - [InventoryTransportReference](docs/Model/InventoryTransportReference.md)
 - [InventoryTransportReferenceGet200Response](docs/Model/InventoryTransportReferenceGet200Response.md)
 - [InvoicingType](docs/Model/InvoicingType.md)
+- [ItemAvailability](docs/Model/ItemAvailability.md)
 - [ItemPick](docs/Model/ItemPick.md)
 - [ItemType](docs/Model/ItemType.md)
 - [JobAbortGet200Response](docs/Model/JobAbortGet200Response.md)
@@ -1308,6 +1320,7 @@ Class | Method | HTTP request | Description
 - [ProductionOrderFastProductionBookingPost200Response](docs/Model/ProductionOrderFastProductionBookingPost200Response.md)
 - [ProductionOrderFastProductionBookingPostRequest](docs/Model/ProductionOrderFastProductionBookingPostRequest.md)
 - [ProductionOrderGet200Response](docs/Model/ProductionOrderGet200Response.md)
+- [ProductionOrderGet200ResponseAdditionalProperties](docs/Model/ProductionOrderGet200ResponseAdditionalProperties.md)
 - [ProductionOrderItem](docs/Model/ProductionOrderItem.md)
 - [ProductionOrderItemStatus](docs/Model/ProductionOrderItemStatus.md)
 - [ProductionOrderStatusHistory](docs/Model/ProductionOrderStatusHistory.md)
@@ -1447,6 +1460,7 @@ Class | Method | HTTP request | Description
 - [SalesOrderGet200ResponseAdditionalProperties](docs/Model/SalesOrderGet200ResponseAdditionalProperties.md)
 - [SalesOrderIdIdCalculateSalesPricesPostRequest](docs/Model/SalesOrderIdIdCalculateSalesPricesPostRequest.md)
 - [SalesOrderIdIdCreateDropshippingPostRequest](docs/Model/SalesOrderIdIdCreateDropshippingPostRequest.md)
+- [SalesOrderIdIdCreateProductionOrdersPost200Response](docs/Model/SalesOrderIdIdCreateProductionOrdersPost200Response.md)
 - [SalesOrderIdIdCreateProductionOrdersPostRequest](docs/Model/SalesOrderIdIdCreateProductionOrdersPostRequest.md)
 - [SalesOrderIdIdCreatePurchaseOrderPostRequest](docs/Model/SalesOrderIdIdCreatePurchaseOrderPostRequest.md)
 - [SalesOrderIdIdCreatePurchaseOrderRequestPostRequest](docs/Model/SalesOrderIdIdCreatePurchaseOrderRequestPostRequest.md)
@@ -1571,6 +1585,10 @@ Class | Method | HTTP request | Description
 - [User](docs/Model/User.md)
 - [UserCurrentUserGet200Response](docs/Model/UserCurrentUserGet200Response.md)
 - [UserGet200Response](docs/Model/UserGet200Response.md)
+- [UserIdIdDeleteMfaDevicePostRequest](docs/Model/UserIdIdDeleteMfaDevicePostRequest.md)
+- [UserIdIdReadMfaDevicesGet200Response](docs/Model/UserIdIdReadMfaDevicesGet200Response.md)
+- [UserMfaDevice](docs/Model/UserMfaDevice.md)
+- [UserMfaDeviceType](docs/Model/UserMfaDeviceType.md)
 - [UserRole](docs/Model/UserRole.md)
 - [UserRoleGet200Response](docs/Model/UserRoleGet200Response.md)
 - [UserStatus](docs/Model/UserStatus.md)

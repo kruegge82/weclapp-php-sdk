@@ -73,6 +73,8 @@ class InternalShippingCarrier
 
     public const DHL_EXPRESS_ONE_DAY_EARLY = 'DHL_EXPRESS_ONE_DAY_EARLY';
 
+    public const DHL_KLEINPAKET = 'DHL_KLEINPAKET';
+
     public const DHL_KLEINPAKET_EV = 'DHL_KLEINPAKET_EV';
 
     public const DHL_PAKET_EV = 'DHL_PAKET_EV';
@@ -161,6 +163,7 @@ class InternalShippingCarrier
             self::DHL_EXPRESS_ECONOMY_SELECT,
             self::DHL_EXPRESS_ONE_DAY,
             self::DHL_EXPRESS_ONE_DAY_EARLY,
+            self::DHL_KLEINPAKET,
             self::DHL_KLEINPAKET_EV,
             self::DHL_PAKET_EV,
             self::DHL_PAKET_INTERNATIONAL_EV,

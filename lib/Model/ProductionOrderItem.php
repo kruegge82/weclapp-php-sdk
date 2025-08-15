@@ -69,8 +69,6 @@ class ProductionOrderItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'quantity' => 'float',
         'actual_pick_date' => 'int',
         'actual_quantity' => 'float',
-        'availability' => '\kruegge82\weclapp\Model\DispositionInfoAvailabilityType',
-        'availability_for_all_warehouses' => '\kruegge82\weclapp\Model\DispositionInfoAvailabilityType',
         'picks' => '\kruegge82\weclapp\Model\ItemPick[]',
         'target_pick_date' => 'int',
         'target_quantity' => 'float'
@@ -95,8 +93,6 @@ class ProductionOrderItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'quantity' => 'decimal',
         'actual_pick_date' => 'timestamp',
         'actual_quantity' => 'decimal',
-        'availability' => null,
-        'availability_for_all_warehouses' => null,
         'picks' => null,
         'target_pick_date' => 'timestamp',
         'target_quantity' => 'decimal'
@@ -119,8 +115,6 @@ class ProductionOrderItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'quantity' => false,
         'actual_pick_date' => false,
         'actual_quantity' => false,
-        'availability' => false,
-        'availability_for_all_warehouses' => false,
         'picks' => false,
         'target_pick_date' => false,
         'target_quantity' => false
@@ -223,8 +217,6 @@ class ProductionOrderItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'quantity' => 'quantity',
         'actual_pick_date' => 'actualPickDate',
         'actual_quantity' => 'actualQuantity',
-        'availability' => 'availability',
-        'availability_for_all_warehouses' => 'availabilityForAllWarehouses',
         'picks' => 'picks',
         'target_pick_date' => 'targetPickDate',
         'target_quantity' => 'targetQuantity'
@@ -247,8 +239,6 @@ class ProductionOrderItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'quantity' => 'setQuantity',
         'actual_pick_date' => 'setActualPickDate',
         'actual_quantity' => 'setActualQuantity',
-        'availability' => 'setAvailability',
-        'availability_for_all_warehouses' => 'setAvailabilityForAllWarehouses',
         'picks' => 'setPicks',
         'target_pick_date' => 'setTargetPickDate',
         'target_quantity' => 'setTargetQuantity'
@@ -271,8 +261,6 @@ class ProductionOrderItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'quantity' => 'getQuantity',
         'actual_pick_date' => 'getActualPickDate',
         'actual_quantity' => 'getActualQuantity',
-        'availability' => 'getAvailability',
-        'availability_for_all_warehouses' => 'getAvailabilityForAllWarehouses',
         'picks' => 'getPicks',
         'target_pick_date' => 'getTargetPickDate',
         'target_quantity' => 'getTargetQuantity'
@@ -346,8 +334,6 @@ class ProductionOrderItem implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('quantity', $data ?? [], null);
         $this->setIfExists('actual_pick_date', $data ?? [], null);
         $this->setIfExists('actual_quantity', $data ?? [], null);
-        $this->setIfExists('availability', $data ?? [], null);
-        $this->setIfExists('availability_for_all_warehouses', $data ?? [], null);
         $this->setIfExists('picks', $data ?? [], null);
         $this->setIfExists('target_pick_date', $data ?? [], null);
         $this->setIfExists('target_quantity', $data ?? [], null);
@@ -384,16 +370,16 @@ class ProductionOrderItem implements ModelInterface, ArrayAccess, \JsonSerializa
             $invalidProperties[] = "invalid value for 'note', the character length must be smaller than or equal to 1000.";
         }
 
-        if (!is_null($this->container['quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['quantity'])) {
-            $invalidProperties[] = "invalid value for 'quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['quantity'])) {
+            $invalidProperties[] = "invalid value for 'quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['actual_quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['actual_quantity'])) {
-            $invalidProperties[] = "invalid value for 'actual_quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['actual_quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['actual_quantity'])) {
+            $invalidProperties[] = "invalid value for 'actual_quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['target_quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['target_quantity'])) {
-            $invalidProperties[] = "invalid value for 'target_quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['target_quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['target_quantity'])) {
+            $invalidProperties[] = "invalid value for 'target_quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -654,8 +640,8 @@ class ProductionOrderItem implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable quantity cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$quantity when calling ProductionOrderItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$quantity when calling ProductionOrderItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['quantity'] = $quantity;
@@ -713,65 +699,11 @@ class ProductionOrderItem implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable actual_quantity cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($actual_quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$actual_quantity when calling ProductionOrderItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($actual_quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$actual_quantity when calling ProductionOrderItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['actual_quantity'] = $actual_quantity;
-
-        return $this;
-    }
-
-    /**
-     * Gets availability
-     *
-     * @return \kruegge82\weclapp\Model\DispositionInfoAvailabilityType|null
-     */
-    public function getAvailability()
-    {
-        return $this->container['availability'];
-    }
-
-    /**
-     * Sets availability
-     *
-     * @param \kruegge82\weclapp\Model\DispositionInfoAvailabilityType|null $availability availability
-     *
-     * @return self
-     */
-    public function setAvailability($availability)
-    {
-        if (is_null($availability)) {
-            throw new \InvalidArgumentException('non-nullable availability cannot be null');
-        }
-        $this->container['availability'] = $availability;
-
-        return $this;
-    }
-
-    /**
-     * Gets availability_for_all_warehouses
-     *
-     * @return \kruegge82\weclapp\Model\DispositionInfoAvailabilityType|null
-     */
-    public function getAvailabilityForAllWarehouses()
-    {
-        return $this->container['availability_for_all_warehouses'];
-    }
-
-    /**
-     * Sets availability_for_all_warehouses
-     *
-     * @param \kruegge82\weclapp\Model\DispositionInfoAvailabilityType|null $availability_for_all_warehouses availability_for_all_warehouses
-     *
-     * @return self
-     */
-    public function setAvailabilityForAllWarehouses($availability_for_all_warehouses)
-    {
-        if (is_null($availability_for_all_warehouses)) {
-            throw new \InvalidArgumentException('non-nullable availability_for_all_warehouses cannot be null');
-        }
-        $this->container['availability_for_all_warehouses'] = $availability_for_all_warehouses;
 
         return $this;
     }
@@ -853,8 +785,8 @@ class ProductionOrderItem implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable target_quantity cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($target_quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$target_quantity when calling ProductionOrderItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($target_quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$target_quantity when calling ProductionOrderItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['target_quantity'] = $target_quantity;

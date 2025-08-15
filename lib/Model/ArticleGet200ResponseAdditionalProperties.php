@@ -61,6 +61,7 @@ class ArticleGet200ResponseAdditionalProperties implements ModelInterface, Array
         'aggregate_stock' => '\kruegge82\weclapp\Model\AggregateStock[][]',
         'average_price' => '\kruegge82\weclapp\Model\Amount[]',
         'current_sales_price' => '\kruegge82\weclapp\Model\PriceData[]',
+        'current_stock_minus_total_sales_volume' => 'float[]',
         'pickable_stock_quantity' => '\kruegge82\weclapp\Model\WarehouseQuantity[][]',
         'reserved_stock_quantity' => '\kruegge82\weclapp\Model\WarehouseQuantity[][]',
         'total_stock_quantity' => '\kruegge82\weclapp\Model\WarehouseQuantity[][]'
@@ -77,6 +78,7 @@ class ArticleGet200ResponseAdditionalProperties implements ModelInterface, Array
         'aggregate_stock' => null,
         'average_price' => null,
         'current_sales_price' => null,
+        'current_stock_minus_total_sales_volume' => 'decimal',
         'pickable_stock_quantity' => null,
         'reserved_stock_quantity' => null,
         'total_stock_quantity' => null
@@ -91,6 +93,7 @@ class ArticleGet200ResponseAdditionalProperties implements ModelInterface, Array
         'aggregate_stock' => false,
         'average_price' => false,
         'current_sales_price' => false,
+        'current_stock_minus_total_sales_volume' => false,
         'pickable_stock_quantity' => false,
         'reserved_stock_quantity' => false,
         'total_stock_quantity' => false
@@ -185,6 +188,7 @@ class ArticleGet200ResponseAdditionalProperties implements ModelInterface, Array
         'aggregate_stock' => 'aggregateStock',
         'average_price' => 'averagePrice',
         'current_sales_price' => 'currentSalesPrice',
+        'current_stock_minus_total_sales_volume' => 'currentStockMinusTotalSalesVolume',
         'pickable_stock_quantity' => 'pickableStockQuantity',
         'reserved_stock_quantity' => 'reservedStockQuantity',
         'total_stock_quantity' => 'totalStockQuantity'
@@ -199,6 +203,7 @@ class ArticleGet200ResponseAdditionalProperties implements ModelInterface, Array
         'aggregate_stock' => 'setAggregateStock',
         'average_price' => 'setAveragePrice',
         'current_sales_price' => 'setCurrentSalesPrice',
+        'current_stock_minus_total_sales_volume' => 'setCurrentStockMinusTotalSalesVolume',
         'pickable_stock_quantity' => 'setPickableStockQuantity',
         'reserved_stock_quantity' => 'setReservedStockQuantity',
         'total_stock_quantity' => 'setTotalStockQuantity'
@@ -213,6 +218,7 @@ class ArticleGet200ResponseAdditionalProperties implements ModelInterface, Array
         'aggregate_stock' => 'getAggregateStock',
         'average_price' => 'getAveragePrice',
         'current_sales_price' => 'getCurrentSalesPrice',
+        'current_stock_minus_total_sales_volume' => 'getCurrentStockMinusTotalSalesVolume',
         'pickable_stock_quantity' => 'getPickableStockQuantity',
         'reserved_stock_quantity' => 'getReservedStockQuantity',
         'total_stock_quantity' => 'getTotalStockQuantity'
@@ -278,6 +284,7 @@ class ArticleGet200ResponseAdditionalProperties implements ModelInterface, Array
         $this->setIfExists('aggregate_stock', $data ?? [], null);
         $this->setIfExists('average_price', $data ?? [], null);
         $this->setIfExists('current_sales_price', $data ?? [], null);
+        $this->setIfExists('current_stock_minus_total_sales_volume', $data ?? [], null);
         $this->setIfExists('pickable_stock_quantity', $data ?? [], null);
         $this->setIfExists('reserved_stock_quantity', $data ?? [], null);
         $this->setIfExists('total_stock_quantity', $data ?? [], null);
@@ -402,6 +409,33 @@ class ArticleGet200ResponseAdditionalProperties implements ModelInterface, Array
             throw new \InvalidArgumentException('non-nullable current_sales_price cannot be null');
         }
         $this->container['current_sales_price'] = $current_sales_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets current_stock_minus_total_sales_volume
+     *
+     * @return float[]|null
+     */
+    public function getCurrentStockMinusTotalSalesVolume()
+    {
+        return $this->container['current_stock_minus_total_sales_volume'];
+    }
+
+    /**
+     * Sets current_stock_minus_total_sales_volume
+     *
+     * @param float[]|null $current_stock_minus_total_sales_volume current_stock_minus_total_sales_volume
+     *
+     * @return self
+     */
+    public function setCurrentStockMinusTotalSalesVolume($current_stock_minus_total_sales_volume)
+    {
+        if (is_null($current_stock_minus_total_sales_volume)) {
+            throw new \InvalidArgumentException('non-nullable current_stock_minus_total_sales_volume cannot be null');
+        }
+        $this->container['current_stock_minus_total_sales_volume'] = $current_stock_minus_total_sales_volume;
 
         return $this;
     }

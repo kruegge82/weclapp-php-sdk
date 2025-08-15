@@ -168,7 +168,7 @@ try {
 ## `salesOrderGet()`
 
 ```php
-salesOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\SalesOrderGet200Response
+salesOrderGet($page, $page_size, $serialize_nulls, $ignore_missing_properties, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\SalesOrderGet200Response
 ```
 
 query salesOrder
@@ -197,6 +197,7 @@ $apiInstance = new kruegge82\weclapp\Api\SalesOrderApi(
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
+$ignore_missing_properties = True; // bool
 $sort = 'sort_example'; // string
 $filter = 'filter_example'; // string
 $properties = 'properties_example'; // string
@@ -204,7 +205,7 @@ $include_referenced_entities = 'include_referenced_entities_example'; // string
 $additional_properties = 'additional_properties_example'; // string
 
 try {
-    $result = $apiInstance->salesOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
+    $result = $apiInstance->salesOrderGet($page, $page_size, $serialize_nulls, $ignore_missing_properties, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SalesOrderApi->salesOrderGet: ', $e->getMessage(), PHP_EOL;
@@ -218,6 +219,7 @@ try {
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
+| **ignore_missing_properties** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
 | **filter** | **string**|  | [optional] |
 | **properties** | **string**|  | [optional] |
@@ -802,7 +804,7 @@ try {
 ## `salesOrderIdIdCreateProductionOrdersPost()`
 
 ```php
-salesOrderIdIdCreateProductionOrdersPost($id, $sales_order_id_id_create_production_orders_post_request): \kruegge82\weclapp\Model\ProductionOrderGet200Response
+salesOrderIdIdCreateProductionOrdersPost($id, $sales_order_id_id_create_production_orders_post_request): \kruegge82\weclapp\Model\SalesOrderIdIdCreateProductionOrdersPost200Response
 ```
 
 
@@ -846,7 +848,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\ProductionOrderGet200Response**](../Model/ProductionOrderGet200Response.md)
+[**\kruegge82\weclapp\Model\SalesOrderIdIdCreateProductionOrdersPost200Response**](../Model/SalesOrderIdIdCreateProductionOrdersPost200Response.md)
 
 ### Authorization
 

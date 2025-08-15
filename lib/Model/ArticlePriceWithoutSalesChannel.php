@@ -370,12 +370,12 @@ class ArticlePriceWithoutSalesChannel implements ModelInterface, ArrayAccess, \J
             $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['price']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['price'])) {
-            $invalidProperties[] = "invalid value for 'price', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['price']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['price'])) {
+            $invalidProperties[] = "invalid value for 'price', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['price_scale_value']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['price_scale_value'])) {
-            $invalidProperties[] = "invalid value for 'price_scale_value', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['price_scale_value']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['price_scale_value'])) {
+            $invalidProperties[] = "invalid value for 'price_scale_value', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -663,8 +663,8 @@ class ArticlePriceWithoutSalesChannel implements ModelInterface, ArrayAccess, \J
             throw new \InvalidArgumentException('non-nullable price cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($price)))) {
-            throw new \InvalidArgumentException("invalid value for \$price when calling ArticlePriceWithoutSalesChannel., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($price)))) {
+            throw new \InvalidArgumentException("invalid value for \$price when calling ArticlePriceWithoutSalesChannel., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['price'] = $price;
@@ -722,8 +722,8 @@ class ArticlePriceWithoutSalesChannel implements ModelInterface, ArrayAccess, \J
             throw new \InvalidArgumentException('non-nullable price_scale_value cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($price_scale_value)))) {
-            throw new \InvalidArgumentException("invalid value for \$price_scale_value when calling ArticlePriceWithoutSalesChannel., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($price_scale_value)))) {
+            throw new \InvalidArgumentException("invalid value for \$price_scale_value when calling ArticlePriceWithoutSalesChannel., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['price_scale_value'] = $price_scale_value;

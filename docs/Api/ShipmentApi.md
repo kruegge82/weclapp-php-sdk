@@ -86,7 +86,7 @@ try {
 ## `shipmentGet()`
 
 ```php
-shipmentGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ShipmentGet200Response
+shipmentGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\ShipmentGet200Response
 ```
 
 query shipment
@@ -119,9 +119,10 @@ $sort = 'sort_example'; // string
 $filter = 'filter_example'; // string
 $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
+$additional_properties = 'additional_properties_example'; // string
 
 try {
-    $result = $apiInstance->shipmentGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->shipmentGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->shipmentGet: ', $e->getMessage(), PHP_EOL;
@@ -139,6 +140,7 @@ try {
 | **filter** | **string**|  | [optional] |
 | **properties** | **string**|  | [optional] |
 | **include_referenced_entities** | **string**|  | [optional] |
+| **additional_properties** | **string**|  | [optional] |
 
 ### Return type
 

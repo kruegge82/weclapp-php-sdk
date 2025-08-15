@@ -75,8 +75,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'title' => 'string',
         'unit_id' => 'string',
         'add_page_break_before' => 'bool',
-        'availability' => '\kruegge82\weclapp\Model\DispositionInfoAvailabilityType',
-        'availability_for_all_warehouses' => '\kruegge82\weclapp\Model\DispositionInfoAvailabilityType',
         'group_name' => 'string',
         'picks' => '\kruegge82\weclapp\Model\ItemPick[]',
         'purchase_order_item_id' => 'string',
@@ -113,8 +111,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'title' => null,
         'unit_id' => null,
         'add_page_break_before' => null,
-        'availability' => null,
-        'availability_for_all_warehouses' => null,
         'group_name' => null,
         'picks' => null,
         'purchase_order_item_id' => null,
@@ -149,8 +145,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'title' => false,
         'unit_id' => false,
         'add_page_break_before' => false,
-        'availability' => false,
-        'availability_for_all_warehouses' => false,
         'group_name' => false,
         'picks' => false,
         'purchase_order_item_id' => false,
@@ -265,8 +259,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'title' => 'title',
         'unit_id' => 'unitId',
         'add_page_break_before' => 'addPageBreakBefore',
-        'availability' => 'availability',
-        'availability_for_all_warehouses' => 'availabilityForAllWarehouses',
         'group_name' => 'groupName',
         'picks' => 'picks',
         'purchase_order_item_id' => 'purchaseOrderItemId',
@@ -301,8 +293,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'title' => 'setTitle',
         'unit_id' => 'setUnitId',
         'add_page_break_before' => 'setAddPageBreakBefore',
-        'availability' => 'setAvailability',
-        'availability_for_all_warehouses' => 'setAvailabilityForAllWarehouses',
         'group_name' => 'setGroupName',
         'picks' => 'setPicks',
         'purchase_order_item_id' => 'setPurchaseOrderItemId',
@@ -337,8 +327,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'title' => 'getTitle',
         'unit_id' => 'getUnitId',
         'add_page_break_before' => 'getAddPageBreakBefore',
-        'availability' => 'getAvailability',
-        'availability_for_all_warehouses' => 'getAvailabilityForAllWarehouses',
         'group_name' => 'getGroupName',
         'picks' => 'getPicks',
         'purchase_order_item_id' => 'getPurchaseOrderItemId',
@@ -424,8 +412,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('title', $data ?? [], null);
         $this->setIfExists('unit_id', $data ?? [], null);
         $this->setIfExists('add_page_break_before', $data ?? [], null);
-        $this->setIfExists('availability', $data ?? [], null);
-        $this->setIfExists('availability_for_all_warehouses', $data ?? [], null);
         $this->setIfExists('group_name', $data ?? [], null);
         $this->setIfExists('picks', $data ?? [], null);
         $this->setIfExists('purchase_order_item_id', $data ?? [], null);
@@ -468,8 +454,8 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'note', the character length must be smaller than or equal to 1000.";
         }
 
-        if (!is_null($this->container['quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['quantity'])) {
-            $invalidProperties[] = "invalid value for 'quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['quantity'])) {
+            $invalidProperties[] = "invalid value for 'quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 255)) {
@@ -746,8 +732,8 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable quantity cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$quantity when calling ShipmentItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$quantity when calling ShipmentItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['quantity'] = $quantity;
@@ -975,60 +961,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable add_page_break_before cannot be null');
         }
         $this->container['add_page_break_before'] = $add_page_break_before;
-
-        return $this;
-    }
-
-    /**
-     * Gets availability
-     *
-     * @return \kruegge82\weclapp\Model\DispositionInfoAvailabilityType|null
-     */
-    public function getAvailability()
-    {
-        return $this->container['availability'];
-    }
-
-    /**
-     * Sets availability
-     *
-     * @param \kruegge82\weclapp\Model\DispositionInfoAvailabilityType|null $availability availability
-     *
-     * @return self
-     */
-    public function setAvailability($availability)
-    {
-        if (is_null($availability)) {
-            throw new \InvalidArgumentException('non-nullable availability cannot be null');
-        }
-        $this->container['availability'] = $availability;
-
-        return $this;
-    }
-
-    /**
-     * Gets availability_for_all_warehouses
-     *
-     * @return \kruegge82\weclapp\Model\DispositionInfoAvailabilityType|null
-     */
-    public function getAvailabilityForAllWarehouses()
-    {
-        return $this->container['availability_for_all_warehouses'];
-    }
-
-    /**
-     * Sets availability_for_all_warehouses
-     *
-     * @param \kruegge82\weclapp\Model\DispositionInfoAvailabilityType|null $availability_for_all_warehouses availability_for_all_warehouses
-     *
-     * @return self
-     */
-    public function setAvailabilityForAllWarehouses($availability_for_all_warehouses)
-    {
-        if (is_null($availability_for_all_warehouses)) {
-            throw new \InvalidArgumentException('non-nullable availability_for_all_warehouses cannot be null');
-        }
-        $this->container['availability_for_all_warehouses'] = $availability_for_all_warehouses;
 
         return $this;
     }

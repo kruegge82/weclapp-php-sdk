@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional] [readonly]
 **permission_type** | [**\kruegge82\weclapp\Model\CustomAttributeDefinitionPermissionType**](CustomAttributeDefinitionPermissionType.md) |  | [optional]
-**user_role_id** | **string** |  | [optional] [readonly]
+**user_role_id** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

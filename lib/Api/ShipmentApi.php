@@ -464,15 +464,16 @@ class ShipmentApi
      * @param  string|null $filter filter (optional)
      * @param  string|null $properties properties (optional)
      * @param  string|null $include_referenced_entities include_referenced_entities (optional)
+     * @param  string|null $additional_properties additional_properties (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['shipmentGet'] to see the possible values for this operation
      *
      * @throws \kruegge82\weclapp\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \kruegge82\weclapp\Model\ShipmentGet200Response|\kruegge82\weclapp\Model\ApiProblem
      */
-    public function shipmentGet($page = null, $page_size = null, $serialize_nulls = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, string $contentType = self::contentTypes['shipmentGet'][0])
+    public function shipmentGet($page = null, $page_size = null, $serialize_nulls = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, $additional_properties = null, string $contentType = self::contentTypes['shipmentGet'][0])
     {
-        list($response) = $this->shipmentGetWithHttpInfo($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $contentType);
+        list($response) = $this->shipmentGetWithHttpInfo($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties, $contentType);
         return $response;
     }
 
@@ -488,15 +489,16 @@ class ShipmentApi
      * @param  string|null $filter (optional)
      * @param  string|null $properties (optional)
      * @param  string|null $include_referenced_entities (optional)
+     * @param  string|null $additional_properties (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['shipmentGet'] to see the possible values for this operation
      *
      * @throws \kruegge82\weclapp\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \kruegge82\weclapp\Model\ShipmentGet200Response|\kruegge82\weclapp\Model\ApiProblem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function shipmentGetWithHttpInfo($page = null, $page_size = null, $serialize_nulls = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, string $contentType = self::contentTypes['shipmentGet'][0])
+    public function shipmentGetWithHttpInfo($page = null, $page_size = null, $serialize_nulls = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, $additional_properties = null, string $contentType = self::contentTypes['shipmentGet'][0])
     {
-        $request = $this->shipmentGetRequest($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $contentType);
+        $request = $this->shipmentGetRequest($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -593,14 +595,15 @@ class ShipmentApi
      * @param  string|null $filter (optional)
      * @param  string|null $properties (optional)
      * @param  string|null $include_referenced_entities (optional)
+     * @param  string|null $additional_properties (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['shipmentGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function shipmentGetAsync($page = null, $page_size = null, $serialize_nulls = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, string $contentType = self::contentTypes['shipmentGet'][0])
+    public function shipmentGetAsync($page = null, $page_size = null, $serialize_nulls = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, $additional_properties = null, string $contentType = self::contentTypes['shipmentGet'][0])
     {
-        return $this->shipmentGetAsyncWithHttpInfo($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $contentType)
+        return $this->shipmentGetAsyncWithHttpInfo($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -620,15 +623,16 @@ class ShipmentApi
      * @param  string|null $filter (optional)
      * @param  string|null $properties (optional)
      * @param  string|null $include_referenced_entities (optional)
+     * @param  string|null $additional_properties (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['shipmentGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function shipmentGetAsyncWithHttpInfo($page = null, $page_size = null, $serialize_nulls = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, string $contentType = self::contentTypes['shipmentGet'][0])
+    public function shipmentGetAsyncWithHttpInfo($page = null, $page_size = null, $serialize_nulls = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, $additional_properties = null, string $contentType = self::contentTypes['shipmentGet'][0])
     {
         $returnType = '\kruegge82\weclapp\Model\ShipmentGet200Response';
-        $request = $this->shipmentGetRequest($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $contentType);
+        $request = $this->shipmentGetRequest($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -676,13 +680,15 @@ class ShipmentApi
      * @param  string|null $filter (optional)
      * @param  string|null $properties (optional)
      * @param  string|null $include_referenced_entities (optional)
+     * @param  string|null $additional_properties (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['shipmentGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function shipmentGetRequest($page = null, $page_size = null, $serialize_nulls = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, string $contentType = self::contentTypes['shipmentGet'][0])
+    public function shipmentGetRequest($page = null, $page_size = null, $serialize_nulls = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, $additional_properties = null, string $contentType = self::contentTypes['shipmentGet'][0])
     {
+
 
 
 
@@ -757,6 +763,15 @@ class ShipmentApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $include_referenced_entities,
             'includeReferencedEntities', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $additional_properties,
+            'additionalProperties', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

@@ -58,12 +58,16 @@ class SalesOrderGet200ResponseAdditionalProperties implements ModelInterface, Ar
       * @var string[]
       */
     protected static $openAPITypes = [
+        'availability' => '\kruegge82\weclapp\Model\DispositionInfoAvailabilityType[]',
+        'availability_for_all_warehouses' => '\kruegge82\weclapp\Model\DispositionInfoAvailabilityType[]',
         'booked_billable_work' => '\kruegge82\weclapp\Model\Duration[]',
         'booked_work' => '\kruegge82\weclapp\Model\Duration[]',
         'consignment' => 'bool[]',
         'cost_of_services' => '\kruegge82\weclapp\Model\Amount[]',
         'invoiceable_services' => '\kruegge82\weclapp\Model\Amount[]',
         'invoiced_services' => '\kruegge82\weclapp\Model\Amount[]',
+        'items_availability' => '\kruegge82\weclapp\Model\ItemAvailability[][]',
+        'items_availability_for_all_warehouses' => '\kruegge82\weclapp\Model\ItemAvailability[][]',
         'not_invoiced_services' => '\kruegge82\weclapp\Model\Amount[]',
         'planned_billable_effort' => '\kruegge82\weclapp\Model\Duration[]',
         'planned_effort' => '\kruegge82\weclapp\Model\Duration[]'
@@ -77,12 +81,16 @@ class SalesOrderGet200ResponseAdditionalProperties implements ModelInterface, Ar
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'availability' => null,
+        'availability_for_all_warehouses' => null,
         'booked_billable_work' => null,
         'booked_work' => null,
         'consignment' => null,
         'cost_of_services' => null,
         'invoiceable_services' => null,
         'invoiced_services' => null,
+        'items_availability' => null,
+        'items_availability_for_all_warehouses' => null,
         'not_invoiced_services' => null,
         'planned_billable_effort' => null,
         'planned_effort' => null
@@ -94,12 +102,16 @@ class SalesOrderGet200ResponseAdditionalProperties implements ModelInterface, Ar
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'availability' => false,
+        'availability_for_all_warehouses' => false,
         'booked_billable_work' => false,
         'booked_work' => false,
         'consignment' => false,
         'cost_of_services' => false,
         'invoiceable_services' => false,
         'invoiced_services' => false,
+        'items_availability' => false,
+        'items_availability_for_all_warehouses' => false,
         'not_invoiced_services' => false,
         'planned_billable_effort' => false,
         'planned_effort' => false
@@ -191,12 +203,16 @@ class SalesOrderGet200ResponseAdditionalProperties implements ModelInterface, Ar
      * @var string[]
      */
     protected static $attributeMap = [
+        'availability' => 'availability',
+        'availability_for_all_warehouses' => 'availabilityForAllWarehouses',
         'booked_billable_work' => 'bookedBillableWork',
         'booked_work' => 'bookedWork',
         'consignment' => 'consignment',
         'cost_of_services' => 'costOfServices',
         'invoiceable_services' => 'invoiceableServices',
         'invoiced_services' => 'invoicedServices',
+        'items_availability' => 'itemsAvailability',
+        'items_availability_for_all_warehouses' => 'itemsAvailabilityForAllWarehouses',
         'not_invoiced_services' => 'notInvoicedServices',
         'planned_billable_effort' => 'plannedBillableEffort',
         'planned_effort' => 'plannedEffort'
@@ -208,12 +224,16 @@ class SalesOrderGet200ResponseAdditionalProperties implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
+        'availability' => 'setAvailability',
+        'availability_for_all_warehouses' => 'setAvailabilityForAllWarehouses',
         'booked_billable_work' => 'setBookedBillableWork',
         'booked_work' => 'setBookedWork',
         'consignment' => 'setConsignment',
         'cost_of_services' => 'setCostOfServices',
         'invoiceable_services' => 'setInvoiceableServices',
         'invoiced_services' => 'setInvoicedServices',
+        'items_availability' => 'setItemsAvailability',
+        'items_availability_for_all_warehouses' => 'setItemsAvailabilityForAllWarehouses',
         'not_invoiced_services' => 'setNotInvoicedServices',
         'planned_billable_effort' => 'setPlannedBillableEffort',
         'planned_effort' => 'setPlannedEffort'
@@ -225,12 +245,16 @@ class SalesOrderGet200ResponseAdditionalProperties implements ModelInterface, Ar
      * @var string[]
      */
     protected static $getters = [
+        'availability' => 'getAvailability',
+        'availability_for_all_warehouses' => 'getAvailabilityForAllWarehouses',
         'booked_billable_work' => 'getBookedBillableWork',
         'booked_work' => 'getBookedWork',
         'consignment' => 'getConsignment',
         'cost_of_services' => 'getCostOfServices',
         'invoiceable_services' => 'getInvoiceableServices',
         'invoiced_services' => 'getInvoicedServices',
+        'items_availability' => 'getItemsAvailability',
+        'items_availability_for_all_warehouses' => 'getItemsAvailabilityForAllWarehouses',
         'not_invoiced_services' => 'getNotInvoicedServices',
         'planned_billable_effort' => 'getPlannedBillableEffort',
         'planned_effort' => 'getPlannedEffort'
@@ -293,12 +317,16 @@ class SalesOrderGet200ResponseAdditionalProperties implements ModelInterface, Ar
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('availability', $data ?? [], null);
+        $this->setIfExists('availability_for_all_warehouses', $data ?? [], null);
         $this->setIfExists('booked_billable_work', $data ?? [], null);
         $this->setIfExists('booked_work', $data ?? [], null);
         $this->setIfExists('consignment', $data ?? [], null);
         $this->setIfExists('cost_of_services', $data ?? [], null);
         $this->setIfExists('invoiceable_services', $data ?? [], null);
         $this->setIfExists('invoiced_services', $data ?? [], null);
+        $this->setIfExists('items_availability', $data ?? [], null);
+        $this->setIfExists('items_availability_for_all_warehouses', $data ?? [], null);
         $this->setIfExists('not_invoiced_services', $data ?? [], null);
         $this->setIfExists('planned_billable_effort', $data ?? [], null);
         $this->setIfExists('planned_effort', $data ?? [], null);
@@ -345,6 +373,60 @@ class SalesOrderGet200ResponseAdditionalProperties implements ModelInterface, Ar
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets availability
+     *
+     * @return \kruegge82\weclapp\Model\DispositionInfoAvailabilityType[]|null
+     */
+    public function getAvailability()
+    {
+        return $this->container['availability'];
+    }
+
+    /**
+     * Sets availability
+     *
+     * @param \kruegge82\weclapp\Model\DispositionInfoAvailabilityType[]|null $availability availability
+     *
+     * @return self
+     */
+    public function setAvailability($availability)
+    {
+        if (is_null($availability)) {
+            throw new \InvalidArgumentException('non-nullable availability cannot be null');
+        }
+        $this->container['availability'] = $availability;
+
+        return $this;
+    }
+
+    /**
+     * Gets availability_for_all_warehouses
+     *
+     * @return \kruegge82\weclapp\Model\DispositionInfoAvailabilityType[]|null
+     */
+    public function getAvailabilityForAllWarehouses()
+    {
+        return $this->container['availability_for_all_warehouses'];
+    }
+
+    /**
+     * Sets availability_for_all_warehouses
+     *
+     * @param \kruegge82\weclapp\Model\DispositionInfoAvailabilityType[]|null $availability_for_all_warehouses availability_for_all_warehouses
+     *
+     * @return self
+     */
+    public function setAvailabilityForAllWarehouses($availability_for_all_warehouses)
+    {
+        if (is_null($availability_for_all_warehouses)) {
+            throw new \InvalidArgumentException('non-nullable availability_for_all_warehouses cannot be null');
+        }
+        $this->container['availability_for_all_warehouses'] = $availability_for_all_warehouses;
+
+        return $this;
+    }
 
     /**
      * Gets booked_billable_work
@@ -504,6 +586,60 @@ class SalesOrderGet200ResponseAdditionalProperties implements ModelInterface, Ar
             throw new \InvalidArgumentException('non-nullable invoiced_services cannot be null');
         }
         $this->container['invoiced_services'] = $invoiced_services;
+
+        return $this;
+    }
+
+    /**
+     * Gets items_availability
+     *
+     * @return \kruegge82\weclapp\Model\ItemAvailability[][]|null
+     */
+    public function getItemsAvailability()
+    {
+        return $this->container['items_availability'];
+    }
+
+    /**
+     * Sets items_availability
+     *
+     * @param \kruegge82\weclapp\Model\ItemAvailability[][]|null $items_availability items_availability
+     *
+     * @return self
+     */
+    public function setItemsAvailability($items_availability)
+    {
+        if (is_null($items_availability)) {
+            throw new \InvalidArgumentException('non-nullable items_availability cannot be null');
+        }
+        $this->container['items_availability'] = $items_availability;
+
+        return $this;
+    }
+
+    /**
+     * Gets items_availability_for_all_warehouses
+     *
+     * @return \kruegge82\weclapp\Model\ItemAvailability[][]|null
+     */
+    public function getItemsAvailabilityForAllWarehouses()
+    {
+        return $this->container['items_availability_for_all_warehouses'];
+    }
+
+    /**
+     * Sets items_availability_for_all_warehouses
+     *
+     * @param \kruegge82\weclapp\Model\ItemAvailability[][]|null $items_availability_for_all_warehouses items_availability_for_all_warehouses
+     *
+     * @return self
+     */
+    public function setItemsAvailabilityForAllWarehouses($items_availability_for_all_warehouses)
+    {
+        if (is_null($items_availability_for_all_warehouses)) {
+            throw new \InvalidArgumentException('non-nullable items_availability_for_all_warehouses cannot be null');
+        }
+        $this->container['items_availability_for_all_warehouses'] = $items_availability_for_all_warehouses;
 
         return $this;
     }

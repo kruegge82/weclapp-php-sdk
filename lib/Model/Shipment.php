@@ -78,8 +78,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => '\kruegge82\weclapp\Model\ShipmentStatusType',
         'status_history' => '\kruegge82\weclapp\Model\ShipmentStatus[]',
         'additional_delivery_information' => 'string',
-        'availability' => '\kruegge82\weclapp\Model\DispositionInfoAvailabilityType',
-        'availability_for_all_warehouses' => '\kruegge82\weclapp\Model\DispositionInfoAvailabilityType',
         'consolidation_storage_place_id' => 'string',
         'customer_purchase_order_number' => 'string',
         'declared_value_amount' => 'float',
@@ -148,8 +146,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => null,
         'status_history' => null,
         'additional_delivery_information' => 'html',
-        'availability' => null,
-        'availability_for_all_warehouses' => null,
         'consolidation_storage_place_id' => null,
         'customer_purchase_order_number' => null,
         'declared_value_amount' => 'decimal',
@@ -216,8 +212,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => false,
         'status_history' => false,
         'additional_delivery_information' => false,
-        'availability' => false,
-        'availability_for_all_warehouses' => false,
         'consolidation_storage_place_id' => false,
         'customer_purchase_order_number' => false,
         'declared_value_amount' => false,
@@ -364,8 +358,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'status',
         'status_history' => 'statusHistory',
         'additional_delivery_information' => 'additionalDeliveryInformation',
-        'availability' => 'availability',
-        'availability_for_all_warehouses' => 'availabilityForAllWarehouses',
         'consolidation_storage_place_id' => 'consolidationStoragePlaceId',
         'customer_purchase_order_number' => 'customerPurchaseOrderNumber',
         'declared_value_amount' => 'declaredValueAmount',
@@ -432,8 +424,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'setStatus',
         'status_history' => 'setStatusHistory',
         'additional_delivery_information' => 'setAdditionalDeliveryInformation',
-        'availability' => 'setAvailability',
-        'availability_for_all_warehouses' => 'setAvailabilityForAllWarehouses',
         'consolidation_storage_place_id' => 'setConsolidationStoragePlaceId',
         'customer_purchase_order_number' => 'setCustomerPurchaseOrderNumber',
         'declared_value_amount' => 'setDeclaredValueAmount',
@@ -500,8 +490,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'getStatus',
         'status_history' => 'getStatusHistory',
         'additional_delivery_information' => 'getAdditionalDeliveryInformation',
-        'availability' => 'getAvailability',
-        'availability_for_all_warehouses' => 'getAvailabilityForAllWarehouses',
         'consolidation_storage_place_id' => 'getConsolidationStoragePlaceId',
         'customer_purchase_order_number' => 'getCustomerPurchaseOrderNumber',
         'declared_value_amount' => 'getDeclaredValueAmount',
@@ -619,8 +607,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('status_history', $data ?? [], null);
         $this->setIfExists('additional_delivery_information', $data ?? [], null);
-        $this->setIfExists('availability', $data ?? [], null);
-        $this->setIfExists('availability_for_all_warehouses', $data ?? [], null);
         $this->setIfExists('consolidation_storage_place_id', $data ?? [], null);
         $this->setIfExists('customer_purchase_order_number', $data ?? [], null);
         $this->setIfExists('declared_value_amount', $data ?? [], null);
@@ -716,8 +702,8 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'customer_purchase_order_number', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['declared_value_amount']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['declared_value_amount'])) {
-            $invalidProperties[] = "invalid value for 'declared_value_amount', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['declared_value_amount']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['declared_value_amount'])) {
+            $invalidProperties[] = "invalid value for 'declared_value_amount', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['dhl_receiver_id']) && (mb_strlen($this->container['dhl_receiver_id']) > 1000)) {
@@ -744,8 +730,8 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'package_tracking_url', the character length must be smaller than or equal to 1000.";
         }
 
-        if (!is_null($this->container['package_weight']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['package_weight'])) {
-            $invalidProperties[] = "invalid value for 'package_weight', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['package_weight']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['package_weight'])) {
+            $invalidProperties[] = "invalid value for 'package_weight', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['picking_instructions']) && (mb_strlen($this->container['picking_instructions']) > 255)) {
@@ -1344,60 +1330,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets availability
-     *
-     * @return \kruegge82\weclapp\Model\DispositionInfoAvailabilityType|null
-     */
-    public function getAvailability()
-    {
-        return $this->container['availability'];
-    }
-
-    /**
-     * Sets availability
-     *
-     * @param \kruegge82\weclapp\Model\DispositionInfoAvailabilityType|null $availability availability
-     *
-     * @return self
-     */
-    public function setAvailability($availability)
-    {
-        if (is_null($availability)) {
-            throw new \InvalidArgumentException('non-nullable availability cannot be null');
-        }
-        $this->container['availability'] = $availability;
-
-        return $this;
-    }
-
-    /**
-     * Gets availability_for_all_warehouses
-     *
-     * @return \kruegge82\weclapp\Model\DispositionInfoAvailabilityType|null
-     */
-    public function getAvailabilityForAllWarehouses()
-    {
-        return $this->container['availability_for_all_warehouses'];
-    }
-
-    /**
-     * Sets availability_for_all_warehouses
-     *
-     * @param \kruegge82\weclapp\Model\DispositionInfoAvailabilityType|null $availability_for_all_warehouses availability_for_all_warehouses
-     *
-     * @return self
-     */
-    public function setAvailabilityForAllWarehouses($availability_for_all_warehouses)
-    {
-        if (is_null($availability_for_all_warehouses)) {
-            throw new \InvalidArgumentException('non-nullable availability_for_all_warehouses cannot be null');
-        }
-        $this->container['availability_for_all_warehouses'] = $availability_for_all_warehouses;
-
-        return $this;
-    }
-
-    /**
      * Gets consolidation_storage_place_id
      *
      * @return string|null
@@ -1478,8 +1410,8 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable declared_value_amount cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($declared_value_amount)))) {
-            throw new \InvalidArgumentException("invalid value for \$declared_value_amount when calling Shipment., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($declared_value_amount)))) {
+            throw new \InvalidArgumentException("invalid value for \$declared_value_amount when calling Shipment., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['declared_value_amount'] = $declared_value_amount;
@@ -1912,8 +1844,8 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable package_weight cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($package_weight)))) {
-            throw new \InvalidArgumentException("invalid value for \$package_weight when calling Shipment., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($package_weight)))) {
+            throw new \InvalidArgumentException("invalid value for \$package_weight when calling Shipment., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['package_weight'] = $package_weight;

@@ -14,8 +14,6 @@ Name | Type | Description | Notes
 **actual_start_date** | **int** |  | [optional] [readonly]
 **article_id** | **string** |  | [optional]
 **assembly_storage_place_id** | **string** |  | [optional]
-**availability** | [**\kruegge82\weclapp\Model\DispositionInfoAvailabilityType**](DispositionInfoAvailabilityType.md) |  | [optional]
-**availability_for_all_warehouses** | [**\kruegge82\weclapp\Model\DispositionInfoAvailabilityType**](DispositionInfoAvailabilityType.md) |  | [optional]
 **picking_instructions** | **string** |  | [optional]
 **picks_complete** | **bool** |  | [optional] [readonly]
 **production_order_items** | [**\kruegge82\weclapp\Model\ProductionOrderItem[]**](ProductionOrderItem.md) |  | [optional]

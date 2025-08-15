@@ -352,20 +352,20 @@ class PaymentApplication implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['amount_applied']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_applied'])) {
-            $invalidProperties[] = "invalid value for 'amount_applied', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['amount_applied']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_applied'])) {
+            $invalidProperties[] = "invalid value for 'amount_applied', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['amount_applied_origin_currency']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_applied_origin_currency'])) {
-            $invalidProperties[] = "invalid value for 'amount_applied_origin_currency', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['amount_applied_origin_currency']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_applied_origin_currency'])) {
+            $invalidProperties[] = "invalid value for 'amount_applied_origin_currency', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['amount_costs_of_monetary_traffic']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_costs_of_monetary_traffic'])) {
-            $invalidProperties[] = "invalid value for 'amount_costs_of_monetary_traffic', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['amount_costs_of_monetary_traffic']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_costs_of_monetary_traffic'])) {
+            $invalidProperties[] = "invalid value for 'amount_costs_of_monetary_traffic', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['amount_discount_applied']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_discount_applied'])) {
-            $invalidProperties[] = "invalid value for 'amount_discount_applied', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['amount_discount_applied']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_discount_applied'])) {
+            $invalidProperties[] = "invalid value for 'amount_discount_applied', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -514,8 +514,8 @@ class PaymentApplication implements ModelInterface, ArrayAccess, \JsonSerializab
             throw new \InvalidArgumentException('non-nullable amount_applied cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_applied)))) {
-            throw new \InvalidArgumentException("invalid value for \$amount_applied when calling PaymentApplication., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_applied)))) {
+            throw new \InvalidArgumentException("invalid value for \$amount_applied when calling PaymentApplication., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['amount_applied'] = $amount_applied;
@@ -546,8 +546,8 @@ class PaymentApplication implements ModelInterface, ArrayAccess, \JsonSerializab
             throw new \InvalidArgumentException('non-nullable amount_applied_origin_currency cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_applied_origin_currency)))) {
-            throw new \InvalidArgumentException("invalid value for \$amount_applied_origin_currency when calling PaymentApplication., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_applied_origin_currency)))) {
+            throw new \InvalidArgumentException("invalid value for \$amount_applied_origin_currency when calling PaymentApplication., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['amount_applied_origin_currency'] = $amount_applied_origin_currency;
@@ -578,8 +578,8 @@ class PaymentApplication implements ModelInterface, ArrayAccess, \JsonSerializab
             throw new \InvalidArgumentException('non-nullable amount_costs_of_monetary_traffic cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_costs_of_monetary_traffic)))) {
-            throw new \InvalidArgumentException("invalid value for \$amount_costs_of_monetary_traffic when calling PaymentApplication., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_costs_of_monetary_traffic)))) {
+            throw new \InvalidArgumentException("invalid value for \$amount_costs_of_monetary_traffic when calling PaymentApplication., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['amount_costs_of_monetary_traffic'] = $amount_costs_of_monetary_traffic;
@@ -610,8 +610,8 @@ class PaymentApplication implements ModelInterface, ArrayAccess, \JsonSerializab
             throw new \InvalidArgumentException('non-nullable amount_discount_applied cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_discount_applied)))) {
-            throw new \InvalidArgumentException("invalid value for \$amount_discount_applied when calling PaymentApplication., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_discount_applied)))) {
+            throw new \InvalidArgumentException("invalid value for \$amount_discount_applied when calling PaymentApplication., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['amount_discount_applied'] = $amount_discount_applied;

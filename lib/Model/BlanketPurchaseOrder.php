@@ -69,6 +69,9 @@ class BlanketPurchaseOrder implements ModelInterface, ArrayAccess, \JsonSerializ
         'commercial_language' => 'string',
         'confirmation_number' => 'string',
         'creator_id' => 'string',
+        'currency_conversion_date' => 'int',
+        'currency_conversion_locked' => 'bool',
+        'currency_conversion_rate' => 'float',
         'delivery_address' => '\kruegge82\weclapp\Model\RecordAddress',
         'description' => 'string',
         'discount_percentage' => 'float',
@@ -129,6 +132,9 @@ class BlanketPurchaseOrder implements ModelInterface, ArrayAccess, \JsonSerializ
         'commercial_language' => null,
         'confirmation_number' => null,
         'creator_id' => null,
+        'currency_conversion_date' => 'timestamp',
+        'currency_conversion_locked' => null,
+        'currency_conversion_rate' => 'decimal',
         'delivery_address' => null,
         'description' => 'html',
         'discount_percentage' => 'decimal',
@@ -187,6 +193,9 @@ class BlanketPurchaseOrder implements ModelInterface, ArrayAccess, \JsonSerializ
         'commercial_language' => false,
         'confirmation_number' => false,
         'creator_id' => false,
+        'currency_conversion_date' => false,
+        'currency_conversion_locked' => false,
+        'currency_conversion_rate' => false,
         'delivery_address' => false,
         'description' => false,
         'discount_percentage' => false,
@@ -325,6 +334,9 @@ class BlanketPurchaseOrder implements ModelInterface, ArrayAccess, \JsonSerializ
         'commercial_language' => 'commercialLanguage',
         'confirmation_number' => 'confirmationNumber',
         'creator_id' => 'creatorId',
+        'currency_conversion_date' => 'currencyConversionDate',
+        'currency_conversion_locked' => 'currencyConversionLocked',
+        'currency_conversion_rate' => 'currencyConversionRate',
         'delivery_address' => 'deliveryAddress',
         'description' => 'description',
         'discount_percentage' => 'discountPercentage',
@@ -383,6 +395,9 @@ class BlanketPurchaseOrder implements ModelInterface, ArrayAccess, \JsonSerializ
         'commercial_language' => 'setCommercialLanguage',
         'confirmation_number' => 'setConfirmationNumber',
         'creator_id' => 'setCreatorId',
+        'currency_conversion_date' => 'setCurrencyConversionDate',
+        'currency_conversion_locked' => 'setCurrencyConversionLocked',
+        'currency_conversion_rate' => 'setCurrencyConversionRate',
         'delivery_address' => 'setDeliveryAddress',
         'description' => 'setDescription',
         'discount_percentage' => 'setDiscountPercentage',
@@ -441,6 +456,9 @@ class BlanketPurchaseOrder implements ModelInterface, ArrayAccess, \JsonSerializ
         'commercial_language' => 'getCommercialLanguage',
         'confirmation_number' => 'getConfirmationNumber',
         'creator_id' => 'getCreatorId',
+        'currency_conversion_date' => 'getCurrencyConversionDate',
+        'currency_conversion_locked' => 'getCurrencyConversionLocked',
+        'currency_conversion_rate' => 'getCurrencyConversionRate',
         'delivery_address' => 'getDeliveryAddress',
         'description' => 'getDescription',
         'discount_percentage' => 'getDiscountPercentage',
@@ -550,6 +568,9 @@ class BlanketPurchaseOrder implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('commercial_language', $data ?? [], null);
         $this->setIfExists('confirmation_number', $data ?? [], null);
         $this->setIfExists('creator_id', $data ?? [], null);
+        $this->setIfExists('currency_conversion_date', $data ?? [], null);
+        $this->setIfExists('currency_conversion_locked', $data ?? [], null);
+        $this->setIfExists('currency_conversion_rate', $data ?? [], null);
         $this->setIfExists('delivery_address', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('discount_percentage', $data ?? [], null);
@@ -630,28 +651,32 @@ class BlanketPurchaseOrder implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "invalid value for 'confirmation_number', the character length must be smaller than or equal to 30.";
         }
 
+        if (!is_null($this->container['currency_conversion_rate']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['currency_conversion_rate'])) {
+            $invalidProperties[] = "invalid value for 'currency_conversion_rate', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        }
+
         if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 255)) {
             $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['discount_percentage']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['discount_percentage'])) {
-            $invalidProperties[] = "invalid value for 'discount_percentage', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['discount_percentage']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['discount_percentage'])) {
+            $invalidProperties[] = "invalid value for 'discount_percentage', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['header_discount']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['header_discount'])) {
-            $invalidProperties[] = "invalid value for 'header_discount', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['header_discount']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['header_discount'])) {
+            $invalidProperties[] = "invalid value for 'header_discount', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['header_surcharge']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['header_surcharge'])) {
-            $invalidProperties[] = "invalid value for 'header_surcharge', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['header_surcharge']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['header_surcharge'])) {
+            $invalidProperties[] = "invalid value for 'header_surcharge', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['note']) && (mb_strlen($this->container['note']) > 512)) {
             $invalidProperties[] = "invalid value for 'note', the character length must be smaller than or equal to 512.";
         }
 
-        if (!is_null($this->container['order_quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['order_quantity'])) {
-            $invalidProperties[] = "invalid value for 'order_quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['order_quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['order_quantity'])) {
+            $invalidProperties[] = "invalid value for 'order_quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['recipient_country_code']) && (mb_strlen($this->container['recipient_country_code']) > 5)) {
@@ -682,8 +707,8 @@ class BlanketPurchaseOrder implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "invalid value for 'supplier_quotation_number', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['unit_price']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['unit_price'])) {
-            $invalidProperties[] = "invalid value for 'unit_price', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['unit_price']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['unit_price'])) {
+            $invalidProperties[] = "invalid value for 'unit_price', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -1011,6 +1036,92 @@ class BlanketPurchaseOrder implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
+     * Gets currency_conversion_date
+     *
+     * @return int|null
+     */
+    public function getCurrencyConversionDate()
+    {
+        return $this->container['currency_conversion_date'];
+    }
+
+    /**
+     * Sets currency_conversion_date
+     *
+     * @param int|null $currency_conversion_date currency_conversion_date
+     *
+     * @return self
+     */
+    public function setCurrencyConversionDate($currency_conversion_date)
+    {
+        if (is_null($currency_conversion_date)) {
+            throw new \InvalidArgumentException('non-nullable currency_conversion_date cannot be null');
+        }
+        $this->container['currency_conversion_date'] = $currency_conversion_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency_conversion_locked
+     *
+     * @return bool|null
+     */
+    public function getCurrencyConversionLocked()
+    {
+        return $this->container['currency_conversion_locked'];
+    }
+
+    /**
+     * Sets currency_conversion_locked
+     *
+     * @param bool|null $currency_conversion_locked currency_conversion_locked
+     *
+     * @return self
+     */
+    public function setCurrencyConversionLocked($currency_conversion_locked)
+    {
+        if (is_null($currency_conversion_locked)) {
+            throw new \InvalidArgumentException('non-nullable currency_conversion_locked cannot be null');
+        }
+        $this->container['currency_conversion_locked'] = $currency_conversion_locked;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency_conversion_rate
+     *
+     * @return float|null
+     */
+    public function getCurrencyConversionRate()
+    {
+        return $this->container['currency_conversion_rate'];
+    }
+
+    /**
+     * Sets currency_conversion_rate
+     *
+     * @param float|null $currency_conversion_rate currency_conversion_rate
+     *
+     * @return self
+     */
+    public function setCurrencyConversionRate($currency_conversion_rate)
+    {
+        if (is_null($currency_conversion_rate)) {
+            throw new \InvalidArgumentException('non-nullable currency_conversion_rate cannot be null');
+        }
+
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($currency_conversion_rate)))) {
+            throw new \InvalidArgumentException("invalid value for \$currency_conversion_rate when calling BlanketPurchaseOrder., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        }
+
+        $this->container['currency_conversion_rate'] = $currency_conversion_rate;
+
+        return $this;
+    }
+
+    /**
      * Gets delivery_address
      *
      * @return \kruegge82\weclapp\Model\RecordAddress|null
@@ -1091,8 +1202,8 @@ class BlanketPurchaseOrder implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable discount_percentage cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($discount_percentage)))) {
-            throw new \InvalidArgumentException("invalid value for \$discount_percentage when calling BlanketPurchaseOrder., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($discount_percentage)))) {
+            throw new \InvalidArgumentException("invalid value for \$discount_percentage when calling BlanketPurchaseOrder., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['discount_percentage'] = $discount_percentage;
@@ -1177,8 +1288,8 @@ class BlanketPurchaseOrder implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable header_discount cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($header_discount)))) {
-            throw new \InvalidArgumentException("invalid value for \$header_discount when calling BlanketPurchaseOrder., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($header_discount)))) {
+            throw new \InvalidArgumentException("invalid value for \$header_discount when calling BlanketPurchaseOrder., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['header_discount'] = $header_discount;
@@ -1209,8 +1320,8 @@ class BlanketPurchaseOrder implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable header_surcharge cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($header_surcharge)))) {
-            throw new \InvalidArgumentException("invalid value for \$header_surcharge when calling BlanketPurchaseOrder., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($header_surcharge)))) {
+            throw new \InvalidArgumentException("invalid value for \$header_surcharge when calling BlanketPurchaseOrder., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['header_surcharge'] = $header_surcharge;
@@ -1353,8 +1464,8 @@ class BlanketPurchaseOrder implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable order_quantity cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($order_quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$order_quantity when calling BlanketPurchaseOrder., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($order_quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$order_quantity when calling BlanketPurchaseOrder., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['order_quantity'] = $order_quantity;
@@ -2061,8 +2172,8 @@ class BlanketPurchaseOrder implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable unit_price cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($unit_price)))) {
-            throw new \InvalidArgumentException("invalid value for \$unit_price when calling BlanketPurchaseOrder., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($unit_price)))) {
+            throw new \InvalidArgumentException("invalid value for \$unit_price when calling BlanketPurchaseOrder., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['unit_price'] = $unit_price;

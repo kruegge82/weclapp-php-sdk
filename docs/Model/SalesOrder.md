@@ -53,8 +53,6 @@ Name | Type | Description | Notes
 **advance_payment_amount** | **float** |  | [optional]
 **advance_payment_status** | [**\kruegge82\weclapp\Model\AdvancePaymentStatus**](AdvancePaymentStatus.md) |  | [optional]
 **apply_shipping_costs_only_once** | **bool** |  | [optional]
-**availability** | [**\kruegge82\weclapp\Model\DispositionInfoAvailabilityType**](DispositionInfoAvailabilityType.md) |  | [optional]
-**availability_for_all_warehouses** | [**\kruegge82\weclapp\Model\DispositionInfoAvailabilityType**](DispositionInfoAvailabilityType.md) |  | [optional]
 **cash_account_id** | **string** |  | [optional]
 **customer_habitual_exporter_letter_of_intent_id** | **string** |  | [optional]
 **default_shipping_return_carrier_id** | **string** |  | [optional]

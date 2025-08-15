@@ -665,6 +665,13 @@
                           },
                           "type": "array"
                         },
+                        "currentStockMinusTotalSalesVolume": {
+                          "items": {
+                            "format": "decimal",
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
                         "pickableStockQuantity": {
                           "items": {
                             "items": {
@@ -10502,6 +10509,331 @@
         "summary": "update a contractTerminationReason",
         "tags": [
           "contractTerminationReason"
+        ]
+      }
+    },
+    "/contractType": {
+      "get": {
+        "description": "query contractType",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "serializeNulls",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "properties",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "includeReferencedEntities",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "result": {
+                      "items": {
+                        "$ref": "#/components/schemas/contractType"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "contractType response"
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/apiProblem"
+                }
+              }
+            },
+            "description": "error response"
+          }
+        },
+        "summary": "query contractType",
+        "tags": [
+          "contractType"
+        ]
+      },
+      "post": {
+        "description": "create a contractType",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "dryRun",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/contractType"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/contractType"
+                }
+              }
+            },
+            "description": "contractType create response"
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/apiProblem"
+                }
+              }
+            },
+            "description": "error response"
+          }
+        },
+        "summary": "create a contractType",
+        "tags": [
+          "contractType"
+        ]
+      }
+    },
+    "/contractType/count": {
+      "get": {
+        "description": "count contractType",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "filter",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "result": {
+                      "format": "int64",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "count"
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/apiProblem"
+                }
+              }
+            },
+            "description": "error response"
+          }
+        },
+        "summary": "count contractType",
+        "tags": [
+          "contractType"
+        ]
+      }
+    },
+    "/contractType/id/{id}": {
+      "delete": {
+        "description": "delete a contractType",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "dryRun",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "contractType delete response"
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/apiProblem"
+                }
+              }
+            },
+            "description": "error response"
+          }
+        },
+        "summary": "delete a contractType",
+        "tags": [
+          "contractType"
+        ]
+      },
+      "get": {
+        "description": "query a specific contractType",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/contractType"
+                }
+              }
+            },
+            "description": "get by id"
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/apiProblem"
+                }
+              }
+            },
+            "description": "error response"
+          }
+        },
+        "summary": "query a specific contractType",
+        "tags": [
+          "contractType"
+        ]
+      },
+      "put": {
+        "description": "update contractType",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "dryRun",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/contractType"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/contractType"
+                }
+              }
+            },
+            "description": "contractType update response"
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/apiProblem"
+                }
+              }
+            },
+            "description": "error response"
+          }
+        },
+        "summary": "update a contractType",
+        "tags": [
+          "contractType"
         ]
       }
     },
@@ -35194,6 +35526,12 @@
             "schema": {
               "type": "boolean"
             }
+          },{
+            "in": "query",
+            "name": "ignoreMissingProperties",
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "in": "query",
@@ -49929,6 +50267,56 @@
         ]
       }
     },
+    "/user/id/{id}/deleteMfaDevice": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "deleteMfaDevice response"
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/apiProblem"
+                }
+              }
+            },
+            "description": "error response"
+          }
+        },
+        "tags": [
+          "user"
+        ]
+      }
+    },
     "/user/id/{id}/invite": {
       "post": {
         "parameters": [
@@ -49967,6 +50355,53 @@
               }
             },
             "description": "invite response"
+          },
+          "default": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/apiProblem"
+                }
+              }
+            },
+            "description": "error response"
+          }
+        },
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/user/id/{id}/readMfaDevices": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "result": {
+                      "items": {
+                        "$ref": "#/components/schemas/userMfaDevice"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "readMfaDevices response"
           },
           "default": {
             "content": {
@@ -55371,6 +55806,10 @@
                   "service": "ledgerAccount"
                 }
               },
+              "additionalEcommerceId": {
+                "maxLength": 1000,
+                "type": "string"
+              },
               "amount": {
                 "format": "decimal",
                 "pattern": "^-?([0-9]{1,13})([.][0-9]{1,5})?$",
@@ -55412,11 +55851,22 @@
                 "maxLength": 255,
                 "type": "string"
               },
+              "ecommerceId": {
+                "maxLength": 1000,
+                "type": "string"
+              },
               "effectiveDate": {
                 "format": "timestamp",
                 "type": "integer",
                 "x-weclapp": {
                   "required": true
+                }
+              },
+              "externalConnectionId": {
+                "type": "string",
+                "x-weclapp": {
+                  "entity": "externalConnection",
+                  "service": "externalConnection"
                 }
               },
               "externalRecordNumber": {
@@ -57722,7 +58172,11 @@
                 "items": {
                   "$ref": "#/components/schemas/onlyId"
                 },
-                "type": "array"
+                "type": "array",
+                "x-weclapp": {
+                  "entity": "contractType",
+                  "service": "contractType"
+                }
               },
               "unlimited": {
                 "type": "boolean",
@@ -58036,6 +58490,39 @@
           "INACTIVE"
         ],
         "type": "string"
+      },
+      "contractType": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/abstractEntity"
+          },
+          {
+            "properties": {
+              "active": {
+                "type": "boolean",
+                "x-weclapp": {
+                  "required": true
+                }
+              },
+              "iconClass": {
+                "maxLength": 1000,
+                "type": "string"
+              },
+              "name": {
+                "maxLength": 255,
+                "type": "string",
+                "x-weclapp": {
+                  "required": true
+                }
+              },
+              "positionNumber": {
+                "format": "int32",
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          }
+        ]
       },
       "contractUnitType": {
         "enum": [
@@ -58514,7 +59001,6 @@
                 }
               },
               "userRoleId": {
-                "readOnly": true,
                 "type": "string",
                 "x-weclapp": {
                   "entity": "userRole",
@@ -60101,6 +60587,7 @@
           "DHL_EXPRESS_ECONOMY_SELECT",
           "DHL_EXPRESS_ONE_DAY",
           "DHL_EXPRESS_ONE_DAY_EARLY",
+          "DHL_KLEINPAKET",
           "DHL_KLEINPAKET_EV",
           "DHL_PAKET_EV",
           "DHL_PAKET_INTERNATIONAL_EV",
@@ -60364,11 +60851,7 @@
                 "type": "array"
               },
               "inventoryTransportReferenceId": {
-                "type": "string",
-                "x-weclapp": {
-                  "entity": "inventoryTransportReference",
-                  "service": "inventoryTransportReference"
-                }
+                "type": "string"
               },
               "manualPosition": {
                 "readOnly": true,
@@ -65809,7 +66292,6 @@
                 "type": "string"
               },
               "opportunityId": {
-                "readOnly": true,
                 "type": "string",
                 "x-weclapp": {
                   "entity": "opportunity",
@@ -70875,6 +71357,32 @@
             "type": "object"
           }
         ]
+      },
+      "userMfaDevice": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/abstractEntity"
+          },
+          {
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/userMfaDeviceType",
+                "x-weclapp": {
+                  "required": true
+                }
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "userMfaDeviceType": {
+        "enum": [
+          "TOTP",
+          "U2F",
+          "WEBAUTHN"
+        ],
+        "type": "string"
       },
       "userRole": {
         "allOf": [

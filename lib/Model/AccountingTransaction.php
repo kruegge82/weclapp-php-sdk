@@ -394,8 +394,8 @@ class AccountingTransaction implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['conversion_rate']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['conversion_rate'])) {
-            $invalidProperties[] = "invalid value for 'conversion_rate', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['conversion_rate']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['conversion_rate'])) {
+            $invalidProperties[] = "invalid value for 'conversion_rate', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['external_record_number']) && (mb_strlen($this->container['external_record_number']) > 1000)) {
@@ -583,8 +583,8 @@ class AccountingTransaction implements ModelInterface, ArrayAccess, \JsonSeriali
             throw new \InvalidArgumentException('non-nullable conversion_rate cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($conversion_rate)))) {
-            throw new \InvalidArgumentException("invalid value for \$conversion_rate when calling AccountingTransaction., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($conversion_rate)))) {
+            throw new \InvalidArgumentException("invalid value for \$conversion_rate when calling AccountingTransaction., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['conversion_rate'] = $conversion_rate;

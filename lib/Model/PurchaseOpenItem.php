@@ -366,20 +366,20 @@ class PurchaseOpenItem implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['amount']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount'])) {
-            $invalidProperties[] = "invalid value for 'amount', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['amount']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount'])) {
+            $invalidProperties[] = "invalid value for 'amount', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['amount_discount']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_discount'])) {
-            $invalidProperties[] = "invalid value for 'amount_discount', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['amount_discount']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_discount'])) {
+            $invalidProperties[] = "invalid value for 'amount_discount', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['amount_open']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_open'])) {
-            $invalidProperties[] = "invalid value for 'amount_open', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['amount_open']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_open'])) {
+            $invalidProperties[] = "invalid value for 'amount_open', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['amount_paid']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_paid'])) {
-            $invalidProperties[] = "invalid value for 'amount_paid', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['amount_paid']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['amount_paid'])) {
+            $invalidProperties[] = "invalid value for 'amount_paid', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['open_item_number']) && (mb_strlen($this->container['open_item_number']) > 255)) {
@@ -532,8 +532,8 @@ class PurchaseOpenItem implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable amount cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount)))) {
-            throw new \InvalidArgumentException("invalid value for \$amount when calling PurchaseOpenItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount)))) {
+            throw new \InvalidArgumentException("invalid value for \$amount when calling PurchaseOpenItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['amount'] = $amount;
@@ -564,8 +564,8 @@ class PurchaseOpenItem implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable amount_discount cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_discount)))) {
-            throw new \InvalidArgumentException("invalid value for \$amount_discount when calling PurchaseOpenItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_discount)))) {
+            throw new \InvalidArgumentException("invalid value for \$amount_discount when calling PurchaseOpenItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['amount_discount'] = $amount_discount;
@@ -596,8 +596,8 @@ class PurchaseOpenItem implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable amount_open cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_open)))) {
-            throw new \InvalidArgumentException("invalid value for \$amount_open when calling PurchaseOpenItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_open)))) {
+            throw new \InvalidArgumentException("invalid value for \$amount_open when calling PurchaseOpenItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['amount_open'] = $amount_open;
@@ -628,8 +628,8 @@ class PurchaseOpenItem implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable amount_paid cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_paid)))) {
-            throw new \InvalidArgumentException("invalid value for \$amount_paid when calling PurchaseOpenItem., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($amount_paid)))) {
+            throw new \InvalidArgumentException("invalid value for \$amount_paid when calling PurchaseOpenItem., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['amount_paid'] = $amount_paid;

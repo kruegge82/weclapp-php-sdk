@@ -24,8 +24,6 @@ Name | Type | Description | Notes
 **status** | [**\kruegge82\weclapp\Model\ShipmentStatusType**](ShipmentStatusType.md) |  | [optional]
 **status_history** | [**\kruegge82\weclapp\Model\ShipmentStatus[]**](ShipmentStatus.md) |  | [optional] [readonly]
 **additional_delivery_information** | **string** |  | [optional]
-**availability** | [**\kruegge82\weclapp\Model\DispositionInfoAvailabilityType**](DispositionInfoAvailabilityType.md) |  | [optional]
-**availability_for_all_warehouses** | [**\kruegge82\weclapp\Model\DispositionInfoAvailabilityType**](DispositionInfoAvailabilityType.md) |  | [optional]
 **consolidation_storage_place_id** | **string** |  | [optional]
 **customer_purchase_order_number** | **string** |  | [optional]
 **declared_value_amount** | **float** |  | [optional]

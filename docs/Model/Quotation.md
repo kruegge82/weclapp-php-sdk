@@ -54,7 +54,7 @@ Name | Type | Description | Notes
 **expected_signature_date** | **int** |  | [optional]
 **invoice_recipient_id** | **string** |  | [optional]
 **merged_to_quotation_id** | **string** |  | [optional] [readonly]
-**opportunity_id** | **string** |  | [optional] [readonly]
+**opportunity_id** | **string** |  | [optional]
 **public_link** | **string** |  | [optional]
 **quotation_date** | **int** |  | [optional]
 **quotation_items** | [**\kruegge82\weclapp\Model\QuotationItem[]**](QuotationItem.md) |  | [optional]

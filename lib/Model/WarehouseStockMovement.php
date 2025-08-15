@@ -441,8 +441,8 @@ class WarehouseStockMovement implements ModelInterface, ArrayAccess, \JsonSerial
             $invalidProperties[] = "invalid value for 'quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['valuation_price']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['valuation_price'])) {
-            $invalidProperties[] = "invalid value for 'valuation_price', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['valuation_price']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['valuation_price'])) {
+            $invalidProperties[] = "invalid value for 'valuation_price', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -1090,8 +1090,8 @@ class WarehouseStockMovement implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('non-nullable valuation_price cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($valuation_price)))) {
-            throw new \InvalidArgumentException("invalid value for \$valuation_price when calling WarehouseStockMovement., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($valuation_price)))) {
+            throw new \InvalidArgumentException("invalid value for \$valuation_price when calling WarehouseStockMovement., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['valuation_price'] = $valuation_price;

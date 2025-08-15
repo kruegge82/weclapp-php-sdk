@@ -81,6 +81,9 @@ class PurchaseInvoiceApi
         'purchaseInvoiceGet' => [
             'application/json',
         ],
+        'purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost' => [
+            'application/json',
+        ],
         'purchaseInvoiceIdIdCreateContractPost' => [
             'application/json',
         ],
@@ -810,6 +813,304 @@ class PurchaseInvoiceApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost
+     *
+     * @param  string $id id (required)
+     * @param  object $body body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost'] to see the possible values for this operation
+     *
+     * @throws \kruegge82\weclapp\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \kruegge82\weclapp\Model\IncomingGoodsIdIdCreatePurchaseInvoicePost200Response|\kruegge82\weclapp\Model\ApiProblem
+     */
+    public function purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost($id, $body, string $contentType = self::contentTypes['purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost'][0])
+    {
+        list($response) = $this->purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePostWithHttpInfo($id, $body, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePostWithHttpInfo
+     *
+     * @param  string $id (required)
+     * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost'] to see the possible values for this operation
+     *
+     * @throws \kruegge82\weclapp\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \kruegge82\weclapp\Model\IncomingGoodsIdIdCreatePurchaseInvoicePost200Response|\kruegge82\weclapp\Model\ApiProblem, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePostWithHttpInfo($id, $body, string $contentType = self::contentTypes['purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost'][0])
+    {
+        $request = $this->purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePostRequest($id, $body, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\kruegge82\weclapp\Model\IncomingGoodsIdIdCreatePurchaseInvoicePost200Response',
+                        $request,
+                        $response,
+                    );
+                default:
+                    return $this->handleResponseWithDataType(
+                        '\kruegge82\weclapp\Model\ApiProblem',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\kruegge82\weclapp\Model\IncomingGoodsIdIdCreatePurchaseInvoicePost200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\kruegge82\weclapp\Model\IncomingGoodsIdIdCreatePurchaseInvoicePost200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                default:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\kruegge82\weclapp\Model\ApiProblem',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePostAsync
+     *
+     * @param  string $id (required)
+     * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePostAsync($id, $body, string $contentType = self::contentTypes['purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost'][0])
+    {
+        return $this->purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePostAsyncWithHttpInfo($id, $body, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePostAsyncWithHttpInfo
+     *
+     * @param  string $id (required)
+     * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePostAsyncWithHttpInfo($id, $body, string $contentType = self::contentTypes['purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost'][0])
+    {
+        $returnType = '\kruegge82\weclapp\Model\IncomingGoodsIdIdCreatePurchaseInvoicePost200Response';
+        $request = $this->purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePostRequest($id, $body, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost'
+     *
+     * @param  string $id (required)
+     * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePostRequest($id, $body, string $contentType = self::contentTypes['purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost'][0])
+    {
+
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost'
+            );
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost'
+            );
+        }
+
+
+        $resourcePath = '/purchaseInvoice/id/{id}/convertPurchaseInvoiceToCreditNote';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('AuthenticationToken');
+        if ($apiKey !== null) {
+            $headers['AuthenticationToken'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

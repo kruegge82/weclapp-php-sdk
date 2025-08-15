@@ -58,7 +58,8 @@ class PurchaseOrderIdIdProcessDropshippingPostRequestProcessPurchaseOrderItemsIn
       * @var string[]
       */
     protected static $openAPITypes = [
-        'purchase_order_item_id' => 'string'
+        'purchase_order_item_id' => 'string',
+        'quantity' => 'float'
     ];
 
     /**
@@ -69,7 +70,8 @@ class PurchaseOrderIdIdProcessDropshippingPostRequestProcessPurchaseOrderItemsIn
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'purchase_order_item_id' => null
+        'purchase_order_item_id' => null,
+        'quantity' => 'decimal'
     ];
 
     /**
@@ -78,7 +80,8 @@ class PurchaseOrderIdIdProcessDropshippingPostRequestProcessPurchaseOrderItemsIn
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'purchase_order_item_id' => false
+        'purchase_order_item_id' => false,
+        'quantity' => false
     ];
 
     /**
@@ -167,7 +170,8 @@ class PurchaseOrderIdIdProcessDropshippingPostRequestProcessPurchaseOrderItemsIn
      * @var string[]
      */
     protected static $attributeMap = [
-        'purchase_order_item_id' => 'purchaseOrderItemId'
+        'purchase_order_item_id' => 'purchaseOrderItemId',
+        'quantity' => 'quantity'
     ];
 
     /**
@@ -176,7 +180,8 @@ class PurchaseOrderIdIdProcessDropshippingPostRequestProcessPurchaseOrderItemsIn
      * @var string[]
      */
     protected static $setters = [
-        'purchase_order_item_id' => 'setPurchaseOrderItemId'
+        'purchase_order_item_id' => 'setPurchaseOrderItemId',
+        'quantity' => 'setQuantity'
     ];
 
     /**
@@ -185,7 +190,8 @@ class PurchaseOrderIdIdProcessDropshippingPostRequestProcessPurchaseOrderItemsIn
      * @var string[]
      */
     protected static $getters = [
-        'purchase_order_item_id' => 'getPurchaseOrderItemId'
+        'purchase_order_item_id' => 'getPurchaseOrderItemId',
+        'quantity' => 'getQuantity'
     ];
 
     /**
@@ -246,6 +252,7 @@ class PurchaseOrderIdIdProcessDropshippingPostRequestProcessPurchaseOrderItemsIn
     public function __construct(?array $data = null)
     {
         $this->setIfExists('purchase_order_item_id', $data ?? [], null);
+        $this->setIfExists('quantity', $data ?? [], null);
     }
 
     /**
@@ -313,6 +320,33 @@ class PurchaseOrderIdIdProcessDropshippingPostRequestProcessPurchaseOrderItemsIn
             throw new \InvalidArgumentException('non-nullable purchase_order_item_id cannot be null');
         }
         $this->container['purchase_order_item_id'] = $purchase_order_item_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity
+     *
+     * @return float|null
+     */
+    public function getQuantity()
+    {
+        return $this->container['quantity'];
+    }
+
+    /**
+     * Sets quantity
+     *
+     * @param float|null $quantity quantity
+     *
+     * @return self
+     */
+    public function setQuantity($quantity)
+    {
+        if (is_null($quantity)) {
+            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
+        }
+        $this->container['quantity'] = $quantity;
 
         return $this;
     }

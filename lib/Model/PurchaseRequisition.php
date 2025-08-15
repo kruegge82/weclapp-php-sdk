@@ -422,12 +422,12 @@ class PurchaseRequisition implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['proposed_quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['proposed_quantity'])) {
-            $invalidProperties[] = "invalid value for 'proposed_quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['proposed_quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['proposed_quantity'])) {
+            $invalidProperties[] = "invalid value for 'proposed_quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
-        if (!is_null($this->container['requirement_quantity']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['requirement_quantity'])) {
-            $invalidProperties[] = "invalid value for 'requirement_quantity', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['requirement_quantity']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['requirement_quantity'])) {
+            $invalidProperties[] = "invalid value for 'requirement_quantity', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         if (!is_null($this->container['requisition_number']) && (mb_strlen($this->container['requisition_number']) > 30)) {
@@ -823,8 +823,8 @@ class PurchaseRequisition implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable proposed_quantity cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($proposed_quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$proposed_quantity when calling PurchaseRequisition., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($proposed_quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$proposed_quantity when calling PurchaseRequisition., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['proposed_quantity'] = $proposed_quantity;
@@ -882,8 +882,8 @@ class PurchaseRequisition implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable requirement_quantity cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($requirement_quantity)))) {
-            throw new \InvalidArgumentException("invalid value for \$requirement_quantity when calling PurchaseRequisition., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($requirement_quantity)))) {
+            throw new \InvalidArgumentException("invalid value for \$requirement_quantity when calling PurchaseRequisition., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['requirement_quantity'] = $requirement_quantity;

@@ -58,6 +58,7 @@ class ProductionOrderGet200Response implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
+        'additional_properties' => '\kruegge82\weclapp\Model\ProductionOrderGet200ResponseAdditionalProperties',
         'result' => '\kruegge82\weclapp\Model\ProductionOrder[]'
     ];
 
@@ -69,6 +70,7 @@ class ProductionOrderGet200Response implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'additional_properties' => null,
         'result' => null
     ];
 
@@ -78,6 +80,7 @@ class ProductionOrderGet200Response implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'additional_properties' => false,
         'result' => false
     ];
 
@@ -167,6 +170,7 @@ class ProductionOrderGet200Response implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
+        'additional_properties' => 'additionalProperties',
         'result' => 'result'
     ];
 
@@ -176,6 +180,7 @@ class ProductionOrderGet200Response implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
+        'additional_properties' => 'setAdditionalProperties',
         'result' => 'setResult'
     ];
 
@@ -185,6 +190,7 @@ class ProductionOrderGet200Response implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
+        'additional_properties' => 'getAdditionalProperties',
         'result' => 'getResult'
     ];
 
@@ -245,6 +251,7 @@ class ProductionOrderGet200Response implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('additional_properties', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
     }
 
@@ -289,6 +296,33 @@ class ProductionOrderGet200Response implements ModelInterface, ArrayAccess, \Jso
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets additional_properties
+     *
+     * @return \kruegge82\weclapp\Model\ProductionOrderGet200ResponseAdditionalProperties|null
+     */
+    public function getAdditionalProperties()
+    {
+        return $this->container['additional_properties'];
+    }
+
+    /**
+     * Sets additional_properties
+     *
+     * @param \kruegge82\weclapp\Model\ProductionOrderGet200ResponseAdditionalProperties|null $additional_properties additional_properties
+     *
+     * @return self
+     */
+    public function setAdditionalProperties($additional_properties)
+    {
+        if (is_null($additional_properties)) {
+            throw new \InvalidArgumentException('non-nullable additional_properties cannot be null');
+        }
+        $this->container['additional_properties'] = $additional_properties;
+
+        return $this;
+    }
 
     /**
      * Gets result

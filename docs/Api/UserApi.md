@@ -7,9 +7,11 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 | [**userCountGet()**](UserApi.md#userCountGet) | **GET** /user/count | count user |
 | [**userCurrentUserGet()**](UserApi.md#userCurrentUserGet) | **GET** /user/currentUser |  |
 | [**userGet()**](UserApi.md#userGet) | **GET** /user | query user |
+| [**userIdIdDeleteMfaDevicePost()**](UserApi.md#userIdIdDeleteMfaDevicePost) | **POST** /user/id/{id}/deleteMfaDevice |  |
 | [**userIdIdGet()**](UserApi.md#userIdIdGet) | **GET** /user/id/{id} | query a specific user |
 | [**userIdIdInvitePost()**](UserApi.md#userIdIdInvitePost) | **POST** /user/id/{id}/invite |  |
 | [**userIdIdPut()**](UserApi.md#userIdIdPut) | **PUT** /user/id/{id} | update a user |
+| [**userIdIdReadMfaDevicesGet()**](UserApi.md#userIdIdReadMfaDevicesGet) | **GET** /user/id/{id}/readMfaDevices |  |
 | [**userIdIdSoftDeletePost()**](UserApi.md#userIdIdSoftDeletePost) | **POST** /user/id/{id}/softDelete |  |
 | [**userIdIdUserImageGet()**](UserApi.md#userIdIdUserImageGet) | **GET** /user/id/{id}/userImage |  |
 | [**userIdIdUserImageThumbnailGet()**](UserApi.md#userIdIdUserImageThumbnailGet) | **GET** /user/id/{id}/userImageThumbnail |  |
@@ -209,6 +211,67 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `userIdIdDeleteMfaDevicePost()`
+
+```php
+userIdIdDeleteMfaDevicePost($id, $user_id_id_delete_mfa_device_post_request)
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$user_id_id_delete_mfa_device_post_request = new \kruegge82\weclapp\Model\UserIdIdDeleteMfaDevicePostRequest(); // \kruegge82\weclapp\Model\UserIdIdDeleteMfaDevicePostRequest
+
+try {
+    $apiInstance->userIdIdDeleteMfaDevicePost($id, $user_id_id_delete_mfa_device_post_request);
+} catch (Exception $e) {
+    echo 'Exception when calling UserApi->userIdIdDeleteMfaDevicePost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **user_id_id_delete_mfa_device_post_request** | [**\kruegge82\weclapp\Model\UserIdIdDeleteMfaDevicePostRequest**](../Model/UserIdIdDeleteMfaDevicePostRequest.md)|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `userIdIdGet()`
 
 ```php
@@ -393,6 +456,66 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `userIdIdReadMfaDevicesGet()`
+
+```php
+userIdIdReadMfaDevicesGet($id): \kruegge82\weclapp\Model\UserIdIdReadMfaDevicesGet200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\UserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+
+try {
+    $result = $apiInstance->userIdIdReadMfaDevicesGet($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UserApi->userIdIdReadMfaDevicesGet: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\UserIdIdReadMfaDevicesGet200Response**](../Model/UserIdIdReadMfaDevicesGet200Response.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

@@ -310,8 +310,8 @@ class CostCenterWithDistributionPercentage implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['distribution_percentage']) && !preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['distribution_percentage'])) {
-            $invalidProperties[] = "invalid value for 'distribution_percentage', must be conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.";
+        if (!is_null($this->container['distribution_percentage']) && !preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", $this->container['distribution_percentage'])) {
+            $invalidProperties[] = "invalid value for 'distribution_percentage', must be conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.";
         }
 
         return $invalidProperties;
@@ -487,8 +487,8 @@ class CostCenterWithDistributionPercentage implements ModelInterface, ArrayAcces
             throw new \InvalidArgumentException('non-nullable distribution_percentage cannot be null');
         }
 
-        if ((!preg_match("/^-?([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($distribution_percentage)))) {
-            throw new \InvalidArgumentException("invalid value for \$distribution_percentage when calling CostCenterWithDistributionPercentage., must conform to the pattern /^-?([0-9]{1,13})([.][0-9]{1,5})?$/.");
+        if ((!preg_match("/^([0-9]{1,13})([.][0-9]{1,5})?$/", ObjectSerializer::toString($distribution_percentage)))) {
+            throw new \InvalidArgumentException("invalid value for \$distribution_percentage when calling CostCenterWithDistributionPercentage., must conform to the pattern /^([0-9]{1,13})([.][0-9]{1,5})?$/.");
         }
 
         $this->container['distribution_percentage'] = $distribution_percentage;
