@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **picks_complete** | **bool** |  | [optional] [readonly]
 **production_order_items** | [**\kruegge82\weclapp\Model\ProductionOrderItem[]**](ProductionOrderItem.md) |  | [optional]
 **production_order_number** | **string** |  | [optional]
+**sales_order_item_id** | **string** |  | [optional] [readonly]
 **status** | [**\kruegge82\weclapp\Model\ProductionOrderStatusType**](ProductionOrderStatusType.md) |  | [optional]
 **status_history** | [**\kruegge82\weclapp\Model\ProductionOrderStatusHistory[]**](ProductionOrderStatusHistory.md) |  | [optional] [readonly]
 **target_end_date** | **int** |  | [optional]

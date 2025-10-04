@@ -43,6 +43,7 @@ Name | Type | Description | Notes
 **package_tracking_url** | **string** |  | [optional]
 **package_weight** | **float** |  | [optional]
 **package_width** | **int** |  | [optional]
+**parcels** | [**\kruegge82\weclapp\Model\Parcel[]**](Parcel.md) |  | [optional]
 **picking_instructions** | **string** |  | [optional]
 **picks_complete** | **bool** |  | [optional] [readonly]
 **purchase_orders** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional] [readonly]
@@ -61,6 +62,7 @@ Name | Type | Description | Notes
 **shipping_date** | **int** |  | [optional]
 **shipping_labels_count** | **int** |  | [optional]
 **shipping_return_carrier_id** | **string** |  | [optional]
+**total_weight** | **float** |  | [optional]
 **warehouse_id** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

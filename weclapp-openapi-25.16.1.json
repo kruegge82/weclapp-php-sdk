@@ -55138,7 +55138,6 @@
               },
               "longText": {
                 "format": "html",
-                "maxLength": 255,
                 "type": "string"
               },
               "lowLevelCode": {

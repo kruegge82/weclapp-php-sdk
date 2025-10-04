@@ -1,0 +1,45 @@
+# # Task
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **string** |  | [optional] [readonly]
+**created_date** | **int** |  | [optional] [readonly]
+**last_modified_date** | **int** |  | [optional] [readonly]
+**version** | **string** |  | [optional] [readonly]
+**custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
+**allow_over_booking** | **bool** |  | [optional]
+**allow_time_booking** | **bool** |  | [optional]
+**article_id** | **string** |  | [optional]
+**assignees** | [**\kruegge82\weclapp\Model\TaskAssignee[]**](TaskAssignee.md) |  | [optional]
+**billable_status** | **bool** |  | [optional] [readonly]
+**calendar_event_id** | **string** |  | [optional] [readonly]
+**creator_user_id** | **string** |  | [optional] [readonly]
+**customer_id** | **string** |  | [optional]
+**date_from** | **int** |  | [optional]
+**date_to** | **int** |  | [optional]
+**description** | **string** |  | [optional]
+**entity_references** | [**\kruegge82\weclapp\Model\EntityReference[]**](EntityReference.md) |  | [optional]
+**identifier** | **string** |  | [optional] [readonly]
+**invoicing_status** | [**\kruegge82\weclapp\Model\BillableInvoiceStatus**](BillableInvoiceStatus.md) |  | [optional]
+**last_reminder_date_for_overdue** | **int** |  | [optional] [readonly]
+**order_item_id** | **string** |  | [optional]
+**parent_task_id** | **string** |  | [optional]
+**performance_recorded_status** | [**\kruegge82\weclapp\Model\PerformanceRecordedStatus**](PerformanceRecordedStatus.md) |  | [optional]
+**planned_effort** | **int** |  | [optional]
+**position_number** | **int** |  | [optional]
+**previous_task_id** | **string** |  | [optional]
+**subject** | **string** |  | [optional]
+**task_lists** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
+**task_mail_account** | [**\kruegge82\weclapp\Model\TaskMailAccount**](TaskMailAccount.md) |  | [optional]
+**task_priority** | [**\kruegge82\weclapp\Model\TaskPriority**](TaskPriority.md) |  | [optional]
+**task_status** | [**\kruegge82\weclapp\Model\TaskProgressStatus**](TaskProgressStatus.md) |  | [optional]
+**task_topics** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
+**task_types** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
+**task_visibility_type** | [**\kruegge82\weclapp\Model\TaskVisibilityType**](TaskVisibilityType.md) |  | [optional]
+**ticket_id** | **string** |  | [optional]
+**user_of_last_status_change_id** | **string** |  | [optional] [readonly]
+**watchers** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -348,7 +348,7 @@ try {
 ## `shipmentIdIdCreateShippingLabelPdfPost()`
 
 ```php
-shipmentIdIdCreateShippingLabelPdfPost($id, $name, $body, $description): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
+shipmentIdIdCreateShippingLabelPdfPost($id, $name, $body, $description, $parcel_id): \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPost200Response
 ```
 
 
@@ -376,9 +376,10 @@ $id = 'id_example'; // string
 $name = 'name_example'; // string
 $body = '/path/to/file.txt'; // \SplFileObject
 $description = 'description_example'; // string
+$parcel_id = 'parcel_id_example'; // string
 
 try {
-    $result = $apiInstance->shipmentIdIdCreateShippingLabelPdfPost($id, $name, $body, $description);
+    $result = $apiInstance->shipmentIdIdCreateShippingLabelPdfPost($id, $name, $body, $description, $parcel_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->shipmentIdIdCreateShippingLabelPdfPost: ', $e->getMessage(), PHP_EOL;
@@ -393,6 +394,7 @@ try {
 | **name** | **string**|  | |
 | **body** | **\SplFileObject****\SplFileObject**|  | |
 | **description** | **string**|  | [optional] |
+| **parcel_id** | **string**|  | [optional] |
 
 ### Return type
 
@@ -414,7 +416,7 @@ try {
 ## `shipmentIdIdCreateShippingLabelsPost()`
 
 ```php
-shipmentIdIdCreateShippingLabelsPost($id, $body): \kruegge82\weclapp\Model\DocumentGet200Response
+shipmentIdIdCreateShippingLabelsPost($id, $shipment_id_id_create_shipping_labels_post_request): \kruegge82\weclapp\Model\DocumentGet200Response
 ```
 
 
@@ -439,10 +441,10 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentApi(
     $config
 );
 $id = 'id_example'; // string
-$body = array('key' => new \stdClass); // object
+$shipment_id_id_create_shipping_labels_post_request = new \kruegge82\weclapp\Model\ShipmentIdIdCreateShippingLabelsPostRequest(); // \kruegge82\weclapp\Model\ShipmentIdIdCreateShippingLabelsPostRequest
 
 try {
-    $result = $apiInstance->shipmentIdIdCreateShippingLabelsPost($id, $body);
+    $result = $apiInstance->shipmentIdIdCreateShippingLabelsPost($id, $shipment_id_id_create_shipping_labels_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->shipmentIdIdCreateShippingLabelsPost: ', $e->getMessage(), PHP_EOL;
@@ -454,7 +456,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | **object**|  | |
+| **shipment_id_id_create_shipping_labels_post_request** | [**\kruegge82\weclapp\Model\ShipmentIdIdCreateShippingLabelsPostRequest**](../Model/ShipmentIdIdCreateShippingLabelsPostRequest.md)|  | |
 
 ### Return type
 

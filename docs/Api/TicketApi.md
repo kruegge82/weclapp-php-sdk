@@ -6,6 +6,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 | ------------- | ------------- | ------------- |
 | [**ticketCountGet()**](TicketApi.md#ticketCountGet) | **GET** /ticket/count | count ticket |
 | [**ticketGet()**](TicketApi.md#ticketGet) | **GET** /ticket | query ticket |
+| [**ticketIdIdCreatePerformanceRecordPost()**](TicketApi.md#ticketIdIdCreatePerformanceRecordPost) | **POST** /ticket/id/{id}/createPerformanceRecord |  |
 | [**ticketIdIdCreatePublicPagePost()**](TicketApi.md#ticketIdIdCreatePublicPagePost) | **POST** /ticket/id/{id}/createPublicPage |  |
 | [**ticketIdIdDelete()**](TicketApi.md#ticketIdIdDelete) | **DELETE** /ticket/id/{id} | delete a ticket |
 | [**ticketIdIdDisablePublicPagePost()**](TicketApi.md#ticketIdIdDisablePublicPagePost) | **POST** /ticket/id/{id}/disablePublicPage |  |
@@ -148,6 +149,68 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ticketIdIdCreatePerformanceRecordPost()`
+
+```php
+ticketIdIdCreatePerformanceRecordPost($id, $body): \kruegge82\weclapp\Model\PerformanceRecordIdIdAddToPerformanceRecordPost200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\TicketApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$body = array('key' => new \stdClass); // object
+
+try {
+    $result = $apiInstance->ticketIdIdCreatePerformanceRecordPost($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TicketApi->ticketIdIdCreatePerformanceRecordPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **body** | **object**|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\PerformanceRecordIdIdAddToPerformanceRecordPost200Response**](../Model/PerformanceRecordIdIdAddToPerformanceRecordPost200Response.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

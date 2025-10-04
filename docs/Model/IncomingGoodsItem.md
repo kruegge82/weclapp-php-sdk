@@ -24,10 +24,14 @@ Name | Type | Description | Notes
 **item_group** | **string** |  | [optional]
 **purchase_order_item_id** | **string** |  | [optional]
 **return_assessment_id** | **string** |  | [optional]
+**return_assessments** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
 **return_description** | **string** |  | [optional]
 **return_error_id** | **string** |  | [optional]
+**return_errors** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
 **return_reason_id** | **string** |  | [optional]
+**return_reasons** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
 **return_rectification_id** | **string** |  | [optional]
+**return_rectifications** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
 **sales_order_item_id** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

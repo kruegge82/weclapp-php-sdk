@@ -1,0 +1,45 @@
+# # PerformanceRecord
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **string** |  | [optional] [readonly]
+**created_date** | **int** |  | [optional] [readonly]
+**last_modified_date** | **int** |  | [optional] [readonly]
+**version** | **string** |  | [optional] [readonly]
+**custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
+**commercial_language** | **string** |  | [optional]
+**creator_id** | **string** |  | [optional] [readonly]
+**description** | **string** |  | [optional]
+**disable_record_emailing_rule** | **bool** |  | [optional]
+**record_comment** | **string** |  | [optional]
+**record_free_text** | **string** |  | [optional]
+**record_opening** | **string** |  | [optional]
+**sent_to_recipient** | **bool** |  | [optional]
+**tags** | **string[]** |  | [optional]
+**commission** | **string** |  | [optional]
+**customer_id** | **string** |  | [optional]
+**customer_signature_date** | **int** |  | [optional] [readonly]
+**invoice_address** | [**\kruegge82\weclapp\Model\RecordAddress**](RecordAddress.md) |  | [optional]
+**invoice_recipient_id** | **string** |  | [optional]
+**order_number_at_customer** | **string** |  | [optional]
+**performance_record_date** | **int** |  | [optional]
+**performance_record_items** | [**\kruegge82\weclapp\Model\PerformanceRecordItem[]**](PerformanceRecordItem.md) |  | [optional]
+**performance_record_number** | **string** |  | [optional]
+**record_address** | [**\kruegge82\weclapp\Model\RecordAddress**](RecordAddress.md) |  | [optional]
+**record_comment_inheritance** | **bool** |  | [optional]
+**record_email_addresses** | [**\kruegge82\weclapp\Model\EmailAddresses**](EmailAddresses.md) |  | [optional]
+**record_free_text_inheritance** | **bool** |  | [optional]
+**record_opening_inheritance** | **bool** |  | [optional]
+**sales_channel** | [**\kruegge82\weclapp\Model\DistributionChannel**](DistributionChannel.md) |  | [optional]
+**sales_invoice_email_addresses** | [**\kruegge82\weclapp\Model\EmailAddresses**](EmailAddresses.md) |  | [optional]
+**sales_order_id** | **string** |  | [optional] [readonly]
+**service_period_from** | **int** |  | [optional]
+**service_period_to** | **int** |  | [optional]
+**service_provider_id** | **string** |  | [optional]
+**service_provider_signature_date** | **int** |  | [optional] [readonly]
+**status** | [**\kruegge82\weclapp\Model\PerformanceRecordStatusType**](PerformanceRecordStatusType.md) |  | [optional]
+**status_history** | [**\kruegge82\weclapp\Model\PerformanceRecordStatusHistory[]**](PerformanceRecordStatusHistory.md) |  | [optional] [readonly]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

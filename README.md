@@ -176,6 +176,9 @@ Class | Method | HTTP request | Description
 *BlanketPurchaseOrderApi* | [**blanketPurchaseOrderIdIdGet**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderididget) | **GET** /blanketPurchaseOrder/id/{id} | query a specific blanketPurchaseOrder
 *BlanketPurchaseOrderApi* | [**blanketPurchaseOrderIdIdPut**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderididput) | **PUT** /blanketPurchaseOrder/id/{id} | update a blanketPurchaseOrder
 *BlanketPurchaseOrderApi* | [**blanketPurchaseOrderPost**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderpost) | **POST** /blanketPurchaseOrder | create a blanketPurchaseOrder
+*BlanketSalesOrderApi* | [**blanketSalesOrderCountGet**](docs/Api/BlanketSalesOrderApi.md#blanketsalesordercountget) | **GET** /blanketSalesOrder/count | count blanketSalesOrder
+*BlanketSalesOrderApi* | [**blanketSalesOrderGet**](docs/Api/BlanketSalesOrderApi.md#blanketsalesorderget) | **GET** /blanketSalesOrder | query blanketSalesOrder
+*BlanketSalesOrderApi* | [**blanketSalesOrderIdIdGet**](docs/Api/BlanketSalesOrderApi.md#blanketsalesorderididget) | **GET** /blanketSalesOrder/id/{id} | query a specific blanketSalesOrder
 *CalendarApi* | [**calendarCountGet**](docs/Api/CalendarApi.md#calendarcountget) | **GET** /calendar/count | count calendar
 *CalendarApi* | [**calendarGet**](docs/Api/CalendarApi.md#calendarget) | **GET** /calendar | query calendar
 *CalendarApi* | [**calendarIdIdDelete**](docs/Api/CalendarApi.md#calendarididdelete) | **DELETE** /calendar/id/{id} | delete a calendar
@@ -442,6 +445,7 @@ Class | Method | HTTP request | Description
 *ManufacturerApi* | [**manufacturerIdIdGet**](docs/Api/ManufacturerApi.md#manufacturerididget) | **GET** /manufacturer/id/{id} | query a specific manufacturer
 *ManufacturerApi* | [**manufacturerIdIdPut**](docs/Api/ManufacturerApi.md#manufacturerididput) | **PUT** /manufacturer/id/{id} | update a manufacturer
 *ManufacturerApi* | [**manufacturerPost**](docs/Api/ManufacturerApi.md#manufacturerpost) | **POST** /manufacturer | create a manufacturer
+*MetaApi* | [**metaLegacyReferencePropertiesGet**](docs/Api/MetaApi.md#metalegacyreferencepropertiesget) | **GET** /meta/legacyReferenceProperties | 
 *MetaApi* | [**metaQueryFilterPropertiesGet**](docs/Api/MetaApi.md#metaqueryfilterpropertiesget) | **GET** /meta/queryFilterProperties | 
 *MetaApi* | [**metaQuerySortPropertiesGet**](docs/Api/MetaApi.md#metaquerysortpropertiesget) | **GET** /meta/querySortProperties | 
 *MetaApi* | [**metaResourcesGet**](docs/Api/MetaApi.md#metaresourcesget) | **GET** /meta/resources | 
@@ -449,6 +453,12 @@ Class | Method | HTTP request | Description
 *NotificationApi* | [**notificationGet**](docs/Api/NotificationApi.md#notificationget) | **GET** /notification | query notification
 *NotificationApi* | [**notificationIdIdGet**](docs/Api/NotificationApi.md#notificationididget) | **GET** /notification/id/{id} | query a specific notification
 *NotificationApi* | [**notificationIdIdMarkReadPost**](docs/Api/NotificationApi.md#notificationididmarkreadpost) | **POST** /notification/id/{id}/markRead | 
+*NumberRangeApi* | [**numberRangeCountGet**](docs/Api/NumberRangeApi.md#numberrangecountget) | **GET** /numberRange/count | count numberRange
+*NumberRangeApi* | [**numberRangeGet**](docs/Api/NumberRangeApi.md#numberrangeget) | **GET** /numberRange | query numberRange
+*NumberRangeApi* | [**numberRangeIdIdGet**](docs/Api/NumberRangeApi.md#numberrangeididget) | **GET** /numberRange/id/{id} | query a specific numberRange
+*NumberRangeValueApi* | [**numberRangeValueCountGet**](docs/Api/NumberRangeValueApi.md#numberrangevaluecountget) | **GET** /numberRangeValue/count | count numberRangeValue
+*NumberRangeValueApi* | [**numberRangeValueGet**](docs/Api/NumberRangeValueApi.md#numberrangevalueget) | **GET** /numberRangeValue | query numberRangeValue
+*NumberRangeValueApi* | [**numberRangeValueIdIdGet**](docs/Api/NumberRangeValueApi.md#numberrangevalueididget) | **GET** /numberRangeValue/id/{id} | query a specific numberRangeValue
 *OpportunityApi* | [**opportunityCountGet**](docs/Api/OpportunityApi.md#opportunitycountget) | **GET** /opportunity/count | count opportunity
 *OpportunityApi* | [**opportunityGet**](docs/Api/OpportunityApi.md#opportunityget) | **GET** /opportunity | query opportunity
 *OpportunityApi* | [**opportunityIdIdDelete**](docs/Api/OpportunityApi.md#opportunityididdelete) | **DELETE** /opportunity/id/{id} | delete a opportunity
@@ -497,6 +507,19 @@ Class | Method | HTTP request | Description
 *PaymentRunItemApi* | [**paymentRunItemCountGet**](docs/Api/PaymentRunItemApi.md#paymentrunitemcountget) | **GET** /paymentRunItem/count | count paymentRunItem
 *PaymentRunItemApi* | [**paymentRunItemGet**](docs/Api/PaymentRunItemApi.md#paymentrunitemget) | **GET** /paymentRunItem | query paymentRunItem
 *PaymentRunItemApi* | [**paymentRunItemIdIdGet**](docs/Api/PaymentRunItemApi.md#paymentrunitemididget) | **GET** /paymentRunItem/id/{id} | query a specific paymentRunItem
+*PerformanceRecordApi* | [**performanceRecordCountGet**](docs/Api/PerformanceRecordApi.md#performancerecordcountget) | **GET** /performanceRecord/count | count performanceRecord
+*PerformanceRecordApi* | [**performanceRecordGet**](docs/Api/PerformanceRecordApi.md#performancerecordget) | **GET** /performanceRecord | query performanceRecord
+*PerformanceRecordApi* | [**performanceRecordIdIdAddToPerformanceRecordPost**](docs/Api/PerformanceRecordApi.md#performancerecordididaddtoperformancerecordpost) | **POST** /performanceRecord/id/{id}/addToPerformanceRecord | 
+*PerformanceRecordApi* | [**performanceRecordIdIdCreateInvoicePost**](docs/Api/PerformanceRecordApi.md#performancerecordididcreateinvoicepost) | **POST** /performanceRecord/id/{id}/createInvoice | 
+*PerformanceRecordApi* | [**performanceRecordIdIdDelete**](docs/Api/PerformanceRecordApi.md#performancerecordididdelete) | **DELETE** /performanceRecord/id/{id} | delete a performanceRecord
+*PerformanceRecordApi* | [**performanceRecordIdIdDownloadLatestPerformanceRecordPdfGet**](docs/Api/PerformanceRecordApi.md#performancerecordididdownloadlatestperformancerecordpdfget) | **GET** /performanceRecord/id/{id}/downloadLatestPerformanceRecordPdf | 
+*PerformanceRecordApi* | [**performanceRecordIdIdDownloadSignatureGet**](docs/Api/PerformanceRecordApi.md#performancerecordididdownloadsignatureget) | **GET** /performanceRecord/id/{id}/downloadSignature | 
+*PerformanceRecordApi* | [**performanceRecordIdIdGet**](docs/Api/PerformanceRecordApi.md#performancerecordididget) | **GET** /performanceRecord/id/{id} | query a specific performanceRecord
+*PerformanceRecordApi* | [**performanceRecordIdIdPut**](docs/Api/PerformanceRecordApi.md#performancerecordididput) | **PUT** /performanceRecord/id/{id} | update a performanceRecord
+*PerformanceRecordApi* | [**performanceRecordIdIdRecalculateQuantitiesPost**](docs/Api/PerformanceRecordApi.md#performancerecordididrecalculatequantitiespost) | **POST** /performanceRecord/id/{id}/recalculateQuantities | 
+*PerformanceRecordApi* | [**performanceRecordIdIdRemoveSignaturePost**](docs/Api/PerformanceRecordApi.md#performancerecordididremovesignaturepost) | **POST** /performanceRecord/id/{id}/removeSignature | 
+*PerformanceRecordApi* | [**performanceRecordIdIdUploadSignaturePost**](docs/Api/PerformanceRecordApi.md#performancerecordididuploadsignaturepost) | **POST** /performanceRecord/id/{id}/uploadSignature | 
+*PerformanceRecordApi* | [**performanceRecordPost**](docs/Api/PerformanceRecordApi.md#performancerecordpost) | **POST** /performanceRecord | create a performanceRecord
 *PersonDepartmentApi* | [**personDepartmentCountGet**](docs/Api/PersonDepartmentApi.md#persondepartmentcountget) | **GET** /personDepartment/count | count personDepartment
 *PersonDepartmentApi* | [**personDepartmentGet**](docs/Api/PersonDepartmentApi.md#persondepartmentget) | **GET** /personDepartment | query personDepartment
 *PersonDepartmentApi* | [**personDepartmentIdIdDelete**](docs/Api/PersonDepartmentApi.md#persondepartmentididdelete) | **DELETE** /personDepartment/id/{id} | delete a personDepartment
@@ -557,6 +580,12 @@ Class | Method | HTTP request | Description
 *ProductionWorkScheduleAssignmentApi* | [**productionWorkScheduleAssignmentIdIdGet**](docs/Api/ProductionWorkScheduleAssignmentApi.md#productionworkscheduleassignmentididget) | **GET** /productionWorkScheduleAssignment/id/{id} | query a specific productionWorkScheduleAssignment
 *ProductionWorkScheduleAssignmentApi* | [**productionWorkScheduleAssignmentIdIdPut**](docs/Api/ProductionWorkScheduleAssignmentApi.md#productionworkscheduleassignmentididput) | **PUT** /productionWorkScheduleAssignment/id/{id} | update a productionWorkScheduleAssignment
 *ProductionWorkScheduleAssignmentApi* | [**productionWorkScheduleAssignmentPost**](docs/Api/ProductionWorkScheduleAssignmentApi.md#productionworkscheduleassignmentpost) | **POST** /productionWorkScheduleAssignment | create a productionWorkScheduleAssignment
+*ProjectOrderStatusPageApi* | [**projectOrderStatusPageCountGet**](docs/Api/ProjectOrderStatusPageApi.md#projectorderstatuspagecountget) | **GET** /projectOrderStatusPage/count | count projectOrderStatusPage
+*ProjectOrderStatusPageApi* | [**projectOrderStatusPageGet**](docs/Api/ProjectOrderStatusPageApi.md#projectorderstatuspageget) | **GET** /projectOrderStatusPage | query projectOrderStatusPage
+*ProjectOrderStatusPageApi* | [**projectOrderStatusPageIdIdDelete**](docs/Api/ProjectOrderStatusPageApi.md#projectorderstatuspageididdelete) | **DELETE** /projectOrderStatusPage/id/{id} | delete a projectOrderStatusPage
+*ProjectOrderStatusPageApi* | [**projectOrderStatusPageIdIdGet**](docs/Api/ProjectOrderStatusPageApi.md#projectorderstatuspageididget) | **GET** /projectOrderStatusPage/id/{id} | query a specific projectOrderStatusPage
+*ProjectOrderStatusPageApi* | [**projectOrderStatusPageIdIdPut**](docs/Api/ProjectOrderStatusPageApi.md#projectorderstatuspageididput) | **PUT** /projectOrderStatusPage/id/{id} | update a projectOrderStatusPage
+*ProjectOrderStatusPageApi* | [**projectOrderStatusPagePost**](docs/Api/ProjectOrderStatusPageApi.md#projectorderstatuspagepost) | **POST** /projectOrderStatusPage | create a projectOrderStatusPage
 *PropertyTranslationApi* | [**propertyTranslationReadPropertyTranslationsGet**](docs/Api/PropertyTranslationApi.md#propertytranslationreadpropertytranslationsget) | **GET** /propertyTranslation/readPropertyTranslations | 
 *PropertyTranslationApi* | [**propertyTranslationUpdatePropertyTranslationsPost**](docs/Api/PropertyTranslationApi.md#propertytranslationupdatepropertytranslationspost) | **POST** /propertyTranslation/updatePropertyTranslations | 
 *PurchaseInvoiceApi* | [**purchaseInvoiceCountGet**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoicecountget) | **GET** /purchaseInvoice/count | count purchaseInvoice
@@ -663,6 +692,7 @@ Class | Method | HTTP request | Description
 *RemotePrintJobApi* | [**remotePrintJobIdIdPut**](docs/Api/RemotePrintJobApi.md#remoteprintjobididput) | **PUT** /remotePrintJob/id/{id} | update a remotePrintJob
 *RemotePrintJobApi* | [**remotePrintJobPost**](docs/Api/RemotePrintJobApi.md#remoteprintjobpost) | **POST** /remotePrintJob | create a remotePrintJob
 *SalesChannelApi* | [**salesChannelActiveSalesChannelsGet**](docs/Api/SalesChannelApi.md#saleschannelactivesaleschannelsget) | **GET** /salesChannel/activeSalesChannels | 
+*SalesChannelApi* | [**salesChannelSalesChannelUsageGet**](docs/Api/SalesChannelApi.md#saleschannelsaleschannelusageget) | **GET** /salesChannel/salesChannelUsage | 
 *SalesInvoiceApi* | [**salesInvoiceCountGet**](docs/Api/SalesInvoiceApi.md#salesinvoicecountget) | **GET** /salesInvoice/count | count salesInvoice
 *SalesInvoiceApi* | [**salesInvoiceGet**](docs/Api/SalesInvoiceApi.md#salesinvoiceget) | **GET** /salesInvoice | query salesInvoice
 *SalesInvoiceApi* | [**salesInvoiceIdIdAddSalesOrdersPost**](docs/Api/SalesInvoiceApi.md#salesinvoiceididaddsalesorderspost) | **POST** /salesInvoice/id/{id}/addSalesOrders | 
@@ -696,6 +726,7 @@ Class | Method | HTTP request | Description
 *SalesOrderApi* | [**salesOrderIdIdCreateCustomerReturnPost**](docs/Api/SalesOrderApi.md#salesorderididcreatecustomerreturnpost) | **POST** /salesOrder/id/{id}/createCustomerReturn | 
 *SalesOrderApi* | [**salesOrderIdIdCreateDropshippingPost**](docs/Api/SalesOrderApi.md#salesorderididcreatedropshippingpost) | **POST** /salesOrder/id/{id}/createDropshipping | 
 *SalesOrderApi* | [**salesOrderIdIdCreatePartPaymentInvoicePost**](docs/Api/SalesOrderApi.md#salesorderididcreatepartpaymentinvoicepost) | **POST** /salesOrder/id/{id}/createPartPaymentInvoice | 
+*SalesOrderApi* | [**salesOrderIdIdCreatePerformanceRecordPost**](docs/Api/SalesOrderApi.md#salesorderididcreateperformancerecordpost) | **POST** /salesOrder/id/{id}/createPerformanceRecord | 
 *SalesOrderApi* | [**salesOrderIdIdCreatePrepaymentFinalInvoicePost**](docs/Api/SalesOrderApi.md#salesorderididcreateprepaymentfinalinvoicepost) | **POST** /salesOrder/id/{id}/createPrepaymentFinalInvoice | 
 *SalesOrderApi* | [**salesOrderIdIdCreateProductionOrdersPost**](docs/Api/SalesOrderApi.md#salesorderididcreateproductionorderspost) | **POST** /salesOrder/id/{id}/createProductionOrders | 
 *SalesOrderApi* | [**salesOrderIdIdCreatePurchaseOrderPost**](docs/Api/SalesOrderApi.md#salesorderididcreatepurchaseorderpost) | **POST** /salesOrder/id/{id}/createPurchaseOrder | 
@@ -834,6 +865,27 @@ Class | Method | HTTP request | Description
 *TagApi* | [**tagIdIdGet**](docs/Api/TagApi.md#tagididget) | **GET** /tag/id/{id} | query a specific tag
 *TagApi* | [**tagIdIdPut**](docs/Api/TagApi.md#tagididput) | **PUT** /tag/id/{id} | update a tag
 *TagApi* | [**tagPost**](docs/Api/TagApi.md#tagpost) | **POST** /tag | create a tag
+*TaskApi* | [**taskCountGet**](docs/Api/TaskApi.md#taskcountget) | **GET** /task/count | count task
+*TaskApi* | [**taskFromTemplateGet**](docs/Api/TaskApi.md#taskfromtemplateget) | **GET** /task/fromTemplate | 
+*TaskApi* | [**taskGet**](docs/Api/TaskApi.md#taskget) | **GET** /task | query task
+*TaskApi* | [**taskIdIdCreatePerformanceRecordPost**](docs/Api/TaskApi.md#taskididcreateperformancerecordpost) | **POST** /task/id/{id}/createPerformanceRecord | 
+*TaskApi* | [**taskIdIdDelete**](docs/Api/TaskApi.md#taskididdelete) | **DELETE** /task/id/{id} | delete a task
+*TaskApi* | [**taskIdIdGet**](docs/Api/TaskApi.md#taskididget) | **GET** /task/id/{id} | query a specific task
+*TaskApi* | [**taskIdIdPut**](docs/Api/TaskApi.md#taskididput) | **PUT** /task/id/{id} | update a task
+*TaskApi* | [**taskIdIdUpdateBillingDataPost**](docs/Api/TaskApi.md#taskididupdatebillingdatapost) | **POST** /task/id/{id}/updateBillingData | 
+*TaskApi* | [**taskPost**](docs/Api/TaskApi.md#taskpost) | **POST** /task | create a task
+*TaskListApi* | [**taskListCountGet**](docs/Api/TaskListApi.md#tasklistcountget) | **GET** /taskList/count | count taskList
+*TaskListApi* | [**taskListGet**](docs/Api/TaskListApi.md#tasklistget) | **GET** /taskList | query taskList
+*TaskListApi* | [**taskListIdIdDelete**](docs/Api/TaskListApi.md#tasklistididdelete) | **DELETE** /taskList/id/{id} | delete a taskList
+*TaskListApi* | [**taskListIdIdGet**](docs/Api/TaskListApi.md#tasklistididget) | **GET** /taskList/id/{id} | query a specific taskList
+*TaskListApi* | [**taskListIdIdPut**](docs/Api/TaskListApi.md#tasklistididput) | **PUT** /taskList/id/{id} | update a taskList
+*TaskListApi* | [**taskListPost**](docs/Api/TaskListApi.md#tasklistpost) | **POST** /taskList | create a taskList
+*TaskTemplateApi* | [**taskTemplateCountGet**](docs/Api/TaskTemplateApi.md#tasktemplatecountget) | **GET** /taskTemplate/count | count taskTemplate
+*TaskTemplateApi* | [**taskTemplateGet**](docs/Api/TaskTemplateApi.md#tasktemplateget) | **GET** /taskTemplate | query taskTemplate
+*TaskTemplateApi* | [**taskTemplateIdIdDelete**](docs/Api/TaskTemplateApi.md#tasktemplateididdelete) | **DELETE** /taskTemplate/id/{id} | delete a taskTemplate
+*TaskTemplateApi* | [**taskTemplateIdIdGet**](docs/Api/TaskTemplateApi.md#tasktemplateididget) | **GET** /taskTemplate/id/{id} | query a specific taskTemplate
+*TaskTemplateApi* | [**taskTemplateIdIdPut**](docs/Api/TaskTemplateApi.md#tasktemplateididput) | **PUT** /taskTemplate/id/{id} | update a taskTemplate
+*TaskTemplateApi* | [**taskTemplatePost**](docs/Api/TaskTemplateApi.md#tasktemplatepost) | **POST** /taskTemplate | create a taskTemplate
 *TaxApi* | [**taxConfigurePurchaseTaxesPost**](docs/Api/TaxApi.md#taxconfigurepurchasetaxespost) | **POST** /tax/configurePurchaseTaxes | 
 *TaxApi* | [**taxConfigureSalesTaxesPost**](docs/Api/TaxApi.md#taxconfiguresalestaxespost) | **POST** /tax/configureSalesTaxes | 
 *TaxApi* | [**taxCountGet**](docs/Api/TaxApi.md#taxcountget) | **GET** /tax/count | count tax
@@ -859,6 +911,7 @@ Class | Method | HTTP request | Description
 *TermOfPaymentApi* | [**termOfPaymentPost**](docs/Api/TermOfPaymentApi.md#termofpaymentpost) | **POST** /termOfPayment | create a termOfPayment
 *TicketApi* | [**ticketCountGet**](docs/Api/TicketApi.md#ticketcountget) | **GET** /ticket/count | count ticket
 *TicketApi* | [**ticketGet**](docs/Api/TicketApi.md#ticketget) | **GET** /ticket | query ticket
+*TicketApi* | [**ticketIdIdCreatePerformanceRecordPost**](docs/Api/TicketApi.md#ticketididcreateperformancerecordpost) | **POST** /ticket/id/{id}/createPerformanceRecord | 
 *TicketApi* | [**ticketIdIdCreatePublicPagePost**](docs/Api/TicketApi.md#ticketididcreatepublicpagepost) | **POST** /ticket/id/{id}/createPublicPage | 
 *TicketApi* | [**ticketIdIdDelete**](docs/Api/TicketApi.md#ticketididdelete) | **DELETE** /ticket/id/{id} | delete a ticket
 *TicketApi* | [**ticketIdIdDisablePublicPagePost**](docs/Api/TicketApi.md#ticketididdisablepublicpagepost) | **POST** /ticket/id/{id}/disablePublicPage | 
@@ -909,6 +962,12 @@ Class | Method | HTTP request | Description
 *TicketTypeApi* | [**ticketTypeIdIdGet**](docs/Api/TicketTypeApi.md#tickettypeididget) | **GET** /ticketType/id/{id} | query a specific ticketType
 *TicketTypeApi* | [**ticketTypeIdIdPut**](docs/Api/TicketTypeApi.md#tickettypeididput) | **PUT** /ticketType/id/{id} | update a ticketType
 *TicketTypeApi* | [**ticketTypePost**](docs/Api/TicketTypeApi.md#tickettypepost) | **POST** /ticketType | create a ticketType
+*TimeRecordApi* | [**timeRecordCountGet**](docs/Api/TimeRecordApi.md#timerecordcountget) | **GET** /timeRecord/count | count timeRecord
+*TimeRecordApi* | [**timeRecordGet**](docs/Api/TimeRecordApi.md#timerecordget) | **GET** /timeRecord | query timeRecord
+*TimeRecordApi* | [**timeRecordIdIdDelete**](docs/Api/TimeRecordApi.md#timerecordididdelete) | **DELETE** /timeRecord/id/{id} | delete a timeRecord
+*TimeRecordApi* | [**timeRecordIdIdGet**](docs/Api/TimeRecordApi.md#timerecordididget) | **GET** /timeRecord/id/{id} | query a specific timeRecord
+*TimeRecordApi* | [**timeRecordIdIdPut**](docs/Api/TimeRecordApi.md#timerecordididput) | **PUT** /timeRecord/id/{id} | update a timeRecord
+*TimeRecordApi* | [**timeRecordPost**](docs/Api/TimeRecordApi.md#timerecordpost) | **POST** /timeRecord | create a timeRecord
 *TitleApi* | [**titleCountGet**](docs/Api/TitleApi.md#titlecountget) | **GET** /title/count | count title
 *TitleApi* | [**titleGet**](docs/Api/TitleApi.md#titleget) | **GET** /title | query title
 *TitleApi* | [**titleIdIdDelete**](docs/Api/TitleApi.md#titleididdelete) | **DELETE** /title/id/{id} | delete a title
@@ -1093,6 +1152,11 @@ Class | Method | HTTP request | Description
 - [BlanketPurchaseOrderIdIdGenerateReleasesPostRequest](docs/Model/BlanketPurchaseOrderIdIdGenerateReleasesPostRequest.md)
 - [BlanketPurchaseOrderStatusHistory](docs/Model/BlanketPurchaseOrderStatusHistory.md)
 - [BlanketPurchaseOrderStatusType](docs/Model/BlanketPurchaseOrderStatusType.md)
+- [BlanketSalesOrder](docs/Model/BlanketSalesOrder.md)
+- [BlanketSalesOrderGet200Response](docs/Model/BlanketSalesOrderGet200Response.md)
+- [BlanketSalesOrderItem](docs/Model/BlanketSalesOrderItem.md)
+- [BlanketSalesOrderStatusHistory](docs/Model/BlanketSalesOrderStatusHistory.md)
+- [BlanketSalesOrderStatusType](docs/Model/BlanketSalesOrderStatusType.md)
 - [BookingType](docs/Model/BookingType.md)
 - [CalculationType](docs/Model/CalculationType.md)
 - [Calendar](docs/Model/Calendar.md)
@@ -1260,16 +1324,23 @@ Class | Method | HTTP request | Description
 - [Manufacturer](docs/Model/Manufacturer.md)
 - [ManufacturerGet200Response](docs/Model/ManufacturerGet200Response.md)
 - [MarginCalculationPriceType](docs/Model/MarginCalculationPriceType.md)
+- [MetaLegacyReferencePropertiesGet200Response](docs/Model/MetaLegacyReferencePropertiesGet200Response.md)
 - [MetaQueryFilterPropertiesGet200Response](docs/Model/MetaQueryFilterPropertiesGet200Response.md)
-- [MetaResourcesGet200Response](docs/Model/MetaResourcesGet200Response.md)
 - [MinimalStoragePlace](docs/Model/MinimalStoragePlace.md)
 - [MoneyTransactionProcessingStrategy](docs/Model/MoneyTransactionProcessingStrategy.md)
 - [MoneyTransactionSource](docs/Model/MoneyTransactionSource.md)
 - [NestedStoragePlace](docs/Model/NestedStoragePlace.md)
+- [NoLoginProjectOrderPlannedWorkVisibility](docs/Model/NoLoginProjectOrderPlannedWorkVisibility.md)
+- [NoLoginProjectOrderRealizedWorkVisibility](docs/Model/NoLoginProjectOrderRealizedWorkVisibility.md)
 - [Notification](docs/Model/Notification.md)
 - [NotificationGet200Response](docs/Model/NotificationGet200Response.md)
 - [NotificationIdIdMarkReadPost200Response](docs/Model/NotificationIdIdMarkReadPost200Response.md)
 - [NotificationPriority](docs/Model/NotificationPriority.md)
+- [NumberRange](docs/Model/NumberRange.md)
+- [NumberRangeGet200Response](docs/Model/NumberRangeGet200Response.md)
+- [NumberRangeType](docs/Model/NumberRangeType.md)
+- [NumberRangeValue](docs/Model/NumberRangeValue.md)
+- [NumberRangeValueGet200Response](docs/Model/NumberRangeValueGet200Response.md)
 - [OfferOutType](docs/Model/OfferOutType.md)
 - [OfferStatusType](docs/Model/OfferStatusType.md)
 - [OnlineAccount](docs/Model/OnlineAccount.md)
@@ -1283,6 +1354,7 @@ Class | Method | HTTP request | Description
 - [OpportunityIdIdLinkQuotationPostRequest](docs/Model/OpportunityIdIdLinkQuotationPostRequest.md)
 - [OrderStatusType](docs/Model/OrderStatusType.md)
 - [PackagingUnit](docs/Model/PackagingUnit.md)
+- [Parcel](docs/Model/Parcel.md)
 - [Party](docs/Model/Party.md)
 - [PartyBankAccount](docs/Model/PartyBankAccount.md)
 - [PartyEmailAddresses](docs/Model/PartyEmailAddresses.md)
@@ -1303,6 +1375,15 @@ Class | Method | HTTP request | Description
 - [PaymentRunPaymentType](docs/Model/PaymentRunPaymentType.md)
 - [PaymentStatus](docs/Model/PaymentStatus.md)
 - [PaymentType](docs/Model/PaymentType.md)
+- [PerformanceRecord](docs/Model/PerformanceRecord.md)
+- [PerformanceRecordGet200Response](docs/Model/PerformanceRecordGet200Response.md)
+- [PerformanceRecordGet200ResponseAdditionalProperties](docs/Model/PerformanceRecordGet200ResponseAdditionalProperties.md)
+- [PerformanceRecordIdIdAddToPerformanceRecordPost200Response](docs/Model/PerformanceRecordIdIdAddToPerformanceRecordPost200Response.md)
+- [PerformanceRecordIdIdAddToPerformanceRecordPostRequest](docs/Model/PerformanceRecordIdIdAddToPerformanceRecordPostRequest.md)
+- [PerformanceRecordIdIdRemoveSignaturePostRequest](docs/Model/PerformanceRecordIdIdRemoveSignaturePostRequest.md)
+- [PerformanceRecordItem](docs/Model/PerformanceRecordItem.md)
+- [PerformanceRecordStatusHistory](docs/Model/PerformanceRecordStatusHistory.md)
+- [PerformanceRecordStatusType](docs/Model/PerformanceRecordStatusType.md)
 - [PerformanceRecordedStatus](docs/Model/PerformanceRecordedStatus.md)
 - [Period](docs/Model/Period.md)
 - [PermissionString](docs/Model/PermissionString.md)
@@ -1334,6 +1415,8 @@ Class | Method | HTTP request | Description
 - [ProductionWorkScheduleItemTimeType](docs/Model/ProductionWorkScheduleItemTimeType.md)
 - [ProductionWorkScheduleStatus](docs/Model/ProductionWorkScheduleStatus.md)
 - [ProjectMembers](docs/Model/ProjectMembers.md)
+- [ProjectOrderStatusPage](docs/Model/ProjectOrderStatusPage.md)
+- [ProjectOrderStatusPageGet200Response](docs/Model/ProjectOrderStatusPageGet200Response.md)
 - [PropertyTranslation](docs/Model/PropertyTranslation.md)
 - [PropertyTranslationReadPropertyTranslationsGet200Response](docs/Model/PropertyTranslationReadPropertyTranslationsGet200Response.md)
 - [PropertyTranslationUpdatePropertyTranslationsPostRequest](docs/Model/PropertyTranslationUpdatePropertyTranslationsPostRequest.md)
@@ -1438,6 +1521,8 @@ Class | Method | HTTP request | Description
 - [SalesBillOfMaterialArticleItem](docs/Model/SalesBillOfMaterialArticleItem.md)
 - [SalesChannel](docs/Model/SalesChannel.md)
 - [SalesChannelActiveSalesChannelsGet200Response](docs/Model/SalesChannelActiveSalesChannelsGet200Response.md)
+- [SalesChannelSalesChannelUsageGet200Response](docs/Model/SalesChannelSalesChannelUsageGet200Response.md)
+- [SalesChannelUsage](docs/Model/SalesChannelUsage.md)
 - [SalesInvoice](docs/Model/SalesInvoice.md)
 - [SalesInvoiceGet200Response](docs/Model/SalesInvoiceGet200Response.md)
 - [SalesInvoiceIdIdAddSalesOrdersPostRequest](docs/Model/SalesInvoiceIdIdAddSalesOrdersPostRequest.md)
@@ -1483,11 +1568,13 @@ Class | Method | HTTP request | Description
 - [SepaDirectDebitType](docs/Model/SepaDirectDebitType.md)
 - [SerialNumber](docs/Model/SerialNumber.md)
 - [SerialNumberGet200Response](docs/Model/SerialNumberGet200Response.md)
+- [ServiceQuotaTreatmentType](docs/Model/ServiceQuotaTreatmentType.md)
 - [Shelf](docs/Model/Shelf.md)
 - [ShelfGet200Response](docs/Model/ShelfGet200Response.md)
 - [ShelfIdIdActivatePost200Response](docs/Model/ShelfIdIdActivatePost200Response.md)
 - [Shipment](docs/Model/Shipment.md)
 - [ShipmentGet200Response](docs/Model/ShipmentGet200Response.md)
+- [ShipmentIdIdCreateShippingLabelsPostRequest](docs/Model/ShipmentIdIdCreateShippingLabelsPostRequest.md)
 - [ShipmentIdIdPrintLabelPostRequest](docs/Model/ShipmentIdIdPrintLabelPostRequest.md)
 - [ShipmentInType](docs/Model/ShipmentInType.md)
 - [ShipmentItem](docs/Model/ShipmentItem.md)
@@ -1523,6 +1610,22 @@ Class | Method | HTTP request | Description
 - [SystemPermissionsGet200Response](docs/Model/SystemPermissionsGet200Response.md)
 - [Tag](docs/Model/Tag.md)
 - [TagGet200Response](docs/Model/TagGet200Response.md)
+- [Task](docs/Model/Task.md)
+- [TaskAssignee](docs/Model/TaskAssignee.md)
+- [TaskFromTemplateGet200Response](docs/Model/TaskFromTemplateGet200Response.md)
+- [TaskGet200Response](docs/Model/TaskGet200Response.md)
+- [TaskGet200ResponseAdditionalProperties](docs/Model/TaskGet200ResponseAdditionalProperties.md)
+- [TaskIdIdUpdateBillingDataPostRequest](docs/Model/TaskIdIdUpdateBillingDataPostRequest.md)
+- [TaskIdIdUpdateBillingDataPostRequestBillingData](docs/Model/TaskIdIdUpdateBillingDataPostRequestBillingData.md)
+- [TaskList](docs/Model/TaskList.md)
+- [TaskListGet200Response](docs/Model/TaskListGet200Response.md)
+- [TaskMailAccount](docs/Model/TaskMailAccount.md)
+- [TaskPriority](docs/Model/TaskPriority.md)
+- [TaskProgressStatus](docs/Model/TaskProgressStatus.md)
+- [TaskTemplate](docs/Model/TaskTemplate.md)
+- [TaskTemplateAssignee](docs/Model/TaskTemplateAssignee.md)
+- [TaskTemplateGet200Response](docs/Model/TaskTemplateGet200Response.md)
+- [TaskVisibilityType](docs/Model/TaskVisibilityType.md)
 - [Tax](docs/Model/Tax.md)
 - [TaxConfigurePurchaseTaxesPostRequest](docs/Model/TaxConfigurePurchaseTaxesPostRequest.md)
 - [TaxConfigureSalesTaxesPostRequest](docs/Model/TaxConfigureSalesTaxesPostRequest.md)
@@ -1564,6 +1667,10 @@ Class | Method | HTTP request | Description
 - [TicketStatusGet200Response](docs/Model/TicketStatusGet200Response.md)
 - [TicketType](docs/Model/TicketType.md)
 - [TicketTypeGet200Response](docs/Model/TicketTypeGet200Response.md)
+- [TimeRecord](docs/Model/TimeRecord.md)
+- [TimeRecordGet200Response](docs/Model/TimeRecordGet200Response.md)
+- [TimeRecordGet200ResponseAdditionalProperties](docs/Model/TimeRecordGet200ResponseAdditionalProperties.md)
+- [TimeRecordSource](docs/Model/TimeRecordSource.md)
 - [TimeUnit](docs/Model/TimeUnit.md)
 - [Translation](docs/Model/Translation.md)
 - [TranslationGet200Response](docs/Model/TranslationGet200Response.md)
@@ -1582,6 +1689,7 @@ Class | Method | HTTP request | Description
 - [TransportationOrderType](docs/Model/TransportationOrderType.md)
 - [Unit](docs/Model/Unit.md)
 - [UnitGet200Response](docs/Model/UnitGet200Response.md)
+- [Usage](docs/Model/Usage.md)
 - [User](docs/Model/User.md)
 - [UserCurrentUserGet200Response](docs/Model/UserCurrentUserGet200Response.md)
 - [UserGet200Response](docs/Model/UserGet200Response.md)
@@ -1622,6 +1730,7 @@ Class | Method | HTTP request | Description
 - [WebhookRequestMethod](docs/Model/WebhookRequestMethod.md)
 - [WeclappOs](docs/Model/WeclappOs.md)
 - [WeclappOsGet200Response](docs/Model/WeclappOsGet200Response.md)
+- [WeclappOsGet200ResponseAdditionalProperties](docs/Model/WeclappOsGet200ResponseAdditionalProperties.md)
 
 ## Authorization
 
@@ -1651,5 +1760,5 @@ support@weclapp.com
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `2`
-    - Generator version: `7.14.0`
+    - Generator version: `7.16.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

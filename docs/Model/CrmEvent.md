@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional] [readonly]
 **custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
+**calendar_event_id** | **string** |  | [optional] [readonly]
 **call_category_id** | **string** |  | [optional]
 **contact_id** | **string** |  | [optional]
 **creator_user_id** | **string** |  | [optional] [readonly]

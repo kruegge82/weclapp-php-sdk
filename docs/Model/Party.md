@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **company2** | **string** |  | [optional]
 **delivery_address_id** | **string** |  | [optional]
 **email** | **string** |  | [optional]
+**email_home** | **string** |  | [optional]
 **fax** | **string** |  | [optional]
 **first_name** | **string** |  | [optional]
 **invoice_address_id** | **string** |  | [optional]
