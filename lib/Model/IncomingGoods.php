@@ -72,8 +72,6 @@ class IncomingGoods implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => 'string',
         'sent_to_recipient' => 'bool',
         'tags' => 'string[]',
-        'invoice_address' => '\kruegge82\weclapp\Model\RecordAddress',
-        'recipient_address' => '\kruegge82\weclapp\Model\RecordAddress',
         'sales_orders' => '\kruegge82\weclapp\Model\OnlyId[]',
         'status' => '\kruegge82\weclapp\Model\ShipmentStatusType',
         'status_history' => '\kruegge82\weclapp\Model\ShipmentStatus[]',
@@ -85,8 +83,10 @@ class IncomingGoods implements ModelInterface, ArrayAccess, \JsonSerializable
         'incoming_goods_items' => '\kruegge82\weclapp\Model\IncomingGoodsItem[]',
         'incoming_goods_number' => 'string',
         'incoming_goods_type' => '\kruegge82\weclapp\Model\ShipmentInType',
+        'invoice_address' => '\kruegge82\weclapp\Model\RecordAddress',
         'invoice_recipient_id' => 'string',
         'purchase_orders' => '\kruegge82\weclapp\Model\OnlyId[]',
+        'recipient_address' => '\kruegge82\weclapp\Model\RecordAddress',
         'related_shipment_id' => 'string',
         'responsible_user_id' => 'string',
         'return_address' => '\kruegge82\weclapp\Model\RecordAddress',
@@ -120,8 +120,6 @@ class IncomingGoods implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => 'html',
         'sent_to_recipient' => null,
         'tags' => null,
-        'invoice_address' => null,
-        'recipient_address' => null,
         'sales_orders' => null,
         'status' => null,
         'status_history' => null,
@@ -133,8 +131,10 @@ class IncomingGoods implements ModelInterface, ArrayAccess, \JsonSerializable
         'incoming_goods_items' => null,
         'incoming_goods_number' => null,
         'incoming_goods_type' => null,
+        'invoice_address' => null,
         'invoice_recipient_id' => null,
         'purchase_orders' => null,
+        'recipient_address' => null,
         'related_shipment_id' => null,
         'responsible_user_id' => null,
         'return_address' => null,
@@ -166,8 +166,6 @@ class IncomingGoods implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => false,
         'sent_to_recipient' => false,
         'tags' => false,
-        'invoice_address' => false,
-        'recipient_address' => false,
         'sales_orders' => false,
         'status' => false,
         'status_history' => false,
@@ -179,8 +177,10 @@ class IncomingGoods implements ModelInterface, ArrayAccess, \JsonSerializable
         'incoming_goods_items' => false,
         'incoming_goods_number' => false,
         'incoming_goods_type' => false,
+        'invoice_address' => false,
         'invoice_recipient_id' => false,
         'purchase_orders' => false,
+        'recipient_address' => false,
         'related_shipment_id' => false,
         'responsible_user_id' => false,
         'return_address' => false,
@@ -292,8 +292,6 @@ class IncomingGoods implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => 'recordOpening',
         'sent_to_recipient' => 'sentToRecipient',
         'tags' => 'tags',
-        'invoice_address' => 'invoiceAddress',
-        'recipient_address' => 'recipientAddress',
         'sales_orders' => 'salesOrders',
         'status' => 'status',
         'status_history' => 'statusHistory',
@@ -305,8 +303,10 @@ class IncomingGoods implements ModelInterface, ArrayAccess, \JsonSerializable
         'incoming_goods_items' => 'incomingGoodsItems',
         'incoming_goods_number' => 'incomingGoodsNumber',
         'incoming_goods_type' => 'incomingGoodsType',
+        'invoice_address' => 'invoiceAddress',
         'invoice_recipient_id' => 'invoiceRecipientId',
         'purchase_orders' => 'purchaseOrders',
+        'recipient_address' => 'recipientAddress',
         'related_shipment_id' => 'relatedShipmentId',
         'responsible_user_id' => 'responsibleUserId',
         'return_address' => 'returnAddress',
@@ -338,8 +338,6 @@ class IncomingGoods implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => 'setRecordOpening',
         'sent_to_recipient' => 'setSentToRecipient',
         'tags' => 'setTags',
-        'invoice_address' => 'setInvoiceAddress',
-        'recipient_address' => 'setRecipientAddress',
         'sales_orders' => 'setSalesOrders',
         'status' => 'setStatus',
         'status_history' => 'setStatusHistory',
@@ -351,8 +349,10 @@ class IncomingGoods implements ModelInterface, ArrayAccess, \JsonSerializable
         'incoming_goods_items' => 'setIncomingGoodsItems',
         'incoming_goods_number' => 'setIncomingGoodsNumber',
         'incoming_goods_type' => 'setIncomingGoodsType',
+        'invoice_address' => 'setInvoiceAddress',
         'invoice_recipient_id' => 'setInvoiceRecipientId',
         'purchase_orders' => 'setPurchaseOrders',
+        'recipient_address' => 'setRecipientAddress',
         'related_shipment_id' => 'setRelatedShipmentId',
         'responsible_user_id' => 'setResponsibleUserId',
         'return_address' => 'setReturnAddress',
@@ -384,8 +384,6 @@ class IncomingGoods implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => 'getRecordOpening',
         'sent_to_recipient' => 'getSentToRecipient',
         'tags' => 'getTags',
-        'invoice_address' => 'getInvoiceAddress',
-        'recipient_address' => 'getRecipientAddress',
         'sales_orders' => 'getSalesOrders',
         'status' => 'getStatus',
         'status_history' => 'getStatusHistory',
@@ -397,8 +395,10 @@ class IncomingGoods implements ModelInterface, ArrayAccess, \JsonSerializable
         'incoming_goods_items' => 'getIncomingGoodsItems',
         'incoming_goods_number' => 'getIncomingGoodsNumber',
         'incoming_goods_type' => 'getIncomingGoodsType',
+        'invoice_address' => 'getInvoiceAddress',
         'invoice_recipient_id' => 'getInvoiceRecipientId',
         'purchase_orders' => 'getPurchaseOrders',
+        'recipient_address' => 'getRecipientAddress',
         'related_shipment_id' => 'getRelatedShipmentId',
         'responsible_user_id' => 'getResponsibleUserId',
         'return_address' => 'getReturnAddress',
@@ -481,8 +481,6 @@ class IncomingGoods implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('record_opening', $data ?? [], null);
         $this->setIfExists('sent_to_recipient', $data ?? [], null);
         $this->setIfExists('tags', $data ?? [], null);
-        $this->setIfExists('invoice_address', $data ?? [], null);
-        $this->setIfExists('recipient_address', $data ?? [], null);
         $this->setIfExists('sales_orders', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('status_history', $data ?? [], null);
@@ -494,8 +492,10 @@ class IncomingGoods implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('incoming_goods_items', $data ?? [], null);
         $this->setIfExists('incoming_goods_number', $data ?? [], null);
         $this->setIfExists('incoming_goods_type', $data ?? [], null);
+        $this->setIfExists('invoice_address', $data ?? [], null);
         $this->setIfExists('invoice_recipient_id', $data ?? [], null);
         $this->setIfExists('purchase_orders', $data ?? [], null);
+        $this->setIfExists('recipient_address', $data ?? [], null);
         $this->setIfExists('related_shipment_id', $data ?? [], null);
         $this->setIfExists('responsible_user_id', $data ?? [], null);
         $this->setIfExists('return_address', $data ?? [], null);
@@ -956,60 +956,6 @@ class IncomingGoods implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets invoice_address
-     *
-     * @return \kruegge82\weclapp\Model\RecordAddress|null
-     */
-    public function getInvoiceAddress()
-    {
-        return $this->container['invoice_address'];
-    }
-
-    /**
-     * Sets invoice_address
-     *
-     * @param \kruegge82\weclapp\Model\RecordAddress|null $invoice_address invoice_address
-     *
-     * @return self
-     */
-    public function setInvoiceAddress($invoice_address)
-    {
-        if (is_null($invoice_address)) {
-            throw new \InvalidArgumentException('non-nullable invoice_address cannot be null');
-        }
-        $this->container['invoice_address'] = $invoice_address;
-
-        return $this;
-    }
-
-    /**
-     * Gets recipient_address
-     *
-     * @return \kruegge82\weclapp\Model\RecordAddress|null
-     */
-    public function getRecipientAddress()
-    {
-        return $this->container['recipient_address'];
-    }
-
-    /**
-     * Sets recipient_address
-     *
-     * @param \kruegge82\weclapp\Model\RecordAddress|null $recipient_address recipient_address
-     *
-     * @return self
-     */
-    public function setRecipientAddress($recipient_address)
-    {
-        if (is_null($recipient_address)) {
-            throw new \InvalidArgumentException('non-nullable recipient_address cannot be null');
-        }
-        $this->container['recipient_address'] = $recipient_address;
-
-        return $this;
-    }
-
-    /**
      * Gets sales_orders
      *
      * @return \kruegge82\weclapp\Model\OnlyId[]|null
@@ -1319,6 +1265,33 @@ class IncomingGoods implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets invoice_address
+     *
+     * @return \kruegge82\weclapp\Model\RecordAddress|null
+     */
+    public function getInvoiceAddress()
+    {
+        return $this->container['invoice_address'];
+    }
+
+    /**
+     * Sets invoice_address
+     *
+     * @param \kruegge82\weclapp\Model\RecordAddress|null $invoice_address invoice_address
+     *
+     * @return self
+     */
+    public function setInvoiceAddress($invoice_address)
+    {
+        if (is_null($invoice_address)) {
+            throw new \InvalidArgumentException('non-nullable invoice_address cannot be null');
+        }
+        $this->container['invoice_address'] = $invoice_address;
+
+        return $this;
+    }
+
+    /**
      * Gets invoice_recipient_id
      *
      * @return string|null
@@ -1368,6 +1341,33 @@ class IncomingGoods implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable purchase_orders cannot be null');
         }
         $this->container['purchase_orders'] = $purchase_orders;
+
+        return $this;
+    }
+
+    /**
+     * Gets recipient_address
+     *
+     * @return \kruegge82\weclapp\Model\RecordAddress|null
+     */
+    public function getRecipientAddress()
+    {
+        return $this->container['recipient_address'];
+    }
+
+    /**
+     * Sets recipient_address
+     *
+     * @param \kruegge82\weclapp\Model\RecordAddress|null $recipient_address recipient_address
+     *
+     * @return self
+     */
+    public function setRecipientAddress($recipient_address)
+    {
+        if (is_null($recipient_address)) {
+            throw new \InvalidArgumentException('non-nullable recipient_address cannot be null');
+        }
+        $this->container['recipient_address'] = $recipient_address;
 
         return $this;
     }

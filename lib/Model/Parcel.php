@@ -66,6 +66,7 @@ class Parcel implements ModelInterface, ArrayAccess, \JsonSerializable
         'declared_value_amount' => 'float',
         'declared_value_currency_id' => 'string',
         'dhl_go_green_plus_service' => 'bool',
+        'dhl_postal_delivered_duty_paid_service' => 'bool',
         'dhl_premium_international_service' => 'bool',
         'height' => 'int',
         'length' => 'int',
@@ -98,6 +99,7 @@ class Parcel implements ModelInterface, ArrayAccess, \JsonSerializable
         'declared_value_amount' => 'decimal',
         'declared_value_currency_id' => null,
         'dhl_go_green_plus_service' => null,
+        'dhl_postal_delivered_duty_paid_service' => null,
         'dhl_premium_international_service' => null,
         'height' => 'int32',
         'length' => 'int32',
@@ -128,6 +130,7 @@ class Parcel implements ModelInterface, ArrayAccess, \JsonSerializable
         'declared_value_amount' => false,
         'declared_value_currency_id' => false,
         'dhl_go_green_plus_service' => false,
+        'dhl_postal_delivered_duty_paid_service' => false,
         'dhl_premium_international_service' => false,
         'height' => false,
         'length' => false,
@@ -238,6 +241,7 @@ class Parcel implements ModelInterface, ArrayAccess, \JsonSerializable
         'declared_value_amount' => 'declaredValueAmount',
         'declared_value_currency_id' => 'declaredValueCurrencyId',
         'dhl_go_green_plus_service' => 'dhlGoGreenPlusService',
+        'dhl_postal_delivered_duty_paid_service' => 'dhlPostalDeliveredDutyPaidService',
         'dhl_premium_international_service' => 'dhlPremiumInternationalService',
         'height' => 'height',
         'length' => 'length',
@@ -268,6 +272,7 @@ class Parcel implements ModelInterface, ArrayAccess, \JsonSerializable
         'declared_value_amount' => 'setDeclaredValueAmount',
         'declared_value_currency_id' => 'setDeclaredValueCurrencyId',
         'dhl_go_green_plus_service' => 'setDhlGoGreenPlusService',
+        'dhl_postal_delivered_duty_paid_service' => 'setDhlPostalDeliveredDutyPaidService',
         'dhl_premium_international_service' => 'setDhlPremiumInternationalService',
         'height' => 'setHeight',
         'length' => 'setLength',
@@ -298,6 +303,7 @@ class Parcel implements ModelInterface, ArrayAccess, \JsonSerializable
         'declared_value_amount' => 'getDeclaredValueAmount',
         'declared_value_currency_id' => 'getDeclaredValueCurrencyId',
         'dhl_go_green_plus_service' => 'getDhlGoGreenPlusService',
+        'dhl_postal_delivered_duty_paid_service' => 'getDhlPostalDeliveredDutyPaidService',
         'dhl_premium_international_service' => 'getDhlPremiumInternationalService',
         'height' => 'getHeight',
         'length' => 'getLength',
@@ -379,6 +385,7 @@ class Parcel implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('declared_value_amount', $data ?? [], null);
         $this->setIfExists('declared_value_currency_id', $data ?? [], null);
         $this->setIfExists('dhl_go_green_plus_service', $data ?? [], null);
+        $this->setIfExists('dhl_postal_delivered_duty_paid_service', $data ?? [], null);
         $this->setIfExists('dhl_premium_international_service', $data ?? [], null);
         $this->setIfExists('height', $data ?? [], null);
         $this->setIfExists('length', $data ?? [], null);
@@ -678,6 +685,33 @@ class Parcel implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable dhl_go_green_plus_service cannot be null');
         }
         $this->container['dhl_go_green_plus_service'] = $dhl_go_green_plus_service;
+
+        return $this;
+    }
+
+    /**
+     * Gets dhl_postal_delivered_duty_paid_service
+     *
+     * @return bool|null
+     */
+    public function getDhlPostalDeliveredDutyPaidService()
+    {
+        return $this->container['dhl_postal_delivered_duty_paid_service'];
+    }
+
+    /**
+     * Sets dhl_postal_delivered_duty_paid_service
+     *
+     * @param bool|null $dhl_postal_delivered_duty_paid_service dhl_postal_delivered_duty_paid_service
+     *
+     * @return self
+     */
+    public function setDhlPostalDeliveredDutyPaidService($dhl_postal_delivered_duty_paid_service)
+    {
+        if (is_null($dhl_postal_delivered_duty_paid_service)) {
+            throw new \InvalidArgumentException('non-nullable dhl_postal_delivered_duty_paid_service cannot be null');
+        }
+        $this->container['dhl_postal_delivered_duty_paid_service'] = $dhl_postal_delivered_duty_paid_service;
 
         return $this;
     }

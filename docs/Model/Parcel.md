@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **declared_value_amount** | **float** |  | [optional]
 **declared_value_currency_id** | **string** |  | [optional]
 **dhl_go_green_plus_service** | **bool** |  | [optional]
+**dhl_postal_delivered_duty_paid_service** | **bool** |  | [optional]
 **dhl_premium_international_service** | **bool** |  | [optional]
 **height** | **int** |  | [optional]
 **length** | **int** |  | [optional]

@@ -18,8 +18,6 @@ Name | Type | Description | Notes
 **record_opening** | **string** |  | [optional]
 **sent_to_recipient** | **bool** |  | [optional]
 **tags** | **string[]** |  | [optional]
-**invoice_address** | [**\kruegge82\weclapp\Model\RecordAddress**](RecordAddress.md) |  | [optional]
-**recipient_address** | [**\kruegge82\weclapp\Model\RecordAddress**](RecordAddress.md) |  | [optional]
 **sales_orders** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
 **status** | [**\kruegge82\weclapp\Model\ShipmentStatusType**](ShipmentStatusType.md) |  | [optional]
 **status_history** | [**\kruegge82\weclapp\Model\ShipmentStatus[]**](ShipmentStatus.md) |  | [optional] [readonly]

@@ -72,8 +72,6 @@ class BaseShipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => 'string',
         'sent_to_recipient' => 'bool',
         'tags' => 'string[]',
-        'invoice_address' => '\kruegge82\weclapp\Model\RecordAddress',
-        'recipient_address' => '\kruegge82\weclapp\Model\RecordAddress',
         'sales_orders' => '\kruegge82\weclapp\Model\OnlyId[]',
         'status' => '\kruegge82\weclapp\Model\ShipmentStatusType',
         'status_history' => '\kruegge82\weclapp\Model\ShipmentStatus[]'
@@ -101,8 +99,6 @@ class BaseShipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => 'html',
         'sent_to_recipient' => null,
         'tags' => null,
-        'invoice_address' => null,
-        'recipient_address' => null,
         'sales_orders' => null,
         'status' => null,
         'status_history' => null
@@ -128,8 +124,6 @@ class BaseShipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => false,
         'sent_to_recipient' => false,
         'tags' => false,
-        'invoice_address' => false,
-        'recipient_address' => false,
         'sales_orders' => false,
         'status' => false,
         'status_history' => false
@@ -235,8 +229,6 @@ class BaseShipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => 'recordOpening',
         'sent_to_recipient' => 'sentToRecipient',
         'tags' => 'tags',
-        'invoice_address' => 'invoiceAddress',
-        'recipient_address' => 'recipientAddress',
         'sales_orders' => 'salesOrders',
         'status' => 'status',
         'status_history' => 'statusHistory'
@@ -262,8 +254,6 @@ class BaseShipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => 'setRecordOpening',
         'sent_to_recipient' => 'setSentToRecipient',
         'tags' => 'setTags',
-        'invoice_address' => 'setInvoiceAddress',
-        'recipient_address' => 'setRecipientAddress',
         'sales_orders' => 'setSalesOrders',
         'status' => 'setStatus',
         'status_history' => 'setStatusHistory'
@@ -289,8 +279,6 @@ class BaseShipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => 'getRecordOpening',
         'sent_to_recipient' => 'getSentToRecipient',
         'tags' => 'getTags',
-        'invoice_address' => 'getInvoiceAddress',
-        'recipient_address' => 'getRecipientAddress',
         'sales_orders' => 'getSalesOrders',
         'status' => 'getStatus',
         'status_history' => 'getStatusHistory'
@@ -367,8 +355,6 @@ class BaseShipment implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('record_opening', $data ?? [], null);
         $this->setIfExists('sent_to_recipient', $data ?? [], null);
         $this->setIfExists('tags', $data ?? [], null);
-        $this->setIfExists('invoice_address', $data ?? [], null);
-        $this->setIfExists('recipient_address', $data ?? [], null);
         $this->setIfExists('sales_orders', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('status_history', $data ?? [], null);
@@ -798,60 +784,6 @@ class BaseShipment implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable tags cannot be null');
         }
         $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets invoice_address
-     *
-     * @return \kruegge82\weclapp\Model\RecordAddress|null
-     */
-    public function getInvoiceAddress()
-    {
-        return $this->container['invoice_address'];
-    }
-
-    /**
-     * Sets invoice_address
-     *
-     * @param \kruegge82\weclapp\Model\RecordAddress|null $invoice_address invoice_address
-     *
-     * @return self
-     */
-    public function setInvoiceAddress($invoice_address)
-    {
-        if (is_null($invoice_address)) {
-            throw new \InvalidArgumentException('non-nullable invoice_address cannot be null');
-        }
-        $this->container['invoice_address'] = $invoice_address;
-
-        return $this;
-    }
-
-    /**
-     * Gets recipient_address
-     *
-     * @return \kruegge82\weclapp\Model\RecordAddress|null
-     */
-    public function getRecipientAddress()
-    {
-        return $this->container['recipient_address'];
-    }
-
-    /**
-     * Sets recipient_address
-     *
-     * @param \kruegge82\weclapp\Model\RecordAddress|null $recipient_address recipient_address
-     *
-     * @return self
-     */
-    public function setRecipientAddress($recipient_address)
-    {
-        if (is_null($recipient_address)) {
-            throw new \InvalidArgumentException('non-nullable recipient_address cannot be null');
-        }
-        $this->container['recipient_address'] = $recipient_address;
 
         return $this;
     }

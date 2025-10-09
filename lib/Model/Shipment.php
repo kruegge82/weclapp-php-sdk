@@ -72,8 +72,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => 'string',
         'sent_to_recipient' => 'bool',
         'tags' => 'string[]',
-        'invoice_address' => '\kruegge82\weclapp\Model\RecordAddress',
-        'recipient_address' => '\kruegge82\weclapp\Model\RecordAddress',
         'sales_orders' => '\kruegge82\weclapp\Model\OnlyId[]',
         'status' => '\kruegge82\weclapp\Model\ShipmentStatusType',
         'status_history' => '\kruegge82\weclapp\Model\ShipmentStatus[]',
@@ -86,6 +84,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'destination_storage_place_id' => 'string',
         'destination_warehouse_id' => 'string',
         'dhl_receiver_id' => 'string',
+        'invoice_address' => '\kruegge82\weclapp\Model\RecordAddress',
         'invoice_recipient_id' => 'string',
         'main_sales_order_id' => 'string',
         'package_height' => 'int',
@@ -101,6 +100,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'picking_instructions' => 'string',
         'picks_complete' => 'bool',
         'purchase_orders' => '\kruegge82\weclapp\Model\OnlyId[]',
+        'recipient_address' => '\kruegge82\weclapp\Model\RecordAddress',
         'recipient_customer_number' => 'string',
         'recipient_party_id' => 'string',
         'recipient_supplier_number' => 'string',
@@ -142,8 +142,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => 'html',
         'sent_to_recipient' => null,
         'tags' => null,
-        'invoice_address' => null,
-        'recipient_address' => null,
         'sales_orders' => null,
         'status' => null,
         'status_history' => null,
@@ -156,6 +154,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'destination_storage_place_id' => null,
         'destination_warehouse_id' => null,
         'dhl_receiver_id' => null,
+        'invoice_address' => null,
         'invoice_recipient_id' => null,
         'main_sales_order_id' => null,
         'package_height' => 'int32',
@@ -171,6 +170,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'picking_instructions' => null,
         'picks_complete' => null,
         'purchase_orders' => null,
+        'recipient_address' => null,
         'recipient_customer_number' => null,
         'recipient_party_id' => null,
         'recipient_supplier_number' => null,
@@ -210,8 +210,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => false,
         'sent_to_recipient' => false,
         'tags' => false,
-        'invoice_address' => false,
-        'recipient_address' => false,
         'sales_orders' => false,
         'status' => false,
         'status_history' => false,
@@ -224,6 +222,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'destination_storage_place_id' => false,
         'destination_warehouse_id' => false,
         'dhl_receiver_id' => false,
+        'invoice_address' => false,
         'invoice_recipient_id' => false,
         'main_sales_order_id' => false,
         'package_height' => false,
@@ -239,6 +238,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'picking_instructions' => false,
         'picks_complete' => false,
         'purchase_orders' => false,
+        'recipient_address' => false,
         'recipient_customer_number' => false,
         'recipient_party_id' => false,
         'recipient_supplier_number' => false,
@@ -358,8 +358,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => 'recordOpening',
         'sent_to_recipient' => 'sentToRecipient',
         'tags' => 'tags',
-        'invoice_address' => 'invoiceAddress',
-        'recipient_address' => 'recipientAddress',
         'sales_orders' => 'salesOrders',
         'status' => 'status',
         'status_history' => 'statusHistory',
@@ -372,6 +370,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'destination_storage_place_id' => 'destinationStoragePlaceId',
         'destination_warehouse_id' => 'destinationWarehouseId',
         'dhl_receiver_id' => 'dhlReceiverId',
+        'invoice_address' => 'invoiceAddress',
         'invoice_recipient_id' => 'invoiceRecipientId',
         'main_sales_order_id' => 'mainSalesOrderId',
         'package_height' => 'packageHeight',
@@ -387,6 +386,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'picking_instructions' => 'pickingInstructions',
         'picks_complete' => 'picksComplete',
         'purchase_orders' => 'purchaseOrders',
+        'recipient_address' => 'recipientAddress',
         'recipient_customer_number' => 'recipientCustomerNumber',
         'recipient_party_id' => 'recipientPartyId',
         'recipient_supplier_number' => 'recipientSupplierNumber',
@@ -426,8 +426,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => 'setRecordOpening',
         'sent_to_recipient' => 'setSentToRecipient',
         'tags' => 'setTags',
-        'invoice_address' => 'setInvoiceAddress',
-        'recipient_address' => 'setRecipientAddress',
         'sales_orders' => 'setSalesOrders',
         'status' => 'setStatus',
         'status_history' => 'setStatusHistory',
@@ -440,6 +438,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'destination_storage_place_id' => 'setDestinationStoragePlaceId',
         'destination_warehouse_id' => 'setDestinationWarehouseId',
         'dhl_receiver_id' => 'setDhlReceiverId',
+        'invoice_address' => 'setInvoiceAddress',
         'invoice_recipient_id' => 'setInvoiceRecipientId',
         'main_sales_order_id' => 'setMainSalesOrderId',
         'package_height' => 'setPackageHeight',
@@ -455,6 +454,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'picking_instructions' => 'setPickingInstructions',
         'picks_complete' => 'setPicksComplete',
         'purchase_orders' => 'setPurchaseOrders',
+        'recipient_address' => 'setRecipientAddress',
         'recipient_customer_number' => 'setRecipientCustomerNumber',
         'recipient_party_id' => 'setRecipientPartyId',
         'recipient_supplier_number' => 'setRecipientSupplierNumber',
@@ -494,8 +494,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'record_opening' => 'getRecordOpening',
         'sent_to_recipient' => 'getSentToRecipient',
         'tags' => 'getTags',
-        'invoice_address' => 'getInvoiceAddress',
-        'recipient_address' => 'getRecipientAddress',
         'sales_orders' => 'getSalesOrders',
         'status' => 'getStatus',
         'status_history' => 'getStatusHistory',
@@ -508,6 +506,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'destination_storage_place_id' => 'getDestinationStoragePlaceId',
         'destination_warehouse_id' => 'getDestinationWarehouseId',
         'dhl_receiver_id' => 'getDhlReceiverId',
+        'invoice_address' => 'getInvoiceAddress',
         'invoice_recipient_id' => 'getInvoiceRecipientId',
         'main_sales_order_id' => 'getMainSalesOrderId',
         'package_height' => 'getPackageHeight',
@@ -523,6 +522,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'picking_instructions' => 'getPickingInstructions',
         'picks_complete' => 'getPicksComplete',
         'purchase_orders' => 'getPurchaseOrders',
+        'recipient_address' => 'getRecipientAddress',
         'recipient_customer_number' => 'getRecipientCustomerNumber',
         'recipient_party_id' => 'getRecipientPartyId',
         'recipient_supplier_number' => 'getRecipientSupplierNumber',
@@ -613,8 +613,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('record_opening', $data ?? [], null);
         $this->setIfExists('sent_to_recipient', $data ?? [], null);
         $this->setIfExists('tags', $data ?? [], null);
-        $this->setIfExists('invoice_address', $data ?? [], null);
-        $this->setIfExists('recipient_address', $data ?? [], null);
         $this->setIfExists('sales_orders', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('status_history', $data ?? [], null);
@@ -627,6 +625,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('destination_storage_place_id', $data ?? [], null);
         $this->setIfExists('destination_warehouse_id', $data ?? [], null);
         $this->setIfExists('dhl_receiver_id', $data ?? [], null);
+        $this->setIfExists('invoice_address', $data ?? [], null);
         $this->setIfExists('invoice_recipient_id', $data ?? [], null);
         $this->setIfExists('main_sales_order_id', $data ?? [], null);
         $this->setIfExists('package_height', $data ?? [], null);
@@ -642,6 +641,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('picking_instructions', $data ?? [], null);
         $this->setIfExists('picks_complete', $data ?? [], null);
         $this->setIfExists('purchase_orders', $data ?? [], null);
+        $this->setIfExists('recipient_address', $data ?? [], null);
         $this->setIfExists('recipient_customer_number', $data ?? [], null);
         $this->setIfExists('recipient_party_id', $data ?? [], null);
         $this->setIfExists('recipient_supplier_number', $data ?? [], null);
@@ -1142,60 +1142,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets invoice_address
-     *
-     * @return \kruegge82\weclapp\Model\RecordAddress|null
-     */
-    public function getInvoiceAddress()
-    {
-        return $this->container['invoice_address'];
-    }
-
-    /**
-     * Sets invoice_address
-     *
-     * @param \kruegge82\weclapp\Model\RecordAddress|null $invoice_address invoice_address
-     *
-     * @return self
-     */
-    public function setInvoiceAddress($invoice_address)
-    {
-        if (is_null($invoice_address)) {
-            throw new \InvalidArgumentException('non-nullable invoice_address cannot be null');
-        }
-        $this->container['invoice_address'] = $invoice_address;
-
-        return $this;
-    }
-
-    /**
-     * Gets recipient_address
-     *
-     * @return \kruegge82\weclapp\Model\RecordAddress|null
-     */
-    public function getRecipientAddress()
-    {
-        return $this->container['recipient_address'];
-    }
-
-    /**
-     * Sets recipient_address
-     *
-     * @param \kruegge82\weclapp\Model\RecordAddress|null $recipient_address recipient_address
-     *
-     * @return self
-     */
-    public function setRecipientAddress($recipient_address)
-    {
-        if (is_null($recipient_address)) {
-            throw new \InvalidArgumentException('non-nullable recipient_address cannot be null');
-        }
-        $this->container['recipient_address'] = $recipient_address;
-
-        return $this;
-    }
-
-    /**
      * Gets sales_orders
      *
      * @return \kruegge82\weclapp\Model\OnlyId[]|null
@@ -1532,6 +1478,33 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['dhl_receiver_id'] = $dhl_receiver_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoice_address
+     *
+     * @return \kruegge82\weclapp\Model\RecordAddress|null
+     */
+    public function getInvoiceAddress()
+    {
+        return $this->container['invoice_address'];
+    }
+
+    /**
+     * Sets invoice_address
+     *
+     * @param \kruegge82\weclapp\Model\RecordAddress|null $invoice_address invoice_address
+     *
+     * @return self
+     */
+    public function setInvoiceAddress($invoice_address)
+    {
+        if (is_null($invoice_address)) {
+            throw new \InvalidArgumentException('non-nullable invoice_address cannot be null');
+        }
+        $this->container['invoice_address'] = $invoice_address;
 
         return $this;
     }
@@ -1976,6 +1949,33 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable purchase_orders cannot be null');
         }
         $this->container['purchase_orders'] = $purchase_orders;
+
+        return $this;
+    }
+
+    /**
+     * Gets recipient_address
+     *
+     * @return \kruegge82\weclapp\Model\RecordAddress|null
+     */
+    public function getRecipientAddress()
+    {
+        return $this->container['recipient_address'];
+    }
+
+    /**
+     * Sets recipient_address
+     *
+     * @param \kruegge82\weclapp\Model\RecordAddress|null $recipient_address recipient_address
+     *
+     * @return self
+     */
+    public function setRecipientAddress($recipient_address)
+    {
+        if (is_null($recipient_address)) {
+            throw new \InvalidArgumentException('non-nullable recipient_address cannot be null');
+        }
+        $this->container['recipient_address'] = $recipient_address;
 
         return $this;
     }
