@@ -169,7 +169,7 @@ try {
 ## `salesOrderGet()`
 
 ```php
-salesOrderGet($page, $page_size, $serialize_nulls, $ignore_missing_properties, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\SalesOrderGet200Response
+salesOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\SalesOrderGet200Response
 ```
 
 query salesOrder
@@ -198,7 +198,6 @@ $apiInstance = new kruegge82\weclapp\Api\SalesOrderApi(
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
-$ignore_missing_properties = True; // bool
 $sort = 'sort_example'; // string
 $filter = 'filter_example'; // string
 $properties = 'properties_example'; // string
@@ -206,7 +205,7 @@ $include_referenced_entities = 'include_referenced_entities_example'; // string
 $additional_properties = 'additional_properties_example'; // string
 
 try {
-    $result = $apiInstance->salesOrderGet($page, $page_size, $serialize_nulls, $ignore_missing_properties, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
+    $result = $apiInstance->salesOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SalesOrderApi->salesOrderGet: ', $e->getMessage(), PHP_EOL;
@@ -220,7 +219,6 @@ try {
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
-| **ignore_missing_properties** | **bool**|  | [optional] |
 | **sort** | **string**|  | [optional] |
 | **filter** | **string**|  | [optional] |
 | **properties** | **string**|  | [optional] |
@@ -1730,7 +1728,7 @@ try {
 ## `salesOrderIdIdPut()`
 
 ```php
-salesOrderIdIdPut($id, $sales_order, $dry_run): \kruegge82\weclapp\Model\SalesOrder
+salesOrderIdIdPut($id, $sales_order, $dry_run, $ignore_missing_properties): \kruegge82\weclapp\Model\SalesOrder
 ```
 
 update a salesOrder
@@ -1759,9 +1757,10 @@ $apiInstance = new kruegge82\weclapp\Api\SalesOrderApi(
 $id = 'id_example'; // string
 $sales_order = new \kruegge82\weclapp\Model\SalesOrder(); // \kruegge82\weclapp\Model\SalesOrder
 $dry_run = True; // bool
+$ignore_missing_properties = True; // bool
 
 try {
-    $result = $apiInstance->salesOrderIdIdPut($id, $sales_order, $dry_run);
+    $result = $apiInstance->salesOrderIdIdPut($id, $sales_order, $dry_run, $ignore_missing_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SalesOrderApi->salesOrderIdIdPut: ', $e->getMessage(), PHP_EOL;
@@ -1775,6 +1774,7 @@ try {
 | **id** | **string**|  | |
 | **sales_order** | [**\kruegge82\weclapp\Model\SalesOrder**](../Model/SalesOrder.md)|  | |
 | **dry_run** | **bool**|  | [optional] |
+| **ignore_missing_properties** | **bool**|  | [optional] |
 
 ### Return type
 

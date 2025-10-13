@@ -816,7 +816,6 @@ class SalesOrderApi
      * @param  int|null $page page (optional)
      * @param  int|null $page_size page_size (optional)
      * @param  bool|null $serialize_nulls serialize_nulls (optional)
-     * @param  bool|null $ignore_missing_properties ignore_missing_properties (optional)
      * @param  string|null $sort sort (optional)
      * @param  string|null $filter filter (optional)
      * @param  string|null $properties properties (optional)
@@ -828,9 +827,9 @@ class SalesOrderApi
      * @throws \InvalidArgumentException
      * @return \kruegge82\weclapp\Model\SalesOrderGet200Response|\kruegge82\weclapp\Model\ApiProblem
      */
-    public function salesOrderGet($page = null, $page_size = null, $serialize_nulls = null, $ignore_missing_properties = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, $additional_properties = null, string $contentType = self::contentTypes['salesOrderGet'][0])
+    public function salesOrderGet($page = null, $page_size = null, $serialize_nulls = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, $additional_properties = null, string $contentType = self::contentTypes['salesOrderGet'][0])
     {
-        list($response) = $this->salesOrderGetWithHttpInfo($page, $page_size, $serialize_nulls, $ignore_missing_properties, $sort, $filter, $properties, $include_referenced_entities, $additional_properties, $contentType);
+        list($response) = $this->salesOrderGetWithHttpInfo($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties, $contentType);
         return $response;
     }
 
@@ -842,7 +841,6 @@ class SalesOrderApi
      * @param  int|null $page (optional)
      * @param  int|null $page_size (optional)
      * @param  bool|null $serialize_nulls (optional)
-     * @param  bool|null $ignore_missing_properties (optional)
      * @param  string|null $sort (optional)
      * @param  string|null $filter (optional)
      * @param  string|null $properties (optional)
@@ -854,9 +852,9 @@ class SalesOrderApi
      * @throws \InvalidArgumentException
      * @return array of \kruegge82\weclapp\Model\SalesOrderGet200Response|\kruegge82\weclapp\Model\ApiProblem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function salesOrderGetWithHttpInfo($page = null, $page_size = null, $serialize_nulls = null, $ignore_missing_properties = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, $additional_properties = null, string $contentType = self::contentTypes['salesOrderGet'][0])
+    public function salesOrderGetWithHttpInfo($page = null, $page_size = null, $serialize_nulls = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, $additional_properties = null, string $contentType = self::contentTypes['salesOrderGet'][0])
     {
-        $request = $this->salesOrderGetRequest($page, $page_size, $serialize_nulls, $ignore_missing_properties, $sort, $filter, $properties, $include_referenced_entities, $additional_properties, $contentType);
+        $request = $this->salesOrderGetRequest($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -949,7 +947,6 @@ class SalesOrderApi
      * @param  int|null $page (optional)
      * @param  int|null $page_size (optional)
      * @param  bool|null $serialize_nulls (optional)
-     * @param  bool|null $ignore_missing_properties (optional)
      * @param  string|null $sort (optional)
      * @param  string|null $filter (optional)
      * @param  string|null $properties (optional)
@@ -960,9 +957,9 @@ class SalesOrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function salesOrderGetAsync($page = null, $page_size = null, $serialize_nulls = null, $ignore_missing_properties = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, $additional_properties = null, string $contentType = self::contentTypes['salesOrderGet'][0])
+    public function salesOrderGetAsync($page = null, $page_size = null, $serialize_nulls = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, $additional_properties = null, string $contentType = self::contentTypes['salesOrderGet'][0])
     {
-        return $this->salesOrderGetAsyncWithHttpInfo($page, $page_size, $serialize_nulls, $ignore_missing_properties, $sort, $filter, $properties, $include_referenced_entities, $additional_properties, $contentType)
+        return $this->salesOrderGetAsyncWithHttpInfo($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -978,7 +975,6 @@ class SalesOrderApi
      * @param  int|null $page (optional)
      * @param  int|null $page_size (optional)
      * @param  bool|null $serialize_nulls (optional)
-     * @param  bool|null $ignore_missing_properties (optional)
      * @param  string|null $sort (optional)
      * @param  string|null $filter (optional)
      * @param  string|null $properties (optional)
@@ -989,10 +985,10 @@ class SalesOrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function salesOrderGetAsyncWithHttpInfo($page = null, $page_size = null, $serialize_nulls = null, $ignore_missing_properties = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, $additional_properties = null, string $contentType = self::contentTypes['salesOrderGet'][0])
+    public function salesOrderGetAsyncWithHttpInfo($page = null, $page_size = null, $serialize_nulls = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, $additional_properties = null, string $contentType = self::contentTypes['salesOrderGet'][0])
     {
         $returnType = '\kruegge82\weclapp\Model\SalesOrderGet200Response';
-        $request = $this->salesOrderGetRequest($page, $page_size, $serialize_nulls, $ignore_missing_properties, $sort, $filter, $properties, $include_referenced_entities, $additional_properties, $contentType);
+        $request = $this->salesOrderGetRequest($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1036,7 +1032,6 @@ class SalesOrderApi
      * @param  int|null $page (optional)
      * @param  int|null $page_size (optional)
      * @param  bool|null $serialize_nulls (optional)
-     * @param  bool|null $ignore_missing_properties (optional)
      * @param  string|null $sort (optional)
      * @param  string|null $filter (optional)
      * @param  string|null $properties (optional)
@@ -1047,9 +1042,8 @@ class SalesOrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function salesOrderGetRequest($page = null, $page_size = null, $serialize_nulls = null, $ignore_missing_properties = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, $additional_properties = null, string $contentType = self::contentTypes['salesOrderGet'][0])
+    public function salesOrderGetRequest($page = null, $page_size = null, $serialize_nulls = null, $sort = null, $filter = null, $properties = null, $include_referenced_entities = null, $additional_properties = null, string $contentType = self::contentTypes['salesOrderGet'][0])
     {
-
 
 
 
@@ -1089,15 +1083,6 @@ class SalesOrderApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $serialize_nulls,
             'serializeNulls', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $ignore_missing_properties,
-            'ignoreMissingProperties', // param base name
             'boolean', // openApiType
             'form', // style
             true, // explode
@@ -8250,15 +8235,16 @@ class SalesOrderApi
      * @param  string $id id (required)
      * @param  \kruegge82\weclapp\Model\SalesOrder $sales_order sales_order (required)
      * @param  bool|null $dry_run dry_run (optional)
+     * @param  bool|null $ignore_missing_properties ignore_missing_properties (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['salesOrderIdIdPut'] to see the possible values for this operation
      *
      * @throws \kruegge82\weclapp\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \kruegge82\weclapp\Model\SalesOrder|\kruegge82\weclapp\Model\ApiProblem
      */
-    public function salesOrderIdIdPut($id, $sales_order, $dry_run = null, string $contentType = self::contentTypes['salesOrderIdIdPut'][0])
+    public function salesOrderIdIdPut($id, $sales_order, $dry_run = null, $ignore_missing_properties = null, string $contentType = self::contentTypes['salesOrderIdIdPut'][0])
     {
-        list($response) = $this->salesOrderIdIdPutWithHttpInfo($id, $sales_order, $dry_run, $contentType);
+        list($response) = $this->salesOrderIdIdPutWithHttpInfo($id, $sales_order, $dry_run, $ignore_missing_properties, $contentType);
         return $response;
     }
 
@@ -8270,15 +8256,16 @@ class SalesOrderApi
      * @param  string $id (required)
      * @param  \kruegge82\weclapp\Model\SalesOrder $sales_order (required)
      * @param  bool|null $dry_run (optional)
+     * @param  bool|null $ignore_missing_properties (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['salesOrderIdIdPut'] to see the possible values for this operation
      *
      * @throws \kruegge82\weclapp\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \kruegge82\weclapp\Model\SalesOrder|\kruegge82\weclapp\Model\ApiProblem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function salesOrderIdIdPutWithHttpInfo($id, $sales_order, $dry_run = null, string $contentType = self::contentTypes['salesOrderIdIdPut'][0])
+    public function salesOrderIdIdPutWithHttpInfo($id, $sales_order, $dry_run = null, $ignore_missing_properties = null, string $contentType = self::contentTypes['salesOrderIdIdPut'][0])
     {
-        $request = $this->salesOrderIdIdPutRequest($id, $sales_order, $dry_run, $contentType);
+        $request = $this->salesOrderIdIdPutRequest($id, $sales_order, $dry_run, $ignore_missing_properties, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8371,14 +8358,15 @@ class SalesOrderApi
      * @param  string $id (required)
      * @param  \kruegge82\weclapp\Model\SalesOrder $sales_order (required)
      * @param  bool|null $dry_run (optional)
+     * @param  bool|null $ignore_missing_properties (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['salesOrderIdIdPut'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function salesOrderIdIdPutAsync($id, $sales_order, $dry_run = null, string $contentType = self::contentTypes['salesOrderIdIdPut'][0])
+    public function salesOrderIdIdPutAsync($id, $sales_order, $dry_run = null, $ignore_missing_properties = null, string $contentType = self::contentTypes['salesOrderIdIdPut'][0])
     {
-        return $this->salesOrderIdIdPutAsyncWithHttpInfo($id, $sales_order, $dry_run, $contentType)
+        return $this->salesOrderIdIdPutAsyncWithHttpInfo($id, $sales_order, $dry_run, $ignore_missing_properties, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8394,15 +8382,16 @@ class SalesOrderApi
      * @param  string $id (required)
      * @param  \kruegge82\weclapp\Model\SalesOrder $sales_order (required)
      * @param  bool|null $dry_run (optional)
+     * @param  bool|null $ignore_missing_properties (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['salesOrderIdIdPut'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function salesOrderIdIdPutAsyncWithHttpInfo($id, $sales_order, $dry_run = null, string $contentType = self::contentTypes['salesOrderIdIdPut'][0])
+    public function salesOrderIdIdPutAsyncWithHttpInfo($id, $sales_order, $dry_run = null, $ignore_missing_properties = null, string $contentType = self::contentTypes['salesOrderIdIdPut'][0])
     {
         $returnType = '\kruegge82\weclapp\Model\SalesOrder';
-        $request = $this->salesOrderIdIdPutRequest($id, $sales_order, $dry_run, $contentType);
+        $request = $this->salesOrderIdIdPutRequest($id, $sales_order, $dry_run, $ignore_missing_properties, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8446,12 +8435,13 @@ class SalesOrderApi
      * @param  string $id (required)
      * @param  \kruegge82\weclapp\Model\SalesOrder $sales_order (required)
      * @param  bool|null $dry_run (optional)
+     * @param  bool|null $ignore_missing_properties (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['salesOrderIdIdPut'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function salesOrderIdIdPutRequest($id, $sales_order, $dry_run = null, string $contentType = self::contentTypes['salesOrderIdIdPut'][0])
+    public function salesOrderIdIdPutRequest($id, $sales_order, $dry_run = null, $ignore_missing_properties = null, string $contentType = self::contentTypes['salesOrderIdIdPut'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -8470,6 +8460,7 @@ class SalesOrderApi
 
 
 
+
         $resourcePath = '/salesOrder/id/{id}';
         $formParams = [];
         $queryParams = [];
@@ -8481,6 +8472,15 @@ class SalesOrderApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $dry_run,
             'dryRun', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $ignore_missing_properties,
+            'ignoreMissingProperties', // param base name
             'boolean', // openApiType
             'form', // style
             true, // explode

@@ -37396,13 +37396,6 @@
           },
           {
             "in": "query",
-            "name": "ignoreMissingProperties",
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "in": "query",
             "name": "sort",
             "schema": {
               "type": "string"
@@ -37804,6 +37797,12 @@
             "in": "query",
             "name": "dryRun",
             "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },{
+            "in": "query",
+            "name": "ignoreMissingProperties",
             "schema": {
               "type": "boolean"
             }
