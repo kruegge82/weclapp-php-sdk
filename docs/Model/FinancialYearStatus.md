@@ -1,4 +1,4 @@
-# # FinancialYearStatus
+# FinancialYearStatus
 
 ## Properties
 

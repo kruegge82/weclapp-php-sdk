@@ -1,4 +1,4 @@
-# # QuotationIdIdAcceptPost200Response
+# QuotationIdIdAcceptPost200Response
 
 ## Properties
 

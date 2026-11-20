@@ -1,4 +1,4 @@
-# # VariantArticleAttributeOption
+# VariantArticleAttributeOption
 
 ## Properties
 

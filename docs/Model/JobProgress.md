@@ -1,4 +1,4 @@
-# # JobProgress
+# JobProgress
 
 ## Properties
 

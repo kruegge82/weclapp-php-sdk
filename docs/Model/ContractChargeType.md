@@ -1,4 +1,4 @@
-# # ContractChargeType
+# ContractChargeType
 
 ## Properties
 

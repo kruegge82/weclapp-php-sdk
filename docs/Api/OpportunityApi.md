@@ -1,5 +1,7 @@
 # kruegge82\weclapp\OpportunityApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -16,7 +18,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `opportunityCountGet()`
 
 ```php
-opportunityCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+opportunityCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count opportunity
@@ -60,7 +62,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -78,7 +80,7 @@ try {
 ## `opportunityGet()`
 
 ```php
-opportunityGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\OpportunityGet200Response
+opportunityGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject52
 ```
 
 query opportunity
@@ -104,6 +106,7 @@ $apiInstance = new kruegge82\weclapp\Api\OpportunityApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -113,7 +116,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->opportunityGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->opportunityGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OpportunityApi->opportunityGet: ', $e->getMessage(), PHP_EOL;
@@ -124,6 +127,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -134,7 +138,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\OpportunityGet200Response**](../Model/OpportunityGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject52**](../Model/InlineObject52.md)
 
 ### Authorization
 

@@ -1,4 +1,4 @@
-# # StoragePlaceSize
+# StoragePlaceSize
 
 ## Properties
 

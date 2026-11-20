@@ -1,4 +1,4 @@
-# # PurchaseInvoiceIdIdPrintLabelPostRequest
+# PurchaseInvoiceIdIdPrintLabelPostRequest
 
 ## Properties
 

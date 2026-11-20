@@ -1,9 +1,10 @@
-# # QuotationIdIdCreatePurchaseOrderRequestPostRequest
+# QuotationIdIdCreatePurchaseOrderRequestPostRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**custom_attributes** | [**\kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPostRequestCustomAttributesInner[]**](ProductionOrderIdIdCreatePickingOrderPostRequestCustomAttributesInner.md) |  | [optional]
 **merge_items** | **bool** |  | [optional]
 **quotation_item_ids** | **string[]** |  | [optional]
 **request_type** | **string** |  |

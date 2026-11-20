@@ -1,4 +1,4 @@
-# # NotificationPriority
+# NotificationPriority
 
 ## Properties
 

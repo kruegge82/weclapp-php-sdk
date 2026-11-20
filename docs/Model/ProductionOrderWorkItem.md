@@ -1,4 +1,4 @@
-# # ProductionOrderWorkItem
+# ProductionOrderWorkItem
 
 ## Properties
 

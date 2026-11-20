@@ -1,4 +1,4 @@
-# # ApiProblemType
+# ApiProblemType
 
 ## Properties
 

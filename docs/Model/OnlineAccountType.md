@@ -1,4 +1,4 @@
-# # OnlineAccountType
+# OnlineAccountType
 
 ## Properties
 

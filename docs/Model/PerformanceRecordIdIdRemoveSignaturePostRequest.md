@@ -1,4 +1,4 @@
-# # PerformanceRecordIdIdRemoveSignaturePostRequest
+# PerformanceRecordIdIdRemoveSignaturePostRequest
 
 ## Properties
 

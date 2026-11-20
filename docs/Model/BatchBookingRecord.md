@@ -1,4 +1,4 @@
-# # BatchBookingRecord
+# BatchBookingRecord
 
 ## Properties
 

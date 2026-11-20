@@ -1,11 +1,14 @@
 # kruegge82\weclapp\AttendanceApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**attendanceCountGet()**](AttendanceApi.md#attendanceCountGet) | **GET** /attendance/count | count attendance |
 | [**attendanceCurrentAttendanceGet()**](AttendanceApi.md#attendanceCurrentAttendanceGet) | **GET** /attendance/currentAttendance |  |
+| [**attendanceEndBreakPost()**](AttendanceApi.md#attendanceEndBreakPost) | **POST** /attendance/endBreak |  |
 | [**attendanceGet()**](AttendanceApi.md#attendanceGet) | **GET** /attendance | query attendance |
 | [**attendanceIdIdDelete()**](AttendanceApi.md#attendanceIdIdDelete) | **DELETE** /attendance/id/{id} | delete a attendance |
 | [**attendanceIdIdGet()**](AttendanceApi.md#attendanceIdIdGet) | **GET** /attendance/id/{id} | query a specific attendance |
@@ -13,12 +16,13 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 | [**attendanceLogOffPost()**](AttendanceApi.md#attendanceLogOffPost) | **POST** /attendance/logOff |  |
 | [**attendanceLogOnPost()**](AttendanceApi.md#attendanceLogOnPost) | **POST** /attendance/logOn |  |
 | [**attendancePost()**](AttendanceApi.md#attendancePost) | **POST** /attendance | create a attendance |
+| [**attendanceStartBreakPost()**](AttendanceApi.md#attendanceStartBreakPost) | **POST** /attendance/startBreak |  |
 
 
 ## `attendanceCountGet()`
 
 ```php
-attendanceCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+attendanceCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count attendance
@@ -62,7 +66,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -134,10 +138,70 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `attendanceEndBreakPost()`
+
+```php
+attendanceEndBreakPost($body): \kruegge82\weclapp\Model\AttendanceCurrentAttendanceGet200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\AttendanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = array('key' => new \stdClass); // object
+
+try {
+    $result = $apiInstance->attendanceEndBreakPost($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AttendanceApi->attendanceEndBreakPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **object**|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\AttendanceCurrentAttendanceGet200Response**](../Model/AttendanceCurrentAttendanceGet200Response.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `attendanceGet()`
 
 ```php
-attendanceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\AttendanceGet200Response
+attendanceGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject12
 ```
 
 query attendance
@@ -163,6 +227,7 @@ $apiInstance = new kruegge82\weclapp\Api\AttendanceApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -172,7 +237,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->attendanceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->attendanceGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttendanceApi->attendanceGet: ', $e->getMessage(), PHP_EOL;
@@ -183,6 +248,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -193,7 +259,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AttendanceGet200Response**](../Model/AttendanceGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject12**](../Model/InlineObject12.md)
 
 ### Authorization
 
@@ -569,6 +635,66 @@ try {
 ### Return type
 
 [**\kruegge82\weclapp\Model\Attendance**](../Model/Attendance.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `attendanceStartBreakPost()`
+
+```php
+attendanceStartBreakPost($body): \kruegge82\weclapp\Model\AttendanceCurrentAttendanceGet200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\AttendanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = array('key' => new \stdClass); // object
+
+try {
+    $result = $apiInstance->attendanceStartBreakPost($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AttendanceApi->attendanceStartBreakPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **object**|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\AttendanceCurrentAttendanceGet200Response**](../Model/AttendanceCurrentAttendanceGet200Response.md)
 
 ### Authorization
 

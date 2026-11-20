@@ -1,4 +1,4 @@
-# # MoneyTransactionSource
+# MoneyTransactionSource
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # PurchaseRequisitionStatusType
+# PurchaseRequisitionStatusType
 
 ## Properties
 

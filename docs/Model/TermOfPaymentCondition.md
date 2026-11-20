@@ -1,4 +1,4 @@
-# # TermOfPaymentCondition
+# TermOfPaymentCondition
 
 ## Properties
 

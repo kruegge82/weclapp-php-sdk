@@ -1,4 +1,4 @@
-# # ArticleIdIdPackagingUnitStructureGet200Response
+# ArticleIdIdPackagingUnitStructureGet200Response
 
 ## Properties
 

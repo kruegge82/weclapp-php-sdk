@@ -1,4 +1,4 @@
-# # QuotationIdIdCalculateSalesPricesPostRequest
+# QuotationIdIdCalculateSalesPricesPostRequest
 
 ## Properties
 

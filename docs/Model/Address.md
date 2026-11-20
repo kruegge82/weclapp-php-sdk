@@ -1,4 +1,4 @@
-# # Address
+# Address
 
 ## Properties
 
@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **city** | **string** |  | [optional]
 **company** | **string** |  | [optional]
 **company2** | **string** |  | [optional]
-**country_code** | **string** |  | [optional]
+**country_code** | [**\kruegge82\weclapp\Model\Country**](Country.md) |  | [optional]
 **delivery_address** | **bool** |  | [optional]
 **first_name** | **string** |  | [optional]
 **global_location_number** | **string** |  | [optional]

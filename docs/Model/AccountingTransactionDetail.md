@@ -1,4 +1,4 @@
-# # AccountingTransactionDetail
+# AccountingTransactionDetail
 
 ## Properties
 

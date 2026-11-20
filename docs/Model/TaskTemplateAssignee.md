@@ -1,4 +1,4 @@
-# # TaskTemplateAssignee
+# TaskTemplateAssignee
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ValidationErrorType
+# ValidationErrorType
 
 ## Properties
 

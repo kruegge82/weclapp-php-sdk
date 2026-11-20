@@ -1,4 +1,4 @@
-# # BaseSalesRecordItemWithService
+# BaseSalesRecordItemWithService
 
 ## Properties
 

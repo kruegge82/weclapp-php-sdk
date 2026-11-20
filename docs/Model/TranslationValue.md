@@ -1,4 +1,4 @@
-# # TranslationValue
+# TranslationValue
 
 ## Properties
 

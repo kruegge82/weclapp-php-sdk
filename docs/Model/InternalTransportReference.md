@@ -1,4 +1,4 @@
-# # InternalTransportReference
+# InternalTransportReference
 
 ## Properties
 

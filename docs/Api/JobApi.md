@@ -1,5 +1,7 @@
 # kruegge82\weclapp\JobApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -11,7 +13,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `jobAbortGet()`
 
 ```php
-jobAbortGet($type): \kruegge82\weclapp\Model\JobAbortGet200Response
+jobAbortGet($type): \kruegge82\weclapp\Model\ExternalConnectionIdIdStartArticleSynchronizationPost200Response
 ```
 
 
@@ -53,7 +55,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\JobAbortGet200Response**](../Model/JobAbortGet200Response.md)
+[**\kruegge82\weclapp\Model\ExternalConnectionIdIdStartArticleSynchronizationPost200Response**](../Model/ExternalConnectionIdIdStartArticleSynchronizationPost200Response.md)
 
 ### Authorization
 
@@ -71,7 +73,7 @@ try {
 ## `jobStatusGet()`
 
 ```php
-jobStatusGet($type): \kruegge82\weclapp\Model\JobAbortGet200Response
+jobStatusGet($type): \kruegge82\weclapp\Model\ExternalConnectionIdIdStartArticleSynchronizationPost200Response
 ```
 
 
@@ -113,7 +115,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\JobAbortGet200Response**](../Model/JobAbortGet200Response.md)
+[**\kruegge82\weclapp\Model\ExternalConnectionIdIdStartArticleSynchronizationPost200Response**](../Model/ExternalConnectionIdIdStartArticleSynchronizationPost200Response.md)
 
 ### Authorization
 

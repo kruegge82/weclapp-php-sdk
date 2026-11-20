@@ -1,4 +1,4 @@
-# # Attendance
+# Attendance
 
 ## Properties
 
@@ -8,8 +8,9 @@ Name | Type | Description | Notes
 **created_date** | **int** |  | [optional] [readonly]
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional] [readonly]
+**breaks** | [**\kruegge82\weclapp\Model\AttendanceBreak[]**](AttendanceBreak.md) |  | [optional]
+**employee_id** | **string** |  | [optional]
 **end_time** | **int** |  | [optional]
 **start_time** | **int** |  | [optional]
-**user_id** | **string** |  | [optional] [readonly]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

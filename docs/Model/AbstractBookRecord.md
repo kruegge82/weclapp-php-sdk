@@ -1,4 +1,4 @@
-# # AbstractBookRecord
+# AbstractBookRecord
 
 ## Properties
 
@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **created_date** | **int** |  | [optional] [readonly]
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional] [readonly]
+**custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
 **batch_number** | **string** |  | [optional]
 **confirmed_by_user_id** | **string** |  | [optional] [readonly]
 **confirmed_date** | **int** |  | [optional] [readonly]

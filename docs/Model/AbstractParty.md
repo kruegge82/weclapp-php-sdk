@@ -1,4 +1,4 @@
-# # AbstractParty
+# AbstractParty
 
 ## Properties
 

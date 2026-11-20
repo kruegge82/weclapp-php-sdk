@@ -1,4 +1,4 @@
-# # TransportationOrderType
+# TransportationOrderType
 
 ## Properties
 

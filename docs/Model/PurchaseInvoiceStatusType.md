@@ -1,4 +1,4 @@
-# # PurchaseInvoiceStatusType
+# PurchaseInvoiceStatusType
 
 ## Properties
 

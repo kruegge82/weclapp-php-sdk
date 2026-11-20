@@ -1,4 +1,4 @@
-# # ReminderSendType
+# ReminderSendType
 
 ## Properties
 

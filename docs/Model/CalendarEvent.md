@@ -1,4 +1,4 @@
-# # CalendarEvent
+# CalendarEvent
 
 ## Properties
 

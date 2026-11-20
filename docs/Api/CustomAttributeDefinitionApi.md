@@ -1,5 +1,7 @@
 # kruegge82\weclapp\CustomAttributeDefinitionApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -17,7 +19,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `customAttributeDefinitionCountGet()`
 
 ```php
-customAttributeDefinitionCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+customAttributeDefinitionCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count customAttributeDefinition
@@ -61,7 +63,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -79,7 +81,7 @@ try {
 ## `customAttributeDefinitionGet()`
 
 ```php
-customAttributeDefinitionGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\CustomAttributeDefinitionGet200Response
+customAttributeDefinitionGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject36
 ```
 
 query customAttributeDefinition
@@ -105,6 +107,7 @@ $apiInstance = new kruegge82\weclapp\Api\CustomAttributeDefinitionApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -114,7 +117,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->customAttributeDefinitionGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->customAttributeDefinitionGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomAttributeDefinitionApi->customAttributeDefinitionGet: ', $e->getMessage(), PHP_EOL;
@@ -125,6 +128,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -135,7 +139,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\CustomAttributeDefinitionGet200Response**](../Model/CustomAttributeDefinitionGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject36**](../Model/InlineObject36.md)
 
 ### Authorization
 

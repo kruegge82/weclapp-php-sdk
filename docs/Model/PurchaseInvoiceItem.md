@@ -1,4 +1,4 @@
-# # PurchaseInvoiceItem
+# PurchaseInvoiceItem
 
 ## Properties
 

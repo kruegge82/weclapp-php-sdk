@@ -1,4 +1,4 @@
-# # PropertyTranslationUpdatePropertyTranslationsPostRequestPropertyTranslationsInner
+# PropertyTranslationUpdatePropertyTranslationsPostRequestPropertyTranslationsInner
 
 ## Properties
 

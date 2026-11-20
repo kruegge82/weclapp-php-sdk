@@ -1,4 +1,4 @@
-# # TicketIdIdCreatePublicPagePost200Response
+# TicketIdIdCreatePublicPagePost200Response
 
 ## Properties
 

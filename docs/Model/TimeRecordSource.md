@@ -1,4 +1,4 @@
-# # TimeRecordSource
+# TimeRecordSource
 
 ## Properties
 

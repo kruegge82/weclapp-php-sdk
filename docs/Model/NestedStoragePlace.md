@@ -1,4 +1,4 @@
-# # NestedStoragePlace
+# NestedStoragePlace
 
 ## Properties
 
@@ -14,9 +14,10 @@ Name | Type | Description | Notes
 **barcode** | **string** |  | [optional]
 **blocked_for_resupply** | **bool** |  | [optional]
 **blocked_for_resupply_reason_id** | **string** |  | [optional]
-**customer_id** | **string** |  | [optional] [readonly]
+**customer_id** | **string** |  | [optional]
 **field_number** | **int** |  | [optional]
 **level_number** | **int** |  | [optional]
+**pick_sequence** | **int** |  | [optional]
 **storage_place_size_id** | **string** |  | [optional]
 **storage_place_type** | [**\kruegge82\weclapp\Model\StoragePlaceType**](StoragePlaceType.md) |  | [optional]
 

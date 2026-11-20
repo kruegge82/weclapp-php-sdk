@@ -1,4 +1,4 @@
-# # Party
+# Party
 
 ## Properties
 
@@ -43,6 +43,7 @@ Name | Type | Description | Notes
 **converted_on_date** | **int** |  | [optional] [readonly]
 **currency_id** | **string** |  | [optional]
 **customer** | **bool** |  | [optional]
+**customer_active** | **bool** |  | [optional]
 **customer_allow_dropshipping_order_creation** | **bool** |  | [optional]
 **customer_amount_insured** | **float** |  | [optional]
 **customer_annual_revenue** | **float** |  | [optional]
@@ -57,6 +58,7 @@ Name | Type | Description | Notes
 **customer_default_header_discount** | **float** |  | [optional]
 **customer_default_header_surcharge** | **float** |  | [optional]
 **customer_default_shipping_carrier_id** | **string** |  | [optional]
+**customer_default_warehouse_id** | **string** |  | [optional]
 **customer_delivery_block** | **bool** |  | [optional]
 **customer_insolvent** | **bool** |  | [optional]
 **customer_insured** | **bool** |  | [optional]

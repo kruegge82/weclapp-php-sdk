@@ -1,4 +1,4 @@
-# # ShipmentIdIdCreateShippingLabelsPostRequest
+# ShipmentIdIdCreateShippingLabelsPostRequest
 
 ## Properties
 

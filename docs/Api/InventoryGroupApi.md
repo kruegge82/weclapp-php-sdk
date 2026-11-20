@@ -1,5 +1,7 @@
 # kruegge82\weclapp\InventoryGroupApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -12,7 +14,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `inventoryGroupCountGet()`
 
 ```php
-inventoryGroupCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+inventoryGroupCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count inventoryGroup
@@ -56,7 +58,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -74,7 +76,7 @@ try {
 ## `inventoryGroupGet()`
 
 ```php
-inventoryGroupGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InventoryGroupGet200Response
+inventoryGroupGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject41
 ```
 
 query inventoryGroup
@@ -100,6 +102,7 @@ $apiInstance = new kruegge82\weclapp\Api\InventoryGroupApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -109,7 +112,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->inventoryGroupGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->inventoryGroupGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryGroupApi->inventoryGroupGet: ', $e->getMessage(), PHP_EOL;
@@ -120,6 +123,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -130,7 +134,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\InventoryGroupGet200Response**](../Model/InventoryGroupGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject41**](../Model/InlineObject41.md)
 
 ### Authorization
 

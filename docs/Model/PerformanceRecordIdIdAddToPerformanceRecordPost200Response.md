@@ -1,4 +1,4 @@
-# # PerformanceRecordIdIdAddToPerformanceRecordPost200Response
+# PerformanceRecordIdIdAddToPerformanceRecordPost200Response
 
 ## Properties
 

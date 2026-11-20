@@ -1,4 +1,4 @@
-# # FollowupBusyState
+# FollowupBusyState
 
 ## Properties
 

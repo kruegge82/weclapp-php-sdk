@@ -1,4 +1,4 @@
-# # ItemAvailability
+# ItemAvailability
 
 ## Properties
 

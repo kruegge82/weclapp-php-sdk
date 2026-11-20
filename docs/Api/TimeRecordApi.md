@@ -1,5 +1,7 @@
 # kruegge82\weclapp\TimeRecordApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -15,7 +17,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `timeRecordCountGet()`
 
 ```php
-timeRecordCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+timeRecordCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count timeRecord
@@ -59,7 +61,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -77,7 +79,7 @@ try {
 ## `timeRecordGet()`
 
 ```php
-timeRecordGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\TimeRecordGet200Response
+timeRecordGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\InlineObject108
 ```
 
 query timeRecord
@@ -103,6 +105,7 @@ $apiInstance = new kruegge82\weclapp\Api\TimeRecordApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -113,7 +116,7 @@ $include_referenced_entities = 'include_referenced_entities_example'; // string
 $additional_properties = 'additional_properties_example'; // string
 
 try {
-    $result = $apiInstance->timeRecordGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
+    $result = $apiInstance->timeRecordGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TimeRecordApi->timeRecordGet: ', $e->getMessage(), PHP_EOL;
@@ -124,6 +127,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -135,7 +139,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\TimeRecordGet200Response**](../Model/TimeRecordGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject108**](../Model/InlineObject108.md)
 
 ### Authorization
 

@@ -1,4 +1,4 @@
-# # PurchaseOrderItem
+# PurchaseOrderItem
 
 ## Properties
 
@@ -38,6 +38,7 @@ Name | Type | Description | Notes
 **batch_serial_numbers** | [**\kruegge82\weclapp\Model\BatchSerialNumber[]**](BatchSerialNumber.md) |  | [optional]
 **blanket_purchase_order_id** | **string** |  | [optional]
 **blanket_purchase_order_release_id** | **string** |  | [optional] [readonly]
+**cost_center_items** | [**\kruegge82\weclapp\Model\CostCenterWithDistributionPercentage[]**](CostCenterWithDistributionPercentage.md) |  | [optional]
 **invoiced_quantity** | **float** |  | [optional] [readonly]
 **planned_delivery_date** | **int** |  | [optional]
 **planned_shipping_date** | **int** |  | [optional]

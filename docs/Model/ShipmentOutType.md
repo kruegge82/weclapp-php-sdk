@@ -1,4 +1,4 @@
-# # ShipmentOutType
+# ShipmentOutType
 
 ## Properties
 

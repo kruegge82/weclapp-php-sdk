@@ -1,4 +1,4 @@
-# # DistributionChannel
+# DistributionChannel
 
 ## Properties
 

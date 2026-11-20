@@ -1,4 +1,4 @@
-# # TaskTemplate
+# TaskTemplate
 
 ## Properties
 
@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **created_date** | **int** |  | [optional] [readonly]
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional] [readonly]
-**custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
 **article_id** | **string** |  | [optional]
 **assignees** | [**\kruegge82\weclapp\Model\TaskTemplateAssignee[]**](TaskTemplateAssignee.md) |  | [optional]
 **creator_user_id** | **string** |  | [optional] [readonly]

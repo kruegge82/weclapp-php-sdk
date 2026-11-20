@@ -1,4 +1,4 @@
-# # ReminderRecurringEvent
+# ReminderRecurringEvent
 
 ## Properties
 

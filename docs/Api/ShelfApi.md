@@ -1,5 +1,7 @@
 # kruegge82\weclapp\ShelfApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -17,7 +19,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `shelfCountGet()`
 
 ```php
-shelfCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+shelfCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count shelf
@@ -61,7 +63,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -79,7 +81,7 @@ try {
 ## `shelfGet()`
 
 ```php
-shelfGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ShelfGet200Response
+shelfGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject84
 ```
 
 query shelf
@@ -105,6 +107,7 @@ $apiInstance = new kruegge82\weclapp\Api\ShelfApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -114,7 +117,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->shelfGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->shelfGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShelfApi->shelfGet: ', $e->getMessage(), PHP_EOL;
@@ -125,6 +128,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -135,7 +139,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\ShelfGet200Response**](../Model/ShelfGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject84**](../Model/InlineObject84.md)
 
 ### Authorization
 

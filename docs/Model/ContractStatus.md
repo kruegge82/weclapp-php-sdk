@@ -1,4 +1,4 @@
-# # ContractStatus
+# ContractStatus
 
 ## Properties
 

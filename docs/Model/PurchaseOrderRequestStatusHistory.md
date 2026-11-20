@@ -1,10 +1,10 @@
-# # PurchaseOrderRequestStatusHistory
+# PurchaseOrderRequestStatusHistory
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | [**\kruegge82\weclapp\Model\PurchaseOrderRequestStatusType**](PurchaseOrderRequestStatusType.md) |  | [optional]
+**status** | [**\kruegge82\weclapp\Model\PurchaseOrderRequestStatusType**](PurchaseOrderRequestStatusType.md) |  | [optional] [readonly]
 **status_date** | **int** |  | [optional] [readonly]
 **user_id** | **string** |  | [optional] [readonly]
 

@@ -1,4 +1,4 @@
-# # BaseSalesRecordItemWithCost
+# BaseSalesRecordItemWithCost
 
 ## Properties
 

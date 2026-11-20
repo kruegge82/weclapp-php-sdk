@@ -1,4 +1,4 @@
-# # Shelf
+# Shelf
 
 ## Properties
 

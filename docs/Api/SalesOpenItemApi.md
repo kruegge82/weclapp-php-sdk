@@ -1,5 +1,7 @@
 # kruegge82\weclapp\SalesOpenItemApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -14,7 +16,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `salesOpenItemCountGet()`
 
 ```php
-salesOpenItemCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+salesOpenItemCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count salesOpenItem
@@ -58,7 +60,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -76,7 +78,7 @@ try {
 ## `salesOpenItemGet()`
 
 ```php
-salesOpenItemGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\SalesOpenItemGet200Response
+salesOpenItemGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject77
 ```
 
 query salesOpenItem
@@ -102,6 +104,7 @@ $apiInstance = new kruegge82\weclapp\Api\SalesOpenItemApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -111,7 +114,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->salesOpenItemGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->salesOpenItemGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SalesOpenItemApi->salesOpenItemGet: ', $e->getMessage(), PHP_EOL;
@@ -122,6 +125,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -132,7 +136,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\SalesOpenItemGet200Response**](../Model/SalesOpenItemGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject77**](../Model/InlineObject77.md)
 
 ### Authorization
 

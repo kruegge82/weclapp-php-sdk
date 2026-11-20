@@ -1,4 +1,4 @@
-# # CrmEvent
+# CrmEvent
 
 ## Properties
 
@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **party_id** | **string** |  | [optional]
 **start_date** | **int** |  | [optional]
 **subject** | **string** |  | [optional]
+**tags** | **string[]** |  | [optional]
 **type** | [**\kruegge82\weclapp\Model\CrmEventType**](CrmEventType.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

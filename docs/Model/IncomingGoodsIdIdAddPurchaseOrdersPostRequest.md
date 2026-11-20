@@ -1,4 +1,4 @@
-# # IncomingGoodsIdIdAddPurchaseOrdersPostRequest
+# IncomingGoodsIdIdAddPurchaseOrdersPostRequest
 
 ## Properties
 

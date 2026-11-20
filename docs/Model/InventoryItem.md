@@ -1,4 +1,4 @@
-# # InventoryItem
+# InventoryItem
 
 ## Properties
 

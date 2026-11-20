@@ -1,4 +1,4 @@
-# # AbstractBillOfMaterial
+# AbstractBillOfMaterial
 
 ## Properties
 

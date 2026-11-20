@@ -1,4 +1,4 @@
-# # CommissionSalesPartner
+# CommissionSalesPartner
 
 ## Properties
 

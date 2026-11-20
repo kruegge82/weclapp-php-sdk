@@ -1,4 +1,4 @@
-# # SpecialCalculationMode
+# SpecialCalculationMode
 
 ## Properties
 

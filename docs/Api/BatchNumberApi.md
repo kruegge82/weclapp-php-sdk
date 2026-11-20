@@ -1,5 +1,7 @@
 # kruegge82\weclapp\BatchNumberApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -7,12 +9,13 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 | [**batchNumberCountGet()**](BatchNumberApi.md#batchNumberCountGet) | **GET** /batchNumber/count | count batchNumber |
 | [**batchNumberGet()**](BatchNumberApi.md#batchNumberGet) | **GET** /batchNumber | query batchNumber |
 | [**batchNumberIdIdGet()**](BatchNumberApi.md#batchNumberIdIdGet) | **GET** /batchNumber/id/{id} | query a specific batchNumber |
+| [**batchNumberIdIdPut()**](BatchNumberApi.md#batchNumberIdIdPut) | **PUT** /batchNumber/id/{id} | update a batchNumber |
 
 
 ## `batchNumberCountGet()`
 
 ```php
-batchNumberCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+batchNumberCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count batchNumber
@@ -56,7 +59,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -74,7 +77,7 @@ try {
 ## `batchNumberGet()`
 
 ```php
-batchNumberGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\BatchNumberGet200Response
+batchNumberGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject15
 ```
 
 query batchNumber
@@ -100,6 +103,7 @@ $apiInstance = new kruegge82\weclapp\Api\BatchNumberApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -109,7 +113,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->batchNumberGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->batchNumberGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BatchNumberApi->batchNumberGet: ', $e->getMessage(), PHP_EOL;
@@ -120,6 +124,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -130,7 +135,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\BatchNumberGet200Response**](../Model/BatchNumberGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject15**](../Model/InlineObject15.md)
 
 ### Authorization
 
@@ -201,6 +206,72 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `batchNumberIdIdPut()`
+
+```php
+batchNumberIdIdPut($id, $batch_number, $dry_run): \kruegge82\weclapp\Model\BatchNumber
+```
+
+update a batchNumber
+
+update batchNumber
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\BatchNumberApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$batch_number = new \kruegge82\weclapp\Model\BatchNumber(); // \kruegge82\weclapp\Model\BatchNumber
+$dry_run = True; // bool
+
+try {
+    $result = $apiInstance->batchNumberIdIdPut($id, $batch_number, $dry_run);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling BatchNumberApi->batchNumberIdIdPut: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **batch_number** | [**\kruegge82\weclapp\Model\BatchNumber**](../Model/BatchNumber.md)|  | |
+| **dry_run** | **bool**|  | [optional] |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\BatchNumber**](../Model/BatchNumber.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

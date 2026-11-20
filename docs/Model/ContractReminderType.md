@@ -1,4 +1,4 @@
-# # ContractReminderType
+# ContractReminderType
 
 ## Properties
 

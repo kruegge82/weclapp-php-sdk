@@ -1,4 +1,4 @@
-# # PaymentRunPaymentType
+# PaymentRunPaymentType
 
 ## Properties
 

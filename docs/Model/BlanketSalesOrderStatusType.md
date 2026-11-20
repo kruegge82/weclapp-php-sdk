@@ -1,4 +1,4 @@
-# # BlanketSalesOrderStatusType
+# BlanketSalesOrderStatusType
 
 ## Properties
 

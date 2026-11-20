@@ -1,4 +1,4 @@
-# # CustomAttributeType
+# CustomAttributeType
 
 ## Properties
 

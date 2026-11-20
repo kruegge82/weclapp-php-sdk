@@ -1,4 +1,4 @@
-# # TicketCategory
+# TicketCategory
 
 ## Properties
 
@@ -9,9 +9,11 @@ Name | Type | Description | Notes
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional] [readonly]
 **active** | **bool** |  | [optional]
+**customer_portals** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
 **name** | **string** |  | [optional]
 **parent_ticket_category_id** | **string** |  | [optional]
-**pseudo_category** | **bool** |  | [optional]
+**path** | **string** |  | [optional] [readonly]
+**pseudo_category** | **bool** |  | [optional] [readonly]
 **published** | **bool** |  | [optional]
 **visible_in_customer_portal** | **bool** |  | [optional]
 

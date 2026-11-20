@@ -1,4 +1,4 @@
-# # PerformanceRecordItem
+# PerformanceRecordItem
 
 ## Properties
 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **unit_id** | **string** |  | [optional]
 **add_page_break_before** | **bool** |  | [optional]
 **group_name** | **string** |  | [optional]
-**invoicing_type** | [**\kruegge82\weclapp\Model\InvoicingType**](InvoicingType.md) |  | [optional]
+**invoicing_type** | [**\kruegge82\weclapp\Model\InvoicingType**](InvoicingType.md) |  | [optional] [readonly]
 **order_item_id** | **string** |  | [optional]
 **service_period_from** | **int** |  | [optional]
 **service_period_to** | **int** |  | [optional]

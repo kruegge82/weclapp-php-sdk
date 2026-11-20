@@ -55,19 +55,19 @@ $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey(
 // $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
 
 
-$apiInstance = new kruegge82\weclapp\Api\AccountingTransactionApi(
+$apiInstance = new kruegge82\weclapp\Api\AbsenceTypeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$accounting_transaction_batch_booking_post_request = new \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPostRequest(); // \kruegge82\weclapp\Model\AccountingTransactionBatchBookingPostRequest
+$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->accountingTransactionBatchBookingPost($accounting_transaction_batch_booking_post_request);
+    $result = $apiInstance->absenceTypeCountGet($filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountingTransactionApi->accountingTransactionBatchBookingPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AbsenceTypeApi->absenceTypeCountGet: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -78,10 +78,32 @@ All URIs are relative to *https://localhost:80/webapp/api/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AbsenceTypeApi* | [**absenceTypeCountGet**](docs/Api/AbsenceTypeApi.md#absencetypecountget) | **GET** /absenceType/count | count absenceType
+*AbsenceTypeApi* | [**absenceTypeGet**](docs/Api/AbsenceTypeApi.md#absencetypeget) | **GET** /absenceType | query absenceType
+*AbsenceTypeApi* | [**absenceTypeIdIdDelete**](docs/Api/AbsenceTypeApi.md#absencetypeididdelete) | **DELETE** /absenceType/id/{id} | delete a absenceType
+*AbsenceTypeApi* | [**absenceTypeIdIdGet**](docs/Api/AbsenceTypeApi.md#absencetypeididget) | **GET** /absenceType/id/{id} | query a specific absenceType
+*AbsenceTypeApi* | [**absenceTypeIdIdPut**](docs/Api/AbsenceTypeApi.md#absencetypeididput) | **PUT** /absenceType/id/{id} | update a absenceType
+*AbsenceTypeApi* | [**absenceTypePost**](docs/Api/AbsenceTypeApi.md#absencetypepost) | **POST** /absenceType | create a absenceType
 *AccountingTransactionApi* | [**accountingTransactionBatchBookingPost**](docs/Api/AccountingTransactionApi.md#accountingtransactionbatchbookingpost) | **POST** /accountingTransaction/batchBooking | Creates an accounting transaction of type &#39;impersonal&#39;
 *AccountingTransactionApi* | [**accountingTransactionCountGet**](docs/Api/AccountingTransactionApi.md#accountingtransactioncountget) | **GET** /accountingTransaction/count | count accountingTransaction
 *AccountingTransactionApi* | [**accountingTransactionGet**](docs/Api/AccountingTransactionApi.md#accountingtransactionget) | **GET** /accountingTransaction | query accountingTransaction
 *AccountingTransactionApi* | [**accountingTransactionIdIdGet**](docs/Api/AccountingTransactionApi.md#accountingtransactionididget) | **GET** /accountingTransaction/id/{id} | query a specific accountingTransaction
+*ApprovalApi* | [**approvalCountGet**](docs/Api/ApprovalApi.md#approvalcountget) | **GET** /approval/count | count approval
+*ApprovalApi* | [**approvalGet**](docs/Api/ApprovalApi.md#approvalget) | **GET** /approval | query approval
+*ApprovalApi* | [**approvalIdIdChangeStatusPost**](docs/Api/ApprovalApi.md#approvalididchangestatuspost) | **POST** /approval/id/{id}/changeStatus | 
+*ApprovalApi* | [**approvalIdIdGet**](docs/Api/ApprovalApi.md#approvalididget) | **GET** /approval/id/{id} | query a specific approval
+*ApprovalGroupApi* | [**approvalGroupCountGet**](docs/Api/ApprovalGroupApi.md#approvalgroupcountget) | **GET** /approvalGroup/count | count approvalGroup
+*ApprovalGroupApi* | [**approvalGroupGet**](docs/Api/ApprovalGroupApi.md#approvalgroupget) | **GET** /approvalGroup | query approvalGroup
+*ApprovalGroupApi* | [**approvalGroupIdIdDelete**](docs/Api/ApprovalGroupApi.md#approvalgroupididdelete) | **DELETE** /approvalGroup/id/{id} | delete a approvalGroup
+*ApprovalGroupApi* | [**approvalGroupIdIdGet**](docs/Api/ApprovalGroupApi.md#approvalgroupididget) | **GET** /approvalGroup/id/{id} | query a specific approvalGroup
+*ApprovalGroupApi* | [**approvalGroupIdIdPut**](docs/Api/ApprovalGroupApi.md#approvalgroupididput) | **PUT** /approvalGroup/id/{id} | update a approvalGroup
+*ApprovalGroupApi* | [**approvalGroupPost**](docs/Api/ApprovalGroupApi.md#approvalgrouppost) | **POST** /approvalGroup | create a approvalGroup
+*ApprovalRuleApi* | [**approvalRuleCountGet**](docs/Api/ApprovalRuleApi.md#approvalrulecountget) | **GET** /approvalRule/count | count approvalRule
+*ApprovalRuleApi* | [**approvalRuleGet**](docs/Api/ApprovalRuleApi.md#approvalruleget) | **GET** /approvalRule | query approvalRule
+*ApprovalRuleApi* | [**approvalRuleIdIdDelete**](docs/Api/ApprovalRuleApi.md#approvalruleididdelete) | **DELETE** /approvalRule/id/{id} | delete a approvalRule
+*ApprovalRuleApi* | [**approvalRuleIdIdGet**](docs/Api/ApprovalRuleApi.md#approvalruleididget) | **GET** /approvalRule/id/{id} | query a specific approvalRule
+*ApprovalRuleApi* | [**approvalRuleIdIdPut**](docs/Api/ApprovalRuleApi.md#approvalruleididput) | **PUT** /approvalRule/id/{id} | update a approvalRule
+*ApprovalRuleApi* | [**approvalRulePost**](docs/Api/ApprovalRuleApi.md#approvalrulepost) | **POST** /approvalRule | create a approvalRule
 *ArchivedEmailApi* | [**archivedEmailCountGet**](docs/Api/ArchivedEmailApi.md#archivedemailcountget) | **GET** /archivedEmail/count | count archivedEmail
 *ArchivedEmailApi* | [**archivedEmailGet**](docs/Api/ArchivedEmailApi.md#archivedemailget) | **GET** /archivedEmail | query archivedEmail
 *ArchivedEmailApi* | [**archivedEmailIdIdGet**](docs/Api/ArchivedEmailApi.md#archivedemailididget) | **GET** /archivedEmail/id/{id} | query a specific archivedEmail
@@ -148,6 +170,7 @@ Class | Method | HTTP request | Description
 *ArticleSupplySourceApi* | [**articleSupplySourcePost**](docs/Api/ArticleSupplySourceApi.md#articlesupplysourcepost) | **POST** /articleSupplySource | create a articleSupplySource
 *AttendanceApi* | [**attendanceCountGet**](docs/Api/AttendanceApi.md#attendancecountget) | **GET** /attendance/count | count attendance
 *AttendanceApi* | [**attendanceCurrentAttendanceGet**](docs/Api/AttendanceApi.md#attendancecurrentattendanceget) | **GET** /attendance/currentAttendance | 
+*AttendanceApi* | [**attendanceEndBreakPost**](docs/Api/AttendanceApi.md#attendanceendbreakpost) | **POST** /attendance/endBreak | 
 *AttendanceApi* | [**attendanceGet**](docs/Api/AttendanceApi.md#attendanceget) | **GET** /attendance | query attendance
 *AttendanceApi* | [**attendanceIdIdDelete**](docs/Api/AttendanceApi.md#attendanceididdelete) | **DELETE** /attendance/id/{id} | delete a attendance
 *AttendanceApi* | [**attendanceIdIdGet**](docs/Api/AttendanceApi.md#attendanceididget) | **GET** /attendance/id/{id} | query a specific attendance
@@ -155,6 +178,7 @@ Class | Method | HTTP request | Description
 *AttendanceApi* | [**attendanceLogOffPost**](docs/Api/AttendanceApi.md#attendancelogoffpost) | **POST** /attendance/logOff | 
 *AttendanceApi* | [**attendanceLogOnPost**](docs/Api/AttendanceApi.md#attendancelogonpost) | **POST** /attendance/logOn | 
 *AttendanceApi* | [**attendancePost**](docs/Api/AttendanceApi.md#attendancepost) | **POST** /attendance | create a attendance
+*AttendanceApi* | [**attendanceStartBreakPost**](docs/Api/AttendanceApi.md#attendancestartbreakpost) | **POST** /attendance/startBreak | 
 *BankAccountApi* | [**bankAccountCountGet**](docs/Api/BankAccountApi.md#bankaccountcountget) | **GET** /bankAccount/count | count bankAccount
 *BankAccountApi* | [**bankAccountGet**](docs/Api/BankAccountApi.md#bankaccountget) | **GET** /bankAccount | query bankAccount
 *BankAccountApi* | [**bankAccountIdIdDelete**](docs/Api/BankAccountApi.md#bankaccountididdelete) | **DELETE** /bankAccount/id/{id} | delete a bankAccount
@@ -168,6 +192,7 @@ Class | Method | HTTP request | Description
 *BatchNumberApi* | [**batchNumberCountGet**](docs/Api/BatchNumberApi.md#batchnumbercountget) | **GET** /batchNumber/count | count batchNumber
 *BatchNumberApi* | [**batchNumberGet**](docs/Api/BatchNumberApi.md#batchnumberget) | **GET** /batchNumber | query batchNumber
 *BatchNumberApi* | [**batchNumberIdIdGet**](docs/Api/BatchNumberApi.md#batchnumberididget) | **GET** /batchNumber/id/{id} | query a specific batchNumber
+*BatchNumberApi* | [**batchNumberIdIdPut**](docs/Api/BatchNumberApi.md#batchnumberididput) | **PUT** /batchNumber/id/{id} | update a batchNumber
 *BlanketPurchaseOrderApi* | [**blanketPurchaseOrderCountGet**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseordercountget) | **GET** /blanketPurchaseOrder/count | count blanketPurchaseOrder
 *BlanketPurchaseOrderApi* | [**blanketPurchaseOrderGet**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderget) | **GET** /blanketPurchaseOrder | query blanketPurchaseOrder
 *BlanketPurchaseOrderApi* | [**blanketPurchaseOrderIdIdDelete**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderididdelete) | **DELETE** /blanketPurchaseOrder/id/{id} | delete a blanketPurchaseOrder
@@ -178,7 +203,20 @@ Class | Method | HTTP request | Description
 *BlanketPurchaseOrderApi* | [**blanketPurchaseOrderPost**](docs/Api/BlanketPurchaseOrderApi.md#blanketpurchaseorderpost) | **POST** /blanketPurchaseOrder | create a blanketPurchaseOrder
 *BlanketSalesOrderApi* | [**blanketSalesOrderCountGet**](docs/Api/BlanketSalesOrderApi.md#blanketsalesordercountget) | **GET** /blanketSalesOrder/count | count blanketSalesOrder
 *BlanketSalesOrderApi* | [**blanketSalesOrderGet**](docs/Api/BlanketSalesOrderApi.md#blanketsalesorderget) | **GET** /blanketSalesOrder | query blanketSalesOrder
+*BlanketSalesOrderApi* | [**blanketSalesOrderIdIdDelete**](docs/Api/BlanketSalesOrderApi.md#blanketsalesorderididdelete) | **DELETE** /blanketSalesOrder/id/{id} | delete a blanketSalesOrder
+*BlanketSalesOrderApi* | [**blanketSalesOrderIdIdDownloadLatestBlanketSalesOrderPdfGet**](docs/Api/BlanketSalesOrderApi.md#blanketsalesorderididdownloadlatestblanketsalesorderpdfget) | **GET** /blanketSalesOrder/id/{id}/downloadLatestBlanketSalesOrderPdf | 
+*BlanketSalesOrderApi* | [**blanketSalesOrderIdIdGenerateReleasesPost**](docs/Api/BlanketSalesOrderApi.md#blanketsalesorderididgeneratereleasespost) | **POST** /blanketSalesOrder/id/{id}/generateReleases | 
 *BlanketSalesOrderApi* | [**blanketSalesOrderIdIdGet**](docs/Api/BlanketSalesOrderApi.md#blanketsalesorderididget) | **GET** /blanketSalesOrder/id/{id} | query a specific blanketSalesOrder
+*BlanketSalesOrderApi* | [**blanketSalesOrderIdIdPut**](docs/Api/BlanketSalesOrderApi.md#blanketsalesorderididput) | **PUT** /blanketSalesOrder/id/{id} | update a blanketSalesOrder
+*BlanketSalesOrderApi* | [**blanketSalesOrderIdIdUpdateStatusPost**](docs/Api/BlanketSalesOrderApi.md#blanketsalesorderididupdatestatuspost) | **POST** /blanketSalesOrder/id/{id}/updateStatus | 
+*BlanketSalesOrderApi* | [**blanketSalesOrderPost**](docs/Api/BlanketSalesOrderApi.md#blanketsalesorderpost) | **POST** /blanketSalesOrder | create a blanketSalesOrder
+*BusinessHolidaysApi* | [**businessHolidaysCountGet**](docs/Api/BusinessHolidaysApi.md#businessholidayscountget) | **GET** /businessHolidays/count | count businessHolidays
+*BusinessHolidaysApi* | [**businessHolidaysGet**](docs/Api/BusinessHolidaysApi.md#businessholidaysget) | **GET** /businessHolidays | query businessHolidays
+*BusinessHolidaysApi* | [**businessHolidaysIdIdDelete**](docs/Api/BusinessHolidaysApi.md#businessholidaysididdelete) | **DELETE** /businessHolidays/id/{id} | delete a businessHolidays
+*BusinessHolidaysApi* | [**businessHolidaysIdIdGet**](docs/Api/BusinessHolidaysApi.md#businessholidaysididget) | **GET** /businessHolidays/id/{id} | query a specific businessHolidays
+*BusinessHolidaysApi* | [**businessHolidaysIdIdImportCalendarDataPost**](docs/Api/BusinessHolidaysApi.md#businessholidaysididimportcalendardatapost) | **POST** /businessHolidays/id/{id}/importCalendarData | 
+*BusinessHolidaysApi* | [**businessHolidaysIdIdPut**](docs/Api/BusinessHolidaysApi.md#businessholidaysididput) | **PUT** /businessHolidays/id/{id} | update a businessHolidays
+*BusinessHolidaysApi* | [**businessHolidaysPost**](docs/Api/BusinessHolidaysApi.md#businessholidayspost) | **POST** /businessHolidays | create a businessHolidays
 *CalendarApi* | [**calendarCountGet**](docs/Api/CalendarApi.md#calendarcountget) | **GET** /calendar/count | count calendar
 *CalendarApi* | [**calendarGet**](docs/Api/CalendarApi.md#calendarget) | **GET** /calendar | query calendar
 *CalendarApi* | [**calendarIdIdDelete**](docs/Api/CalendarApi.md#calendarididdelete) | **DELETE** /calendar/id/{id} | delete a calendar
@@ -207,9 +245,16 @@ Class | Method | HTTP request | Description
 *CampaignParticipantApi* | [**campaignParticipantPost**](docs/Api/CampaignParticipantApi.md#campaignparticipantpost) | **POST** /campaignParticipant | create a campaignParticipant
 *CashAccountApi* | [**cashAccountCountGet**](docs/Api/CashAccountApi.md#cashaccountcountget) | **GET** /cashAccount/count | count cashAccount
 *CashAccountApi* | [**cashAccountGet**](docs/Api/CashAccountApi.md#cashaccountget) | **GET** /cashAccount | query cashAccount
+*CashAccountApi* | [**cashAccountIdIdDelete**](docs/Api/CashAccountApi.md#cashaccountididdelete) | **DELETE** /cashAccount/id/{id} | delete a cashAccount
 *CashAccountApi* | [**cashAccountIdIdGet**](docs/Api/CashAccountApi.md#cashaccountididget) | **GET** /cashAccount/id/{id} | query a specific cashAccount
 *CashAccountApi* | [**cashAccountIdIdPut**](docs/Api/CashAccountApi.md#cashaccountididput) | **PUT** /cashAccount/id/{id} | update a cashAccount
 *CashAccountApi* | [**cashAccountPost**](docs/Api/CashAccountApi.md#cashaccountpost) | **POST** /cashAccount | create a cashAccount
+*CashAccountSheetApi* | [**cashAccountSheetCountGet**](docs/Api/CashAccountSheetApi.md#cashaccountsheetcountget) | **GET** /cashAccountSheet/count | count cashAccountSheet
+*CashAccountSheetApi* | [**cashAccountSheetGet**](docs/Api/CashAccountSheetApi.md#cashaccountsheetget) | **GET** /cashAccountSheet | query cashAccountSheet
+*CashAccountSheetApi* | [**cashAccountSheetIdIdDelete**](docs/Api/CashAccountSheetApi.md#cashaccountsheetididdelete) | **DELETE** /cashAccountSheet/id/{id} | delete a cashAccountSheet
+*CashAccountSheetApi* | [**cashAccountSheetIdIdGet**](docs/Api/CashAccountSheetApi.md#cashaccountsheetididget) | **GET** /cashAccountSheet/id/{id} | query a specific cashAccountSheet
+*CashAccountSheetApi* | [**cashAccountSheetIdIdPut**](docs/Api/CashAccountSheetApi.md#cashaccountsheetididput) | **PUT** /cashAccountSheet/id/{id} | update a cashAccountSheet
+*CashAccountSheetApi* | [**cashAccountSheetPost**](docs/Api/CashAccountSheetApi.md#cashaccountsheetpost) | **POST** /cashAccountSheet | create a cashAccountSheet
 *CashAccountTransactionApi* | [**cashAccountTransactionCountGet**](docs/Api/CashAccountTransactionApi.md#cashaccounttransactioncountget) | **GET** /cashAccountTransaction/count | count cashAccountTransaction
 *CashAccountTransactionApi* | [**cashAccountTransactionGet**](docs/Api/CashAccountTransactionApi.md#cashaccounttransactionget) | **GET** /cashAccountTransaction | query cashAccountTransaction
 *CashAccountTransactionApi* | [**cashAccountTransactionIdIdDelete**](docs/Api/CashAccountTransactionApi.md#cashaccounttransactionididdelete) | **DELETE** /cashAccountTransaction/id/{id} | delete a cashAccountTransaction
@@ -240,7 +285,10 @@ Class | Method | HTTP request | Description
 *ContractApi* | [**contractPost**](docs/Api/ContractApi.md#contractpost) | **POST** /contract | create a contract
 *ContractAuthorizationUnitApi* | [**contractAuthorizationUnitCountGet**](docs/Api/ContractAuthorizationUnitApi.md#contractauthorizationunitcountget) | **GET** /contractAuthorizationUnit/count | count contractAuthorizationUnit
 *ContractAuthorizationUnitApi* | [**contractAuthorizationUnitGet**](docs/Api/ContractAuthorizationUnitApi.md#contractauthorizationunitget) | **GET** /contractAuthorizationUnit | query contractAuthorizationUnit
+*ContractAuthorizationUnitApi* | [**contractAuthorizationUnitIdIdDelete**](docs/Api/ContractAuthorizationUnitApi.md#contractauthorizationunitididdelete) | **DELETE** /contractAuthorizationUnit/id/{id} | delete a contractAuthorizationUnit
 *ContractAuthorizationUnitApi* | [**contractAuthorizationUnitIdIdGet**](docs/Api/ContractAuthorizationUnitApi.md#contractauthorizationunitididget) | **GET** /contractAuthorizationUnit/id/{id} | query a specific contractAuthorizationUnit
+*ContractAuthorizationUnitApi* | [**contractAuthorizationUnitIdIdPut**](docs/Api/ContractAuthorizationUnitApi.md#contractauthorizationunitididput) | **PUT** /contractAuthorizationUnit/id/{id} | update a contractAuthorizationUnit
+*ContractAuthorizationUnitApi* | [**contractAuthorizationUnitPost**](docs/Api/ContractAuthorizationUnitApi.md#contractauthorizationunitpost) | **POST** /contractAuthorizationUnit | create a contractAuthorizationUnit
 *ContractBillingGroupApi* | [**contractBillingGroupCountGet**](docs/Api/ContractBillingGroupApi.md#contractbillinggroupcountget) | **GET** /contractBillingGroup/count | count contractBillingGroup
 *ContractBillingGroupApi* | [**contractBillingGroupGet**](docs/Api/ContractBillingGroupApi.md#contractbillinggroupget) | **GET** /contractBillingGroup | query contractBillingGroup
 *ContractBillingGroupApi* | [**contractBillingGroupIdIdDelete**](docs/Api/ContractBillingGroupApi.md#contractbillinggroupididdelete) | **DELETE** /contractBillingGroup/id/{id} | delete a contractBillingGroup
@@ -346,9 +394,18 @@ Class | Method | HTTP request | Description
 *DocumentApi* | [**documentIdIdPut**](docs/Api/DocumentApi.md#documentididput) | **PUT** /document/id/{id} | update a document
 *DocumentApi* | [**documentIdIdUploadPost**](docs/Api/DocumentApi.md#documentididuploadpost) | **POST** /document/id/{id}/upload | 
 *DocumentApi* | [**documentUploadPost**](docs/Api/DocumentApi.md#documentuploadpost) | **POST** /document/upload | 
+*EmployeeApi* | [**employeeCountGet**](docs/Api/EmployeeApi.md#employeecountget) | **GET** /employee/count | count employee
+*EmployeeApi* | [**employeeGet**](docs/Api/EmployeeApi.md#employeeget) | **GET** /employee | query employee
+*EmployeeApi* | [**employeeIdIdDelete**](docs/Api/EmployeeApi.md#employeeididdelete) | **DELETE** /employee/id/{id} | delete a employee
+*EmployeeApi* | [**employeeIdIdGet**](docs/Api/EmployeeApi.md#employeeididget) | **GET** /employee/id/{id} | query a specific employee
+*EmployeeApi* | [**employeeIdIdPut**](docs/Api/EmployeeApi.md#employeeididput) | **PUT** /employee/id/{id} | update a employee
+*EmployeeApi* | [**employeePost**](docs/Api/EmployeeApi.md#employeepost) | **POST** /employee | create a employee
 *ExternalConnectionApi* | [**externalConnectionCountGet**](docs/Api/ExternalConnectionApi.md#externalconnectioncountget) | **GET** /externalConnection/count | count externalConnection
 *ExternalConnectionApi* | [**externalConnectionGet**](docs/Api/ExternalConnectionApi.md#externalconnectionget) | **GET** /externalConnection | query externalConnection
 *ExternalConnectionApi* | [**externalConnectionIdIdGet**](docs/Api/ExternalConnectionApi.md#externalconnectionididget) | **GET** /externalConnection/id/{id} | query a specific externalConnection
+*ExternalConnectionApi* | [**externalConnectionIdIdStartArticleSynchronizationPost**](docs/Api/ExternalConnectionApi.md#externalconnectionididstartarticlesynchronizationpost) | **POST** /externalConnection/id/{id}/startArticleSynchronization | 
+*ExternalConnectionApi* | [**externalConnectionIdIdStartEbayListingSynchronizationPost**](docs/Api/ExternalConnectionApi.md#externalconnectionididstartebaylistingsynchronizationpost) | **POST** /externalConnection/id/{id}/startEbayListingSynchronization | 
+*ExternalConnectionApi* | [**externalConnectionIdIdStartOrderSynchronizationPost**](docs/Api/ExternalConnectionApi.md#externalconnectionididstartordersynchronizationpost) | **POST** /externalConnection/id/{id}/startOrderSynchronization | 
 *FinancialYearApi* | [**financialYearCountGet**](docs/Api/FinancialYearApi.md#financialyearcountget) | **GET** /financialYear/count | count financialYear
 *FinancialYearApi* | [**financialYearGet**](docs/Api/FinancialYearApi.md#financialyearget) | **GET** /financialYear | query financialYear
 *FinancialYearApi* | [**financialYearIdIdDelete**](docs/Api/FinancialYearApi.md#financialyearididdelete) | **DELETE** /financialYear/id/{id} | delete a financialYear
@@ -356,9 +413,13 @@ Class | Method | HTTP request | Description
 *FinancialYearApi* | [**financialYearIdIdGet**](docs/Api/FinancialYearApi.md#financialyearididget) | **GET** /financialYear/id/{id} | query a specific financialYear
 *FinancialYearApi* | [**financialYearIdIdPut**](docs/Api/FinancialYearApi.md#financialyearididput) | **PUT** /financialYear/id/{id} | update a financialYear
 *FinancialYearApi* | [**financialYearPost**](docs/Api/FinancialYearApi.md#financialyearpost) | **POST** /financialYear | create a financialYear
+*FulfillmentProviderApi* | [**fulfillmentProviderActiveFulfillmentProvidersGet**](docs/Api/FulfillmentProviderApi.md#fulfillmentprovideractivefulfillmentprovidersget) | **GET** /fulfillmentProvider/activeFulfillmentProviders | 
 *FulfillmentProviderApi* | [**fulfillmentProviderCountGet**](docs/Api/FulfillmentProviderApi.md#fulfillmentprovidercountget) | **GET** /fulfillmentProvider/count | count fulfillmentProvider
 *FulfillmentProviderApi* | [**fulfillmentProviderGet**](docs/Api/FulfillmentProviderApi.md#fulfillmentproviderget) | **GET** /fulfillmentProvider | query fulfillmentProvider
+*FulfillmentProviderApi* | [**fulfillmentProviderIdIdDelete**](docs/Api/FulfillmentProviderApi.md#fulfillmentproviderididdelete) | **DELETE** /fulfillmentProvider/id/{id} | delete a fulfillmentProvider
 *FulfillmentProviderApi* | [**fulfillmentProviderIdIdGet**](docs/Api/FulfillmentProviderApi.md#fulfillmentproviderididget) | **GET** /fulfillmentProvider/id/{id} | query a specific fulfillmentProvider
+*FulfillmentProviderApi* | [**fulfillmentProviderIdIdPut**](docs/Api/FulfillmentProviderApi.md#fulfillmentproviderididput) | **PUT** /fulfillmentProvider/id/{id} | update a fulfillmentProvider
+*FulfillmentProviderApi* | [**fulfillmentProviderPost**](docs/Api/FulfillmentProviderApi.md#fulfillmentproviderpost) | **POST** /fulfillmentProvider | create a fulfillmentProvider
 *IncomingGoodsApi* | [**incomingGoodsCountGet**](docs/Api/IncomingGoodsApi.md#incominggoodscountget) | **GET** /incomingGoods/count | count incomingGoods
 *IncomingGoodsApi* | [**incomingGoodsGet**](docs/Api/IncomingGoodsApi.md#incominggoodsget) | **GET** /incomingGoods | query incomingGoods
 *IncomingGoodsApi* | [**incomingGoodsIdIdAddPurchaseOrdersPost**](docs/Api/IncomingGoodsApi.md#incominggoodsididaddpurchaseorderspost) | **POST** /incomingGoods/id/{id}/addPurchaseOrders | 
@@ -384,6 +445,8 @@ Class | Method | HTTP request | Description
 *InventoryApi* | [**inventoryCountGet**](docs/Api/InventoryApi.md#inventorycountget) | **GET** /inventory/count | count inventory
 *InventoryApi* | [**inventoryCreatePost**](docs/Api/InventoryApi.md#inventorycreatepost) | **POST** /inventory/create | 
 *InventoryApi* | [**inventoryGet**](docs/Api/InventoryApi.md#inventoryget) | **GET** /inventory | query inventory
+*InventoryApi* | [**inventoryIdIdBookInventoryPost**](docs/Api/InventoryApi.md#inventoryididbookinventorypost) | **POST** /inventory/id/{id}/bookInventory | 
+*InventoryApi* | [**inventoryIdIdDelete**](docs/Api/InventoryApi.md#inventoryididdelete) | **DELETE** /inventory/id/{id} | delete a inventory
 *InventoryApi* | [**inventoryIdIdGet**](docs/Api/InventoryApi.md#inventoryididget) | **GET** /inventory/id/{id} | query a specific inventory
 *InventoryApi* | [**inventoryIdIdPut**](docs/Api/InventoryApi.md#inventoryididput) | **PUT** /inventory/id/{id} | update a inventory
 *InventoryApi* | [**inventoryPost**](docs/Api/InventoryApi.md#inventorypost) | **POST** /inventory | create a inventory
@@ -449,13 +512,18 @@ Class | Method | HTTP request | Description
 *MetaApi* | [**metaQueryFilterPropertiesGet**](docs/Api/MetaApi.md#metaqueryfilterpropertiesget) | **GET** /meta/queryFilterProperties | 
 *MetaApi* | [**metaQuerySortPropertiesGet**](docs/Api/MetaApi.md#metaquerysortpropertiesget) | **GET** /meta/querySortProperties | 
 *MetaApi* | [**metaResourcesGet**](docs/Api/MetaApi.md#metaresourcesget) | **GET** /meta/resources | 
+*MetaApi* | [**metaValidationErrorCodesGet**](docs/Api/MetaApi.md#metavalidationerrorcodesget) | **GET** /meta/validationErrorCodes | 
 *NotificationApi* | [**notificationCountGet**](docs/Api/NotificationApi.md#notificationcountget) | **GET** /notification/count | count notification
 *NotificationApi* | [**notificationGet**](docs/Api/NotificationApi.md#notificationget) | **GET** /notification | query notification
 *NotificationApi* | [**notificationIdIdGet**](docs/Api/NotificationApi.md#notificationididget) | **GET** /notification/id/{id} | query a specific notification
 *NotificationApi* | [**notificationIdIdMarkReadPost**](docs/Api/NotificationApi.md#notificationididmarkreadpost) | **POST** /notification/id/{id}/markRead | 
 *NumberRangeApi* | [**numberRangeCountGet**](docs/Api/NumberRangeApi.md#numberrangecountget) | **GET** /numberRange/count | count numberRange
 *NumberRangeApi* | [**numberRangeGet**](docs/Api/NumberRangeApi.md#numberrangeget) | **GET** /numberRange | query numberRange
+*NumberRangeApi* | [**numberRangeIdIdDelete**](docs/Api/NumberRangeApi.md#numberrangeididdelete) | **DELETE** /numberRange/id/{id} | delete a numberRange
 *NumberRangeApi* | [**numberRangeIdIdGet**](docs/Api/NumberRangeApi.md#numberrangeididget) | **GET** /numberRange/id/{id} | query a specific numberRange
+*NumberRangeApi* | [**numberRangeIdIdPut**](docs/Api/NumberRangeApi.md#numberrangeididput) | **PUT** /numberRange/id/{id} | update a numberRange
+*NumberRangeApi* | [**numberRangeMissingNumberRangesGet**](docs/Api/NumberRangeApi.md#numberrangemissingnumberrangesget) | **GET** /numberRange/missingNumberRanges | 
+*NumberRangeApi* | [**numberRangePost**](docs/Api/NumberRangeApi.md#numberrangepost) | **POST** /numberRange | create a numberRange
 *NumberRangeValueApi* | [**numberRangeValueCountGet**](docs/Api/NumberRangeValueApi.md#numberrangevaluecountget) | **GET** /numberRangeValue/count | count numberRangeValue
 *NumberRangeValueApi* | [**numberRangeValueGet**](docs/Api/NumberRangeValueApi.md#numberrangevalueget) | **GET** /numberRangeValue | query numberRangeValue
 *NumberRangeValueApi* | [**numberRangeValueIdIdGet**](docs/Api/NumberRangeValueApi.md#numberrangevalueididget) | **GET** /numberRangeValue/id/{id} | query a specific numberRangeValue
@@ -485,6 +553,8 @@ Class | Method | HTTP request | Description
 *PartyApi* | [**partyIdIdDownloadImageGet**](docs/Api/PartyApi.md#partyididdownloadimageget) | **GET** /party/id/{id}/downloadImage | 
 *PartyApi* | [**partyIdIdGet**](docs/Api/PartyApi.md#partyididget) | **GET** /party/id/{id} | query a specific party
 *PartyApi* | [**partyIdIdPut**](docs/Api/PartyApi.md#partyididput) | **PUT** /party/id/{id} | update a party
+*PartyApi* | [**partyIdIdStartTransferAddressesToOpenRecordsPost**](docs/Api/PartyApi.md#partyididstarttransferaddressestoopenrecordspost) | **POST** /party/id/{id}/startTransferAddressesToOpenRecords | 
+*PartyApi* | [**partyIdIdStartTransferEmailAddressesToOpenRecordsPost**](docs/Api/PartyApi.md#partyididstarttransferemailaddressestoopenrecordspost) | **POST** /party/id/{id}/startTransferEmailAddressesToOpenRecords | 
 *PartyApi* | [**partyIdIdUploadImagePost**](docs/Api/PartyApi.md#partyididuploadimagepost) | **POST** /party/id/{id}/uploadImage | 
 *PartyApi* | [**partyPost**](docs/Api/PartyApi.md#partypost) | **POST** /party | create a party
 *PartyRatingApi* | [**partyRatingCountGet**](docs/Api/PartyRatingApi.md#partyratingcountget) | **GET** /partyRating/count | count partyRating
@@ -515,11 +585,13 @@ Class | Method | HTTP request | Description
 *PerformanceRecordApi* | [**performanceRecordIdIdDownloadLatestPerformanceRecordPdfGet**](docs/Api/PerformanceRecordApi.md#performancerecordididdownloadlatestperformancerecordpdfget) | **GET** /performanceRecord/id/{id}/downloadLatestPerformanceRecordPdf | 
 *PerformanceRecordApi* | [**performanceRecordIdIdDownloadSignatureGet**](docs/Api/PerformanceRecordApi.md#performancerecordididdownloadsignatureget) | **GET** /performanceRecord/id/{id}/downloadSignature | 
 *PerformanceRecordApi* | [**performanceRecordIdIdGet**](docs/Api/PerformanceRecordApi.md#performancerecordididget) | **GET** /performanceRecord/id/{id} | query a specific performanceRecord
+*PerformanceRecordApi* | [**performanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPost**](docs/Api/PerformanceRecordApi.md#performancerecordididperformservicequotaassignmentfortimerecordspost) | **POST** /performanceRecord/id/{id}/performServiceQuotaAssignmentForTimeRecords | 
 *PerformanceRecordApi* | [**performanceRecordIdIdPut**](docs/Api/PerformanceRecordApi.md#performancerecordididput) | **PUT** /performanceRecord/id/{id} | update a performanceRecord
 *PerformanceRecordApi* | [**performanceRecordIdIdRecalculateQuantitiesPost**](docs/Api/PerformanceRecordApi.md#performancerecordididrecalculatequantitiespost) | **POST** /performanceRecord/id/{id}/recalculateQuantities | 
 *PerformanceRecordApi* | [**performanceRecordIdIdRemoveSignaturePost**](docs/Api/PerformanceRecordApi.md#performancerecordididremovesignaturepost) | **POST** /performanceRecord/id/{id}/removeSignature | 
 *PerformanceRecordApi* | [**performanceRecordIdIdUploadSignaturePost**](docs/Api/PerformanceRecordApi.md#performancerecordididuploadsignaturepost) | **POST** /performanceRecord/id/{id}/uploadSignature | 
 *PerformanceRecordApi* | [**performanceRecordPost**](docs/Api/PerformanceRecordApi.md#performancerecordpost) | **POST** /performanceRecord | create a performanceRecord
+*PerformanceRecordApi* | [**performanceRecordStartConfiguredMassPerformanceRecordCreationPost**](docs/Api/PerformanceRecordApi.md#performancerecordstartconfiguredmassperformancerecordcreationpost) | **POST** /performanceRecord/startConfiguredMassPerformanceRecordCreation | 
 *PersonDepartmentApi* | [**personDepartmentCountGet**](docs/Api/PersonDepartmentApi.md#persondepartmentcountget) | **GET** /personDepartment/count | count personDepartment
 *PersonDepartmentApi* | [**personDepartmentGet**](docs/Api/PersonDepartmentApi.md#persondepartmentget) | **GET** /personDepartment | query personDepartment
 *PersonDepartmentApi* | [**personDepartmentIdIdDelete**](docs/Api/PersonDepartmentApi.md#persondepartmentididdelete) | **DELETE** /personDepartment/id/{id} | delete a personDepartment
@@ -563,6 +635,7 @@ Class | Method | HTTP request | Description
 *ProductionOrderApi* | [**productionOrderFastProductionBookingPost**](docs/Api/ProductionOrderApi.md#productionorderfastproductionbookingpost) | **POST** /productionOrder/fastProductionBooking | 
 *ProductionOrderApi* | [**productionOrderGet**](docs/Api/ProductionOrderApi.md#productionorderget) | **GET** /productionOrder | query productionOrder
 *ProductionOrderApi* | [**productionOrderIdIdCreatePickingListPost**](docs/Api/ProductionOrderApi.md#productionorderididcreatepickinglistpost) | **POST** /productionOrder/id/{id}/createPickingList | 
+*ProductionOrderApi* | [**productionOrderIdIdCreatePickingOrderPost**](docs/Api/ProductionOrderApi.md#productionorderididcreatepickingorderpost) | **POST** /productionOrder/id/{id}/createPickingOrder | 
 *ProductionOrderApi* | [**productionOrderIdIdDelete**](docs/Api/ProductionOrderApi.md#productionorderididdelete) | **DELETE** /productionOrder/id/{id} | delete a productionOrder
 *ProductionOrderApi* | [**productionOrderIdIdDownloadLatestProductionOrderPdfGet**](docs/Api/ProductionOrderApi.md#productionorderididdownloadlatestproductionorderpdfget) | **GET** /productionOrder/id/{id}/downloadLatestProductionOrderPdf | 
 *ProductionOrderApi* | [**productionOrderIdIdGet**](docs/Api/ProductionOrderApi.md#productionorderididget) | **GET** /productionOrder/id/{id} | query a specific productionOrder
@@ -590,6 +663,7 @@ Class | Method | HTTP request | Description
 *PropertyTranslationApi* | [**propertyTranslationUpdatePropertyTranslationsPost**](docs/Api/PropertyTranslationApi.md#propertytranslationupdatepropertytranslationspost) | **POST** /propertyTranslation/updatePropertyTranslations | 
 *PurchaseInvoiceApi* | [**purchaseInvoiceCountGet**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoicecountget) | **GET** /purchaseInvoice/count | count purchaseInvoice
 *PurchaseInvoiceApi* | [**purchaseInvoiceGet**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceget) | **GET** /purchaseInvoice | query purchaseInvoice
+*PurchaseInvoiceApi* | [**purchaseInvoiceIdIdCancelPost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididcancelpost) | **POST** /purchaseInvoice/id/{id}/cancel | 
 *PurchaseInvoiceApi* | [**purchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididconvertpurchaseinvoicetocreditnotepost) | **POST** /purchaseInvoice/id/{id}/convertPurchaseInvoiceToCreditNote | 
 *PurchaseInvoiceApi* | [**purchaseInvoiceIdIdCreateContractPost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididcreatecontractpost) | **POST** /purchaseInvoice/id/{id}/createContract | 
 *PurchaseInvoiceApi* | [**purchaseInvoiceIdIdCreateCreditNotePost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididcreatecreditnotepost) | **POST** /purchaseInvoice/id/{id}/createCreditNote | 
@@ -600,6 +674,7 @@ Class | Method | HTTP request | Description
 *PurchaseInvoiceApi* | [**purchaseInvoiceIdIdPut**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididput) | **PUT** /purchaseInvoice/id/{id} | update a purchaseInvoice
 *PurchaseInvoiceApi* | [**purchaseInvoiceIdIdResetTaxesPost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididresettaxespost) | **POST** /purchaseInvoice/id/{id}/resetTaxes | 
 *PurchaseInvoiceApi* | [**purchaseInvoiceIdIdSaveDuplicateInvoiceAsOriginalPost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididsaveduplicateinvoiceasoriginalpost) | **POST** /purchaseInvoice/id/{id}/saveDuplicateInvoiceAsOriginal | 
+*PurchaseInvoiceApi* | [**purchaseInvoiceIdIdUpdateStatusPost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoiceididupdatestatuspost) | **POST** /purchaseInvoice/id/{id}/updateStatus | 
 *PurchaseInvoiceApi* | [**purchaseInvoicePost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoicepost) | **POST** /purchaseInvoice | create a purchaseInvoice
 *PurchaseInvoiceApi* | [**purchaseInvoiceStartInvoiceDocumentProcessingMultipartUploadPost**](docs/Api/PurchaseInvoiceApi.md#purchaseinvoicestartinvoicedocumentprocessingmultipartuploadpost) | **POST** /purchaseInvoice/startInvoiceDocumentProcessing/multipartUpload | 
 *PurchaseOpenItemApi* | [**purchaseOpenItemCountGet**](docs/Api/PurchaseOpenItemApi.md#purchaseopenitemcountget) | **GET** /purchaseOpenItem/count | count purchaseOpenItem
@@ -614,6 +689,7 @@ Class | Method | HTTP request | Description
 *PurchaseOrderApi* | [**purchaseOrderIdIdCreateContractPost**](docs/Api/PurchaseOrderApi.md#purchaseorderididcreatecontractpost) | **POST** /purchaseOrder/id/{id}/createContract | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdCreateDropshippingDeliveryNotePdfPost**](docs/Api/PurchaseOrderApi.md#purchaseorderididcreatedropshippingdeliverynotepdfpost) | **POST** /purchaseOrder/id/{id}/createDropshippingDeliveryNotePdf | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdCreateIncomingGoodsPost**](docs/Api/PurchaseOrderApi.md#purchaseorderididcreateincominggoodspost) | **POST** /purchaseOrder/id/{id}/createIncomingGoods | 
+*PurchaseOrderApi* | [**purchaseOrderIdIdCreateProductionOrdersPost**](docs/Api/PurchaseOrderApi.md#purchaseorderididcreateproductionorderspost) | **POST** /purchaseOrder/id/{id}/createProductionOrders | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdCreatePurchaseInvoicePost**](docs/Api/PurchaseOrderApi.md#purchaseorderididcreatepurchaseinvoicepost) | **POST** /purchaseOrder/id/{id}/createPurchaseInvoice | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdCreateSupplierReturnPost**](docs/Api/PurchaseOrderApi.md#purchaseorderididcreatesupplierreturnpost) | **POST** /purchaseOrder/id/{id}/createSupplierReturn | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdDelete**](docs/Api/PurchaseOrderApi.md#purchaseorderididdelete) | **DELETE** /purchaseOrder/id/{id} | delete a purchaseOrder
@@ -621,9 +697,12 @@ Class | Method | HTTP request | Description
 *PurchaseOrderApi* | [**purchaseOrderIdIdDownloadLatestDropshippingDeliveryNotePdfGet**](docs/Api/PurchaseOrderApi.md#purchaseorderididdownloadlatestdropshippingdeliverynotepdfget) | **GET** /purchaseOrder/id/{id}/downloadLatestDropshippingDeliveryNotePdf | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdDownloadLatestPurchaseOrderPdfGet**](docs/Api/PurchaseOrderApi.md#purchaseorderididdownloadlatestpurchaseorderpdfget) | **GET** /purchaseOrder/id/{id}/downloadLatestPurchaseOrderPdf | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdGet**](docs/Api/PurchaseOrderApi.md#purchaseorderididget) | **GET** /purchaseOrder/id/{id} | query a specific purchaseOrder
+*PurchaseOrderApi* | [**purchaseOrderIdIdManuallyClosePost**](docs/Api/PurchaseOrderApi.md#purchaseorderididmanuallyclosepost) | **POST** /purchaseOrder/id/{id}/manuallyClose | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdPrintLabelPost**](docs/Api/PurchaseOrderApi.md#purchaseorderididprintlabelpost) | **POST** /purchaseOrder/id/{id}/printLabel | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdProcessDropshippingPost**](docs/Api/PurchaseOrderApi.md#purchaseorderididprocessdropshippingpost) | **POST** /purchaseOrder/id/{id}/processDropshipping | 
 *PurchaseOrderApi* | [**purchaseOrderIdIdPut**](docs/Api/PurchaseOrderApi.md#purchaseorderididput) | **PUT** /purchaseOrder/id/{id} | update a purchaseOrder
+*PurchaseOrderApi* | [**purchaseOrderIdIdResetTaxesPost**](docs/Api/PurchaseOrderApi.md#purchaseorderididresettaxespost) | **POST** /purchaseOrder/id/{id}/resetTaxes | 
+*PurchaseOrderApi* | [**purchaseOrderIdIdUpdateStatusPost**](docs/Api/PurchaseOrderApi.md#purchaseorderididupdatestatuspost) | **POST** /purchaseOrder/id/{id}/updateStatus | 
 *PurchaseOrderApi* | [**purchaseOrderPost**](docs/Api/PurchaseOrderApi.md#purchaseorderpost) | **POST** /purchaseOrder | create a purchaseOrder
 *PurchaseOrderRequestApi* | [**purchaseOrderRequestCountGet**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestcountget) | **GET** /purchaseOrderRequest/count | count purchaseOrderRequest
 *PurchaseOrderRequestApi* | [**purchaseOrderRequestGet**](docs/Api/PurchaseOrderRequestApi.md#purchaseorderrequestget) | **GET** /purchaseOrderRequest | query purchaseOrderRequest
@@ -665,7 +744,14 @@ Class | Method | HTTP request | Description
 *QuotationApi* | [**quotationIdIdResetTaxesPost**](docs/Api/QuotationApi.md#quotationididresettaxespost) | **POST** /quotation/id/{id}/resetTaxes | 
 *QuotationApi* | [**quotationIdIdSetCostsForItemsWithoutCostPost**](docs/Api/QuotationApi.md#quotationididsetcostsforitemswithoutcostpost) | **POST** /quotation/id/{id}/setCostsForItemsWithoutCost | 
 *QuotationApi* | [**quotationIdIdUpdatePricesPost**](docs/Api/QuotationApi.md#quotationididupdatepricespost) | **POST** /quotation/id/{id}/updatePrices | 
+*QuotationApi* | [**quotationIdIdUpdateStatusPost**](docs/Api/QuotationApi.md#quotationididupdatestatuspost) | **POST** /quotation/id/{id}/updateStatus | 
 *QuotationApi* | [**quotationPost**](docs/Api/QuotationApi.md#quotationpost) | **POST** /quotation | create a quotation
+*RebateApi* | [**rebateCountGet**](docs/Api/RebateApi.md#rebatecountget) | **GET** /rebate/count | count rebate
+*RebateApi* | [**rebateGet**](docs/Api/RebateApi.md#rebateget) | **GET** /rebate | query rebate
+*RebateApi* | [**rebateIdIdDelete**](docs/Api/RebateApi.md#rebateididdelete) | **DELETE** /rebate/id/{id} | delete a rebate
+*RebateApi* | [**rebateIdIdGet**](docs/Api/RebateApi.md#rebateididget) | **GET** /rebate/id/{id} | query a specific rebate
+*RebateApi* | [**rebateIdIdPut**](docs/Api/RebateApi.md#rebateididput) | **PUT** /rebate/id/{id} | update a rebate
+*RebateApi* | [**rebatePost**](docs/Api/RebateApi.md#rebatepost) | **POST** /rebate | create a rebate
 *RecordEmailingRuleApi* | [**recordEmailingRuleCountGet**](docs/Api/RecordEmailingRuleApi.md#recordemailingrulecountget) | **GET** /recordEmailingRule/count | count recordEmailingRule
 *RecordEmailingRuleApi* | [**recordEmailingRuleGet**](docs/Api/RecordEmailingRuleApi.md#recordemailingruleget) | **GET** /recordEmailingRule | query recordEmailingRule
 *RecordEmailingRuleApi* | [**recordEmailingRuleIdIdDelete**](docs/Api/RecordEmailingRuleApi.md#recordemailingruleididdelete) | **DELETE** /recordEmailingRule/id/{id} | delete a recordEmailingRule
@@ -677,6 +763,7 @@ Class | Method | HTTP request | Description
 *RegionApi* | [**regionIdIdDelete**](docs/Api/RegionApi.md#regionididdelete) | **DELETE** /region/id/{id} | delete a region
 *RegionApi* | [**regionIdIdGet**](docs/Api/RegionApi.md#regionididget) | **GET** /region/id/{id} | query a specific region
 *RegionApi* | [**regionIdIdPut**](docs/Api/RegionApi.md#regionididput) | **PUT** /region/id/{id} | update a region
+*RegionApi* | [**regionIdIdResetResponsiblePersonPost**](docs/Api/RegionApi.md#regionididresetresponsiblepersonpost) | **POST** /region/id/{id}/resetResponsiblePerson | 
 *RegionApi* | [**regionPost**](docs/Api/RegionApi.md#regionpost) | **POST** /region | create a region
 *ReminderApi* | [**reminderCountGet**](docs/Api/ReminderApi.md#remindercountget) | **GET** /reminder/count | count reminder
 *ReminderApi* | [**reminderGet**](docs/Api/ReminderApi.md#reminderget) | **GET** /reminder | query reminder
@@ -693,10 +780,17 @@ Class | Method | HTTP request | Description
 *RemotePrintJobApi* | [**remotePrintJobPost**](docs/Api/RemotePrintJobApi.md#remoteprintjobpost) | **POST** /remotePrintJob | create a remotePrintJob
 *SalesChannelApi* | [**salesChannelActiveSalesChannelsGet**](docs/Api/SalesChannelApi.md#saleschannelactivesaleschannelsget) | **GET** /salesChannel/activeSalesChannels | 
 *SalesChannelApi* | [**salesChannelSalesChannelUsageGet**](docs/Api/SalesChannelApi.md#saleschannelsaleschannelusageget) | **GET** /salesChannel/salesChannelUsage | 
+*SalesChannelAccountingDataApi* | [**salesChannelAccountingDataCountGet**](docs/Api/SalesChannelAccountingDataApi.md#saleschannelaccountingdatacountget) | **GET** /salesChannelAccountingData/count | count salesChannelAccountingData
+*SalesChannelAccountingDataApi* | [**salesChannelAccountingDataGet**](docs/Api/SalesChannelAccountingDataApi.md#saleschannelaccountingdataget) | **GET** /salesChannelAccountingData | query salesChannelAccountingData
+*SalesChannelAccountingDataApi* | [**salesChannelAccountingDataIdIdDelete**](docs/Api/SalesChannelAccountingDataApi.md#saleschannelaccountingdataididdelete) | **DELETE** /salesChannelAccountingData/id/{id} | delete a salesChannelAccountingData
+*SalesChannelAccountingDataApi* | [**salesChannelAccountingDataIdIdGet**](docs/Api/SalesChannelAccountingDataApi.md#saleschannelaccountingdataididget) | **GET** /salesChannelAccountingData/id/{id} | query a specific salesChannelAccountingData
+*SalesChannelAccountingDataApi* | [**salesChannelAccountingDataIdIdPut**](docs/Api/SalesChannelAccountingDataApi.md#saleschannelaccountingdataididput) | **PUT** /salesChannelAccountingData/id/{id} | update a salesChannelAccountingData
+*SalesChannelAccountingDataApi* | [**salesChannelAccountingDataPost**](docs/Api/SalesChannelAccountingDataApi.md#saleschannelaccountingdatapost) | **POST** /salesChannelAccountingData | create a salesChannelAccountingData
 *SalesInvoiceApi* | [**salesInvoiceCountGet**](docs/Api/SalesInvoiceApi.md#salesinvoicecountget) | **GET** /salesInvoice/count | count salesInvoice
 *SalesInvoiceApi* | [**salesInvoiceGet**](docs/Api/SalesInvoiceApi.md#salesinvoiceget) | **GET** /salesInvoice | query salesInvoice
 *SalesInvoiceApi* | [**salesInvoiceIdIdAddSalesOrdersPost**](docs/Api/SalesInvoiceApi.md#salesinvoiceididaddsalesorderspost) | **POST** /salesInvoice/id/{id}/addSalesOrders | 
 *SalesInvoiceApi* | [**salesInvoiceIdIdCalculateSalesPricesPost**](docs/Api/SalesInvoiceApi.md#salesinvoiceididcalculatesalespricespost) | **POST** /salesInvoice/id/{id}/calculateSalesPrices | 
+*SalesInvoiceApi* | [**salesInvoiceIdIdCancelPost**](docs/Api/SalesInvoiceApi.md#salesinvoiceididcancelpost) | **POST** /salesInvoice/id/{id}/cancel | 
 *SalesInvoiceApi* | [**salesInvoiceIdIdCreateContractPost**](docs/Api/SalesInvoiceApi.md#salesinvoiceididcreatecontractpost) | **POST** /salesInvoice/id/{id}/createContract | 
 *SalesInvoiceApi* | [**salesInvoiceIdIdCreateCreditNoteOpenItemPost**](docs/Api/SalesInvoiceApi.md#salesinvoiceididcreatecreditnoteopenitempost) | **POST** /salesInvoice/id/{id}/createCreditNoteOpenItem | 
 *SalesInvoiceApi* | [**salesInvoiceIdIdCreateCreditNotePost**](docs/Api/SalesInvoiceApi.md#salesinvoiceididcreatecreditnotepost) | **POST** /salesInvoice/id/{id}/createCreditNote | 
@@ -757,6 +851,12 @@ Class | Method | HTTP request | Description
 *SalesStageApi* | [**salesStageIdIdGet**](docs/Api/SalesStageApi.md#salesstageididget) | **GET** /salesStage/id/{id} | query a specific salesStage
 *SalesStageApi* | [**salesStageIdIdPut**](docs/Api/SalesStageApi.md#salesstageididput) | **PUT** /salesStage/id/{id} | update a salesStage
 *SalesStageApi* | [**salesStagePost**](docs/Api/SalesStageApi.md#salesstagepost) | **POST** /salesStage | create a salesStage
+*SalesTeamApi* | [**salesTeamCountGet**](docs/Api/SalesTeamApi.md#salesteamcountget) | **GET** /salesTeam/count | count salesTeam
+*SalesTeamApi* | [**salesTeamGet**](docs/Api/SalesTeamApi.md#salesteamget) | **GET** /salesTeam | query salesTeam
+*SalesTeamApi* | [**salesTeamIdIdDelete**](docs/Api/SalesTeamApi.md#salesteamididdelete) | **DELETE** /salesTeam/id/{id} | delete a salesTeam
+*SalesTeamApi* | [**salesTeamIdIdGet**](docs/Api/SalesTeamApi.md#salesteamididget) | **GET** /salesTeam/id/{id} | query a specific salesTeam
+*SalesTeamApi* | [**salesTeamIdIdPut**](docs/Api/SalesTeamApi.md#salesteamididput) | **PUT** /salesTeam/id/{id} | update a salesTeam
+*SalesTeamApi* | [**salesTeamPost**](docs/Api/SalesTeamApi.md#salesteampost) | **POST** /salesTeam | create a salesTeam
 *SectorApi* | [**sectorCountGet**](docs/Api/SectorApi.md#sectorcountget) | **GET** /sector/count | count sector
 *SectorApi* | [**sectorGet**](docs/Api/SectorApi.md#sectorget) | **GET** /sector | query sector
 *SectorApi* | [**sectorIdIdDelete**](docs/Api/SectorApi.md#sectorididdelete) | **DELETE** /sector/id/{id} | delete a sector
@@ -773,6 +873,14 @@ Class | Method | HTTP request | Description
 *SerialNumberApi* | [**serialNumberGet**](docs/Api/SerialNumberApi.md#serialnumberget) | **GET** /serialNumber | query serialNumber
 *SerialNumberApi* | [**serialNumberIdIdGet**](docs/Api/SerialNumberApi.md#serialnumberididget) | **GET** /serialNumber/id/{id} | query a specific serialNumber
 *SerialNumberApi* | [**serialNumberIdIdPut**](docs/Api/SerialNumberApi.md#serialnumberididput) | **PUT** /serialNumber/id/{id} | update a serialNumber
+*ServiceQuotaApi* | [**serviceQuotaCountGet**](docs/Api/ServiceQuotaApi.md#servicequotacountget) | **GET** /serviceQuota/count | count serviceQuota
+*ServiceQuotaApi* | [**serviceQuotaGet**](docs/Api/ServiceQuotaApi.md#servicequotaget) | **GET** /serviceQuota | query serviceQuota
+*ServiceQuotaApi* | [**serviceQuotaIdIdClosePost**](docs/Api/ServiceQuotaApi.md#servicequotaididclosepost) | **POST** /serviceQuota/id/{id}/close | 
+*ServiceQuotaApi* | [**serviceQuotaIdIdCreatePerformanceRecordPost**](docs/Api/ServiceQuotaApi.md#servicequotaididcreateperformancerecordpost) | **POST** /serviceQuota/id/{id}/createPerformanceRecord | 
+*ServiceQuotaApi* | [**serviceQuotaIdIdDelete**](docs/Api/ServiceQuotaApi.md#servicequotaididdelete) | **DELETE** /serviceQuota/id/{id} | delete a serviceQuota
+*ServiceQuotaApi* | [**serviceQuotaIdIdGet**](docs/Api/ServiceQuotaApi.md#servicequotaididget) | **GET** /serviceQuota/id/{id} | query a specific serviceQuota
+*ServiceQuotaApi* | [**serviceQuotaIdIdOpenPost**](docs/Api/ServiceQuotaApi.md#servicequotaididopenpost) | **POST** /serviceQuota/id/{id}/open | 
+*ServiceQuotaApi* | [**serviceQuotaIdIdPut**](docs/Api/ServiceQuotaApi.md#servicequotaididput) | **PUT** /serviceQuota/id/{id} | update a serviceQuota
 *ShelfApi* | [**shelfCountGet**](docs/Api/ShelfApi.md#shelfcountget) | **GET** /shelf/count | count shelf
 *ShelfApi* | [**shelfGet**](docs/Api/ShelfApi.md#shelfget) | **GET** /shelf | query shelf
 *ShelfApi* | [**shelfIdIdActivatePost**](docs/Api/ShelfApi.md#shelfididactivatepost) | **POST** /shelf/id/{id}/activate | 
@@ -784,6 +892,7 @@ Class | Method | HTTP request | Description
 *ShipmentApi* | [**shipmentCountGet**](docs/Api/ShipmentApi.md#shipmentcountget) | **GET** /shipment/count | count shipment
 *ShipmentApi* | [**shipmentGet**](docs/Api/ShipmentApi.md#shipmentget) | **GET** /shipment | query shipment
 *ShipmentApi* | [**shipmentIdIdCreatePickingListPost**](docs/Api/ShipmentApi.md#shipmentididcreatepickinglistpost) | **POST** /shipment/id/{id}/createPickingList | 
+*ShipmentApi* | [**shipmentIdIdCreatePickingOrderPost**](docs/Api/ShipmentApi.md#shipmentididcreatepickingorderpost) | **POST** /shipment/id/{id}/createPickingOrder | 
 *ShipmentApi* | [**shipmentIdIdCreateReturnLabelsPost**](docs/Api/ShipmentApi.md#shipmentididcreatereturnlabelspost) | **POST** /shipment/id/{id}/createReturnLabels | 
 *ShipmentApi* | [**shipmentIdIdCreateSalesInvoicePost**](docs/Api/ShipmentApi.md#shipmentididcreatesalesinvoicepost) | **POST** /shipment/id/{id}/createSalesInvoice | 
 *ShipmentApi* | [**shipmentIdIdCreateShippingLabelPdfPost**](docs/Api/ShipmentApi.md#shipmentididcreateshippinglabelpdfpost) | **POST** /shipment/id/{id}/createShippingLabelPdf | 
@@ -928,7 +1037,10 @@ Class | Method | HTTP request | Description
 *TicketAssignmentRuleApi* | [**ticketAssignmentRulePost**](docs/Api/TicketAssignmentRuleApi.md#ticketassignmentrulepost) | **POST** /ticketAssignmentRule | create a ticketAssignmentRule
 *TicketCategoryApi* | [**ticketCategoryCountGet**](docs/Api/TicketCategoryApi.md#ticketcategorycountget) | **GET** /ticketCategory/count | count ticketCategory
 *TicketCategoryApi* | [**ticketCategoryGet**](docs/Api/TicketCategoryApi.md#ticketcategoryget) | **GET** /ticketCategory | query ticketCategory
+*TicketCategoryApi* | [**ticketCategoryIdIdDelete**](docs/Api/TicketCategoryApi.md#ticketcategoryididdelete) | **DELETE** /ticketCategory/id/{id} | delete a ticketCategory
 *TicketCategoryApi* | [**ticketCategoryIdIdGet**](docs/Api/TicketCategoryApi.md#ticketcategoryididget) | **GET** /ticketCategory/id/{id} | query a specific ticketCategory
+*TicketCategoryApi* | [**ticketCategoryIdIdPut**](docs/Api/TicketCategoryApi.md#ticketcategoryididput) | **PUT** /ticketCategory/id/{id} | update a ticketCategory
+*TicketCategoryApi* | [**ticketCategoryPost**](docs/Api/TicketCategoryApi.md#ticketcategorypost) | **POST** /ticketCategory | create a ticketCategory
 *TicketChannelApi* | [**ticketChannelCountGet**](docs/Api/TicketChannelApi.md#ticketchannelcountget) | **GET** /ticketChannel/count | count ticketChannel
 *TicketChannelApi* | [**ticketChannelGet**](docs/Api/TicketChannelApi.md#ticketchannelget) | **GET** /ticketChannel | query ticketChannel
 *TicketChannelApi* | [**ticketChannelIdIdDelete**](docs/Api/TicketChannelApi.md#ticketchannelididdelete) | **DELETE** /ticketChannel/id/{id} | delete a ticketChannel
@@ -944,6 +1056,12 @@ Class | Method | HTTP request | Description
 *TicketPoolingGroupApi* | [**ticketPoolingGroupCountGet**](docs/Api/TicketPoolingGroupApi.md#ticketpoolinggroupcountget) | **GET** /ticketPoolingGroup/count | count ticketPoolingGroup
 *TicketPoolingGroupApi* | [**ticketPoolingGroupGet**](docs/Api/TicketPoolingGroupApi.md#ticketpoolinggroupget) | **GET** /ticketPoolingGroup | query ticketPoolingGroup
 *TicketPoolingGroupApi* | [**ticketPoolingGroupIdIdGet**](docs/Api/TicketPoolingGroupApi.md#ticketpoolinggroupididget) | **GET** /ticketPoolingGroup/id/{id} | query a specific ticketPoolingGroup
+*TicketPriorityApi* | [**ticketPriorityCountGet**](docs/Api/TicketPriorityApi.md#ticketprioritycountget) | **GET** /ticketPriority/count | count ticketPriority
+*TicketPriorityApi* | [**ticketPriorityGet**](docs/Api/TicketPriorityApi.md#ticketpriorityget) | **GET** /ticketPriority | query ticketPriority
+*TicketPriorityApi* | [**ticketPriorityIdIdDelete**](docs/Api/TicketPriorityApi.md#ticketpriorityididdelete) | **DELETE** /ticketPriority/id/{id} | delete a ticketPriority
+*TicketPriorityApi* | [**ticketPriorityIdIdGet**](docs/Api/TicketPriorityApi.md#ticketpriorityididget) | **GET** /ticketPriority/id/{id} | query a specific ticketPriority
+*TicketPriorityApi* | [**ticketPriorityIdIdPut**](docs/Api/TicketPriorityApi.md#ticketpriorityididput) | **PUT** /ticketPriority/id/{id} | update a ticketPriority
+*TicketPriorityApi* | [**ticketPriorityPost**](docs/Api/TicketPriorityApi.md#ticketprioritypost) | **POST** /ticketPriority | create a ticketPriority
 *TicketServiceLevelAgreementApi* | [**ticketServiceLevelAgreementCountGet**](docs/Api/TicketServiceLevelAgreementApi.md#ticketservicelevelagreementcountget) | **GET** /ticketServiceLevelAgreement/count | count ticketServiceLevelAgreement
 *TicketServiceLevelAgreementApi* | [**ticketServiceLevelAgreementGet**](docs/Api/TicketServiceLevelAgreementApi.md#ticketservicelevelagreementget) | **GET** /ticketServiceLevelAgreement | query ticketServiceLevelAgreement
 *TicketServiceLevelAgreementApi* | [**ticketServiceLevelAgreementIdIdDelete**](docs/Api/TicketServiceLevelAgreementApi.md#ticketservicelevelagreementididdelete) | **DELETE** /ticketServiceLevelAgreement/id/{id} | delete a ticketServiceLevelAgreement
@@ -982,6 +1100,7 @@ Class | Method | HTTP request | Description
 *TranslationApi* | [**translationPost**](docs/Api/TranslationApi.md#translationpost) | **POST** /translation | create a translation
 *TransportationOrderApi* | [**transportationOrderCountGet**](docs/Api/TransportationOrderApi.md#transportationordercountget) | **GET** /transportationOrder/count | count transportationOrder
 *TransportationOrderApi* | [**transportationOrderGet**](docs/Api/TransportationOrderApi.md#transportationorderget) | **GET** /transportationOrder | query transportationOrder
+*TransportationOrderApi* | [**transportationOrderIdIdAddPicksPost**](docs/Api/TransportationOrderApi.md#transportationorderididaddpickspost) | **POST** /transportationOrder/id/{id}/addPicks | 
 *TransportationOrderApi* | [**transportationOrderIdIdCreatePickPost**](docs/Api/TransportationOrderApi.md#transportationorderididcreatepickpost) | **POST** /transportationOrder/id/{id}/createPick | 
 *TransportationOrderApi* | [**transportationOrderIdIdCreatePickingListPost**](docs/Api/TransportationOrderApi.md#transportationorderididcreatepickinglistpost) | **POST** /transportationOrder/id/{id}/createPickingList | 
 *TransportationOrderApi* | [**transportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPost**](docs/Api/TransportationOrderApi.md#transportationorderididcreatetransportationorderfromunpickedrecordspost) | **POST** /transportationOrder/id/{id}/createTransportationOrderFromUnpickedRecords | 
@@ -1065,11 +1184,27 @@ Class | Method | HTTP request | Description
 *WeclappOsApi* | [**weclappOsIdIdGet**](docs/Api/WeclappOsApi.md#weclapposididget) | **GET** /weclappOs/id/{id} | query a specific weclappOs
 *WeclappOsApi* | [**weclappOsIdIdPut**](docs/Api/WeclappOsApi.md#weclapposididput) | **PUT** /weclappOs/id/{id} | update a weclappOs
 *WeclappOsApi* | [**weclappOsPost**](docs/Api/WeclappOsApi.md#weclappospost) | **POST** /weclappOs | create a weclappOs
+*WorkScheduleProfileApi* | [**workScheduleProfileCountGet**](docs/Api/WorkScheduleProfileApi.md#workscheduleprofilecountget) | **GET** /workScheduleProfile/count | count workScheduleProfile
+*WorkScheduleProfileApi* | [**workScheduleProfileGet**](docs/Api/WorkScheduleProfileApi.md#workscheduleprofileget) | **GET** /workScheduleProfile | query workScheduleProfile
+*WorkScheduleProfileApi* | [**workScheduleProfileIdIdDelete**](docs/Api/WorkScheduleProfileApi.md#workscheduleprofileididdelete) | **DELETE** /workScheduleProfile/id/{id} | delete a workScheduleProfile
+*WorkScheduleProfileApi* | [**workScheduleProfileIdIdGet**](docs/Api/WorkScheduleProfileApi.md#workscheduleprofileididget) | **GET** /workScheduleProfile/id/{id} | query a specific workScheduleProfile
+*WorkScheduleProfileApi* | [**workScheduleProfileIdIdPut**](docs/Api/WorkScheduleProfileApi.md#workscheduleprofileididput) | **PUT** /workScheduleProfile/id/{id} | update a workScheduleProfile
+*WorkScheduleProfileApi* | [**workScheduleProfilePost**](docs/Api/WorkScheduleProfileApi.md#workscheduleprofilepost) | **POST** /workScheduleProfile | create a workScheduleProfile
+*WorkingTimeRuleApi* | [**workingTimeRuleCountGet**](docs/Api/WorkingTimeRuleApi.md#workingtimerulecountget) | **GET** /workingTimeRule/count | count workingTimeRule
+*WorkingTimeRuleApi* | [**workingTimeRuleGet**](docs/Api/WorkingTimeRuleApi.md#workingtimeruleget) | **GET** /workingTimeRule | query workingTimeRule
+*WorkingTimeRuleApi* | [**workingTimeRuleIdIdDelete**](docs/Api/WorkingTimeRuleApi.md#workingtimeruleididdelete) | **DELETE** /workingTimeRule/id/{id} | delete a workingTimeRule
+*WorkingTimeRuleApi* | [**workingTimeRuleIdIdGet**](docs/Api/WorkingTimeRuleApi.md#workingtimeruleididget) | **GET** /workingTimeRule/id/{id} | query a specific workingTimeRule
+*WorkingTimeRuleApi* | [**workingTimeRuleIdIdPut**](docs/Api/WorkingTimeRuleApi.md#workingtimeruleididput) | **PUT** /workingTimeRule/id/{id} | update a workingTimeRule
+*WorkingTimeRuleApi* | [**workingTimeRulePost**](docs/Api/WorkingTimeRuleApi.md#workingtimerulepost) | **POST** /workingTimeRule | create a workingTimeRule
 
 ## Models
 
+- [AbsenceType](docs/Model/AbsenceType.md)
+- [AbsenceTypeColor](docs/Model/AbsenceTypeColor.md)
+- [AbstractApprover](docs/Model/AbstractApprover.md)
 - [AbstractBillOfMaterial](docs/Model/AbstractBillOfMaterial.md)
 - [AbstractBookRecord](docs/Model/AbstractBookRecord.md)
+- [AbstractEmployeeTemporalAssignment](docs/Model/AbstractEmployeeTemporalAssignment.md)
 - [AbstractEntity](docs/Model/AbstractEntity.md)
 - [AbstractEntityWithCustomAttributes](docs/Model/AbstractEntityWithCustomAttributes.md)
 - [AbstractParty](docs/Model/AbstractParty.md)
@@ -1077,53 +1212,49 @@ Class | Method | HTTP request | Description
 - [AccountingTransactionBatchBookingPost200Response](docs/Model/AccountingTransactionBatchBookingPost200Response.md)
 - [AccountingTransactionBatchBookingPostRequest](docs/Model/AccountingTransactionBatchBookingPostRequest.md)
 - [AccountingTransactionBatchBookingPostRequestBatchBooking](docs/Model/AccountingTransactionBatchBookingPostRequestBatchBooking.md)
-- [AccountingTransactionCountGet200Response](docs/Model/AccountingTransactionCountGet200Response.md)
 - [AccountingTransactionDetail](docs/Model/AccountingTransactionDetail.md)
-- [AccountingTransactionGet200Response](docs/Model/AccountingTransactionGet200Response.md)
 - [AccountingTransactionStatus](docs/Model/AccountingTransactionStatus.md)
 - [Address](docs/Model/Address.md)
 - [AdvancePaymentStatus](docs/Model/AdvancePaymentStatus.md)
 - [AggregatePackagingUnit](docs/Model/AggregatePackagingUnit.md)
 - [AggregateStock](docs/Model/AggregateStock.md)
+- [AmazonInvoiceUploadSuccess](docs/Model/AmazonInvoiceUploadSuccess.md)
+- [AmazonSalesChannel](docs/Model/AmazonSalesChannel.md)
 - [Amount](docs/Model/Amount.md)
 - [ApiProblem](docs/Model/ApiProblem.md)
 - [ApiProblemType](docs/Model/ApiProblemType.md)
+- [Approval](docs/Model/Approval.md)
+- [ApprovalGroup](docs/Model/ApprovalGroup.md)
+- [ApprovalIdIdChangeStatusPost200Response](docs/Model/ApprovalIdIdChangeStatusPost200Response.md)
+- [ApprovalIdIdChangeStatusPostRequest](docs/Model/ApprovalIdIdChangeStatusPostRequest.md)
+- [ApprovalRule](docs/Model/ApprovalRule.md)
+- [ApprovalRuleConditionType](docs/Model/ApprovalRuleConditionType.md)
+- [ApprovalRuleEvent](docs/Model/ApprovalRuleEvent.md)
+- [ApprovalStatusType](docs/Model/ApprovalStatusType.md)
+- [Approver](docs/Model/Approver.md)
+- [ApproverStatus](docs/Model/ApproverStatus.md)
 - [ArchivedEmail](docs/Model/ArchivedEmail.md)
-- [ArchivedEmailGet200Response](docs/Model/ArchivedEmailGet200Response.md)
 - [ArchivedEmailIdIdRemoveReferencePostRequest](docs/Model/ArchivedEmailIdIdRemoveReferencePostRequest.md)
 - [Article](docs/Model/Article.md)
-- [ArticleAccountingCodeGet200Response](docs/Model/ArticleAccountingCodeGet200Response.md)
 - [ArticleAlternativeQuantity](docs/Model/ArticleAlternativeQuantity.md)
 - [ArticleCalculationPrice](docs/Model/ArticleCalculationPrice.md)
 - [ArticleCalculationPriceType](docs/Model/ArticleCalculationPriceType.md)
 - [ArticleCategory](docs/Model/ArticleCategory.md)
-- [ArticleCategoryGet200Response](docs/Model/ArticleCategoryGet200Response.md)
-- [ArticleGet200Response](docs/Model/ArticleGet200Response.md)
-- [ArticleGet200ResponseAdditionalProperties](docs/Model/ArticleGet200ResponseAdditionalProperties.md)
 - [ArticleIdIdChangeUnitPostRequest](docs/Model/ArticleIdIdChangeUnitPostRequest.md)
 - [ArticleIdIdCreateDatasheetPdfPostRequest](docs/Model/ArticleIdIdCreateDatasheetPdfPostRequest.md)
 - [ArticleIdIdCreateLabelPdfPostRequest](docs/Model/ArticleIdIdCreateLabelPdfPostRequest.md)
 - [ArticleIdIdPackagingUnitStructureGet200Response](docs/Model/ArticleIdIdPackagingUnitStructureGet200Response.md)
 - [ArticleImage](docs/Model/ArticleImage.md)
 - [ArticleItemGroup](docs/Model/ArticleItemGroup.md)
-- [ArticleItemGroupGet200Response](docs/Model/ArticleItemGroupGet200Response.md)
 - [ArticleItemGroupItem](docs/Model/ArticleItemGroupItem.md)
-- [ArticlePrice](docs/Model/ArticlePrice.md)
-- [ArticlePriceGet200Response](docs/Model/ArticlePriceGet200Response.md)
-- [ArticlePriceWithoutArticleReference](docs/Model/ArticlePriceWithoutArticleReference.md)
-- [ArticlePriceWithoutSalesChannel](docs/Model/ArticlePriceWithoutSalesChannel.md)
 - [ArticleSupplySource](docs/Model/ArticleSupplySource.md)
-- [ArticleSupplySourceGet200Response](docs/Model/ArticleSupplySourceGet200Response.md)
-- [ArticleSupplySourceGet200ResponseAdditionalProperties](docs/Model/ArticleSupplySourceGet200ResponseAdditionalProperties.md)
 - [ArticleType](docs/Model/ArticleType.md)
 - [Attendance](docs/Model/Attendance.md)
+- [AttendanceBreak](docs/Model/AttendanceBreak.md)
 - [AttendanceCurrentAttendanceGet200Response](docs/Model/AttendanceCurrentAttendanceGet200Response.md)
-- [AttendanceGet200Response](docs/Model/AttendanceGet200Response.md)
 - [BalanceSheetItem](docs/Model/BalanceSheetItem.md)
 - [BankAccount](docs/Model/BankAccount.md)
-- [BankAccountGet200Response](docs/Model/BankAccountGet200Response.md)
 - [BankTransaction](docs/Model/BankTransaction.md)
-- [BankTransactionGet200Response](docs/Model/BankTransactionGet200Response.md)
 - [BaseArticle](docs/Model/BaseArticle.md)
 - [BaseMinimalRecordItem](docs/Model/BaseMinimalRecordItem.md)
 - [BasePick](docs/Model/BasePick.md)
@@ -1141,83 +1272,77 @@ Class | Method | HTTP request | Description
 - [BaseShippingCostItem](docs/Model/BaseShippingCostItem.md)
 - [BatchBookingRecord](docs/Model/BatchBookingRecord.md)
 - [BatchNumber](docs/Model/BatchNumber.md)
-- [BatchNumberGet200Response](docs/Model/BatchNumberGet200Response.md)
 - [BatchSerialNumber](docs/Model/BatchSerialNumber.md)
 - [BillOfMaterial](docs/Model/BillOfMaterial.md)
 - [BillUntil](docs/Model/BillUntil.md)
 - [BillableInvoiceStatus](docs/Model/BillableInvoiceStatus.md)
 - [BlanketPurchaseOrder](docs/Model/BlanketPurchaseOrder.md)
-- [BlanketPurchaseOrderGet200Response](docs/Model/BlanketPurchaseOrderGet200Response.md)
 - [BlanketPurchaseOrderIdIdGenerateReleasesPost200Response](docs/Model/BlanketPurchaseOrderIdIdGenerateReleasesPost200Response.md)
 - [BlanketPurchaseOrderIdIdGenerateReleasesPostRequest](docs/Model/BlanketPurchaseOrderIdIdGenerateReleasesPostRequest.md)
 - [BlanketPurchaseOrderStatusHistory](docs/Model/BlanketPurchaseOrderStatusHistory.md)
 - [BlanketPurchaseOrderStatusType](docs/Model/BlanketPurchaseOrderStatusType.md)
 - [BlanketSalesOrder](docs/Model/BlanketSalesOrder.md)
-- [BlanketSalesOrderGet200Response](docs/Model/BlanketSalesOrderGet200Response.md)
+- [BlanketSalesOrderIdIdGenerateReleasesPost200Response](docs/Model/BlanketSalesOrderIdIdGenerateReleasesPost200Response.md)
+- [BlanketSalesOrderIdIdUpdateStatusPostRequest](docs/Model/BlanketSalesOrderIdIdUpdateStatusPostRequest.md)
 - [BlanketSalesOrderItem](docs/Model/BlanketSalesOrderItem.md)
 - [BlanketSalesOrderStatusHistory](docs/Model/BlanketSalesOrderStatusHistory.md)
 - [BlanketSalesOrderStatusType](docs/Model/BlanketSalesOrderStatusType.md)
 - [BookingType](docs/Model/BookingType.md)
+- [BusinessHolidays](docs/Model/BusinessHolidays.md)
+- [BusinessHolidaysIdIdImportCalendarDataPost200Response](docs/Model/BusinessHolidaysIdIdImportCalendarDataPost200Response.md)
+- [BusinessTimesDayOff](docs/Model/BusinessTimesDayOff.md)
+- [BusinessTimesDayOffTimePeriod](docs/Model/BusinessTimesDayOffTimePeriod.md)
+- [BusinessWorkDay](docs/Model/BusinessWorkDay.md)
 - [CalculationType](docs/Model/CalculationType.md)
 - [Calendar](docs/Model/Calendar.md)
 - [CalendarEvent](docs/Model/CalendarEvent.md)
 - [CalendarEventAttendee](docs/Model/CalendarEventAttendee.md)
-- [CalendarEventGet200Response](docs/Model/CalendarEventGet200Response.md)
-- [CalendarGet200Response](docs/Model/CalendarGet200Response.md)
 - [CalendarIdIdDeleteCalendarAndMoveEventsPostRequest](docs/Model/CalendarIdIdDeleteCalendarAndMoveEventsPostRequest.md)
+- [CalendarImportResult](docs/Model/CalendarImportResult.md)
 - [CalendarSharingPermissionType](docs/Model/CalendarSharingPermissionType.md)
 - [CalendarSharingPermissions](docs/Model/CalendarSharingPermissions.md)
 - [Campaign](docs/Model/Campaign.md)
-- [CampaignGet200Response](docs/Model/CampaignGet200Response.md)
 - [CampaignParticipant](docs/Model/CampaignParticipant.md)
-- [CampaignParticipantGet200Response](docs/Model/CampaignParticipantGet200Response.md)
 - [CampaignType](docs/Model/CampaignType.md)
 - [CashAccount](docs/Model/CashAccount.md)
-- [CashAccountGet200Response](docs/Model/CashAccountGet200Response.md)
+- [CashAccountCashCountItem](docs/Model/CashAccountCashCountItem.md)
+- [CashAccountSheet](docs/Model/CashAccountSheet.md)
 - [CashAccountTransaction](docs/Model/CashAccountTransaction.md)
-- [CashAccountTransactionGet200Response](docs/Model/CashAccountTransactionGet200Response.md)
 - [CollectiveInvoicePositionPrintType](docs/Model/CollectiveInvoicePositionPrintType.md)
 - [Comment](docs/Model/Comment.md)
-- [CommentGet200Response](docs/Model/CommentGet200Response.md)
 - [CommercialLanguage](docs/Model/CommercialLanguage.md)
-- [CommercialLanguageGet200Response](docs/Model/CommercialLanguageGet200Response.md)
 - [CommissionSalesPartner](docs/Model/CommissionSalesPartner.md)
 - [CommissionType](docs/Model/CommissionType.md)
 - [ConditionsForEntityType](docs/Model/ConditionsForEntityType.md)
 - [Contract](docs/Model/Contract.md)
 - [ContractAdditionalAddress](docs/Model/ContractAdditionalAddress.md)
 - [ContractAuthorizationUnit](docs/Model/ContractAuthorizationUnit.md)
-- [ContractAuthorizationUnitGet200Response](docs/Model/ContractAuthorizationUnitGet200Response.md)
 - [ContractBillingType](docs/Model/ContractBillingType.md)
 - [ContractChargeInterval](docs/Model/ContractChargeInterval.md)
 - [ContractChargeIntervalType](docs/Model/ContractChargeIntervalType.md)
 - [ContractChargeType](docs/Model/ContractChargeType.md)
 - [ContractCostItem](docs/Model/ContractCostItem.md)
-- [ContractGet200Response](docs/Model/ContractGet200Response.md)
 - [ContractItem](docs/Model/ContractItem.md)
+- [ContractPermission](docs/Model/ContractPermission.md)
+- [ContractPermissionType](docs/Model/ContractPermissionType.md)
 - [ContractReminderType](docs/Model/ContractReminderType.md)
 - [ContractSoftframe](docs/Model/ContractSoftframe.md)
 - [ContractStatus](docs/Model/ContractStatus.md)
 - [ContractType](docs/Model/ContractType.md)
-- [ContractTypeGet200Response](docs/Model/ContractTypeGet200Response.md)
 - [ContractUnitType](docs/Model/ContractUnitType.md)
 - [CostCenter](docs/Model/CostCenter.md)
-- [CostCenterGet200Response](docs/Model/CostCenterGet200Response.md)
 - [CostCenterWithDistributionPercentage](docs/Model/CostCenterWithDistributionPercentage.md)
 - [CostType](docs/Model/CostType.md)
-- [CostTypeGet200Response](docs/Model/CostTypeGet200Response.md)
+- [Country](docs/Model/Country.md)
 - [CrmEvent](docs/Model/CrmEvent.md)
-- [CrmEventGet200Response](docs/Model/CrmEventGet200Response.md)
 - [CrmEventType](docs/Model/CrmEventType.md)
 - [Currency](docs/Model/Currency.md)
 - [CurrencyCompanyCurrencyGet200Response](docs/Model/CurrencyCompanyCurrencyGet200Response.md)
-- [CurrencyGet200Response](docs/Model/CurrencyGet200Response.md)
 - [CustomAttribute](docs/Model/CustomAttribute.md)
 - [CustomAttributeDefinition](docs/Model/CustomAttributeDefinition.md)
 - [CustomAttributeDefinitionConditionOperator](docs/Model/CustomAttributeDefinitionConditionOperator.md)
 - [CustomAttributeDefinitionConditionType](docs/Model/CustomAttributeDefinitionConditionType.md)
 - [CustomAttributeDefinitionConditions](docs/Model/CustomAttributeDefinitionConditions.md)
-- [CustomAttributeDefinitionGet200Response](docs/Model/CustomAttributeDefinitionGet200Response.md)
 - [CustomAttributeDefinitionListValue](docs/Model/CustomAttributeDefinitionListValue.md)
 - [CustomAttributeDefinitionOrder](docs/Model/CustomAttributeDefinitionOrder.md)
 - [CustomAttributeDefinitionPermission](docs/Model/CustomAttributeDefinitionPermission.md)
@@ -1240,10 +1365,10 @@ Class | Method | HTTP request | Description
 - [DesiredInvoiceStatusType](docs/Model/DesiredInvoiceStatusType.md)
 - [DispositionInfoAvailabilityType](docs/Model/DispositionInfoAvailabilityType.md)
 - [DistributionChannel](docs/Model/DistributionChannel.md)
+- [DistributionChannelAccountingData](docs/Model/DistributionChannelAccountingData.md)
 - [Document](docs/Model/Document.md)
 - [DocumentCopyPost200Response](docs/Model/DocumentCopyPost200Response.md)
 - [DocumentCopyPostRequest](docs/Model/DocumentCopyPostRequest.md)
-- [DocumentGet200Response](docs/Model/DocumentGet200Response.md)
 - [DocumentIdIdCopyPostRequest](docs/Model/DocumentIdIdCopyPostRequest.md)
 - [DocumentType](docs/Model/DocumentType.md)
 - [DocumentVersion](docs/Model/DocumentVersion.md)
@@ -1253,79 +1378,217 @@ Class | Method | HTTP request | Description
 - [Duration](docs/Model/Duration.md)
 - [EcommerceOrder](docs/Model/EcommerceOrder.md)
 - [EcommerceShippingCarrier](docs/Model/EcommerceShippingCarrier.md)
+- [EducationLevel](docs/Model/EducationLevel.md)
 - [EmailAddresses](docs/Model/EmailAddresses.md)
+- [Employee](docs/Model/Employee.md)
+- [EmploymentStatus](docs/Model/EmploymentStatus.md)
+- [EmploymentType](docs/Model/EmploymentType.md)
 - [EntityReference](docs/Model/EntityReference.md)
 - [EventInvitationStatus](docs/Model/EventInvitationStatus.md)
 - [EventRight](docs/Model/EventRight.md)
 - [ExternalConnection](docs/Model/ExternalConnection.md)
-- [ExternalConnectionGet200Response](docs/Model/ExternalConnectionGet200Response.md)
+- [ExternalConnectionIdIdStartArticleSynchronizationPost200Response](docs/Model/ExternalConnectionIdIdStartArticleSynchronizationPost200Response.md)
+- [ExternalConnectionIdIdStartArticleSynchronizationPostRequest](docs/Model/ExternalConnectionIdIdStartArticleSynchronizationPostRequest.md)
+- [ExternalConnectionIdIdStartEbayListingSynchronizationPostRequest](docs/Model/ExternalConnectionIdIdStartEbayListingSynchronizationPostRequest.md)
+- [ExternalConnectionIdIdStartOrderSynchronizationPostRequest](docs/Model/ExternalConnectionIdIdStartOrderSynchronizationPostRequest.md)
 - [ExternalConnectionType](docs/Model/ExternalConnectionType.md)
 - [FastProductionBookingResult](docs/Model/FastProductionBookingResult.md)
 - [FastProductionBookingResultMessage](docs/Model/FastProductionBookingResultMessage.md)
 - [FinancialYear](docs/Model/FinancialYear.md)
-- [FinancialYearGet200Response](docs/Model/FinancialYearGet200Response.md)
 - [FinancialYearIdIdGeneratePeriodsPost200Response](docs/Model/FinancialYearIdIdGeneratePeriodsPost200Response.md)
 - [FinancialYearStatus](docs/Model/FinancialYearStatus.md)
 - [FollowupBusyState](docs/Model/FollowupBusyState.md)
 - [FulfillmentProvider](docs/Model/FulfillmentProvider.md)
-- [FulfillmentProviderGet200Response](docs/Model/FulfillmentProviderGet200Response.md)
+- [FulfillmentProviderActiveFulfillmentProvidersGet200Response](docs/Model/FulfillmentProviderActiveFulfillmentProvidersGet200Response.md)
 - [FulfillmentProviderType](docs/Model/FulfillmentProviderType.md)
+- [Gender](docs/Model/Gender.md)
+- [HealthInsuranceType](docs/Model/HealthInsuranceType.md)
+- [IncomeTaxClass](docs/Model/IncomeTaxClass.md)
 - [IncomingBooking](docs/Model/IncomingBooking.md)
 - [IncomingGoods](docs/Model/IncomingGoods.md)
-- [IncomingGoodsGet200Response](docs/Model/IncomingGoodsGet200Response.md)
 - [IncomingGoodsIdIdAddPurchaseOrdersPost200Response](docs/Model/IncomingGoodsIdIdAddPurchaseOrdersPost200Response.md)
 - [IncomingGoodsIdIdAddPurchaseOrdersPostRequest](docs/Model/IncomingGoodsIdIdAddPurchaseOrdersPostRequest.md)
 - [IncomingGoodsIdIdCreateCompensationShipmentPost200Response](docs/Model/IncomingGoodsIdIdCreateCompensationShipmentPost200Response.md)
 - [IncomingGoodsIdIdCreateCreditNotePost200Response](docs/Model/IncomingGoodsIdIdCreateCreditNotePost200Response.md)
 - [IncomingGoodsIdIdCreatePurchaseInvoicePost200Response](docs/Model/IncomingGoodsIdIdCreatePurchaseInvoicePost200Response.md)
+- [IncomingGoodsIdIdCreateReturnLabelsPost200Response](docs/Model/IncomingGoodsIdIdCreateReturnLabelsPost200Response.md)
 - [IncomingGoodsIdIdCreateSupplierReturnPostRequest](docs/Model/IncomingGoodsIdIdCreateSupplierReturnPostRequest.md)
 - [IncomingGoodsIdIdIncomingBookingsGet200Response](docs/Model/IncomingGoodsIdIdIncomingBookingsGet200Response.md)
 - [IncomingGoodsIdIdUpdateIncomingBookingsPostRequest](docs/Model/IncomingGoodsIdIdUpdateIncomingBookingsPostRequest.md)
 - [IncomingGoodsIdIdUpdateIncomingBookingsPostRequestIncomingBookingsInner](docs/Model/IncomingGoodsIdIdUpdateIncomingBookingsPostRequestIncomingBookingsInner.md)
 - [IncomingGoodsItem](docs/Model/IncomingGoodsItem.md)
+- [InlineObject](docs/Model/InlineObject.md)
+- [InlineObject1](docs/Model/InlineObject1.md)
+- [InlineObject10](docs/Model/InlineObject10.md)
+- [InlineObject100](docs/Model/InlineObject100.md)
+- [InlineObject100AdditionalProperties](docs/Model/InlineObject100AdditionalProperties.md)
+- [InlineObject101](docs/Model/InlineObject101.md)
+- [InlineObject102](docs/Model/InlineObject102.md)
+- [InlineObject103](docs/Model/InlineObject103.md)
+- [InlineObject104](docs/Model/InlineObject104.md)
+- [InlineObject104AdditionalProperties](docs/Model/InlineObject104AdditionalProperties.md)
+- [InlineObject105](docs/Model/InlineObject105.md)
+- [InlineObject106](docs/Model/InlineObject106.md)
+- [InlineObject107](docs/Model/InlineObject107.md)
+- [InlineObject108](docs/Model/InlineObject108.md)
+- [InlineObject108AdditionalProperties](docs/Model/InlineObject108AdditionalProperties.md)
+- [InlineObject109](docs/Model/InlineObject109.md)
+- [InlineObject10AdditionalProperties](docs/Model/InlineObject10AdditionalProperties.md)
+- [InlineObject11](docs/Model/InlineObject11.md)
+- [InlineObject110](docs/Model/InlineObject110.md)
+- [InlineObject111](docs/Model/InlineObject111.md)
+- [InlineObject112](docs/Model/InlineObject112.md)
+- [InlineObject113](docs/Model/InlineObject113.md)
+- [InlineObject114](docs/Model/InlineObject114.md)
+- [InlineObject115](docs/Model/InlineObject115.md)
+- [InlineObject116](docs/Model/InlineObject116.md)
+- [InlineObject117](docs/Model/InlineObject117.md)
+- [InlineObject118](docs/Model/InlineObject118.md)
+- [InlineObject119](docs/Model/InlineObject119.md)
+- [InlineObject11AdditionalProperties](docs/Model/InlineObject11AdditionalProperties.md)
+- [InlineObject12](docs/Model/InlineObject12.md)
+- [InlineObject120](docs/Model/InlineObject120.md)
+- [InlineObject120AdditionalProperties](docs/Model/InlineObject120AdditionalProperties.md)
+- [InlineObject121](docs/Model/InlineObject121.md)
+- [InlineObject122](docs/Model/InlineObject122.md)
+- [InlineObject13](docs/Model/InlineObject13.md)
+- [InlineObject14](docs/Model/InlineObject14.md)
+- [InlineObject15](docs/Model/InlineObject15.md)
+- [InlineObject16](docs/Model/InlineObject16.md)
+- [InlineObject17](docs/Model/InlineObject17.md)
+- [InlineObject18](docs/Model/InlineObject18.md)
+- [InlineObject19](docs/Model/InlineObject19.md)
+- [InlineObject2](docs/Model/InlineObject2.md)
+- [InlineObject20](docs/Model/InlineObject20.md)
+- [InlineObject21](docs/Model/InlineObject21.md)
+- [InlineObject22](docs/Model/InlineObject22.md)
+- [InlineObject23](docs/Model/InlineObject23.md)
+- [InlineObject24](docs/Model/InlineObject24.md)
+- [InlineObject25](docs/Model/InlineObject25.md)
+- [InlineObject26](docs/Model/InlineObject26.md)
+- [InlineObject27](docs/Model/InlineObject27.md)
+- [InlineObject28](docs/Model/InlineObject28.md)
+- [InlineObject29](docs/Model/InlineObject29.md)
+- [InlineObject29AdditionalProperties](docs/Model/InlineObject29AdditionalProperties.md)
+- [InlineObject3](docs/Model/InlineObject3.md)
+- [InlineObject30](docs/Model/InlineObject30.md)
+- [InlineObject31](docs/Model/InlineObject31.md)
+- [InlineObject32](docs/Model/InlineObject32.md)
+- [InlineObject33](docs/Model/InlineObject33.md)
+- [InlineObject34](docs/Model/InlineObject34.md)
+- [InlineObject35](docs/Model/InlineObject35.md)
+- [InlineObject36](docs/Model/InlineObject36.md)
+- [InlineObject37](docs/Model/InlineObject37.md)
+- [InlineObject38](docs/Model/InlineObject38.md)
+- [InlineObject39](docs/Model/InlineObject39.md)
+- [InlineObject4](docs/Model/InlineObject4.md)
+- [InlineObject40](docs/Model/InlineObject40.md)
+- [InlineObject41](docs/Model/InlineObject41.md)
+- [InlineObject42](docs/Model/InlineObject42.md)
+- [InlineObject43](docs/Model/InlineObject43.md)
+- [InlineObject44](docs/Model/InlineObject44.md)
+- [InlineObject45](docs/Model/InlineObject45.md)
+- [InlineObject46](docs/Model/InlineObject46.md)
+- [InlineObject47](docs/Model/InlineObject47.md)
+- [InlineObject48](docs/Model/InlineObject48.md)
+- [InlineObject49](docs/Model/InlineObject49.md)
+- [InlineObject5](docs/Model/InlineObject5.md)
+- [InlineObject50](docs/Model/InlineObject50.md)
+- [InlineObject51](docs/Model/InlineObject51.md)
+- [InlineObject52](docs/Model/InlineObject52.md)
+- [InlineObject53](docs/Model/InlineObject53.md)
+- [InlineObject53AdditionalProperties](docs/Model/InlineObject53AdditionalProperties.md)
+- [InlineObject54](docs/Model/InlineObject54.md)
+- [InlineObject55](docs/Model/InlineObject55.md)
+- [InlineObject56](docs/Model/InlineObject56.md)
+- [InlineObject57](docs/Model/InlineObject57.md)
+- [InlineObject57AdditionalProperties](docs/Model/InlineObject57AdditionalProperties.md)
+- [InlineObject58](docs/Model/InlineObject58.md)
+- [InlineObject59](docs/Model/InlineObject59.md)
+- [InlineObject6](docs/Model/InlineObject6.md)
+- [InlineObject60](docs/Model/InlineObject60.md)
+- [InlineObject60AdditionalProperties](docs/Model/InlineObject60AdditionalProperties.md)
+- [InlineObject61](docs/Model/InlineObject61.md)
+- [InlineObject62](docs/Model/InlineObject62.md)
+- [InlineObject63](docs/Model/InlineObject63.md)
+- [InlineObject64](docs/Model/InlineObject64.md)
+- [InlineObject65](docs/Model/InlineObject65.md)
+- [InlineObject66](docs/Model/InlineObject66.md)
+- [InlineObject67](docs/Model/InlineObject67.md)
+- [InlineObject68](docs/Model/InlineObject68.md)
+- [InlineObject69](docs/Model/InlineObject69.md)
+- [InlineObject69AdditionalProperties](docs/Model/InlineObject69AdditionalProperties.md)
+- [InlineObject7](docs/Model/InlineObject7.md)
+- [InlineObject70](docs/Model/InlineObject70.md)
+- [InlineObject71](docs/Model/InlineObject71.md)
+- [InlineObject72](docs/Model/InlineObject72.md)
+- [InlineObject73](docs/Model/InlineObject73.md)
+- [InlineObject74](docs/Model/InlineObject74.md)
+- [InlineObject75](docs/Model/InlineObject75.md)
+- [InlineObject76](docs/Model/InlineObject76.md)
+- [InlineObject77](docs/Model/InlineObject77.md)
+- [InlineObject78](docs/Model/InlineObject78.md)
+- [InlineObject78AdditionalProperties](docs/Model/InlineObject78AdditionalProperties.md)
+- [InlineObject79](docs/Model/InlineObject79.md)
+- [InlineObject8](docs/Model/InlineObject8.md)
+- [InlineObject80](docs/Model/InlineObject80.md)
+- [InlineObject81](docs/Model/InlineObject81.md)
+- [InlineObject82](docs/Model/InlineObject82.md)
+- [InlineObject83](docs/Model/InlineObject83.md)
+- [InlineObject84](docs/Model/InlineObject84.md)
+- [InlineObject85](docs/Model/InlineObject85.md)
+- [InlineObject86](docs/Model/InlineObject86.md)
+- [InlineObject86AdditionalProperties](docs/Model/InlineObject86AdditionalProperties.md)
+- [InlineObject87](docs/Model/InlineObject87.md)
+- [InlineObject88](docs/Model/InlineObject88.md)
+- [InlineObject89](docs/Model/InlineObject89.md)
+- [InlineObject9](docs/Model/InlineObject9.md)
+- [InlineObject90](docs/Model/InlineObject90.md)
+- [InlineObject91](docs/Model/InlineObject91.md)
+- [InlineObject92](docs/Model/InlineObject92.md)
+- [InlineObject93](docs/Model/InlineObject93.md)
+- [InlineObject94](docs/Model/InlineObject94.md)
+- [InlineObject94AdditionalProperties](docs/Model/InlineObject94AdditionalProperties.md)
+- [InlineObject95](docs/Model/InlineObject95.md)
+- [InlineObject96](docs/Model/InlineObject96.md)
+- [InlineObject97](docs/Model/InlineObject97.md)
+- [InlineObject98](docs/Model/InlineObject98.md)
+- [InlineObject99](docs/Model/InlineObject99.md)
 - [InternalShippingCarrier](docs/Model/InternalShippingCarrier.md)
 - [InternalTicketStatus](docs/Model/InternalTicketStatus.md)
 - [InternalTransportReference](docs/Model/InternalTransportReference.md)
-- [InternalTransportReferenceGet200Response](docs/Model/InternalTransportReferenceGet200Response.md)
 - [Inventory](docs/Model/Inventory.md)
 - [InventoryCreatePost200Response](docs/Model/InventoryCreatePost200Response.md)
 - [InventoryCreatePostRequest](docs/Model/InventoryCreatePostRequest.md)
 - [InventoryCreatePostRequestInventory](docs/Model/InventoryCreatePostRequestInventory.md)
-- [InventoryGet200Response](docs/Model/InventoryGet200Response.md)
 - [InventoryGroup](docs/Model/InventoryGroup.md)
-- [InventoryGroupGet200Response](docs/Model/InventoryGroupGet200Response.md)
 - [InventoryItem](docs/Model/InventoryItem.md)
-- [InventoryItemGet200Response](docs/Model/InventoryItemGet200Response.md)
 - [InventorySerialNumber](docs/Model/InventorySerialNumber.md)
 - [InventorySerialNumberStatus](docs/Model/InventorySerialNumberStatus.md)
 - [InventoryStatusHistory](docs/Model/InventoryStatusHistory.md)
 - [InventoryStatusType](docs/Model/InventoryStatusType.md)
 - [InventoryTransportReference](docs/Model/InventoryTransportReference.md)
-- [InventoryTransportReferenceGet200Response](docs/Model/InventoryTransportReferenceGet200Response.md)
 - [InvoicingType](docs/Model/InvoicingType.md)
 - [ItemAvailability](docs/Model/ItemAvailability.md)
 - [ItemPick](docs/Model/ItemPick.md)
 - [ItemType](docs/Model/ItemType.md)
-- [JobAbortGet200Response](docs/Model/JobAbortGet200Response.md)
 - [JobProgress](docs/Model/JobProgress.md)
 - [JobResult](docs/Model/JobResult.md)
 - [JobStatus](docs/Model/JobStatus.md)
 - [JobType](docs/Model/JobType.md)
 - [LeadStatus](docs/Model/LeadStatus.md)
 - [LedgerAccount](docs/Model/LedgerAccount.md)
-- [LedgerAccountGet200Response](docs/Model/LedgerAccountGet200Response.md)
 - [LedgerAccountType](docs/Model/LedgerAccountType.md)
 - [LevelOfDetail](docs/Model/LevelOfDetail.md)
 - [License](docs/Model/License.md)
 - [LoadingEquipmentIdentifier](docs/Model/LoadingEquipmentIdentifier.md)
-- [LoadingEquipmentIdentifierGet200Response](docs/Model/LoadingEquipmentIdentifierGet200Response.md)
 - [MailTemplate](docs/Model/MailTemplate.md)
-- [MailTemplateGet200Response](docs/Model/MailTemplateGet200Response.md)
 - [Manufacturer](docs/Model/Manufacturer.md)
-- [ManufacturerGet200Response](docs/Model/ManufacturerGet200Response.md)
 - [MarginCalculationPriceType](docs/Model/MarginCalculationPriceType.md)
+- [MarriageStatus](docs/Model/MarriageStatus.md)
 - [MetaLegacyReferencePropertiesGet200Response](docs/Model/MetaLegacyReferencePropertiesGet200Response.md)
 - [MetaQueryFilterPropertiesGet200Response](docs/Model/MetaQueryFilterPropertiesGet200Response.md)
+- [MetaValidationErrorCodesGet200Response](docs/Model/MetaValidationErrorCodesGet200Response.md)
 - [MinimalStoragePlace](docs/Model/MinimalStoragePlace.md)
 - [MoneyTransactionProcessingStrategy](docs/Model/MoneyTransactionProcessingStrategy.md)
 - [MoneyTransactionSource](docs/Model/MoneyTransactionSource.md)
@@ -1333,14 +1596,13 @@ Class | Method | HTTP request | Description
 - [NoLoginProjectOrderPlannedWorkVisibility](docs/Model/NoLoginProjectOrderPlannedWorkVisibility.md)
 - [NoLoginProjectOrderRealizedWorkVisibility](docs/Model/NoLoginProjectOrderRealizedWorkVisibility.md)
 - [Notification](docs/Model/Notification.md)
-- [NotificationGet200Response](docs/Model/NotificationGet200Response.md)
 - [NotificationIdIdMarkReadPost200Response](docs/Model/NotificationIdIdMarkReadPost200Response.md)
 - [NotificationPriority](docs/Model/NotificationPriority.md)
 - [NumberRange](docs/Model/NumberRange.md)
-- [NumberRangeGet200Response](docs/Model/NumberRangeGet200Response.md)
+- [NumberRangeMissingNumberRangesGet200Response](docs/Model/NumberRangeMissingNumberRangesGet200Response.md)
 - [NumberRangeType](docs/Model/NumberRangeType.md)
 - [NumberRangeValue](docs/Model/NumberRangeValue.md)
-- [NumberRangeValueGet200Response](docs/Model/NumberRangeValueGet200Response.md)
+- [OccupationType](docs/Model/OccupationType.md)
 - [OfferOutType](docs/Model/OfferOutType.md)
 - [OfferStatusType](docs/Model/OfferStatusType.md)
 - [OnlineAccount](docs/Model/OnlineAccount.md)
@@ -1349,7 +1611,6 @@ Class | Method | HTTP request | Description
 - [OpenItem](docs/Model/OpenItem.md)
 - [OpenItemType](docs/Model/OpenItemType.md)
 - [Opportunity](docs/Model/Opportunity.md)
-- [OpportunityGet200Response](docs/Model/OpportunityGet200Response.md)
 - [OpportunityIdIdLinkQuotationPost200Response](docs/Model/OpportunityIdIdLinkQuotationPost200Response.md)
 - [OpportunityIdIdLinkQuotationPostRequest](docs/Model/OpportunityIdIdLinkQuotationPostRequest.md)
 - [OrderStatusType](docs/Model/OrderStatusType.md)
@@ -1358,40 +1619,37 @@ Class | Method | HTTP request | Description
 - [Party](docs/Model/Party.md)
 - [PartyBankAccount](docs/Model/PartyBankAccount.md)
 - [PartyEmailAddresses](docs/Model/PartyEmailAddresses.md)
-- [PartyGet200Response](docs/Model/PartyGet200Response.md)
-- [PartyGet200ResponseAdditionalProperties](docs/Model/PartyGet200ResponseAdditionalProperties.md)
 - [PartyHabitualExporterLetterOfIntent](docs/Model/PartyHabitualExporterLetterOfIntent.md)
 - [PartyHabitualExporterLetterOfIntentType](docs/Model/PartyHabitualExporterLetterOfIntentType.md)
 - [PartyIdIdCreatePublicPagePost200Response](docs/Model/PartyIdIdCreatePublicPagePost200Response.md)
+- [PartyIdIdStartTransferAddressesToOpenRecordsPostRequest](docs/Model/PartyIdIdStartTransferAddressesToOpenRecordsPostRequest.md)
+- [PartyIdIdStartTransferEmailAddressesToOpenRecordsPostRequest](docs/Model/PartyIdIdStartTransferEmailAddressesToOpenRecordsPostRequest.md)
 - [PartyType](docs/Model/PartyType.md)
 - [PaymentApplication](docs/Model/PaymentApplication.md)
 - [PaymentMethod](docs/Model/PaymentMethod.md)
-- [PaymentMethodGet200Response](docs/Model/PaymentMethodGet200Response.md)
 - [PaymentMethodTypeKey](docs/Model/PaymentMethodTypeKey.md)
 - [PaymentRun](docs/Model/PaymentRun.md)
-- [PaymentRunGet200Response](docs/Model/PaymentRunGet200Response.md)
 - [PaymentRunItem](docs/Model/PaymentRunItem.md)
-- [PaymentRunItemGet200Response](docs/Model/PaymentRunItemGet200Response.md)
 - [PaymentRunPaymentType](docs/Model/PaymentRunPaymentType.md)
 - [PaymentStatus](docs/Model/PaymentStatus.md)
 - [PaymentType](docs/Model/PaymentType.md)
 - [PerformanceRecord](docs/Model/PerformanceRecord.md)
-- [PerformanceRecordGet200Response](docs/Model/PerformanceRecordGet200Response.md)
-- [PerformanceRecordGet200ResponseAdditionalProperties](docs/Model/PerformanceRecordGet200ResponseAdditionalProperties.md)
 - [PerformanceRecordIdIdAddToPerformanceRecordPost200Response](docs/Model/PerformanceRecordIdIdAddToPerformanceRecordPost200Response.md)
 - [PerformanceRecordIdIdAddToPerformanceRecordPostRequest](docs/Model/PerformanceRecordIdIdAddToPerformanceRecordPostRequest.md)
+- [PerformanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPost200Response](docs/Model/PerformanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPost200Response.md)
+- [PerformanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPostRequest](docs/Model/PerformanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPostRequest.md)
 - [PerformanceRecordIdIdRemoveSignaturePostRequest](docs/Model/PerformanceRecordIdIdRemoveSignaturePostRequest.md)
+- [PerformanceRecordInvoicingMode](docs/Model/PerformanceRecordInvoicingMode.md)
 - [PerformanceRecordItem](docs/Model/PerformanceRecordItem.md)
+- [PerformanceRecordStartConfiguredMassPerformanceRecordCreationPostRequest](docs/Model/PerformanceRecordStartConfiguredMassPerformanceRecordCreationPostRequest.md)
 - [PerformanceRecordStatusHistory](docs/Model/PerformanceRecordStatusHistory.md)
 - [PerformanceRecordStatusType](docs/Model/PerformanceRecordStatusType.md)
 - [PerformanceRecordedStatus](docs/Model/PerformanceRecordedStatus.md)
 - [Period](docs/Model/Period.md)
 - [PermissionString](docs/Model/PermissionString.md)
+- [PersonalAccountAssignmentMode](docs/Model/PersonalAccountAssignmentMode.md)
 - [Pick](docs/Model/Pick.md)
-- [PickGet200Response](docs/Model/PickGet200Response.md)
 - [PriceCalculationParameter](docs/Model/PriceCalculationParameter.md)
-- [PriceCalculationParameterGet200Response](docs/Model/PriceCalculationParameterGet200Response.md)
-- [PriceConditionType](docs/Model/PriceConditionType.md)
 - [PriceData](docs/Model/PriceData.md)
 - [PriceDataReductionAdditionItem](docs/Model/PriceDataReductionAdditionItem.md)
 - [PriceScaleType](docs/Model/PriceScaleType.md)
@@ -1400,8 +1658,9 @@ Class | Method | HTTP request | Description
 - [ProductionOrder](docs/Model/ProductionOrder.md)
 - [ProductionOrderFastProductionBookingPost200Response](docs/Model/ProductionOrderFastProductionBookingPost200Response.md)
 - [ProductionOrderFastProductionBookingPostRequest](docs/Model/ProductionOrderFastProductionBookingPostRequest.md)
-- [ProductionOrderGet200Response](docs/Model/ProductionOrderGet200Response.md)
-- [ProductionOrderGet200ResponseAdditionalProperties](docs/Model/ProductionOrderGet200ResponseAdditionalProperties.md)
+- [ProductionOrderIdIdCreatePickingOrderPost200Response](docs/Model/ProductionOrderIdIdCreatePickingOrderPost200Response.md)
+- [ProductionOrderIdIdCreatePickingOrderPostRequest](docs/Model/ProductionOrderIdIdCreatePickingOrderPostRequest.md)
+- [ProductionOrderIdIdCreatePickingOrderPostRequestCustomAttributesInner](docs/Model/ProductionOrderIdIdCreatePickingOrderPostRequestCustomAttributesInner.md)
 - [ProductionOrderItem](docs/Model/ProductionOrderItem.md)
 - [ProductionOrderItemStatus](docs/Model/ProductionOrderItemStatus.md)
 - [ProductionOrderStatusHistory](docs/Model/ProductionOrderStatusHistory.md)
@@ -1409,24 +1668,26 @@ Class | Method | HTTP request | Description
 - [ProductionOrderWorkItem](docs/Model/ProductionOrderWorkItem.md)
 - [ProductionWorkSchedule](docs/Model/ProductionWorkSchedule.md)
 - [ProductionWorkScheduleAssignment](docs/Model/ProductionWorkScheduleAssignment.md)
-- [ProductionWorkScheduleAssignmentGet200Response](docs/Model/ProductionWorkScheduleAssignmentGet200Response.md)
-- [ProductionWorkScheduleGet200Response](docs/Model/ProductionWorkScheduleGet200Response.md)
 - [ProductionWorkScheduleItem](docs/Model/ProductionWorkScheduleItem.md)
 - [ProductionWorkScheduleItemTimeType](docs/Model/ProductionWorkScheduleItemTimeType.md)
 - [ProductionWorkScheduleStatus](docs/Model/ProductionWorkScheduleStatus.md)
+- [ProfessionalEducationLevel](docs/Model/ProfessionalEducationLevel.md)
 - [ProjectMembers](docs/Model/ProjectMembers.md)
 - [ProjectOrderStatusPage](docs/Model/ProjectOrderStatusPage.md)
-- [ProjectOrderStatusPageGet200Response](docs/Model/ProjectOrderStatusPageGet200Response.md)
 - [PropertyTranslation](docs/Model/PropertyTranslation.md)
 - [PropertyTranslationReadPropertyTranslationsGet200Response](docs/Model/PropertyTranslationReadPropertyTranslationsGet200Response.md)
 - [PropertyTranslationUpdatePropertyTranslationsPostRequest](docs/Model/PropertyTranslationUpdatePropertyTranslationsPostRequest.md)
 - [PropertyTranslationUpdatePropertyTranslationsPostRequestPropertyTranslationsInner](docs/Model/PropertyTranslationUpdatePropertyTranslationsPostRequestPropertyTranslationsInner.md)
 - [PropertyTranslationValue](docs/Model/PropertyTranslationValue.md)
 - [PurchaseInvoice](docs/Model/PurchaseInvoice.md)
-- [PurchaseInvoiceGet200Response](docs/Model/PurchaseInvoiceGet200Response.md)
+- [PurchaseInvoiceIdIdCancelPostRequest](docs/Model/PurchaseInvoiceIdIdCancelPostRequest.md)
+- [PurchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePostRequest](docs/Model/PurchaseInvoiceIdIdConvertPurchaseInvoiceToCreditNotePostRequest.md)
 - [PurchaseInvoiceIdIdCreateContractPost200Response](docs/Model/PurchaseInvoiceIdIdCreateContractPost200Response.md)
+- [PurchaseInvoiceIdIdCreateContractPostRequest](docs/Model/PurchaseInvoiceIdIdCreateContractPostRequest.md)
 - [PurchaseInvoiceIdIdCreateCreditNotePostRequest](docs/Model/PurchaseInvoiceIdIdCreateCreditNotePostRequest.md)
 - [PurchaseInvoiceIdIdPrintLabelPostRequest](docs/Model/PurchaseInvoiceIdIdPrintLabelPostRequest.md)
+- [PurchaseInvoiceIdIdUpdateStatusPost200Response](docs/Model/PurchaseInvoiceIdIdUpdateStatusPost200Response.md)
+- [PurchaseInvoiceIdIdUpdateStatusPostRequest](docs/Model/PurchaseInvoiceIdIdUpdateStatusPostRequest.md)
 - [PurchaseInvoiceItem](docs/Model/PurchaseInvoiceItem.md)
 - [PurchaseInvoiceItemRelationship](docs/Model/PurchaseInvoiceItemRelationship.md)
 - [PurchaseInvoiceShippingCostItem](docs/Model/PurchaseInvoiceShippingCostItem.md)
@@ -1434,23 +1695,24 @@ Class | Method | HTTP request | Description
 - [PurchaseInvoiceStatusType](docs/Model/PurchaseInvoiceStatusType.md)
 - [PurchaseInvoiceType](docs/Model/PurchaseInvoiceType.md)
 - [PurchaseOpenItem](docs/Model/PurchaseOpenItem.md)
-- [PurchaseOpenItemGet200Response](docs/Model/PurchaseOpenItemGet200Response.md)
 - [PurchaseOpenItemIdIdCreatePaymentApplicationPost200Response](docs/Model/PurchaseOpenItemIdIdCreatePaymentApplicationPost200Response.md)
 - [PurchaseOpenItemIdIdCreatePaymentApplicationPostRequest](docs/Model/PurchaseOpenItemIdIdCreatePaymentApplicationPostRequest.md)
 - [PurchaseOpenItemIdIdUpdatePaymentStatePostRequest](docs/Model/PurchaseOpenItemIdIdUpdatePaymentStatePostRequest.md)
 - [PurchaseOrder](docs/Model/PurchaseOrder.md)
-- [PurchaseOrderGet200Response](docs/Model/PurchaseOrderGet200Response.md)
 - [PurchaseOrderIdIdCancelDropshippingShipmentsPost200Response](docs/Model/PurchaseOrderIdIdCancelDropshippingShipmentsPost200Response.md)
 - [PurchaseOrderIdIdCancelDropshippingShipmentsPostRequest](docs/Model/PurchaseOrderIdIdCancelDropshippingShipmentsPostRequest.md)
 - [PurchaseOrderIdIdCreateIncomingGoodsPostRequest](docs/Model/PurchaseOrderIdIdCreateIncomingGoodsPostRequest.md)
+- [PurchaseOrderIdIdCreateProductionOrdersPost200Response](docs/Model/PurchaseOrderIdIdCreateProductionOrdersPost200Response.md)
+- [PurchaseOrderIdIdCreateProductionOrdersPostRequest](docs/Model/PurchaseOrderIdIdCreateProductionOrdersPostRequest.md)
 - [PurchaseOrderIdIdCreatePurchaseInvoicePostRequest](docs/Model/PurchaseOrderIdIdCreatePurchaseInvoicePostRequest.md)
+- [PurchaseOrderIdIdManuallyClosePostRequest](docs/Model/PurchaseOrderIdIdManuallyClosePostRequest.md)
 - [PurchaseOrderIdIdPrintLabelPostRequest](docs/Model/PurchaseOrderIdIdPrintLabelPostRequest.md)
 - [PurchaseOrderIdIdProcessDropshippingPostRequest](docs/Model/PurchaseOrderIdIdProcessDropshippingPostRequest.md)
 - [PurchaseOrderIdIdProcessDropshippingPostRequestProcessPurchaseOrderItemsInner](docs/Model/PurchaseOrderIdIdProcessDropshippingPostRequestProcessPurchaseOrderItemsInner.md)
 - [PurchaseOrderIdIdProcessDropshippingPostRequestShipmentParameters](docs/Model/PurchaseOrderIdIdProcessDropshippingPostRequestShipmentParameters.md)
+- [PurchaseOrderIdIdUpdateStatusPostRequest](docs/Model/PurchaseOrderIdIdUpdateStatusPostRequest.md)
 - [PurchaseOrderItem](docs/Model/PurchaseOrderItem.md)
 - [PurchaseOrderRequest](docs/Model/PurchaseOrderRequest.md)
-- [PurchaseOrderRequestGet200Response](docs/Model/PurchaseOrderRequestGet200Response.md)
 - [PurchaseOrderRequestIdIdCreateBlanketPurchaseOrderPostRequest](docs/Model/PurchaseOrderRequestIdIdCreateBlanketPurchaseOrderPostRequest.md)
 - [PurchaseOrderRequestIdIdCreatePurchaseOrderPostRequest](docs/Model/PurchaseOrderRequestIdIdCreatePurchaseOrderPostRequest.md)
 - [PurchaseOrderRequestIdIdCreatePurchaseOrderPostRequestOfferItemToUpdateSupplierInformationInner](docs/Model/PurchaseOrderRequestIdIdCreatePurchaseOrderPostRequestOfferItemToUpdateSupplierInformationInner.md)
@@ -1468,8 +1730,8 @@ Class | Method | HTTP request | Description
 - [PurchaseOrderRequestType](docs/Model/PurchaseOrderRequestType.md)
 - [PurchaseOrderShippingCostItem](docs/Model/PurchaseOrderShippingCostItem.md)
 - [PurchaseOrderStatusHistory](docs/Model/PurchaseOrderStatusHistory.md)
+- [PurchasePrice](docs/Model/PurchasePrice.md)
 - [PurchaseRequisition](docs/Model/PurchaseRequisition.md)
-- [PurchaseRequisitionGet200Response](docs/Model/PurchaseRequisitionGet200Response.md)
 - [PurchaseRequisitionIdIdAddToInternalShipmentPost200Response](docs/Model/PurchaseRequisitionIdIdAddToInternalShipmentPost200Response.md)
 - [PurchaseRequisitionIdIdAddToInternalShipmentPostRequest](docs/Model/PurchaseRequisitionIdIdAddToInternalShipmentPostRequest.md)
 - [PurchaseRequisitionIdIdAddToPurchaseOrderPostRequest](docs/Model/PurchaseRequisitionIdIdAddToPurchaseOrderPostRequest.md)
@@ -1480,7 +1742,7 @@ Class | Method | HTTP request | Description
 - [PurchaseShippingCostItem](docs/Model/PurchaseShippingCostItem.md)
 - [QuantityConversion](docs/Model/QuantityConversion.md)
 - [Quotation](docs/Model/Quotation.md)
-- [QuotationGet200Response](docs/Model/QuotationGet200Response.md)
+- [QuotationFollowupType](docs/Model/QuotationFollowupType.md)
 - [QuotationIdIdAcceptPost200Response](docs/Model/QuotationIdIdAcceptPost200Response.md)
 - [QuotationIdIdAcceptPostRequest](docs/Model/QuotationIdIdAcceptPostRequest.md)
 - [QuotationIdIdAcceptPostRequestAcceptQuotationItemsInner](docs/Model/QuotationIdIdAcceptPostRequestAcceptQuotationItemsInner.md)
@@ -1491,40 +1753,43 @@ Class | Method | HTTP request | Description
 - [QuotationIdIdInquirePostRequest](docs/Model/QuotationIdIdInquirePostRequest.md)
 - [QuotationIdIdPrintLabelPostRequest](docs/Model/QuotationIdIdPrintLabelPostRequest.md)
 - [QuotationIdIdSetCostsForItemsWithoutCostPostRequest](docs/Model/QuotationIdIdSetCostsForItemsWithoutCostPostRequest.md)
+- [QuotationIdIdUpdateStatusPostRequest](docs/Model/QuotationIdIdUpdateStatusPostRequest.md)
 - [QuotationItem](docs/Model/QuotationItem.md)
+- [QuotationItemRelationship](docs/Model/QuotationItemRelationship.md)
 - [QuotationItemScaleValue](docs/Model/QuotationItemScaleValue.md)
+- [QuotationReminderCalculationType](docs/Model/QuotationReminderCalculationType.md)
 - [QuotationShippingCostItem](docs/Model/QuotationShippingCostItem.md)
 - [QuotationStatusHistory](docs/Model/QuotationStatusHistory.md)
+- [QuotationUnitType](docs/Model/QuotationUnitType.md)
 - [Rating](docs/Model/Rating.md)
+- [Rebate](docs/Model/Rebate.md)
 - [RecordAddress](docs/Model/RecordAddress.md)
 - [RecordEmailingRule](docs/Model/RecordEmailingRule.md)
 - [RecordEmailingRuleEventType](docs/Model/RecordEmailingRuleEventType.md)
-- [RecordEmailingRuleGet200Response](docs/Model/RecordEmailingRuleGet200Response.md)
 - [RecordEmailingRuleRecipientType](docs/Model/RecordEmailingRuleRecipientType.md)
 - [RecordItemReductionAdditionSource](docs/Model/RecordItemReductionAdditionSource.md)
-- [RecordItemReductionAdditionType](docs/Model/RecordItemReductionAdditionType.md)
 - [RecurringEvent](docs/Model/RecurringEvent.md)
 - [RecurringEventType](docs/Model/RecurringEventType.md)
 - [ReductionAddition](docs/Model/ReductionAddition.md)
 - [ReductionAdditionItem](docs/Model/ReductionAdditionItem.md)
+- [ReductionAdditionType](docs/Model/ReductionAdditionType.md)
 - [Region](docs/Model/Region.md)
-- [RegionGet200Response](docs/Model/RegionGet200Response.md)
+- [RegionIdIdResetResponsiblePersonPost200Response](docs/Model/RegionIdIdResetResponsiblePersonPost200Response.md)
 - [Releases](docs/Model/Releases.md)
+- [Religion](docs/Model/Religion.md)
 - [Reminder](docs/Model/Reminder.md)
-- [ReminderGet200Response](docs/Model/ReminderGet200Response.md)
 - [ReminderRecurringEvent](docs/Model/ReminderRecurringEvent.md)
 - [ReminderSendType](docs/Model/ReminderSendType.md)
 - [RemotePrintJob](docs/Model/RemotePrintJob.md)
 - [RemotePrintJobCreatePrintJobWithDocumentPost200Response](docs/Model/RemotePrintJobCreatePrintJobWithDocumentPost200Response.md)
-- [RemotePrintJobGet200Response](docs/Model/RemotePrintJobGet200Response.md)
 - [RemotePrintJobStatus](docs/Model/RemotePrintJobStatus.md)
+- [SalaryType](docs/Model/SalaryType.md)
 - [SalesBillOfMaterialArticleItem](docs/Model/SalesBillOfMaterialArticleItem.md)
 - [SalesChannel](docs/Model/SalesChannel.md)
 - [SalesChannelActiveSalesChannelsGet200Response](docs/Model/SalesChannelActiveSalesChannelsGet200Response.md)
 - [SalesChannelSalesChannelUsageGet200Response](docs/Model/SalesChannelSalesChannelUsageGet200Response.md)
 - [SalesChannelUsage](docs/Model/SalesChannelUsage.md)
 - [SalesInvoice](docs/Model/SalesInvoice.md)
-- [SalesInvoiceGet200Response](docs/Model/SalesInvoiceGet200Response.md)
 - [SalesInvoiceIdIdAddSalesOrdersPostRequest](docs/Model/SalesInvoiceIdIdAddSalesOrdersPostRequest.md)
 - [SalesInvoiceIdIdCalculateSalesPricesPostRequest](docs/Model/SalesInvoiceIdIdCalculateSalesPricesPostRequest.md)
 - [SalesInvoiceIdIdCreateCreditNoteOpenItemPostRequest](docs/Model/SalesInvoiceIdIdCreateCreditNoteOpenItemPostRequest.md)
@@ -1537,16 +1802,13 @@ Class | Method | HTTP request | Description
 - [SalesInvoiceStatusType](docs/Model/SalesInvoiceStatusType.md)
 - [SalesInvoiceType](docs/Model/SalesInvoiceType.md)
 - [SalesOpenItem](docs/Model/SalesOpenItem.md)
-- [SalesOpenItemGet200Response](docs/Model/SalesOpenItemGet200Response.md)
 - [SalesOpenItemIdIdCreatePaymentApplicationPost200Response](docs/Model/SalesOpenItemIdIdCreatePaymentApplicationPost200Response.md)
 - [SalesOrder](docs/Model/SalesOrder.md)
 - [SalesOrderDefaultValuesForCreateGet200Response](docs/Model/SalesOrderDefaultValuesForCreateGet200Response.md)
-- [SalesOrderGet200Response](docs/Model/SalesOrderGet200Response.md)
-- [SalesOrderGet200ResponseAdditionalProperties](docs/Model/SalesOrderGet200ResponseAdditionalProperties.md)
 - [SalesOrderIdIdCalculateSalesPricesPostRequest](docs/Model/SalesOrderIdIdCalculateSalesPricesPostRequest.md)
 - [SalesOrderIdIdCreateDropshippingPostRequest](docs/Model/SalesOrderIdIdCreateDropshippingPostRequest.md)
-- [SalesOrderIdIdCreateProductionOrdersPost200Response](docs/Model/SalesOrderIdIdCreateProductionOrdersPost200Response.md)
 - [SalesOrderIdIdCreateProductionOrdersPostRequest](docs/Model/SalesOrderIdIdCreateProductionOrdersPostRequest.md)
+- [SalesOrderIdIdCreatePurchaseOrderPost200Response](docs/Model/SalesOrderIdIdCreatePurchaseOrderPost200Response.md)
 - [SalesOrderIdIdCreatePurchaseOrderPostRequest](docs/Model/SalesOrderIdIdCreatePurchaseOrderPostRequest.md)
 - [SalesOrderIdIdCreatePurchaseOrderRequestPostRequest](docs/Model/SalesOrderIdIdCreatePurchaseOrderRequestPostRequest.md)
 - [SalesOrderIdIdCreateSalesInvoicePostRequest](docs/Model/SalesOrderIdIdCreateSalesInvoicePostRequest.md)
@@ -1557,46 +1819,46 @@ Class | Method | HTTP request | Description
 - [SalesOrderPaymentType](docs/Model/SalesOrderPaymentType.md)
 - [SalesOrderShippingCostItem](docs/Model/SalesOrderShippingCostItem.md)
 - [SalesOrderStatusHistory](docs/Model/SalesOrderStatusHistory.md)
+- [SalesPrice](docs/Model/SalesPrice.md)
 - [SalesShippingCostItem](docs/Model/SalesShippingCostItem.md)
 - [SalesStage](docs/Model/SalesStage.md)
-- [SalesStageGet200Response](docs/Model/SalesStageGet200Response.md)
 - [SalesStageHistory](docs/Model/SalesStageHistory.md)
+- [SalesTeam](docs/Model/SalesTeam.md)
 - [Salutation](docs/Model/Salutation.md)
 - [SepaDirectDebitMandate](docs/Model/SepaDirectDebitMandate.md)
-- [SepaDirectDebitMandateGet200Response](docs/Model/SepaDirectDebitMandateGet200Response.md)
 - [SepaDirectDebitRuntime](docs/Model/SepaDirectDebitRuntime.md)
 - [SepaDirectDebitType](docs/Model/SepaDirectDebitType.md)
 - [SerialNumber](docs/Model/SerialNumber.md)
-- [SerialNumberGet200Response](docs/Model/SerialNumberGet200Response.md)
+- [ServiceQuota](docs/Model/ServiceQuota.md)
+- [ServiceQuotaIdIdClosePost200Response](docs/Model/ServiceQuotaIdIdClosePost200Response.md)
+- [ServiceQuotaRelationship](docs/Model/ServiceQuotaRelationship.md)
+- [ServiceQuotaStatusHistory](docs/Model/ServiceQuotaStatusHistory.md)
+- [ServiceQuotaStatusType](docs/Model/ServiceQuotaStatusType.md)
 - [ServiceQuotaTreatmentType](docs/Model/ServiceQuotaTreatmentType.md)
 - [Shelf](docs/Model/Shelf.md)
-- [ShelfGet200Response](docs/Model/ShelfGet200Response.md)
 - [ShelfIdIdActivatePost200Response](docs/Model/ShelfIdIdActivatePost200Response.md)
 - [Shipment](docs/Model/Shipment.md)
-- [ShipmentGet200Response](docs/Model/ShipmentGet200Response.md)
+- [ShipmentIdIdCreateSalesInvoicePostRequest](docs/Model/ShipmentIdIdCreateSalesInvoicePostRequest.md)
 - [ShipmentIdIdCreateShippingLabelsPostRequest](docs/Model/ShipmentIdIdCreateShippingLabelsPostRequest.md)
 - [ShipmentIdIdPrintLabelPostRequest](docs/Model/ShipmentIdIdPrintLabelPostRequest.md)
 - [ShipmentInType](docs/Model/ShipmentInType.md)
 - [ShipmentItem](docs/Model/ShipmentItem.md)
 - [ShipmentMethod](docs/Model/ShipmentMethod.md)
-- [ShipmentMethodGet200Response](docs/Model/ShipmentMethodGet200Response.md)
 - [ShipmentOutType](docs/Model/ShipmentOutType.md)
-- [ShipmentReturnAssessmentGet200Response](docs/Model/ShipmentReturnAssessmentGet200Response.md)
 - [ShipmentReturnDescription](docs/Model/ShipmentReturnDescription.md)
 - [ShipmentStatus](docs/Model/ShipmentStatus.md)
 - [ShipmentStatusType](docs/Model/ShipmentStatusType.md)
 - [ShippingCarrier](docs/Model/ShippingCarrier.md)
-- [ShippingCarrierGet200Response](docs/Model/ShippingCarrierGet200Response.md)
 - [ShippingServiceProviderType](docs/Model/ShippingServiceProviderType.md)
 - [SpecialCalculationMode](docs/Model/SpecialCalculationMode.md)
+- [StandaloneSalesPrice](docs/Model/StandaloneSalesPrice.md)
+- [StatusUpdateResult](docs/Model/StatusUpdateResult.md)
+- [StatusUpdateResultType](docs/Model/StatusUpdateResultType.md)
 - [StockMovementType](docs/Model/StockMovementType.md)
 - [StorageLocation](docs/Model/StorageLocation.md)
-- [StorageLocationGet200Response](docs/Model/StorageLocationGet200Response.md)
 - [StorageLocationIdIdActivatePost200Response](docs/Model/StorageLocationIdIdActivatePost200Response.md)
 - [StoragePlace](docs/Model/StoragePlace.md)
-- [StoragePlaceGet200Response](docs/Model/StoragePlaceGet200Response.md)
 - [StoragePlaceSize](docs/Model/StoragePlaceSize.md)
-- [StoragePlaceSizeGet200Response](docs/Model/StoragePlaceSizeGet200Response.md)
 - [StoragePlaceType](docs/Model/StoragePlaceType.md)
 - [StoragePlaceTypeSettings](docs/Model/StoragePlaceTypeSettings.md)
 - [StoreType](docs/Model/StoreType.md)
@@ -1609,30 +1871,23 @@ Class | Method | HTTP request | Description
 - [SystemLicensesGet200Response](docs/Model/SystemLicensesGet200Response.md)
 - [SystemPermissionsGet200Response](docs/Model/SystemPermissionsGet200Response.md)
 - [Tag](docs/Model/Tag.md)
-- [TagGet200Response](docs/Model/TagGet200Response.md)
 - [Task](docs/Model/Task.md)
 - [TaskAssignee](docs/Model/TaskAssignee.md)
 - [TaskFromTemplateGet200Response](docs/Model/TaskFromTemplateGet200Response.md)
-- [TaskGet200Response](docs/Model/TaskGet200Response.md)
-- [TaskGet200ResponseAdditionalProperties](docs/Model/TaskGet200ResponseAdditionalProperties.md)
 - [TaskIdIdUpdateBillingDataPostRequest](docs/Model/TaskIdIdUpdateBillingDataPostRequest.md)
 - [TaskIdIdUpdateBillingDataPostRequestBillingData](docs/Model/TaskIdIdUpdateBillingDataPostRequestBillingData.md)
 - [TaskList](docs/Model/TaskList.md)
-- [TaskListGet200Response](docs/Model/TaskListGet200Response.md)
 - [TaskMailAccount](docs/Model/TaskMailAccount.md)
 - [TaskPriority](docs/Model/TaskPriority.md)
 - [TaskProgressStatus](docs/Model/TaskProgressStatus.md)
 - [TaskTemplate](docs/Model/TaskTemplate.md)
 - [TaskTemplateAssignee](docs/Model/TaskTemplateAssignee.md)
-- [TaskTemplateGet200Response](docs/Model/TaskTemplateGet200Response.md)
 - [TaskVisibilityType](docs/Model/TaskVisibilityType.md)
 - [Tax](docs/Model/Tax.md)
 - [TaxConfigurePurchaseTaxesPostRequest](docs/Model/TaxConfigurePurchaseTaxesPostRequest.md)
 - [TaxConfigureSalesTaxesPostRequest](docs/Model/TaxConfigureSalesTaxesPostRequest.md)
 - [TaxDeterminationRule](docs/Model/TaxDeterminationRule.md)
-- [TaxDeterminationRuleGet200Response](docs/Model/TaxDeterminationRuleGet200Response.md)
 - [TaxFindPurchaseTaxGet200Response](docs/Model/TaxFindPurchaseTaxGet200Response.md)
-- [TaxGet200Response](docs/Model/TaxGet200Response.md)
 - [TaxKey](docs/Model/TaxKey.md)
 - [TaxRateType](docs/Model/TaxRateType.md)
 - [TaxResetSystemTaxesPostRequest](docs/Model/TaxResetSystemTaxesPostRequest.md)
@@ -1641,96 +1896,81 @@ Class | Method | HTTP request | Description
 - [TemplateType](docs/Model/TemplateType.md)
 - [TermOfPayment](docs/Model/TermOfPayment.md)
 - [TermOfPaymentCondition](docs/Model/TermOfPaymentCondition.md)
-- [TermOfPaymentGet200Response](docs/Model/TermOfPaymentGet200Response.md)
 - [Ticket](docs/Model/Ticket.md)
 - [TicketAssigneeType](docs/Model/TicketAssigneeType.md)
 - [TicketAssignmentRule](docs/Model/TicketAssignmentRule.md)
-- [TicketAssignmentRuleGet200Response](docs/Model/TicketAssignmentRuleGet200Response.md)
 - [TicketCategory](docs/Model/TicketCategory.md)
-- [TicketCategoryGet200Response](docs/Model/TicketCategoryGet200Response.md)
 - [TicketFaq](docs/Model/TicketFaq.md)
-- [TicketFaqGet200Response](docs/Model/TicketFaqGet200Response.md)
 - [TicketFaqVisibility](docs/Model/TicketFaqVisibility.md)
-- [TicketGet200Response](docs/Model/TicketGet200Response.md)
-- [TicketGet200ResponseAdditionalProperties](docs/Model/TicketGet200ResponseAdditionalProperties.md)
 - [TicketIdIdCreatePublicPagePost200Response](docs/Model/TicketIdIdCreatePublicPagePost200Response.md)
 - [TicketIdIdLinkSalesOrderPostRequest](docs/Model/TicketIdIdLinkSalesOrderPostRequest.md)
 - [TicketPoolingGroup](docs/Model/TicketPoolingGroup.md)
-- [TicketPoolingGroupGet200Response](docs/Model/TicketPoolingGroupGet200Response.md)
 - [TicketPoolingGroupMember](docs/Model/TicketPoolingGroupMember.md)
+- [TicketPriority](docs/Model/TicketPriority.md)
 - [TicketServiceLevelAgreement](docs/Model/TicketServiceLevelAgreement.md)
-- [TicketServiceLevelAgreementGet200Response](docs/Model/TicketServiceLevelAgreementGet200Response.md)
 - [TicketServiceLevelAgreementTarget](docs/Model/TicketServiceLevelAgreementTarget.md)
 - [TicketServiceLevelAgreementUnit](docs/Model/TicketServiceLevelAgreementUnit.md)
 - [TicketStatus](docs/Model/TicketStatus.md)
 - [TicketStatusColor](docs/Model/TicketStatusColor.md)
-- [TicketStatusGet200Response](docs/Model/TicketStatusGet200Response.md)
 - [TicketType](docs/Model/TicketType.md)
-- [TicketTypeGet200Response](docs/Model/TicketTypeGet200Response.md)
 - [TimeRecord](docs/Model/TimeRecord.md)
-- [TimeRecordGet200Response](docs/Model/TimeRecordGet200Response.md)
-- [TimeRecordGet200ResponseAdditionalProperties](docs/Model/TimeRecordGet200ResponseAdditionalProperties.md)
 - [TimeRecordSource](docs/Model/TimeRecordSource.md)
 - [TimeUnit](docs/Model/TimeUnit.md)
 - [Translation](docs/Model/Translation.md)
-- [TranslationGet200Response](docs/Model/TranslationGet200Response.md)
 - [TranslationValue](docs/Model/TranslationValue.md)
 - [TransportPick](docs/Model/TransportPick.md)
 - [TransportationOrder](docs/Model/TransportationOrder.md)
-- [TransportationOrderGet200Response](docs/Model/TransportationOrderGet200Response.md)
-- [TransportationOrderIdIdCreatePickPost200Response](docs/Model/TransportationOrderIdIdCreatePickPost200Response.md)
+- [TransportationOrderIdIdAddPicksPostRequest](docs/Model/TransportationOrderIdIdAddPicksPostRequest.md)
 - [TransportationOrderIdIdCreatePickPostRequest](docs/Model/TransportationOrderIdIdCreatePickPostRequest.md)
 - [TransportationOrderIdIdCreatePickPostRequestExistingReservationsInner](docs/Model/TransportationOrderIdIdCreatePickPostRequestExistingReservationsInner.md)
 - [TransportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPostRequest](docs/Model/TransportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPostRequest.md)
+- [TransportationOrderIdIdInternalTransportReferencesForPickUpGet200Response](docs/Model/TransportationOrderIdIdInternalTransportReferencesForPickUpGet200Response.md)
 - [TransportationOrderIdIdPickPickPostRequest](docs/Model/TransportationOrderIdIdPickPickPostRequest.md)
 - [TransportationOrderIdIdPutDownInternalTransportReferencePostRequest](docs/Model/TransportationOrderIdIdPutDownInternalTransportReferencePostRequest.md)
 - [TransportationOrderStatusHistory](docs/Model/TransportationOrderStatusHistory.md)
 - [TransportationOrderStatusType](docs/Model/TransportationOrderStatusType.md)
 - [TransportationOrderType](docs/Model/TransportationOrderType.md)
 - [Unit](docs/Model/Unit.md)
-- [UnitGet200Response](docs/Model/UnitGet200Response.md)
 - [Usage](docs/Model/Usage.md)
 - [User](docs/Model/User.md)
 - [UserCurrentUserGet200Response](docs/Model/UserCurrentUserGet200Response.md)
-- [UserGet200Response](docs/Model/UserGet200Response.md)
 - [UserIdIdDeleteMfaDevicePostRequest](docs/Model/UserIdIdDeleteMfaDevicePostRequest.md)
 - [UserIdIdReadMfaDevicesGet200Response](docs/Model/UserIdIdReadMfaDevicesGet200Response.md)
 - [UserMfaDevice](docs/Model/UserMfaDevice.md)
 - [UserMfaDeviceType](docs/Model/UserMfaDeviceType.md)
 - [UserRole](docs/Model/UserRole.md)
-- [UserRoleGet200Response](docs/Model/UserRoleGet200Response.md)
 - [UserStatus](docs/Model/UserStatus.md)
 - [ValidationError](docs/Model/ValidationError.md)
+- [ValidationErrorCodeInfo](docs/Model/ValidationErrorCodeInfo.md)
+- [ValidationErrorCodes](docs/Model/ValidationErrorCodes.md)
 - [ValidationErrorType](docs/Model/ValidationErrorType.md)
 - [VariantArticle](docs/Model/VariantArticle.md)
 - [VariantArticleAttribute](docs/Model/VariantArticleAttribute.md)
-- [VariantArticleAttributeGet200Response](docs/Model/VariantArticleAttributeGet200Response.md)
 - [VariantArticleAttributeOption](docs/Model/VariantArticleAttributeOption.md)
-- [VariantArticleGet200Response](docs/Model/VariantArticleGet200Response.md)
 - [VariantArticleVariant](docs/Model/VariantArticleVariant.md)
-- [VariantArticleVariantGet200Response](docs/Model/VariantArticleVariantGet200Response.md)
 - [VariantArticleVariantWithoutReference](docs/Model/VariantArticleVariantWithoutReference.md)
 - [Warehouse](docs/Model/Warehouse.md)
-- [WarehouseGet200Response](docs/Model/WarehouseGet200Response.md)
 - [WarehouseIdIdActivatePost200Response](docs/Model/WarehouseIdIdActivatePost200Response.md)
 - [WarehouseQuantity](docs/Model/WarehouseQuantity.md)
 - [WarehouseStock](docs/Model/WarehouseStock.md)
-- [WarehouseStockGet200Response](docs/Model/WarehouseStockGet200Response.md)
 - [WarehouseStockMovement](docs/Model/WarehouseStockMovement.md)
+- [WarehouseStockMovementBookDirectStockTransferPost200Response](docs/Model/WarehouseStockMovementBookDirectStockTransferPost200Response.md)
 - [WarehouseStockMovementBookDirectStockTransferPostRequest](docs/Model/WarehouseStockMovementBookDirectStockTransferPostRequest.md)
-- [WarehouseStockMovementBookDirectStockTransferPostRequestCustomAttributesInner](docs/Model/WarehouseStockMovementBookDirectStockTransferPostRequestCustomAttributesInner.md)
 - [WarehouseStockMovementBookFromLoadingEquipmentPlacePostRequest](docs/Model/WarehouseStockMovementBookFromLoadingEquipmentPlacePostRequest.md)
 - [WarehouseStockMovementBookIncomingMovementPostRequest](docs/Model/WarehouseStockMovementBookIncomingMovementPostRequest.md)
 - [WarehouseStockMovementBookOntoInternalTransportReferencePostRequest](docs/Model/WarehouseStockMovementBookOntoInternalTransportReferencePostRequest.md)
 - [WarehouseStockMovementBookOutgoingMovementPostRequest](docs/Model/WarehouseStockMovementBookOutgoingMovementPostRequest.md)
 - [WarehouseStockMovementBookToLoadingEquipmentPlacePostRequest](docs/Model/WarehouseStockMovementBookToLoadingEquipmentPlacePostRequest.md)
-- [WarehouseStockMovementGet200Response](docs/Model/WarehouseStockMovementGet200Response.md)
 - [Webhook](docs/Model/Webhook.md)
-- [WebhookGet200Response](docs/Model/WebhookGet200Response.md)
 - [WebhookRequestMethod](docs/Model/WebhookRequestMethod.md)
 - [WeclappOs](docs/Model/WeclappOs.md)
-- [WeclappOsGet200Response](docs/Model/WeclappOsGet200Response.md)
-- [WeclappOsGet200ResponseAdditionalProperties](docs/Model/WeclappOsGet200ResponseAdditionalProperties.md)
+- [WorkScheduleDay](docs/Model/WorkScheduleDay.md)
+- [WorkScheduleProfile](docs/Model/WorkScheduleProfile.md)
+- [WorkScheduleProfileAssignment](docs/Model/WorkScheduleProfileAssignment.md)
+- [WorkScheduleProfileType](docs/Model/WorkScheduleProfileType.md)
+- [WorkingTimeBreakRule](docs/Model/WorkingTimeBreakRule.md)
+- [WorkingTimeRule](docs/Model/WorkingTimeRule.md)
+- [WorkingTimeRuleAssignment](docs/Model/WorkingTimeRuleAssignment.md)
 
 ## Authorization
 
@@ -1760,5 +2000,5 @@ support@weclapp.com
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `2`
-    - Generator version: `7.16.0`
+    - Generator version: `7.27.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

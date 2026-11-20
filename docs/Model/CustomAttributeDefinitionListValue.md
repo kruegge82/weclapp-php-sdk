@@ -1,4 +1,4 @@
-# # CustomAttributeDefinitionListValue
+# CustomAttributeDefinitionListValue
 
 ## Properties
 

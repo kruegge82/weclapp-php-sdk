@@ -1,4 +1,4 @@
-# # SupplierOrderStatusType
+# SupplierOrderStatusType
 
 ## Properties
 

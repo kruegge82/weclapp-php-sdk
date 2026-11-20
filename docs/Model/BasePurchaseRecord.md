@@ -1,4 +1,4 @@
-# # BasePurchaseRecord
+# BasePurchaseRecord
 
 ## Properties
 
@@ -23,14 +23,21 @@ Name | Type | Description | Notes
 **currency_conversion_rate** | **float** |  | [optional]
 **gross_amount** | **float** |  | [optional] [readonly]
 **gross_amount_in_company_currency** | **float** |  | [optional] [readonly]
+**gross_amount_without_shipping_costs** | **float** |  | [optional] [readonly]
+**gross_amount_without_shipping_costs_in_company_currency** | **float** |  | [optional] [readonly]
 **header_discount** | **float** |  | [optional]
 **header_surcharge** | **float** |  | [optional]
 **net_amount** | **float** |  | [optional] [readonly]
 **net_amount_in_company_currency** | **float** |  | [optional] [readonly]
+**net_amount_without_shipping_costs** | **float** |  | [optional] [readonly]
+**net_amount_without_shipping_costs_in_company_currency** | **float** |  | [optional] [readonly]
 **non_standard_tax_id** | **string** |  | [optional]
 **payment_method_id** | **string** |  | [optional]
 **record_currency_id** | **string** |  | [optional]
 **term_of_payment_id** | **string** |  | [optional]
+**vat_amount** | **float** |  | [optional] [readonly]
+**vat_amount_in_company_currency** | **float** |  | [optional] [readonly]
+**last_status_change_user_id** | **string** |  | [optional] [readonly]
 **record_email_addresses** | [**\kruegge82\weclapp\Model\EmailAddresses**](EmailAddresses.md) |  | [optional]
 **responsible_user_id** | **string** |  | [optional]
 **service_period_from** | **int** |  | [optional]

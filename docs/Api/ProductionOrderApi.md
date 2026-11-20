@@ -1,5 +1,7 @@
 # kruegge82\weclapp\ProductionOrderApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -8,6 +10,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 | [**productionOrderFastProductionBookingPost()**](ProductionOrderApi.md#productionOrderFastProductionBookingPost) | **POST** /productionOrder/fastProductionBooking |  |
 | [**productionOrderGet()**](ProductionOrderApi.md#productionOrderGet) | **GET** /productionOrder | query productionOrder |
 | [**productionOrderIdIdCreatePickingListPost()**](ProductionOrderApi.md#productionOrderIdIdCreatePickingListPost) | **POST** /productionOrder/id/{id}/createPickingList |  |
+| [**productionOrderIdIdCreatePickingOrderPost()**](ProductionOrderApi.md#productionOrderIdIdCreatePickingOrderPost) | **POST** /productionOrder/id/{id}/createPickingOrder |  |
 | [**productionOrderIdIdDelete()**](ProductionOrderApi.md#productionOrderIdIdDelete) | **DELETE** /productionOrder/id/{id} | delete a productionOrder |
 | [**productionOrderIdIdDownloadLatestProductionOrderPdfGet()**](ProductionOrderApi.md#productionOrderIdIdDownloadLatestProductionOrderPdfGet) | **GET** /productionOrder/id/{id}/downloadLatestProductionOrderPdf |  |
 | [**productionOrderIdIdGet()**](ProductionOrderApi.md#productionOrderIdIdGet) | **GET** /productionOrder/id/{id} | query a specific productionOrder |
@@ -18,7 +21,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `productionOrderCountGet()`
 
 ```php
-productionOrderCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+productionOrderCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count productionOrder
@@ -62,7 +65,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -140,7 +143,7 @@ try {
 ## `productionOrderGet()`
 
 ```php
-productionOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\ProductionOrderGet200Response
+productionOrderGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\InlineObject60
 ```
 
 query productionOrder
@@ -166,6 +169,7 @@ $apiInstance = new kruegge82\weclapp\Api\ProductionOrderApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -176,7 +180,7 @@ $include_referenced_entities = 'include_referenced_entities_example'; // string
 $additional_properties = 'additional_properties_example'; // string
 
 try {
-    $result = $apiInstance->productionOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
+    $result = $apiInstance->productionOrderGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductionOrderApi->productionOrderGet: ', $e->getMessage(), PHP_EOL;
@@ -187,6 +191,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -198,7 +203,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\ProductionOrderGet200Response**](../Model/ProductionOrderGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject60**](../Model/InlineObject60.md)
 
 ### Authorization
 
@@ -270,6 +275,68 @@ try {
 
 - **Content-Type**: `application/json`
 - **Accept**: `*/*`, `application/pdf`, `image/jpeg`, `image/png`, `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `productionOrderIdIdCreatePickingOrderPost()`
+
+```php
+productionOrderIdIdCreatePickingOrderPost($id, $production_order_id_id_create_picking_order_post_request): \kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPost200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\ProductionOrderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$production_order_id_id_create_picking_order_post_request = new \kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPostRequest(); // \kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPostRequest
+
+try {
+    $result = $apiInstance->productionOrderIdIdCreatePickingOrderPost($id, $production_order_id_id_create_picking_order_post_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductionOrderApi->productionOrderIdIdCreatePickingOrderPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **production_order_id_id_create_picking_order_post_request** | [**\kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPostRequest**](../Model/ProductionOrderIdIdCreatePickingOrderPostRequest.md)|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPost200Response**](../Model/ProductionOrderIdIdCreatePickingOrderPost200Response.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

@@ -1,4 +1,4 @@
-# # CampaignType
+# CampaignType
 
 ## Properties
 

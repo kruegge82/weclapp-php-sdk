@@ -1,4 +1,4 @@
-# # PaymentRun
+# PaymentRun
 
 ## Properties
 

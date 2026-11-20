@@ -1,4 +1,4 @@
-# # CurrencyCompanyCurrencyGet200Response
+# CurrencyCompanyCurrencyGet200Response
 
 ## Properties
 

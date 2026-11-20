@@ -1,4 +1,4 @@
-# # DunningBlockState
+# DunningBlockState
 
 ## Properties
 

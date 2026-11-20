@@ -1,4 +1,4 @@
-# # RecordItemReductionAdditionSource
+# RecordItemReductionAdditionSource
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # InternalShippingCarrier
+# InternalShippingCarrier
 
 ## Properties
 

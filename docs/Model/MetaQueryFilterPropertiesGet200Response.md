@@ -1,4 +1,4 @@
-# # MetaQueryFilterPropertiesGet200Response
+# MetaQueryFilterPropertiesGet200Response
 
 ## Properties
 

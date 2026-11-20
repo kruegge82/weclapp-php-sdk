@@ -1,4 +1,4 @@
-# # SystemLicensesGet200Response
+# SystemLicensesGet200Response
 
 ## Properties
 

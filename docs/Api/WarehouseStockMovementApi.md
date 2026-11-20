@@ -1,5 +1,7 @@
 # kruegge82\weclapp\WarehouseStockMovementApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -18,7 +20,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `warehouseStockMovementBookDirectStockTransferPost()`
 
 ```php
-warehouseStockMovementBookDirectStockTransferPost($warehouse_stock_movement_book_direct_stock_transfer_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
+warehouseStockMovementBookDirectStockTransferPost($warehouse_stock_movement_book_direct_stock_transfer_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPost200Response
 ```
 
 
@@ -60,7 +62,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\WarehouseStockMovementGet200Response**](../Model/WarehouseStockMovementGet200Response.md)
+[**\kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPost200Response**](../Model/WarehouseStockMovementBookDirectStockTransferPost200Response.md)
 
 ### Authorization
 
@@ -78,7 +80,7 @@ try {
 ## `warehouseStockMovementBookFromLoadingEquipmentPlacePost()`
 
 ```php
-warehouseStockMovementBookFromLoadingEquipmentPlacePost($warehouse_stock_movement_book_from_loading_equipment_place_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
+warehouseStockMovementBookFromLoadingEquipmentPlacePost($warehouse_stock_movement_book_from_loading_equipment_place_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPost200Response
 ```
 
 
@@ -120,7 +122,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\WarehouseStockMovementGet200Response**](../Model/WarehouseStockMovementGet200Response.md)
+[**\kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPost200Response**](../Model/WarehouseStockMovementBookDirectStockTransferPost200Response.md)
 
 ### Authorization
 
@@ -138,7 +140,7 @@ try {
 ## `warehouseStockMovementBookIncomingMovementPost()`
 
 ```php
-warehouseStockMovementBookIncomingMovementPost($warehouse_stock_movement_book_incoming_movement_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
+warehouseStockMovementBookIncomingMovementPost($warehouse_stock_movement_book_incoming_movement_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPost200Response
 ```
 
 
@@ -180,7 +182,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\WarehouseStockMovementGet200Response**](../Model/WarehouseStockMovementGet200Response.md)
+[**\kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPost200Response**](../Model/WarehouseStockMovementBookDirectStockTransferPost200Response.md)
 
 ### Authorization
 
@@ -198,7 +200,7 @@ try {
 ## `warehouseStockMovementBookOntoInternalTransportReferencePost()`
 
 ```php
-warehouseStockMovementBookOntoInternalTransportReferencePost($warehouse_stock_movement_book_onto_internal_transport_reference_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
+warehouseStockMovementBookOntoInternalTransportReferencePost($warehouse_stock_movement_book_onto_internal_transport_reference_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPost200Response
 ```
 
 
@@ -240,7 +242,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\WarehouseStockMovementGet200Response**](../Model/WarehouseStockMovementGet200Response.md)
+[**\kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPost200Response**](../Model/WarehouseStockMovementBookDirectStockTransferPost200Response.md)
 
 ### Authorization
 
@@ -258,7 +260,7 @@ try {
 ## `warehouseStockMovementBookOutgoingMovementPost()`
 
 ```php
-warehouseStockMovementBookOutgoingMovementPost($warehouse_stock_movement_book_outgoing_movement_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
+warehouseStockMovementBookOutgoingMovementPost($warehouse_stock_movement_book_outgoing_movement_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPost200Response
 ```
 
 
@@ -300,7 +302,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\WarehouseStockMovementGet200Response**](../Model/WarehouseStockMovementGet200Response.md)
+[**\kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPost200Response**](../Model/WarehouseStockMovementBookDirectStockTransferPost200Response.md)
 
 ### Authorization
 
@@ -318,7 +320,7 @@ try {
 ## `warehouseStockMovementBookToLoadingEquipmentPlacePost()`
 
 ```php
-warehouseStockMovementBookToLoadingEquipmentPlacePost($warehouse_stock_movement_book_to_loading_equipment_place_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
+warehouseStockMovementBookToLoadingEquipmentPlacePost($warehouse_stock_movement_book_to_loading_equipment_place_post_request): \kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPost200Response
 ```
 
 
@@ -360,7 +362,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\WarehouseStockMovementGet200Response**](../Model/WarehouseStockMovementGet200Response.md)
+[**\kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPost200Response**](../Model/WarehouseStockMovementBookDirectStockTransferPost200Response.md)
 
 ### Authorization
 
@@ -378,7 +380,7 @@ try {
 ## `warehouseStockMovementCountGet()`
 
 ```php
-warehouseStockMovementCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+warehouseStockMovementCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count warehouseStockMovement
@@ -422,7 +424,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -440,7 +442,7 @@ try {
 ## `warehouseStockMovementGet()`
 
 ```php
-warehouseStockMovementGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\WarehouseStockMovementGet200Response
+warehouseStockMovementGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPost200Response
 ```
 
 query warehouseStockMovement
@@ -466,6 +468,7 @@ $apiInstance = new kruegge82\weclapp\Api\WarehouseStockMovementApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -475,7 +478,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->warehouseStockMovementGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->warehouseStockMovementGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WarehouseStockMovementApi->warehouseStockMovementGet: ', $e->getMessage(), PHP_EOL;
@@ -486,6 +489,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -496,7 +500,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\WarehouseStockMovementGet200Response**](../Model/WarehouseStockMovementGet200Response.md)
+[**\kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPost200Response**](../Model/WarehouseStockMovementBookDirectStockTransferPost200Response.md)
 
 ### Authorization
 

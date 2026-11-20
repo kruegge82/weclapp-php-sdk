@@ -1,4 +1,4 @@
-# # FastProductionBookingResultMessage
+# FastProductionBookingResultMessage
 
 ## Properties
 

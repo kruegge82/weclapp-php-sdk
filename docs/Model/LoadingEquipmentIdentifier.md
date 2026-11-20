@@ -1,4 +1,4 @@
-# # LoadingEquipmentIdentifier
+# LoadingEquipmentIdentifier
 
 ## Properties
 

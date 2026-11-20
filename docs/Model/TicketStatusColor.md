@@ -1,4 +1,4 @@
-# # TicketStatusColor
+# TicketStatusColor
 
 ## Properties
 

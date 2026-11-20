@@ -1,4 +1,4 @@
-# # AccountingTransactionStatus
+# AccountingTransactionStatus
 
 ## Properties
 

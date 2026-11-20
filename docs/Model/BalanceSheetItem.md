@@ -1,4 +1,4 @@
-# # BalanceSheetItem
+# BalanceSheetItem
 
 ## Properties
 

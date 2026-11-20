@@ -1,11 +1,14 @@
 # kruegge82\weclapp\TransportationOrderApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**transportationOrderCountGet()**](TransportationOrderApi.md#transportationOrderCountGet) | **GET** /transportationOrder/count | count transportationOrder |
 | [**transportationOrderGet()**](TransportationOrderApi.md#transportationOrderGet) | **GET** /transportationOrder | query transportationOrder |
+| [**transportationOrderIdIdAddPicksPost()**](TransportationOrderApi.md#transportationOrderIdIdAddPicksPost) | **POST** /transportationOrder/id/{id}/addPicks |  |
 | [**transportationOrderIdIdCreatePickPost()**](TransportationOrderApi.md#transportationOrderIdIdCreatePickPost) | **POST** /transportationOrder/id/{id}/createPick |  |
 | [**transportationOrderIdIdCreatePickingListPost()**](TransportationOrderApi.md#transportationOrderIdIdCreatePickingListPost) | **POST** /transportationOrder/id/{id}/createPickingList |  |
 | [**transportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPost()**](TransportationOrderApi.md#transportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPost) | **POST** /transportationOrder/id/{id}/createTransportationOrderFromUnpickedRecords |  |
@@ -21,7 +24,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `transportationOrderCountGet()`
 
 ```php
-transportationOrderCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+transportationOrderCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count transportationOrder
@@ -65,7 +68,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -83,7 +86,7 @@ try {
 ## `transportationOrderGet()`
 
 ```php
-transportationOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\TransportationOrderGet200Response
+transportationOrderGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject110
 ```
 
 query transportationOrder
@@ -109,6 +112,7 @@ $apiInstance = new kruegge82\weclapp\Api\TransportationOrderApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -118,7 +122,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->transportationOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->transportationOrderGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransportationOrderApi->transportationOrderGet: ', $e->getMessage(), PHP_EOL;
@@ -129,6 +133,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -139,7 +144,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\TransportationOrderGet200Response**](../Model/TransportationOrderGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject110**](../Model/InlineObject110.md)
 
 ### Authorization
 
@@ -154,10 +159,72 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `transportationOrderIdIdAddPicksPost()`
+
+```php
+transportationOrderIdIdAddPicksPost($id, $transportation_order_id_id_add_picks_post_request): \kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPost200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\TransportationOrderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$transportation_order_id_id_add_picks_post_request = new \kruegge82\weclapp\Model\TransportationOrderIdIdAddPicksPostRequest(); // \kruegge82\weclapp\Model\TransportationOrderIdIdAddPicksPostRequest
+
+try {
+    $result = $apiInstance->transportationOrderIdIdAddPicksPost($id, $transportation_order_id_id_add_picks_post_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TransportationOrderApi->transportationOrderIdIdAddPicksPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **transportation_order_id_id_add_picks_post_request** | [**\kruegge82\weclapp\Model\TransportationOrderIdIdAddPicksPostRequest**](../Model/TransportationOrderIdIdAddPicksPostRequest.md)|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPost200Response**](../Model/ProductionOrderIdIdCreatePickingOrderPost200Response.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `transportationOrderIdIdCreatePickPost()`
 
 ```php
-transportationOrderIdIdCreatePickPost($id, $transportation_order_id_id_create_pick_post_request): \kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPost200Response
+transportationOrderIdIdCreatePickPost($id, $transportation_order_id_id_create_pick_post_request): \kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPost200Response
 ```
 
 
@@ -201,7 +268,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPost200Response**](../Model/TransportationOrderIdIdCreatePickPost200Response.md)
+[**\kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPost200Response**](../Model/ProductionOrderIdIdCreatePickingOrderPost200Response.md)
 
 ### Authorization
 
@@ -281,7 +348,7 @@ try {
 ## `transportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPost()`
 
 ```php
-transportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPost($id, $transportation_order_id_id_create_transportation_order_from_unpicked_records_post_request): \kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPost200Response
+transportationOrderIdIdCreateTransportationOrderFromUnpickedRecordsPost($id, $transportation_order_id_id_create_transportation_order_from_unpicked_records_post_request): \kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPost200Response
 ```
 
 
@@ -325,7 +392,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPost200Response**](../Model/TransportationOrderIdIdCreatePickPost200Response.md)
+[**\kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPost200Response**](../Model/ProductionOrderIdIdCreatePickingOrderPost200Response.md)
 
 ### Authorization
 
@@ -468,7 +535,7 @@ try {
 ## `transportationOrderIdIdInternalTransportReferencesForPickUpGet()`
 
 ```php
-transportationOrderIdIdInternalTransportReferencesForPickUpGet($id, $ignore_current_loading_equipment): \kruegge82\weclapp\Model\InternalTransportReferenceGet200Response
+transportationOrderIdIdInternalTransportReferencesForPickUpGet($id, $ignore_current_loading_equipment): \kruegge82\weclapp\Model\TransportationOrderIdIdInternalTransportReferencesForPickUpGet200Response
 ```
 
 
@@ -512,7 +579,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\InternalTransportReferenceGet200Response**](../Model/InternalTransportReferenceGet200Response.md)
+[**\kruegge82\weclapp\Model\TransportationOrderIdIdInternalTransportReferencesForPickUpGet200Response**](../Model/TransportationOrderIdIdInternalTransportReferencesForPickUpGet200Response.md)
 
 ### Authorization
 
@@ -530,7 +597,7 @@ try {
 ## `transportationOrderIdIdPickPickPost()`
 
 ```php
-transportationOrderIdIdPickPickPost($id, $transportation_order_id_id_pick_pick_post_request): \kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPost200Response
+transportationOrderIdIdPickPickPost($id, $transportation_order_id_id_pick_pick_post_request): \kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPost200Response
 ```
 
 
@@ -574,7 +641,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPost200Response**](../Model/TransportationOrderIdIdCreatePickPost200Response.md)
+[**\kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPost200Response**](../Model/ProductionOrderIdIdCreatePickingOrderPost200Response.md)
 
 ### Authorization
 
@@ -658,7 +725,7 @@ try {
 ## `transportationOrderIdIdPutDownInternalTransportReferencePost()`
 
 ```php
-transportationOrderIdIdPutDownInternalTransportReferencePost($id, $transportation_order_id_id_put_down_internal_transport_reference_post_request): \kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPost200Response
+transportationOrderIdIdPutDownInternalTransportReferencePost($id, $transportation_order_id_id_put_down_internal_transport_reference_post_request): \kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPost200Response
 ```
 
 
@@ -702,7 +769,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\TransportationOrderIdIdCreatePickPost200Response**](../Model/TransportationOrderIdIdCreatePickPost200Response.md)
+[**\kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPost200Response**](../Model/ProductionOrderIdIdCreatePickingOrderPost200Response.md)
 
 ### Authorization
 

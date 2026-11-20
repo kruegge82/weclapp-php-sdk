@@ -1,4 +1,4 @@
-# # AggregatePackagingUnit
+# AggregatePackagingUnit
 
 ## Properties
 

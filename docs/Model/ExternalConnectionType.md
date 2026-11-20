@@ -1,4 +1,4 @@
-# # ExternalConnectionType
+# ExternalConnectionType
 
 ## Properties
 

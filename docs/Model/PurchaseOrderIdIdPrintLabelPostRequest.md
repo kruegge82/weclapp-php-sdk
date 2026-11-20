@@ -1,4 +1,4 @@
-# # PurchaseOrderIdIdPrintLabelPostRequest
+# PurchaseOrderIdIdPrintLabelPostRequest
 
 ## Properties
 

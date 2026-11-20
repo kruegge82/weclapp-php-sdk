@@ -1,4 +1,4 @@
-# # AccountingTransactionBatchBookingPost200Response
+# AccountingTransactionBatchBookingPost200Response
 
 ## Properties
 

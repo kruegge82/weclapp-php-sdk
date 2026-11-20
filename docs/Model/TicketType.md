@@ -1,4 +1,4 @@
-# # TicketType
+# TicketType
 
 ## Properties
 

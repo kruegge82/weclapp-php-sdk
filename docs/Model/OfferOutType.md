@@ -1,4 +1,4 @@
-# # OfferOutType
+# OfferOutType
 
 ## Properties
 

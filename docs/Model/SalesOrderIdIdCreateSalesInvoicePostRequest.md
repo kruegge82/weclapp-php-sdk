@@ -1,9 +1,10 @@
-# # SalesOrderIdIdCreateSalesInvoicePostRequest
+# SalesOrderIdIdCreateSalesInvoicePostRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **additional_sales_order_ids** | **string[]** |  | [optional]
+**custom_attributes** | [**\kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPostRequestCustomAttributesInner[]**](ProductionOrderIdIdCreatePickingOrderPostRequestCustomAttributesInner.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

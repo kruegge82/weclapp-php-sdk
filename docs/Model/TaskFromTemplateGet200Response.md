@@ -1,4 +1,4 @@
-# # TaskFromTemplateGet200Response
+# TaskFromTemplateGet200Response
 
 ## Properties
 

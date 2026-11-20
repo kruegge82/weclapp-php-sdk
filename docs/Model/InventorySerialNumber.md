@@ -1,4 +1,4 @@
-# # InventorySerialNumber
+# InventorySerialNumber
 
 ## Properties
 

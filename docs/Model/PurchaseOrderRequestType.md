@@ -1,4 +1,4 @@
-# # PurchaseOrderRequestType
+# PurchaseOrderRequestType
 
 ## Properties
 

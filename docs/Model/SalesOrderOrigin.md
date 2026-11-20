@@ -1,4 +1,4 @@
-# # SalesOrderOrigin
+# SalesOrderOrigin
 
 ## Properties
 

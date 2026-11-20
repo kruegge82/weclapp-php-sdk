@@ -1,4 +1,4 @@
-# # BaseRecordItemWithMoney
+# BaseRecordItemWithMoney
 
 ## Properties
 

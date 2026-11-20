@@ -1,4 +1,4 @@
-# # InventoryCreatePostRequest
+# InventoryCreatePostRequest
 
 ## Properties
 

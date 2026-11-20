@@ -1,4 +1,4 @@
-# # BlanketPurchaseOrderIdIdGenerateReleasesPost200Response
+# BlanketPurchaseOrderIdIdGenerateReleasesPost200Response
 
 ## Properties
 

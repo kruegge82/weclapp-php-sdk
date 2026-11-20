@@ -1,11 +1,11 @@
-# # SalesOrderStatusHistory
+# SalesOrderStatusHistory
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **credit_limit_exceeded** | **bool** |  | [optional] [readonly]
-**status** | [**\kruegge82\weclapp\Model\OrderStatusType**](OrderStatusType.md) |  | [optional]
+**status** | [**\kruegge82\weclapp\Model\OrderStatusType**](OrderStatusType.md) |  | [optional] [readonly]
 **status_date** | **int** |  | [optional] [readonly]
 **user_id** | **string** |  | [optional] [readonly]
 

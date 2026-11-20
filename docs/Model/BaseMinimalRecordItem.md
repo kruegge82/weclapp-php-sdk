@@ -1,4 +1,4 @@
-# # BaseMinimalRecordItem
+# BaseMinimalRecordItem
 
 ## Properties
 

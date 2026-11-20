@@ -1,4 +1,4 @@
-# # WeclappOs
+# WeclappOs
 
 ## Properties
 

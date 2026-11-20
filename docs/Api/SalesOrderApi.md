@@ -1,5 +1,7 @@
 # kruegge82\weclapp\SalesOrderApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -45,7 +47,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `salesOrderCountGet()`
 
 ```php
-salesOrderCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+salesOrderCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count salesOrder
@@ -89,7 +91,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -169,7 +171,7 @@ try {
 ## `salesOrderGet()`
 
 ```php
-salesOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\SalesOrderGet200Response
+salesOrderGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\InlineObject78
 ```
 
 query salesOrder
@@ -195,6 +197,7 @@ $apiInstance = new kruegge82\weclapp\Api\SalesOrderApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -205,7 +208,7 @@ $include_referenced_entities = 'include_referenced_entities_example'; // string
 $additional_properties = 'additional_properties_example'; // string
 
 try {
-    $result = $apiInstance->salesOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
+    $result = $apiInstance->salesOrderGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SalesOrderApi->salesOrderGet: ', $e->getMessage(), PHP_EOL;
@@ -216,6 +219,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -227,7 +231,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\SalesOrderGet200Response**](../Model/SalesOrderGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject78**](../Model/InlineObject78.md)
 
 ### Authorization
 
@@ -431,7 +435,7 @@ try {
 ## `salesOrderIdIdCreateAdvancePaymentRequestPost()`
 
 ```php
-salesOrderIdIdCreateAdvancePaymentRequestPost($id, $body): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCreditNotePost200Response
+salesOrderIdIdCreateAdvancePaymentRequestPost($id, $purchase_invoice_id_id_create_contract_post_request): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCreditNotePost200Response
 ```
 
 
@@ -456,10 +460,10 @@ $apiInstance = new kruegge82\weclapp\Api\SalesOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = array('key' => new \stdClass); // object
+$purchase_invoice_id_id_create_contract_post_request = new \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest(); // \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest
 
 try {
-    $result = $apiInstance->salesOrderIdIdCreateAdvancePaymentRequestPost($id, $body);
+    $result = $apiInstance->salesOrderIdIdCreateAdvancePaymentRequestPost($id, $purchase_invoice_id_id_create_contract_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SalesOrderApi->salesOrderIdIdCreateAdvancePaymentRequestPost: ', $e->getMessage(), PHP_EOL;
@@ -471,7 +475,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | **object**|  | |
+| **purchase_invoice_id_id_create_contract_post_request** | [**\kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest**](../Model/PurchaseInvoiceIdIdCreateContractPostRequest.md)|  | |
 
 ### Return type
 
@@ -493,7 +497,7 @@ try {
 ## `salesOrderIdIdCreateContractPost()`
 
 ```php
-salesOrderIdIdCreateContractPost($id, $body): \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPost200Response
+salesOrderIdIdCreateContractPost($id, $purchase_invoice_id_id_create_contract_post_request): \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPost200Response
 ```
 
 
@@ -518,10 +522,10 @@ $apiInstance = new kruegge82\weclapp\Api\SalesOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = array('key' => new \stdClass); // object
+$purchase_invoice_id_id_create_contract_post_request = new \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest(); // \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest
 
 try {
-    $result = $apiInstance->salesOrderIdIdCreateContractPost($id, $body);
+    $result = $apiInstance->salesOrderIdIdCreateContractPost($id, $purchase_invoice_id_id_create_contract_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SalesOrderApi->salesOrderIdIdCreateContractPost: ', $e->getMessage(), PHP_EOL;
@@ -533,7 +537,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | **object**|  | |
+| **purchase_invoice_id_id_create_contract_post_request** | [**\kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest**](../Model/PurchaseInvoiceIdIdCreateContractPostRequest.md)|  | |
 
 ### Return type
 
@@ -679,7 +683,7 @@ try {
 ## `salesOrderIdIdCreatePartPaymentInvoicePost()`
 
 ```php
-salesOrderIdIdCreatePartPaymentInvoicePost($id, $body): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCreditNotePost200Response
+salesOrderIdIdCreatePartPaymentInvoicePost($id, $purchase_invoice_id_id_create_contract_post_request): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCreditNotePost200Response
 ```
 
 
@@ -704,10 +708,10 @@ $apiInstance = new kruegge82\weclapp\Api\SalesOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = array('key' => new \stdClass); // object
+$purchase_invoice_id_id_create_contract_post_request = new \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest(); // \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest
 
 try {
-    $result = $apiInstance->salesOrderIdIdCreatePartPaymentInvoicePost($id, $body);
+    $result = $apiInstance->salesOrderIdIdCreatePartPaymentInvoicePost($id, $purchase_invoice_id_id_create_contract_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SalesOrderApi->salesOrderIdIdCreatePartPaymentInvoicePost: ', $e->getMessage(), PHP_EOL;
@@ -719,7 +723,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | **object**|  | |
+| **purchase_invoice_id_id_create_contract_post_request** | [**\kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest**](../Model/PurchaseInvoiceIdIdCreateContractPostRequest.md)|  | |
 
 ### Return type
 
@@ -741,7 +745,7 @@ try {
 ## `salesOrderIdIdCreatePerformanceRecordPost()`
 
 ```php
-salesOrderIdIdCreatePerformanceRecordPost($id, $body): \kruegge82\weclapp\Model\PerformanceRecordIdIdAddToPerformanceRecordPost200Response
+salesOrderIdIdCreatePerformanceRecordPost($id, $purchase_invoice_id_id_create_contract_post_request): \kruegge82\weclapp\Model\PerformanceRecordIdIdAddToPerformanceRecordPost200Response
 ```
 
 
@@ -766,10 +770,10 @@ $apiInstance = new kruegge82\weclapp\Api\SalesOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = array('key' => new \stdClass); // object
+$purchase_invoice_id_id_create_contract_post_request = new \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest(); // \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest
 
 try {
-    $result = $apiInstance->salesOrderIdIdCreatePerformanceRecordPost($id, $body);
+    $result = $apiInstance->salesOrderIdIdCreatePerformanceRecordPost($id, $purchase_invoice_id_id_create_contract_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SalesOrderApi->salesOrderIdIdCreatePerformanceRecordPost: ', $e->getMessage(), PHP_EOL;
@@ -781,7 +785,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | **object**|  | |
+| **purchase_invoice_id_id_create_contract_post_request** | [**\kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest**](../Model/PurchaseInvoiceIdIdCreateContractPostRequest.md)|  | |
 
 ### Return type
 
@@ -803,7 +807,7 @@ try {
 ## `salesOrderIdIdCreatePrepaymentFinalInvoicePost()`
 
 ```php
-salesOrderIdIdCreatePrepaymentFinalInvoicePost($id, $body): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCreditNotePost200Response
+salesOrderIdIdCreatePrepaymentFinalInvoicePost($id, $purchase_invoice_id_id_create_contract_post_request): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCreditNotePost200Response
 ```
 
 
@@ -828,10 +832,10 @@ $apiInstance = new kruegge82\weclapp\Api\SalesOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = array('key' => new \stdClass); // object
+$purchase_invoice_id_id_create_contract_post_request = new \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest(); // \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest
 
 try {
-    $result = $apiInstance->salesOrderIdIdCreatePrepaymentFinalInvoicePost($id, $body);
+    $result = $apiInstance->salesOrderIdIdCreatePrepaymentFinalInvoicePost($id, $purchase_invoice_id_id_create_contract_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SalesOrderApi->salesOrderIdIdCreatePrepaymentFinalInvoicePost: ', $e->getMessage(), PHP_EOL;
@@ -843,7 +847,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | **object**|  | |
+| **purchase_invoice_id_id_create_contract_post_request** | [**\kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest**](../Model/PurchaseInvoiceIdIdCreateContractPostRequest.md)|  | |
 
 ### Return type
 
@@ -865,7 +869,7 @@ try {
 ## `salesOrderIdIdCreateProductionOrdersPost()`
 
 ```php
-salesOrderIdIdCreateProductionOrdersPost($id, $sales_order_id_id_create_production_orders_post_request): \kruegge82\weclapp\Model\SalesOrderIdIdCreateProductionOrdersPost200Response
+salesOrderIdIdCreateProductionOrdersPost($id, $sales_order_id_id_create_production_orders_post_request): \kruegge82\weclapp\Model\PurchaseOrderIdIdCreateProductionOrdersPost200Response
 ```
 
 
@@ -909,7 +913,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\SalesOrderIdIdCreateProductionOrdersPost200Response**](../Model/SalesOrderIdIdCreateProductionOrdersPost200Response.md)
+[**\kruegge82\weclapp\Model\PurchaseOrderIdIdCreateProductionOrdersPost200Response**](../Model/PurchaseOrderIdIdCreateProductionOrdersPost200Response.md)
 
 ### Authorization
 
@@ -927,7 +931,7 @@ try {
 ## `salesOrderIdIdCreatePurchaseOrderPost()`
 
 ```php
-salesOrderIdIdCreatePurchaseOrderPost($id, $sales_order_id_id_create_purchase_order_post_request): \kruegge82\weclapp\Model\PurchaseOrderGet200Response
+salesOrderIdIdCreatePurchaseOrderPost($id, $sales_order_id_id_create_purchase_order_post_request): \kruegge82\weclapp\Model\SalesOrderIdIdCreatePurchaseOrderPost200Response
 ```
 
 
@@ -971,7 +975,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\PurchaseOrderGet200Response**](../Model/PurchaseOrderGet200Response.md)
+[**\kruegge82\weclapp\Model\SalesOrderIdIdCreatePurchaseOrderPost200Response**](../Model/SalesOrderIdIdCreatePurchaseOrderPost200Response.md)
 
 ### Authorization
 
@@ -1051,7 +1055,7 @@ try {
 ## `salesOrderIdIdCreateReturnLabelsPost()`
 
 ```php
-salesOrderIdIdCreateReturnLabelsPost($id, $body): \kruegge82\weclapp\Model\DocumentGet200Response
+salesOrderIdIdCreateReturnLabelsPost($id, $body): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateReturnLabelsPost200Response
 ```
 
 
@@ -1095,7 +1099,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\DocumentGet200Response**](../Model/DocumentGet200Response.md)
+[**\kruegge82\weclapp\Model\IncomingGoodsIdIdCreateReturnLabelsPost200Response**](../Model/IncomingGoodsIdIdCreateReturnLabelsPost200Response.md)
 
 ### Authorization
 
@@ -1237,7 +1241,7 @@ try {
 ## `salesOrderIdIdCreateShippingLabelsPost()`
 
 ```php
-salesOrderIdIdCreateShippingLabelsPost($id, $body): \kruegge82\weclapp\Model\DocumentGet200Response
+salesOrderIdIdCreateShippingLabelsPost($id, $body): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateReturnLabelsPost200Response
 ```
 
 
@@ -1281,7 +1285,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\DocumentGet200Response**](../Model/DocumentGet200Response.md)
+[**\kruegge82\weclapp\Model\IncomingGoodsIdIdCreateReturnLabelsPost200Response**](../Model/IncomingGoodsIdIdCreateReturnLabelsPost200Response.md)
 
 ### Authorization
 

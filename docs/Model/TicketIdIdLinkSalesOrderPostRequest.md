@@ -1,4 +1,4 @@
-# # TicketIdIdLinkSalesOrderPostRequest
+# TicketIdIdLinkSalesOrderPostRequest
 
 ## Properties
 

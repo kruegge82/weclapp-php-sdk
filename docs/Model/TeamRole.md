@@ -1,4 +1,4 @@
-# # TeamRole
+# TeamRole
 
 ## Properties
 

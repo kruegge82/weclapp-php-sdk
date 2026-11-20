@@ -1,4 +1,4 @@
-# # ContractUnitType
+# ContractUnitType
 
 ## Properties
 

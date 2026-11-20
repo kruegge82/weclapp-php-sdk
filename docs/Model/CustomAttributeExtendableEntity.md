@@ -1,4 +1,4 @@
-# # CustomAttributeExtendableEntity
+# CustomAttributeExtendableEntity
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # JobResult
+# JobResult
 
 ## Properties
 

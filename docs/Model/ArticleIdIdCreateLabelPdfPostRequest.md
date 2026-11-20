@@ -1,4 +1,4 @@
-# # ArticleIdIdCreateLabelPdfPostRequest
+# ArticleIdIdCreateLabelPdfPostRequest
 
 ## Properties
 

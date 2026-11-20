@@ -1,5 +1,7 @@
 # kruegge82\weclapp\ArticlePriceApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -12,7 +14,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `articlePriceCountGet()`
 
 ```php
-articlePriceCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+articlePriceCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count articlePrice
@@ -56,7 +58,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -74,7 +76,7 @@ try {
 ## `articlePriceGet()`
 
 ```php
-articlePriceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ArticlePriceGet200Response
+articlePriceGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject9
 ```
 
 query articlePrice
@@ -100,6 +102,7 @@ $apiInstance = new kruegge82\weclapp\Api\ArticlePriceApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -109,7 +112,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->articlePriceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->articlePriceGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticlePriceApi->articlePriceGet: ', $e->getMessage(), PHP_EOL;
@@ -120,6 +123,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -130,7 +134,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\ArticlePriceGet200Response**](../Model/ArticlePriceGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject9**](../Model/InlineObject9.md)
 
 ### Authorization
 
@@ -148,7 +152,7 @@ try {
 ## `articlePriceIdIdGet()`
 
 ```php
-articlePriceIdIdGet($id): \kruegge82\weclapp\Model\ArticlePrice
+articlePriceIdIdGet($id): \kruegge82\weclapp\Model\StandaloneSalesPrice
 ```
 
 query a specific articlePrice
@@ -192,7 +196,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\ArticlePrice**](../Model/ArticlePrice.md)
+[**\kruegge82\weclapp\Model\StandaloneSalesPrice**](../Model/StandaloneSalesPrice.md)
 
 ### Authorization
 

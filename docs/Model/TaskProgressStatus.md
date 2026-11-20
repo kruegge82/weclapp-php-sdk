@@ -1,4 +1,4 @@
-# # TaskProgressStatus
+# TaskProgressStatus
 
 ## Properties
 

@@ -1,5 +1,7 @@
 # kruegge82\weclapp\SalesInvoiceApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -8,6 +10,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 | [**salesInvoiceGet()**](SalesInvoiceApi.md#salesInvoiceGet) | **GET** /salesInvoice | query salesInvoice |
 | [**salesInvoiceIdIdAddSalesOrdersPost()**](SalesInvoiceApi.md#salesInvoiceIdIdAddSalesOrdersPost) | **POST** /salesInvoice/id/{id}/addSalesOrders |  |
 | [**salesInvoiceIdIdCalculateSalesPricesPost()**](SalesInvoiceApi.md#salesInvoiceIdIdCalculateSalesPricesPost) | **POST** /salesInvoice/id/{id}/calculateSalesPrices |  |
+| [**salesInvoiceIdIdCancelPost()**](SalesInvoiceApi.md#salesInvoiceIdIdCancelPost) | **POST** /salesInvoice/id/{id}/cancel |  |
 | [**salesInvoiceIdIdCreateContractPost()**](SalesInvoiceApi.md#salesInvoiceIdIdCreateContractPost) | **POST** /salesInvoice/id/{id}/createContract |  |
 | [**salesInvoiceIdIdCreateCreditNoteOpenItemPost()**](SalesInvoiceApi.md#salesInvoiceIdIdCreateCreditNoteOpenItemPost) | **POST** /salesInvoice/id/{id}/createCreditNoteOpenItem |  |
 | [**salesInvoiceIdIdCreateCreditNotePost()**](SalesInvoiceApi.md#salesInvoiceIdIdCreateCreditNotePost) | **POST** /salesInvoice/id/{id}/createCreditNote |  |
@@ -26,7 +29,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `salesInvoiceCountGet()`
 
 ```php
-salesInvoiceCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+salesInvoiceCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count salesInvoice
@@ -70,7 +73,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -88,7 +91,7 @@ try {
 ## `salesInvoiceGet()`
 
 ```php
-salesInvoiceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\SalesInvoiceGet200Response
+salesInvoiceGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\InlineObject76
 ```
 
 query salesInvoice
@@ -114,6 +117,7 @@ $apiInstance = new kruegge82\weclapp\Api\SalesInvoiceApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -121,9 +125,10 @@ $sort = 'sort_example'; // string
 $filter = 'filter_example'; // string
 $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
+$additional_properties = 'additional_properties_example'; // string
 
 try {
-    $result = $apiInstance->salesInvoiceGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->salesInvoiceGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SalesInvoiceApi->salesInvoiceGet: ', $e->getMessage(), PHP_EOL;
@@ -134,6 +139,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -141,10 +147,11 @@ try {
 | **filter** | **string**|  | [optional] |
 | **properties** | **string**|  | [optional] |
 | **include_referenced_entities** | **string**|  | [optional] |
+| **additional_properties** | **string**|  | [optional] |
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\SalesInvoiceGet200Response**](../Model/SalesInvoiceGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject76**](../Model/InlineObject76.md)
 
 ### Authorization
 
@@ -283,10 +290,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `salesInvoiceIdIdCreateContractPost()`
+## `salesInvoiceIdIdCancelPost()`
 
 ```php
-salesInvoiceIdIdCreateContractPost($id, $body): \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPost200Response
+salesInvoiceIdIdCancelPost($id, $purchase_invoice_id_id_cancel_post_request): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCreditNotePost200Response
 ```
 
 
@@ -311,10 +318,72 @@ $apiInstance = new kruegge82\weclapp\Api\SalesInvoiceApi(
     $config
 );
 $id = 'id_example'; // string
-$body = array('key' => new \stdClass); // object
+$purchase_invoice_id_id_cancel_post_request = new \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCancelPostRequest(); // \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCancelPostRequest
 
 try {
-    $result = $apiInstance->salesInvoiceIdIdCreateContractPost($id, $body);
+    $result = $apiInstance->salesInvoiceIdIdCancelPost($id, $purchase_invoice_id_id_cancel_post_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SalesInvoiceApi->salesInvoiceIdIdCancelPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **purchase_invoice_id_id_cancel_post_request** | [**\kruegge82\weclapp\Model\PurchaseInvoiceIdIdCancelPostRequest**](../Model/PurchaseInvoiceIdIdCancelPostRequest.md)|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCreditNotePost200Response**](../Model/IncomingGoodsIdIdCreateCreditNotePost200Response.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `salesInvoiceIdIdCreateContractPost()`
+
+```php
+salesInvoiceIdIdCreateContractPost($id, $purchase_invoice_id_id_create_contract_post_request): \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPost200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\SalesInvoiceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$purchase_invoice_id_id_create_contract_post_request = new \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest(); // \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest
+
+try {
+    $result = $apiInstance->salesInvoiceIdIdCreateContractPost($id, $purchase_invoice_id_id_create_contract_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SalesInvoiceApi->salesInvoiceIdIdCreateContractPost: ', $e->getMessage(), PHP_EOL;
@@ -326,7 +395,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | **object**|  | |
+| **purchase_invoice_id_id_create_contract_post_request** | [**\kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest**](../Model/PurchaseInvoiceIdIdCreateContractPostRequest.md)|  | |
 
 ### Return type
 

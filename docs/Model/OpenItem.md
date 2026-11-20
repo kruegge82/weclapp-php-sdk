@@ -1,4 +1,4 @@
-# # OpenItem
+# OpenItem
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ContractBillingType
+# ContractBillingType
 
 ## Properties
 

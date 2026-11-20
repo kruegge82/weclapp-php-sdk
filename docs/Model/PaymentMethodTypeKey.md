@@ -1,4 +1,4 @@
-# # PaymentMethodTypeKey
+# PaymentMethodTypeKey
 
 ## Properties
 

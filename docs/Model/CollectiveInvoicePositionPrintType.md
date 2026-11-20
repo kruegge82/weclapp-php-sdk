@@ -1,4 +1,4 @@
-# # CollectiveInvoicePositionPrintType
+# CollectiveInvoicePositionPrintType
 
 ## Properties
 

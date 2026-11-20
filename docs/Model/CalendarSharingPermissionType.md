@@ -1,4 +1,4 @@
-# # CalendarSharingPermissionType
+# CalendarSharingPermissionType
 
 ## Properties
 

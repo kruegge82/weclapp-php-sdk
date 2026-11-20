@@ -1,4 +1,4 @@
-# # JobType
+# JobType
 
 ## Properties
 

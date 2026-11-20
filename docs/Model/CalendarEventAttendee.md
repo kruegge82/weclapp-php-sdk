@@ -1,4 +1,4 @@
-# # CalendarEventAttendee
+# CalendarEventAttendee
 
 ## Properties
 

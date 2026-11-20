@@ -1,4 +1,4 @@
-# # TransportationOrder
+# TransportationOrder
 
 ## Properties
 
@@ -15,11 +15,11 @@ Name | Type | Description | Notes
 **loading_equipment_article_id** | **string** |  | [optional]
 **loading_equipment_identifier_id** | **string** |  | [optional]
 **picks** | [**\kruegge82\weclapp\Model\TransportPick[]**](TransportPick.md) |  | [optional]
-**production_order_id** | **string** |  | [optional]
-**shipment_id** | **string** |  | [optional]
+**production_order_id** | **string** |  | [optional] [readonly]
+**shipment_id** | **string** |  | [optional] [readonly]
 **status** | [**\kruegge82\weclapp\Model\TransportationOrderStatusType**](TransportationOrderStatusType.md) |  | [optional]
 **status_history** | [**\kruegge82\weclapp\Model\TransportationOrderStatusHistory[]**](TransportationOrderStatusHistory.md) |  | [optional] [readonly]
 **transportation_order_number** | **string** |  | [optional] [readonly]
-**transportation_order_type** | [**\kruegge82\weclapp\Model\TransportationOrderType**](TransportationOrderType.md) |  | [optional]
+**transportation_order_type** | [**\kruegge82\weclapp\Model\TransportationOrderType**](TransportationOrderType.md) |  | [optional] [readonly]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

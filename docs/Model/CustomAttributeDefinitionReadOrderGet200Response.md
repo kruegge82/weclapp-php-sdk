@@ -1,4 +1,4 @@
-# # CustomAttributeDefinitionReadOrderGet200Response
+# CustomAttributeDefinitionReadOrderGet200Response
 
 ## Properties
 

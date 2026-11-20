@@ -1,4 +1,4 @@
-# # BaseRecordItem
+# BaseRecordItem
 
 ## Properties
 

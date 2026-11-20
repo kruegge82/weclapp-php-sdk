@@ -1,5 +1,7 @@
 # kruegge82\weclapp\ArticleApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -22,7 +24,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `articleCountGet()`
 
 ```php
-articleCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+articleCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count article
@@ -66,7 +68,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -84,7 +86,7 @@ try {
 ## `articleGet()`
 
 ```php
-articleGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\ArticleGet200Response
+articleGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\InlineObject10
 ```
 
 query article
@@ -110,6 +112,7 @@ $apiInstance = new kruegge82\weclapp\Api\ArticleApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -120,7 +123,7 @@ $include_referenced_entities = 'include_referenced_entities_example'; // string
 $additional_properties = 'additional_properties_example'; // string
 
 try {
-    $result = $apiInstance->articleGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
+    $result = $apiInstance->articleGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArticleApi->articleGet: ', $e->getMessage(), PHP_EOL;
@@ -131,6 +134,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -142,7 +146,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\ArticleGet200Response**](../Model/ArticleGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject10**](../Model/InlineObject10.md)
 
 ### Authorization
 

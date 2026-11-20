@@ -1,4 +1,4 @@
-# # WarehouseIdIdActivatePost200Response
+# WarehouseIdIdActivatePost200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # QuotationIdIdAddDefaultScalePricesToItemsPostRequest
+# QuotationIdIdAddDefaultScalePricesToItemsPostRequest
 
 ## Properties
 

@@ -1,5 +1,7 @@
 # kruegge82\weclapp\PurchaseRequisitionApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -18,7 +20,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `purchaseRequisitionCountGet()`
 
 ```php
-purchaseRequisitionCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+purchaseRequisitionCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count purchaseRequisition
@@ -62,7 +64,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -139,7 +141,7 @@ void (empty response body)
 ## `purchaseRequisitionGet()`
 
 ```php
-purchaseRequisitionGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\PurchaseRequisitionGet200Response
+purchaseRequisitionGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject68
 ```
 
 query purchaseRequisition
@@ -165,6 +167,7 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseRequisitionApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -174,7 +177,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->purchaseRequisitionGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->purchaseRequisitionGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseRequisitionApi->purchaseRequisitionGet: ', $e->getMessage(), PHP_EOL;
@@ -185,6 +188,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -195,7 +199,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\PurchaseRequisitionGet200Response**](../Model/PurchaseRequisitionGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject68**](../Model/InlineObject68.md)
 
 ### Authorization
 
@@ -527,7 +531,7 @@ try {
 ## `purchaseRequisitionStartMaterialPlanningRunPost()`
 
 ```php
-purchaseRequisitionStartMaterialPlanningRunPost($purchase_requisition_start_material_planning_run_post_request): \kruegge82\weclapp\Model\JobAbortGet200Response
+purchaseRequisitionStartMaterialPlanningRunPost($purchase_requisition_start_material_planning_run_post_request): \kruegge82\weclapp\Model\ExternalConnectionIdIdStartArticleSynchronizationPost200Response
 ```
 
 
@@ -569,7 +573,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\JobAbortGet200Response**](../Model/JobAbortGet200Response.md)
+[**\kruegge82\weclapp\Model\ExternalConnectionIdIdStartArticleSynchronizationPost200Response**](../Model/ExternalConnectionIdIdStartArticleSynchronizationPost200Response.md)
 
 ### Authorization
 

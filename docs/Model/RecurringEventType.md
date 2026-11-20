@@ -1,4 +1,4 @@
-# # RecurringEventType
+# RecurringEventType
 
 ## Properties
 

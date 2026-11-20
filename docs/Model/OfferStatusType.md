@@ -1,4 +1,4 @@
-# # OfferStatusType
+# OfferStatusType
 
 ## Properties
 

@@ -1,5 +1,7 @@
 # kruegge82\weclapp\CompanySizeApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -15,7 +17,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `companySizeCountGet()`
 
 ```php
-companySizeCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+companySizeCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count companySize
@@ -59,7 +61,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -77,7 +79,7 @@ try {
 ## `companySizeGet()`
 
 ```php
-companySizeGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response
+companySizeGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject6
 ```
 
 query companySize
@@ -103,6 +105,7 @@ $apiInstance = new kruegge82\weclapp\Api\CompanySizeApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -112,7 +115,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->companySizeGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->companySizeGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CompanySizeApi->companySizeGet: ', $e->getMessage(), PHP_EOL;
@@ -123,6 +126,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -133,7 +137,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\ArticleAccountingCodeGet200Response**](../Model/ArticleAccountingCodeGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject6**](../Model/InlineObject6.md)
 
 ### Authorization
 

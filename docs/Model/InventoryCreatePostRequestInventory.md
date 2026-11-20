@@ -1,4 +1,4 @@
-# # InventoryCreatePostRequestInventory
+# InventoryCreatePostRequestInventory
 
 ## Properties
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **inventory_group_id** | **string** |  | [optional]
 **inventory_number** | **string** |  | [optional] [readonly]
 **last_modified_date** | **int** |  | [optional] [readonly]
-**level_of_detail** | [**\kruegge82\weclapp\Model\LevelOfDetail**](LevelOfDetail.md) |  | [optional]
+**level_of_detail** | [**\kruegge82\weclapp\Model\LevelOfDetail**](LevelOfDetail.md) |  | [optional] [readonly]
 **manager_id** | **string** |  | [optional]
 **recorder** | **string** |  | [optional]
 **start_date** | **int** |  | [optional]

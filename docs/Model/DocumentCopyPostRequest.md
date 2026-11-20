@@ -1,4 +1,4 @@
-# # DocumentCopyPostRequest
+# DocumentCopyPostRequest
 
 ## Properties
 

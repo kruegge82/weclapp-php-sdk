@@ -1,4 +1,4 @@
-# # EventRight
+# EventRight
 
 ## Properties
 

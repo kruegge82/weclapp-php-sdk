@@ -1,4 +1,4 @@
-# # ProductionArticleConfigurationRule
+# ProductionArticleConfigurationRule
 
 ## Properties
 

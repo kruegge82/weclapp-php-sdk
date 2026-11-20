@@ -1,4 +1,4 @@
-# # CommissionType
+# CommissionType
 
 ## Properties
 

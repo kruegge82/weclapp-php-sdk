@@ -1,4 +1,4 @@
-# # WarehouseStockMovementBookIncomingMovementPostRequest
+# WarehouseStockMovementBookIncomingMovementPostRequest
 
 ## Properties
 
@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **article_valuation_price** | **float** |  | [optional]
 **batch_number** | **string** |  | [optional]
 **batch_number_expiration_date** | **int** |  | [optional]
-**custom_attributes** | [**\kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPostRequestCustomAttributesInner[]**](WarehouseStockMovementBookDirectStockTransferPostRequestCustomAttributesInner.md) |  | [optional]
+**custom_attributes** | [**\kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPostRequestCustomAttributesInner[]**](ProductionOrderIdIdCreatePickingOrderPostRequestCustomAttributesInner.md) |  | [optional]
+**dds_number** | **string** |  | [optional]
 **internal_transport_reference_id** | **string** |  | [optional]
 **loading_equipment_identifier_id** | **string** |  | [optional]
 **movement_note** | **string** |  | [optional]

@@ -1,4 +1,4 @@
-# # SalesOpenItem
+# SalesOpenItem
 
 ## Properties
 

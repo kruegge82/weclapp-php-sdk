@@ -1,4 +1,4 @@
-# # CustomValue
+# CustomValue
 
 ## Properties
 

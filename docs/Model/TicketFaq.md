@@ -1,4 +1,4 @@
-# # TicketFaq
+# TicketFaq
 
 ## Properties
 

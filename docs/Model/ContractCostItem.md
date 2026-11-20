@@ -1,4 +1,4 @@
-# # ContractCostItem
+# ContractCostItem
 
 ## Properties
 

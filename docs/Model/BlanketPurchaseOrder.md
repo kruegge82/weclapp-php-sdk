@@ -1,4 +1,4 @@
-# # BlanketPurchaseOrder
+# BlanketPurchaseOrder
 
 ## Properties
 
@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
 **article_id** | **string** |  | [optional]
 **blanket_purchase_order_number** | **string** |  | [optional]
+**blanket_sales_order_id** | **string** |  | [optional] [readonly]
 **calculation_mode** | [**\kruegge82\weclapp\Model\SpecialCalculationMode**](SpecialCalculationMode.md) |  | [optional]
 **commercial_language** | **string** |  | [optional]
 **confirmation_number** | **string** |  | [optional]
@@ -26,12 +27,13 @@ Name | Type | Description | Notes
 **header_discount** | **float** |  | [optional]
 **header_surcharge** | **float** |  | [optional]
 **invoice_address** | [**\kruegge82\weclapp\Model\RecordAddress**](RecordAddress.md) |  | [optional]
+**last_status_change_user_id** | **string** |  | [optional] [readonly]
 **non_standard_tax_id** | **string** |  | [optional]
 **note** | **string** |  | [optional]
 **order_date** | **int** |  | [optional]
 **order_quantity** | **float** |  | [optional]
 **payment_method_id** | **string** |  | [optional]
-**recipient_country_code** | **string** |  | [optional]
+**recipient_country_code** | [**\kruegge82\weclapp\Model\Country**](Country.md) |  | [optional]
 **record_address** | [**\kruegge82\weclapp\Model\RecordAddress**](RecordAddress.md) |  | [optional]
 **record_comment** | **string** |  | [optional]
 **record_currency_id** | **string** |  | [optional]
@@ -42,7 +44,7 @@ Name | Type | Description | Notes
 **releases** | [**\kruegge82\weclapp\Model\Releases[]**](Releases.md) |  | [optional]
 **residual_quantity** | **float** |  | [optional] [readonly]
 **responsible_user_id** | **string** |  | [optional]
-**sender_country_code** | **string** |  | [optional]
+**sender_country_code** | [**\kruegge82\weclapp\Model\Country**](Country.md) |  | [optional]
 **sent_to_recipient** | **bool** |  | [optional]
 **shipment_method_id** | **string** |  | [optional]
 **start_date** | **int** |  | [optional]

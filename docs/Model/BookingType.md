@@ -1,4 +1,4 @@
-# # BookingType
+# BookingType
 
 ## Properties
 

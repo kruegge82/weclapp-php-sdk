@@ -1,4 +1,4 @@
-# # ArticleAlternativeQuantity
+# ArticleAlternativeQuantity
 
 ## Properties
 

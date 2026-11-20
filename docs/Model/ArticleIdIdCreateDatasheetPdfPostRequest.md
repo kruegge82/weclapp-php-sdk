@@ -1,4 +1,4 @@
-# # ArticleIdIdCreateDatasheetPdfPostRequest
+# ArticleIdIdCreateDatasheetPdfPostRequest
 
 ## Properties
 

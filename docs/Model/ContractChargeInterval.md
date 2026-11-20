@@ -1,4 +1,4 @@
-# # ContractChargeInterval
+# ContractChargeInterval
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # LevelOfDetail
+# LevelOfDetail
 
 ## Properties
 

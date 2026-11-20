@@ -1,4 +1,4 @@
-# # SystemDemoTestSystemInfoGet200Response
+# SystemDemoTestSystemInfoGet200Response
 
 ## Properties
 

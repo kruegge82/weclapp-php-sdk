@@ -1,4 +1,4 @@
-# # BillUntil
+# BillUntil
 
 ## Properties
 

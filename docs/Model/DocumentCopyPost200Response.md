@@ -1,4 +1,4 @@
-# # DocumentCopyPost200Response
+# DocumentCopyPost200Response
 
 ## Properties
 

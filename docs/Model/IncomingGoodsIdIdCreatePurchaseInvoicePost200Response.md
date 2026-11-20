@@ -1,4 +1,4 @@
-# # IncomingGoodsIdIdCreatePurchaseInvoicePost200Response
+# IncomingGoodsIdIdCreatePurchaseInvoicePost200Response
 
 ## Properties
 

@@ -1,5 +1,7 @@
 # kruegge82\weclapp\ArchivedEmailApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -13,7 +15,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `archivedEmailCountGet()`
 
 ```php
-archivedEmailCountGet($entity_id, $entity_name, $filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+archivedEmailCountGet($filter, $entity_id, $entity_name): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count archivedEmail
@@ -39,12 +41,12 @@ $apiInstance = new kruegge82\weclapp\Api\ArchivedEmailApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = 'filter_example'; // string
 $entity_id = 'entity_id_example'; // string
 $entity_name = 'entity_name_example'; // string
-$filter = 'filter_example'; // string
 
 try {
-    $result = $apiInstance->archivedEmailCountGet($entity_id, $entity_name, $filter);
+    $result = $apiInstance->archivedEmailCountGet($filter, $entity_id, $entity_name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArchivedEmailApi->archivedEmailCountGet: ', $e->getMessage(), PHP_EOL;
@@ -55,13 +57,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **entity_id** | **string**|  | |
-| **entity_name** | **string**|  | |
 | **filter** | **string**|  | [optional] |
+| **entity_id** | **string**|  | [optional] |
+| **entity_name** | **string**|  | [optional] |
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -79,7 +81,7 @@ try {
 ## `archivedEmailGet()`
 
 ```php
-archivedEmailGet($entity_id, $entity_name, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\ArchivedEmailGet200Response
+archivedEmailGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $entity_id, $entity_name): \kruegge82\weclapp\Model\InlineObject5
 ```
 
 query archivedEmail
@@ -105,8 +107,7 @@ $apiInstance = new kruegge82\weclapp\Api\ArchivedEmailApi(
     new GuzzleHttp\Client(),
     $config
 );
-$entity_id = 'entity_id_example'; // string
-$entity_name = 'entity_name_example'; // string
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -114,9 +115,11 @@ $sort = 'sort_example'; // string
 $filter = 'filter_example'; // string
 $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
+$entity_id = 'entity_id_example'; // string
+$entity_name = 'entity_name_example'; // string
 
 try {
-    $result = $apiInstance->archivedEmailGet($entity_id, $entity_name, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->archivedEmailGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $entity_id, $entity_name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ArchivedEmailApi->archivedEmailGet: ', $e->getMessage(), PHP_EOL;
@@ -127,8 +130,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **entity_id** | **string**|  | |
-| **entity_name** | **string**|  | |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -136,10 +138,12 @@ try {
 | **filter** | **string**|  | [optional] |
 | **properties** | **string**|  | [optional] |
 | **include_referenced_entities** | **string**|  | [optional] |
+| **entity_id** | **string**|  | [optional] |
+| **entity_name** | **string**|  | [optional] |
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\ArchivedEmailGet200Response**](../Model/ArchivedEmailGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject5**](../Model/InlineObject5.md)
 
 ### Authorization
 

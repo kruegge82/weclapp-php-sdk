@@ -1,4 +1,4 @@
-# # IncomingGoodsIdIdCreateCompensationShipmentPost200Response
+# IncomingGoodsIdIdCreateCompensationShipmentPost200Response
 
 ## Properties
 

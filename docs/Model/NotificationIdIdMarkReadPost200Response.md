@@ -1,4 +1,4 @@
-# # NotificationIdIdMarkReadPost200Response
+# NotificationIdIdMarkReadPost200Response
 
 ## Properties
 

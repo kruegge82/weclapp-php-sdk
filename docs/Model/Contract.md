@@ -1,4 +1,4 @@
-# # Contract
+# Contract
 
 ## Properties
 
@@ -74,6 +74,7 @@ Name | Type | Description | Notes
 **sales_channel** | [**\kruegge82\weclapp\Model\DistributionChannel**](DistributionChannel.md) |  | [optional]
 **sales_invoice_email_addresses** | [**\kruegge82\weclapp\Model\EmailAddresses**](EmailAddresses.md) |  | [optional]
 **sales_order_email_addresses** | [**\kruegge82\weclapp\Model\EmailAddresses**](EmailAddresses.md) |  | [optional]
+**sepa_direct_debit_mandate_id** | **string** |  | [optional]
 **start_date** | **int** |  | [optional]
 **technical_contact_person_id** | **string** |  | [optional]
 **template** | **bool** |  | [optional]

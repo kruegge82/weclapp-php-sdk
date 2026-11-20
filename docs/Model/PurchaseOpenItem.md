@@ -1,4 +1,4 @@
-# # PurchaseOpenItem
+# PurchaseOpenItem
 
 ## Properties
 

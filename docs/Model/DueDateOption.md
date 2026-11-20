@@ -1,4 +1,4 @@
-# # DueDateOption
+# DueDateOption
 
 ## Properties
 

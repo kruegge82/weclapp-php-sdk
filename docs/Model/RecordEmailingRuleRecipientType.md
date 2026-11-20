@@ -1,4 +1,4 @@
-# # RecordEmailingRuleRecipientType
+# RecordEmailingRuleRecipientType
 
 ## Properties
 

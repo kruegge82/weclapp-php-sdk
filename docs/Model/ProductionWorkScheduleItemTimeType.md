@@ -1,4 +1,4 @@
-# # ProductionWorkScheduleItemTimeType
+# ProductionWorkScheduleItemTimeType
 
 ## Properties
 

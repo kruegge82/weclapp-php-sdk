@@ -1,4 +1,4 @@
-# # StorageLocationIdIdActivatePost200Response
+# StorageLocationIdIdActivatePost200Response
 
 ## Properties
 

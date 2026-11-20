@@ -1,4 +1,4 @@
-# # IncomingGoodsIdIdCreateCreditNotePost200Response
+# IncomingGoodsIdIdCreateCreditNotePost200Response
 
 ## Properties
 

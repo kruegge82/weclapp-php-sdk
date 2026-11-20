@@ -1,4 +1,4 @@
-# # StorageLocation
+# StorageLocation
 
 ## Properties
 
@@ -17,6 +17,6 @@ Name | Type | Description | Notes
 **storage_place_type_settings_blocked** | [**\kruegge82\weclapp\Model\StoragePlaceTypeSettings**](StoragePlaceTypeSettings.md) |  | [optional]
 **storage_place_type_settings_picking** | [**\kruegge82\weclapp\Model\StoragePlaceTypeSettings**](StoragePlaceTypeSettings.md) |  | [optional]
 **storage_place_type_settings_stock** | [**\kruegge82\weclapp\Model\StoragePlaceTypeSettings**](StoragePlaceTypeSettings.md) |  | [optional]
-**warehouse_id** | **string** |  | [optional] [readonly]
+**warehouse_id** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

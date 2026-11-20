@@ -1,4 +1,4 @@
-# # SalesInvoiceItemRelationship
+# SalesInvoiceItemRelationship
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # MinimalStoragePlace
+# MinimalStoragePlace
 
 ## Properties
 

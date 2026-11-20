@@ -1,4 +1,4 @@
-# # SalesInvoiceItem
+# SalesInvoiceItem
 
 ## Properties
 

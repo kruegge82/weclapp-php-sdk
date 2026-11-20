@@ -1,5 +1,7 @@
 # kruegge82\weclapp\CurrencyApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -73,7 +75,7 @@ This endpoint does not need any parameter.
 ## `currencyCountGet()`
 
 ```php
-currencyCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+currencyCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count currency
@@ -117,7 +119,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -135,7 +137,7 @@ try {
 ## `currencyGet()`
 
 ```php
-currencyGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\CurrencyGet200Response
+currencyGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject35
 ```
 
 query currency
@@ -161,6 +163,7 @@ $apiInstance = new kruegge82\weclapp\Api\CurrencyApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -170,7 +173,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->currencyGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->currencyGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CurrencyApi->currencyGet: ', $e->getMessage(), PHP_EOL;
@@ -181,6 +184,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -191,7 +195,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\CurrencyGet200Response**](../Model/CurrencyGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject35**](../Model/InlineObject35.md)
 
 ### Authorization
 

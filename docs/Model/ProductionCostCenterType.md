@@ -1,4 +1,4 @@
-# # ProductionCostCenterType
+# ProductionCostCenterType
 
 ## Properties
 

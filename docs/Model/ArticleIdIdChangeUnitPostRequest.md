@@ -1,4 +1,4 @@
-# # ArticleIdIdChangeUnitPostRequest
+# ArticleIdIdChangeUnitPostRequest
 
 ## Properties
 

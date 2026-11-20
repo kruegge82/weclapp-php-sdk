@@ -1,4 +1,4 @@
-# # Ticket
+# Ticket
 
 ## Properties
 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **finished_date** | **int** |  | [optional] [readonly]
 **first_name** | **string** |  | [optional]
 **follow_up_date** | **int** |  | [optional]
-**invoicing_status** | [**\kruegge82\weclapp\Model\BillableInvoiceStatus**](BillableInvoiceStatus.md) |  | [optional]
+**invoicing_status** | [**\kruegge82\weclapp\Model\BillableInvoiceStatus**](BillableInvoiceStatus.md) |  | [optional] [readonly]
 **is_template** | **bool** |  | [optional]
 **language** | **string** |  | [optional]
 **last_name** | **string** |  | [optional]
@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **mobile_phone_number** | **string** |  | [optional]
 **note** | **string** |  | [optional]
 **party_id** | **string** |  | [optional]
-**performance_recorded_status** | [**\kruegge82\weclapp\Model\PerformanceRecordedStatus**](PerformanceRecordedStatus.md) |  | [optional]
+**performance_recorded_status** | [**\kruegge82\weclapp\Model\PerformanceRecordedStatus**](PerformanceRecordedStatus.md) |  | [optional] [readonly]
 **phone_number** | **string** |  | [optional]
 **public_page_expiration_date** | **int** |  | [optional] [readonly]
 **public_page_uuid** | **string** |  | [optional] [readonly]

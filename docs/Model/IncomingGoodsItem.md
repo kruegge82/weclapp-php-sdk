@@ -1,4 +1,4 @@
-# # IncomingGoodsItem
+# IncomingGoodsItem
 
 ## Properties
 

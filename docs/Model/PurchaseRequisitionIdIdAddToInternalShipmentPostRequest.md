@@ -1,4 +1,4 @@
-# # PurchaseRequisitionIdIdAddToInternalShipmentPostRequest
+# PurchaseRequisitionIdIdAddToInternalShipmentPostRequest
 
 ## Properties
 

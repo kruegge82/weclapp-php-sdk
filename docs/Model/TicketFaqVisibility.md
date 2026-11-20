@@ -1,4 +1,4 @@
-# # TicketFaqVisibility
+# TicketFaqVisibility
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # Opportunity
+# Opportunity
 
 ## Properties
 

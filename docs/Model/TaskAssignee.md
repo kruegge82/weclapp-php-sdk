@@ -1,4 +1,4 @@
-# # TaskAssignee
+# TaskAssignee
 
 ## Properties
 

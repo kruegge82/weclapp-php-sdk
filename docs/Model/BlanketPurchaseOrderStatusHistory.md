@@ -1,10 +1,10 @@
-# # BlanketPurchaseOrderStatusHistory
+# BlanketPurchaseOrderStatusHistory
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | [**\kruegge82\weclapp\Model\BlanketPurchaseOrderStatusType**](BlanketPurchaseOrderStatusType.md) |  | [optional]
+**status** | [**\kruegge82\weclapp\Model\BlanketPurchaseOrderStatusType**](BlanketPurchaseOrderStatusType.md) |  | [optional] [readonly]
 **status_date** | **int** |  | [optional] [readonly]
 **user_id** | **string** |  | [optional] [readonly]
 

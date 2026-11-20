@@ -1,4 +1,4 @@
-# # DropshippingDeliveryNoteFormTextBlockData
+# DropshippingDeliveryNoteFormTextBlockData
 
 ## Properties
 

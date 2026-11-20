@@ -1,4 +1,4 @@
-# # PurchaseOrderRequestItem
+# PurchaseOrderRequestItem
 
 ## Properties
 
@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **parent_item_id** | **string** |  | [optional]
 **title** | **string** |  | [optional]
 **unit_id** | **string** |  | [optional]
+**add_page_break_before** | **bool** |  | [optional]
 **deleted** | **bool** |  | [optional] [readonly]
 **price_scale_type** | [**\kruegge82\weclapp\Model\PriceScaleType**](PriceScaleType.md) |  | [optional]
 **scale_values** | [**\kruegge82\weclapp\Model\PurchaseOrderRequestItemScaleValue[]**](PurchaseOrderRequestItemScaleValue.md) |  | [optional]

@@ -1,4 +1,4 @@
-# # Article
+# Article
 
 ## Properties
 
@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **match_code** | **string** |  | [optional]
 **minimum_purchase_quantity** | **float** |  | [optional]
 **name** | **string** |  | [optional]
+**procurement_lead_days** | **int** |  | [optional]
 **short_description1** | **string** |  | [optional]
 **short_description2** | **string** |  | [optional]
 **tax_rate_type** | [**\kruegge82\weclapp\Model\TaxRateType**](TaxRateType.md) |  | [optional]
@@ -34,7 +35,7 @@ Name | Type | Description | Notes
 **article_images** | [**\kruegge82\weclapp\Model\ArticleImage[]**](ArticleImage.md) |  | [optional]
 **article_length** | **float** |  | [optional]
 **article_net_weight** | **float** |  | [optional]
-**article_prices** | [**\kruegge82\weclapp\Model\ArticlePriceWithoutArticleReference[]**](ArticlePriceWithoutArticleReference.md) |  | [optional]
+**article_prices** | [**\kruegge82\weclapp\Model\SalesPrice[]**](SalesPrice.md) |  | [optional]
 **article_type** | [**\kruegge82\weclapp\Model\ArticleType**](ArticleType.md) |  | [optional]
 **article_width** | **float** |  | [optional]
 **available_for_sales_channels** | [**\kruegge82\weclapp\Model\DistributionChannel[]**](DistributionChannel.md) |  | [optional]
@@ -47,7 +48,7 @@ Name | Type | Description | Notes
 **commission_rate** | **float** |  | [optional]
 **contract_billing_cycle** | [**\kruegge82\weclapp\Model\ContractChargeInterval**](ContractChargeInterval.md) |  | [optional]
 **contract_billing_mode** | [**\kruegge82\weclapp\Model\ContractChargeIntervalType**](ContractChargeIntervalType.md) |  | [optional]
-**country_of_origin_code** | **string** |  | [optional]
+**country_of_origin_code** | [**\kruegge82\weclapp\Model\Country**](Country.md) |  | [optional]
 **customer_article_numbers** | [**\kruegge82\weclapp\Model\CustomerSpecificArticleAttributes[]**](CustomerSpecificArticleAttributes.md) |  | [optional]
 **customs_description** | **string** |  | [optional]
 **customs_tariff_number_id** | **string** |  | [optional]
@@ -70,7 +71,6 @@ Name | Type | Description | Notes
 **packaging_unit_parent_article_id** | **string** |  | [optional]
 **planned_working_time_per_unit** | **int** |  | [optional]
 **primary_supply_source_id** | **string** |  | [optional]
-**procurement_lead_days** | **int** |  | [optional]
 **producer_type** | **string** |  | [optional]
 **production_article** | **bool** |  | [optional]
 **production_bill_of_material_items** | [**\kruegge82\weclapp\Model\BillOfMaterial[]**](BillOfMaterial.md) |  | [optional]

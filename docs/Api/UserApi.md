@@ -1,5 +1,7 @@
 # kruegge82\weclapp\UserApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -21,7 +23,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `userCountGet()`
 
 ```php
-userCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+userCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count user
@@ -65,7 +67,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -140,7 +142,7 @@ This endpoint does not need any parameter.
 ## `userGet()`
 
 ```php
-userGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\UserGet200Response
+userGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject112
 ```
 
 query user
@@ -166,6 +168,7 @@ $apiInstance = new kruegge82\weclapp\Api\UserApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -175,7 +178,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->userGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->userGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->userGet: ', $e->getMessage(), PHP_EOL;
@@ -186,6 +189,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -196,7 +200,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\UserGet200Response**](../Model/UserGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject112**](../Model/InlineObject112.md)
 
 ### Authorization
 

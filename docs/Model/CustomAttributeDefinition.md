@@ -1,4 +1,4 @@
-# # CustomAttributeDefinition
+# CustomAttributeDefinition
 
 ## Properties
 
@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **default_string_value** | **string** |  | [optional]
 **entities** | **string[]** |  | [optional]
 **group_name** | **string** |  | [optional]
+**inherit_on_copy** | **bool** |  | [optional]
 **label** | **string** |  | [optional]
 **legacy_entities** | **string[]** |  | [optional]
 **mandatory** | **bool** |  | [optional]

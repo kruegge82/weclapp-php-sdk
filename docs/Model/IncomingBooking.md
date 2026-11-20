@@ -1,4 +1,4 @@
-# # IncomingBooking
+# IncomingBooking
 
 ## Properties
 
@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **created_date** | **int** |  | [optional] [readonly]
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional] [readonly]
+**custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
 **batch_number** | **string** |  | [optional]
 **confirmed_by_user_id** | **string** |  | [optional] [readonly]
 **confirmed_date** | **int** |  | [optional] [readonly]
@@ -17,9 +18,7 @@ Name | Type | Description | Notes
 **storage_place_id** | **string** |  | [optional]
 **article_valuation_price** | **float** |  | [optional]
 **book_into_warehouse** | **bool** |  | [optional]
-**confirmed_by_user_id_deprecated** | **string** |  | [optional] [readonly]
-**confirmed_date_deprecated** | **int** |  | [optional] [readonly]
-**confirmed_quantity_deprecated** | **float** |  | [optional]
+**dds_number** | **string** |  | [optional]
 **expiration_date** | **int** |  | [optional]
 **incoming_goods_item_id** | **string** |  | [optional] [readonly]
 **loading_equipment_identifier_id** | **string** |  | [optional]

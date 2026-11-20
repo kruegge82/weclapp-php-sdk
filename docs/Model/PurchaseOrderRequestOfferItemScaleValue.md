@@ -1,4 +1,4 @@
-# # PurchaseOrderRequestOfferItemScaleValue
+# PurchaseOrderRequestOfferItemScaleValue
 
 ## Properties
 

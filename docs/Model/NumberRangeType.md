@@ -1,4 +1,4 @@
-# # NumberRangeType
+# NumberRangeType
 
 ## Properties
 

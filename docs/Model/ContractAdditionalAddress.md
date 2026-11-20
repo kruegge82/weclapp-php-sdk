@@ -1,4 +1,4 @@
-# # ContractAdditionalAddress
+# ContractAdditionalAddress
 
 ## Properties
 

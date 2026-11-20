@@ -1,4 +1,4 @@
-# # BlanketPurchaseOrderStatusType
+# BlanketPurchaseOrderStatusType
 
 ## Properties
 

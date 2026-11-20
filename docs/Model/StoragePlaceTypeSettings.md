@@ -1,4 +1,4 @@
-# # StoragePlaceTypeSettings
+# StoragePlaceTypeSettings
 
 ## Properties
 

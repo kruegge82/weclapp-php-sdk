@@ -1,4 +1,4 @@
-# # CostType
+# CostType
 
 ## Properties
 

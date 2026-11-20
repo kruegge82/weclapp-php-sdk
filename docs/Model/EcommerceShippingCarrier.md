@@ -1,4 +1,4 @@
-# # EcommerceShippingCarrier
+# EcommerceShippingCarrier
 
 ## Properties
 

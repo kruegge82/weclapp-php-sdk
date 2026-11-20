@@ -1,4 +1,4 @@
-# # ServiceQuotaTreatmentType
+# ServiceQuotaTreatmentType
 
 ## Properties
 

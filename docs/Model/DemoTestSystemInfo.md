@@ -1,4 +1,4 @@
-# # DemoTestSystemInfo
+# DemoTestSystemInfo
 
 ## Properties
 

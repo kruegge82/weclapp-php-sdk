@@ -1,4 +1,4 @@
-# # ContractItem
+# ContractItem
 
 ## Properties
 

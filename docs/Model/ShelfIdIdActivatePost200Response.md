@@ -1,4 +1,4 @@
-# # ShelfIdIdActivatePost200Response
+# ShelfIdIdActivatePost200Response
 
 ## Properties
 

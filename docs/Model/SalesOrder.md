@@ -1,4 +1,4 @@
-# # SalesOrder
+# SalesOrder
 
 ## Properties
 
@@ -23,19 +23,27 @@ Name | Type | Description | Notes
 **currency_conversion_rate** | **float** |  | [optional]
 **gross_amount** | **float** |  | [optional] [readonly]
 **gross_amount_in_company_currency** | **float** |  | [optional] [readonly]
+**gross_amount_without_shipping_costs** | **float** |  | [optional] [readonly]
+**gross_amount_without_shipping_costs_in_company_currency** | **float** |  | [optional] [readonly]
 **header_discount** | **float** |  | [optional]
 **header_surcharge** | **float** |  | [optional]
 **net_amount** | **float** |  | [optional] [readonly]
 **net_amount_in_company_currency** | **float** |  | [optional] [readonly]
+**net_amount_without_shipping_costs** | **float** |  | [optional] [readonly]
+**net_amount_without_shipping_costs_in_company_currency** | **float** |  | [optional] [readonly]
 **non_standard_tax_id** | **string** |  | [optional]
 **payment_method_id** | **string** |  | [optional]
 **record_currency_id** | **string** |  | [optional]
 **term_of_payment_id** | **string** |  | [optional]
+**vat_amount** | **float** |  | [optional] [readonly]
+**vat_amount_in_company_currency** | **float** |  | [optional] [readonly]
 **commission** | **string** |  | [optional]
 **commission_sales_partners** | [**\kruegge82\weclapp\Model\CommissionSalesPartner[]**](CommissionSalesPartner.md) |  | [optional]
+**cost** | **float** |  | [optional] [readonly]
 **customer_id** | **string** |  | [optional]
-**dispatch_country_code** | **string** |  | [optional]
+**dispatch_country_code** | [**\kruegge82\weclapp\Model\Country**](Country.md) |  | [optional]
 **factoring** | **bool** |  | [optional]
+**last_status_change_user_id** | **string** |  | [optional] [readonly]
 **pricing_date** | **int** |  | [optional]
 **responsible_user_id** | **string** |  | [optional]
 **sales_channel** | [**\kruegge82\weclapp\Model\DistributionChannel**](DistributionChannel.md) |  | [optional]
@@ -51,9 +59,10 @@ Name | Type | Description | Notes
 **record_address** | [**\kruegge82\weclapp\Model\RecordAddress**](RecordAddress.md) |  | [optional]
 **sales_invoice_email_addresses** | [**\kruegge82\weclapp\Model\EmailAddresses**](EmailAddresses.md) |  | [optional]
 **advance_payment_amount** | **float** |  | [optional]
-**advance_payment_status** | [**\kruegge82\weclapp\Model\AdvancePaymentStatus**](AdvancePaymentStatus.md) |  | [optional]
+**advance_payment_status** | [**\kruegge82\weclapp\Model\AdvancePaymentStatus**](AdvancePaymentStatus.md) |  | [optional] [readonly]
 **apply_shipping_costs_only_once** | **bool** |  | [optional]
 **cash_account_id** | **string** |  | [optional]
+**cost_center_id** | **string** |  | [optional]
 **customer_habitual_exporter_letter_of_intent_id** | **string** |  | [optional]
 **default_shipping_return_carrier_id** | **string** |  | [optional]
 **ecommerce_order** | [**\kruegge82\weclapp\Model\EcommerceOrder**](EcommerceOrder.md) |  | [optional]
@@ -88,6 +97,7 @@ Name | Type | Description | Notes
 **status** | [**\kruegge82\weclapp\Model\OrderStatusType**](OrderStatusType.md) |  | [optional]
 **status_history** | [**\kruegge82\weclapp\Model\SalesOrderStatusHistory[]**](SalesOrderStatusHistory.md) |  | [optional] [readonly]
 **template** | **bool** |  | [optional]
+**template_label** | **string** |  | [optional]
 **warehouse_id** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

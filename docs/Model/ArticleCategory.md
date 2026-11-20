@@ -1,4 +1,4 @@
-# # ArticleCategory
+# ArticleCategory
 
 ## Properties
 

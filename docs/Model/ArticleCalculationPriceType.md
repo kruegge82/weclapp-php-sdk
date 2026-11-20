@@ -1,4 +1,4 @@
-# # ArticleCalculationPriceType
+# ArticleCalculationPriceType
 
 ## Properties
 

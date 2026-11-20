@@ -1,4 +1,4 @@
-# # PropertyTranslationValue
+# PropertyTranslationValue
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # RemotePrintJob
+# RemotePrintJob
 
 ## Properties
 

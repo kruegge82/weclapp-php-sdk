@@ -1,4 +1,4 @@
-# # PurchaseRequisitionIdIdAddToInternalShipmentPost200Response
+# PurchaseRequisitionIdIdAddToInternalShipmentPost200Response
 
 ## Properties
 

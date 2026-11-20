@@ -1,4 +1,4 @@
-# # UserIdIdReadMfaDevicesGet200Response
+# UserIdIdReadMfaDevicesGet200Response
 
 ## Properties
 

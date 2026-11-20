@@ -1,4 +1,4 @@
-# # LedgerAccount
+# LedgerAccount
 
 ## Properties
 

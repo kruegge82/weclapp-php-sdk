@@ -1,4 +1,4 @@
-# # Manufacturer
+# Manufacturer
 
 ## Properties
 

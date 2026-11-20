@@ -1,4 +1,4 @@
-# # InventoryGroup
+# InventoryGroup
 
 ## Properties
 

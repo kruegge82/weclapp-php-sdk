@@ -1,4 +1,4 @@
-# # InventoryCreatePost200Response
+# InventoryCreatePost200Response
 
 ## Properties
 

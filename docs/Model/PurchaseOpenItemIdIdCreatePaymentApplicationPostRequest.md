@@ -1,4 +1,4 @@
-# # PurchaseOpenItemIdIdCreatePaymentApplicationPostRequest
+# PurchaseOpenItemIdIdCreatePaymentApplicationPostRequest
 
 ## Properties
 

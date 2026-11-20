@@ -1,5 +1,7 @@
 # kruegge82\weclapp\PerformanceRecordApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -12,17 +14,19 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 | [**performanceRecordIdIdDownloadLatestPerformanceRecordPdfGet()**](PerformanceRecordApi.md#performanceRecordIdIdDownloadLatestPerformanceRecordPdfGet) | **GET** /performanceRecord/id/{id}/downloadLatestPerformanceRecordPdf |  |
 | [**performanceRecordIdIdDownloadSignatureGet()**](PerformanceRecordApi.md#performanceRecordIdIdDownloadSignatureGet) | **GET** /performanceRecord/id/{id}/downloadSignature |  |
 | [**performanceRecordIdIdGet()**](PerformanceRecordApi.md#performanceRecordIdIdGet) | **GET** /performanceRecord/id/{id} | query a specific performanceRecord |
+| [**performanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPost()**](PerformanceRecordApi.md#performanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPost) | **POST** /performanceRecord/id/{id}/performServiceQuotaAssignmentForTimeRecords |  |
 | [**performanceRecordIdIdPut()**](PerformanceRecordApi.md#performanceRecordIdIdPut) | **PUT** /performanceRecord/id/{id} | update a performanceRecord |
 | [**performanceRecordIdIdRecalculateQuantitiesPost()**](PerformanceRecordApi.md#performanceRecordIdIdRecalculateQuantitiesPost) | **POST** /performanceRecord/id/{id}/recalculateQuantities |  |
 | [**performanceRecordIdIdRemoveSignaturePost()**](PerformanceRecordApi.md#performanceRecordIdIdRemoveSignaturePost) | **POST** /performanceRecord/id/{id}/removeSignature |  |
 | [**performanceRecordIdIdUploadSignaturePost()**](PerformanceRecordApi.md#performanceRecordIdIdUploadSignaturePost) | **POST** /performanceRecord/id/{id}/uploadSignature |  |
 | [**performanceRecordPost()**](PerformanceRecordApi.md#performanceRecordPost) | **POST** /performanceRecord | create a performanceRecord |
+| [**performanceRecordStartConfiguredMassPerformanceRecordCreationPost()**](PerformanceRecordApi.md#performanceRecordStartConfiguredMassPerformanceRecordCreationPost) | **POST** /performanceRecord/startConfiguredMassPerformanceRecordCreation |  |
 
 
 ## `performanceRecordCountGet()`
 
 ```php
-performanceRecordCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+performanceRecordCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count performanceRecord
@@ -66,7 +70,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -84,7 +88,7 @@ try {
 ## `performanceRecordGet()`
 
 ```php
-performanceRecordGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\PerformanceRecordGet200Response
+performanceRecordGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\InlineObject57
 ```
 
 query performanceRecord
@@ -110,6 +114,7 @@ $apiInstance = new kruegge82\weclapp\Api\PerformanceRecordApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -120,7 +125,7 @@ $include_referenced_entities = 'include_referenced_entities_example'; // string
 $additional_properties = 'additional_properties_example'; // string
 
 try {
-    $result = $apiInstance->performanceRecordGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
+    $result = $apiInstance->performanceRecordGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PerformanceRecordApi->performanceRecordGet: ', $e->getMessage(), PHP_EOL;
@@ -131,6 +136,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -142,7 +148,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\PerformanceRecordGet200Response**](../Model/PerformanceRecordGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject57**](../Model/InlineObject57.md)
 
 ### Authorization
 
@@ -532,6 +538,68 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `performanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPost()`
+
+```php
+performanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPost($id, $performance_record_id_id_perform_service_quota_assignment_for_time_records_post_request): \kruegge82\weclapp\Model\PerformanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPost200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\PerformanceRecordApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$performance_record_id_id_perform_service_quota_assignment_for_time_records_post_request = new \kruegge82\weclapp\Model\PerformanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPostRequest(); // \kruegge82\weclapp\Model\PerformanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPostRequest
+
+try {
+    $result = $apiInstance->performanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPost($id, $performance_record_id_id_perform_service_quota_assignment_for_time_records_post_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PerformanceRecordApi->performanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **performance_record_id_id_perform_service_quota_assignment_for_time_records_post_request** | [**\kruegge82\weclapp\Model\PerformanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPostRequest**](../Model/PerformanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPostRequest.md)|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\PerformanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPost200Response**](../Model/PerformanceRecordIdIdPerformServiceQuotaAssignmentForTimeRecordsPost200Response.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `performanceRecordIdIdPut()`
 
 ```php
@@ -836,6 +904,66 @@ try {
 ### Return type
 
 [**\kruegge82\weclapp\Model\PerformanceRecord**](../Model/PerformanceRecord.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `performanceRecordStartConfiguredMassPerformanceRecordCreationPost()`
+
+```php
+performanceRecordStartConfiguredMassPerformanceRecordCreationPost($performance_record_start_configured_mass_performance_record_creation_post_request): \kruegge82\weclapp\Model\ExternalConnectionIdIdStartArticleSynchronizationPost200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\PerformanceRecordApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$performance_record_start_configured_mass_performance_record_creation_post_request = new \kruegge82\weclapp\Model\PerformanceRecordStartConfiguredMassPerformanceRecordCreationPostRequest(); // \kruegge82\weclapp\Model\PerformanceRecordStartConfiguredMassPerformanceRecordCreationPostRequest
+
+try {
+    $result = $apiInstance->performanceRecordStartConfiguredMassPerformanceRecordCreationPost($performance_record_start_configured_mass_performance_record_creation_post_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PerformanceRecordApi->performanceRecordStartConfiguredMassPerformanceRecordCreationPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **performance_record_start_configured_mass_performance_record_creation_post_request** | [**\kruegge82\weclapp\Model\PerformanceRecordStartConfiguredMassPerformanceRecordCreationPostRequest**](../Model/PerformanceRecordStartConfiguredMassPerformanceRecordCreationPostRequest.md)|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\ExternalConnectionIdIdStartArticleSynchronizationPost200Response**](../Model/ExternalConnectionIdIdStartArticleSynchronizationPost200Response.md)
 
 ### Authorization
 

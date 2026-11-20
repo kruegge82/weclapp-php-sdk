@@ -1,4 +1,4 @@
-# # ShipmentIdIdPrintLabelPostRequest
+# ShipmentIdIdPrintLabelPostRequest
 
 ## Properties
 

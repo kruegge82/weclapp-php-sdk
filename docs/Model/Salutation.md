@@ -1,4 +1,4 @@
-# # Salutation
+# Salutation
 
 ## Properties
 

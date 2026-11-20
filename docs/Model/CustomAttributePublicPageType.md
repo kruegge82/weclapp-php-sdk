@@ -1,4 +1,4 @@
-# # CustomAttributePublicPageType
+# CustomAttributePublicPageType
 
 ## Properties
 

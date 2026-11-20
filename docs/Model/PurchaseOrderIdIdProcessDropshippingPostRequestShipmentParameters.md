@@ -1,4 +1,4 @@
-# # PurchaseOrderIdIdProcessDropshippingPostRequestShipmentParameters
+# PurchaseOrderIdIdProcessDropshippingPostRequestShipmentParameters
 
 ## Properties
 

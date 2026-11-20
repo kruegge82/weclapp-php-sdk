@@ -1,4 +1,4 @@
-# # WarehouseQuantity
+# WarehouseQuantity
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # User
+# User
 
 ## Properties
 
@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional] [readonly]
 **custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
-**birth_date** | **int** |  | [optional]
+**can_edit_dashboard** | **bool** |  | [optional]
 **email** | **string** |  | [optional]
 **fax_number** | **string** |  | [optional]
 **first_name** | **string** |  | [optional]
@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **mobile_phone_number** | **string** |  | [optional]
 **phone_number** | **string** |  | [optional]
 **status** | [**\kruegge82\weclapp\Model\UserStatus**](UserStatus.md) |  | [optional]
+**super_user** | **bool** |  | [optional] [readonly]
 **title** | **string** |  | [optional]
 **user_roles** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
 **username** | **string** |  | [optional] [readonly]

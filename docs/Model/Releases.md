@@ -1,4 +1,4 @@
-# # Releases
+# Releases
 
 ## Properties
 

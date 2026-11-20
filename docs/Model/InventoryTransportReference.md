@@ -1,4 +1,4 @@
-# # InventoryTransportReference
+# InventoryTransportReference
 
 ## Properties
 

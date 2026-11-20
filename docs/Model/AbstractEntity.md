@@ -1,4 +1,4 @@
-# # AbstractEntity
+# AbstractEntity
 
 ## Properties
 

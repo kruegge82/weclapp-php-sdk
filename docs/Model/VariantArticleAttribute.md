@@ -1,4 +1,4 @@
-# # VariantArticleAttribute
+# VariantArticleAttribute
 
 ## Properties
 

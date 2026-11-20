@@ -1,4 +1,4 @@
-# # AccountingTransactionBatchBookingPostRequestBatchBooking
+# AccountingTransactionBatchBookingPostRequestBatchBooking
 
 ## Properties
 

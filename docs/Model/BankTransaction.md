@@ -1,4 +1,4 @@
-# # BankTransaction
+# BankTransaction
 
 ## Properties
 

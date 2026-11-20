@@ -1,4 +1,4 @@
-# # CustomAttributeDefinitionTranslation
+# CustomAttributeDefinitionTranslation
 
 ## Properties
 

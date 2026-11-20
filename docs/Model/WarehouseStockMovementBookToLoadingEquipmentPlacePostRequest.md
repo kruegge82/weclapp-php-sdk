@@ -1,10 +1,10 @@
-# # WarehouseStockMovementBookToLoadingEquipmentPlacePostRequest
+# WarehouseStockMovementBookToLoadingEquipmentPlacePostRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**custom_attributes** | [**\kruegge82\weclapp\Model\WarehouseStockMovementBookDirectStockTransferPostRequestCustomAttributesInner[]**](WarehouseStockMovementBookDirectStockTransferPostRequestCustomAttributesInner.md) |  | [optional]
+**custom_attributes** | [**\kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPostRequestCustomAttributesInner[]**](ProductionOrderIdIdCreatePickingOrderPostRequestCustomAttributesInner.md) |  | [optional]
 **loading_equipment_article_id** | **string** |  |
 **movement_note** | **string** |  | [optional]
 **quantity** | **float** |  |

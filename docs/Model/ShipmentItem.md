@@ -1,4 +1,4 @@
-# # ShipmentItem
+# ShipmentItem
 
 ## Properties
 
@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **title** | **string** |  | [optional]
 **unit_id** | **string** |  | [optional]
 **add_page_break_before** | **bool** |  | [optional]
+**delivery_date** | **int** |  | [optional]
 **group_name** | **string** |  | [optional]
 **picks** | [**\kruegge82\weclapp\Model\ItemPick[]**](ItemPick.md) |  | [optional]
 **purchase_order_item_id** | **string** |  | [optional]
@@ -34,5 +35,6 @@ Name | Type | Description | Notes
 **return_rectification_id** | **string** |  | [optional]
 **return_rectifications** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
 **sales_order_item_id** | **string** |  | [optional]
+**shipping_date** | **int** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

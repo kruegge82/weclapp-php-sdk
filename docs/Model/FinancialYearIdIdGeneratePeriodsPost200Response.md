@@ -1,4 +1,4 @@
-# # FinancialYearIdIdGeneratePeriodsPost200Response
+# FinancialYearIdIdGeneratePeriodsPost200Response
 
 ## Properties
 

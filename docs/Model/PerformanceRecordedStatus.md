@@ -1,4 +1,4 @@
-# # PerformanceRecordedStatus
+# PerformanceRecordedStatus
 
 ## Properties
 

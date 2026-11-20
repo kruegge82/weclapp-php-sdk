@@ -1,4 +1,4 @@
-# # PerformanceRecord
+# PerformanceRecord
 
 ## Properties
 
@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **customer_signature_date** | **int** |  | [optional] [readonly]
 **invoice_address** | [**\kruegge82\weclapp\Model\RecordAddress**](RecordAddress.md) |  | [optional]
 **invoice_recipient_id** | **string** |  | [optional]
+**last_status_change_user_id** | **string** |  | [optional] [readonly]
 **order_number_at_customer** | **string** |  | [optional]
 **performance_record_date** | **int** |  | [optional]
 **performance_record_items** | [**\kruegge82\weclapp\Model\PerformanceRecordItem[]**](PerformanceRecordItem.md) |  | [optional]
@@ -32,7 +33,7 @@ Name | Type | Description | Notes
 **record_email_addresses** | [**\kruegge82\weclapp\Model\EmailAddresses**](EmailAddresses.md) |  | [optional]
 **record_free_text_inheritance** | **bool** |  | [optional]
 **record_opening_inheritance** | **bool** |  | [optional]
-**sales_channel** | [**\kruegge82\weclapp\Model\DistributionChannel**](DistributionChannel.md) |  | [optional]
+**sales_channel** | [**\kruegge82\weclapp\Model\DistributionChannel**](DistributionChannel.md) |  | [optional] [readonly]
 **sales_invoice_email_addresses** | [**\kruegge82\weclapp\Model\EmailAddresses**](EmailAddresses.md) |  | [optional]
 **sales_order_id** | **string** |  | [optional] [readonly]
 **service_period_from** | **int** |  | [optional]

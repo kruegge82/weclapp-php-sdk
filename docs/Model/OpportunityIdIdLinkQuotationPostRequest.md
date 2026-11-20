@@ -1,4 +1,4 @@
-# # OpportunityIdIdLinkQuotationPostRequest
+# OpportunityIdIdLinkQuotationPostRequest
 
 ## Properties
 

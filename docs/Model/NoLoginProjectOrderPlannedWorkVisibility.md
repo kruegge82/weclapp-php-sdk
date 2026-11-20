@@ -1,4 +1,4 @@
-# # NoLoginProjectOrderPlannedWorkVisibility
+# NoLoginProjectOrderPlannedWorkVisibility
 
 ## Properties
 

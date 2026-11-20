@@ -1,4 +1,4 @@
-# # CalculationType
+# CalculationType
 
 ## Properties
 

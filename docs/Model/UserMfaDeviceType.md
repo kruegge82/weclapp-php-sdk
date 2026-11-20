@@ -1,4 +1,4 @@
-# # UserMfaDeviceType
+# UserMfaDeviceType
 
 ## Properties
 

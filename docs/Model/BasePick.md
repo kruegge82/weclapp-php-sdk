@@ -1,4 +1,4 @@
-# # BasePick
+# BasePick
 
 ## Properties
 
@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **created_date** | **int** |  | [optional] [readonly]
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional] [readonly]
+**custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
 **batch_number** | **string** |  | [optional]
 **confirmed_by_user_id** | **string** |  | [optional] [readonly]
 **confirmed_date** | **int** |  | [optional] [readonly]
@@ -16,7 +17,7 @@ Name | Type | Description | Notes
 **serial_numbers** | **string[]** |  | [optional]
 **storage_place_id** | **string** |  | [optional]
 **booked_date** | **int** |  | [optional] [readonly]
-**order_item_id** | **string** |  | [optional] [readonly]
+**order_item_id** | **string** |  | [optional]
 **source_internal_transport_reference_id** | **string** |  | [optional] [readonly]
 **source_storage_place_id** | **string** |  | [optional] [readonly]
 

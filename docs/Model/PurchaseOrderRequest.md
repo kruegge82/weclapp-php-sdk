@@ -1,4 +1,4 @@
-# # PurchaseOrderRequest
+# PurchaseOrderRequest
 
 ## Properties
 
@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **confirmation_deadline** | **int** |  | [optional]
 **delivery_address** | [**\kruegge82\weclapp\Model\RecordAddress**](RecordAddress.md) |  | [optional]
 **invoice_address** | [**\kruegge82\weclapp\Model\RecordAddress**](RecordAddress.md) |  | [optional]
+**last_status_change_user_id** | **string** |  | [optional] [readonly]
 **planned_delivery_date** | **int** |  | [optional]
 **purchase_order_request_items** | [**\kruegge82\weclapp\Model\PurchaseOrderRequestItem[]**](PurchaseOrderRequestItem.md) |  | [optional]
 **purchase_order_request_number** | **string** |  | [optional]

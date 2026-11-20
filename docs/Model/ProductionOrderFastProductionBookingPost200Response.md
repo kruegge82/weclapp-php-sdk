@@ -1,4 +1,4 @@
-# # ProductionOrderFastProductionBookingPost200Response
+# ProductionOrderFastProductionBookingPost200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # CrmEventType
+# CrmEventType
 
 ## Properties
 

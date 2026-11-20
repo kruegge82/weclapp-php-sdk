@@ -1,4 +1,4 @@
-# # PurchaseInvoiceItemRelationship
+# PurchaseInvoiceItemRelationship
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # SalesInvoiceIdIdAddSalesOrdersPostRequest
+# SalesInvoiceIdIdAddSalesOrdersPostRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # PerformanceRecordIdIdAddToPerformanceRecordPostRequest
+# PerformanceRecordIdIdAddToPerformanceRecordPostRequest
 
 ## Properties
 

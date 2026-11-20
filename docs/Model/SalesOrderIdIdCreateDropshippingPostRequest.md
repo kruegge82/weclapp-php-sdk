@@ -1,9 +1,10 @@
-# # SalesOrderIdIdCreateDropshippingPostRequest
+# SalesOrderIdIdCreateDropshippingPostRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**custom_attributes** | [**\kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPostRequestCustomAttributesInner[]**](ProductionOrderIdIdCreatePickingOrderPostRequestCustomAttributesInner.md) |  | [optional]
 **order_item_ids** | **string[]** |  | [optional]
 **supplier_id** | **string** |  |
 

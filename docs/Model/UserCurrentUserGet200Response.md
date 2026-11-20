@@ -1,4 +1,4 @@
-# # UserCurrentUserGet200Response
+# UserCurrentUserGet200Response
 
 ## Properties
 

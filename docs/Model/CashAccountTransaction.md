@@ -1,4 +1,4 @@
-# # CashAccountTransaction
+# CashAccountTransaction
 
 ## Properties
 

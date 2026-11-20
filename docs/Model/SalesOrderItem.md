@@ -1,4 +1,4 @@
-# # SalesOrderItem
+# SalesOrderItem
 
 ## Properties
 
@@ -47,6 +47,7 @@ Name | Type | Description | Notes
 **planned_shipping_date** | **int** |  | [optional]
 **planned_working_time_per_unit** | **int** |  | [optional]
 **contract_charge_id** | **string** |  | [optional] [readonly]
+**cost_center_items** | [**\kruegge82\weclapp\Model\CostCenterWithDistributionPercentage[]**](CostCenterWithDistributionPercentage.md) |  | [optional]
 **ecommerce_order_item_ids** | **string[]** |  | [optional]
 **invoiced_quantity** | **float** |  | [optional] [readonly]
 **picks** | [**\kruegge82\weclapp\Model\ItemPick[]**](ItemPick.md) |  | [optional]

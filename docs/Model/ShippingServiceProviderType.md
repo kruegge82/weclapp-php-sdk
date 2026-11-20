@@ -1,4 +1,4 @@
-# # ShippingServiceProviderType
+# ShippingServiceProviderType
 
 ## Properties
 

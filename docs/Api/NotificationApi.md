@@ -1,5 +1,7 @@
 # kruegge82\weclapp\NotificationApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -13,7 +15,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `notificationCountGet()`
 
 ```php
-notificationCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+notificationCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count notification
@@ -57,7 +59,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -75,7 +77,7 @@ try {
 ## `notificationGet()`
 
 ```php
-notificationGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\NotificationGet200Response
+notificationGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject49
 ```
 
 query notification
@@ -101,6 +103,7 @@ $apiInstance = new kruegge82\weclapp\Api\NotificationApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -110,7 +113,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->notificationGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->notificationGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NotificationApi->notificationGet: ', $e->getMessage(), PHP_EOL;
@@ -121,6 +124,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -131,7 +135,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\NotificationGet200Response**](../Model/NotificationGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject49**](../Model/InlineObject49.md)
 
 ### Authorization
 

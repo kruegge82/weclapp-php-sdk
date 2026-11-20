@@ -1,4 +1,4 @@
-# # ConditionsForEntityType
+# ConditionsForEntityType
 
 ## Properties
 

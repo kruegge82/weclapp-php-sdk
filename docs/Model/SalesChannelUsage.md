@@ -1,4 +1,4 @@
-# # SalesChannelUsage
+# SalesChannelUsage
 
 ## Properties
 

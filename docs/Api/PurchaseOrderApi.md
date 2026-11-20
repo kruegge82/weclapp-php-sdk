@@ -1,5 +1,7 @@
 # kruegge82\weclapp\PurchaseOrderApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -11,6 +13,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 | [**purchaseOrderIdIdCreateContractPost()**](PurchaseOrderApi.md#purchaseOrderIdIdCreateContractPost) | **POST** /purchaseOrder/id/{id}/createContract |  |
 | [**purchaseOrderIdIdCreateDropshippingDeliveryNotePdfPost()**](PurchaseOrderApi.md#purchaseOrderIdIdCreateDropshippingDeliveryNotePdfPost) | **POST** /purchaseOrder/id/{id}/createDropshippingDeliveryNotePdf |  |
 | [**purchaseOrderIdIdCreateIncomingGoodsPost()**](PurchaseOrderApi.md#purchaseOrderIdIdCreateIncomingGoodsPost) | **POST** /purchaseOrder/id/{id}/createIncomingGoods |  |
+| [**purchaseOrderIdIdCreateProductionOrdersPost()**](PurchaseOrderApi.md#purchaseOrderIdIdCreateProductionOrdersPost) | **POST** /purchaseOrder/id/{id}/createProductionOrders |  |
 | [**purchaseOrderIdIdCreatePurchaseInvoicePost()**](PurchaseOrderApi.md#purchaseOrderIdIdCreatePurchaseInvoicePost) | **POST** /purchaseOrder/id/{id}/createPurchaseInvoice |  |
 | [**purchaseOrderIdIdCreateSupplierReturnPost()**](PurchaseOrderApi.md#purchaseOrderIdIdCreateSupplierReturnPost) | **POST** /purchaseOrder/id/{id}/createSupplierReturn |  |
 | [**purchaseOrderIdIdDelete()**](PurchaseOrderApi.md#purchaseOrderIdIdDelete) | **DELETE** /purchaseOrder/id/{id} | delete a purchaseOrder |
@@ -18,16 +21,19 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 | [**purchaseOrderIdIdDownloadLatestDropshippingDeliveryNotePdfGet()**](PurchaseOrderApi.md#purchaseOrderIdIdDownloadLatestDropshippingDeliveryNotePdfGet) | **GET** /purchaseOrder/id/{id}/downloadLatestDropshippingDeliveryNotePdf |  |
 | [**purchaseOrderIdIdDownloadLatestPurchaseOrderPdfGet()**](PurchaseOrderApi.md#purchaseOrderIdIdDownloadLatestPurchaseOrderPdfGet) | **GET** /purchaseOrder/id/{id}/downloadLatestPurchaseOrderPdf |  |
 | [**purchaseOrderIdIdGet()**](PurchaseOrderApi.md#purchaseOrderIdIdGet) | **GET** /purchaseOrder/id/{id} | query a specific purchaseOrder |
+| [**purchaseOrderIdIdManuallyClosePost()**](PurchaseOrderApi.md#purchaseOrderIdIdManuallyClosePost) | **POST** /purchaseOrder/id/{id}/manuallyClose |  |
 | [**purchaseOrderIdIdPrintLabelPost()**](PurchaseOrderApi.md#purchaseOrderIdIdPrintLabelPost) | **POST** /purchaseOrder/id/{id}/printLabel |  |
 | [**purchaseOrderIdIdProcessDropshippingPost()**](PurchaseOrderApi.md#purchaseOrderIdIdProcessDropshippingPost) | **POST** /purchaseOrder/id/{id}/processDropshipping |  |
 | [**purchaseOrderIdIdPut()**](PurchaseOrderApi.md#purchaseOrderIdIdPut) | **PUT** /purchaseOrder/id/{id} | update a purchaseOrder |
+| [**purchaseOrderIdIdResetTaxesPost()**](PurchaseOrderApi.md#purchaseOrderIdIdResetTaxesPost) | **POST** /purchaseOrder/id/{id}/resetTaxes |  |
+| [**purchaseOrderIdIdUpdateStatusPost()**](PurchaseOrderApi.md#purchaseOrderIdIdUpdateStatusPost) | **POST** /purchaseOrder/id/{id}/updateStatus |  |
 | [**purchaseOrderPost()**](PurchaseOrderApi.md#purchaseOrderPost) | **POST** /purchaseOrder | create a purchaseOrder |
 
 
 ## `purchaseOrderCountGet()`
 
 ```php
-purchaseOrderCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+purchaseOrderCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count purchaseOrder
@@ -71,7 +77,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -89,7 +95,7 @@ try {
 ## `purchaseOrderGet()`
 
 ```php
-purchaseOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\PurchaseOrderGet200Response
+purchaseOrderGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\InlineObject66
 ```
 
 query purchaseOrder
@@ -115,6 +121,7 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -122,9 +129,10 @@ $sort = 'sort_example'; // string
 $filter = 'filter_example'; // string
 $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
+$additional_properties = 'additional_properties_example'; // string
 
 try {
-    $result = $apiInstance->purchaseOrderGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->purchaseOrderGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOrderApi->purchaseOrderGet: ', $e->getMessage(), PHP_EOL;
@@ -135,6 +143,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -142,10 +151,11 @@ try {
 | **filter** | **string**|  | [optional] |
 | **properties** | **string**|  | [optional] |
 | **include_referenced_entities** | **string**|  | [optional] |
+| **additional_properties** | **string**|  | [optional] |
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\PurchaseOrderGet200Response**](../Model/PurchaseOrderGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject66**](../Model/InlineObject66.md)
 
 ### Authorization
 
@@ -286,7 +296,7 @@ void (empty response body)
 ## `purchaseOrderIdIdCreateContractPost()`
 
 ```php
-purchaseOrderIdIdCreateContractPost($id, $body): \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPost200Response
+purchaseOrderIdIdCreateContractPost($id, $purchase_invoice_id_id_create_contract_post_request): \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPost200Response
 ```
 
 
@@ -311,10 +321,10 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = array('key' => new \stdClass); // object
+$purchase_invoice_id_id_create_contract_post_request = new \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest(); // \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest
 
 try {
-    $result = $apiInstance->purchaseOrderIdIdCreateContractPost($id, $body);
+    $result = $apiInstance->purchaseOrderIdIdCreateContractPost($id, $purchase_invoice_id_id_create_contract_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOrderApi->purchaseOrderIdIdCreateContractPost: ', $e->getMessage(), PHP_EOL;
@@ -326,7 +336,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | **object**|  | |
+| **purchase_invoice_id_id_create_contract_post_request** | [**\kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest**](../Model/PurchaseInvoiceIdIdCreateContractPostRequest.md)|  | |
 
 ### Return type
 
@@ -469,6 +479,68 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `purchaseOrderIdIdCreateProductionOrdersPost()`
+
+```php
+purchaseOrderIdIdCreateProductionOrdersPost($id, $purchase_order_id_id_create_production_orders_post_request): \kruegge82\weclapp\Model\PurchaseOrderIdIdCreateProductionOrdersPost200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$purchase_order_id_id_create_production_orders_post_request = new \kruegge82\weclapp\Model\PurchaseOrderIdIdCreateProductionOrdersPostRequest(); // \kruegge82\weclapp\Model\PurchaseOrderIdIdCreateProductionOrdersPostRequest
+
+try {
+    $result = $apiInstance->purchaseOrderIdIdCreateProductionOrdersPost($id, $purchase_order_id_id_create_production_orders_post_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PurchaseOrderApi->purchaseOrderIdIdCreateProductionOrdersPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **purchase_order_id_id_create_production_orders_post_request** | [**\kruegge82\weclapp\Model\PurchaseOrderIdIdCreateProductionOrdersPostRequest**](../Model/PurchaseOrderIdIdCreateProductionOrdersPostRequest.md)|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\PurchaseOrderIdIdCreateProductionOrdersPost200Response**](../Model/PurchaseOrderIdIdCreateProductionOrdersPost200Response.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `purchaseOrderIdIdCreatePurchaseInvoicePost()`
 
 ```php
@@ -534,7 +606,7 @@ try {
 ## `purchaseOrderIdIdCreateSupplierReturnPost()`
 
 ```php
-purchaseOrderIdIdCreateSupplierReturnPost($id, $body): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCompensationShipmentPost200Response
+purchaseOrderIdIdCreateSupplierReturnPost($id, $purchase_invoice_id_id_create_contract_post_request): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCompensationShipmentPost200Response
 ```
 
 
@@ -559,10 +631,10 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
     $config
 );
 $id = 'id_example'; // string
-$body = array('key' => new \stdClass); // object
+$purchase_invoice_id_id_create_contract_post_request = new \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest(); // \kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest
 
 try {
-    $result = $apiInstance->purchaseOrderIdIdCreateSupplierReturnPost($id, $body);
+    $result = $apiInstance->purchaseOrderIdIdCreateSupplierReturnPost($id, $purchase_invoice_id_id_create_contract_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOrderApi->purchaseOrderIdIdCreateSupplierReturnPost: ', $e->getMessage(), PHP_EOL;
@@ -574,7 +646,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | **object**|  | |
+| **purchase_invoice_id_id_create_contract_post_request** | [**\kruegge82\weclapp\Model\PurchaseInvoiceIdIdCreateContractPostRequest**](../Model/PurchaseInvoiceIdIdCreateContractPostRequest.md)|  | |
 
 ### Return type
 
@@ -898,6 +970,68 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `purchaseOrderIdIdManuallyClosePost()`
+
+```php
+purchaseOrderIdIdManuallyClosePost($id, $purchase_order_id_id_manually_close_post_request): \kruegge82\weclapp\Model\PurchaseOrderIdIdCancelDropshippingShipmentsPost200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$purchase_order_id_id_manually_close_post_request = new \kruegge82\weclapp\Model\PurchaseOrderIdIdManuallyClosePostRequest(); // \kruegge82\weclapp\Model\PurchaseOrderIdIdManuallyClosePostRequest
+
+try {
+    $result = $apiInstance->purchaseOrderIdIdManuallyClosePost($id, $purchase_order_id_id_manually_close_post_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PurchaseOrderApi->purchaseOrderIdIdManuallyClosePost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **purchase_order_id_id_manually_close_post_request** | [**\kruegge82\weclapp\Model\PurchaseOrderIdIdManuallyClosePostRequest**](../Model/PurchaseOrderIdIdManuallyClosePostRequest.md)|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\PurchaseOrderIdIdCancelDropshippingShipmentsPost200Response**](../Model/PurchaseOrderIdIdCancelDropshippingShipmentsPost200Response.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `purchaseOrderIdIdPrintLabelPost()`
 
 ```php
@@ -1074,6 +1208,130 @@ try {
 ### Return type
 
 [**\kruegge82\weclapp\Model\PurchaseOrder**](../Model/PurchaseOrder.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `purchaseOrderIdIdResetTaxesPost()`
+
+```php
+purchaseOrderIdIdResetTaxesPost($id, $body): \kruegge82\weclapp\Model\PurchaseOrderIdIdCancelDropshippingShipmentsPost200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$body = array('key' => new \stdClass); // object
+
+try {
+    $result = $apiInstance->purchaseOrderIdIdResetTaxesPost($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PurchaseOrderApi->purchaseOrderIdIdResetTaxesPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **body** | **object**|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\PurchaseOrderIdIdCancelDropshippingShipmentsPost200Response**](../Model/PurchaseOrderIdIdCancelDropshippingShipmentsPost200Response.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `purchaseOrderIdIdUpdateStatusPost()`
+
+```php
+purchaseOrderIdIdUpdateStatusPost($id, $purchase_order_id_id_update_status_post_request): \kruegge82\weclapp\Model\PurchaseInvoiceIdIdUpdateStatusPost200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\PurchaseOrderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$purchase_order_id_id_update_status_post_request = new \kruegge82\weclapp\Model\PurchaseOrderIdIdUpdateStatusPostRequest(); // \kruegge82\weclapp\Model\PurchaseOrderIdIdUpdateStatusPostRequest
+
+try {
+    $result = $apiInstance->purchaseOrderIdIdUpdateStatusPost($id, $purchase_order_id_id_update_status_post_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PurchaseOrderApi->purchaseOrderIdIdUpdateStatusPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **purchase_order_id_id_update_status_post_request** | [**\kruegge82\weclapp\Model\PurchaseOrderIdIdUpdateStatusPostRequest**](../Model/PurchaseOrderIdIdUpdateStatusPostRequest.md)|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\PurchaseInvoiceIdIdUpdateStatusPost200Response**](../Model/PurchaseInvoiceIdIdUpdateStatusPost200Response.md)
 
 ### Authorization
 

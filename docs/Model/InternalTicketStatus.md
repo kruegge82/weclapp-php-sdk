@@ -1,4 +1,4 @@
-# # InternalTicketStatus
+# InternalTicketStatus
 
 ## Properties
 

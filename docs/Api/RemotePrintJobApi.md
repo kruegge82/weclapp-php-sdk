@@ -1,5 +1,7 @@
 # kruegge82\weclapp\RemotePrintJobApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -16,7 +18,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `remotePrintJobCountGet()`
 
 ```php
-remotePrintJobCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+remotePrintJobCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count remotePrintJob
@@ -60,7 +62,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -148,7 +150,7 @@ try {
 ## `remotePrintJobGet()`
 
 ```php
-remotePrintJobGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\RemotePrintJobGet200Response
+remotePrintJobGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject74
 ```
 
 query remotePrintJob
@@ -174,6 +176,7 @@ $apiInstance = new kruegge82\weclapp\Api\RemotePrintJobApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -183,7 +186,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->remotePrintJobGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->remotePrintJobGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RemotePrintJobApi->remotePrintJobGet: ', $e->getMessage(), PHP_EOL;
@@ -194,6 +197,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -204,7 +208,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\RemotePrintJobGet200Response**](../Model/RemotePrintJobGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject74**](../Model/InlineObject74.md)
 
 ### Authorization
 

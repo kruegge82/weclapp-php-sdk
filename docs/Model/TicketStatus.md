@@ -1,4 +1,4 @@
-# # TicketStatus
+# TicketStatus
 
 ## Properties
 

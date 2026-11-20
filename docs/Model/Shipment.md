@@ -1,4 +1,4 @@
-# # Shipment
+# Shipment
 
 ## Properties
 
@@ -18,7 +18,9 @@ Name | Type | Description | Notes
 **record_opening** | **string** |  | [optional]
 **sent_to_recipient** | **bool** |  | [optional]
 **tags** | **string[]** |  | [optional]
+**last_status_change_user_id** | **string** |  | [optional] [readonly]
 **sales_orders** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
+**shipping_return_labels_count** | **int** |  | [optional]
 **status** | [**\kruegge82\weclapp\Model\ShipmentStatusType**](ShipmentStatusType.md) |  | [optional]
 **status_history** | [**\kruegge82\weclapp\Model\ShipmentStatus[]**](ShipmentStatus.md) |  | [optional] [readonly]
 **additional_delivery_information** | **string** |  | [optional]
@@ -57,7 +59,7 @@ Name | Type | Description | Notes
 **shipment_method_id** | **string** |  | [optional]
 **shipment_number** | **string** |  | [optional]
 **shipment_type** | [**\kruegge82\weclapp\Model\ShipmentOutType**](ShipmentOutType.md) |  | [optional]
-**shipped_from_address** | [**\kruegge82\weclapp\Model\RecordAddress**](RecordAddress.md) |  | [optional]
+**shipped_from_address** | [**\kruegge82\weclapp\Model\RecordAddress**](RecordAddress.md) |  | [optional] [readonly]
 **shipping_carrier_id** | **string** |  | [optional]
 **shipping_date** | **int** |  | [optional]
 **shipping_labels_count** | **int** |  | [optional]

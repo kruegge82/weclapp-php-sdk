@@ -1,4 +1,4 @@
-# # SepaDirectDebitType
+# SepaDirectDebitType
 
 ## Properties
 

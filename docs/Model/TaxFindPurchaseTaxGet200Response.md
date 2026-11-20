@@ -1,4 +1,4 @@
-# # TaxFindPurchaseTaxGet200Response
+# TaxFindPurchaseTaxGet200Response
 
 ## Properties
 

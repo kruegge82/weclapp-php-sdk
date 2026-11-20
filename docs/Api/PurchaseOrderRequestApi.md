@@ -1,5 +1,7 @@
 # kruegge82\weclapp\PurchaseOrderRequestApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -19,7 +21,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `purchaseOrderRequestCountGet()`
 
 ```php
-purchaseOrderRequestCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+purchaseOrderRequestCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count purchaseOrderRequest
@@ -63,7 +65,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -81,7 +83,7 @@ try {
 ## `purchaseOrderRequestGet()`
 
 ```php
-purchaseOrderRequestGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\PurchaseOrderRequestGet200Response
+purchaseOrderRequestGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\InlineObject67
 ```
 
 query purchaseOrderRequest
@@ -107,6 +109,7 @@ $apiInstance = new kruegge82\weclapp\Api\PurchaseOrderRequestApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -114,9 +117,10 @@ $sort = 'sort_example'; // string
 $filter = 'filter_example'; // string
 $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
+$additional_properties = 'additional_properties_example'; // string
 
 try {
-    $result = $apiInstance->purchaseOrderRequestGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->purchaseOrderRequestGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseOrderRequestApi->purchaseOrderRequestGet: ', $e->getMessage(), PHP_EOL;
@@ -127,6 +131,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -134,10 +139,11 @@ try {
 | **filter** | **string**|  | [optional] |
 | **properties** | **string**|  | [optional] |
 | **include_referenced_entities** | **string**|  | [optional] |
+| **additional_properties** | **string**|  | [optional] |
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\PurchaseOrderRequestGet200Response**](../Model/PurchaseOrderRequestGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject67**](../Model/InlineObject67.md)
 
 ### Authorization
 

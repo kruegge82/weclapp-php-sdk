@@ -1,4 +1,4 @@
-# # IncomingGoodsIdIdUpdateIncomingBookingsPostRequestIncomingBookingsInner
+# IncomingGoodsIdIdUpdateIncomingBookingsPostRequestIncomingBookingsInner
 
 ## Properties
 
@@ -8,11 +8,10 @@ Name | Type | Description | Notes
 **batch_number** | **string** |  | [optional]
 **book_into_warehouse** | **bool** |  | [optional]
 **confirmed_by_user_id** | **string** |  | [optional] [readonly]
-**confirmed_by_user_id_deprecated** | **string** |  | [optional] [readonly]
 **confirmed_date** | **int** |  | [optional] [readonly]
-**confirmed_date_deprecated** | **int** |  | [optional] [readonly]
-**confirmed_quantity_deprecated** | **float** |  | [optional]
 **created_date** | **int** |  | [optional] [readonly]
+**custom_attributes** | [**\kruegge82\weclapp\Model\CustomAttribute[]**](CustomAttribute.md) |  | [optional]
+**dds_number** | **string** |  | [optional]
 **expiration_date** | **int** |  | [optional]
 **id** | **string** |  | [optional] [readonly]
 **incoming_goods_item_id** | **string** |  | [optional] [readonly]

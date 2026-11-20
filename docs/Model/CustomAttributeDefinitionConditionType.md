@@ -1,4 +1,4 @@
-# # CustomAttributeDefinitionConditionType
+# CustomAttributeDefinitionConditionType
 
 ## Properties
 

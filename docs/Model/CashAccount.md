@@ -1,4 +1,4 @@
-# # CashAccount
+# CashAccount
 
 ## Properties
 
@@ -10,7 +10,9 @@ Name | Type | Description | Notes
 **version** | **string** |  | [optional] [readonly]
 **account_id** | **string** |  | [optional]
 **active** | **bool** |  | [optional]
+**cash_account_sheets** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
 **currency_id** | **string** |  | [optional]
+**dco_cash_ledger** | **string** |  | [optional]
 **description** | **string** |  | [optional]
 **opening_balance** | **float** |  | [optional]
 **treasurer_id** | **string** |  | [optional]

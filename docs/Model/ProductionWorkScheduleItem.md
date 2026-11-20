@@ -1,4 +1,4 @@
-# # ProductionWorkScheduleItem
+# ProductionWorkScheduleItem
 
 ## Properties
 

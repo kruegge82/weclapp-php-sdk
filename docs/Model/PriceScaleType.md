@@ -1,4 +1,4 @@
-# # PriceScaleType
+# PriceScaleType
 
 ## Properties
 

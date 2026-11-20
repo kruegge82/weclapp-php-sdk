@@ -1,4 +1,4 @@
-# # PartyType
+# PartyType
 
 ## Properties
 

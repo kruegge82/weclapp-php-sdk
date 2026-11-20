@@ -1,4 +1,4 @@
-# # TaskMailAccount
+# TaskMailAccount
 
 ## Properties
 

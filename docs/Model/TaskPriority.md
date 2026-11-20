@@ -1,4 +1,4 @@
-# # TaskPriority
+# TaskPriority
 
 ## Properties
 

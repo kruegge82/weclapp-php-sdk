@@ -1,4 +1,4 @@
-# # FulfillmentProvider
+# FulfillmentProvider
 
 ## Properties
 
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **created_date** | **int** |  | [optional] [readonly]
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional] [readonly]
-**fulfillment_provider_type** | [**\kruegge82\weclapp\Model\FulfillmentProviderType**](FulfillmentProviderType.md) |  | [optional]
+**fulfillment_provider_type** | [**\kruegge82\weclapp\Model\FulfillmentProviderType**](FulfillmentProviderType.md) |  | [optional] [readonly]
 **name** | **string** |  | [optional]
 **warehouse_id** | **string** |  | [optional]
 

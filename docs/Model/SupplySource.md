@@ -1,4 +1,4 @@
-# # SupplySource
+# SupplySource
 
 ## Properties
 

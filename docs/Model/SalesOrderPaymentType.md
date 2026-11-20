@@ -1,4 +1,4 @@
-# # SalesOrderPaymentType
+# SalesOrderPaymentType
 
 ## Properties
 

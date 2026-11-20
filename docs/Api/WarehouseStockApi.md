@@ -1,5 +1,7 @@
 # kruegge82\weclapp\WarehouseStockApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -12,7 +14,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `warehouseStockCountGet()`
 
 ```php
-warehouseStockCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+warehouseStockCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count warehouseStock
@@ -56,7 +58,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -74,7 +76,7 @@ try {
 ## `warehouseStockGet()`
 
 ```php
-warehouseStockGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\WarehouseStockGet200Response
+warehouseStockGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject118
 ```
 
 query warehouseStock
@@ -100,6 +102,7 @@ $apiInstance = new kruegge82\weclapp\Api\WarehouseStockApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -109,7 +112,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->warehouseStockGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->warehouseStockGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WarehouseStockApi->warehouseStockGet: ', $e->getMessage(), PHP_EOL;
@@ -120,6 +123,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -130,7 +134,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\WarehouseStockGet200Response**](../Model/WarehouseStockGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject118**](../Model/InlineObject118.md)
 
 ### Authorization
 

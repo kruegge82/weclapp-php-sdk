@@ -1,4 +1,4 @@
-# # PurchaseOrderRequestIdIdPushPurchasePricesPostRequest
+# PurchaseOrderRequestIdIdPushPurchasePricesPostRequest
 
 ## Properties
 

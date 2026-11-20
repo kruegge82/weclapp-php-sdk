@@ -1,4 +1,4 @@
-# # AdvancePaymentStatus
+# AdvancePaymentStatus
 
 ## Properties
 

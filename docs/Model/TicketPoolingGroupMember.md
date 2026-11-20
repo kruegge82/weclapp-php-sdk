@@ -1,4 +1,4 @@
-# # TicketPoolingGroupMember
+# TicketPoolingGroupMember
 
 ## Properties
 

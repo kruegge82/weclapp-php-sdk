@@ -1,4 +1,4 @@
-# # ProductionWorkScheduleStatus
+# ProductionWorkScheduleStatus
 
 ## Properties
 

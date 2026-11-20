@@ -1,4 +1,4 @@
-# # ArticleImage
+# ArticleImage
 
 ## Properties
 

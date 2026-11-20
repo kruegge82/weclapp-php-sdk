@@ -1,4 +1,4 @@
-# # CostCenterWithDistributionPercentage
+# CostCenterWithDistributionPercentage
 
 ## Properties
 

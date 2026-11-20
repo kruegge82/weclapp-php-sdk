@@ -1,4 +1,4 @@
-# # DesiredInvoiceStatusType
+# DesiredInvoiceStatusType
 
 ## Properties
 

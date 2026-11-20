@@ -1,4 +1,4 @@
-# # IncomingGoods
+# IncomingGoods
 
 ## Properties
 
@@ -18,7 +18,9 @@ Name | Type | Description | Notes
 **record_opening** | **string** |  | [optional]
 **sent_to_recipient** | **bool** |  | [optional]
 **tags** | **string[]** |  | [optional]
+**last_status_change_user_id** | **string** |  | [optional] [readonly]
 **sales_orders** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
+**shipping_return_labels_count** | **int** |  | [optional]
 **status** | [**\kruegge82\weclapp\Model\ShipmentStatusType**](ShipmentStatusType.md) |  | [optional]
 **status_history** | [**\kruegge82\weclapp\Model\ShipmentStatus[]**](ShipmentStatus.md) |  | [optional] [readonly]
 **customer_delivery_address** | [**\kruegge82\weclapp\Model\RecordAddress**](RecordAddress.md) |  | [optional]

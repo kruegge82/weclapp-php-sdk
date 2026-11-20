@@ -1,4 +1,4 @@
-# # StockMovementType
+# StockMovementType
 
 ## Properties
 

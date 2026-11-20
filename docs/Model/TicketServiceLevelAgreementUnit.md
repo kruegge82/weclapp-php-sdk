@@ -1,4 +1,4 @@
-# # TicketServiceLevelAgreementUnit
+# TicketServiceLevelAgreementUnit
 
 ## Properties
 

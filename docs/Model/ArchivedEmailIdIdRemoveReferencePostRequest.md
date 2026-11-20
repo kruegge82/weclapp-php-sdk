@@ -1,4 +1,4 @@
-# # ArchivedEmailIdIdRemoveReferencePostRequest
+# ArchivedEmailIdIdRemoveReferencePostRequest
 
 ## Properties
 

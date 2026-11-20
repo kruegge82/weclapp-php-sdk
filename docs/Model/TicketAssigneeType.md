@@ -1,4 +1,4 @@
-# # TicketAssigneeType
+# TicketAssigneeType
 
 ## Properties
 

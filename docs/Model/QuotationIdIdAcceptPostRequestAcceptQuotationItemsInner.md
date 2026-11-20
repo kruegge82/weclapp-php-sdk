@@ -1,4 +1,4 @@
-# # QuotationIdIdAcceptPostRequestAcceptQuotationItemsInner
+# QuotationIdIdAcceptPostRequestAcceptQuotationItemsInner
 
 ## Properties
 

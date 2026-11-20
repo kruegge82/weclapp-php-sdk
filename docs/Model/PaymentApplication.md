@@ -1,4 +1,4 @@
-# # PaymentApplication
+# PaymentApplication
 
 ## Properties
 

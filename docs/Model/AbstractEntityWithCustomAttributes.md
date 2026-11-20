@@ -1,4 +1,4 @@
-# # AbstractEntityWithCustomAttributes
+# AbstractEntityWithCustomAttributes
 
 ## Properties
 

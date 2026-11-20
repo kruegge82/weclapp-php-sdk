@@ -1,4 +1,4 @@
-# # OrderStatusType
+# OrderStatusType
 
 ## Properties
 

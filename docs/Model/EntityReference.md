@@ -1,4 +1,4 @@
-# # EntityReference
+# EntityReference
 
 ## Properties
 

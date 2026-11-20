@@ -1,4 +1,4 @@
-# # TaskVisibilityType
+# TaskVisibilityType
 
 ## Properties
 

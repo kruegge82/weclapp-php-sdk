@@ -1,4 +1,4 @@
-# # InvoicingType
+# InvoicingType
 
 ## Properties
 

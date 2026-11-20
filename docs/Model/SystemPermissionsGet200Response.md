@@ -1,4 +1,4 @@
-# # SystemPermissionsGet200Response
+# SystemPermissionsGet200Response
 
 ## Properties
 

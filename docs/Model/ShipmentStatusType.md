@@ -1,4 +1,4 @@
-# # ShipmentStatusType
+# ShipmentStatusType
 
 ## Properties
 

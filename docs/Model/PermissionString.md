@@ -1,4 +1,4 @@
-# # PermissionString
+# PermissionString
 
 ## Properties
 

@@ -1,9 +1,10 @@
-# # PurchaseOrderRequestIdIdCreateBlanketPurchaseOrderPostRequest
+# PurchaseOrderRequestIdIdCreateBlanketPurchaseOrderPostRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**custom_attributes** | [**\kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPostRequestCustomAttributesInner[]**](ProductionOrderIdIdCreatePickingOrderPostRequestCustomAttributesInner.md) |  | [optional]
 **offer_item_id** | **string** |  |
 **ordered_quantity** | **float** |  |
 

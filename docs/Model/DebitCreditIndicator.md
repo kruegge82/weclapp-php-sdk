@@ -1,4 +1,4 @@
-# # DebitCreditIndicator
+# DebitCreditIndicator
 
 ## Properties
 

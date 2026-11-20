@@ -1,4 +1,4 @@
-# # Task
+# Task
 
 ## Properties
 
@@ -22,11 +22,11 @@ Name | Type | Description | Notes
 **description** | **string** |  | [optional]
 **entity_references** | [**\kruegge82\weclapp\Model\EntityReference[]**](EntityReference.md) |  | [optional]
 **identifier** | **string** |  | [optional] [readonly]
-**invoicing_status** | [**\kruegge82\weclapp\Model\BillableInvoiceStatus**](BillableInvoiceStatus.md) |  | [optional]
+**invoicing_status** | [**\kruegge82\weclapp\Model\BillableInvoiceStatus**](BillableInvoiceStatus.md) |  | [optional] [readonly]
 **last_reminder_date_for_overdue** | **int** |  | [optional] [readonly]
 **order_item_id** | **string** |  | [optional]
 **parent_task_id** | **string** |  | [optional]
-**performance_recorded_status** | [**\kruegge82\weclapp\Model\PerformanceRecordedStatus**](PerformanceRecordedStatus.md) |  | [optional]
+**performance_recorded_status** | [**\kruegge82\weclapp\Model\PerformanceRecordedStatus**](PerformanceRecordedStatus.md) |  | [optional] [readonly]
 **planned_effort** | **int** |  | [optional]
 **position_number** | **int** |  | [optional]
 **previous_task_id** | **string** |  | [optional]

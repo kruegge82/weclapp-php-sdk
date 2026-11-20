@@ -1,4 +1,4 @@
-# # RecordEmailingRule
+# RecordEmailingRule
 
 ## Properties
 
@@ -20,9 +20,11 @@ Name | Type | Description | Notes
 **name** | **string** |  | [optional]
 **other_recipients** | **string** |  | [optional]
 **payment_methods** | [**\kruegge82\weclapp\Model\OnlyId[]**](OnlyId.md) |  | [optional]
+**performance_record_invoicing_modes** | [**\kruegge82\weclapp\Model\PerformanceRecordInvoicingMode[]**](PerformanceRecordInvoicingMode.md) |  | [optional]
+**purchase_credit_advice_types** | [**\kruegge82\weclapp\Model\PurchaseInvoiceType[]**](PurchaseInvoiceType.md) |  | [optional]
 **recipient_type** | [**\kruegge82\weclapp\Model\RecordEmailingRuleRecipientType**](RecordEmailingRuleRecipientType.md) |  | [optional]
 **sales_channels** | [**\kruegge82\weclapp\Model\DistributionChannel[]**](DistributionChannel.md) |  | [optional]
-**sales_invoice_origin** | [**\kruegge82\weclapp\Model\SalesInvoiceOrigin**](SalesInvoiceOrigin.md) |  | [optional]
+**sales_invoice_origins** | [**\kruegge82\weclapp\Model\SalesInvoiceOrigin[]**](SalesInvoiceOrigin.md) |  | [optional]
 **sales_invoice_types** | [**\kruegge82\weclapp\Model\SalesInvoiceType[]**](SalesInvoiceType.md) |  | [optional]
 **sales_order_origins** | [**\kruegge82\weclapp\Model\SalesOrderOrigin[]**](SalesOrderOrigin.md) |  | [optional]
 **shipment_out_types** | [**\kruegge82\weclapp\Model\ShipmentOutType[]**](ShipmentOutType.md) |  | [optional]

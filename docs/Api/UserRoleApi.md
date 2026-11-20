@@ -1,5 +1,7 @@
 # kruegge82\weclapp\UserRoleApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -17,7 +19,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `userRoleCountGet()`
 
 ```php
-userRoleCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+userRoleCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count userRole
@@ -61,7 +63,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -197,7 +199,7 @@ void (empty response body)
 ## `userRoleGet()`
 
 ```php
-userRoleGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\UserRoleGet200Response
+userRoleGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject113
 ```
 
 query userRole
@@ -223,6 +225,7 @@ $apiInstance = new kruegge82\weclapp\Api\UserRoleApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -232,7 +235,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->userRoleGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->userRoleGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserRoleApi->userRoleGet: ', $e->getMessage(), PHP_EOL;
@@ -243,6 +246,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -253,7 +257,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\UserRoleGet200Response**](../Model/UserRoleGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject113**](../Model/InlineObject113.md)
 
 ### Authorization
 

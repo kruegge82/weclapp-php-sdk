@@ -1,4 +1,4 @@
-# # JobStatus
+# JobStatus
 
 ## Properties
 

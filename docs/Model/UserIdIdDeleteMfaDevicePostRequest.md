@@ -1,4 +1,4 @@
-# # UserIdIdDeleteMfaDevicePostRequest
+# UserIdIdDeleteMfaDevicePostRequest
 
 ## Properties
 

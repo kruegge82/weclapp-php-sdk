@@ -1,5 +1,7 @@
 # kruegge82\weclapp\ShipmentApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -7,6 +9,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 | [**shipmentCountGet()**](ShipmentApi.md#shipmentCountGet) | **GET** /shipment/count | count shipment |
 | [**shipmentGet()**](ShipmentApi.md#shipmentGet) | **GET** /shipment | query shipment |
 | [**shipmentIdIdCreatePickingListPost()**](ShipmentApi.md#shipmentIdIdCreatePickingListPost) | **POST** /shipment/id/{id}/createPickingList |  |
+| [**shipmentIdIdCreatePickingOrderPost()**](ShipmentApi.md#shipmentIdIdCreatePickingOrderPost) | **POST** /shipment/id/{id}/createPickingOrder |  |
 | [**shipmentIdIdCreateReturnLabelsPost()**](ShipmentApi.md#shipmentIdIdCreateReturnLabelsPost) | **POST** /shipment/id/{id}/createReturnLabels |  |
 | [**shipmentIdIdCreateSalesInvoicePost()**](ShipmentApi.md#shipmentIdIdCreateSalesInvoicePost) | **POST** /shipment/id/{id}/createSalesInvoice |  |
 | [**shipmentIdIdCreateShippingLabelPdfPost()**](ShipmentApi.md#shipmentIdIdCreateShippingLabelPdfPost) | **POST** /shipment/id/{id}/createShippingLabelPdf |  |
@@ -24,7 +27,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `shipmentCountGet()`
 
 ```php
-shipmentCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+shipmentCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count shipment
@@ -68,7 +71,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -86,7 +89,7 @@ try {
 ## `shipmentGet()`
 
 ```php
-shipmentGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\ShipmentGet200Response
+shipmentGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\InlineObject86
 ```
 
 query shipment
@@ -112,6 +115,7 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -122,7 +126,7 @@ $include_referenced_entities = 'include_referenced_entities_example'; // string
 $additional_properties = 'additional_properties_example'; // string
 
 try {
-    $result = $apiInstance->shipmentGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
+    $result = $apiInstance->shipmentGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->shipmentGet: ', $e->getMessage(), PHP_EOL;
@@ -133,6 +137,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -144,7 +149,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\ShipmentGet200Response**](../Model/ShipmentGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject86**](../Model/InlineObject86.md)
 
 ### Authorization
 
@@ -221,10 +226,72 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `shipmentIdIdCreatePickingOrderPost()`
+
+```php
+shipmentIdIdCreatePickingOrderPost($id, $production_order_id_id_create_picking_order_post_request): \kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPost200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\ShipmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$production_order_id_id_create_picking_order_post_request = new \kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPostRequest(); // \kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPostRequest
+
+try {
+    $result = $apiInstance->shipmentIdIdCreatePickingOrderPost($id, $production_order_id_id_create_picking_order_post_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ShipmentApi->shipmentIdIdCreatePickingOrderPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **production_order_id_id_create_picking_order_post_request** | [**\kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPostRequest**](../Model/ProductionOrderIdIdCreatePickingOrderPostRequest.md)|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPost200Response**](../Model/ProductionOrderIdIdCreatePickingOrderPost200Response.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `shipmentIdIdCreateReturnLabelsPost()`
 
 ```php
-shipmentIdIdCreateReturnLabelsPost($id, $body): \kruegge82\weclapp\Model\DocumentGet200Response
+shipmentIdIdCreateReturnLabelsPost($id, $body): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateReturnLabelsPost200Response
 ```
 
 
@@ -268,7 +335,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\DocumentGet200Response**](../Model/DocumentGet200Response.md)
+[**\kruegge82\weclapp\Model\IncomingGoodsIdIdCreateReturnLabelsPost200Response**](../Model/IncomingGoodsIdIdCreateReturnLabelsPost200Response.md)
 
 ### Authorization
 
@@ -286,7 +353,7 @@ try {
 ## `shipmentIdIdCreateSalesInvoicePost()`
 
 ```php
-shipmentIdIdCreateSalesInvoicePost($id, $body): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCreditNotePost200Response
+shipmentIdIdCreateSalesInvoicePost($id, $shipment_id_id_create_sales_invoice_post_request): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateCreditNotePost200Response
 ```
 
 
@@ -311,10 +378,10 @@ $apiInstance = new kruegge82\weclapp\Api\ShipmentApi(
     $config
 );
 $id = 'id_example'; // string
-$body = array('key' => new \stdClass); // object
+$shipment_id_id_create_sales_invoice_post_request = new \kruegge82\weclapp\Model\ShipmentIdIdCreateSalesInvoicePostRequest(); // \kruegge82\weclapp\Model\ShipmentIdIdCreateSalesInvoicePostRequest
 
 try {
-    $result = $apiInstance->shipmentIdIdCreateSalesInvoicePost($id, $body);
+    $result = $apiInstance->shipmentIdIdCreateSalesInvoicePost($id, $shipment_id_id_create_sales_invoice_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentApi->shipmentIdIdCreateSalesInvoicePost: ', $e->getMessage(), PHP_EOL;
@@ -326,7 +393,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | **object**|  | |
+| **shipment_id_id_create_sales_invoice_post_request** | [**\kruegge82\weclapp\Model\ShipmentIdIdCreateSalesInvoicePostRequest**](../Model/ShipmentIdIdCreateSalesInvoicePostRequest.md)|  | |
 
 ### Return type
 
@@ -416,7 +483,7 @@ try {
 ## `shipmentIdIdCreateShippingLabelsPost()`
 
 ```php
-shipmentIdIdCreateShippingLabelsPost($id, $shipment_id_id_create_shipping_labels_post_request): \kruegge82\weclapp\Model\DocumentGet200Response
+shipmentIdIdCreateShippingLabelsPost($id, $shipment_id_id_create_shipping_labels_post_request): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateReturnLabelsPost200Response
 ```
 
 
@@ -460,7 +527,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\DocumentGet200Response**](../Model/DocumentGet200Response.md)
+[**\kruegge82\weclapp\Model\IncomingGoodsIdIdCreateReturnLabelsPost200Response**](../Model/IncomingGoodsIdIdCreateReturnLabelsPost200Response.md)
 
 ### Authorization
 

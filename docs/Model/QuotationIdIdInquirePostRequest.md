@@ -1,4 +1,4 @@
-# # QuotationIdIdInquirePostRequest
+# QuotationIdIdInquirePostRequest
 
 ## Properties
 

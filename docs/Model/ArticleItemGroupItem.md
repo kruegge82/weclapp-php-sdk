@@ -1,4 +1,4 @@
-# # ArticleItemGroupItem
+# ArticleItemGroupItem
 
 ## Properties
 

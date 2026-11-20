@@ -1,4 +1,4 @@
-# # QuotationItemScaleValue
+# QuotationItemScaleValue
 
 ## Properties
 

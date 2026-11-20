@@ -1,4 +1,4 @@
-# # TaxDeterminationRule
+# TaxDeterminationRule
 
 ## Properties
 
@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 **version** | **string** |  | [optional] [readonly]
 **accounting_code_id** | **string** |  | [optional]
 **customer_debtor_accounting_code_id** | **string** |  | [optional]
-**dispatch_country_code** | **string** |  | [optional]
+**dispatch_country_code** | [**\kruegge82\weclapp\Model\Country**](Country.md) |  | [optional]
 **end_date** | **int** |  | [optional]
 **party_type** | [**\kruegge82\weclapp\Model\PartyType**](PartyType.md) |  | [optional]
-**recipient_country_code** | **string** |  | [optional]
+**recipient_country_code** | [**\kruegge82\weclapp\Model\Country**](Country.md) |  | [optional]
 **sales** | **bool** |  | [optional]
 **start_date** | **int** |  | [optional]
 **tax_id** | **string** |  | [optional]

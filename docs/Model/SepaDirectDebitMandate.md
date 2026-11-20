@@ -1,4 +1,4 @@
-# # SepaDirectDebitMandate
+# SepaDirectDebitMandate
 
 ## Properties
 
@@ -17,5 +17,6 @@ Name | Type | Description | Notes
 **runtime** | [**\kruegge82\weclapp\Model\SepaDirectDebitRuntime**](SepaDirectDebitRuntime.md) |  | [optional]
 **signature_date** | **int** |  | [optional]
 **type** | [**\kruegge82\weclapp\Model\SepaDirectDebitType**](SepaDirectDebitType.md) |  | [optional]
+**valid** | **bool** |  | [optional] [readonly]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

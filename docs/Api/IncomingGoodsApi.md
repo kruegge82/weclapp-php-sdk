@@ -1,5 +1,7 @@
 # kruegge82\weclapp\IncomingGoodsApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -23,7 +25,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `incomingGoodsCountGet()`
 
 ```php
-incomingGoodsCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+incomingGoodsCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count incomingGoods
@@ -67,7 +69,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -85,7 +87,7 @@ try {
 ## `incomingGoodsGet()`
 
 ```php
-incomingGoodsGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\IncomingGoodsGet200Response
+incomingGoodsGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\InlineObject40
 ```
 
 query incomingGoods
@@ -111,6 +113,7 @@ $apiInstance = new kruegge82\weclapp\Api\IncomingGoodsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -118,9 +121,10 @@ $sort = 'sort_example'; // string
 $filter = 'filter_example'; // string
 $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
+$additional_properties = 'additional_properties_example'; // string
 
 try {
-    $result = $apiInstance->incomingGoodsGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->incomingGoodsGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IncomingGoodsApi->incomingGoodsGet: ', $e->getMessage(), PHP_EOL;
@@ -131,6 +135,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -138,10 +143,11 @@ try {
 | **filter** | **string**|  | [optional] |
 | **properties** | **string**|  | [optional] |
 | **include_referenced_entities** | **string**|  | [optional] |
+| **additional_properties** | **string**|  | [optional] |
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\IncomingGoodsGet200Response**](../Model/IncomingGoodsGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject40**](../Model/InlineObject40.md)
 
 ### Authorization
 
@@ -407,7 +413,7 @@ try {
 ## `incomingGoodsIdIdCreateReturnLabelsPost()`
 
 ```php
-incomingGoodsIdIdCreateReturnLabelsPost($id, $body): \kruegge82\weclapp\Model\DocumentGet200Response
+incomingGoodsIdIdCreateReturnLabelsPost($id, $body): \kruegge82\weclapp\Model\IncomingGoodsIdIdCreateReturnLabelsPost200Response
 ```
 
 
@@ -451,7 +457,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\DocumentGet200Response**](../Model/DocumentGet200Response.md)
+[**\kruegge82\weclapp\Model\IncomingGoodsIdIdCreateReturnLabelsPost200Response**](../Model/IncomingGoodsIdIdCreateReturnLabelsPost200Response.md)
 
 ### Authorization
 

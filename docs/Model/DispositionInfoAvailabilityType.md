@@ -1,4 +1,4 @@
-# # DispositionInfoAvailabilityType
+# DispositionInfoAvailabilityType
 
 ## Properties
 

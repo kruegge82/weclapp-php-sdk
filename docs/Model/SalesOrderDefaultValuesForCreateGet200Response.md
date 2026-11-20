@@ -1,4 +1,4 @@
-# # SalesOrderDefaultValuesForCreateGet200Response
+# SalesOrderDefaultValuesForCreateGet200Response
 
 ## Properties
 

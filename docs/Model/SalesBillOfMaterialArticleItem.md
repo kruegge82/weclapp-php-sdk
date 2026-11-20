@@ -1,4 +1,4 @@
-# # SalesBillOfMaterialArticleItem
+# SalesBillOfMaterialArticleItem
 
 ## Properties
 

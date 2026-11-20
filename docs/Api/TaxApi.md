@@ -1,5 +1,7 @@
 # kruegge82\weclapp\TaxApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -140,7 +142,7 @@ try {
 ## `taxCountGet()`
 
 ```php
-taxCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+taxCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count tax
@@ -184,7 +186,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -348,7 +350,7 @@ try {
 ## `taxGet()`
 
 ```php
-taxGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\TaxGet200Response
+taxGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject97
 ```
 
 query tax
@@ -374,6 +376,7 @@ $apiInstance = new kruegge82\weclapp\Api\TaxApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -383,7 +386,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->taxGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->taxGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxApi->taxGet: ', $e->getMessage(), PHP_EOL;
@@ -394,6 +397,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -404,7 +408,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\TaxGet200Response**](../Model/TaxGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject97**](../Model/InlineObject97.md)
 
 ### Authorization
 

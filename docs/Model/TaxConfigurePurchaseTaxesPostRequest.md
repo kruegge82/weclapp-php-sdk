@@ -1,4 +1,4 @@
-# # TaxConfigurePurchaseTaxesPostRequest
+# TaxConfigurePurchaseTaxesPostRequest
 
 ## Properties
 

@@ -1,10 +1,10 @@
-# # SalesInvoiceStatusHistory
+# SalesInvoiceStatusHistory
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | [**\kruegge82\weclapp\Model\SalesInvoiceStatusType**](SalesInvoiceStatusType.md) |  | [optional]
+**status** | [**\kruegge82\weclapp\Model\SalesInvoiceStatusType**](SalesInvoiceStatusType.md) |  | [optional] [readonly]
 **status_date** | **int** |  | [optional] [readonly]
 **user_id** | **string** |  | [optional] [readonly]
 

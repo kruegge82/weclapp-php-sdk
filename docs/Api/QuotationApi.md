@@ -1,5 +1,7 @@
 # kruegge82\weclapp\QuotationApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -25,13 +27,14 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 | [**quotationIdIdResetTaxesPost()**](QuotationApi.md#quotationIdIdResetTaxesPost) | **POST** /quotation/id/{id}/resetTaxes |  |
 | [**quotationIdIdSetCostsForItemsWithoutCostPost()**](QuotationApi.md#quotationIdIdSetCostsForItemsWithoutCostPost) | **POST** /quotation/id/{id}/setCostsForItemsWithoutCost |  |
 | [**quotationIdIdUpdatePricesPost()**](QuotationApi.md#quotationIdIdUpdatePricesPost) | **POST** /quotation/id/{id}/updatePrices |  |
+| [**quotationIdIdUpdateStatusPost()**](QuotationApi.md#quotationIdIdUpdateStatusPost) | **POST** /quotation/id/{id}/updateStatus |  |
 | [**quotationPost()**](QuotationApi.md#quotationPost) | **POST** /quotation | create a quotation |
 
 
 ## `quotationCountGet()`
 
 ```php
-quotationCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+quotationCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count quotation
@@ -75,7 +78,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -93,7 +96,7 @@ try {
 ## `quotationGet()`
 
 ```php
-quotationGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\QuotationGet200Response
+quotationGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties): \kruegge82\weclapp\Model\InlineObject69
 ```
 
 query quotation
@@ -119,6 +122,7 @@ $apiInstance = new kruegge82\weclapp\Api\QuotationApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -126,9 +130,10 @@ $sort = 'sort_example'; // string
 $filter = 'filter_example'; // string
 $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
+$additional_properties = 'additional_properties_example'; // string
 
 try {
-    $result = $apiInstance->quotationGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->quotationGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities, $additional_properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QuotationApi->quotationGet: ', $e->getMessage(), PHP_EOL;
@@ -139,6 +144,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -146,10 +152,11 @@ try {
 | **filter** | **string**|  | [optional] |
 | **properties** | **string**|  | [optional] |
 | **include_referenced_entities** | **string**|  | [optional] |
+| **additional_properties** | **string**|  | [optional] |
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\QuotationGet200Response**](../Model/QuotationGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject69**](../Model/InlineObject69.md)
 
 ### Authorization
 
@@ -1327,6 +1334,68 @@ try {
 ### Return type
 
 [**\kruegge82\weclapp\Model\QuotationIdIdAcceptPost200Response**](../Model/QuotationIdIdAcceptPost200Response.md)
+
+### Authorization
+
+[api-token](../../README.md#api-token)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `quotationIdIdUpdateStatusPost()`
+
+```php
+quotationIdIdUpdateStatusPost($id, $quotation_id_id_update_status_post_request): \kruegge82\weclapp\Model\PurchaseInvoiceIdIdUpdateStatusPost200Response
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: api-token
+$config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKey('AuthenticationToken', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = kruegge82\weclapp\Configuration::getDefaultConfiguration()->setApiKeyPrefix('AuthenticationToken', 'Bearer');
+
+
+$apiInstance = new kruegge82\weclapp\Api\QuotationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string
+$quotation_id_id_update_status_post_request = new \kruegge82\weclapp\Model\QuotationIdIdUpdateStatusPostRequest(); // \kruegge82\weclapp\Model\QuotationIdIdUpdateStatusPostRequest
+
+try {
+    $result = $apiInstance->quotationIdIdUpdateStatusPost($id, $quotation_id_id_update_status_post_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling QuotationApi->quotationIdIdUpdateStatusPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**|  | |
+| **quotation_id_id_update_status_post_request** | [**\kruegge82\weclapp\Model\QuotationIdIdUpdateStatusPostRequest**](../Model/QuotationIdIdUpdateStatusPostRequest.md)|  | |
+
+### Return type
+
+[**\kruegge82\weclapp\Model\PurchaseInvoiceIdIdUpdateStatusPost200Response**](../Model/PurchaseInvoiceIdIdUpdateStatusPost200Response.md)
 
 ### Authorization
 

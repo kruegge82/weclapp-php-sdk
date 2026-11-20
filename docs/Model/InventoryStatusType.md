@@ -1,4 +1,4 @@
-# # InventoryStatusType
+# InventoryStatusType
 
 ## Properties
 

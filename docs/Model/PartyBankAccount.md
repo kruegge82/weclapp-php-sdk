@@ -1,4 +1,4 @@
-# # PartyBankAccount
+# PartyBankAccount
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # MarginCalculationPriceType
+# MarginCalculationPriceType
 
 ## Properties
 

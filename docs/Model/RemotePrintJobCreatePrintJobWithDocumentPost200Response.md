@@ -1,4 +1,4 @@
-# # RemotePrintJobCreatePrintJobWithDocumentPost200Response
+# RemotePrintJobCreatePrintJobWithDocumentPost200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # QuotationIdIdCreatePurchaseOrderRequestPost200Response
+# QuotationIdIdCreatePurchaseOrderRequestPost200Response
 
 ## Properties
 

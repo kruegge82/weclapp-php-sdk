@@ -1,4 +1,4 @@
-# # BaseArticle
+# BaseArticle
 
 ## Properties
 
@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **match_code** | **string** |  | [optional]
 **minimum_purchase_quantity** | **float** |  | [optional]
 **name** | **string** |  | [optional]
+**procurement_lead_days** | **int** |  | [optional]
 **short_description1** | **string** |  | [optional]
 **short_description2** | **string** |  | [optional]
 **tax_rate_type** | [**\kruegge82\weclapp\Model\TaxRateType**](TaxRateType.md) |  | [optional]

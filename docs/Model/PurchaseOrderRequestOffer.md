@@ -1,4 +1,4 @@
-# # PurchaseOrderRequestOffer
+# PurchaseOrderRequestOffer
 
 ## Properties
 

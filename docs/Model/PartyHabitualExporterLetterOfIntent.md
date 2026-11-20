@@ -1,4 +1,4 @@
-# # PartyHabitualExporterLetterOfIntent
+# PartyHabitualExporterLetterOfIntent
 
 ## Properties
 

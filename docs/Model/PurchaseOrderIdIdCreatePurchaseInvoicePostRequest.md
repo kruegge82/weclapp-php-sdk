@@ -1,10 +1,11 @@
-# # PurchaseOrderIdIdCreatePurchaseInvoicePostRequest
+# PurchaseOrderIdIdCreatePurchaseInvoicePostRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allow_existing_invoice_number** | **bool** |  | [optional]
+**custom_attributes** | [**\kruegge82\weclapp\Model\ProductionOrderIdIdCreatePickingOrderPostRequestCustomAttributesInner[]**](ProductionOrderIdIdCreatePickingOrderPostRequestCustomAttributesInner.md) |  | [optional]
 **invoice_date** | **int** |  | [optional]
 **invoice_number** | **string** |  | [optional]
 **invoice_type** | **string** |  | [optional]

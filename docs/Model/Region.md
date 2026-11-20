@@ -1,4 +1,4 @@
-# # Region
+# Region
 
 ## Properties
 
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **created_date** | **int** |  | [optional] [readonly]
 **last_modified_date** | **int** |  | [optional] [readonly]
 **version** | **string** |  | [optional] [readonly]
-**country_code** | **string** |  | [optional]
+**country_code** | [**\kruegge82\weclapp\Model\Country**](Country.md) |  | [optional]
 **description** | **string** |  | [optional]
 **match_code** | **string** |  | [optional]
 **name** | **string** |  | [optional]

@@ -1,4 +1,4 @@
-# # SalesChannelSalesChannelUsageGet200Response
+# SalesChannelSalesChannelUsageGet200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # PropertyTranslationReadPropertyTranslationsGet200Response
+# PropertyTranslationReadPropertyTranslationsGet200Response
 
 ## Properties
 

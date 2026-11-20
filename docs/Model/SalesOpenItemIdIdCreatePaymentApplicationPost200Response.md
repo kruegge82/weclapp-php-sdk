@@ -1,4 +1,4 @@
-# # SalesOpenItemIdIdCreatePaymentApplicationPost200Response
+# SalesOpenItemIdIdCreatePaymentApplicationPost200Response
 
 ## Properties
 

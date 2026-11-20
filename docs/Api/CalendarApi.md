@@ -1,5 +1,7 @@
 # kruegge82\weclapp\CalendarApi
 
+
+
 All URIs are relative to https://localhost:80/webapp/api/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -17,7 +19,7 @@ All URIs are relative to https://localhost:80/webapp/api/v2, except if the opera
 ## `calendarCountGet()`
 
 ```php
-calendarCountGet($filter): \kruegge82\weclapp\Model\AccountingTransactionCountGet200Response
+calendarCountGet($filter): \kruegge82\weclapp\Model\InlineObject33
 ```
 
 count calendar
@@ -61,7 +63,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\AccountingTransactionCountGet200Response**](../Model/AccountingTransactionCountGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject33**](../Model/InlineObject33.md)
 
 ### Authorization
 
@@ -79,7 +81,7 @@ try {
 ## `calendarGet()`
 
 ```php
-calendarGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\CalendarGet200Response
+calendarGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities): \kruegge82\weclapp\Model\InlineObject20
 ```
 
 query calendar
@@ -105,6 +107,7 @@ $apiInstance = new kruegge82\weclapp\Api\CalendarApi(
     new GuzzleHttp\Client(),
     $config
 );
+$offset = 56; // int
 $page = 56; // int
 $page_size = 56; // int
 $serialize_nulls = True; // bool
@@ -114,7 +117,7 @@ $properties = 'properties_example'; // string
 $include_referenced_entities = 'include_referenced_entities_example'; // string
 
 try {
-    $result = $apiInstance->calendarGet($page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
+    $result = $apiInstance->calendarGet($offset, $page, $page_size, $serialize_nulls, $sort, $filter, $properties, $include_referenced_entities);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CalendarApi->calendarGet: ', $e->getMessage(), PHP_EOL;
@@ -125,6 +128,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **offset** | **int**|  | [optional] |
 | **page** | **int**|  | [optional] |
 | **page_size** | **int**|  | [optional] |
 | **serialize_nulls** | **bool**|  | [optional] |
@@ -135,7 +139,7 @@ try {
 
 ### Return type
 
-[**\kruegge82\weclapp\Model\CalendarGet200Response**](../Model/CalendarGet200Response.md)
+[**\kruegge82\weclapp\Model\InlineObject20**](../Model/InlineObject20.md)
 
 ### Authorization
 

@@ -1,4 +1,4 @@
-# # MoneyTransactionProcessingStrategy
+# MoneyTransactionProcessingStrategy
 
 ## Properties
 

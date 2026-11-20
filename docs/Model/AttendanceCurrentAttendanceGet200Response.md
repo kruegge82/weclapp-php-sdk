@@ -1,4 +1,4 @@
-# # AttendanceCurrentAttendanceGet200Response
+# AttendanceCurrentAttendanceGet200Response
 
 ## Properties
 

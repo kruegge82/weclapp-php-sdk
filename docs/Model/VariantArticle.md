@@ -1,4 +1,4 @@
-# # VariantArticle
+# VariantArticle
 
 ## Properties
 

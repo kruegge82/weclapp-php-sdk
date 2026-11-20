@@ -1,4 +1,4 @@
-# # TaxConfigureSalesTaxesPostRequest
+# TaxConfigureSalesTaxesPostRequest
 
 ## Properties
 

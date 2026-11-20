@@ -1,4 +1,4 @@
-# # PriceCalculationParameter
+# PriceCalculationParameter
 
 ## Properties
 

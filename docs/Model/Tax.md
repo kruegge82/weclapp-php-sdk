@@ -1,4 +1,4 @@
-# # Tax
+# Tax
 
 ## Properties
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **default_nominal_account_id** | **string** |  | [optional]
 **deposit_account_id** | **string** |  | [optional]
 **name** | **string** |  | [optional]
-**tax_key** | [**\kruegge82\weclapp\Model\TaxKey**](TaxKey.md) |  | [optional]
+**tax_key** | [**\kruegge82\weclapp\Model\TaxKey**](TaxKey.md) |  | [optional] [readonly]
 **tax_type** | [**\kruegge82\weclapp\Model\TaxType**](TaxType.md) |  | [optional]
 **tax_value** | **float** |  | [optional]
 

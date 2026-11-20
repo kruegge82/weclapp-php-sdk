@@ -1,4 +1,4 @@
-# # SalesStageHistory
+# SalesStageHistory
 
 ## Properties
 

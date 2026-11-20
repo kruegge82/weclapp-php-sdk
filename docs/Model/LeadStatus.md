@@ -1,4 +1,4 @@
-# # LeadStatus
+# LeadStatus
 
 ## Properties
 

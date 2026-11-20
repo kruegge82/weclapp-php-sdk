@@ -1,4 +1,4 @@
-# # BankAccount
+# BankAccount
 
 ## Properties
 
@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **incidental_costs_of_monetary_traffic_account_id** | **string** |  | [optional]
 **incidental_costs_of_monetary_traffic_tax_id** | **string** |  | [optional]
 **last_download** | **int** |  | [optional] [readonly]
+**payment_provider_connection_id** | **string** |  | [optional] [readonly]
 **primary** | **bool** |  | [optional]
 **qr_iban** | **string** |  | [optional]
 **qr_identifier** | **string** |  | [optional]

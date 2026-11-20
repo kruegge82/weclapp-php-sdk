@@ -1,4 +1,4 @@
-# # ProductionWorkScheduleAssignment
+# ProductionWorkScheduleAssignment
 
 ## Properties
 

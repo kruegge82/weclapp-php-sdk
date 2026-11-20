@@ -1,4 +1,4 @@
-# # QuotationIdIdPrintLabelPostRequest
+# QuotationIdIdPrintLabelPostRequest
 
 ## Properties
 

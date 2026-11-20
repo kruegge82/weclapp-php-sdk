@@ -1,4 +1,4 @@
-# # ProductionOrderStatusType
+# ProductionOrderStatusType
 
 ## Properties
 

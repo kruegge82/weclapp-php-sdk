@@ -1,4 +1,4 @@
-# # ArchivedEmail
+# ArchivedEmail
 
 ## Properties
 

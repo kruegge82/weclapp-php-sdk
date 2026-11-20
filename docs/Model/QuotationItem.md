@@ -1,4 +1,4 @@
-# # QuotationItem
+# QuotationItem
 
 ## Properties
 
@@ -49,6 +49,7 @@ Name | Type | Description | Notes
 **alternative** | **bool** |  | [optional]
 **it_scope_id** | **string** |  | [optional] [readonly]
 **optional** | **bool** |  | [optional]
+**quotation_item_relationships** | [**\kruegge82\weclapp\Model\QuotationItemRelationship[]**](QuotationItemRelationship.md) |  | [optional] [readonly]
 **scale_values** | [**\kruegge82\weclapp\Model\QuotationItemScaleValue[]**](QuotationItemScaleValue.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

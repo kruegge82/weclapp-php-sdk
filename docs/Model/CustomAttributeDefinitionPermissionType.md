@@ -1,4 +1,4 @@
-# # CustomAttributeDefinitionPermissionType
+# CustomAttributeDefinitionPermissionType
 
 ## Properties
 

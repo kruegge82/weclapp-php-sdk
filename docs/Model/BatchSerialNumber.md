@@ -1,4 +1,4 @@
-# # BatchSerialNumber
+# BatchSerialNumber
 
 ## Properties
 

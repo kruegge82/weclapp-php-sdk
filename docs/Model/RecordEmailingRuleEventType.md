@@ -1,4 +1,4 @@
-# # RecordEmailingRuleEventType
+# RecordEmailingRuleEventType
 
 ## Properties
 

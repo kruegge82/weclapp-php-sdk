@@ -1,4 +1,4 @@
-# # PriceData
+# PriceData
 
 ## Properties
 

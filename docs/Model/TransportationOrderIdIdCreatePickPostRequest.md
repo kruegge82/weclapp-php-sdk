@@ -1,4 +1,4 @@
-# # TransportationOrderIdIdCreatePickPostRequest
+# TransportationOrderIdIdCreatePickPostRequest
 
 ## Properties
 

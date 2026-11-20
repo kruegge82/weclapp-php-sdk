@@ -1,4 +1,4 @@
-# # IncomingGoodsIdIdIncomingBookingsGet200Response
+# IncomingGoodsIdIdIncomingBookingsGet200Response
 
 ## Properties
 

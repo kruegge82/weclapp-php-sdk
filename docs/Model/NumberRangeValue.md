@@ -1,4 +1,4 @@
-# # NumberRangeValue
+# NumberRangeValue
 
 ## Properties
 

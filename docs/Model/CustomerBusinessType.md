@@ -1,4 +1,4 @@
-# # CustomerBusinessType
+# CustomerBusinessType
 
 ## Properties
 

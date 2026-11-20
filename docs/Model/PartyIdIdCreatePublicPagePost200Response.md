@@ -1,4 +1,4 @@
-# # PartyIdIdCreatePublicPagePost200Response
+# PartyIdIdCreatePublicPagePost200Response
 
 ## Properties
 

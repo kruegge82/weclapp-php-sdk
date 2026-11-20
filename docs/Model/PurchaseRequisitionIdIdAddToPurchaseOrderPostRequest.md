@@ -1,4 +1,4 @@
-# # PurchaseRequisitionIdIdAddToPurchaseOrderPostRequest
+# PurchaseRequisitionIdIdAddToPurchaseOrderPostRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # StoreType
+# StoreType
 
 ## Properties
 

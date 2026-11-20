@@ -1,4 +1,4 @@
-# # EventInvitationStatus
+# EventInvitationStatus
 
 ## Properties
 

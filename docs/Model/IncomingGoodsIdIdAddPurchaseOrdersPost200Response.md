@@ -1,4 +1,4 @@
-# # IncomingGoodsIdIdAddPurchaseOrdersPost200Response
+# IncomingGoodsIdIdAddPurchaseOrdersPost200Response
 
 ## Properties
 

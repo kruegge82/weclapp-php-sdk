@@ -1,4 +1,4 @@
-# # ArticleSupplySource
+# ArticleSupplySource
 
 ## Properties
 
@@ -18,14 +18,14 @@ Name | Type | Description | Notes
 **match_code** | **string** |  | [optional]
 **minimum_purchase_quantity** | **float** |  | [optional]
 **name** | **string** |  | [optional]
+**procurement_lead_days** | **int** |  | [optional]
 **short_description1** | **string** |  | [optional]
 **short_description2** | **string** |  | [optional]
 **tax_rate_type** | [**\kruegge82\weclapp\Model\TaxRateType**](TaxRateType.md) |  | [optional]
 **unit_id** | **string** |  | [optional]
-**article_prices** | [**\kruegge82\weclapp\Model\ArticlePriceWithoutSalesChannel[]**](ArticlePriceWithoutSalesChannel.md) |  | [optional]
+**article_prices** | [**\kruegge82\weclapp\Model\PurchasePrice[]**](PurchasePrice.md) |  | [optional]
 **dropshipping_possible** | **bool** |  | [optional]
 **ignore_in_dropshipping_automation** | **bool** |  | [optional]
-**procurement_lead_days** | **int** |  | [optional]
 **supplier_id** | **string** |  | [optional]
 **supplier_stock_quantity** | **float** |  | [optional]
 

@@ -1,4 +1,4 @@
-# # MetaLegacyReferencePropertiesGet200Response
+# MetaLegacyReferencePropertiesGet200Response
 
 ## Properties
 
